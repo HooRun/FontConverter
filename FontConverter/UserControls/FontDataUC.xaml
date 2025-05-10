@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="LVGLFontConverter.UserControls.FontDataUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:LVGLFontConverter.UserControls"
+    xmlns:helper="using:LVGLFontConverter.Helpers"
+    xmlns:converter="using:LVGLFontConverter.Contracts.Converter"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <converter:DateTimeToStringConverter x:Key="DateTimeConverter"/>
+    </UserControl.Resources>
+
+    <Expander 
+    IsExpanded="False" 
+    ExpandDirection="Down" 
+    VerticalAlignment="Top" 
+    HorizontalAlignment="Stretch" 
+    HorizontalContentAlignment="Stretch" 
+    Padding="10">
+        <Expander.Header>
+            <TextBlock 
+            Text="{helper:Loc Key=Text_Header_FontData}" 
+            Style="{StaticResource ExpanderHeaderTextBlock}"/>
+        </Expander.Header>
+        <Expander.Content>
+            <StackPanel 
+                Orientation="Vertical" 
+                Background="Transparent" 
+                Spacing="5" >
+                <!-- Full Font Name -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.FullFontName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                        Text="{helper:Loc Key=Text_Header_FontData_FullFontName}" 
+                        Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- Font Family -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.FontFamily, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontData_FontFamily}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- Font Sub Family -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.FontSubfamily, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontData_FontSubFamily}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- Manufacturer -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.Manufacturer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontData_Manufacturer}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- Font Revision -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.FontRevision, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontData_FontRevision}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- Created -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.Created, Converter={StaticResource DateTimeConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontData_Created}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- Modified -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.Modified, Converter={StaticResource DateTimeConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontData_Modified}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- Advance Width Max -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.AdvanceWidthMax, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontData_AdvancedWidthMax}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- Ascent -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.Ascent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontData_Ascent}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- Descent -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.Descent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontData_Descent}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- X Min -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.XMin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontData_XMin}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- Y Min -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.YMin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontData_YMin}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- X Max -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.XMax, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                        Text="{helper:Loc Key=Text_Header_FontData_XMax}" 
+                        Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- Y Max -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.YMax, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontData_YMax}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- Max Charachter Width -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{x:Bind ViewModel.MaxCharWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontData_MaxCharWidth}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+
+            </StackPanel>
+        </Expander.Content>
+    </Expander>
+</UserControl>

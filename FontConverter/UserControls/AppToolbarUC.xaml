@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="LVGLFontConverter.UserControls.AppToolbarUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="using:Microsoft.Xaml.Interactivity" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:LVGLFontConverter.UserControls"
+    xmlns:helper="using:LVGLFontConverter.Helpers"
+    xmlns:behaviors="using:LVGLFontConverter.Behaviors"
+    mc:Ignorable="d">
+
+    <Border Margin="10 0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="White"  CornerRadius="5" Translation="0,0,10" BorderThickness="1" BorderBrush="#44CCCCCC" >
+        <Border.Shadow>
+            <ThemeShadow />
+        </Border.Shadow>
+        <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" IsSticky="False" HorizontalAlignment="Left" HorizontalContentAlignment="Stretch" LightDismissOverlayMode="Off">
+            <CommandBar.Resources>
+                <Thickness x:Key="CommandBarBorderThicknessOpen">0</Thickness>
+                <Color x:Key="CommandBarBackgroundOpen">Transparent</Color>
+            </CommandBar.Resources>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="{helper:Loc Key=Text_App_Toolbar_New}">
+                    <AppBarButton.Icon>
+                        <FontIcon Glyph="{helper:Loc Key=Icon_App_Toolbar_New}" Style="{StaticResource AppToolbarFontIcon}"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+                <AppBarButton Label="{helper:Loc Key=Text_App_Toolbar_Open}">
+                    <AppBarButton.Icon>
+                        <FontIcon Glyph="{helper:Loc Key=Icon_App_Toolbar_Open}" Style="{StaticResource AppToolbarFontIcon}"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+                <!--<AppBarButton Label="{helper:Loc Key=Text_App_Toolbar_InsertFont}">
+                    <AppBarButton.Icon>
+                        <FontIcon Glyph="{helper:Loc Key=Icon_App_Toolbar_InsertFont}" Style="{StaticResource AppToolbarFontIcon}"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+                <AppBarSeparator />-->
+                <AppBarButton Label="{helper:Loc Key=Text_App_Toolbar_Save}">
+                    <AppBarButton.Icon>
+                        <FontIcon Glyph="{helper:Loc Key=Icon_App_Toolbar_Save}" Style="{StaticResource AppToolbarFontIcon}"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+                <AppBarButton Label="{helper:Loc Key=Text_App_Toolbar_SaveAs}">
+                    <AppBarButton.Icon>
+                        <FontIcon Glyph="{helper:Loc Key=Icon_App_Toolbar_SaveAs}" Style="{StaticResource AppToolbarFontIcon}"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+                <AppBarSeparator />
+                <AppBarButton Label="{helper:Loc Key=Text_App_Toolbar_Undo}">
+                    <AppBarButton.Icon>
+                        <FontIcon Glyph="{helper:Loc Key=Icon_App_Toolbar_Undo}" Style="{StaticResource AppToolbarFontIcon}"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+                <AppBarButton Label="{helper:Loc Key=Text_App_Toolbar_Redo}">
+                    <AppBarButton.Icon>
+                        <FontIcon Glyph="{helper:Loc Key=Icon_App_Toolbar_Redo}" Style="{StaticResource AppToolbarFontIcon}"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+                <AppBarSeparator />
+                <AppBarButton Label="{helper:Loc Key=Text_App_Toolbar_Generate}">
+                    <AppBarButton.Icon>
+                        <FontIcon Glyph="{helper:Loc Key=Icon_App_Toolbar_Generate}" Style="{StaticResource AppToolbarFontIcon}"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Border>
+    
+</UserControl>

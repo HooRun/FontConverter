@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="LVGLFontConverter.Views.TotalGlyphs"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+    xmlns:i="using:Microsoft.Xaml.Interactivity" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:LVGLFontConverter.Views"
+    xmlns:helper="using:LVGLFontConverter.Helpers"
+    xmlns:behaviors="using:LVGLFontConverter.Behaviors"
+    xmlns:uc="using:LVGLFontConverter.UserControls"
+    xmlns:controls="using:LVGLFontConverter.Library"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid ColumnSpacing="5" RowSpacing="10" Margin="10 0 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Padding="0" HorizontalAlignment="Center" Command="{x:Bind ViewModel.ConvertFont}">
+            <FontIcon Glyph="reset_iso" Style="{StaticResource ButtonFontIcon}"/>
+        </Button>
+        <AutoSuggestBox Grid.Column="1" Grid.Row="0" Text="{x:Bind ViewModel.FontNamePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Choose Font" VerticalAlignment="Center" HorizontalAlignment="Stretch" ItemsSource="{x:Bind ViewModel.SugestSystemFonts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Behaviors>
+                <!--<behaviors:AutoSuggestBoxAutoResizeBehavior />-->
+                <behaviors:AutoSuggestBoxCommandBehavior  Command="{x:Bind ViewModel.SearchCommand}" 
+                              SuggestionChosenCommand="{x:Bind ViewModel.SuggestionChosenCommand}"
+                              QuerySubmittedCommand="{x:Bind ViewModel.QuerySubmittedCommand}"/>
+            </i:Interaction.Behaviors>
+        </AutoSuggestBox>
+        <Button Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" Command="{x:Bind ViewModel.FontFileOpenPickerCommand}" Padding="0">
+            <FontIcon Glyph="{helper:Loc Key=Icon_App_Brows}" Style="{StaticResource ButtonFontIcon}"/>
+        </Button>
+
+        <uc:GlyphToolbarUC Grid.Column="0" Grid.Row="1" Margin="0 0 0 0" Padding="0"/>
+        <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Background="White" CornerRadius="10"  Padding="10 10 0 10" Translation="0,0,0" BorderThickness="1" BorderBrush="#44CCCCCC">
+            <Border.Shadow>
+                <ThemeShadow />
+            </Border.Shadow>
+            <controls:GlyphView LVFont="{x:Bind ViewModel.LVFont, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Border>
+
+    </Grid>
+
+</Page>

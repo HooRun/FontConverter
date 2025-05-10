@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LVGLFontConverter.Library">
+
+    <Style TargetType="local:GlyphView">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:GlyphView">
+                    <Border x:Name="PART_Border">
+                        <ItemsRepeaterScrollHost>
+                            <ScrollViewer x:Name="PART_ScrollViewer" >
+                                <ItemsRepeater x:Name="PART_ItemsRepeater"/>
+                            </ScrollViewer>
+                        </ItemsRepeaterScrollHost>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>
