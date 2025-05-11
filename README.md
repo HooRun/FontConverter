@@ -1,6 +1,6 @@
 ![Font Converter For LVGL](https://github.com/HooRun/FontConverter/blob/master/Images/repository-open-graph.png?raw=true)
 
-# Font Converter
+# Font Converter For LVGL
  
 
 ### ![Font Converter Logo](https://github.com/HooRun/FontConverter/blob/master/FontConverter.Package/Images/Square44x44Logo.altform-lightunplated_targetsize-16.png?raw=true) Why was Font Converter created?
