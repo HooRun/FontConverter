@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	<StaticWebAssetBasePath>FontConverter/docs/</StaticWebAssetBasePath>
+	<StaticWebAssetBasePath>FontConverter/</StaticWebAssetBasePath>
   </PropertyGroup>
 
   <ItemGroup>
