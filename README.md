@@ -1,4 +1,4 @@
-![Font Converter For LVGL](https://github.com/HooRun/FontConverter/blob/master/Images/repository-open-graph.png?raw=true)
+![Font Converter For LVGL](https://github.com/HooRun/FontConverter/blob/master/Images/repository-open-graph.png)
 
 # Font Converter For LVGL
  
