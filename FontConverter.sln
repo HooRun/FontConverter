@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontConverter", "FontConver
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontConverter.Library", "FontConverter.Library\FontConverter.Library.csproj", "{523E3BB9-FC63-493A-BE42-EB3408ACC2B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontConverter.Blazor", "FontConverter.Blazor\FontConverter.Blazor.csproj", "{5488D291-648B-466F-9BDD-F075E43ADBB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontConverter.Blazor", "FontConverter.Blazor\FontConverter.Blazor.csproj", "{BC274512-AB50-4F48-AF23-C796EA1941F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,18 +63,18 @@ Global
 		{523E3BB9-FC63-493A-BE42-EB3408ACC2B9}.Release|x64.Build.0 = Release|Any CPU
 		{523E3BB9-FC63-493A-BE42-EB3408ACC2B9}.Release|x86.ActiveCfg = Release|Any CPU
 		{523E3BB9-FC63-493A-BE42-EB3408ACC2B9}.Release|x86.Build.0 = Release|Any CPU
-		{5488D291-648B-466F-9BDD-F075E43ADBB2}.Debug|ARM64.ActiveCfg = Debug|Any CPU
-		{5488D291-648B-466F-9BDD-F075E43ADBB2}.Debug|ARM64.Build.0 = Debug|Any CPU
-		{5488D291-648B-466F-9BDD-F075E43ADBB2}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{5488D291-648B-466F-9BDD-F075E43ADBB2}.Debug|x64.Build.0 = Debug|Any CPU
-		{5488D291-648B-466F-9BDD-F075E43ADBB2}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5488D291-648B-466F-9BDD-F075E43ADBB2}.Debug|x86.Build.0 = Debug|Any CPU
-		{5488D291-648B-466F-9BDD-F075E43ADBB2}.Release|ARM64.ActiveCfg = Release|Any CPU
-		{5488D291-648B-466F-9BDD-F075E43ADBB2}.Release|ARM64.Build.0 = Release|Any CPU
-		{5488D291-648B-466F-9BDD-F075E43ADBB2}.Release|x64.ActiveCfg = Release|Any CPU
-		{5488D291-648B-466F-9BDD-F075E43ADBB2}.Release|x64.Build.0 = Release|Any CPU
-		{5488D291-648B-466F-9BDD-F075E43ADBB2}.Release|x86.ActiveCfg = Release|Any CPU
-		{5488D291-648B-466F-9BDD-F075E43ADBB2}.Release|x86.Build.0 = Release|Any CPU
+		{BC274512-AB50-4F48-AF23-C796EA1941F2}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{BC274512-AB50-4F48-AF23-C796EA1941F2}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{BC274512-AB50-4F48-AF23-C796EA1941F2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BC274512-AB50-4F48-AF23-C796EA1941F2}.Debug|x64.Build.0 = Debug|Any CPU
+		{BC274512-AB50-4F48-AF23-C796EA1941F2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BC274512-AB50-4F48-AF23-C796EA1941F2}.Debug|x86.Build.0 = Debug|Any CPU
+		{BC274512-AB50-4F48-AF23-C796EA1941F2}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{BC274512-AB50-4F48-AF23-C796EA1941F2}.Release|ARM64.Build.0 = Release|Any CPU
+		{BC274512-AB50-4F48-AF23-C796EA1941F2}.Release|x64.ActiveCfg = Release|Any CPU
+		{BC274512-AB50-4F48-AF23-C796EA1941F2}.Release|x64.Build.0 = Release|Any CPU
+		{BC274512-AB50-4F48-AF23-C796EA1941F2}.Release|x86.ActiveCfg = Release|Any CPU
+		{BC274512-AB50-4F48-AF23-C796EA1941F2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
