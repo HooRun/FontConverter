@@ -1,10 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	<StaticWebAssetBasePath>FontConverter/docs/</StaticWebAssetBasePath>
+	<StaticWebAssetBasePath>FontConverter</StaticWebAssetBasePath>
   </PropertyGroup>
 
   <ItemGroup>
