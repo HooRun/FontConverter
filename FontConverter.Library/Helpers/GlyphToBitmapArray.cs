@@ -1,4 +1,5 @@
-﻿using SkiaSharp;
+﻿using LVGLFontConverter.Library.Data;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,20 +11,6 @@ namespace LVGLFontConverter.Library.Helpers;
 
 public static class GlyphToBitmapArray
 {
-    public record GlyphToBitmapResult
-    {
-        public int Index { get; set; }
-        public byte[] Bitmap { get; set; }
-        public SKRectI Bounds { get; set; }
-
-        public GlyphToBitmapResult(int glyphIndex, byte[] bitmap, SKRectI bounds)
-        {
-            Index = glyphIndex;
-            Bitmap = bitmap;
-            Bounds = bounds;
-        }
-    }
-
     public static GlyphToBitmapResult RenderGlyphToBitmap(SKFont font, ushort glyphIndex, int pixelHeight, byte bpp, int threshold, int gamma, SKPaint paint)
     {
         GlyphToBitmapResult bResponce = new GlyphToBitmapResult(glyphIndex, Array.Empty<byte>(), new SKRectI());

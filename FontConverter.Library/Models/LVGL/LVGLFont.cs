@@ -34,13 +34,6 @@ public class LVGLFont : IList, IKeyIndexMapping, INotifyCollectionChanged
     public LVGLFontAdjusment FontAdjusment { get; set; }
 
 
-
-
-
-
-
-
-
     public List<LVGLFontGlyph> Glyphs { get; set; }
     public uint GlyphsCount { get; set; }
 

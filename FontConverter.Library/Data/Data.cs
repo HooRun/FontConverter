@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SkiaSharp;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -7,9 +8,20 @@ using System.Threading.Tasks;
 
 namespace LVGLFontConverter.Library.Data;
 
-public record UnicodeBlock(int Start, int End, string Name) : IComparable<UnicodeBlock>
+public record UnicodeBlock : IComparable<UnicodeBlock>
 {
-    public int CompareTo(UnicodeBlock? other)
+    public int Start { get; set; }
+    public int End { get; set; }
+    public string Name { get; set; }
+
+    public UnicodeBlock(int start, int end, string name)
+    {
+        Start = start;
+        End = end;
+        Name = name ?? string.Empty;
+    }
+
+    public int CompareTo([AllowNull] UnicodeBlock other=null)
     {
         if (ReferenceEquals(other, null))
             return 1;
@@ -25,3 +37,17 @@ public record UnicodeBlock(int Start, int End, string Name) : IComparable<Unicod
 public record UnicodeCharacterName(int CodePoint, string Name);
 
 public record StandardMacintoshGlyphName(int GlyphID, string Name);
+
+public record GlyphToBitmapResult
+{
+    public int Index { get; set; }
+    public byte[] Bitmap { get; set; }
+    public SKRectI Bounds { get; set; }
+
+    public GlyphToBitmapResult(int glyphIndex, byte[] bitmap, SKRectI bounds)
+    {
+        Index = glyphIndex;
+        Bitmap = bitmap;
+        Bounds = bounds;
+    }
+}
