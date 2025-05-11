@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "c97svAnB",
+  "version": "s+9jp6dM",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -14,8 +14,8 @@ self.assetsManifest = {
       "url": "FontConverter.Blazor.styles.css"
     },
     {
-      "hash": "sha256-DUlurPgwM1RQ/DO11NCKhmFtBRI9E2S9gLhU9O4JI1E=",
-      "url": "_framework/FontConverter.Blazor.lu8hu1owtm.wasm"
+      "hash": "sha256-TpC46UCK8mVTG13hce3niKgChYMWOAHXHa+Ouz8HInk=",
+      "url": "_framework/FontConverter.Blazor.y34ivbykvk.wasm"
     },
     {
       "hash": "sha256-/+4qPE13F7H+3S5dkE6JtPMfrVBsISaepeEUhhKotGo=",
@@ -150,7 +150,7 @@ self.assetsManifest = {
       "url": "_framework/System.Text.RegularExpressions.k97bmwwlww.wasm"
     },
     {
-      "hash": "sha256-H09GdXWMdVsy1Za5xpAzdwFUDoySmemh8CdtjisEySI=",
+      "hash": "sha256-IFy3AhKUJsIqq8Tw9r3oSmm+YiFKvci57BVfvmRtr8g=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -202,7 +202,7 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-5vhAqHw/A/egZtLIYYeIDJK9JiV5FZm1/Dv4Bp4WCWQ=",
+      "hash": "sha256-5KoSC97DjojAXY47lVxDeG+LVYLsSpa1Jy3QdJfs9kM=",
       "url": "index.html"
     },
     {
