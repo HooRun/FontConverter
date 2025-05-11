@@ -1,4 +1,4 @@
-# FontConverter
+# Font Converter
 
 ### Why was Font Converter created?
 
