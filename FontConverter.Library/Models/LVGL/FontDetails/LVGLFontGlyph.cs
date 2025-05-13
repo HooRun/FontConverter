@@ -25,12 +25,12 @@ public class LVGLFontGlyph
     public LVGLFontAdjusment GlyphAdjusment { get; set; } = new();
     public LVGLGlyphBitmap GlyphBitmap { get; set; } = new();
 
-    
 
-    
 
-    
-    
+    public int BitsPerPixel { get; set; }
+
+
+
     public List<(uint CodePoint, string Name)> Unicodes { get; set; }
 
     public bool IsEmpty { get; set; }

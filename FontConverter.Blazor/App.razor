@@ -1,5 +1,8 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿@using Radzen
+@using Radzen.Blazor
+<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
+        <RadzenTheme Theme="material" @rendermode="InteractiveAuto" />
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>

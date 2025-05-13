@@ -175,36 +175,36 @@ public static class GetGlyphInformation
                             ushort glyphNameIndex = postTable.GlyphNameIndex[glyphIndex];
                             if (glyphNameIndex > 257 && postTable.PascalStrings?.Count > glyphNameIndex - 258)
                             {
-                                lvglGlyph.Name = postTable.PascalStrings[glyphNameIndex - 258];
+                                lvglGlyph.GlyphProperties.Name = postTable.PascalStrings[glyphNameIndex - 258];
                             }
                             else if (glyphNameIndex < standardMacintoshGlyphNames.Count)
                             {
-                                lvglGlyph.Name = standardMacintoshGlyphNames[glyphNameIndex].Name;
+                                lvglGlyph.GlyphProperties.Name = standardMacintoshGlyphNames[glyphNameIndex].Name;
                             }
                         }
 
                         // Set glyph properties
                         lvglGlyph.Index = glyphIndex;
-                        lvglGlyph.AdvanceWidth = (int)Math.Ceiling(scale * hmtxTable.GlyphMetrics[glyphIndex].AdvanceWidth);
-                        lvglGlyph.Width = (int)Math.Ceiling(scale * (glyph.XMax - glyph.XMin));
-                        lvglGlyph.Height = (int)Math.Ceiling(scale * (glyph.YMax - glyph.YMin));
+                        lvglGlyph.GlyphProperties.AdvanceWidth = (int)Math.Ceiling(scale * hmtxTable.GlyphMetrics[glyphIndex].AdvanceWidth);
+                        lvglGlyph.GlyphProperties.Width = (int)Math.Ceiling(scale * (glyph.XMax - glyph.XMin));
+                        lvglGlyph.GlyphProperties.Height = (int)Math.Ceiling(scale * (glyph.YMax - glyph.YMin));
                         lvglGlyph.BitsPerPixel = bpp;
-                        lvglGlyph.Threshold = threshold;
-                        lvglGlyph.Gamma = gamma;
-                        lvglGlyph.MaxCharWidth = lvFont.FontData.MaxCharWidth;
-                        lvglGlyph.YAxisPosition = lvFont.FontProperties.YAxisPosition;
-                        lvglGlyph.LineHeight = lvFont.FontProperties.LineHeight;
-                        lvglGlyph.BaseLine = lvFont.FontProperties.BaseLine;
+                        lvglGlyph.GlyphAdjusment.Threshold = threshold;
+                        lvglGlyph.GlyphAdjusment.Gamma = gamma;
+                        //lvglGlyph.MaxCharWidth = lvFont.FontData.MaxCharWidth;
+                        //lvglGlyph.YAxisPosition = lvFont.FontProperties.YAxisPosition;
+                        //lvglGlyph.LineHeight = lvFont.FontProperties.LineHeight;
+                        //lvglGlyph.BaseLine = lvFont.FontProperties.BaseLine;
 
                         
-                        lvglGlyph.Bitmap = glyphsBitmapList[glyphIndex].Bitmap;
-                        lvglGlyph.BitmapSize = glyphsBitmapList[glyphIndex].Bitmap.Length;
-                        lvglGlyph.BitmapWidth = glyphsBitmapList[glyphIndex].Bounds.Width;
-                        lvglGlyph.BitmapHeight = glyphsBitmapList[glyphIndex].Bounds.Height;
-                        lvglGlyph.OffsetX = glyphsBitmapList[glyphIndex].Bounds.Left;
-                        lvglGlyph.OffsetY = lvglGlyph.BaseLine - (int)glyphsBitmapList[glyphIndex].Bounds.Bottom;
+                        lvglGlyph.GlyphBitmap.Bitmap = glyphsBitmapList[glyphIndex].Bitmap;
+                        //lvglGlyph.GlyphBitmap.BitmapSize = glyphsBitmapList[glyphIndex].Bitmap.Length;
+                        lvglGlyph.GlyphBitmap.BitmapWidth = glyphsBitmapList[glyphIndex].Bounds.Width;
+                        lvglGlyph.GlyphBitmap.BitmapHeight = glyphsBitmapList[glyphIndex].Bounds.Height;
+                        lvglGlyph.GlyphProperties.OffsetX = glyphsBitmapList[glyphIndex].Bounds.Left;
+                        lvglGlyph.GlyphProperties.OffsetY = lvFont.FontProperties.BaseLine - (int)glyphsBitmapList[glyphIndex].Bounds.Bottom;
 
-                        lvglGlyph.IsEmpty = lvglGlyph.BitmapWidth == 0 || lvglGlyph.BitmapHeight == 0;
+                        lvglGlyph.IsEmpty = lvglGlyph.GlyphBitmap.BitmapWidth == 0 || lvglGlyph.GlyphBitmap.BitmapHeight == 0;
 
                         // Map Unicode code points
                         var matchingKeys = cmapTable.UnicodeToGlyphMap

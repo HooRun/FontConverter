@@ -104,13 +104,13 @@ public class GlyphBitmapControl : Panel
     {
         
         _glyph = glyph;
-        _bitmapData = glyph.Bitmap;
-        _bitmapWidth = glyph.BitmapWidth;
-        _bitmapHeight = glyph.BitmapHeight;
-        _bitsPerPixel = glyph.BitsPerPixel;
-        _baseline = glyph.BaseLine;
-        _lineHeight = glyph.LineHeight;
-        _maxCharWidth = glyph.MaxCharWidth;
+        _bitmapData = glyph.GlyphBitmap.Bitmap;
+        _bitmapWidth = glyph.GlyphBitmap.BitmapWidth;
+        _bitmapHeight = glyph.GlyphBitmap.BitmapHeight;
+        //_bitsPerPixel = glyph.BitsPerPixel;
+        //_baseline = glyph.BaseLine;
+        //_lineHeight = glyph.LineHeight;
+        //_maxCharWidth = glyph.MaxCharWidth;
         Index = glyph.Index;
     }
 
@@ -258,7 +258,7 @@ public class GlyphBitmapControl : Panel
 
         var device = CanvasDevice.GetSharedDevice();
         var graphicsDevice = CanvasComposition.CreateCompositionGraphicsDevice(_compositor, device);
-        var truncatedText = TruncateText(_glyph.Name ?? "Glyph", _headerFontSize, _headerWidth-widthPadding);
+        var truncatedText = TruncateText(_glyph.GlyphProperties.Name ?? "Glyph", _headerFontSize, _headerWidth-widthPadding);
         var textSize = MeasureText(truncatedText, _headerFontSize, _headerWidth - widthPadding);
 
         var drawingSurface = graphicsDevice.CreateDrawingSurface(

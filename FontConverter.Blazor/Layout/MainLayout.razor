@@ -1,16 +1,70 @@
-﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+@inherits LayoutComponentBase
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+<RadzenComponents @rendermode="InteractiveAuto" />
+<RadzenLayout style="position: relative;grid-template-areas: 'rz-sidebar rz-header' 'rz-sidebar rz-body'">
+    <RadzenHeader>
+        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
+            <RadzenSidebarToggle Click="@(() => sidebarExpanded = !sidebarExpanded)" />
+            <RadzenImage Path="Assets/FontConverterLogo.png" Style="width:24px; height:24px; margin-right:5px;" />
+            <RadzenLabel Text="@SharedResources.AppName" />
+        </RadzenStack>
+    </RadzenHeader>
+    <RadzenSidebar Responsive="false" @bind-Expanded="@sidebarExpanded" style="position: absolute; z-index: 3; width:350px;">
+        <RadzenStack AlignItems="AlignItems.End" class="rz-p-2">
+            <RadzenButton Icon="west" Variant="Variant.Text" ButtonStyle="ButtonStyle.Secondary" Click="@(() => sidebarExpanded = false)" />
+        </RadzenStack>
+        <div class="rz-p-4">
+            <RadzenAccordion Multiple="false">
+                <Items>
+                    <RadzenAccordionItem Text="Orders" Icon="account_balance_wallet">
+                        Details for Orders
+                    </RadzenAccordionItem>
+                    
+                </Items>
+            </RadzenAccordion>
         </div>
+        <div class="rz-p-4">
+            <RadzenAccordion Multiple="false">
+                <Items>
+                    <RadzenAccordionItem Text="Orders" Icon="account_balance_wallet">
+                        Details for Orders
+                    </RadzenAccordionItem>
 
-        <article class="content px-4">
+                </Items>
+            </RadzenAccordion>
+        </div>
+        <div class="rz-p-4">
+            <RadzenAccordion Multiple="false">
+                <Items>
+                    <RadzenAccordionItem Text="Orders" Icon="account_balance_wallet">
+                        Details for Orders
+                    </RadzenAccordionItem>
+
+                </Items>
+            </RadzenAccordion>
+        </div>
+        <div class="rz-p-4">
+            <RadzenAccordion Multiple="false">
+                <Items>
+                    <RadzenAccordionItem Text="Orders" Icon="account_balance_wallet">
+                        Details for Orders
+                    </RadzenAccordionItem>
+
+                </Items>
+            </RadzenAccordion>
+        </div>
+    </RadzenSidebar>
+    <RadzenBody>
+        <div class="rz-p-4">
             @Body
-        </article>
-    </main>
-</div>
+        </div>
+    </RadzenBody>
+    @if (sidebarExpanded)
+    {
+        <div @onclick="@(() => sidebarExpanded = false)" class="rz-dialog-mask" style="position: absolute; z-index: 2"></div>
+    }
+</RadzenLayout>
+
+@code {
+    bool sidebarExpanded = true;
+}

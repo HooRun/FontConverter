@@ -45,7 +45,7 @@ public class GlyphViewItem : Panel, IDisposable
     public GlyphViewItem(LVGLFontGlyph glyph) : this()
     {
         Glyph = glyph;
-        ToolTipText = Glyph.Name;
+        ToolTipText = Glyph.GlyphProperties.Name;
     }
 
     #region Internal Events
@@ -116,7 +116,7 @@ public class GlyphViewItem : Panel, IDisposable
         {
             glyphViewItem.Glyph = (LVGLFontGlyph)e.NewValue;
             string toolTip = $"Glyph Index: {glyphViewItem.Glyph.Index.ToString()}\n" +
-                $"Glyph Name: {glyphViewItem.Glyph.Name}\n" +
+                $"Glyph Name: {glyphViewItem.Glyph.GlyphProperties.Name}\n" +
                 $"Glyph UniCode(s):\n{string.Join(Environment.NewLine, glyphViewItem.Glyph.Unicodes.Select(item => string.Format("  U+{0:X4}: {1}", item.CodePoint, item.Name)))}";
             glyphViewItem.ToolTipText = toolTip;
         }
@@ -497,9 +497,9 @@ public class GlyphViewItem : Panel, IDisposable
         _contentAxisX.Size = new Vector2(_contentContainer.Size.X, 1);
         _contentAxisY.Size = new Vector2(1, _contentContainer.Size.Y);
 
-        _glyphBitmapContainer.Size = new Vector2(Glyph.BitmapWidth * Zoom, Glyph.BitmapHeight * Zoom);
+        _glyphBitmapContainer.Size = new Vector2(Glyph.GlyphBitmap.BitmapWidth * Zoom, Glyph.GlyphBitmap.BitmapHeight * Zoom);
 
-        float adw = Glyph.AdvanceWidth > 0 ? Glyph.AdvanceWidth : 0;
+        float adw = Glyph.GlyphProperties.AdvanceWidth > 0 ? Glyph.GlyphProperties.AdvanceWidth : 0;
         _adwContainer.Size = new Vector2(adw * Zoom, (float)ContentHight);
         _adwRect.Size = _adwContainer.Size;
     }
@@ -529,8 +529,8 @@ public class GlyphViewItem : Panel, IDisposable
         _adwContainer.Offset = new Vector3(Axis_Y, 0, 0);
         _adwRect.Offset = Vector3.Zero;
 
-        float bitmapX = Axis_Y + (Glyph.OffsetX * Zoom);
-        float bitmapY = Axis_X - ((Glyph.BitmapHeight + Glyph.OffsetY) * Zoom);
+        float bitmapX = Axis_Y + (Glyph.GlyphProperties.OffsetX * Zoom);
+        float bitmapY = Axis_X - ((Glyph.GlyphBitmap.BitmapHeight + Glyph.GlyphProperties.OffsetY) * Zoom);
         _glyphBitmapContainer.Offset = new Vector3(bitmapX, bitmapY, 0);
     }
 
@@ -596,7 +596,7 @@ public class GlyphViewItem : Panel, IDisposable
 
         float widthPadding = (float)Math.Ceiling(HeaderPadding.Left + HeaderPadding.Right);
         float heightPadding = (float)Math.Ceiling(HeaderPadding.Top + HeaderPadding.Bottom);
-        var truncatedText = TruncateText(string.IsNullOrEmpty(Glyph.Name)? $"Glyph {Glyph.Index}": Glyph.Name, HeaderFontSize, _headerContainer.Size.X - widthPadding);
+        var truncatedText = TruncateText(string.IsNullOrEmpty(Glyph.GlyphProperties.Name) ? $"Glyph {Glyph.Index}": Glyph.GlyphProperties.Name, HeaderFontSize, _headerContainer.Size.X - widthPadding);
         var textSize = MeasureText(truncatedText, HeaderFontSize, (float)(_headerContainer.Size.X - widthPadding));
         float textLeft = (float)((_headerContainer.Size.X - (float)textSize.Width) / 2.0f);
         float textTop = (float)Math.Floor(heightPadding / 2.0);
@@ -646,16 +646,16 @@ public class GlyphViewItem : Panel, IDisposable
         Size bitmapSize = new Size(_glyphBitmapContainer.Size.X == 0 ? 1 : _glyphBitmapContainer.Size.X, _glyphBitmapContainer.Size.Y == 0 ? 1 : _glyphBitmapContainer.Size.Y);
         
             CompositionDrawingSurface surface = _graphicsDevice.CreateDrawingSurface(bitmapSize, DirectXPixelFormat.B8G8R8A8UIntNormalized, DirectXAlphaMode.Premultiplied);
-            int width = Glyph.BitmapWidth * Zoom;
-            int height = Glyph.BitmapHeight * Zoom;
+            int width = Glyph.GlyphBitmap.BitmapWidth * Zoom;
+            int height = Glyph.GlyphBitmap.BitmapHeight * Zoom;
             using (var ds = CanvasComposition.CreateDrawingSession(surface))
             {
                 ds.Clear(Colors.Transparent);
-                for (int y = 0; y < Glyph.BitmapHeight; y++)
+                for (int y = 0; y < Glyph.GlyphBitmap.BitmapHeight; y++)
                 {
-                    for (int x = 0; x < Glyph.BitmapWidth; x++)
+                    for (int x = 0; x < Glyph.GlyphBitmap.BitmapWidth; x++)
                     {
-                        byte value = GetPixel(Glyph.Bitmap, Glyph.BitmapWidth, Glyph.BitsPerPixel, x, y);
+                        byte value = GetPixel(Glyph.GlyphBitmap.Bitmap, Glyph.GlyphBitmap.BitmapWidth, Glyph.BitsPerPixel, x, y);
                         if (value > 0)
                         {
                             var color = Color.FromArgb((byte)(value * 255 / ((1 << Glyph.BitsPerPixel) - 1)), 0, 0, 0);
