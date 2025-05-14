@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Radzen;
 using System.Globalization;
 using Microsoft.Extensions.DependencyInjection;
+using System.Runtime.InteropServices;
+using SkiaSharp;
+using SkiaSharp.Views.Blazor;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
