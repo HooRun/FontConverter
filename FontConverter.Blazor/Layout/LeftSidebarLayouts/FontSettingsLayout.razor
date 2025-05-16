@@ -1,0 +1,85 @@
+﻿
+<RadzenAccordion Multiple="false">
+    <Items>
+        <RadzenAccordionItem Text="@SharedResources.Text_Accordion_Font_Settings" Icon="@SharedResources.Icon_Accordion_Font_Settings">
+            <RadzenStack Orientation="Orientation.Vertical" Gap="15">
+
+                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Font Name:" Variant="@variant">
+                    <ChildContent>
+                        <RadzenTextBox />
+                    </ChildContent>
+                </RadzenFormField>
+
+                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Bit Per Pixel:" Variant="@variant">
+                    <ChildContent>
+                        <RadzenDropDown @bind-Value=@bitPerPixel Data=@bitPerPixelList/>
+                    </ChildContent>
+                </RadzenFormField>
+
+                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Size:" Variant="@variant">
+                    <ChildContent>
+                        <RadzenNumeric Min="8" Max="128" @bind-Value=@size InputAttributes="@(new Dictionary<string,object>(){ { "aria-label", "enter value" }})" />
+                    </ChildContent>
+                </RadzenFormField>
+
+                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Sub Pixel:" Variant="@variant">
+                    <ChildContent>
+                        <RadzenDropDown @bind-Value=@bitPerPixel Data=@bitPerPixelList />
+                    </ChildContent>
+                </RadzenFormField>
+
+                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Fallback Font Name:" Variant="@variant">
+                    <ChildContent>
+                        <RadzenAutoComplete @bind-Value=@companyName Data=@customers OpenOnFocus="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"/>
+                    </ChildContent>
+                </RadzenFormField>
+
+            </RadzenStack>
+        </RadzenAccordionItem>
+    </Items>
+</RadzenAccordion>
+
+<style>
+
+    .rz-accordion {
+    border: 1px solid #EEE !important;
+    }
+
+    .rz-accordion-header {
+    background-color: #F9F9F9 !important;
+    }
+    .rz-accordion-content 
+    {
+    padding:0.5rem !important;
+    }
+
+
+</style>
+
+@code {
+    Variant variant = Variant.Outlined;
+    bool floatFieldLabel = true;
+
+    string bitPerPixel = "Around the Horn";
+    IEnumerable<string> bitPerPixelList = new List<string>
+{
+    "Google",
+    "Microsoft",
+    "Amazon",
+    "Apple",
+    "Around the Horn"
+};
+
+    int size;
+
+    string companyName=string.Empty;
+
+    IEnumerable<string> customers = new List<string>
+{
+    "Google",
+    "Microsoft",
+    "Amazon",
+    "Apple",
+    "Around the Horn"
+};
+}

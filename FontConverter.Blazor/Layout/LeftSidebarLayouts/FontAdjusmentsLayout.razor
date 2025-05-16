@@ -1,0 +1,45 @@
+﻿<RadzenAccordion Multiple="false">
+    <Items>
+        <RadzenAccordionItem Text="@SharedResources.Text_Accordion_Font_Adjusment" Icon="@SharedResources.Icon_Accordion_Font_Adjusment">
+            <RadzenStack Orientation="Orientation.Vertical" Gap="15">
+
+                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Font Name:" Variant="@variant">
+                    <ChildContent>
+                        <RadzenTextBox Placeholder="LVGL Font Name" />
+                    </ChildContent>
+                </RadzenFormField>
+
+                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Bit Per Pixel:" Variant="@variant">
+                    <ChildContent>
+                        <RadzenTextBox Placeholder="LVGL Font Name" />
+                    </ChildContent>
+                </RadzenFormField>
+
+                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Size:" Variant="@variant">
+                    <ChildContent>
+                        <RadzenTextBox Placeholder="LVGL Font Name" />
+                    </ChildContent>
+                </RadzenFormField>
+
+                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Sub Pixel:" Variant="@variant">
+                    <ChildContent>
+                        <RadzenTextBox Placeholder="LVGL Font Name" />
+                    </ChildContent>
+                </RadzenFormField>
+
+                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Fallback Font Name:" Variant="@variant">
+                    <ChildContent>
+                        <RadzenTextBox Placeholder="LVGL Font Name" />
+                    </ChildContent>
+                </RadzenFormField>
+
+            </RadzenStack>
+        </RadzenAccordionItem>
+    </Items>
+</RadzenAccordion>
+
+
+@code {
+    Variant variant = Variant.Outlined;
+    bool floatFieldLabel = true;
+}
