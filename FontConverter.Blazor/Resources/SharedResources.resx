@@ -120,4 +120,43 @@
   <data name="AppName" xml:space="preserve">
     <value>Font Converter For LVGL</value>
   </data>
+  <data name="Icon_Accordion_Font_Adjusment" xml:space="preserve">
+    <value>tune</value>
+  </data>
+  <data name="Icon_Accordion_Font_Content" xml:space="preserve">
+    <value>account_tree</value>
+  </data>
+  <data name="Icon_Accordion_Font_Information" xml:space="preserve">
+    <value>summarize</value>
+  </data>
+  <data name="Icon_Accordion_Font_Settings" xml:space="preserve">
+    <value>settings</value>
+  </data>
+  <data name="Icon_Button_Get_Font_Data" xml:space="preserve">
+    <value>reset_iso</value>
+  </data>
+  <data name="Icon_Button_Upload_Font" xml:space="preserve">
+    <value>upload_file</value>
+  </data>
+  <data name="Text_Accordion_Font_Adjusment" xml:space="preserve">
+    <value>Font Adjusment</value>
+  </data>
+  <data name="Text_Accordion_Font_Content" xml:space="preserve">
+    <value>Font Content</value>
+  </data>
+  <data name="Text_Accordion_Font_Information" xml:space="preserve">
+    <value>Font Information</value>
+  </data>
+  <data name="Text_Accordion_Font_Settings" xml:space="preserve">
+    <value>Font Settings</value>
+  </data>
+  <data name="Text_Button_Get_Font_Data" xml:space="preserve">
+    <value>Get Font Data</value>
+  </data>
+  <data name="Text_Button_Get_Font_Data_Busy" xml:space="preserve">
+    <value>Getting Font Data ...</value>
+  </data>
+  <data name="Text_Button_Upload_Font" xml:space="preserve">
+    <value>Open Font File</value>
+  </data>
 </root>

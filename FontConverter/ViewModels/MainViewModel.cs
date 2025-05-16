@@ -42,7 +42,7 @@ public partial class MainViewModel: BaseViewModel
 
     public MainViewModel(
         IMapper mapper, 
-        FontConverter fontConverter, 
+        LVGLFontConverter.Library.FontConverter fontConverter, 
         INavigationService navigationService, 
         FontPropertiesViewModel fontPropertiesVM, 
         FontDataViewModel fontDataVM,
@@ -192,7 +192,7 @@ public partial class MainViewModel: BaseViewModel
     public AsyncRelayCommand ConvertFont { get; }
 
 
-    public FontConverter FontConverter { get; private set; }
+    public LVGLFontConverter.Library.FontConverter FontConverter { get; private set; }
 
     private List<string> _sugestSystemFonts = [];
     public List<string> SugestSystemFonts

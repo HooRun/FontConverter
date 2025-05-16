@@ -68,5 +68,122 @@ namespace FontConverter.Blazor.Resources {
                 return ResourceManager.GetString("AppName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tune.
+        /// </summary>
+        public static string Icon_Accordion_Font_Adjusment {
+            get {
+                return ResourceManager.GetString("Icon_Accordion_Font_Adjusment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to account_tree.
+        /// </summary>
+        public static string Icon_Accordion_Font_Content {
+            get {
+                return ResourceManager.GetString("Icon_Accordion_Font_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to summarize.
+        /// </summary>
+        public static string Icon_Accordion_Font_Information {
+            get {
+                return ResourceManager.GetString("Icon_Accordion_Font_Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to settings.
+        /// </summary>
+        public static string Icon_Accordion_Font_Settings {
+            get {
+                return ResourceManager.GetString("Icon_Accordion_Font_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to reset_iso.
+        /// </summary>
+        public static string Icon_Button_Get_Font_Data {
+            get {
+                return ResourceManager.GetString("Icon_Button_Get_Font_Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to upload_file.
+        /// </summary>
+        public static string Icon_Button_Upload_Font {
+            get {
+                return ResourceManager.GetString("Icon_Button_Upload_Font", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Adjusment.
+        /// </summary>
+        public static string Text_Accordion_Font_Adjusment {
+            get {
+                return ResourceManager.GetString("Text_Accordion_Font_Adjusment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Content.
+        /// </summary>
+        public static string Text_Accordion_Font_Content {
+            get {
+                return ResourceManager.GetString("Text_Accordion_Font_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Information.
+        /// </summary>
+        public static string Text_Accordion_Font_Information {
+            get {
+                return ResourceManager.GetString("Text_Accordion_Font_Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Settings.
+        /// </summary>
+        public static string Text_Accordion_Font_Settings {
+            get {
+                return ResourceManager.GetString("Text_Accordion_Font_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get Font Data.
+        /// </summary>
+        public static string Text_Button_Get_Font_Data {
+            get {
+                return ResourceManager.GetString("Text_Button_Get_Font_Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Getting Font Data ....
+        /// </summary>
+        public static string Text_Button_Get_Font_Data_Busy {
+            get {
+                return ResourceManager.GetString("Text_Button_Get_Font_Data_Busy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open Font File.
+        /// </summary>
+        public static string Text_Button_Upload_Font {
+            get {
+                return ResourceManager.GetString("Text_Button_Upload_Font", resourceCulture);
+            }
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace LVGLFontConverter.ViewModels;
 
 public class FontLoaderViewModel : BaseViewModel
 {
-    public FontLoaderViewModel(FontConverter fontConverter)
+    public FontLoaderViewModel(LVGLFontConverter.Library.FontConverter fontConverter)
     {
         FontConverter = fontConverter;
         FontLoaderContentDialog = new();
@@ -82,7 +82,7 @@ public class FontLoaderViewModel : BaseViewModel
     #endregion Private Properties
 
     #region Public Properties
-    public FontConverter FontConverter { get; private set; }
+    public LVGLFontConverter.Library.FontConverter FontConverter { get; private set; }
     public CancellationTokenSource? FontLoadingCancellationToken { get; set; }
     public ContentDialog FontLoaderContentDialog { get;  set; }
 

@@ -5,7 +5,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
-	  <!--<StaticWebAssetBasePath>FontConverter/</StaticWebAssetBasePath>-->
+    <Title>Font Converter For LVGL</Title>
+    <RepositoryUrl>https://github.com/HooRun/FontConverter</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,8 +23,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Components\" />
     <Folder Include="Localization\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FontConverter.SharedLibrary\FontConverter.SharedLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\SharedResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SharedResources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

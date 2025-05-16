@@ -1,0 +1,45 @@
+﻿
+
+<RadzenSidebar Responsive="true" @bind-Expanded="@expanded">
+
+    @* <RadzenStack Orientation="Orientation.Horizontal" Style="display: flex; align-items:center !important; width: 100% !important;" class="rz-p-2">
+        <RadzenLabel Style="vertical-align:middle !important; " Text="Font Settings" />
+        <RadzenButton Style="margin-left: auto;" Icon="west" Variant="Variant.Text" ButtonStyle="ButtonStyle.Secondary" Click="@(() => Expanded = false)" />
+    </RadzenStack> *@
+
+    <FontFileOperationLayout />
+
+    <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Stretch" Wrap="FlexWrap.NoWrap" Gap="15" style="padding: 15px;">
+        <RadzenAccordion Multiple="false">
+            <Items>
+                <RadzenAccordionItem Text="@SharedResources.Text_Accordion_Font_Settings" Icon="@SharedResources.Icon_Accordion_Font_Settings">
+                    Details for Orders
+                </RadzenAccordionItem>
+            </Items>
+        </RadzenAccordion>
+        <RadzenAccordion Multiple="false">
+            <Items>
+                <RadzenAccordionItem Text="@SharedResources.Text_Accordion_Font_Adjusment" Icon="@SharedResources.Icon_Accordion_Font_Adjusment">
+                    Details for Orders
+                </RadzenAccordionItem>
+
+            </Items>
+        </RadzenAccordion>
+        <RadzenAccordion Multiple="false">
+            <Items>
+                <RadzenAccordionItem Text="@SharedResources.Text_Accordion_Font_Content" Icon="@SharedResources.Icon_Accordion_Font_Content">
+                    Details for Orders
+                </RadzenAccordionItem>
+
+            </Items>
+        </RadzenAccordion>
+        <RadzenAccordion Multiple="false">
+            <Items>
+                <RadzenAccordionItem Text="@SharedResources.Text_Accordion_Font_Information" Icon="@SharedResources.Icon_Accordion_Font_Information">
+                    Details for Orders
+                </RadzenAccordionItem>
+            </Items>
+        </RadzenAccordion>
+    </RadzenStack>
+</RadzenSidebar>
+

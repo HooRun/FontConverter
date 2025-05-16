@@ -1,165 +1,22 @@
 ﻿@inherits LayoutComponentBase
-@inject NotificationService NotificationService
 
-
-<RadzenComponents @rendermode="InteractiveAuto" />
-<RadzenLayout style="position: relative;grid-template-areas: 'rz-sidebar rz-header' 'rz-sidebar rz-body'">
+<RadzenComponents @rendermode="InteractiveAuto"/>
+<RadzenLayout style="grid-template-columns: auto 1fr; grid-template-areas: 'rz-header rz-header' 'rz-sidebar rz-body'">
     <RadzenHeader>
         <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
-            <RadzenSidebarToggle Click="@(() => sidebarExpanded = !sidebarExpanded)" />
-            <RadzenImage Path="Assets/FontConverterLogo.png" Style="width:24px; height:24px; margin-right:5px;" />
-            <RadzenLabel Text="@SharedResources.AppName" />
+            <RadzenSidebarToggle Click="@ToggleLeftSidebar" />
+            <RadzenLink Path="/" Style="display:flex; align-items:center; text-decoration: none !important;">
+                <RadzenImage Path="Assets/FontConverterLogo.png" Style="width:32px; height:32px; margin-right:5px;" />
+            </RadzenLink>
+            <span>@SharedResources.AppName</span>
         </RadzenStack>
     </RadzenHeader>
-    <RadzenSidebar Responsive="false" @bind-Expanded="@sidebarExpanded" style="position: absolute; z-index: 3;">
-        <RadzenStack AlignItems="AlignItems.End" class="rz-p-2">
-            <RadzenButton Icon="west" Variant="Variant.Text" ButtonStyle="ButtonStyle.Secondary" Click="@(() => sidebarExpanded = false)" />
-        </RadzenStack>
-        <RadzenStack AlignItems="AlignItems.Center" style="padding: 15px;" Wrap="FlexWrap.Wrap">
-            <RadzenUpload Multiple="false" Change=@OnChange Style="width: 100%;" Accept=".ttf,.otf,.c" Icon="add_a_photo" IconColor="@Colors.Primary" ChooseText=" Select Font File"
-            InputAttributes="@(new Dictionary<string,object>{ { "aria-label", "Select Font File" }, { "title", "Select Font File" },})" />
-        </RadzenStack>
-        <RadzenStack AlignItems="AlignItems.Center" style="padding: 15px;" Wrap="FlexWrap.Wrap">
-            <RadzenButton style="width: 100%" Icon="save" BusyText="Getting Font Data ..." IsBusy=@busy Click=@OnBusyClick Text="Get Font Data" />
-        </RadzenStack>
-        <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Stretch" Wrap="FlexWrap.NoWrap" Gap="15" style="padding: 15px;">
-            <RadzenAccordion Multiple="false" >
-                <Items>
-                    <RadzenAccordionItem Text="Orders" Icon="account_balance_wallet">
-                        Details for Orders
-                    </RadzenAccordionItem>
-
-                </Items>
-            </RadzenAccordion>
-            <RadzenAccordion Multiple="false">
-                <Items>
-                    <RadzenAccordionItem Text="Orders" Icon="account_balance_wallet">
-                        Details for Orders
-                    </RadzenAccordionItem>
-
-                </Items>
-            </RadzenAccordion>
-            <RadzenAccordion Multiple="false">
-                <Items>
-                    <RadzenAccordionItem Text="Orders" Icon="account_balance_wallet">
-                        Details for Orders
-                    </RadzenAccordionItem>
-
-                </Items>
-            </RadzenAccordion>
-            <RadzenAccordion Multiple="false">
-                <Items>
-                    <RadzenAccordionItem Text="Orders" Icon="account_balance_wallet">
-                        Details for Orders
-                    </RadzenAccordionItem>
-
-                </Items>
-            </RadzenAccordion>
-        </RadzenStack>
-    </RadzenSidebar>
+    <LeftSidebarLayout @bind-Expanded="@isLeftSidebarExpanded" />
     <RadzenBody>
         <div class="rz-p-4">
             @Body
         </div>
     </RadzenBody>
-    @if (sidebarExpanded)
-    {
-        <div @onclick="@(() => sidebarExpanded = false)" class="rz-dialog-mask" style="position: absolute; z-index: 2"></div>
-    }
+    
 </RadzenLayout>
 
-<style>
-
-    .rz-fileupload-files {
-    border: 2px dashed #28a745 !important;
-    background-color: #e9ecef !important;
-    border-radius: 8px !important;
-    margin-top: 5px !important;
-    font-size: 12px !important;
-    }
-
-    .rz-fileupload-files .rz-fileupload-row {
-    display: flex !important;
-    width: 100% !important;
-    height: auto !important;
-    align-items: center;
-    }
-
-    .rz-fileupload-files .rz-fileupload-row div:nth-child(1) {
-    width: 50% !important;
-    height: 100% !important;
-    white-space: normal !important;
-    overflow-wrap: break-word !important;
-    }
-
-    .rz-fileupload-files .rz-fileupload-row div:nth-child(2) {
-    width: 30% !important;
-    height: 100% !important;
-    }
-
-    .rz-fileupload-files .rz-fileupload-row div:nth-child(3) {
-    width: 20% !important;
-    height: 100% !important;
-    }
-
-</style>
-
-@code {
-    bool sidebarExpanded = true;
-    FileInfo? fontFile = null;
-    string fontFileName = "";
-    long fontFileSize = 0;
-    string fontFileType = "";
-
-    private void OnChange(UploadChangeEventArgs args)
-    {
-        if (args.Files == null || args.Files.Count() == 0)
-        {
-            fontFile = null;
-            return;
-        }
-
-
-        fontFile = args.Files.First();
-        fontFileName = fontFile.Name;
-        fontFileSize = fontFile.Size;
-        fontFileType = Path.GetExtension(fontFile.Name).ToLower();
-
-        // var bytes = memoryStream.ToArray();
-
-        // using var data = SKData.CreateCopy(bytes);
-        // using var typeface = SKTypeface.FromData(data);
-
-    }
-
-    bool busy;
-
-    private void OnClick(string text)
-    {
-        NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Info, Summary = "Button Clicked", Detail = text });
-    }
-
-    async Task OnBusyClick()
-    {
-        busy = true;
-        if (fontFile != null)
-        {
-            using MemoryStream memoryStream = new MemoryStream();
-            await fontFile.OpenReadStream(maxAllowedSize: 100 * 1024 * 1024).CopyToAsync(memoryStream);
-            memoryStream.Seek(0, SeekOrigin.Begin);
-            using var typeface = SKTypeface.FromStream(memoryStream);
-            if (typeface != null)
-            {
-                var familyName = typeface.FamilyName;
-                var style = typeface.FontSlant;
-                var weight = typeface.FontWeight;
-                var width = typeface.FontWidth;
-            }
-            else
-            {
-
-            }
-        }
-        busy = false;
-    }
-}

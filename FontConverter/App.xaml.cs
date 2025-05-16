@@ -1,7 +1,6 @@
 ﻿using LVGLFontConverter.Activation;
 using LVGLFontConverter.Contracts.Mappers;
 using LVGLFontConverter.Contracts.Services;
-using LVGLFontConverter.Library;
 using LVGLFontConverter.Services;
 using LVGLFontConverter.UserControls;
 using LVGLFontConverter.ViewModels;
@@ -50,7 +49,7 @@ public partial class App : Application
             services.AddSingleton<INavigationService, NavigationService>();
 
             // Libraries
-            services.AddSingleton<FontConverter>();
+            services.AddSingleton<LVGLFontConverter.Library.FontConverter>();
 
             // ViewModels
             services.AddSingleton<FontPropertiesViewModel>();
