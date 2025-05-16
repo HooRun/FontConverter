@@ -1,11 +1,11 @@
 {
-  "name": "FontConverter.Blazor",
-  "short_name": "FontConverter.Blazor",
+  "name": "Font Converter For LVGL",
+  "short_name": "Font Converter",
   "id": "./",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#03173d",
+  "theme_color": "#0078d4",
   "prefer_related_applications": false,
   "icons": [
     {
