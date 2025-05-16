@@ -1,37 +1,70 @@
-﻿<RadzenAccordion Multiple="false">
+﻿@inject TooltipService tooltipService
+
+<RadzenAccordion Multiple="false">
     <Items>
         <RadzenAccordionItem Text="@SharedResources.Text_Accordion_Font_Adjusment" Icon="@SharedResources.Icon_Accordion_Font_Adjusment">
             <RadzenStack Orientation="Orientation.Vertical" Gap="15">
 
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Font Name:" Variant="@variant">
+
+                <RadzenRow AlignItems="AlignItems.Center">
+                    <RadzenColumn Size="@colSize" SizeMD="@colMDLeft">
+                        <span style="color:#605e5c; font-size: 0.75rem;">Anti-Alias</span>
+                    </RadzenColumn>
+                    <RadzenColumn Size="10" SizeMD="@colMDRight">
+                        <RadzenSwitch @bind-Value=@antiAliasValue />
+                    </RadzenColumn>
+                </RadzenRow>
+
+                <RadzenRow AlignItems="AlignItems.Center">
+                    <RadzenColumn Size="@colSize" SizeMD="@colMDLeft">
+                        <span style="color:#605e5c; font-size: 0.75rem;">Dither</span>
+                    </RadzenColumn>
+                    <RadzenColumn Size="10" SizeMD="@colMDRight">
+                        <RadzenSwitch @bind-Value=@ditherValue />
+                    </RadzenColumn>
+                </RadzenRow>
+
+                <RadzenRow AlignItems="AlignItems.Center">
+                    <RadzenColumn Size="@colSize" SizeMD="@colMDLeft">
+                        <span style="color:#605e5c; font-size: 0.75rem;">Color Filter</span>
+                    </RadzenColumn>
+                    <RadzenColumn Size="@colSize" SizeMD="@colMDRight">
+                        <RadzenSwitch @bind-Value=@colorFilterValue />
+                    </RadzenColumn>
+                </RadzenRow>
+
+                <RadzenRow AlignItems="AlignItems.Center">
+                    <RadzenColumn Size="@colSize" SizeMD="@colMDLeft">
+                        <span style="color:#605e5c; font-size: 0.75rem;">Shader</span>
+                    </RadzenColumn>
+                    <RadzenColumn Size="@colSize" SizeMD="@colMDRight">
+                        <RadzenSwitch @bind-Value=@shaderValue />
+                    </RadzenColumn>
+                </RadzenRow>
+
+                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Style" Variant="@variant">
                     <ChildContent>
-                        <RadzenTextBox Placeholder="LVGL Font Name" />
+                        <RadzenDropDown @bind-Value=@style Data=@stylesList />
                     </ChildContent>
                 </RadzenFormField>
 
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Bit Per Pixel:" Variant="@variant">
-                    <ChildContent>
-                        <RadzenTextBox Placeholder="LVGL Font Name" />
-                    </ChildContent>
-                </RadzenFormField>
+                <RadzenRow AlignItems="AlignItems.Center">
+                    <RadzenColumn Size="@colSize" SizeMD="@colMDLeft">
+                        <span style="color:#605e5c; font-size: 0.75rem;">Gamma</span>
+                    </RadzenColumn>
+                    <RadzenColumn Size="@colSize" SizeMD="@colMDRight">
+                        <RadzenSlider @bind-Value=@gammaValue TValue="int" Min="0" Max="100" TValue="int"/>
+                    </RadzenColumn>
+                </RadzenRow>
 
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Size:" Variant="@variant">
-                    <ChildContent>
-                        <RadzenTextBox Placeholder="LVGL Font Name" />
-                    </ChildContent>
-                </RadzenFormField>
-
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Sub Pixel:" Variant="@variant">
-                    <ChildContent>
-                        <RadzenTextBox Placeholder="LVGL Font Name" />
-                    </ChildContent>
-                </RadzenFormField>
-
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Fallback Font Name:" Variant="@variant">
-                    <ChildContent>
-                        <RadzenTextBox Placeholder="LVGL Font Name" />
-                    </ChildContent>
-                </RadzenFormField>
+                <RadzenRow AlignItems="AlignItems.Center">
+                    <RadzenColumn Size="@colSize" SizeMD="@colMDLeft">
+                        <span style="color:#605e5c; font-size: 0.75rem;">Threshold</span>
+                    </RadzenColumn>
+                    <RadzenColumn Size="@colSize" SizeMD="@colMDRight">
+                        <RadzenSlider @bind-Value=@thresholdValue TValue="int" Min="0" Max="100" TValue="int"/>
+                    </RadzenColumn>
+                </RadzenRow>
 
             </RadzenStack>
         </RadzenAccordionItem>
@@ -40,6 +73,29 @@
 
 
 @code {
+
+    int colSize = 12;
+    int colMDLeft = 4;
+    int colMDRight = 8;
+
     Variant variant = Variant.Outlined;
     bool floatFieldLabel = true;
+
+    bool antiAliasValue = false;
+    bool ditherValue = false;
+    bool colorFilterValue = false;
+    bool shaderValue = false;
+
+    string style = "Fill";
+    IEnumerable<string> stylesList = new List<string>
+    {
+        "Fill",
+        "Stroke",
+        "Fill And Stroke",
+    };
+
+    int gammaValue = 50;
+
+    int thresholdValue = 0;
+
 }

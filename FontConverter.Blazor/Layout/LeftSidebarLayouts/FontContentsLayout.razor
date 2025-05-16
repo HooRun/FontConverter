@@ -3,35 +3,23 @@
         <RadzenAccordionItem Text="@SharedResources.Text_Accordion_Font_Content" Icon="@SharedResources.Icon_Accordion_Font_Content">
             <RadzenStack Orientation="Orientation.Vertical" Gap="15">
 
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Font Name:" Variant="@variant">
-                    <ChildContent>
-                        <RadzenTextBox Placeholder="LVGL Font Name" />
-                    </ChildContent>
-                </RadzenFormField>
+                <RadzenTree Data=@contentDatas >
+                    <RadzenTreeLevel TextProperty=@nameof(ContentData.Header) ChildrenProperty=@nameof(ContentData.Children)
+                    HasChildren=@(item => ((ContentData)item).Children?.Any() == true) >
 
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Bit Per Pixel:" Variant="@variant">
-                    <ChildContent>
-                        <RadzenTextBox Placeholder="LVGL Font Name" />
-                    </ChildContent>
-                </RadzenFormField>
+                        <Template>
+                            <RadzenStack Orientation="Orientation.Horizontal" Gap="5">
+                                <RadzenIcon Icon="@(((ContentData)context.Value).Icon)" Style="color: black; font-size:16px;" />
+                                <RadzenBadge Shade="Shade.Lighter" BadgeStyle="BadgeStyle.Primary" Text=@(((ContentData)context.Value).Count.ToString()) />
+                                <span>@(((ContentData)context.Value).Header)</span>
+                            </RadzenStack>
+                        </Template>
 
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Size:" Variant="@variant">
-                    <ChildContent>
-                        <RadzenTextBox Placeholder="LVGL Font Name" />
-                    </ChildContent>
-                </RadzenFormField>
+                    </RadzenTreeLevel>
 
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Sub Pixel:" Variant="@variant">
-                    <ChildContent>
-                        <RadzenTextBox Placeholder="LVGL Font Name" />
-                    </ChildContent>
-                </RadzenFormField>
 
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Text="Fallback Font Name:" Variant="@variant">
-                    <ChildContent>
-                        <RadzenTextBox Placeholder="LVGL Font Name" />
-                    </ChildContent>
-                </RadzenFormField>
+
+                </RadzenTree>
 
             </RadzenStack>
         </RadzenAccordionItem>
@@ -41,6 +29,26 @@
 
 
 @code {
-    Variant variant = Variant.Outlined;
-    bool floatFieldLabel = true;
+    public class ContentData
+    {
+        public string Icon { get; set; } = string.Empty;
+        public string Header { get; set; } = string.Empty;
+        public int Count { get; set; } = 0;
+        public List<ContentData> Children { get; set; } = [];
+    }
+
+    IEnumerable<ContentData> contentDatas = new List<ContentData>()
+    {
+        new ContentData()
+        {
+            Icon="loupe", 
+            Header="Glyphs",
+            Children= new List<ContentData>()
+            {
+                new ContentData(){Icon="loupe", Header="Empty" },
+                new ContentData(){Icon="loupe", Header="Mapped" }
+            }
+        },
+        new ContentData(){Icon="loupe", Header="Unicodes"},
+    };
 }
