@@ -12,12 +12,12 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddRadzenComponents();
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
-builder.Services.AddSingleton<OpenTypeFontAnalyzer>();
+builder.Services.AddSingleton<FontConverterLib>();
 builder.Services.AddScoped<OpenTypeFontService>();
 
 var host = builder.Build();
 
-var analyzer = host.Services.GetRequiredService<OpenTypeFontAnalyzer>();
-await analyzer.LoadPrimaryDataAsync();
+//var unicodeList = host.Services.GetRequiredService<FontConverterLib>();
+//await unicodeList.InitialPrimaryData();
 
 await host.RunAsync();
