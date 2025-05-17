@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <Folder Include="Models\LVGL\" />
-    <Folder Include="Models\OpenType\Tables\" />
   </ItemGroup>
 
 </Project>

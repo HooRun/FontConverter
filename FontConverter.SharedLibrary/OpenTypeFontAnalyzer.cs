@@ -1,9 +1,4 @@
-﻿using SkiaSharp;
-using System.Diagnostics;
-using FontConverter.SharedLibrary.Data;
-using FontConverter.SharedLibrary.Helpers;
-
-namespace FontConverter.SharedLibrary;
+﻿namespace FontConverter.SharedLibrary;
 
 public class OpenTypeFontAnalyzer
 {
