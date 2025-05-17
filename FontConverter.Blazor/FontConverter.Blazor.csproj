@@ -23,10 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Localization\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\FontConverter.SharedLibrary\FontConverter.SharedLibrary.csproj" />
   </ItemGroup>
 

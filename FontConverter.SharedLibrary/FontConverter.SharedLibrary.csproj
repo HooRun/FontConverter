@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Data\OpenType\StandardMacintoshGlyphNames.txt">
+    <EmbeddedResource Include="Data\StandardMacintoshGlyphNames.txt">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Data\OpenType\UCD\Blocks.txt">
+    <EmbeddedResource Include="Data\UCD\Blocks.txt">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Data\OpenType\UCD\UnicodeData.txt">
+    <EmbeddedResource Include="Data\UCD\UnicodeData.txt">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

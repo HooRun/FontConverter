@@ -22,25 +22,35 @@ public class FontConverterLib
     public SortedList<LVGLFontEnums.GLYPH_STYLE, string> GlyphStyleList { get; set; }
     public SortedList<int, string> EmbeddedLVGLFontsList { get; set; }
 
-    public async Task InitialPrimaryData(CancellationToken cancellationToken = default)
+    public async Task InitializePrimaryDataAsync(CancellationToken cancellationToken = default)
     {
         try
         {
             cancellationToken.ThrowIfCancellationRequested();
-            UnicodeBlockCollection = await InitialUnicodeBlockCollectionHelper.InitialUnicodeBlockCollection(cancellationToken);
-            StandardMacintoshGlyphNames = await InitialStandardMacintoshGlyphNameHelper.InitialStandardMacintoshGlyphName(cancellationToken);
-            BitPerPixelList = await InitialBitPerPixelListHelper.InitialBitPerPixelList(cancellationToken);
-            SubPixelList = await InitialSubPixelListHelper.InitialSubPixellList(cancellationToken);
-            GlyphStyleList = await InitialGlyphStyleListHelper.InitialGlyphStyleList(cancellationToken);
-            EmbeddedLVGLFontsList = await InitialEmbeddedLVGLFontsListHelper.InitialEmbeddedLVGLFontsList(cancellationToken);
+
+            var unicodeTask = InitialUnicodeBlockCollectionHelper.InitialUnicodeBlockCollection(cancellationToken); 
+            var macintoshTask = InitialStandardMacintoshGlyphNameHelper.InitialStandardMacintoshGlyphName(cancellationToken); 
+            var bitPerPixelTask = InitialBitPerPixelListHelper.InitialBitPerPixelList(cancellationToken);
+            var subPixelTask = InitialSubPixelListHelper.InitialSubPixellList(cancellationToken);
+            var glyphStyleTask = InitialGlyphStyleListHelper.InitialGlyphStyleList(cancellationToken);
+            var embeddedFontsTask = InitialEmbeddedLVGLFontsListHelper.InitialEmbeddedLVGLFontsList(cancellationToken);
+
+            await Task.WhenAll(unicodeTask, macintoshTask, bitPerPixelTask, subPixelTask, glyphStyleTask, embeddedFontsTask);
+
+            UnicodeBlockCollection = unicodeTask.Result;
+            StandardMacintoshGlyphNames =  macintoshTask.Result;
+            BitPerPixelList =  bitPerPixelTask.Result;
+            SubPixelList =  subPixelTask.Result;
+            GlyphStyleList =  glyphStyleTask.Result;
+            EmbeddedLVGLFontsList =  embeddedFontsTask.Result;
         }
         catch (OperationCanceledException)
         {
             throw;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+            throw new InvalidOperationException("Failed to initialize primary data.", ex);
         }
     }
 }

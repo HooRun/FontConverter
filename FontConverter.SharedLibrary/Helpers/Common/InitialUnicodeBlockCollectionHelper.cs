@@ -1,4 +1,5 @@
 ﻿using FontConverter.SharedLibrary.Models;
+using System.Collections.Concurrent;
 using System.Reflection;
 
 namespace FontConverter.SharedLibrary.Helpers;
@@ -13,90 +14,107 @@ public static class InitialUnicodeBlockCollectionHelper
         try
         {
             cancellationToken.ThrowIfCancellationRequested();
+
             var loadBlocksTask = InitialUnicodeBlocksAsync("Blocks.txt", cancellationToken);
             var loadCharactersTask = InitialUnicodeCharactersAsync("UnicodeData.txt", cancellationToken);
             await Task.WhenAll(loadBlocksTask, loadCharactersTask);
+
             unicodeBlockCollection.Blocks = await loadBlocksTask;
             List<UnicodeCharacter> characters = await loadCharactersTask;
-            foreach (var character in characters)
+
+            var sortedBlocks = unicodeBlockCollection.Blocks
+                .Select(b => (Range: b.Key, Block: b.Value))
+                .OrderBy(b => b.Range.Start)
+                .ToArray();
+
+            Parallel.ForEach(characters, character =>
             {
                 int codePoint = character.CodePoint;
-                UnicodeBlock? containingBlock = null;
-                foreach (var pair in unicodeBlockCollection.Blocks)
-                {
-                    var blockRange = pair.Key;
-                    var block = pair.Value;
-                    if (blockRange.Start > codePoint)
-                    {
-                        break;
-                    }
-                    if (codePoint >= blockRange.Start && codePoint <= blockRange.End)
-                    {
-                        containingBlock = block;
-                        break;
-                    }
-                }
+                UnicodeBlock? containingBlock = FindContainingBlock(sortedBlocks, codePoint);
                 if (containingBlock != null)
                 {
-                    if (!containingBlock.Characters.TryAdd(codePoint, character))
+                    lock (containingBlock.Characters) 
                     {
-
+                        containingBlock.Characters.TryAdd(codePoint, character);
                     }
                 }
-            }
+            });
         }
         catch (OperationCanceledException)
         {
             throw;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+            throw new InvalidOperationException("Failed to initialize Unicode block collection.", ex);
         }
 
         return unicodeBlockCollection;
     }
 
+    private static UnicodeBlock? FindContainingBlock((ValueTuple<int, int> Range, UnicodeBlock Block)[] sortedBlocks, int codePoint)
+    {
+        int left = 0, right = sortedBlocks.Length - 1;
+        while (left <= right)
+        {
+            int mid = (left + right) / 2;
+            var (start, end) = sortedBlocks[mid].Range;
+            if (codePoint >= start && codePoint <= end)
+                return sortedBlocks[mid].Block;
+            if (codePoint < start)
+                right = mid - 1;
+            else
+                left = mid + 1;
+        }
+        return null;
+    }
+
     public static async Task<SortedList<(int Start, int End), UnicodeBlock>> InitialUnicodeBlocksAsync(string resourceName, CancellationToken cancellationToken = default)
     {
-        SortedList<(int Start, int End), UnicodeBlock> blocks = new SortedList<(int Start, int End), UnicodeBlock>();
+        var blocks = new SortedList<(int Start, int End), UnicodeBlock>();
         try
         {
             cancellationToken.ThrowIfCancellationRequested();
             var assembly = Assembly.GetExecutingAssembly();
-            var fullName = assembly.GetManifestResourceNames().FirstOrDefault(name => name.EndsWith(resourceName));
-            if (fullName == null)
-                throw new FileNotFoundException($"Resource {resourceName} not found");
+            var fullName = assembly.GetManifestResourceNames().FirstOrDefault(name => name.EndsWith(resourceName))
+                ?? throw new FileNotFoundException($"Resource {resourceName} not found");
+
             using var stream = assembly.GetManifestResourceStream(fullName)!;
             using var reader = new StreamReader(stream);
-            string? line;
-            while ((line = await reader.ReadLineAsync(cancellationToken)) != null)
+
+            string content = await reader.ReadToEndAsync(cancellationToken);
+
+            var lines = content.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+            Parallel.ForEach(lines, line =>
             {
                 cancellationToken.ThrowIfCancellationRequested();
                 var clean = line.Split('#')[0].Trim();
-                if (string.IsNullOrWhiteSpace(clean)) continue;
+                if (string.IsNullOrWhiteSpace(clean)) return;
 
-                var parts = clean.Split(';');
-                var range = parts[0].Trim();
-                var name = parts[1].Trim();
+                var parts = clean.Split(';', StringSplitOptions.TrimEntries);
+                if (parts.Length < 2) return;
 
-                var bounds = range.Split("..");
+                var bounds = parts[0].Split("..", StringSplitOptions.TrimEntries);
                 int start = Convert.ToInt32(bounds[0], 16);
                 int end = Convert.ToInt32(bounds[1], 16);
-                if (!blocks.ContainsKey((start, end)))
-                {
-                    blocks.TryAdd((start, end), new UnicodeBlock(start, end, name));
-                }
+                string name = parts[1];
 
-            }
+                lock (blocks)
+                {
+                    if (!blocks.ContainsKey((start, end)))
+                    {
+                        blocks.TryAdd((start, end), new UnicodeBlock(start, end, name));
+                    }
+                }
+            });
         }
         catch (OperationCanceledException)
         {
             throw;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+            throw new InvalidOperationException($"Failed to load Unicode blocks from {resourceName}.", ex);
         }
         return blocks;
     }
@@ -108,23 +126,28 @@ public static class InitialUnicodeBlockCollectionHelper
         {
             cancellationToken.ThrowIfCancellationRequested();
             var assembly = Assembly.GetExecutingAssembly();
-            var fullName = assembly.GetManifestResourceNames().FirstOrDefault(name => name.EndsWith(resourceName));
-            if (fullName == null)
-                throw new FileNotFoundException($"Resource {resourceName} not found");
+            var fullName = assembly.GetManifestResourceNames().FirstOrDefault(name => name.EndsWith(resourceName))
+                ?? throw new FileNotFoundException($"Resource {resourceName} not found");
+
             using var stream = assembly.GetManifestResourceStream(fullName)!;
             using var reader = new StreamReader(stream);
-            string? line;
-            while ((line = await reader.ReadLineAsync(cancellationToken)) != null)
+
+            string content = await reader.ReadToEndAsync(cancellationToken);
+
+            var lines = content.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+            var tempList = new ConcurrentBag<UnicodeCharacter>();
+
+            Parallel.ForEach(lines, line =>
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                if (string.IsNullOrWhiteSpace(line)) continue;
+                if (string.IsNullOrWhiteSpace(line)) return;
 
-                var parts = line.Split(';');
-                if (parts.Length < 2) continue;
+                var parts = line.Split(';', StringSplitOptions.TrimEntries);
+                if (parts.Length < 2) return;
 
                 int codePoint = Convert.ToInt32(parts[0], 16);
                 string name = parts[1];
-                string alternateName = parts[10];
+                string alternateName = parts.Length > 10 ? parts[10] : string.Empty;
 
                 if (name.StartsWith('<') && name.EndsWith('>'))
                 {
@@ -135,16 +158,18 @@ public static class InitialUnicodeBlockCollectionHelper
                 if (string.IsNullOrWhiteSpace(name))
                     name = $"U+{codePoint:X4}";
 
-                unicodeData.Add(new UnicodeCharacter(codePoint, name));
-            }
+                tempList.Add(new UnicodeCharacter(codePoint, name));
+            });
+
+            unicodeData.AddRange(tempList);
         }
         catch (OperationCanceledException)
         {
             throw;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+            throw new InvalidOperationException($"Failed to load Unicode characters from {resourceName}.", ex);
         }
         return unicodeData;
     }

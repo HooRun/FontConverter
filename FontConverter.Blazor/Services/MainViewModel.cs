@@ -2,11 +2,11 @@
 
 namespace FontConverter.Blazor.Services;
 
-public class OpenTypeFontService
+public class MainViewModel
 {
     private readonly OpenTypeFontAnalyzer _FontAnalyzer;
 
-    public OpenTypeFontService(OpenTypeFontAnalyzer fontAnalyzer)
+    public MainViewModel(OpenTypeFontAnalyzer fontAnalyzer)
     {
         _FontAnalyzer = fontAnalyzer;
     }

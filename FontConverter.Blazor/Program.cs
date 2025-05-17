@@ -13,11 +13,11 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddRadzenComponents();
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 builder.Services.AddSingleton<FontConverterLib>();
-builder.Services.AddScoped<OpenTypeFontService>();
+//builder.Services.AddScoped<OpenTypeFontService>();
 
 var host = builder.Build();
 
-//var unicodeList = host.Services.GetRequiredService<FontConverterLib>();
-//await unicodeList.InitialPrimaryData();
+var unicodeList = host.Services.GetRequiredService<FontConverterLib>();
+await unicodeList.InitializePrimaryDataAsync();
 
 await host.RunAsync();
