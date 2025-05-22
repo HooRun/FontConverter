@@ -5,29 +5,47 @@ namespace FontConverter.SharedLibrary.Helpers;
 
 public static class ParseLocaTableHelper
 {
-    public static FontLocaTable ParseLocaTable(OpenTypeTableBinaryData tableBinaryData, int numGlyphs, short locFormat)
+    const int chunkSize = 500;
+    public static async Task<FontLocaTable> ParseLocaTable(OpenTypeTableBinaryData tableBinaryData, int numGlyphs, short locFormat, CancellationToken cancellationToken = default)
     {
-        FontLocaTable locaTable = new();
+        cancellationToken.ThrowIfCancellationRequested();
+        FontLocaTable locaTable = new()
+        {
+            GlyphOffsets = new List<uint>(numGlyphs + 1) 
+        };
 
         using var ms = new MemoryStream(tableBinaryData.RawData);
         using var reader = new BinaryReader(ms);
 
         int count = numGlyphs + 1;
+        
 
         if (locFormat == 0)
         {
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < count; i += chunkSize)
             {
-                ushort val = ReadUInt16BigEndian(reader);
-                locaTable.GlyphOffsets.Add((uint)(val * 2)); // short format: offsets in units of 2 bytes
+                cancellationToken.ThrowIfCancellationRequested();
+                int batchEnd = Math.Min(i + chunkSize, count);
+                for (int j = i; j < batchEnd; j++)
+                {
+                    ushort val = ReadUInt16BigEndian(reader);
+                    locaTable.GlyphOffsets.Add((uint)(val * 2)); // short format: offsets in units of 2 bytes
+                }
+                await Task.Delay(1).ConfigureAwait(false);
             }
         }
         else
         {
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < count; i += chunkSize)
             {
-                uint val = ReadUInt32BigEndian(reader);
-                locaTable.GlyphOffsets.Add(val); // long format: offsets in bytes
+                cancellationToken.ThrowIfCancellationRequested();
+                int batchEnd = Math.Min(i + chunkSize, count);
+                for (int j = i; j < batchEnd; j++)
+                {
+                    uint val = ReadUInt32BigEndian(reader);
+                    locaTable.GlyphOffsets.Add(val); // long format: offsets in bytes
+                }
+                await Task.Delay(1).ConfigureAwait(false);
             }
         }
 

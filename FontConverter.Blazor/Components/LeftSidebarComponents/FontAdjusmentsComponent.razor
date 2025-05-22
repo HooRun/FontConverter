@@ -7,45 +7,37 @@
                          Gap="15">
 
                 <RadzenRow AlignItems="AlignItems.Center">
-                    <RadzenColumn Size="@colSize"
-                                  SizeMD="@colMDLeft">
+                    <RadzenColumn Size="@colLeft">
                         <span style="color:#605e5c; font-size: 0.75rem;">Anti-Alias</span>
                     </RadzenColumn>
-                    <RadzenColumn Size="@colSize"
-                                  SizeMD="@colMDRight">
+                    <RadzenColumn Size="@colRight">
                         <RadzenSwitch @bind-Value=@antiAliasValue />
                     </RadzenColumn>
                 </RadzenRow>
 
                 <RadzenRow AlignItems="AlignItems.Center">
-                    <RadzenColumn Size="@colSize"
-                                  SizeMD="@colMDLeft">
+                    <RadzenColumn Size="@colLeft">
                         <span style="color:#605e5c; font-size: 0.75rem;">Dither</span>
                     </RadzenColumn>
-                    <RadzenColumn Size="10"
-                                  SizeMD="@colMDRight">
+                    <RadzenColumn Size="@colRight">
                         <RadzenSwitch @bind-Value=@ditherValue />
                     </RadzenColumn>
                 </RadzenRow>
 
                 <RadzenRow AlignItems="AlignItems.Center">
-                    <RadzenColumn Size="@colSize"
-                                  SizeMD="@colMDLeft">
+                    <RadzenColumn Size="@colLeft">
                         <span style="color:#605e5c; font-size: 0.75rem;">Color Filter</span>
                     </RadzenColumn>
-                    <RadzenColumn Size="@colSize"
-                                  SizeMD="@colMDRight">
+                    <RadzenColumn Size="@colRight">
                         <RadzenSwitch @bind-Value=@colorFilterValue />
                     </RadzenColumn>
                 </RadzenRow>
 
                 <RadzenRow AlignItems="AlignItems.Center">
-                    <RadzenColumn Size="@colSize"
-                                  SizeMD="@colMDLeft">
+                    <RadzenColumn Size="@colLeft">
                         <span style="color:#605e5c; font-size: 0.75rem;">Shader</span>
                     </RadzenColumn>
-                    <RadzenColumn Size="@colSize"
-                                  SizeMD="@colMDRight">
+                    <RadzenColumn Size="@colRight">
                         <RadzenSwitch @bind-Value=@shaderValue />
                     </RadzenColumn>
                 </RadzenRow>
@@ -57,17 +49,15 @@
                         <RadzenDropDown @bind-Value=@selectedGlyphStyle
                                         Data=@fontConverterLib.GlyphStyleList
                                         TextProperty="Value"
-                                        ValueProperty="Key"/>
+                                        ValueProperty="Key" />
                     </ChildContent>
                 </RadzenFormField>
 
                 <RadzenRow AlignItems="AlignItems.Center">
-                    <RadzenColumn Size="@colSize"
-                                  SizeMD="@colMDLeft">
+                    <RadzenColumn Size="@colLeft">
                         <span style="color:#605e5c; font-size: 0.75rem;">Gamma</span>
                     </RadzenColumn>
-                    <RadzenColumn Size="@colSize"
-                                  SizeMD="@colMDRight">
+                    <RadzenColumn Size="@colRight">
                         <RadzenSlider @bind-Value=@gammaValue
                                       TValue="int"
                                       Min="0"
@@ -78,12 +68,10 @@
                 </RadzenRow>
 
                 <RadzenRow AlignItems="AlignItems.Center">
-                    <RadzenColumn Size="@colSize"
-                                  SizeMD="@colMDLeft">
+                    <RadzenColumn Size="@colLeft">
                         <span style="color:#605e5c; font-size: 0.75rem;">Threshold</span>
                     </RadzenColumn>
-                    <RadzenColumn Size="@colSize"
-                                  SizeMD="@colMDRight">
+                    <RadzenColumn Size="@colRight">
                         <RadzenSlider @bind-Value=@thresholdValue
                                       TValue="int"
                                       Min="0"

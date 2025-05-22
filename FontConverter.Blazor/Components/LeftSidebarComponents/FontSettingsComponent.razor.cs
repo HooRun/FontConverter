@@ -3,9 +3,9 @@ using FontConverter.SharedLibrary.Helpers;
 using Microsoft.AspNetCore.Components;
 using Radzen;
 
-namespace FontConverter.Blazor.Layout.LeftSidebarLayouts;
+namespace FontConverter.Blazor.Components.LeftSidebarComponents;
 
-public partial class FontSettingsLayout : ComponentBase
+public partial class FontSettingsComponent : ComponentBase
 {
     [Inject]
     public FontConverterLib fontConverterLib { get; set; } = default!;

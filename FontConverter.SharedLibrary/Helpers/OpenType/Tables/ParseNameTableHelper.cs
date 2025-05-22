@@ -1,4 +1,5 @@
 ﻿using FontConverter.SharedLibrary.Models;
+using System;
 using System.Text;
 using static FontConverter.SharedLibrary.Helpers.FontTablesEnumHelper;
 using static FontConverter.SharedLibrary.Helpers.FontTableValueConverterHelper;
@@ -7,45 +8,102 @@ namespace FontConverter.SharedLibrary.Helpers;
 
 public static class ParseNameTableHelper
 {
-    public static FontNameTable ParseNameTable(OpenTypeTableBinaryData tableBinaryData)
+    private const int DefaultChunkSize = 200;
+
+    public static async Task<FontNameTable> ParseNameTable(OpenTypeTableBinaryData tableBinaryData, CancellationToken cancellationToken = default)
     {
-        FontNameTable nameTable = new();
-        try
+        cancellationToken.ThrowIfCancellationRequested();
+
+        if (tableBinaryData?.RawData == null || tableBinaryData.RawData.Length == 0)
         {
-            using var ms = new MemoryStream(tableBinaryData.RawData);
-            using var reader = new BinaryReader(ms);
+            return new FontNameTable();
+        }
 
-            ushort format = ReadUInt16BigEndian(reader);
-            ushort count = ReadUInt16BigEndian(reader);
-            ushort stringOffset = ReadUInt16BigEndian(reader);
+        FontNameTable nameTable = new();
 
-            var langTags = new List<string>();
+        using var ms = new MemoryStream(tableBinaryData.RawData);
+        using var reader = new BinaryReader(ms);
 
-            // Read langTags for format 1 (Optional)
-            long recordStart = reader.BaseStream.Position;
-            if (format == 1)
+        if (reader.BaseStream.Length < 6)
+        {
+            return nameTable;
+        }
+
+        ushort format = ReadUInt16BigEndian(reader);
+        ushort count = ReadUInt16BigEndian(reader);
+        ushort stringOffset = ReadUInt16BigEndian(reader);
+
+        if (stringOffset >= tableBinaryData.RawData.Length)
+        {
+            return nameTable;
+        }
+        if (count * 12 > tableBinaryData.RawData.Length - 6)
+        {
+            return nameTable;
+        }
+
+        var langTags = new List<string>();
+
+        long recordStart = reader.BaseStream.Position;
+        if (format == 1)
+        {
+            if (reader.BaseStream.Position + 2 > reader.BaseStream.Length)
             {
-                reader.BaseStream.Position = recordStart + count * 12;
-                ushort langTagCount = ReadUInt16BigEndian(reader);
-                for (int i = 0; i < langTagCount; i++)
+                return nameTable;
+            }
+            reader.BaseStream.Position = recordStart + count * 12;
+            ushort langTagCount = ReadUInt16BigEndian(reader);
+            langTags = new List<string>(langTagCount);
+            for (int i = 0; i < langTagCount; i++)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                if (reader.BaseStream.Position + 4 > reader.BaseStream.Length)
                 {
-                    ushort length = ReadUInt16BigEndian(reader);
-                    ushort offset = ReadUInt16BigEndian(reader);
-                    if (offset + length <= tableBinaryData.RawData.Length - stringOffset)
+                    break;
+                }
+                ushort length = ReadUInt16BigEndian(reader);
+                ushort offset = ReadUInt16BigEndian(reader);
+
+                if (offset >= 0 && offset + length <= tableBinaryData.RawData.Length - stringOffset && length > 0)
+                {
+                    long pos = reader.BaseStream.Position;
+                    try
                     {
-                        long pos = reader.BaseStream.Position;
                         reader.BaseStream.Position = stringOffset + offset;
+                        if (reader.BaseStream.Position + length > reader.BaseStream.Length)
+                        {
+                            continue;
+                        }
                         var bytes = reader.ReadBytes(length);
-                        langTags.Add(System.Text.Encoding.ASCII.GetString(bytes));
+                        langTags.Add(Encoding.ASCII.GetString(bytes));
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
+                    finally
+                    {
                         reader.BaseStream.Position = pos;
                     }
                 }
+                
             }
+        }
 
-            // Read name records
-            reader.BaseStream.Position = recordStart;
-            for (int i = 0; i < count; i++)
+        int chunkSize = Math.Min(DefaultChunkSize, count > 0 ? count : 1);
+
+        reader.BaseStream.Position = recordStart;
+        for (int i = 0; i < count; i += chunkSize)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            int batchEnd = Math.Min(i + chunkSize, count);
+            for (int j = i; j < batchEnd; j++)
             {
+                if (reader.BaseStream.Position + 12 > reader.BaseStream.Length)
+                {
+                    break;
+                }
+
                 ushort platformID = ReadUInt16BigEndian(reader);
                 ushort encodingID = ReadUInt16BigEndian(reader);
                 ushort languageID = ReadUInt16BigEndian(reader);
@@ -53,37 +111,51 @@ public static class ParseNameTableHelper
                 ushort length = ReadUInt16BigEndian(reader);
                 ushort offset = ReadUInt16BigEndian(reader);
 
-                if (platformID > 3 || length == 0 || length >= 256 || offset + length > tableBinaryData.RawData.Length - stringOffset)
+                if (platformID > 3 || length == 0 || length >= 256 || offset < 0 || stringOffset + offset + length > tableBinaryData.RawData.Length)
+                {
                     continue;
+                }
 
                 try
                 {
+                    long currentPos = reader.BaseStream.Position;
                     reader.BaseStream.Position = stringOffset + offset;
+
+                    if (reader.BaseStream.Position + length > reader.BaseStream.Length)
+                    {
+                        reader.BaseStream.Position = currentPos;
+                        continue;
+                    }
+
                     var stringBytes = reader.ReadBytes(length);
 
                     string? name = platformID switch
                     {
                         0 => Encoding.BigEndianUnicode.GetString(stringBytes),
                         1 => Encoding.ASCII.GetString(stringBytes),
-                        3 when encodingID == 1 || encodingID == 10 => Encoding.BigEndianUnicode.GetString(stringBytes),
+                        3 when encodingID is 1 or 10 => Encoding.BigEndianUnicode.GetString(stringBytes),
                         3 => Encoding.UTF8.GetString(stringBytes),
                         _ => null
                     };
 
-                    if (string.IsNullOrWhiteSpace(name)) continue;
-                    if (!Enum.IsDefined(typeof(NameType), nameID)) continue;
+                    reader.BaseStream.Position = currentPos;
+
+                    if (string.IsNullOrWhiteSpace(name) || !Enum.IsDefined(typeof(NameType), nameID))
+                    {
+                        continue;
+                    }
 
                     var nameType = (NameType)nameID;
 
-                    // Append lang tag if format 1 and languageID >= 0x8000
                     if (format == 1 && languageID >= 0x8000)
                     {
                         int langIndex = languageID - 0x8000;
-                        if (langIndex < langTags.Count)
+                        if (langIndex >= 0 && langIndex < langTags.Count)
+                        {
                             name += $" ({langTags[langIndex]})";
+                        }
                     }
 
-                    // Fill appropriate field
                     switch (nameType)
                     {
                         case NameType.Copyright: nameTable.Copyright = name; break;
@@ -113,10 +185,14 @@ public static class ParseNameTableHelper
                         case NameType.VariationsPostScriptPrefix: nameTable.VariationsPostScriptPrefix = name; break;
                     }
                 }
-                catch { continue; }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
+            await Task.Delay(1).ConfigureAwait(false);
         }
-        catch { }
+
         return nameTable;
     }
 }

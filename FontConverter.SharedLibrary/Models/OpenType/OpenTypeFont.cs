@@ -21,7 +21,7 @@ public class OpenTypeFont
         KernTable = new();
     }
 
-    public SortedDictionary<OpenTypeTables, OpenTypeTableBinaryData> Tables { get; set; } 
+    public SortedList<OpenTypeTables, OpenTypeTableBinaryData> Tables { get; set; } 
 
     public FontNameTable NameTable { get; set; }
 

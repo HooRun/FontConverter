@@ -53,7 +53,7 @@ internal static class FontTableParser
                 };
                 tables.Add((OpenTypeTables)tag, table);
                 progress?.Report("Processed");
-                await Task.Delay(50).ConfigureAwait(false);
+                await Task.Delay(1).ConfigureAwait(false);
             }
 
             return tables;

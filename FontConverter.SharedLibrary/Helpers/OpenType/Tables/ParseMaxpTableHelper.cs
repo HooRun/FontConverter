@@ -1,13 +1,13 @@
 ﻿using FontConverter.SharedLibrary.Models;
 using static FontConverter.SharedLibrary.Helpers.FontTableValueConverterHelper;
 
-
 namespace FontConverter.SharedLibrary.Helpers;
 
 public static class ParseMaxpTableHelper
 {
-    public static FontMaxpTable ParseMaxpTable(OpenTypeTableBinaryData tableBinaryData)
+    public static async Task<FontMaxpTable> ParseMaxpTable(OpenTypeTableBinaryData tableBinaryData, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         FontMaxpTable maxpTable = new();
 
         using var ms = new MemoryStream(tableBinaryData.RawData);
@@ -34,6 +34,7 @@ public static class ParseMaxpTableHelper
             maxpTable.MaxComponentDepth = ReadUInt16BigEndian(reader);
         }
 
+        await Task.Delay(1).ConfigureAwait(false);
         return maxpTable;
     }
 }

@@ -12,7 +12,6 @@ public class UnicodeCharacter
     {
         CodePoint = -1;
         Name = string.Empty;
-        IsCharacterInFont = false;
         GlyphIndex = -1;
     }
 
@@ -24,6 +23,5 @@ public class UnicodeCharacter
 
     public int CodePoint { get; set; }
     public string Name { get; set; }
-    public bool IsCharacterInFont { get; set; }
     public int GlyphIndex { get; set; }
 }

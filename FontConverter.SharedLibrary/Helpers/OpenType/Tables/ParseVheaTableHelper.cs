@@ -5,8 +5,9 @@ namespace FontConverter.SharedLibrary.Helpers;
 
 public static class ParseVheaTableHelper
 {
-    public static FontVheaTable ParseVheaTable(OpenTypeTableBinaryData tableBinaryData)
+    public static async Task<FontVheaTable> ParseVheaTable(OpenTypeTableBinaryData tableBinaryData, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         FontVheaTable vheaTable = new();
 
         using var ms = new MemoryStream(tableBinaryData.RawData);
@@ -35,6 +36,7 @@ public static class ParseVheaTableHelper
         vheaTable.MetricDataFormat = ReadInt16BigEndian(reader);
         vheaTable.NumberOfLongVerMetrics = ReadUInt16BigEndian(reader);
 
+        await Task.Delay(1).ConfigureAwait(false);
         return vheaTable;
     }
 }

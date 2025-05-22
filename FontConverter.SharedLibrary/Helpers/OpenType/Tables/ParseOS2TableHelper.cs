@@ -7,9 +7,19 @@ namespace FontConverter.SharedLibrary.Helpers;
 
 public static class ParseOS2TableHelper
 {
-    public static FontOS2Table ParseOS2Table(OpenTypeTableBinaryData tableBinaryData)
+    public static async Task<FontOS2Table> ParseOS2Table(OpenTypeTableBinaryData tableBinaryData, CancellationToken cancellationToken = default)
     {
-        FontOS2Table os2Table = new();
+        cancellationToken.ThrowIfCancellationRequested();
+        FontOS2Table os2Table = new()
+        {
+            FsType = new List<FsTypeFlags>(8), 
+            UnicodeRange1 = new List<UnicodeRange1>(32),
+            UnicodeRange2 = new List<UnicodeRange2>(32),
+            UnicodeRange3 = new List<UnicodeRange3>(32),
+            UnicodeRange4 = new List<UnicodeRange4>(32),
+            CodePageRange1 = new List<CodePageRange1>(32),
+            CodePageRange2 = new List<CodePageRange2>(32)
+        };
 
         using var ms = new MemoryStream(tableBinaryData.RawData);
         using var reader = new BinaryReader(ms);
@@ -41,7 +51,6 @@ public static class ParseOS2TableHelper
         os2Table.YStrikeoutPosition = ReadInt16BigEndian(reader);
         os2Table.SFamilyClass = ReadInt16BigEndian(reader);
 
-
         os2Table.Panose.FamilyType = reader.ReadByte();
         os2Table.Panose.SerifStyle = reader.ReadByte();
         os2Table.Panose.Weight = reader.ReadByte();
@@ -52,7 +61,6 @@ public static class ParseOS2TableHelper
         os2Table.Panose.LetterForm = reader.ReadByte();
         os2Table.Panose.Midline = reader.ReadByte();
         os2Table.Panose.XHeight = reader.ReadByte();
-
 
         uint unicodeRange1 = ReadUInt32BigEndian(reader);
         foreach (UnicodeRange1 flag in Enum.GetValues(typeof(UnicodeRange1)))
@@ -135,7 +143,7 @@ public static class ParseOS2TableHelper
             os2Table.UsUpperOpticalPointSize = ReadUInt16BigEndian(reader);
         }
 
+        await Task.Delay(1).ConfigureAwait(false);
         return os2Table;
     }
 }
-

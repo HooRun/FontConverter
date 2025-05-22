@@ -5,9 +5,11 @@ namespace FontConverter.SharedLibrary.Helpers;
 
 public static class ParseHheaTableHelper
 {
-    public static FontHheaTable ParseHheaTable(OpenTypeTableBinaryData tableBinaryData)
+    public static async Task<FontHheaTable> ParseHheaTable(OpenTypeTableBinaryData tableBinaryData, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         FontHheaTable hheaTable = new();
+
         using var ms = new MemoryStream(tableBinaryData.RawData);
         using var reader = new BinaryReader(ms);
 
@@ -31,6 +33,7 @@ public static class ParseHheaTableHelper
         hheaTable.MetricDataFormat = ReadInt16BigEndian(reader);
         hheaTable.NumberOfHMetrics = ReadUInt16BigEndian(reader);
 
+        await Task.Delay(1).ConfigureAwait(false);
         return hheaTable;
     }
 }

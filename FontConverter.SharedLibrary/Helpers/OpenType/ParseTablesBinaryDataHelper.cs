@@ -40,7 +40,7 @@ public static class ParseTablesBinaryDataHelper
                 };
                 tables.Add((OpenTypeTables)tag, table);
                 progress?.Report("Processed");
-                await Task.Delay(50).ConfigureAwait(false);
+                await Task.Delay(100).ConfigureAwait(false);
             }
 
             return tables;

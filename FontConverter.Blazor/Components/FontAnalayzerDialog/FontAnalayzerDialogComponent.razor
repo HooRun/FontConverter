@@ -1,0 +1,144 @@
+﻿<RadzenStack>
+
+    <RadzenRow>
+        <RadzenColumn Size=@leftColumnSize>
+            <span style="color:#605e5c; font-size: 0.75rem;">
+                File Name:
+            </span>
+        </RadzenColumn>
+        <RadzenColumn>
+            <span style="color:#605e5c; font-size: 0.75rem;">
+                @FontFile?.Name
+            </span>
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn Size="@leftColumnSize">
+            <span style="color:#605e5c; font-size: 0.75rem;">
+                Font Name:
+            </span>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenProgressBar Value="100"
+                               ShowValue="false"
+                               Mode="ProgressBarMode.Indeterminate"
+                               Visible="@fontNameProgressVisibility" />
+            <span style="color:#605e5c; font-size: 0.75rem; display: @(fontNameProgressVisibility ? "none" : "inline"); border-radius:5px;"
+                  class=@fontNameClass>
+                @fontNameText
+            </span>
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn Size="@leftColumnSize">
+            <span style="color:#605e5c; font-size: 0.75rem;">
+                Count Of Tables:
+            </span>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenProgressBar ShowValue=@tablesCountProgressShowValue
+                               Value=@tablesCountProgressValue
+                               Min=@tablesCountProgressMinValue
+                               Max=@tablesCountProgressMaxValue
+                               Mode=@tablesCountProgressMode
+                               ProgressBarStyle=@tablesCountProgressStyle
+                               Unit=" " />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn Size="@leftColumnSize">
+            <span style="color:#605e5c; font-size: 0.75rem;">
+                Parsing Tables:
+            </span>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenProgressBar ShowValue=@parsingTablesProgressShowValue
+                               Value=@parsingTablesProgressValue
+                               Min=@parsingTablesProgressMinValue
+                               Max=@parsingTablesProgressMaxValue
+                               Mode=@parsingTablesProgressMode
+                               ProgressBarStyle=@parsingTablesProgressStyle
+                               Unit=" %" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn Size="@leftColumnSize">
+            <span style="color:#605e5c; font-size: 0.75rem;">Count Of Glyphs:</span>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenProgressBar Value="100"
+                               ShowValue="false"
+                               Mode="ProgressBarMode.Indeterminate"
+                               Visible="@glyphCountsProgressVisibility" />
+            <span style="color:#605e5c; font-size: 0.75rem; display: @(glyphCountsProgressVisibility ? "none" : "inline"); border-radius:5px;"
+                  class=@glyphCountsClass>
+                @glyphCountsText
+            </span>
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn Size="@leftColumnSize">
+            <span style="color:#605e5c; font-size: 0.75rem;">Rendering Glyphs:</span>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenProgressBar ShowValue=@renderingGlyphsProgressShowValue
+                               Value=@renderingGlyphsProgressValue
+                               Min=@renderingGlyphsProgressMinValue
+                               Max=@renderingGlyphsProgressMaxValue
+                               Mode=@renderingGlyphsProgressMode
+                               ProgressBarStyle=@renderingGlyphsProgressStyle
+                               Unit=" %" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn Size="@leftColumnSize">
+            <span style="color:#605e5c; font-size: 0.75rem;">Organizing Glyphs:</span>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenProgressBar Value="100" ShowValue="false" Mode="ProgressBarMode.Indeterminate" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn Size="@leftColumnSize">
+            <span style="color:#605e5c; font-size: 0.75rem;">Finalizing Fonts:</span>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenProgressBar Value="100" ShowValue="false" Mode="ProgressBarMode.Indeterminate" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn Size="@leftColumnSize">
+            <span style="color:#605e5c; font-size: 0.75rem;">Title</span>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenProgressBar Value="100" ShowValue="false" Mode="ProgressBarMode.Indeterminate" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn Size="@leftColumnSize">
+            <span style="color:#605e5c; font-size: 0.75rem;">Title</span>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenProgressBar Value="100" ShowValue="false" Mode="ProgressBarMode.Indeterminate" />
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Center" class="rz-text-align-center">
+        <RadzenColumn>
+            <RadzenButton Text="Apply" Click="@((args) => dialogService.Close(FontFile))" Disabled="@applyButonDisabled" />
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenButton Text="Close" Click="@((args) => dialogService.Close(true))" />
+        </RadzenColumn>
+    </RadzenRow>
+
+</RadzenStack>

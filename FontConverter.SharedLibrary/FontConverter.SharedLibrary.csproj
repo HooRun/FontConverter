@@ -22,8 +22,4 @@
     <PackageReference Include="SkiaSharp" Version="3.119.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\LVGL\" />
-  </ItemGroup>
-
 </Project>

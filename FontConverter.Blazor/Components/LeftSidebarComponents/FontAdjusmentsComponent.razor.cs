@@ -3,16 +3,15 @@ using FontConverter.SharedLibrary.Helpers;
 using Microsoft.AspNetCore.Components;
 using Radzen;
 
-namespace FontConverter.Blazor.Layout.LeftSidebarLayouts;
+namespace FontConverter.Blazor.Components.LeftSidebarComponents;
 
-public partial class FontAdjusmentsLayout : ComponentBase
+public partial class FontAdjusmentsComponent : ComponentBase
 {
     [Inject]
     public FontConverterLib fontConverterLib { get; set; } = default!;
 
-    int colSize = 12;
-    int colMDLeft = 4;
-    int colMDRight = 8;
+    int colLeft = 4;
+    int colRight = 8;
 
     Variant variant = Variant.Outlined;
     bool floatFieldLabel = true;

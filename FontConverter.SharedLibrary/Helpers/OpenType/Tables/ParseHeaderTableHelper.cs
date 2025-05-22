@@ -6,8 +6,9 @@ namespace FontConverter.SharedLibrary.Helpers;
 
 public static class ParseHeaderTableHelper
 {
-    public static FontHeadTable ParseHeaderTable(OpenTypeTableBinaryData tableBinaryData)
+    public static async Task<FontHeadTable> ParseHeaderTable(OpenTypeTableBinaryData tableBinaryData, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         FontHeadTable headTable = new();
 
         using var ms = new MemoryStream(tableBinaryData.RawData);
@@ -47,6 +48,7 @@ public static class ParseHeaderTableHelper
         headTable.IndexToLocFormat = ReadInt16BigEndian(reader);
         headTable.GlyphDataFormat = ReadInt16BigEndian(reader);
 
+        await Task.Delay(1).ConfigureAwait(false);
         return headTable;
     }
 }

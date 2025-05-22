@@ -1,16 +1,14 @@
 ﻿using FontConverter.SharedLibrary.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using static FontConverter.SharedLibrary.Helpers.FontTableValueConverterHelper;
 
 namespace FontConverter.SharedLibrary.Helpers;
 
 public static class ParseCmapTableHelper
 {
-    public static FontCmapTable ParseCmapTable(OpenTypeTableBinaryData tableBinaryData)
+    const int chunkSize = 500;
+    public static async Task<FontCmapTable> ParseCmapTable(OpenTypeTableBinaryData tableBinaryData, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         FontCmapTable cmapTable = new();
 
         using var ms = new MemoryStream(tableBinaryData.RawData);
@@ -18,18 +16,21 @@ public static class ParseCmapTableHelper
 
         ushort version = ReadUInt16BigEndian(reader);
         ushort numTables = ReadUInt16BigEndian(reader);
-        var encodingRecords = new List<(ushort platformID, ushort encodingID, uint subtableOffset)>();
+        var encodingRecords = new List<(ushort platformID, ushort encodingID, uint subtableOffset)>(numTables);
 
         for (int i = 0; i < numTables; i++)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             ushort platformID = ReadUInt16BigEndian(reader);
             ushort encodingID = ReadUInt16BigEndian(reader);
             uint subtableOffset = ReadUInt32BigEndian(reader);
             encodingRecords.Add((platformID, encodingID, subtableOffset));
+            await Task.Delay(1).ConfigureAwait(false);
         }
 
         foreach (var (platformID, encodingID, subtableOffset) in encodingRecords)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             long tableStart = subtableOffset;
             reader.BaseStream.Seek(tableStart, SeekOrigin.Begin);
             ushort format = ReadUInt16BigEndian(reader);
@@ -37,32 +38,39 @@ public static class ParseCmapTableHelper
 
             var entries = format switch
             {
-                0 => ParseFormat0(reader, tableStart),
-                4 => ParseFormat4(reader, tableStart),
-                6 => ParseFormat6(reader, tableStart),
-                10 => ParseFormat10(reader, tableStart),
-                12 => ParseFormat12(reader, tableStart),
-                13 => ParseFormat13(reader, tableStart),
-                14 => ParseFormat14(reader, tableStart),
+                0 => await ParseFormat0(reader, tableStart, cancellationToken).ConfigureAwait(false),
+                4 => await ParseFormat4(reader, tableStart, cancellationToken).ConfigureAwait(false),
+                6 => await ParseFormat6(reader, tableStart, cancellationToken).ConfigureAwait(false),
+                10 => await ParseFormat10(reader, tableStart, cancellationToken).ConfigureAwait(false),
+                12 => await ParseFormat12(reader, tableStart, cancellationToken).ConfigureAwait(false),
+                13 => await ParseFormat13(reader, tableStart, cancellationToken).ConfigureAwait(false),
+                14 => await ParseFormat14(reader, tableStart, cancellationToken).ConfigureAwait(false),
                 _ => null
             };
 
             if (entries != null)
             {
-                foreach (var (unicode, glyph) in entries)
+                for (int i = 0; i < entries.Count; i += chunkSize)
                 {
-                    cmapTable.UnicodeToGlyphMap[unicode] = glyph;
+                    cancellationToken.ThrowIfCancellationRequested();
+                    var chunk = entries.Skip(i).Take(chunkSize);
+                    foreach (var (unicode, glyph) in chunk)
+                    {
+                        cmapTable.UnicodeToGlyphMap[unicode] = glyph;
+                    }
+                    await Task.Delay(1).ConfigureAwait(false);
                 }
             }
+            await Task.Delay(1).ConfigureAwait(false);
         }
 
         return cmapTable;
-
     }
 
-    internal static Dictionary<uint, ushort> ParseFormat0(BinaryReader reader, long offset)
+    public static async Task<Dictionary<uint, ushort>> ParseFormat0(BinaryReader reader, long offset, CancellationToken cancellationToken = default)
     {
-        var result = new Dictionary<uint, ushort>();
+        cancellationToken.ThrowIfCancellationRequested();
+        var result = new Dictionary<uint, ushort>(256);
         reader.BaseStream.Seek(offset, SeekOrigin.Begin);
         ReadUInt16BigEndian(reader); // format
         ReadUInt16BigEndian(reader); // length
@@ -74,15 +82,16 @@ public static class ParseCmapTableHelper
             if (glyphId != 0)
                 result[i] = glyphId;
         }
-
+        await Task.Delay(1).ConfigureAwait(false);
         return result;
     }
 
-    internal static Dictionary<uint, ushort> ParseFormat4(BinaryReader reader, long offset)
+    public static async Task<Dictionary<uint, ushort>> ParseFormat4(BinaryReader reader, long offset, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         var result = new Dictionary<uint, ushort>();
         reader.BaseStream.Seek(offset, SeekOrigin.Begin);
-        ushort format = ReadUInt16BigEndian(reader);
+        ReadUInt16BigEndian(reader); // format
         ushort length = ReadUInt16BigEndian(reader);
         ReadUInt16BigEndian(reader); // language
         ushort segCountX2 = ReadUInt16BigEndian(reader);
@@ -104,35 +113,46 @@ public static class ParseCmapTableHelper
 
         for (int i = 0; i < segCount; i++)
         {
-            for (uint c = startCode[i]; c <= endCode[i]; c++)
+            cancellationToken.ThrowIfCancellationRequested();
+            uint charCount = (uint)(endCode[i] - startCode[i] + 1);
+            for (uint c = startCode[i]; c <= endCode[i];)
             {
-                if (idRangeOffset[i] == 0)
+                cancellationToken.ThrowIfCancellationRequested();
+                uint batchEnd = (uint)Math.Min(c + (uint)chunkSize, endCode[i] + 1);
+                for (uint batchC = c; batchC < batchEnd; batchC++)
                 {
-                    ushort glyphIndex = (ushort)((c + idDelta[i]) % 65536);
-                    if (glyphIndex != 0)
-                        result[c] = glyphIndex;
-                }
-                else
-                {
-                    long glyphIndexOffset = idRangeOffsetStart + (2 * i) + idRangeOffset[i] + 2 * (c - startCode[i]);
-                    if (glyphIndexOffset + 2 <= reader.BaseStream.Length)
+                    if (idRangeOffset[i] == 0)
                     {
-                        reader.BaseStream.Seek(glyphIndexOffset, SeekOrigin.Begin);
-                        ushort glyphIndex = ReadUInt16BigEndian(reader);
+                        ushort glyphIndex = (ushort)((batchC + idDelta[i]) % 65536);
                         if (glyphIndex != 0)
+                            result[batchC] = glyphIndex;
+                    }
+                    else
+                    {
+                        long glyphIndexOffset = idRangeOffsetStart + (2 * i) + idRangeOffset[i] + 2 * (batchC - startCode[i]);
+                        if (glyphIndexOffset + 2 <= reader.BaseStream.Length)
                         {
-                            glyphIndex = (ushort)((glyphIndex + idDelta[i]) % 65536);
-                            result[c] = glyphIndex;
+                            reader.BaseStream.Seek(glyphIndexOffset, SeekOrigin.Begin);
+                            ushort glyphIndex = ReadUInt16BigEndian(reader);
+                            if (glyphIndex != 0)
+                            {
+                                glyphIndex = (ushort)((glyphIndex + idDelta[i]) % 65536);
+                                result[batchC] = glyphIndex;
+                            }
                         }
                     }
                 }
+                c = batchEnd;
+                await Task.Delay(1).ConfigureAwait(false);
             }
+            await Task.Delay(1).ConfigureAwait(false);
         }
         return result;
     }
 
-    internal static Dictionary<uint, ushort> ParseFormat6(BinaryReader reader, long offset)
+    public static async Task<Dictionary<uint, ushort>> ParseFormat6(BinaryReader reader, long offset, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         var result = new Dictionary<uint, ushort>();
         reader.BaseStream.Seek(offset, SeekOrigin.Begin);
         ReadUInt16BigEndian(reader); // format
@@ -140,17 +160,25 @@ public static class ParseCmapTableHelper
         ReadUInt16BigEndian(reader); // language
         ushort firstCode = ReadUInt16BigEndian(reader);
         ushort entryCount = ReadUInt16BigEndian(reader);
-        for (uint i = 0; i < entryCount; i++)
+
+        for (uint i = 0; i < entryCount; i += (uint)chunkSize)
         {
-            ushort glyphId = ReadUInt16BigEndian(reader);
-            if (glyphId != 0)
-                result[firstCode + i] = glyphId;
+            cancellationToken.ThrowIfCancellationRequested();
+            uint batchEnd = Math.Min(i + (uint)chunkSize, entryCount);
+            for (uint j = i; j < batchEnd; j++)
+            {
+                ushort glyphId = ReadUInt16BigEndian(reader);
+                if (glyphId != 0)
+                    result[firstCode + j] = glyphId;
+            }
+            await Task.Delay(1).ConfigureAwait(false);
         }
         return result;
     }
 
-    internal static Dictionary<uint, ushort> ParseFormat10(BinaryReader reader, long offset)
+    public static async Task<Dictionary<uint, ushort>> ParseFormat10(BinaryReader reader, long offset, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         var result = new Dictionary<uint, ushort>();
         reader.BaseStream.Seek(offset, SeekOrigin.Begin);
         ReadUInt16BigEndian(reader); // format
@@ -159,17 +187,25 @@ public static class ParseCmapTableHelper
         ReadUInt32BigEndian(reader); // language
         uint startCharCode = ReadUInt32BigEndian(reader);
         uint numChars = ReadUInt32BigEndian(reader);
-        for (uint i = 0; i < numChars; i++)
+
+        for (uint i = 0; i < numChars; i += (uint)chunkSize)
         {
-            ushort glyphId = ReadUInt16BigEndian(reader);
-            if (glyphId != 0)
-                result[startCharCode + i] = glyphId;
+            cancellationToken.ThrowIfCancellationRequested();
+            uint batchEnd = Math.Min(i + (uint)chunkSize, numChars);
+            for (uint j = i; j < batchEnd; j++)
+            {
+                ushort glyphId = ReadUInt16BigEndian(reader);
+                if (glyphId != 0)
+                    result[startCharCode + j] = glyphId;
+            }
+            await Task.Delay(1).ConfigureAwait(false);
         }
         return result;
     }
 
-    internal static Dictionary<uint, ushort> ParseFormat12(BinaryReader reader, long offset)
+    public static async Task<Dictionary<uint, ushort>> ParseFormat12(BinaryReader reader, long offset, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         var result = new Dictionary<uint, ushort>();
         reader.BaseStream.Seek(offset, SeekOrigin.Begin);
         ReadUInt16BigEndian(reader); // format
@@ -177,21 +213,36 @@ public static class ParseCmapTableHelper
         ReadUInt32BigEndian(reader); // length
         ReadUInt32BigEndian(reader); // language
         uint nGroups = ReadUInt32BigEndian(reader);
-        for (uint i = 0; i < nGroups; i++)
+
+        for (uint i = 0; i < nGroups; i += (uint)chunkSize)
         {
-            uint startCharCode = ReadUInt32BigEndian(reader);
-            uint endCharCode = ReadUInt32BigEndian(reader);
-            uint startGlyphID = ReadUInt32BigEndian(reader);
-            for (uint c = startCharCode; c <= endCharCode; c++)
+            cancellationToken.ThrowIfCancellationRequested();
+            uint batchEnd = Math.Min(i + (uint)chunkSize, nGroups);
+            for (uint j = i; j < batchEnd; j++)
             {
-                result[c] = (ushort)(startGlyphID + (c - startCharCode));
+                uint startCharCode = ReadUInt32BigEndian(reader);
+                uint endCharCode = ReadUInt32BigEndian(reader);
+                uint startGlyphID = ReadUInt32BigEndian(reader);
+                for (uint c = startCharCode; c <= endCharCode;)
+                {
+                    cancellationToken.ThrowIfCancellationRequested();
+                    uint charBatchEnd = Math.Min(c + (uint)chunkSize, endCharCode + 1);
+                    for (uint batchC = c; batchC < charBatchEnd; batchC++)
+                    {
+                        result[batchC] = (ushort)(startGlyphID + (batchC - startCharCode));
+                    }
+                    c = charBatchEnd;
+                    await Task.Delay(1).ConfigureAwait(false);
+                }
             }
+            await Task.Delay(1).ConfigureAwait(false);
         }
         return result;
     }
 
-    internal static Dictionary<uint, ushort> ParseFormat13(BinaryReader reader, long offset)
+    public static async Task<Dictionary<uint, ushort>> ParseFormat13(BinaryReader reader, long offset, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         var result = new Dictionary<uint, ushort>();
         reader.BaseStream.Seek(offset, SeekOrigin.Begin);
         ReadUInt16BigEndian(reader); // format
@@ -199,23 +250,38 @@ public static class ParseCmapTableHelper
         ReadUInt32BigEndian(reader); // length
         ReadUInt32BigEndian(reader); // language
         uint nGroups = ReadUInt32BigEndian(reader);
-        for (uint i = 0; i < nGroups; i++)
+
+        for (uint i = 0; i < nGroups; i += (uint)chunkSize)
         {
-            uint startCharCode = ReadUInt32BigEndian(reader);
-            uint endCharCode = ReadUInt32BigEndian(reader);
-            uint glyphID = ReadUInt32BigEndian(reader);
-            for (uint c = startCharCode; c <= endCharCode; c++)
+            cancellationToken.ThrowIfCancellationRequested();
+            uint batchEnd = Math.Min(i + (uint)chunkSize, nGroups);
+            for (uint j = i; j < batchEnd; j++)
             {
-                if (glyphID != 0)
-                    result[c] = (ushort)glyphID;
+                uint startCharCode = ReadUInt32BigEndian(reader);
+                uint endCharCode = ReadUInt32BigEndian(reader);
+                uint glyphID = ReadUInt32BigEndian(reader);
+                for (uint c = startCharCode; c <= endCharCode;)
+                {
+                    cancellationToken.ThrowIfCancellationRequested();
+                    uint charBatchEnd = Math.Min(c + (uint)chunkSize, endCharCode + 1);
+                    for (uint batchC = c; batchC < charBatchEnd; batchC++)
+                    {
+                        if (glyphID != 0)
+                            result[batchC] = (ushort)glyphID;
+                    }
+                    c = charBatchEnd;
+                    await Task.Delay(1).ConfigureAwait(false);
+                }
             }
+            await Task.Delay(1).ConfigureAwait(false);
         }
         return result;
     }
 
-    internal static Dictionary<uint, ushort> ParseFormat14(BinaryReader reader, long offset)
+    public static async Task<Dictionary<uint, ushort>> ParseFormat14(BinaryReader reader, long offset, CancellationToken cancellationToken = default)
     {
-        return new();
+        cancellationToken.ThrowIfCancellationRequested();
+        await Task.Delay(1).ConfigureAwait(false);
+        return new Dictionary<uint, ushort>();
     }
 }
-

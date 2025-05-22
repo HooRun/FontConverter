@@ -6,59 +6,74 @@ namespace FontConverter.SharedLibrary.Helpers;
 
 public static class ParseGlyfTableHelper
 {
-    public static FontGlyfTable ParseGlyfTable(OpenTypeTableBinaryData tableBinaryData, List<uint> offsets)
+    const int chunkSize = 500;
+    public static async Task<FontGlyfTable> ParseGlyfTable(OpenTypeTableBinaryData tableBinaryData, List<uint> offsets, CancellationToken cancellationToken = default)
     {
-        FontGlyfTable glyfTable = new();
+        cancellationToken.ThrowIfCancellationRequested();
+        FontGlyfTable glyfTable = new()
+        {
+            Glyphs = new List<Glyph>(offsets.Count - 1)
+        };
 
         using var ms = new MemoryStream(tableBinaryData.RawData);
         using var reader = new BinaryReader(ms);
 
-        for (int i = 0; i < offsets.Count - 1; i++)
+        for (int i = 0; i < offsets.Count - 1; i += chunkSize)
         {
-            uint offset = offsets[i];
-            uint nextOffset = offsets[i + 1];
-
-            if (offset == nextOffset)
+            cancellationToken.ThrowIfCancellationRequested();
+            int batchEnd = Math.Min(i + chunkSize, offsets.Count - 1);
+            for (int j = i; j < batchEnd; j++)
             {
-                glyfTable.Glyphs.Add(new Glyph());
-                continue;
+                uint offset = offsets[j];
+                uint nextOffset = offsets[j + 1];
+
+                if (offset == nextOffset)
+                {
+                    glyfTable.Glyphs.Add(new Glyph());
+                    continue;
+                }
+
+                reader.BaseStream.Seek(offset, SeekOrigin.Begin);
+                short numberOfContours = ReadInt16BigEndian(reader);
+                short xMin = ReadInt16BigEndian(reader);
+                short yMin = ReadInt16BigEndian(reader);
+                short xMax = ReadInt16BigEndian(reader);
+                short yMax = ReadInt16BigEndian(reader);
+
+                var glyph = new Glyph
+                {
+                    NumberOfContours = numberOfContours,
+                    XMin = xMin,
+                    YMin = yMin,
+                    XMax = xMax,
+                    YMax = yMax
+                };
+
+                if (numberOfContours >= 0)
+                {
+                    //glyph.Simple = await ParseSimpleGlyph(reader, numberOfContours, cancellationToken).ConfigureAwait(false);
+                }
+                else
+                {
+                    //glyph.Composite = await ParseCompositeGlyph(reader, cancellationToken).ConfigureAwait(false);
+                }
+
+                glyfTable.Glyphs.Add(glyph);
             }
-
-            reader.BaseStream.Seek(offset, SeekOrigin.Begin);
-            short numberOfContours = ReadInt16BigEndian(reader);
-            short xMin = ReadInt16BigEndian(reader);
-            short yMin = ReadInt16BigEndian(reader);
-            short xMax = ReadInt16BigEndian(reader);
-            short yMax = ReadInt16BigEndian(reader);
-
-            var glyph = new Glyph
-            {
-                NumberOfContours = numberOfContours,
-                XMin = xMin,
-                YMin = yMin,
-                XMax = xMax,
-                YMax = yMax
-            };
-
-            if (numberOfContours >= 0)
-            {
-                //glyph.Simple = ParseSimpleGlyph(reader, numberOfContours);
-            }
-            else
-            {
-                //glyph.Composite = ParseCompositeGlyph(reader);
-            }
-
-            glyfTable.Glyphs.Add(glyph);
+            await Task.Delay(1).ConfigureAwait(false);
         }
 
         return glyfTable;
     }
 
-    internal static SimpleGlyph ParseSimpleGlyph(BinaryReader reader, short numberOfContours)
+    public static async Task<SimpleGlyph> ParseSimpleGlyph(BinaryReader reader, short numberOfContours, CancellationToken cancellationToken = default)
     {
-        var glyph = new SimpleGlyph();
-        glyph.EndPtsOfContours = new List<ushort>();
+        cancellationToken.ThrowIfCancellationRequested();
+        var glyph = new SimpleGlyph
+        {
+            EndPtsOfContours = new List<ushort>(numberOfContours)
+        };
+
         for (int i = 0; i < numberOfContours; i++)
         {
             glyph.EndPtsOfContours.Add(ReadUInt16BigEndian(reader));
@@ -70,9 +85,10 @@ public static class ParseGlyfTableHelper
         int numPoints = glyph.EndPtsOfContours.Count > 0 ? glyph.EndPtsOfContours[^1] + 1 : 0;
 
         // Flags
-        var flags = new List<SimpleGlyphFlags>();
+        var flags = new List<SimpleGlyphFlags>(numPoints);
         for (int i = 0; i < numPoints;)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             SimpleGlyphFlags flag = (SimpleGlyphFlags)reader.ReadByte();
             flags.Add(flag);
             i++;
@@ -85,13 +101,14 @@ public static class ParseGlyfTableHelper
                     i++;
                 }
             }
+            if (i % 500 == 0) await Task.Delay(1).ConfigureAwait(false);
         }
 
         // Coordinates
-        var xCoordinates = DecodeCoordinates(reader, flags, true);
-        var yCoordinates = DecodeCoordinates(reader, flags, false);
+        var xCoordinates = await DecodeCoordinates(reader, flags, true, cancellationToken);
+        var yCoordinates = await DecodeCoordinates(reader, flags, false, cancellationToken);
 
-        glyph.Points = new List<GlyphPoint>();
+        glyph.Points = new List<GlyphPoint>(numPoints);
         for (int i = 0; i < numPoints; i++)
         {
             glyph.Points.Add(new GlyphPoint
@@ -102,44 +119,58 @@ public static class ParseGlyfTableHelper
             });
         }
 
+        await Task.Delay(1).ConfigureAwait(false);
         return glyph;
     }
 
-    internal static List<short> DecodeCoordinates(BinaryReader reader, List<SimpleGlyphFlags> flags, bool isX)
+    public static async Task<List<short>> DecodeCoordinates(BinaryReader reader, List<SimpleGlyphFlags> flags, bool isX, CancellationToken cancellationToken = default)
     {
-        var coords = new List<short>();
+        cancellationToken.ThrowIfCancellationRequested();
+        var coords = new List<short>(flags.Count);
         short current = 0;
-        for (int i = 0; i < flags.Count; i++)
+
+        for (int i = 0; i < flags.Count; i += chunkSize)
         {
-            var flag = flags[i];
-            bool isShort = isX ? flag.HasFlag(SimpleGlyphFlags.X_SHORT_VECTOR) : flag.HasFlag(SimpleGlyphFlags.Y_SHORT_VECTOR);
-            bool sameOrPositive = isX ? flag.HasFlag(SimpleGlyphFlags.X_IS_SAME_OR_POSITIVE_X_SHORT_VECTOR) : flag.HasFlag(SimpleGlyphFlags.Y_IS_SAME_OR_POSITIVE_Y_SHORT_VECTOR);
-
-            short delta = 0;
-            if (isShort)
+            cancellationToken.ThrowIfCancellationRequested();
+            int batchEnd = Math.Min(i + chunkSize, flags.Count);
+            for (int j = i; j < batchEnd; j++)
             {
-                byte b = reader.ReadByte();
-                delta = (short)(sameOrPositive ? b : -b);
-            }
-            else if (!sameOrPositive)
-            {
-                delta = ReadInt16BigEndian(reader);
-            }
-            // else: same as previous (delta = 0)
+                var flag = flags[j];
+                bool isShort = isX ? flag.HasFlag(SimpleGlyphFlags.X_SHORT_VECTOR) : flag.HasFlag(SimpleGlyphFlags.Y_SHORT_VECTOR);
+                bool sameOrPositive = isX ? flag.HasFlag(SimpleGlyphFlags.X_IS_SAME_OR_POSITIVE_X_SHORT_VECTOR) : flag.HasFlag(SimpleGlyphFlags.Y_IS_SAME_OR_POSITIVE_Y_SHORT_VECTOR);
 
-            current += delta;
-            coords.Add(current);
+                short delta = 0;
+                if (isShort)
+                {
+                    byte b = reader.ReadByte();
+                    delta = (short)(sameOrPositive ? b : -b);
+                }
+                else if (!sameOrPositive)
+                {
+                    delta = ReadInt16BigEndian(reader);
+                }
+
+                current += delta;
+                coords.Add(current);
+            }
+            await Task.Delay(1).ConfigureAwait(false);
         }
+
         return coords;
     }
 
-    internal static CompositeGlyph ParseCompositeGlyph(BinaryReader reader)
+    public static async Task<CompositeGlyph> ParseCompositeGlyph(BinaryReader reader, CancellationToken cancellationToken = default)
     {
-        var composite = new CompositeGlyph();
+        cancellationToken.ThrowIfCancellationRequested();
+        var composite = new CompositeGlyph
+        {
+            Components = new List<Component>()
+        };
         bool hasMore = true;
 
         while (hasMore)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             var flags = (ComponentGlyphFlags)ReadUInt16BigEndian(reader);
             ushort glyphIndex = ReadUInt16BigEndian(reader);
             short arg1, arg2;
@@ -179,6 +210,7 @@ public static class ParseGlyfTableHelper
 
             composite.Components.Add(component);
             hasMore = flags.HasFlag(ComponentGlyphFlags.MORE_COMPONENTS);
+            await Task.Delay(1).ConfigureAwait(false);
         }
 
         if (composite.Components[^1].Flags.HasFlag(ComponentGlyphFlags.WE_HAVE_INSTRUCTIONS))
@@ -187,6 +219,7 @@ public static class ParseGlyfTableHelper
             composite.Instructions = reader.ReadBytes(composite.InstructionLength);
         }
 
+        await Task.Delay(1).ConfigureAwait(false);
         return composite;
     }
 }

@@ -4,7 +4,7 @@ using SkiaSharp;
 
 namespace FontConverter.Blazor.Layout;
 
-public partial class LeftSidebarLayout 
+public partial class LeftSidebarLayout :ComponentBase
 {
     [Inject] 
     NotificationService NotificationService { get; set; } = default!;

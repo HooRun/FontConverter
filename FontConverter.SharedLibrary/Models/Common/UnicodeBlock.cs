@@ -13,7 +13,6 @@ public class UnicodeBlock
         Start = -1;
         End = -1;
         Name = string.Empty;
-        ContainsAnyCharacterInFont = false;
         Characters = new();
     }
 
@@ -27,7 +26,6 @@ public class UnicodeBlock
     public int Start { get; set; }
     public int End { get; set; }
     public string Name { get; set; }
-    public bool ContainsAnyCharacterInFont { get; set; }
 
     public SortedList<int, UnicodeCharacter> Characters { get; set; }
 }

@@ -5,7 +5,7 @@ using SkiaSharp;
 
 namespace FontConverter.Blazor.Layout;
 
-public partial class MainLayout
+public partial class MainLayout 
 {
 
     [Inject]

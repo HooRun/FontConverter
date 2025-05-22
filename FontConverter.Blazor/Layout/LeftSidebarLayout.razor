@@ -5,12 +5,12 @@
         <RadzenLabel Style="vertical-align:middle !important; " Text="Font Settings" />
         <RadzenButton Style="margin-left: auto;" Icon="west" Variant="Variant.Text" ButtonStyle="ButtonStyle.Secondary" Click="@(() => Expanded = false)" />
     </RadzenStack> *@
-    <FontFileOperationLayout />
+    <FontFileOperationComponent />
     <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Stretch" Wrap="FlexWrap.NoWrap" Gap="15" style="padding: 15px;">
-        <FontSettingsLayout />
-        <FontAdjusmentsLayout />
-        <FontContentsLayout />
-        <FontInformationsLayout />
+        <FontSettingsComponent />
+        <FontAdjusmentsComponent />
+        <FontContentsComponent />
+        <FontInformationsComponent />
     </RadzenStack>
 </RadzenSidebar>
 

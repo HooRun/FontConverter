@@ -6,8 +6,11 @@ namespace FontConverter.SharedLibrary.Helpers;
 
 public static class ParseKernTableHelper
 {
-    public static FontKernTable ParseKernTable(OpenTypeTableBinaryData tableBinaryData)
+    const int chunkSize = 500;
+
+    public static async Task<FontKernTable> ParseKernTable(OpenTypeTableBinaryData tableBinaryData, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         FontKernTable kernTable = new();
 
         using var ms = new MemoryStream(tableBinaryData.RawData);
@@ -18,6 +21,7 @@ public static class ParseKernTableHelper
 
         for (int i = 0; i < nTables; i++)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             long subtableStart = reader.BaseStream.Position;
 
             ushort versionOrLength = ReadUInt16BigEndian(reader); // for Mac 0x0000 or Win 0x0001
@@ -29,10 +33,10 @@ public static class ParseKernTableHelper
             switch (format)
             {
                 case 0:
-                    subtable = KernParseFormat0(reader, subtableStart);
+                    subtable = await KernParseFormat0(reader, subtableStart, cancellationToken).ConfigureAwait(false);
                     break;
                 case 2:
-                    subtable = KernParseFormat2(reader, subtableStart);
+                    subtable = await KernParseFormat2(reader, subtableStart, cancellationToken).ConfigureAwait(false);
                     break;
             }
 
@@ -44,33 +48,48 @@ public static class ParseKernTableHelper
             }
 
             reader.BaseStream.Seek(subtableStart + length, SeekOrigin.Begin); // move to next subtable
+            await Task.Delay(1).ConfigureAwait(false);
         }
 
         return kernTable;
     }
 
-    public static KernFormat0Subtable KernParseFormat0(BinaryReader reader, long subtableOffset)
+    public static async Task<KernFormat0Subtable> KernParseFormat0(BinaryReader reader, long subtableOffset, CancellationToken cancellationToken = default)
     {
-        var subtable = new KernFormat0Subtable();
-        ushort nPairs = ReadUInt16BigEndian(reader);
-        ushort searchRange = ReadUInt16BigEndian(reader); // ignored
-        ushort entrySelector = ReadUInt16BigEndian(reader); // ignored
-        ushort rangeShift = ReadUInt16BigEndian(reader); // ignored
-
-        for (int i = 0; i < nPairs; i++)
+        cancellationToken.ThrowIfCancellationRequested();
+        var subtable = new KernFormat0Subtable
         {
-            ushort left = ReadUInt16BigEndian(reader);
-            ushort right = ReadUInt16BigEndian(reader);
-            short value = ReadInt16BigEndian(reader);
-            subtable.Pairs.Add(new KernPair { Left = left, Right = right, Value = value });
+            Pairs = new List<KernPair>() 
+        };
+
+        ushort nPairs = ReadUInt16BigEndian(reader);
+        ReadUInt16BigEndian(reader); // searchRange, ignored
+        ReadUInt16BigEndian(reader); // entrySelector, ignored
+        ReadUInt16BigEndian(reader); // rangeShift, ignored
+
+        subtable.Pairs.Capacity = nPairs;
+        for (int i = 0; i < nPairs; i += chunkSize)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            int batchEnd = Math.Min(i + chunkSize, nPairs);
+            for (int j = i; j < batchEnd; j++)
+            {
+                ushort left = ReadUInt16BigEndian(reader);
+                ushort right = ReadUInt16BigEndian(reader);
+                short value = ReadInt16BigEndian(reader);
+                subtable.Pairs.Add(new KernPair { Left = left, Right = right, Value = value });
+            }
+            await Task.Delay(1).ConfigureAwait(false);
         }
 
         return subtable;
     }
 
-    public static KernFormat2Subtable KernParseFormat2(BinaryReader reader, long subtableOffset)
+    public static async Task<KernFormat2Subtable> KernParseFormat2(BinaryReader reader, long subtableOffset, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         var subtable = new KernFormat2Subtable();
+
         subtable.RowWidth = ReadUInt16BigEndian(reader);
         subtable.LeftClassTableOffset = ReadUInt16BigEndian(reader);
         subtable.RightClassTableOffset = ReadUInt16BigEndian(reader);
@@ -99,12 +118,19 @@ public static class ParseKernTableHelper
 
         reader.BaseStream.Seek(arrayOffset, SeekOrigin.Begin);
         subtable.KerningValues = new ushort[subtable.NumLeftClasses, subtable.NumRightClasses];
-        for (int i = 0; i < subtable.NumLeftClasses; i++)
+        
+        for (int i = 0; i < subtable.NumLeftClasses; i += chunkSize)
         {
-            for (int j = 0; j < subtable.NumRightClasses; j++)
+            cancellationToken.ThrowIfCancellationRequested();
+            int batchEnd = Math.Min(i + chunkSize, subtable.NumLeftClasses);
+            for (int j = i; j < batchEnd; j++)
             {
-                subtable.KerningValues[i, j] = ReadUInt16BigEndian(reader);
+                for (int k = 0; k < subtable.NumRightClasses; k++)
+                {
+                    subtable.KerningValues[j, k] = ReadUInt16BigEndian(reader);
+                }
             }
+            await Task.Delay(1).ConfigureAwait(false);
         }
 
         return subtable;
