@@ -1,11 +1,9 @@
 using Microsoft.AspNetCore.Components;
 using Radzen;
-using Radzen.Blazor.Rendering;
-using SkiaSharp;
 
 namespace FontConverter.Blazor.Layout;
 
-public partial class MainLayout 
+public partial class MainLayout : LayoutComponentBase
 {
 
     [Inject]

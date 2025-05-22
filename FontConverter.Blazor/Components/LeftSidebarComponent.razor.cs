@@ -2,9 +2,9 @@
 using Radzen;
 using SkiaSharp;
 
-namespace FontConverter.Blazor.Layout;
+namespace FontConverter.Blazor.Components;
 
-public partial class LeftSidebarLayout :ComponentBase
+public partial class LeftSidebarComponent : ComponentBase
 {
     [Inject] 
     NotificationService NotificationService { get; set; } = default!;
