@@ -1,18 +1,19 @@
 ﻿using FontConverter.SharedLibrary.Models;
 using SkiaSharp;
 using System.Runtime.InteropServices;
+using static FontConverter.SharedLibrary.Helpers.LVGLFontEnums;
 
 namespace FontConverter.SharedLibrary.Helpers;
 
-public class RenderGlyphToBitmapArrayHelper
+public class RenderGlyphsToBitmapArrayHelper
 {
 
-    public static async Task<List<LVGLGlyphBitmapData>> RenderGlyphsAsync(
+    public static async Task<SortedList<int, LVGLGlyphBitmapData>> RenderGlyphsToBitmapArrayAsync(
         SKFont font,
         FontGlyfTable glyfTable,
         LVGLFontAdjusments lvFontAdjusment,
         int fontHeight,
-        byte bpp,
+        BIT_PER_PIXEL_ENUM bpp,
         IProgress<(int glyphIndex, double percentage)>? progress = null,
         CancellationToken cancellationToken = default)
     {
@@ -20,7 +21,7 @@ public class RenderGlyphToBitmapArrayHelper
 
         int threshold = lvFontAdjusment.Threshold;
         int totalGlyphs = glyfTable.Glyphs.Count;
-        var glyphs = new LVGLGlyphBitmapData[totalGlyphs];
+        var glyphs = new SortedList<int, LVGLGlyphBitmapData>();
         int ChunkSize = Math.Max(1, totalGlyphs / 1000);
         int processedGlyphs = 0;
 
@@ -39,7 +40,7 @@ public class RenderGlyphToBitmapArrayHelper
 
             for (int j = i; j < batchEnd; j++)
             {
-                glyphs[j] = RenderGlyphToBitmapArray(font, (ushort)j, fontHeight, bpp, threshold, paint);
+                glyphs.Add(j, RenderGlyphToBitmapArray(font, (ushort)j, fontHeight, bpp, threshold, paint));
                 processedGlyphs++;
             }
             progress?.Report((processedGlyphs, (double)processedGlyphs / totalGlyphs * 100));
@@ -47,12 +48,12 @@ public class RenderGlyphToBitmapArrayHelper
         }
 
         progress?.Report((totalGlyphs, 100.0));
-        return new List<LVGLGlyphBitmapData>(glyphs);
+        return glyphs;
     }
 
-    public static LVGLGlyphBitmapData RenderGlyphToBitmapArray(SKFont font, ushort glyphIndex, int pixelHeight, byte bpp, int threshold, SKPaint paint)
+    public static LVGLGlyphBitmapData RenderGlyphToBitmapArray(SKFont font, ushort glyphIndex, int pixelHeight, BIT_PER_PIXEL_ENUM bpp, int threshold, SKPaint paint)
     {
-        if (bpp is not (1 or 2 or 4 or 8))
+        if (bpp is not (BIT_PER_PIXEL_ENUM.BPP_1 or BIT_PER_PIXEL_ENUM.BPP_2 or BIT_PER_PIXEL_ENUM.BPP_4 or BIT_PER_PIXEL_ENUM.BPP_8))
             return new LVGLGlyphBitmapData(glyphIndex, Array.Empty<byte>(), SKRectI.Empty);
 
         using var path = font.GetGlyphPath(glyphIndex);
@@ -90,22 +91,23 @@ public class RenderGlyphToBitmapArrayHelper
         }
     }
 
-    private static byte[] ConvertAlphaToBpp(byte[] alphaData, int width, int height, int bpp, int threshold)
+    private static byte[] ConvertAlphaToBpp(byte[] alphaData, int width, int height, BIT_PER_PIXEL_ENUM bpp, int threshold)
     {
-        if (bpp == 8)
+        if (bpp == BIT_PER_PIXEL_ENUM.BPP_8)
             return alphaData;
 
         int pixelThreshold = threshold * 255 / 100;
-        int pixelsPerByte = 8 / bpp;
+        byte bitperpixel = (byte)bpp;
+        int pixelsPerByte = 8 / (byte)bpp;
         int totalPixels = width * height;
         int byteCount = (totalPixels + pixelsPerByte - 1) / pixelsPerByte;
         var output = new byte[byteCount];
 
         for (int i = 0, outIndex = 0, bitIndex = 0, currentByte = 0; i < totalPixels; i++)
         {
-            int value = (alphaData[i] >= pixelThreshold ? 255 : alphaData[i]) * ((1 << bpp) - 1) / 255;
-            currentByte = (currentByte << bpp) | value;
-            bitIndex += bpp;
+            int value = (alphaData[i] >= pixelThreshold ? 255 : alphaData[i]) * ((1 << bitperpixel) - 1) / 255;
+            currentByte = (currentByte << bitperpixel) | value;
+            bitIndex += bitperpixel;
 
             if (bitIndex >= 8)
             {

@@ -3,62 +3,76 @@
     <Items>
         <RadzenAccordionItem Text="@SharedResources.Text_Accordion_Font_Settings"
                              Icon="@SharedResources.Icon_Accordion_Font_Settings">
-            <RadzenStack Orientation="Orientation.Vertical"
-                         Gap="15">
-                @* Font Name *@
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel"
-                                 Text="Font Name:"
-                                 Variant="@variant">
-                    <ChildContent>
-                        <RadzenTextBox />
-                    </ChildContent>
-                </RadzenFormField>
-                @* Bit Per Pixel *@
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel"
-                                 Text="Bit Per Pixel:"
-                                 Variant="@variant">
-                    <ChildContent>
-                        <RadzenDropDown @bind-Value=@selectedBPP
-                                        Data=@fontConverterLib.BitPerPixelList
-                                        TextProperty="Value"
-                                        ValueProperty="Key" />
-                    </ChildContent>
-                </RadzenFormField>
-                @* Font Size *@
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel"
-                                 Text="Size:"
-                                 Variant="@variant">
-                    <ChildContent>
-                        <RadzenNumeric Min="8"
-                                       Max="128"
-                                       @bind-Value=@fontSize/>
-                    </ChildContent>
-                </RadzenFormField>
-                @* Sub Pixel *@
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel"
-                                 Text="Sub Pixel:"
-                                 Variant="@variant">
-                    <ChildContent>
-                        <RadzenDropDown @bind-Value=@selectedSubPixel
-                                        Data=@fontConverterLib.SubPixelList
-                                        TextProperty="Value"
-                                        ValueProperty="Key" />
-                    </ChildContent>
-                </RadzenFormField>
-                @* Fallback Font Name *@
-                <RadzenFormField AllowFloatingLabel="@floatFieldLabel"
-                                 Text="Fallback Font Name:"
-                                 Variant="@variant">
-                    <ChildContent>
-                        <RadzenAutoComplete @bind-Value=@selectedFallbackFont
-                                            Data=@fontConverterLib.EmbeddedLVGLFontsList
-                                            TextProperty="Value"
-                                            OpenOnFocus="true"
-                                            FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" />
-                    </ChildContent>
-                </RadzenFormField>
 
-            </RadzenStack>
+            <RadzenTemplateForm Data="@MainViewModel.FontSettingsViewModel"
+                                TItem="FontSettingsViewModel"
+                                EditContext="@editContext">
+
+                <RadzenStack Orientation="Orientation.Vertical"
+                             Gap="15">
+                    @* Font Name *@
+                    <RadzenFormField AllowFloatingLabel="@floatFieldLabel"
+                                     Text="Font Name:"
+                                     Variant="@variant">
+                        <ChildContent>
+                            <RadzenTextBox @bind-Value=@MainViewModel.FontSettingsViewModel.FontName 
+                                @oninput="OnFontNameChanged"/>
+                        </ChildContent>
+                        <Helper>
+                            <ValidationMessage For="@(() => MainViewModel.FontSettingsViewModel.FontName)" />
+                        </Helper>
+                    </RadzenFormField>
+                    @* Bit Per Pixel *@
+                    <RadzenFormField AllowFloatingLabel="@floatFieldLabel"
+                                     Text="Bit Per Pixel:"
+                                     Variant="@variant">
+                        <ChildContent>
+                            <RadzenDropDown @bind-Value=@MainViewModel.FontSettingsViewModel.FontBitPerPixel
+                                            Data=@PredefinedData.BitPerPixelList
+                                            TextProperty="Value"
+                                            ValueProperty="Key" />
+                        </ChildContent>
+                    </RadzenFormField>
+                    @* Font Size *@
+                    <RadzenFormField AllowFloatingLabel="@floatFieldLabel"
+                                     Text="Size:"
+                                     Variant="@variant">
+                        <ChildContent>
+                            <RadzenNumeric Min="8"
+                                           Max="128"
+                                           @bind-Value=@MainViewModel.FontSettingsViewModel.FontSize />
+                        </ChildContent>
+                    </RadzenFormField>
+                    @* Sub Pixel *@
+                    <RadzenFormField AllowFloatingLabel="@floatFieldLabel"
+                                     Text="Sub Pixel:"
+                                     Variant="@variant">
+                        <ChildContent>
+                            <RadzenDropDown @bind-Value=@MainViewModel.FontSettingsViewModel.FontSubPixel
+                                            Data=@PredefinedData.SubPixelList
+                                            TextProperty="Value"
+                                            ValueProperty="Key" />
+                        </ChildContent>
+                    </RadzenFormField>
+                    @* Fallback Font Name *@
+                    <RadzenFormField AllowFloatingLabel="@floatFieldLabel"
+                                     Text="Fallback Font Name:"
+                                     Variant="@variant">
+                        <ChildContent>
+                            <RadzenAutoComplete @bind-Value=@MainViewModel.FontSettingsViewModel.Fallback
+                                                Data=@PredefinedData.EmbeddedLVGLFontsList
+                                                TextProperty="Value"
+                                                OpenOnFocus="true"
+                                                FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                                                @oninput="OnFallbackChanged" />
+                        </ChildContent>
+                        <Helper>
+                            <ValidationMessage For="@(() => MainViewModel.FontSettingsViewModel.Fallback)" />
+                        </Helper>
+                    </RadzenFormField>
+
+                </RadzenStack>
+            </RadzenTemplateForm>
         </RadzenAccordionItem>
     </Items>
 </RadzenAccordion>
@@ -75,6 +89,10 @@
 
     .rz-accordion-content {
         padding: 0.5rem !important;
+    }
+
+    .valid.modified {
+        outline-color: transparent !important;
     }
 
 </style>

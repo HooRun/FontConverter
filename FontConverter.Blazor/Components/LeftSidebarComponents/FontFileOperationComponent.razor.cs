@@ -1,4 +1,4 @@
-﻿using FontConverter.Blazor.Components.FontAnalayzerDialog;
+﻿using FontConverter.Blazor.Components.FontAnalayzerDialogComponents;
 using Microsoft.AspNetCore.Components;
 using Radzen;
 using SkiaSharp;
@@ -12,6 +12,9 @@ public partial class FontFileOperationComponent : ComponentBase
 
     [Inject]
     public DialogService dialogService { get; set; } = default!;
+
+    [Inject]
+    public MainViewModel MainViewModel { get; set; } = default!;
 
     private Radzen.FileInfo? fontFile = null;
     private string fontFileName = "";
@@ -41,7 +44,8 @@ public partial class FontFileOperationComponent : ComponentBase
         {
             SKTypeface? typeface = null;
             CancellationTokenSource? fontLoadingCancellationToken = new CancellationTokenSource();
-            var result = await dialogService.OpenAsync<FontAnalayzerDialogComponent>( string.Empty,
+            MainViewModel.MappingsFromViewModelToModel();
+            var dialogResult = await dialogService.OpenAsync<FontAnalayzerDialogComponent>( string.Empty,
                 new Dictionary<string, object>
                 {
                     { "FontFile", fontFile },
@@ -52,14 +56,22 @@ public partial class FontFileOperationComponent : ComponentBase
                 {
                     ShowClose = false,
                     ShowTitle = false,
-                    
                 }
             );
             fontLoadingCancellationToken.CancelAfter(1);
             fontLoadingCancellationToken.Dispose();
             fontLoadingCancellationToken = null;
             typeface?.Dispose();
-            
+
+            if (dialogResult is not null && dialogResult is bool == true)
+            {
+                MainViewModel.MappingsFromModelToViewModel();
+            }
+            else
+            {
+                MainViewModel.MappingsFromViewModelToModel();
+            }
+            await InvokeAsync(StateHasChanged);
         }
         else
         {

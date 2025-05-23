@@ -15,6 +15,11 @@ public class LVGLGlyph
         Index = 0;
         Bitmap = [];
         Descriptor = new();
+        IsEmpty = false;
+        IsUnMapped = false;
+        IsSingleMapped = false;
+        IsMultiMapped = false;
+        CodePoints = new SortedList<int, UnicodeCharacter>();
     }
 
     public string Name { get; set; }
@@ -22,4 +27,12 @@ public class LVGLGlyph
     public int Index { get; set; }
     public byte[] Bitmap { get; set; }
     public LVGLGlyphDescriptor Descriptor { get; set; }
+
+    public bool IsEmpty { get; set; }
+    public bool IsUnMapped { get; set; }
+    public bool IsSingleMapped { get; set; }
+    public bool IsMultiMapped { get; set; }
+
+    public SortedList<int, UnicodeCharacter> CodePoints { get; set; }
+
 }

@@ -7,17 +7,19 @@ public class LVGLFont
         FontSettings = new();
         FontAdjusments = new();
         FontInformations = new();
-        
+        FontContents = new();
         Glyphs = new();
+        Blocks = new();
     }
 
     public LVGLFontSettings FontSettings { get; set; }
     public LVGLFontAdjusments FontAdjusments { get; set; }
     public LVGLFontInformations FontInformations { get; set; }
+    public LVGLFontContents FontContents { get; set; }
 
     public SortedList<int, LVGLGlyph> Glyphs { get; set; }
 
-
+    public SortedList<(int Start, int End), UnicodeBlock> Blocks { get; set; }
 
 }
 

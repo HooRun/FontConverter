@@ -134,10 +134,10 @@
 
     <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Center" class="rz-text-align-center">
         <RadzenColumn>
-            <RadzenButton Text="Apply" Click="@((args) => dialogService.Close(FontFile))" Disabled="@applyButonDisabled" />
+            <RadzenButton Text="Apply" Click="@((args) => dialogService.Close(true))" @bind-Disabled="@applyButonDisabled" />
         </RadzenColumn>
         <RadzenColumn>
-            <RadzenButton Text="Close" Click="@((args) => dialogService.Close(true))" />
+            <RadzenButton Text="Close" Click="@((args) => dialogService.Close(false))" />
         </RadzenColumn>
     </RadzenRow>
 

@@ -2,53 +2,36 @@
     <Items>
         <RadzenAccordionItem Text="@SharedResources.Text_Accordion_Font_Content" Icon="@SharedResources.Icon_Accordion_Font_Content">
             <RadzenStack Orientation="Orientation.Vertical" Gap="15">
-
-                <RadzenTree Data=@contentDatas >
-                    <RadzenTreeLevel TextProperty=@nameof(ContentData.Header) ChildrenProperty=@nameof(ContentData.Children)
-                    HasChildren=@(item => ((ContentData)item).Children?.Any() == true) >
-
-                        <Template>
-                            <RadzenStack Orientation="Orientation.Horizontal" Gap="5">
-                                <RadzenIcon Icon="@(((ContentData)context.Value).Icon)" Style="color: black; font-size:16px;" />
-                                <RadzenBadge Shade="Shade.Lighter" BadgeStyle="BadgeStyle.Primary" Text=@(((ContentData)context.Value).Count.ToString()) />
-                                <span>@(((ContentData)context.Value).Header)</span>
-                            </RadzenStack>
-                        </Template>
-
-                    </RadzenTreeLevel>
-
-
-
-                </RadzenTree>
-
+                @if (MainViewModel.FontContentsViewModel?.Contents == null || !MainViewModel.FontContentsViewModel.Contents.Any())
+                {
+                    <p>Data unavailable.</p>
+                }
+                else
+                {
+                    <RadzenTree Data="@MainViewModel.FontContentsViewModel.Contents.Values"
+                                Style="width: 100%;"
+                                Change="@(args => OnTreeChange(args))">
+                        <RadzenTreeLevel TextProperty="@nameof(FontContentViewModel.Header)"
+                                         ChildrenProperty="@nameof(FontContentViewModel.Children)"
+                                         HasChildren="@(item => ((FontContentViewModel)item).Children.Any())"
+                                         Selected="@(item => ((FontContentViewModel)item).IsSelected)">
+                            <Template>
+                                <RadzenStack Orientation="Orientation.Horizontal" Gap="5">
+                                    <RadzenIcon Icon="@(((FontContentViewModel)context.Value).Icon)"
+                                                class="filled-icon"
+                                                IconStyle="IconStyle.Dark" />
+                                    <RadzenBadge Shade="Shade.Lighter"
+                                                 BadgeStyle="BadgeStyle.Primary"
+                                                 Text="@(((FontContentViewModel)context.Value).Count.ToString())" />
+                                    <span>@(((FontContentViewModel)context.Value).Header)</span>
+                                </RadzenStack>
+                            </Template>
+                        </RadzenTreeLevel>
+                    </RadzenTree>
+                }
             </RadzenStack>
         </RadzenAccordionItem>
     </Items>
 </RadzenAccordion>
 
 
-
-@code {
-    public class ContentData
-    {
-        public string Icon { get; set; } = string.Empty;
-        public string Header { get; set; } = string.Empty;
-        public int Count { get; set; } = 0;
-        public List<ContentData> Children { get; set; } = [];
-    }
-
-    IEnumerable<ContentData> contentDatas = new List<ContentData>()
-    {
-        new ContentData()
-        {
-            Icon="loupe", 
-            Header="Glyphs",
-            Children= new List<ContentData>()
-            {
-                new ContentData(){Icon="loupe", Header="Empty" },
-                new ContentData(){Icon="loupe", Header="Mapped" }
-            }
-        },
-        new ContentData(){Icon="loupe", Header="UnicodeBlockCollection"},
-    };
-}
