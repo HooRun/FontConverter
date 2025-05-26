@@ -10,29 +10,32 @@ public class LVGLGlyph
 {
     public LVGLGlyph()
     {
+        Index = -1;
         Name = string.Empty;
         Description = string.Empty;
-        Index = 0;
         Bitmap = [];
         Descriptor = new();
+        Adjusments = new();
+        CodePoints = new();
+        Blocks = new();
         IsEmpty = false;
         IsUnMapped = false;
         IsSingleMapped = false;
         IsMultiMapped = false;
-        CodePoints = new SortedList<int, UnicodeCharacter>();
     }
 
+    public int Index { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
-    public int Index { get; set; }
     public byte[] Bitmap { get; set; }
     public LVGLGlyphDescriptor Descriptor { get; set; }
+    public LVGLFontAdjusments Adjusments { get; set; }
+    public SortedList<uint, UnicodeCharacter> CodePoints { get; set; }
+    public SortedList<(uint Start, uint End), UnicodeBlock> Blocks { get; set; }
 
     public bool IsEmpty { get; set; }
     public bool IsUnMapped { get; set; }
     public bool IsSingleMapped { get; set; }
     public bool IsMultiMapped { get; set; }
-
-    public SortedList<int, UnicodeCharacter> CodePoints { get; set; }
 
 }

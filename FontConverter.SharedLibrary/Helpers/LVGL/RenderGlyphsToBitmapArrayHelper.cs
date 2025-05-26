@@ -10,41 +10,53 @@ public class RenderGlyphsToBitmapArrayHelper
 
     public static async Task<SortedList<int, LVGLGlyphBitmapData>> RenderGlyphsToBitmapArrayAsync(
         SKFont font,
-        FontGlyfTable glyfTable,
-        LVGLFontAdjusments lvFontAdjusment,
-        int fontHeight,
-        BIT_PER_PIXEL_ENUM bpp,
+        OpenTypeFont openTypeFont,
+        LVGLFont lVGLFont,
         IProgress<(int glyphIndex, double percentage)>? progress = null,
         CancellationToken cancellationToken = default)
     {
-        ArgumentNullException.ThrowIfNull(glyfTable?.Glyphs);
-
-        int threshold = lvFontAdjusment.Threshold;
-        int totalGlyphs = glyfTable.Glyphs.Count;
+        int threshold = lVGLFont.FontAdjusments.Threshold;
+        int totalGlyphs = openTypeFont.GlyfTable.Glyphs.Count;
         var glyphs = new SortedList<int, LVGLGlyphBitmapData>();
-        int ChunkSize = Math.Max(1, totalGlyphs / 1000);
+        int chunkSize = Math.Max(1, totalGlyphs / 1000);
+        if (chunkSize > 100) chunkSize = 100;
         int processedGlyphs = 0;
 
-        using SKPaint paint = new()
+        int gammaValue = Math.Clamp(lVGLFont.FontAdjusments.Gamma, 0, 100);
+        float gamma;
+        if (gammaValue <= 50)
         {
-            IsAntialias = true,
-            Style = SKPaintStyle.Fill,
-            IsDither = false,
-            Color = SKColors.Black
-        };
+            gamma = gammaValue / 50.0f; 
+        }
+        else
+        {
+            gamma = 1.0f + ((gammaValue - 50) * 9.0f / 50.0f);
+        }
 
-        for (int i = 0; i < totalGlyphs; i += ChunkSize)
+        using SKPaint paint = new()
+            {
+                IsAntialias = lVGLFont.FontAdjusments.AntiAlias,
+                IsDither = lVGLFont.FontAdjusments.Dither,
+                ColorFilter = lVGLFont.FontAdjusments.ColorFilter ? SKColorFilter.CreateBlendMode(SKColors.Black, SKBlendMode.SrcIn) : null,
+                Shader = lVGLFont.FontAdjusments.Shader ? SKShader.CreateColor(SKColors.Black) : null,
+                Style = (SKPaintStyle)lVGLFont.FontAdjusments.Style,
+                Color = SKColors.Black,
+                MaskFilter = SKMaskFilter.CreateGamma(gamma),
+            };
+
+        for (int i = 0; i < totalGlyphs; i += chunkSize)
         {
             cancellationToken.ThrowIfCancellationRequested();
-            int batchEnd = Math.Min(i + ChunkSize, totalGlyphs);
+            int batchEnd = Math.Min(i + chunkSize, totalGlyphs);
 
             for (int j = i; j < batchEnd; j++)
             {
-                glyphs.Add(j, RenderGlyphToBitmapArray(font, (ushort)j, fontHeight, bpp, threshold, paint));
+                glyphs.Add(j, RenderGlyphToBitmapArray(font, (ushort)j, lVGLFont.FontSettings.FontSize, lVGLFont.FontSettings.FontBitPerPixel, threshold, paint));
                 processedGlyphs++;
             }
             progress?.Report((processedGlyphs, (double)processedGlyphs / totalGlyphs * 100));
-            await Task.Delay(1).ConfigureAwait(false);
+            var delay = Math.Max(1, chunkSize / 50);
+            await Task.Delay(delay, cancellationToken).ConfigureAwait(false);
         }
 
         progress?.Report((totalGlyphs, 100.0));

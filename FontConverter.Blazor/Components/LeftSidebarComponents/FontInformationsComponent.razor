@@ -5,79 +5,79 @@
 
                 <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Variant="@variant" Text="Font Name">
                     <ChildContent>
-                        <RadzenTextBox ReadOnly="true" Value=@MainViewModel.FontInformationsViewModel.FontName/>
+                        <RadzenTextBox ReadOnly="true" @bind-Value=@MainViewModel.FontInformationsViewModel.FontName/>
                     </ChildContent>
                 </RadzenFormField>
 
                 <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Variant="@variant" Text="Ascent">
                     <ChildContent>
-                        <RadzenTextBox ReadOnly="true" Value=@MainViewModel.FontInformationsViewModel.Ascent.ToString() />
+                        <RadzenTextBox ReadOnly="true" @bind-Value=@MainViewModel.FontInformationsViewModel.Ascent/>
                     </ChildContent>
                 </RadzenFormField>
 
                 <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Variant="@variant" Text="Descent">
                     <ChildContent>
-                        <RadzenTextBox ReadOnly="true" Value=@MainViewModel.FontInformationsViewModel.Descent.ToString()/>
+                        <RadzenTextBox ReadOnly="true" @bind-Value=@MainViewModel.FontInformationsViewModel.Descent/>
                     </ChildContent>
                 </RadzenFormField>
 
                 <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Variant="@variant" Text="Line Height">
                     <ChildContent>
-                        <RadzenTextBox ReadOnly="true" Value=@MainViewModel.FontInformationsViewModel.LineHeight.ToString()/>
+                        <RadzenTextBox ReadOnly="true" @bind-Value=@MainViewModel.FontInformationsViewModel.LineHeight/>
                     </ChildContent>
                 </RadzenFormField>
 
                 <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Variant="@variant" Text="Base Line">
                     <ChildContent>
-                        <RadzenTextBox ReadOnly="true" Value=@MainViewModel.FontInformationsViewModel.BaseLine.ToString() />
+                        <RadzenTextBox ReadOnly="true" @bind-Value=@MainViewModel.FontInformationsViewModel.BaseLine/>
                     </ChildContent>
                 </RadzenFormField>
 
                 <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Variant="@variant" Text="Max Charachter Width">
                     <ChildContent>
-                        <RadzenTextBox ReadOnly="true" Value=@MainViewModel.FontInformationsViewModel.CharWidthMax.ToString() />
+                        <RadzenTextBox ReadOnly="true" @bind-Value=@MainViewModel.FontInformationsViewModel.CharWidthMax/>
                     </ChildContent>
                 </RadzenFormField>
 
                 <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Variant="@variant" Text="Max Advance Width">
                     <ChildContent>
-                        <RadzenTextBox ReadOnly="true" Value=@MainViewModel.FontInformationsViewModel.AdvanceWidthMax.ToString() />
+                        <RadzenTextBox ReadOnly="true" @bind-Value=@MainViewModel.FontInformationsViewModel.AdvanceWidthMax/>
                     </ChildContent>
                 </RadzenFormField>
 
                 <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Variant="@variant" Text="Underline Position">
                     <ChildContent>
-                        <RadzenTextBox ReadOnly="true" Value=@MainViewModel.FontInformationsViewModel.UnderlinePosition.ToString()/>
+                        <RadzenTextBox ReadOnly="true" @bind-Value=@MainViewModel.FontInformationsViewModel.UnderlinePosition/>
                     </ChildContent>
                 </RadzenFormField>
 
                 <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Variant="@variant" Text="Underline Thickness">
                     <ChildContent>
-                        <RadzenTextBox ReadOnly="true" Value=@MainViewModel.FontInformationsViewModel.UnderlineThickness.ToString() />
+                        <RadzenTextBox ReadOnly="true" @bind-Value=@MainViewModel.FontInformationsViewModel.UnderlineThickness/>
                     </ChildContent>
                 </RadzenFormField>
 
                 <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Variant="@variant" Text="Minimum X">
                     <ChildContent>
-                        <RadzenTextBox ReadOnly="true" Value=@MainViewModel.FontInformationsViewModel.XMin.ToString() />
+                        <RadzenTextBox ReadOnly="true" @bind-Value=@MainViewModel.FontInformationsViewModel.XMin/>
                     </ChildContent>
                 </RadzenFormField>
 
                 <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Variant="@variant" Text="Maximum X">
                     <ChildContent>
-                        <RadzenTextBox ReadOnly="true" Value=@MainViewModel.FontInformationsViewModel.XMax.ToString()/>
+                        <RadzenTextBox ReadOnly="true" @bind-Value=@MainViewModel.FontInformationsViewModel.XMax/>
                     </ChildContent>
                 </RadzenFormField>
 
                 <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Variant="@variant" Text="Minimum Y">
                     <ChildContent>
-                        <RadzenTextBox ReadOnly="true" Value=@MainViewModel.FontInformationsViewModel.YMin.ToString() />
+                        <RadzenTextBox ReadOnly="true" @bind-Value=@MainViewModel.FontInformationsViewModel.YMin/>
                     </ChildContent>
                 </RadzenFormField>
 
                 <RadzenFormField AllowFloatingLabel="@floatFieldLabel" Variant="@variant" Text="Maximum Y">
                     <ChildContent>
-                        <RadzenTextBox ReadOnly="true" Value=@MainViewModel.FontInformationsViewModel.YMax.ToString()/>
+                        <RadzenTextBox ReadOnly="true" @bind-Value=@MainViewModel.FontInformationsViewModel.YMax/>
                     </ChildContent>
                 </RadzenFormField>
 
@@ -85,9 +85,3 @@
         </RadzenAccordionItem>
     </Items>
 </RadzenAccordion>
-
-
-@code {
-    Variant variant = Variant.Outlined;
-    bool floatFieldLabel = true;
-}

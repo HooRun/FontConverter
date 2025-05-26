@@ -469,7 +469,7 @@ public static class FontTablesEnumHelper
         R4E00_9FFF = 1U << 27, //CJK Unified Ideographs
         R2E80_2EFF = 1U << 27, //CJK Radicals Supplement
         R2F00_2FDF = 1U << 27, //Kangxi Radicals
-        R2FF0_2FFF = 1U << 27, //Ideographic Description Characters
+        R2FF0_2FFF = 1U << 27, //Ideographic Description AllCharacters
         R3400_4DBF = 1U << 27, //CJK Unified Ideographs Extension A
         R20000_2A6DF = 1U << 27, //CJK Unified Ideographs Extension B
         R3190_319F = 1U << 27, //Kanbun

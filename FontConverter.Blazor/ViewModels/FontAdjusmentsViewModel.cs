@@ -4,7 +4,7 @@ using static FontConverter.SharedLibrary.Helpers.LVGLFontEnums;
 
 namespace FontConverter.Blazor.ViewModels;
 
-public class FontAdjusmentsViewModel
+public class FontAdjusmentsViewModel : BaseViewModel
 {
     
     public FontAdjusmentsViewModel()
@@ -30,72 +30,48 @@ public class FontAdjusmentsViewModel
     public bool AntiAlias
     {
         get { return _AntiAlias; }
-        set
-        {
-            if (value == _AntiAlias)
-                return;
-            _AntiAlias = value;
-        }
+        set { SetProperty(ref _AntiAlias, value); }
     }
     public bool Dither
     {
         get { return _Dither; }
-        set
-        {
-            if (value == _Dither)
-                return;
-            _Dither = value;
-        }
+        set { SetProperty(ref _Dither, value); }
     }
     public bool ColorFilter
     {
         get { return _ColorFilter; }
-        set
-        {
-            if (value == _ColorFilter)
-                return;
-            _ColorFilter = value;
-        }
+        set { SetProperty(ref _ColorFilter, value); }
     }
     public bool Shader
     {
         get { return _Shader; }
-        set
-        {
-            if (value == _Shader)
-                return;
-            _Shader = value;
-        }
+        set { SetProperty(ref _Shader, value); }
     }
     public GLYPH_STYLE Style
     {
         get { return _Style; }
-        set
-        {
-            if (value == _Style)
-                return;
-            _Style = value;
-        }
+        set { SetProperty(ref _Style, value); }
     }
     public int Gamma
     {
         get { return _Gamma; }
-        set
-        {
-            if (value == _Gamma)
-                return;
-            _Gamma = value;
-        }
+        set { SetProperty(ref _Gamma, value); }
     }
     public int Threshold
     {
         get { return _Threshold; }
-        set
-        {
-            if (value == _Threshold)
-                return;
-            _Threshold = value;
-        }
+        set { SetProperty(ref _Threshold, value); }
+    }
+
+    public void CleanData()
+    {
+        AntiAlias = true;
+        Dither = true;
+        ColorFilter = true;
+        Shader = true;
+        Style = GLYPH_STYLE.STYLE_FILL;
+        Gamma = 50;
+        Threshold = 0;
     }
 
 }

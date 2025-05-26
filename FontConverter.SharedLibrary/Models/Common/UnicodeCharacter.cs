@@ -10,16 +10,16 @@ public class UnicodeCharacter
 {
     public UnicodeCharacter()
     {
-        CodePoint = -1;
+        CodePoint = 0;
         Name = string.Empty;
     }
 
-    public UnicodeCharacter(int codePoint, string name) : this()
+    public UnicodeCharacter(uint codePoint, string name) : this()
     {
         CodePoint = codePoint;
         Name = name ?? string.Empty;
     }
 
-    public int CodePoint { get; set; }
+    public uint CodePoint { get; set; }
     public string Name { get; set; }
 }

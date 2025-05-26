@@ -10,22 +10,22 @@ public class UnicodeBlock
 {
     public UnicodeBlock()
     {
-        Start = -1;
-        End = -1;
+        Start = 0;
+        End = 0;
         Name = string.Empty;
         Characters = new();
     }
 
-    public UnicodeBlock(int start, int end, string name) : this()
+    public UnicodeBlock(uint start, uint end, string name) : this()
     {
         Start = start;
         End = end;
         Name = name ?? string.Empty;
     }
 
-    public int Start { get; set; }
-    public int End { get; set; }
+    public uint Start { get; set; }
+    public uint End { get; set; }
     public string Name { get; set; }
 
-    public SortedList<int, UnicodeCharacter> Characters { get; set; }
+    public SortedList<uint, UnicodeCharacter> Characters { get; set; }
 }

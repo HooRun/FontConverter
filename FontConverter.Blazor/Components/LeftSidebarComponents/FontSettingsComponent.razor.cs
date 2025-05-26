@@ -1,4 +1,5 @@
 ﻿using FontConverter.Blazor.Helpers;
+using FontConverter.Blazor.Interfaces;
 using FontConverter.Blazor.Services;
 using FontConverter.Blazor.ViewModels;
 using FontConverter.SharedLibrary;
@@ -11,7 +12,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FontConverter.Blazor.Components.LeftSidebarComponents;
 
-public partial class FontSettingsComponent : ComponentBase
+public partial class FontSettingsComponent : ComponentBase, IRerenderable
 {
     [Inject]
     public PredefinedDataService PredefinedData { get; set; } = default!;
@@ -61,8 +62,15 @@ public partial class FontSettingsComponent : ComponentBase
 
     protected override void OnInitialized()
     {
+        base.OnInitialized();
         editContext = new EditContext(MainViewModel.FontSettingsViewModel);
         messageStore = new ValidationMessageStore(editContext);
         ValidateForm();
+        MainViewModel.RegisterComponent(nameof(FontSettingsComponent), this);
+    }
+
+    public void ForceRender()
+    {
+        StateHasChanged();
     }
 }

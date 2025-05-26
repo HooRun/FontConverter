@@ -1,49 +1,85 @@
 ﻿using AutoMapper;
-using FontConverter.Blazor.ViewModels;
-using FontConverter.SharedLibrary;
+using FontConverter.Blazor.Components.LeftSidebarComponents;
+using FontConverter.Blazor.Interfaces;
 using FontConverter.SharedLibrary.Models;
+using Radzen.Blazor.Rendering;
 
-public class MainViewModel
+namespace FontConverter.Blazor.ViewModels;
+
+public class MainViewModel : BaseViewModel
 {
-    private readonly IMapper _mapper;
-
-    public MainViewModel(
-        IMapper mapper,
-        OpenTypeFont openTypeFont,
-        LVGLFont lvglFont)
+    public MainViewModel(IMapper mapper)
     {
         _mapper = mapper;
-        OpenTypeFont = openTypeFont;
-        LVGLFont = lvglFont;
-        FontSettingsViewModel = new();
-        FontAdjusmentsViewModel = new();
-        FontContentsViewModel = new();
-        FontInformationsViewModel = new();
+        _OpenTypeFont = new();
+        _LVGLFont = new();
+        _FontSettingsViewModel = new();
+        _FontAdjusmentsViewModel = new();
+        _FontContentsViewModel = new();
+        _FontInformationsViewModel = new();
 
         MappingsFromModelToViewModel();
     }
 
-    public OpenTypeFont OpenTypeFont { get; set; }
-    public LVGLFont LVGLFont { get; set; }
-    public FontSettingsViewModel FontSettingsViewModel { get; set; }
-    public FontAdjusmentsViewModel FontAdjusmentsViewModel { get; set; }
-    public FontContentsViewModel FontContentsViewModel { get; set; }
-    public FontInformationsViewModel FontInformationsViewModel { get; set; }
+    private readonly IMapper _mapper;
+    private OpenTypeFont _OpenTypeFont;
+    private LVGLFont _LVGLFont;
+    private FontSettingsViewModel _FontSettingsViewModel;
+    private FontAdjusmentsViewModel _FontAdjusmentsViewModel;
+    private FontContentsViewModel _FontContentsViewModel;
+    private FontInformationsViewModel _FontInformationsViewModel;
+
+    public OpenTypeFont OpenTypeFont
+    {
+        get { return _OpenTypeFont; }
+        set { SetProperty(ref _OpenTypeFont, value); }
+    }
+    public LVGLFont LVGLFont
+    {
+        get { return _LVGLFont; }
+        set { SetProperty(ref _LVGLFont, value); }
+    }
+    public FontSettingsViewModel FontSettingsViewModel
+    {
+        get { return _FontSettingsViewModel; }
+        set { SetProperty(ref _FontSettingsViewModel, value); }
+    }
+    public FontAdjusmentsViewModel FontAdjusmentsViewModel
+    {
+        get { return _FontAdjusmentsViewModel; }
+        set { SetProperty(ref _FontAdjusmentsViewModel, value); }
+    }
+    public FontContentsViewModel FontContentsViewModel
+    {
+        get { return _FontContentsViewModel; }
+        set { SetProperty(ref _FontContentsViewModel, value); }
+    }
+    public FontInformationsViewModel FontInformationsViewModel
+    {
+        get { return _FontInformationsViewModel; }
+        set { SetProperty(ref _FontInformationsViewModel, value); }
+    }
 
     public void MappingsFromModelToViewModel()
     {
-        FontSettingsViewModel = _mapper.Map<FontSettingsViewModel>(LVGLFont.FontSettings);
-        FontAdjusmentsViewModel = _mapper.Map<FontAdjusmentsViewModel>(LVGLFont.FontAdjusments);
-        FontContentsViewModel = _mapper.Map<FontContentsViewModel>(LVGLFont.FontContents);
-        FontInformationsViewModel = _mapper.Map<FontInformationsViewModel>(LVGLFont.FontInformations);
+        _mapper.Map(LVGLFont.FontSettings, FontSettingsViewModel);
+        _mapper.Map(LVGLFont.FontAdjusments, FontAdjusmentsViewModel);
+        _mapper.Map(LVGLFont.FontContents, FontContentsViewModel);
+        _mapper.Map(LVGLFont.FontInformations, FontInformationsViewModel);
+
+        RerenderMany(
+            nameof(FontSettingsComponent),
+            nameof(FontAdjusmentsComponent),
+            nameof(FontContentsComponent),
+            nameof(FontInformationsComponent));
     }
 
     public void MappingsFromViewModelToModel()
     {
-        LVGLFont.FontSettings = _mapper.Map<LVGLFontSettings>(FontSettingsViewModel);
-        LVGLFont.FontAdjusments = _mapper.Map<LVGLFontAdjusments>(FontAdjusmentsViewModel);
-        LVGLFont.FontContents = _mapper.Map<LVGLFontContents>(FontContentsViewModel);
-        LVGLFont.FontInformations = _mapper.Map<LVGLFontInformations>(FontInformationsViewModel);
+        _mapper.Map(FontSettingsViewModel, LVGLFont.FontSettings);
+        _mapper.Map(FontAdjusmentsViewModel, LVGLFont.FontAdjusments);
+        //_mapper.Map(FontContentsViewModel, LVGLFont.FontContents);
+        //_mapper.Map(FontInformationsViewModel, LVGLFont.FontInformations);
     }
 
     public async Task SelectTreeItemAsync(FontContentViewModel selectedItem)
@@ -63,6 +99,41 @@ public class MainViewModel
         {
             node.IsSelected = node == selectedItem;
             UpdateTreeSelection(node.Children, selectedItem);
+        }
+    }
+
+
+    private readonly Dictionary<string, IRerenderable> _components = new();
+
+    public void RegisterComponent(string name, IRerenderable? component)
+    {
+        if (component != null)
+        {
+            _components[name] = component;
+        }  
+    }
+
+    public void Rerender(string name)
+    {
+        if (_components.TryGetValue(name, out var component))
+        {
+            component.ForceRender();
+        }
+    }
+
+    public void RerenderMany(params string[] names)
+    {
+        foreach (var name in names)
+        {
+            Rerender(name);
+        }
+    }
+
+    public void RerenderAll()
+    {
+        foreach (var c in _components.Values)
+        {
+            c.ForceRender();
         }
     }
 }

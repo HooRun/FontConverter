@@ -1,8 +1,13 @@
-﻿using FontConverter.SharedLibrary.Helpers;
+﻿using FontConverter.Blazor.Components.LeftSidebarComponents;
+using FontConverter.Blazor.Interfaces;
+using FontConverter.Blazor.Services;
+using FontConverter.Blazor.ViewModels;
+using FontConverter.SharedLibrary.Helpers;
 using FontConverter.SharedLibrary.Models;
 using Microsoft.AspNetCore.Components;
 using Radzen;
 using SkiaSharp;
+using System.Threading;
 using static FontConverter.SharedLibrary.Helpers.FontTablesEnumHelper;
 using static FontConverter.SharedLibrary.Helpers.LVGLFontEnums;
 
@@ -12,6 +17,9 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
 {
     [Inject]
     public DialogService dialogService { get; set; } = default!;
+
+    [Inject]
+    public PredefinedDataService PredefinedData { get; set; } = default!;
 
     [Inject]
     public MainViewModel MainViewModel { get; set; } = default!;
@@ -65,6 +73,25 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
     private ProgressBarStyle renderingGlyphsProgressStyle = ProgressBarStyle.Primary;
     private bool renderingGlyphsIsValid = false;
 
+    private bool organizingGlyphsProgressShowValue = false;
+    private double organizingGlyphsProgressValue = 100;
+    private double organizingGlyphsProgressMinValue = 0;
+    private double organizingGlyphsProgressMaxValue = 100;
+    private ProgressBarMode organizingGlyphsProgressMode = ProgressBarMode.Indeterminate;
+    private ProgressBarStyle organizingGlyphsProgressStyle = ProgressBarStyle.Primary;
+    private bool organizingGlyphsIsValid = false;
+
+    private bool finalizingFontProgressShowValue = false;
+    private double finalizingFontProgressValue = 100;
+    private double finalizingFontProgressMinValue = 0;
+    private double finalizingFontProgressMaxValue = 100;
+    private ProgressBarMode finalizingFontProgressMode = ProgressBarMode.Indeterminate;
+    private ProgressBarStyle finalizingFontProgressStyle = ProgressBarStyle.Primary;
+    private bool finalizingFontIsValid = false;
+
+    private bool alertWarningApplyVisibilty = false;
+
+    SKFont? font;
     private SortedList<OpenTypeTables, OpenTypeTableBinaryData> tables = new();
     private SortedList<int, LVGLGlyphBitmapData> glyphsRenderData = new();
 
@@ -73,31 +100,43 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         if (FontFile is not null)
         {
 
-            Typeface = await GetOpenTypeFontFace(FontFile);
+            Typeface = await GetOpenTypeFontFace(FontFile, FontLoadingCancellationToken!.Token);
 
             if (Typeface is not null)
-                await UpdateFontNameSection();
+                await UpdateFontNameSection(FontLoadingCancellationToken!.Token);
 
             if (fontIsValid)
-                await UpdateTablescountSection();
+                await UpdateTablescountSection(FontLoadingCancellationToken!.Token);
 
             if (tablesCountIsValid)
-                await UpdateParseTablesSection();
+                await UpdateParseTablesSection(FontLoadingCancellationToken!.Token);
 
             if (parsingTablesIsValid)
-                await UpdateGlyphCountsSection();
+                await UpdateGlyphCountsSection(FontLoadingCancellationToken!.Token);
 
             if (glyphCountsIsValid)
-                await UpdateRenderGlyphsSection();
+                await UpdateRenderGlyphsSection(FontLoadingCancellationToken!.Token);
 
-            MainViewModel.LVGLFont.FontInformations.FontName = Typeface?.FamilyName ?? string.Empty;
+            if (renderingGlyphsIsValid)
+                await UpdateOrganizingGlyphsSection(FontLoadingCancellationToken!.Token);
 
-            applyButonDisabled = false;
+            if (organizingGlyphsIsValid)
+                await UpdateFinalizingFontSection(FontLoadingCancellationToken!.Token);
+
+            if (finalizingFontIsValid)
+            {
+                alertWarningApplyVisibilty = true;
+                applyButonDisabled = false;
+            }
+
+            font?.Dispose();
+            font = null;
         }
     }
 
-    private async Task<SKTypeface?> GetOpenTypeFontFace(Radzen.FileInfo? fontFile)
+    private async Task<SKTypeface?> GetOpenTypeFontFace(Radzen.FileInfo? fontFile, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         SKTypeface? typeface= null;
         if (fontFile is null) return typeface;
         using (var memoryStream = new MemoryStream())
@@ -109,7 +148,7 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         return typeface;
     }
 
-    private async Task UpdateFontNameSection()
+    private async Task UpdateFontNameSection(CancellationToken cancellationToken = default)
     {
         fontNameClass = textIsValidClass;
         fontNameText = Typeface!.FamilyName;
@@ -118,8 +157,9 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         await InvokeAsync(StateHasChanged);
     }
 
-    private async Task UpdateTablescountSection()
+    private async Task UpdateTablescountSection(CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         tablesCountProgressMode = ProgressBarMode.Determinate;
         await InvokeAsync(StateHasChanged);
         tablesCountProgressValue = 0;
@@ -130,12 +170,12 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
             if (message.StartsWith("Processed"))
             {
                 tablesCountProgressValue++;
-                _ = InvokeAsync(StateHasChanged);
+                InvokeAsync(StateHasChanged);
             }
         });
         try
         {
-            tables = await ParseTablesBinaryDataHelper.GetFontTablesAsync(Typeface, progressTableList, FontLoadingCancellationToken!.Token).ConfigureAwait(false);
+            tables = await ParseTablesBinaryDataHelper.GetFontTablesAsync(Typeface, progressTableList, cancellationToken).ConfigureAwait(false);
             tablesCountIsValid = tables.Count > 0;
         }
         catch (Exception)
@@ -146,8 +186,9 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         await InvokeAsync(StateHasChanged);
     }
 
-    private async Task UpdateParseTablesSection()
+    private async Task UpdateParseTablesSection(CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         parsingTablesProgressMode = ProgressBarMode.Determinate;
         await InvokeAsync(StateHasChanged);
         parsingTablesProgressValue = 0;
@@ -156,12 +197,12 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         await InvokeAsync(StateHasChanged);
         var progressTablesData = new Progress<(string tableName, double percentage)>(report =>
         {
-            parsingTablesProgressValue = Math.Round(report.percentage);
-            _ = InvokeAsync(StateHasChanged);
+            parsingTablesProgressValue = Math.Round(report.percentage, 2);
+            InvokeAsync(StateHasChanged);
         });
         try
         {
-            MainViewModel.OpenTypeFont = await ParseTablesDataHelper.ParseTablesAsync(tables, progressTablesData, FontLoadingCancellationToken!.Token).ConfigureAwait(false);
+            MainViewModel.OpenTypeFont = await ParseTablesDataHelper.ParseTablesAsync(tables, progressTablesData, cancellationToken).ConfigureAwait(false);
             parsingTablesIsValid = MainViewModel.OpenTypeFont.Tables.Count > 0;
         }
         catch (Exception)
@@ -173,8 +214,9 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         await InvokeAsync(StateHasChanged);
     }
 
-    private async Task UpdateGlyphCountsSection()
+    private async Task UpdateGlyphCountsSection(CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         glyphCountsProgressVisibility = false;
         if (MainViewModel.OpenTypeFont.MaxpTable.NumGlyphs > 0)
         {
@@ -185,8 +227,9 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         await InvokeAsync(StateHasChanged);
     }
 
-    private async Task UpdateRenderGlyphsSection()
+    private async Task UpdateRenderGlyphsSection(CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         renderingGlyphsProgressMode = ProgressBarMode.Determinate;
         await InvokeAsync(StateHasChanged);
         renderingGlyphsProgressValue = 0;
@@ -200,16 +243,14 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         });
         try
         {
-            SKFont font = new SKFont(Typeface, MainViewModel.LVGLFont.FontSettings.FontSize);
+            font = new SKFont(Typeface, MainViewModel.LVGLFont.FontSettings.FontSize);
             glyphsRenderData.Clear();
             glyphsRenderData = await RenderGlyphsToBitmapArrayHelper.RenderGlyphsToBitmapArrayAsync(
                 font, 
-                MainViewModel.OpenTypeFont.GlyfTable, 
-                MainViewModel.LVGLFont.FontAdjusments,
-                MainViewModel.LVGLFont.FontSettings.FontSize,
-                MainViewModel.LVGLFont.FontSettings.FontBitPerPixel, 
+                MainViewModel.OpenTypeFont,
+                MainViewModel.LVGLFont,
                 progressRenderGlyphs, 
-                FontLoadingCancellationToken!.Token).ConfigureAwait(false);
+                cancellationToken).ConfigureAwait(false);
             renderingGlyphsIsValid = glyphsRenderData.Count > 0;
         }
         catch (Exception)
@@ -220,4 +261,79 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         renderingGlyphsProgressStyle = renderingGlyphsIsValid ? ProgressBarStyle.Success : ProgressBarStyle.Danger;
         await InvokeAsync(StateHasChanged);
     }
+
+    private async Task UpdateOrganizingGlyphsSection(CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        organizingGlyphsProgressMode = ProgressBarMode.Determinate;
+        await InvokeAsync(StateHasChanged);
+        organizingGlyphsProgressValue = 0;
+        organizingGlyphsProgressMaxValue = 100;
+        organizingGlyphsProgressShowValue = true;
+        await InvokeAsync(StateHasChanged);
+        var progressOrganizeGlyphs = new Progress<(int glyphIndex, double percentage)>(report =>
+        {
+            organizingGlyphsProgressValue = Math.Round(report.percentage, 2);
+            _ = InvokeAsync(StateHasChanged);
+        });
+        try
+        {
+            SortedList<int, LVGLGlyph> glyphs = await OrganizeGlyphsHelper.OrganizeGlyphsAsync(
+                PredefinedData,
+                MainViewModel.OpenTypeFont,
+                MainViewModel.LVGLFont,
+                glyphsRenderData,
+                progressOrganizeGlyphs,
+                cancellationToken).ConfigureAwait(false);
+            organizingGlyphsIsValid = glyphs.Count > 0;
+            if (organizingGlyphsIsValid)
+                MainViewModel.LVGLFont.Glyphs = glyphs;
+        }
+        catch (Exception ex)
+        {
+            organizingGlyphsIsValid = false;
+            //throw;
+        }
+        organizingGlyphsProgressStyle = organizingGlyphsIsValid ? ProgressBarStyle.Success : ProgressBarStyle.Danger;
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private async Task UpdateFinalizingFontSection(CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        finalizingFontProgressMode = ProgressBarMode.Determinate;
+        await InvokeAsync(StateHasChanged);
+        finalizingFontProgressValue = 0;
+        finalizingFontProgressMaxValue = 100;
+        finalizingFontProgressShowValue = true;
+        await InvokeAsync(StateHasChanged);
+        var progressFinalizingFont = new Progress<double>(report =>
+        {
+            finalizingFontProgressValue = Math.Round(report, 2);
+            _ = InvokeAsync(StateHasChanged);
+        });
+        try
+        {
+            if (Typeface is not null)
+            {
+                await FinalizingFontHelper.FinalizingFontAsync(
+                    Typeface,
+                    font,
+                    MainViewModel.OpenTypeFont,
+                    MainViewModel.LVGLFont,
+                    progressFinalizingFont,
+                    cancellationToken).ConfigureAwait(false);
+                finalizingFontIsValid = true;
+            }
+        }
+        catch (Exception ex)
+        {
+            finalizingFontIsValid = false;
+            //throw;
+        }
+        finalizingFontProgressStyle = finalizingFontIsValid ? ProgressBarStyle.Success : ProgressBarStyle.Danger;
+        await InvokeAsync(StateHasChanged);
+    }
+
+    
 }

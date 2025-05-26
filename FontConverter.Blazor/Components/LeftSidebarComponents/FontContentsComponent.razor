@@ -16,14 +16,15 @@
                                          HasChildren="@(item => ((FontContentViewModel)item).Children.Any())"
                                          Selected="@(item => ((FontContentViewModel)item).IsSelected)">
                             <Template>
-                                <RadzenStack Orientation="Orientation.Horizontal" Gap="5">
+                                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="5">
                                     <RadzenIcon Icon="@(((FontContentViewModel)context.Value).Icon)"
                                                 class="filled-icon"
-                                                IconStyle="IconStyle.Dark" />
+                                                IconStyle="IconStyle.Dark"/>
                                     <RadzenBadge Shade="Shade.Lighter"
                                                  BadgeStyle="BadgeStyle.Primary"
-                                                 Text="@(((FontContentViewModel)context.Value).Count.ToString())" />
-                                    <span>@(((FontContentViewModel)context.Value).Header)</span>
+                                                 Text="@(string.Format("{0:N0}", ((FontContentViewModel)context.Value).Count))"
+                                                 Style="font-size: 10px !important;"/>
+                                    <span style="font-size:10px;">@(((FontContentViewModel)context.Value).Header)</span>
                                 </RadzenStack>
                             </Template>
                         </RadzenTreeLevel>

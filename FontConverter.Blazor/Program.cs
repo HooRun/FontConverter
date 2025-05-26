@@ -1,6 +1,7 @@
 using FontConverter.Blazor;
 using FontConverter.Blazor.Helpers;
 using FontConverter.Blazor.Services;
+using FontConverter.Blazor.ViewModels;
 using FontConverter.SharedLibrary.Models;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -14,11 +15,9 @@ builder.Services.AddRadzenComponents();
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 builder.Services.AddSingleton<PredefinedDataService>();
-builder.Services.AddSingleton<OpenTypeFont>();
-builder.Services.AddSingleton<LVGLFont>();
 builder.Services.AddSingleton<FontNameValidatorHelper>();
 
-builder.Services.AddSingleton<MainViewModel>();
+builder.Services.AddScoped<MainViewModel>();
 
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));

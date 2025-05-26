@@ -12,7 +12,7 @@ public static class ParseOS2TableHelper
         cancellationToken.ThrowIfCancellationRequested();
         FontOS2Table os2Table = new()
         {
-            FsType = new List<FsTypeFlags>(8), 
+            FsType = new List<FsTypeFlags>(8),
             UnicodeRange1 = new List<UnicodeRange1>(32),
             UnicodeRange2 = new List<UnicodeRange2>(32),
             UnicodeRange3 = new List<UnicodeRange3>(32),

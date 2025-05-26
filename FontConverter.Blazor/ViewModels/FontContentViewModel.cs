@@ -2,7 +2,7 @@
 
 namespace FontConverter.Blazor.ViewModels;
 
-public class FontContentViewModel
+public class FontContentViewModel : BaseViewModel
 {
     public FontContentViewModel()
     {
@@ -22,52 +22,27 @@ public class FontContentViewModel
     public string Header
     {
         get { return _Header; }
-        set
-        {
-            if (value == _Header)
-                return;
-            _Header = value;
-        }
+        set { SetProperty(ref _Header, value); }
     }
     public string Icon
     {
         get { return _Icon; }
-        set
-        {
-            if (value == _Icon)
-                return;
-            _Icon = value;
-        }
+        set { SetProperty(ref _Icon, value); }
     }
     public int Count
     {
         get { return _Count; }
-        set
-        {
-            if (value == _Count)
-                return;
-            _Count = value;
-        }
+        set { SetProperty(ref _Count, value); }
     }
     public bool IsSelected
     {
         get { return _IsSelected; }
-        set
-        {
-            if (value == _IsSelected)
-                return;
-            _IsSelected = value;
-        }
+        set { SetProperty(ref _IsSelected, value); }
     }
     public SortedList<string, FontContentViewModel> Contents
     {
         get { return _Contents; }
-        set
-        {
-            if (value == _Contents)
-                return;
-            _Contents = value;
-        }
+        set { SetProperty(ref _Contents, value); }
     }
 
     public IEnumerable<FontContentViewModel> Children => _Contents?.Values ?? Enumerable.Empty<FontContentViewModel>();

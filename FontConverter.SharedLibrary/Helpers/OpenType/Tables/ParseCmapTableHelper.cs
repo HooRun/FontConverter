@@ -57,6 +57,13 @@ public static class ParseCmapTableHelper
                     foreach (var (unicode, glyph) in chunk)
                     {
                         cmapTable.UnicodeToGlyphMap[unicode] = glyph;
+                        if (!cmapTable.GlyphToUnicodeMap.TryGetValue(glyph, out var list))
+                        {
+                            list = new List<uint>();
+                            cmapTable.GlyphToUnicodeMap[glyph] = list;
+                        }
+
+                        list.Add(unicode);
                     }
                     await Task.Delay(1).ConfigureAwait(false);
                 }

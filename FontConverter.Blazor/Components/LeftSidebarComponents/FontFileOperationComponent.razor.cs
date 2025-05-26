@@ -1,4 +1,5 @@
 ﻿using FontConverter.Blazor.Components.FontAnalayzerDialogComponents;
+using FontConverter.Blazor.ViewModels;
 using Microsoft.AspNetCore.Components;
 using Radzen;
 using SkiaSharp;
@@ -35,48 +36,71 @@ public partial class FontFileOperationComponent : ComponentBase
         fontFileType = Path.GetExtension(fontFile.Name).ToLower();
     }
 
-    
+
 
     private async Task OnBusyClick()
     {
-        busy = true;
-        if (fontFile != null)
+        try
         {
-            SKTypeface? typeface = null;
-            CancellationTokenSource? fontLoadingCancellationToken = new CancellationTokenSource();
-            MainViewModel.MappingsFromViewModelToModel();
-            var dialogResult = await dialogService.OpenAsync<FontAnalayzerDialogComponent>( string.Empty,
-                new Dictionary<string, object>
-                {
-                    { "FontFile", fontFile },
-                    { "Typeface", typeface! },
-                    { "FontLoadingCancellationToken", fontLoadingCancellationToken! },
-                },
-                new DialogOptions
-                {
-                    ShowClose = false,
-                    ShowTitle = false,
-                }
-            );
-            fontLoadingCancellationToken.CancelAfter(1);
-            fontLoadingCancellationToken.Dispose();
-            fontLoadingCancellationToken = null;
-            typeface?.Dispose();
-
-            if (dialogResult is not null && dialogResult is bool == true)
+            busy = true;
+            if (fontFile != null)
             {
-                MainViewModel.MappingsFromModelToViewModel();
+                SKTypeface? typeface = null;
+                CancellationTokenSource? fontLoadingCancellationToken = new CancellationTokenSource();
+                MainViewModel.MappingsFromViewModelToModel();
+                var dialogResult = await dialogService.OpenAsync<FontAnalayzerDialogComponent>(
+                    string.Empty,
+                    new Dictionary<string, object>
+                    {
+                        { "FontFile", fontFile },
+                        { "Typeface", typeface! },
+                        { "FontLoadingCancellationToken", fontLoadingCancellationToken },
+                    },
+                    new DialogOptions
+                    {
+                        ShowClose = false,
+                        ShowTitle = false,
+                    });
+
+                if (dialogResult is bool result && result)
+                {
+                    MainViewModel.MappingsFromModelToViewModel();
+                }
+                else
+                {
+                    MainViewModel.MappingsFromViewModelToModel();
+                }
+                await fontLoadingCancellationToken.CancelAsync();
+                fontLoadingCancellationToken?.Dispose();
+                fontLoadingCancellationToken = null;
+                typeface?.Dispose();
+                typeface = null;
             }
             else
             {
-                MainViewModel.MappingsFromViewModelToModel();
+                NotificationService.Notify(new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Warning,
+                    Summary = "Get Font Data",
+                    Detail = "Please Select Font",
+                    ShowProgress = true
+                });
             }
-            await InvokeAsync(StateHasChanged);
         }
-        else
+        catch (Exception ex)
         {
-            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Warning, Summary = "Get Font Data", Detail = "Please Select Font", ShowProgress = true });
+            NotificationService.Notify(new NotificationMessage
+            {
+                Severity = NotificationSeverity.Error,
+                Summary = "Get Font Data",
+                Detail = $"Error: {ex.Message}",
+                ShowProgress = true
+            });
         }
-        busy = false;
+        finally
+        {
+            await InvokeAsync(StateHasChanged);
+            busy = false;
+        }
     }
 }

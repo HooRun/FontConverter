@@ -12,14 +12,14 @@ public static class ParseHmtxTableHelper
         cancellationToken.ThrowIfCancellationRequested();
         FontHmtxTable hmtxTable = new()
         {
-            GlyphMetrics = new List<GlyphHorizontalMetric>(numGlyphs) 
+            GlyphMetrics = new List<GlyphHorizontalMetric>(numGlyphs)
         };
 
         using var ms = new MemoryStream(tableBinaryData.RawData);
         using var reader = new BinaryReader(ms);
 
         ushort lastAdvanceWidth = 0;
-        
+
 
         // Full metrics
         for (int i = 0; i < numberOfHMetrics; i += chunkSize)
@@ -58,7 +58,7 @@ public static class ParseHmtxTableHelper
             await Task.Delay(1).ConfigureAwait(false);
         }
 
-        
+
         return hmtxTable;
     }
 }

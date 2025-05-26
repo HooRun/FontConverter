@@ -22,6 +22,9 @@ public static class InitialUnicodeBlockCollectionHelper
             unicodeBlockCollection.Blocks = await loadBlocksTask;
             List<UnicodeCharacter> characters = await loadCharactersTask;
 
+            unicodeBlockCollection.AllBlocks = unicodeBlockCollection.Blocks.ToDictionary(b => b.Key, b => b.Value);
+            unicodeBlockCollection.AllCharacters = characters.ToDictionary(c => c.CodePoint, c => c);
+
             var sortedBlocks = unicodeBlockCollection.Blocks
                 .Select(b => (Range: b.Key, Block: b.Value))
                 .OrderBy(b => b.Range.Start)
@@ -29,7 +32,7 @@ public static class InitialUnicodeBlockCollectionHelper
 
             Parallel.ForEach(characters, character =>
             {
-                int codePoint = character.CodePoint;
+                uint codePoint = character.CodePoint;
                 UnicodeBlock? containingBlock = FindContainingBlock(sortedBlocks, codePoint);
                 if (containingBlock != null)
                 {
@@ -52,7 +55,7 @@ public static class InitialUnicodeBlockCollectionHelper
         return unicodeBlockCollection;
     }
 
-    private static UnicodeBlock? FindContainingBlock((ValueTuple<int, int> Range, UnicodeBlock Block)[] sortedBlocks, int codePoint)
+    private static UnicodeBlock? FindContainingBlock((ValueTuple<uint, uint> Range, UnicodeBlock Block)[] sortedBlocks, uint codePoint)
     {
         int left = 0, right = sortedBlocks.Length - 1;
         while (left <= right)
@@ -69,9 +72,9 @@ public static class InitialUnicodeBlockCollectionHelper
         return null;
     }
 
-    public static async Task<SortedList<(int Start, int End), UnicodeBlock>> InitialUnicodeBlocksAsync(string resourceName, CancellationToken cancellationToken = default)
+    public static async Task<SortedList<(uint Start, uint End), UnicodeBlock>> InitialUnicodeBlocksAsync(string resourceName, CancellationToken cancellationToken = default)
     {
-        var blocks = new SortedList<(int Start, int End), UnicodeBlock>();
+        var blocks = new SortedList<(uint Start, uint End), UnicodeBlock>();
         try
         {
             cancellationToken.ThrowIfCancellationRequested();
@@ -95,8 +98,8 @@ public static class InitialUnicodeBlockCollectionHelper
                 if (parts.Length < 2) return;
 
                 var bounds = parts[0].Split("..", StringSplitOptions.TrimEntries);
-                int start = Convert.ToInt32(bounds[0], 16);
-                int end = Convert.ToInt32(bounds[1], 16);
+                uint start = Convert.ToUInt32(bounds[0], 16);
+                uint end = Convert.ToUInt32(bounds[1], 16);
                 string name = parts[1];
 
                 lock (blocks)
@@ -145,7 +148,7 @@ public static class InitialUnicodeBlockCollectionHelper
                 var parts = line.Split(';', StringSplitOptions.TrimEntries);
                 if (parts.Length < 2) return;
 
-                int codePoint = Convert.ToInt32(parts[0], 16);
+                uint codePoint = Convert.ToUInt32(parts[0], 16);
                 string name = parts[1];
                 string alternateName = parts.Length > 10 ? parts[10] : string.Empty;
 

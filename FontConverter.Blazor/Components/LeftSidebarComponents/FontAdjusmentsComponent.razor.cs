@@ -1,4 +1,5 @@
-﻿using FontConverter.Blazor.Services;
+﻿using FontConverter.Blazor.Interfaces;
+using FontConverter.Blazor.Services;
 using FontConverter.Blazor.ViewModels;
 using FontConverter.SharedLibrary;
 using FontConverter.SharedLibrary.Helpers;
@@ -7,7 +8,7 @@ using Radzen;
 
 namespace FontConverter.Blazor.Components.LeftSidebarComponents;
 
-public partial class FontAdjusmentsComponent : ComponentBase
+public partial class FontAdjusmentsComponent : ComponentBase, IRerenderable
 {
     [Inject]
     public PredefinedDataService PredefinedData { get; set; } = default!;
@@ -21,4 +22,14 @@ public partial class FontAdjusmentsComponent : ComponentBase
     Variant variant = Variant.Outlined;
     bool floatFieldLabel = true;
 
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        MainViewModel.RegisterComponent(nameof(FontAdjusmentsComponent), this);
+    }
+
+    public void ForceRender()
+    {
+        StateHasChanged();
+    }
 }

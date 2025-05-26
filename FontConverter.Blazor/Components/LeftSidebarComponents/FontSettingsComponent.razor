@@ -15,7 +15,7 @@
                                      Text="Font Name:"
                                      Variant="@variant">
                         <ChildContent>
-                            <RadzenTextBox @bind-Value=@MainViewModel.FontSettingsViewModel.FontName 
+                            <RadzenTextBox @bind-Value=@MainViewModel.FontSettingsViewModel.FontName
                                 @oninput="OnFontNameChanged"/>
                         </ChildContent>
                         <Helper>
@@ -40,7 +40,7 @@
                         <ChildContent>
                             <RadzenNumeric Min="8"
                                            Max="128"
-                                           @bind-Value=@MainViewModel.FontSettingsViewModel.FontSize />
+                                           @bind-Value=@MainViewModel.FontSettingsViewModel.FontSize/>
                         </ChildContent>
                     </RadzenFormField>
                     @* Sub Pixel *@

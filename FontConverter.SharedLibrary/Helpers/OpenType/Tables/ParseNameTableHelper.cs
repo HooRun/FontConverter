@@ -86,7 +86,7 @@ public static class ParseNameTableHelper
                         reader.BaseStream.Position = pos;
                     }
                 }
-                
+
             }
         }
 

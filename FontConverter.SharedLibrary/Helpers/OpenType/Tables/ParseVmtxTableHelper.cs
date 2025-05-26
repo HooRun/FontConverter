@@ -12,14 +12,14 @@ public static class ParseVmtxTableHelper
         cancellationToken.ThrowIfCancellationRequested();
         FontVmtxTable vmtxTable = new()
         {
-            GlyphMetrics = new List<GlyphVerticalMetric>(numGlyphs) 
+            GlyphMetrics = new List<GlyphVerticalMetric>(numGlyphs)
         };
 
         using var ms = new MemoryStream(tableBinaryData.RawData);
         using var reader = new BinaryReader(ms);
 
         ushort lastAdvanceHeight = 0;
-        
+
         // Full metrics
         for (int i = 0; i < numOfLongVerMetrics; i += chunkSize)
         {

@@ -3,7 +3,7 @@ using static FontConverter.SharedLibrary.Helpers.LVGLFontEnums;
 
 namespace FontConverter.Blazor.ViewModels;
 
-public class FontSettingsViewModel
+public class FontSettingsViewModel : BaseViewModel
 {
     public FontSettingsViewModel()
     {
@@ -23,53 +23,37 @@ public class FontSettingsViewModel
     public string FontName 
     { 
         get { return _FontName; } 
-        set 
-        {
-            if (value == _FontName)
-                return;
-            _FontName = value; 
-        }
+        set { SetProperty(ref _FontName, value); }
     }
     public BIT_PER_PIXEL_ENUM FontBitPerPixel
     {
         get { return _FontBitPerPixel; }
-        set 
-        {
-            if (value == _FontBitPerPixel)
-                return;
-            _FontBitPerPixel = value; 
-        }
+        set { SetProperty(ref _FontBitPerPixel, value); }
     }
     public int FontSize
     {
         get { return _FontSize; }
-        set 
-        {
-            if (value == _FontSize)
-                return;
-            _FontSize = value; 
-        }
+        set { SetProperty(ref _FontSize, value); }
     }
     public SUB_Pixel_ENUM FontSubPixel
     {
         get { return _FontSubPixel; }
-        set 
-        {
-            if (value == _FontSubPixel)
-                return;
-            _FontSubPixel = value; 
-        }
+        set { SetProperty(ref _FontSubPixel, value); }
     }
     public string Fallback
     {
         get { return _Fallback; }
-        set 
-        {
-            if (value == _Fallback)
-                return;
-            _Fallback = value; 
-        }
+        set { SetProperty(ref _Fallback, value); }
     }
 
+
+    public void CleanData()
+    {
+        FontName = string.Empty;
+        FontBitPerPixel = BIT_PER_PIXEL_ENUM.BPP_8;
+        FontSize = 12;
+        FontSubPixel = SUB_Pixel_ENUM.SUB_PIXEL_NONE;
+        Fallback = string.Empty;
+    }
     
 }

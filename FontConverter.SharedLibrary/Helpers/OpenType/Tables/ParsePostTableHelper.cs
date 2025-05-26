@@ -65,7 +65,7 @@ public static class ParsePostTableHelper
         }
         else if (postTable.Version == 2.5f)
         {
-            
+
             for (int i = 0; i < numGlyphs; i += chunkSize)
             {
                 cancellationToken.ThrowIfCancellationRequested();

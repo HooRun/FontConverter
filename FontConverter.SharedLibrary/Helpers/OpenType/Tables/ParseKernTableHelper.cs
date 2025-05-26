@@ -59,7 +59,7 @@ public static class ParseKernTableHelper
         cancellationToken.ThrowIfCancellationRequested();
         var subtable = new KernFormat0Subtable
         {
-            Pairs = new List<KernPair>() 
+            Pairs = new List<KernPair>()
         };
 
         ushort nPairs = ReadUInt16BigEndian(reader);
@@ -118,7 +118,7 @@ public static class ParseKernTableHelper
 
         reader.BaseStream.Seek(arrayOffset, SeekOrigin.Begin);
         subtable.KerningValues = new ushort[subtable.NumLeftClasses, subtable.NumRightClasses];
-        
+
         for (int i = 0; i < subtable.NumLeftClasses; i += chunkSize)
         {
             cancellationToken.ThrowIfCancellationRequested();

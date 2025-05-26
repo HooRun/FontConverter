@@ -11,14 +11,14 @@ public static class ParseLocaTableHelper
         cancellationToken.ThrowIfCancellationRequested();
         FontLocaTable locaTable = new()
         {
-            GlyphOffsets = new List<uint>(numGlyphs + 1) 
+            GlyphOffsets = new List<uint>(numGlyphs + 1)
         };
 
         using var ms = new MemoryStream(tableBinaryData.RawData);
         using var reader = new BinaryReader(ms);
 
         int count = numGlyphs + 1;
-        
+
 
         if (locFormat == 0)
         {

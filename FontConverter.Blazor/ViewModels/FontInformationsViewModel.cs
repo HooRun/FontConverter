@@ -1,166 +1,118 @@
 ﻿namespace FontConverter.Blazor.ViewModels;
 
-public class FontInformationsViewModel
+public class FontInformationsViewModel : BaseViewModel
 {
     public FontInformationsViewModel()
     {
         _FontName = string.Empty;
-        _LineHeight = 0;
-        _BaseLine = 0;
-        _CharWidthMax = 0;
-        _AdvanceWidthMax = 0;
-        _UnderlinePosition = 0;
-        _UnderlineThickness = 0;
-        _Ascent = 0;
-        _Descent = 0;
-        _XMin = 0;
-        _YMin = 0;
-        _XMax = 0;
-        _YMax = 0;
+        _LineHeight = string.Empty;
+        _BaseLine = string.Empty;
+        _CharWidthMax = string.Empty;
+        _AdvanceWidthMax = string.Empty;
+        _UnderlinePosition = string.Empty;
+        _UnderlineThickness = string.Empty;
+        _Ascent = string.Empty;
+        _Descent = string.Empty;
+        _XMin = string.Empty;
+        _YMin = string.Empty;
+        _XMax = string.Empty;
+        _YMax = string.Empty;
     }
 
     private string _FontName;
-    private int _LineHeight;
-    private int _BaseLine;
-    private int _CharWidthMax;
-    private int _AdvanceWidthMax;
-    private int _UnderlinePosition;
-    private int _UnderlineThickness;
-    private int _Ascent;
-    private int _Descent;
-    private int _XMin;
-    private int _YMin;
-    private int _XMax;
-    private int _YMax;
+    private string _LineHeight;
+    private string _BaseLine;
+    private string _CharWidthMax;
+    private string _AdvanceWidthMax;
+    private string _UnderlinePosition;
+    private string _UnderlineThickness;
+    private string _Ascent;
+    private string _Descent;
+    private string _XMin;
+    private string _YMin;
+    private string _XMax;
+    private string _YMax;
 
     public string FontName
     {
         get { return _FontName; }
-        set
-        {
-            if (value == _FontName)
-                return;
-            _FontName = value;
-        }
+        set { SetProperty(ref _FontName, value); }
     }
-    public int LineHeight
+    public string LineHeight
     {
         get { return _LineHeight; }
-        set
-        {
-            if (value == _LineHeight)
-                return;
-            _LineHeight = value;
-        }
+        set { SetProperty(ref _LineHeight, value); }
     }
-    public int BaseLine
+    public string BaseLine
     {
         get { return _BaseLine; }
-        set
-        {
-            if (value == _BaseLine)
-                return;
-            _BaseLine = value;
-        }
+        set { SetProperty(ref _BaseLine, value); }
     }
-    public int CharWidthMax
+    public string CharWidthMax
     {
         get { return _CharWidthMax; }
-        set
-        {
-            if (value == _CharWidthMax)
-                return;
-            _CharWidthMax = value;
-        }
+        set { SetProperty(ref _CharWidthMax, value); }
     }
-    public int AdvanceWidthMax
+    public string AdvanceWidthMax
     {
         get { return _AdvanceWidthMax; }
-        set
-        {
-            if (value == _AdvanceWidthMax)
-                return;
-            _AdvanceWidthMax = value;
-        }
+        set { SetProperty(ref _AdvanceWidthMax, value); }
     }
-    public int UnderlinePosition
+    public string UnderlinePosition
     {
         get { return _UnderlinePosition; }
-        set
-        {
-            if (value == _UnderlinePosition)
-                return;
-            _UnderlinePosition = value;
-        }
+        set { SetProperty(ref _UnderlinePosition, value); }
     }
-    public int UnderlineThickness
+    public string UnderlineThickness
     {
         get { return _UnderlineThickness; }
-        set
-        {
-            if (value == _UnderlineThickness)
-                return;
-            _UnderlineThickness = value;
-        }
+        set { SetProperty(ref _UnderlineThickness, value); }
     }
-    public int Ascent
+    public string Ascent
     {
         get { return _Ascent; }
-        set
-        {
-            if (value == _Ascent)
-                return;
-            _Ascent = value;
-        }
+        set { SetProperty(ref _Ascent, value); }
     }
-    public int Descent
+    public string Descent
     {
         get { return _Descent; }
-        set
-        {
-            if (value == _Descent)
-                return;
-            _Descent = value;
-        }
+        set { SetProperty(ref _Descent, value); }
     }
-    public int XMin
+    public string XMin
     {
         get { return _XMin; }
-        set
-        {
-            if (value == _XMin)
-                return;
-            _XMin = value;
-        }
+        set { SetProperty(ref _XMin, value); }
     }
-    public int YMin
+    public string YMin
     {
         get { return _YMin; }
-        set
-        {
-            if (value == _YMin)
-                return;
-            _YMin = value;
-        }
+        set { SetProperty(ref _YMin, value); }
     }
-    public int XMax
+    public string XMax
     {
         get { return _XMax; }
-        set
-        {
-            if (value == _XMax)
-                return;
-            _XMax = value;
-        }
+        set { SetProperty(ref _XMax, value); }
     }
-    public int YMax
+    public string YMax
     {
         get { return _YMax; }
-        set
-        {
-            if (value == _YMax)
-                return;
-            _YMax = value;
-        }
+        set { SetProperty(ref _YMax, value); }
+    }
+
+    public void CleanData()
+    {
+        FontName = string.Empty;
+        LineHeight = string.Empty;
+        BaseLine = string.Empty;
+        CharWidthMax = string.Empty;
+        AdvanceWidthMax = string.Empty;
+        UnderlinePosition = string.Empty;
+        UnderlineThickness = string.Empty;
+        Ascent = string.Empty;
+        Descent = string.Empty;
+        XMin = string.Empty;
+        YMin = string.Empty;
+        XMax = string.Empty;
+        YMax = string.Empty;
     }
 }

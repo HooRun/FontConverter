@@ -9,12 +9,13 @@ public partial class LeftSidebarComponent : ComponentBase
     [Inject] 
     NotificationService NotificationService { get; set; } = default!;
 
-    private bool expanded;
     [Parameter]
     public bool Expanded { get; set; }
 
     [Parameter]
     public EventCallback<bool> ExpandedChanged { get; set; }
+
+    private bool expanded;
 
     protected override void OnParametersSet()
     {
