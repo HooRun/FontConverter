@@ -12,6 +12,7 @@ public class MappingProfile : Profile
         CreateMap<LVGLFontSettings, FontSettingsViewModel>();
         CreateMap<LVGLFontAdjusments, FontAdjusmentsViewModel>();
         CreateMap<LVGLFontInformations, FontInformationsViewModel>();
+        CreateMap<LVGLGlyphViewItemProperties, GlyphViewItemPropertiesViewModel>();
 
         CreateMap<SortedList<string, LVGLFontContent>, SortedList<string, FontContentViewModel>>()
             .ConvertUsing((src, dest, context) =>
@@ -48,6 +49,7 @@ public class MappingProfile : Profile
         CreateMap<FontSettingsViewModel, LVGLFontSettings>();
         CreateMap<FontAdjusmentsViewModel, LVGLFontAdjusments>();
         CreateMap<FontInformationsViewModel, LVGLFontInformations>();
+        CreateMap<GlyphViewItemPropertiesViewModel, LVGLGlyphViewItemProperties>();
 
         CreateMap<SortedList<string, FontContentViewModel>, SortedList<string, LVGLFontContent>>()
             .ConvertUsing((src, dest, context) =>

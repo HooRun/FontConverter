@@ -1,0 +1,228 @@
+﻿@* @using FontConverter.SharedLibrary.Models
+<div id="glyph_list_container" class="glyph-list-container" style="transform: translateZ(0); box-sizing: border-box; grid-area:glyph-list-container;" />
+<div  style="@Style">
+     <div>
+   <Virtualize Items="@MainViewModel.LVGLFont.Glyphs.Values.ToList()"
+                Context="glyph"
+                ItemSize="@(GlyphItemHeight+8)">
+        <ItemContent>
+            <GlyphViewItemComponent GlyphId="@glyph.Index"
+                                        OnSelectionChanged="@OnSelectionChanged" /> 
+        </ItemContent>
+        <Placeholder>
+            <div class="grid-container">
+                <div class="grid-item placeholder">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </Placeholder>
+    </Virtualize>
+    </div> 
+</div>
+
+ *@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@using System.Collections.Concurrent
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using BlazorPro.BlazorSize
+@inject IJSRuntime JSRuntime
+
+@if (!IsDataReady)
+{
+    <div>در حال بارگذاری...</div>
+}
+else
+{
+    <div class="container" @ref="ContainerRef">
+        <Virtualize ItemsProvider="LoadChunkedGlyphs" ItemSize="@RowHeight" Context="rowData" OverscanCount="20">
+            <div class="glyph-row" style="display: flex; gap:@(GapPx)px; padding: 4px 0; height: @(RowHeight)px; box-sizing: border-box; width: 100%;">
+                @if (rowData == null || !rowData.Any())
+                {
+                    <div>هیچ داده‌ای در این ردیف وجود ندارد</div>
+                }
+                else
+                {
+                    @foreach (var item in rowData)
+                    {
+                        <div class="glyph-cell" style="width:@(CellWidthPx)px; height:@(RowHeight)px; border:1px solid #ccc; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">
+                            <div class="glyph-content">@item.Index</div>
+                        </div>
+                    }
+                }
+            </div>
+        </Virtualize>
+    </div>
+}
+
+@code {
+    [Inject] private IResizeListener ResizeListener { get; set; } = default!;
+
+    private List<string> Glyphs { get; set; } = new();
+    [Parameter] public int RowHeight { get; set; } = 80;
+    [Parameter] public int CellWidth { get; set; } = 72;
+    private bool IsDataReady { get; set; } = false;
+
+    private ElementReference ContainerRef;
+    private int ContainerWidth = 840;
+
+    private int Columns
+    {
+        get
+        {
+            int columns = Math.Max(1, ContainerWidth / CellWidth);
+            Console.WriteLine($"Columns: {columns}, ContainerWidth: {ContainerWidth}, CellWidth: {CellWidth}");
+            return columns;
+        }
+    }
+
+    private int GapPx
+    {
+        get
+        {
+            if (Columns <= 1) return 0;
+            int totalCellWidth = Columns * CellWidth;
+            int remainingSpace = ContainerWidth - totalCellWidth;
+            int gap = remainingSpace / (Columns - 1);
+            Console.WriteLine($"GapPx: {gap}, RemainingSpace: {remainingSpace}, Columns: {Columns}");
+            return Math.Max(0, gap);
+        }
+    }
+
+    private int CellWidthPx => CellWidth;
+    private int RowCount
+    {
+        get
+        {
+            var rowCount = (int)Math.Ceiling((double)Glyphs.Count / Math.Max(1, Columns));
+            Console.WriteLine($"RowCount: {rowCount}, Glyphs.Count: {Glyphs.Count}, Columns: {Columns}");
+            return rowCount;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Console.WriteLine("OnInitializedAsync started");
+        ResizeListener.OnResized += OnResized;
+        Glyphs = Enumerable.Range(0, 100).Select(i => $"Item{i}").ToList();
+        Console.WriteLine($"Glyphs initialized with {Glyphs.Count} items: {string.Join(", ", Glyphs.Take(5))}...");
+        IsDataReady = true;
+        // عرض را در OnAfterRenderAsync به‌روزرسانی می‌کنیم
+        await InvokeAsync(StateHasChanged);
+        Console.WriteLine("OnInitializedAsync completed");
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender || ContainerWidth == 840) // به‌روزرسانی در رندر اول یا اگر عرض پیش‌فرض است
+        {
+            await UpdateContainerWidth();
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private async Task UpdateContainerWidth()
+    {
+        try
+        {
+            var rect = await JSRuntime.InvokeAsync<BoundingClientRect>("getElementBoundingClientRect", ContainerRef);
+            if (rect.Width > 0) // فقط اگر عرض معتبر باشد
+            {
+                ContainerWidth = (int)rect.Width;
+                Console.WriteLine($"Updated ContainerWidth: {ContainerWidth}");
+            }
+            else
+            {
+                Console.WriteLine("Invalid width from JS, using fallback");
+                // Fallback به عرض مرورگر
+                var browserSize = await ResizeListener.GetBrowserWindowSize();
+                ContainerWidth = (int)browserSize.Width;
+                Console.WriteLine($"Fallback ContainerWidth: {ContainerWidth}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error updating ContainerWidth: {ex.Message}");
+            // Fallback به عرض مرورگر
+            var browserSize = await ResizeListener.GetBrowserWindowSize();
+            ContainerWidth = (int)browserSize.Width;
+            Console.WriteLine($"Fallback ContainerWidth: {ContainerWidth}");
+        }
+    }
+
+    private async void OnResized(object? sender, BrowserWindowSize size)
+    {
+        await UpdateContainerWidth();
+        await InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        ResizeListener.OnResized -= OnResized;
+    }
+
+    private async ValueTask<ItemsProviderResult<List<(string Value, int Index)>>> LoadChunkedGlyphs(ItemsProviderRequest request)
+    {
+        Console.WriteLine($"LoadChunkedGlyphs called, StartIndex: {request.StartIndex}, Count: {request.Count}, Glyphs.Count: {Glyphs.Count}");
+        if (!IsDataReady)
+        {
+            Console.WriteLine("Data not ready, returning empty result");
+            return new ItemsProviderResult<List<(string Value, int Index)>>(new List<List<(string, int)>>(), 0);
+        }
+
+        int startRow = request.StartIndex;
+        int count = request.Count;
+        int startIndex = startRow * Columns;
+
+        var rows = new List<List<(string Value, int Index)>>();
+        for (int i = startIndex; i < Math.Min(Glyphs.Count, startIndex + count * Columns); i += Columns)
+        {
+            var row = Glyphs.Skip(i).Take(Columns).Select((value, idx) => (Value: value, Index: i + idx)).ToList();
+            Console.WriteLine($"Row {i / Columns}: {string.Join(", ", row.Select(r => $"Index: {r.Index}"))}");
+            if (row.Any())
+                rows.Add(row);
+        }
+
+        Console.WriteLine($"Returning {rows.Count} rows, Total RowCount: {RowCount}");
+        return new ItemsProviderResult<List<(string Value, int Index)>>(rows, RowCount);
+    }
+
+    public class BoundingClientRect
+    {
+        public double Width { get; set; }
+        public double Height { get; set; }
+    }
+}
+
+<style>
+    .container {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        box-sizing: border-box;
+    }
+
+    
+
+        .glyph-cell:hover {
+            background: #eee;
+            cursor: pointer;
+        }
+
+</style>

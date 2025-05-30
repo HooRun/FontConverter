@@ -1,7 +1,7 @@
-﻿@inherits LayoutComponentBase
+﻿@* @inherits LayoutComponentBase
 
 <RadzenComponents @rendermode="InteractiveAuto"/>
-<RadzenLayout style="grid-template-columns: auto 1fr; grid-template-areas: 'rz-header rz-header' 'rz-sidebar rz-body'">
+<RadzenLayout style="grid-template-areas: 'rz-sidebar rz-header' 'rz-sidebar rz-body'">
     <RadzenHeader>
         <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
             <RadzenSidebarToggle Click="@ToggleLeftSidebar" />
@@ -17,6 +17,60 @@
             @Body
         </div>
     </RadzenBody>
-    
+
 </RadzenLayout>
 
+ *@
+
+
+
+@inherits LayoutComponentBase
+@* @inject IResizeListener ResizeListener *@
+
+<RadzenComponents @rendermode="InteractiveAuto" />
+
+<div class="main-background" />
+<div class="mica-background" />
+<RadzenLayout class="main-layout">
+
+    <!-- Toolbar -->
+    <ToolbarComponent />
+
+    <!-- Header -->
+    <HeaderComponent />
+
+    <!-- Left Sidebar -->
+    <LeftSidebarComponent />
+
+    <!-- Body -->
+    <RadzenBody>
+        <div class="rz-p-4">
+            @Body
+
+            @* <RadzenButton Text="Toggle left Sidebar"
+                          Click="@(() => MainViewModel.LeftSidebarExpanded = !MainViewModel.LeftSidebarExpanded)" />
+            <RadzenButton Text="Toggle right Sidebar"
+                          Click="@(() => MainViewModel.RightSidebarExpanded = !MainViewModel.RightSidebarExpanded)" /> *@
+        </div>
+    </RadzenBody>
+
+    <!-- Right Sidebar -->
+    <RadzenSidebar @bind-Expanded="@MainViewModel.RightSidebarExpanded"
+                   Responsive="false"
+                   Style="position: absolute; z-index: 3; left:auto; right: 0; grid-area: rz-right-sidebar">
+        <RadzenStack AlignItems="AlignItems.End"
+                     class="rz-p-2">
+            <RadzenButton Icon="east"
+                          Variant="Variant.Text"
+                          ButtonStyle="ButtonStyle.Secondary"
+                          Click="@(() => MainViewModel.RightSidebarExpanded = false)" />
+        </RadzenStack>
+        <div class="rz-p-4">
+            Right Sidebar
+        </div>
+    </RadzenSidebar>
+
+    
+
+
+</RadzenLayout>

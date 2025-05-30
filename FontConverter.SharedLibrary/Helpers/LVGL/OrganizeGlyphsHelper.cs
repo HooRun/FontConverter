@@ -55,7 +55,7 @@ public static class OrganizeGlyphsHelper
                     Width = renderData.Bounds.Width,
                     Height = renderData.Bounds.Height,
                     OffsetX = renderData.Bounds.Left,
-                    OffsetY = renderData.Bounds.Bottom,
+                    OffsetY = -renderData.Bounds.Bottom,
                     AdvanceWidth = (int)Math.Ceiling(scale * glyphMetrics[j].AdvanceWidth),
                     BitmapIndex = bitmapIndex
                 };

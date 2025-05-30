@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using FontConverter.Blazor.Components;
 using FontConverter.Blazor.Components.LeftSidebarComponents;
 using FontConverter.Blazor.Interfaces;
+using FontConverter.Blazor.Layout;
 using FontConverter.SharedLibrary.Models;
 using Radzen.Blazor.Rendering;
 
@@ -17,6 +19,10 @@ public class MainViewModel : BaseViewModel
         _FontAdjusmentsViewModel = new();
         _FontContentsViewModel = new();
         _FontInformationsViewModel = new();
+        _GlyphViewItemPropertiesViewModel = new();
+
+        _LeftSidebarExpanded = false;
+        _RightSidebarExpanded = false;
 
         MappingsFromModelToViewModel();
     }
@@ -28,6 +34,10 @@ public class MainViewModel : BaseViewModel
     private FontAdjusmentsViewModel _FontAdjusmentsViewModel;
     private FontContentsViewModel _FontContentsViewModel;
     private FontInformationsViewModel _FontInformationsViewModel;
+    private GlyphViewItemPropertiesViewModel _GlyphViewItemPropertiesViewModel;
+
+    private bool _LeftSidebarExpanded;
+    private bool _RightSidebarExpanded;
 
     public OpenTypeFont OpenTypeFont
     {
@@ -59,6 +69,33 @@ public class MainViewModel : BaseViewModel
         get { return _FontInformationsViewModel; }
         set { SetProperty(ref _FontInformationsViewModel, value); }
     }
+    public GlyphViewItemPropertiesViewModel GlyphViewItemPropertiesViewModel
+    {
+        get { return _GlyphViewItemPropertiesViewModel; }
+        set { SetProperty(ref _GlyphViewItemPropertiesViewModel, value); }
+    }
+    public bool LeftSidebarExpanded
+    {
+        get { return _LeftSidebarExpanded; }
+        set 
+        {
+            if (SetProperty(ref _LeftSidebarExpanded, value))
+            {
+                RerenderMany(nameof(MainLayout), nameof(ToolbarComponent), nameof(LeftSidebarComponent));
+            }
+        }
+    }
+    public bool RightSidebarExpanded
+    {
+        get { return _RightSidebarExpanded; }
+        set 
+        {
+            if (SetProperty(ref _RightSidebarExpanded, value))
+            {
+                RerenderMany(nameof(MainLayout), nameof(ToolbarComponent), nameof(LeftSidebarComponent));
+            }
+        }
+    }
 
     public void MappingsFromModelToViewModel()
     {
@@ -66,12 +103,14 @@ public class MainViewModel : BaseViewModel
         _mapper.Map(LVGLFont.FontAdjusments, FontAdjusmentsViewModel);
         _mapper.Map(LVGLFont.FontContents, FontContentsViewModel);
         _mapper.Map(LVGLFont.FontInformations, FontInformationsViewModel);
+        _mapper.Map(LVGLFont.GlyphViewItemProperties, GlyphViewItemPropertiesViewModel);
 
-        RerenderMany(
-            nameof(FontSettingsComponent),
-            nameof(FontAdjusmentsComponent),
-            nameof(FontContentsComponent),
-            nameof(FontInformationsComponent));
+        //RerenderMany(
+        //    nameof(FontSettingsComponent),
+        //    nameof(FontAdjusmentsComponent),
+        //    nameof(FontContentsComponent),
+        //    nameof(FontInformationsComponent));
+        RerenderAll();
     }
 
     public void MappingsFromViewModelToModel()

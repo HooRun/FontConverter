@@ -1,7 +1,21 @@
 ﻿@page "/"
 @using Radzen
 @using Radzen.Blazor
-<PageTitle>Home</PageTitle>
+<PageTitle>Font Converter for LVGL</PageTitle>
 
-<p>Home</p>
+<GlyphViewListComponent OnSelectionChanged="OnGlyphSelection" />
 
+
+
+@code {
+    private void OnGlyphSelection((int GhlyphID, bool IsSelected) args)
+    {
+        Console.WriteLine($"Glyph {args.GhlyphID} Selected: {args.IsSelected}");
+    }
+}
+
+<style>
+
+
+
+</style>

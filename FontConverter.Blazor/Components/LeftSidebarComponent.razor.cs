@@ -1,37 +1,29 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using FontConverter.Blazor.Interfaces;
+using FontConverter.Blazor.Layout;
+using FontConverter.Blazor.ViewModels;
+using Microsoft.AspNetCore.Components;
 using Radzen;
 using SkiaSharp;
 
 namespace FontConverter.Blazor.Components;
 
-public partial class LeftSidebarComponent : ComponentBase
+public partial class LeftSidebarComponent : ComponentBase, IRerenderable
 {
     [Inject] 
     NotificationService NotificationService { get; set; } = default!;
 
-    [Parameter]
-    public bool Expanded { get; set; }
+    [Inject]
+    public MainViewModel MainViewModel { get; set; } = default!;
 
-    [Parameter]
-    public EventCallback<bool> ExpandedChanged { get; set; }
-
-    private bool expanded;
-
-    protected override void OnParametersSet()
+    protected override void OnInitialized()
     {
-        if (expanded != Expanded)
-        {
-            expanded = Expanded;
-        }
+        base.OnInitialized();
+        MainViewModel.RegisterComponent(nameof(LeftSidebarComponent), this);
     }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    public void ForceRender()
     {
-        if (expanded != Expanded)
-        {
-            await ExpandedChanged.InvokeAsync(Expanded);
-        }
+        StateHasChanged();
     }
 
-    
 }

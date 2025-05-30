@@ -1,0 +1,177 @@
+﻿.main-background {
+    background: #FFFFFF;
+    background-image: url('/images/main_background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+.mica-background {
+    background-color: rgba(245, 245, 245, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+    .main-background {
+        background: #FFFFFF;
+    }
+}
+
+/* --------------------------------------------- */
+
+.main-layout {
+    grid-template-columns: auto auto 1fr auto !important;
+    grid-template-areas: 'left-toolbar rz-sidebar rz-header rz-right-sidebar' 'left-toolbar rz-sidebar rz-body rz-right-sidebar' !important;
+    background-color: unset !important;
+}
+
+.toolbar-container {
+    grid-area: left-toolbar !important;
+}
+
+    .toolbar-container .toolbar-content {
+        background-color: rgba(255, 255, 255, 0.3) !important;
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20px;
+        width: 90px;
+        height: 100%;
+    }
+
+        .toolbar-container .toolbar-content .toolbar-button {
+            width: 50px;
+            height: 30px;
+        }
+
+        .toolbar-container .toolbar-content .toolbar-button-text {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+.header-container {
+    grid-area: rz-header !important;
+    padding: 10px;
+}
+
+
+
+    .header-container .header-content {
+        background-color: rgba(100, 100, 100, 0.1) !important;
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+    }
+
+.left-sidebar {
+    position: static !important;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+}
+
+.left-sidebar-mask {
+    display: none;
+}
+
+    .left-sidebar-mask.visible {
+        display: none;
+    }
+
+    .left-sidebar-mask.hidden {
+        display: none;
+    }
+
+@media (max-width: 768px) {
+    .main-layout {
+        grid-template-columns: auto 1fr auto !important;
+        grid-template-areas: 'rz-sidebar rz-header rz-right-sidebar' 'rz-sidebar rz-body rz-right-sidebar' 'left-toolbar left-toolbar left-toolbar' !important;
+    }
+
+    .toolbar-container .toolbar-content {
+        width: 100%;
+        height: 90px;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .left-sidebar {
+        position: absolute !important;
+        z-index: 3 !important;
+    }
+
+    .left-sidebar-mask {
+        position: absolute !important;
+        z-index: 2 !important;
+        inset: 0 !important;
+    }
+
+        .left-sidebar-mask.visible {
+            display: block;
+        }
+
+        .left-sidebar-mask.hidden {
+            display: none;
+        }
+
+}
+
+
+
+
+
+
+.glyph-container {
+    border: 2px solid transparent !important;
+    border-radius: 6px;
+    display: block;
+    margin: 4px !important;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: white;
+}
+
+    .glyph-container:hover {
+        border-color: #90caf9 !important;
+    }
+
+    .glyph-container.selected {
+        border-color: steelblue !important;
+    }
+
+.glyph-header {
+    background-color: #cfd9e3;
+    text-align: center;
+    padding: 2px 5px;
+    font-size: 12px;
+    font-family: sans-serif;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    vertical-align: central;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    width: 100%;
+}
+
+.glyph-canvas {
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}

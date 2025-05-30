@@ -11,10 +11,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="BlazorPro.BlazorSize" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.5" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.5" />
-    <PackageReference Include="Radzen.Blazor" Version="7.0.4" />
+    <PackageReference Include="Radzen.Blazor" Version="7.0.7" />
     <PackageReference Include="SkiaSharp.NativeAssets.WebAssembly" Version="3.119.0" />
     <PackageReference Include="SkiaSharp.Views.Blazor" Version="3.119.0" />
   </ItemGroup>

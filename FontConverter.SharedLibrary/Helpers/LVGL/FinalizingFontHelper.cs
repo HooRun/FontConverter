@@ -25,17 +25,25 @@ public static class FinalizingFontHelper
         lVGLFont.FontInformations = new();
         lVGLFont.FontInformations.FontName = typeface.FamilyName;
         lVGLFont.FontInformations.LineHeight = ((int)(Math.Ceiling(scale * openTypeFont.OS2Table.UsWinAscent) + Math.Ceiling(scale * openTypeFont.OS2Table.UsWinDescent))).ToString();
-        lVGLFont.FontInformations.BaseLine = Math.Ceiling(scale * openTypeFont.OS2Table.UsWinDescent).ToString();
-        lVGLFont.FontInformations.CharWidthMax = Math.Ceiling(font.Metrics.MaxCharacterWidth).ToString();
-        lVGLFont.FontInformations.AdvanceWidthMax = Math.Ceiling(scale * openTypeFont.HheaTable.AdvanceWidthMax).ToString();
-        lVGLFont.FontInformations.UnderlinePosition = Math.Ceiling(scale * openTypeFont.PostTable.UnderlinePosition).ToString();
-        lVGLFont.FontInformations.UnderlineThickness = Math.Ceiling(scale * openTypeFont.PostTable.UnderlineThickness).ToString();
-        lVGLFont.FontInformations.Ascent = Math.Ceiling(scale * openTypeFont.OS2Table.UsWinAscent).ToString();
-        lVGLFont.FontInformations.Descent = Math.Ceiling(scale * openTypeFont.OS2Table.UsWinDescent).ToString();
-        lVGLFont.FontInformations.XMin = Math.Ceiling(scale * openTypeFont.HeadTable.XMin).ToString();
-        lVGLFont.FontInformations.YMin = Math.Ceiling(scale * openTypeFont.HeadTable.YMin).ToString();
-        lVGLFont.FontInformations.XMax = Math.Ceiling(scale * openTypeFont.HeadTable.XMax).ToString();
-        lVGLFont.FontInformations.YMax = Math.Ceiling(scale * openTypeFont.HeadTable.YMax).ToString();
+        lVGLFont.FontInformations.BaseLine = ((int)Math.Ceiling(scale * openTypeFont.OS2Table.UsWinDescent)).ToString();
+        lVGLFont.FontInformations.CharWidthMax = ((int)Math.Ceiling(font.Metrics.MaxCharacterWidth)).ToString();
+        lVGLFont.FontInformations.AdvanceWidthMax = ((int)Math.Ceiling(scale * openTypeFont.HheaTable.AdvanceWidthMax)).ToString();
+        lVGLFont.FontInformations.UnderlinePosition = ((int)Math.Ceiling(scale * openTypeFont.PostTable.UnderlinePosition)).ToString();
+        lVGLFont.FontInformations.UnderlineThickness = ((int)Math.Ceiling(scale * openTypeFont.PostTable.UnderlineThickness)).ToString();
+        lVGLFont.FontInformations.Ascent = ((int)Math.Ceiling(scale * openTypeFont.OS2Table.UsWinAscent)).ToString();
+        lVGLFont.FontInformations.Descent = ((int)Math.Ceiling(scale * openTypeFont.OS2Table.UsWinDescent)).ToString();
+        lVGLFont.FontInformations.XMin = ((int)Math.Ceiling(scale * openTypeFont.HeadTable.XMin)).ToString();
+        lVGLFont.FontInformations.YMin = ((int)Math.Ceiling(scale * openTypeFont.HeadTable.YMin)).ToString();
+        lVGLFont.FontInformations.XMax = ((int)Math.Ceiling(scale * openTypeFont.HeadTable.XMax)).ToString();
+        lVGLFont.FontInformations.YMax = ((int)Math.Ceiling(scale * openTypeFont.HeadTable.YMax)).ToString();
+        progress?.Report(30.0);
+        await Task.Delay(500, cancellationToken).ConfigureAwait(false);
+
+        lVGLFont.GlyphViewItemProperties.XMin = (int)Math.Ceiling(scale * openTypeFont.HeadTable.XMin);
+        lVGLFont.GlyphViewItemProperties.BaseLine = (int)Math.Ceiling(scale * openTypeFont.OS2Table.UsWinDescent);
+        lVGLFont.GlyphViewItemProperties.ItemWidth = (int)Math.Max(Math.Ceiling(font.Metrics.MaxCharacterWidth), Math.Ceiling(scale * openTypeFont.HheaTable.AdvanceWidthMax));
+        lVGLFont.GlyphViewItemProperties.ItemHeight = (int)(Math.Ceiling(scale * openTypeFont.OS2Table.UsWinAscent) + Math.Ceiling(scale * openTypeFont.OS2Table.UsWinDescent));
+        lVGLFont.GlyphViewItemProperties.Zoom = 1;
         progress?.Report(50.0);
         await Task.Delay(500, cancellationToken).ConfigureAwait(false);
 
