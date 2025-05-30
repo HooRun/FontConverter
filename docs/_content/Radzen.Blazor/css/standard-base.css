@@ -16585,18 +16585,27 @@ a:focus-visible .rz-fieldset-toggler {
   width: 100%;
 }
 
-@keyframes rz-dialog-open {
+@keyframes rz-dialog-open-scale {
   from {
-    transform: scale(0.5);
+    scale: 0.5;
+  }
+  to {
+    scale: 1;
+  }
+}
+@keyframes rz-dialog-open-opacity {
+  from {
     opacity: 0;
   }
   to {
-    transform: scale(1);
     opacity: 1;
   }
 }
 .rz-dialog.rz-open {
-  animation: var(--rz-dialog-transition) rz-dialog-open;
+  animation: var(--rz-dialog-transition) rz-dialog-open-opacity, var(--rz-dialog-transition) rz-dialog-open-scale;
+}
+.rz-dialog:has(.rz-chart).rz-open {
+  animation: var(--rz-dialog-transition) rz-dialog-open-opacity;
 }
 
 @keyframes rz-side-dialog-right-open {
