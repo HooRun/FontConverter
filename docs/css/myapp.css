@@ -1,6 +1,6 @@
 ﻿.main-background {
     background: #FFFFFF;
-    background-image: url('/images/main_background.jpg');
+    background-image: url('../images/main_background.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
