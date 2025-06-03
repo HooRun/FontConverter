@@ -1,34 +1,7 @@
-﻿@* @inherits LayoutComponentBase
-
-<RadzenComponents @rendermode="InteractiveAuto"/>
-<RadzenLayout style="grid-template-areas: 'rz-sidebar rz-header' 'rz-sidebar rz-body'">
-    <RadzenHeader>
-        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
-            <RadzenSidebarToggle Click="@ToggleLeftSidebar" />
-            <RadzenLink Path="/" Style="display:flex; align-items:center; text-decoration: none !important;">
-                <RadzenImage Path="Assets/FontConverterLogo.png" Style="width:32px; height:32px; margin-right:5px;" />
-            </RadzenLink>
-            <span>@SharedResources.AppName</span>
-        </RadzenStack>
-    </RadzenHeader>
-    <LeftSidebarComponent @bind-Expanded="@isLeftSidebarExpanded" />
-    <RadzenBody>
-        <div class="rz-p-4">
-            @Body
-        </div>
-    </RadzenBody>
-
-</RadzenLayout>
-
- *@
-
-
-
-@inherits LayoutComponentBase
-@* @inject IResizeListener ResizeListener *@
+﻿@inherits LayoutComponentBase
 
 <RadzenComponents @rendermode="InteractiveAuto" />
-
+<PageTitle>Font Converter for LVGL</PageTitle>
 <div class="main-background" />
 <div class="mica-background" />
 <RadzenLayout class="main-layout">
@@ -42,18 +15,9 @@
     <!-- Left Sidebar -->
     <LeftSidebarComponent />
 
-    <!-- Body -->
-    <RadzenBody>
-        <div class="rz-p-4">
-            @Body
-
-            @* <RadzenButton Text="Toggle left Sidebar"
-                          Click="@(() => MainViewModel.LeftSidebarExpanded = !MainViewModel.LeftSidebarExpanded)" />
-            <RadzenButton Text="Toggle right Sidebar"
-                          Click="@(() => MainViewModel.RightSidebarExpanded = !MainViewModel.RightSidebarExpanded)" /> *@
-        </div>
-    </RadzenBody>
-
+    <!-- Glyph List View -->
+    <GlyphViewListComponent OnSelectionChanged="OnGlyphSelection" />
+        
     <!-- Right Sidebar -->
     <RadzenSidebar @bind-Expanded="@MainViewModel.RightSidebarExpanded"
                    Responsive="false"
@@ -69,8 +33,5 @@
             Right Sidebar
         </div>
     </RadzenSidebar>
-
-    
-
 
 </RadzenLayout>

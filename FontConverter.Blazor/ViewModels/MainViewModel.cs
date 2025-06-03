@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FontConverter.Blazor.Components;
+using FontConverter.Blazor.Components.GlyphsListViewComponents;
 using FontConverter.Blazor.Components.LeftSidebarComponents;
 using FontConverter.Blazor.Interfaces;
 using FontConverter.Blazor.Layout;
@@ -175,4 +176,39 @@ public class MainViewModel : BaseViewModel
             c.ForceRender();
         }
     }
+
+
+
+
+
+
+
+
+
+
+    public Task<List<LVGLGlyph>> GetGlyphsAsync(int startIndex, int count)
+    {
+        if (startIndex < 0 || count <= 0 || startIndex >= LVGLFont.Glyphs.Count)
+            return Task.FromResult(new List<LVGLGlyph>());
+        var endIndex = Math.Min(startIndex + count, LVGLFont.Glyphs.Count);
+        var glyphs = new List<LVGLGlyph>();
+        for (int i = startIndex; i < endIndex; i++)
+        {
+            if (LVGLFont.Glyphs.TryGetValue(i, out var glyph))
+            {
+                glyphs.Add(glyph);
+            }
+        }
+        return Task.FromResult(glyphs);
+    }
+
+
+    public int TotalGlyphsCount => LVGLFont.Glyphs.Count;
+
+
+    public int GlyphItemHeight => (GlyphViewItemPropertiesViewModel.ItemHeight * GlyphViewItemPropertiesViewModel.Zoom) + GlyphViewItemPropertiesViewModel.ItemPadding + 20;
+    public int GlyphItemWidth => (GlyphViewItemPropertiesViewModel.ItemWidth * GlyphViewItemPropertiesViewModel.Zoom) + GlyphViewItemPropertiesViewModel.ItemPadding;
+
+
+
 }

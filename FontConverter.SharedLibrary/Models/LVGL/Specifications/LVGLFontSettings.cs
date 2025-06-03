@@ -8,7 +8,7 @@ public class LVGLFontSettings
     {
         FontName = string.Empty;
         FontBitPerPixel = BIT_PER_PIXEL_ENUM.BPP_8;
-        FontSize = 12;   
+        FontSize = 100;   
         FontSubPixel = SUB_Pixel_ENUM.SUB_PIXEL_NONE;
         Fallback = string.Empty;
     }

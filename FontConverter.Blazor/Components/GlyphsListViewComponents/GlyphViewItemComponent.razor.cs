@@ -5,22 +5,29 @@ using FontConverter.Blazor.ViewModels;
 using FontConverter.Blazor.Interfaces;
 using FontConverter.Blazor.Components.LeftSidebarComponents;
 using System.Drawing;
+using System.Data;
 
 namespace FontConverter.Blazor.Components.GlyphsListViewComponents;
 
-public partial class GlyphViewItemComponent : ComponentBase, IRerenderable
+public partial class GlyphViewItemComponent : ComponentBase, IAsyncDisposable, IDisposable
 {
     [Inject]
     public MainViewModel MainViewModel { get; set; } = default!;
 
-    [Parameter] 
+    [Parameter]
     public EventCallback<(int GhlyphID, bool IsSelected)> OnSelectionChanged { get; set; }
 
-    [Parameter] 
-    public int GlyphId { get; set; }
+    [Parameter]
+    public EventCallback<int> OnGlyphRendered { get; set; }
+
+    [Parameter]
+    public int GlyphId { get; set; } = -1;
+
+    private SKCanvasView? _SKCanvasView;
+    private SKSurface? _SKSurface;
+    private SKCanvas? _SKCanvas;
 
     private bool IsSelected { get; set; } = false;
-    private bool IsHovered { get; set; } = false;
 
     private int _Padding = 0;
 
@@ -40,24 +47,24 @@ public partial class GlyphViewItemComponent : ComponentBase, IRerenderable
     private float _BitmapXOffset;
     private float _BitmapYOffset;
 
-    protected override void OnParametersSet()
-    {
-        base.OnParametersSet();
-        ForceRender();
-    }
+    private bool _Dispose = false;
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        MainViewModel.RegisterComponent($"{nameof(FontAdjusmentsComponent)}_{GlyphId}", this);
-        MeasureOverride();
-        ForceRender();
+        InvokeAsync(MeasureOverride);
+        _Dispose = false;
     }
 
-    public void ForceRender()
+    protected override async Task OnParametersSetAsync()
     {
-        MeasureOverride();
-        StateHasChanged();
+        await InvokeAsync(() => _SKCanvasView?.Invalidate());
+    }
+
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+            await InvokeAsync(MeasureOverride);
     }
 
     private async Task ToggleSelection()
@@ -71,14 +78,9 @@ public partial class GlyphViewItemComponent : ComponentBase, IRerenderable
         _Padding = MainViewModel.GlyphViewItemPropertiesViewModel.ItemPadding;
         _Zoom = MainViewModel.GlyphViewItemPropertiesViewModel.Zoom;
 
-        int calculatedWidth = MainViewModel.GlyphViewItemPropertiesViewModel.ItemWidth;
-        if (MainViewModel.GlyphViewItemPropertiesViewModel.XMin >= 0)
-        {
-            calculatedWidth += MainViewModel.GlyphViewItemPropertiesViewModel.XMin;
-        }
-        _ItemWidth = (MainViewModel.GlyphViewItemPropertiesViewModel.ItemWidth * _Zoom) + _Padding;
-        _ItemHeight = (MainViewModel.GlyphViewItemPropertiesViewModel.ItemHeight * _Zoom) + _Padding + _HeaderHeight;
-        
+        _ItemWidth = MainViewModel.GlyphItemWidth;
+        _ItemHeight = MainViewModel.GlyphItemHeight;
+
         _CanvasWidth = _ItemWidth;
         _CanvasHeight = _ItemHeight - _HeaderHeight;
         if (MainViewModel.LVGLFont.Glyphs.ContainsKey(GlyphId))
@@ -106,24 +108,37 @@ public partial class GlyphViewItemComponent : ComponentBase, IRerenderable
 
     private void OnPaintSurface(SKPaintSurfaceEventArgs e)
     {
-        MeasureOverride();
+        _SKSurface = e.Surface;
+        _SKCanvas = e.Surface.Canvas;
+        var info = e.Info;
+        if (info.Width == 0 || info.Height == 0)
+            return;
+        InvokeAsync(PaintCanvas);
+    }
 
-        var canvas = e.Surface.Canvas;
-        canvas.Clear(SKColors.White);
+    private void PaintCanvas()
+    {
+
+        if (_SKCanvasView is null) return;
+        if (_SKSurface is null) return;
+        if (_SKCanvas is null) return;
+
+        MeasureOverride();
+        _SKCanvas.Clear(SKColors.White);
 
         using var mainRectPaint = new SKPaint
         {
             Color = new SKColor(0xF6, 0xEA, 0xCB, 0x66),
             Style = SKPaintStyle.Fill
         };
-        canvas.DrawRect(0, 0, _CanvasWidth, _CanvasHeight, mainRectPaint);
+        _SKCanvas.DrawRect(0, 0, _CanvasWidth, _CanvasHeight, mainRectPaint);
 
         using var advanceWidthPaint = new SKPaint
         {
             Color = new SKColor(0xFF, 0xE3, 0xE3, 0x88),
             Style = SKPaintStyle.Fill
         };
-        canvas.DrawRect(_YAxis, 0, _AdvanceWidth, _CanvasHeight, advanceWidthPaint);
+        _SKCanvas.DrawRect(_YAxis, 0, _AdvanceWidth, _CanvasHeight, advanceWidthPaint);
 
         using var axisPaint = new SKPaint
         {
@@ -132,10 +147,10 @@ public partial class GlyphViewItemComponent : ComponentBase, IRerenderable
             Style = SKPaintStyle.Stroke,
             IsAntialias = false,
         };
-        canvas.DrawLine(0, _XAxis, _CanvasWidth, _XAxis, axisPaint); // X Axis
-        canvas.DrawLine(_YAxis, 0, _YAxis, _CanvasHeight, axisPaint); // Y Axis
+        _SKCanvas.DrawLine(0, _XAxis, _CanvasWidth, _XAxis, axisPaint); // X Axis
+        _SKCanvas.DrawLine(_YAxis, 0, _YAxis, _CanvasHeight, axisPaint); // Y Axis
 
-        RenderGlyphToCanvas(canvas, _GlyphPixels, _BitMapWidth, _BitMapHeight, _BitPerPixel, _Zoom, new SKPoint(_BitmapXOffset, _BitmapYOffset));
+        RenderGlyphToCanvas(_SKCanvas, _GlyphPixels, _BitMapWidth, _BitMapHeight, _BitPerPixel, _Zoom, new SKPoint(_BitmapXOffset, _BitmapYOffset));
     }
 
     private void RenderGlyphToCanvas(SKCanvas canvas, byte[] bitmap, int width, int height, int bpp, int zoom, SKPoint offset)
@@ -166,7 +181,6 @@ public partial class GlyphViewItemComponent : ComponentBase, IRerenderable
         }
     }
 
-
     private byte GetPixel(byte[] data, int width, int bpp, int x, int y)
     {
         int index = y * width + x;
@@ -180,5 +194,25 @@ public partial class GlyphViewItemComponent : ComponentBase, IRerenderable
         return (byte)((b >> bitOffset) & ((1 << bpp) - 1));
     }
 
+    public void Dispose()
+    {
+        if (_Dispose)
+            return;
+        _SKCanvas?.Dispose();
+        _SKSurface?.Dispose();
+        //_SKCanvasView?.Dispose();
+        _SKCanvas = null;
+        _SKSurface = null;
+        _SKCanvasView = null;
+        _Dispose = true;
+    }
 
+    public ValueTask DisposeAsync()
+    {
+        if (!_Dispose)
+        {
+            Dispose();
+        }
+        return ValueTask.CompletedTask;
+    }
 }

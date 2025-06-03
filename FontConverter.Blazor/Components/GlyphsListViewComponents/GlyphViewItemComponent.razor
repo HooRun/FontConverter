@@ -1,13 +1,11 @@
 ﻿<div class="glyph-container @(IsSelected ? "selected" : "")"
      @onclick="ToggleSelection"
-     @onmouseover="() => IsHovered = true"
-     @onmouseout="() => IsHovered = false"
-     style="width:@(_ItemWidth)px !important; height:@(_ItemHeight)px !important;">
+     style="width:@($"{_ItemWidth}px") !important; height:@($"{_ItemHeight}px") !important;">
 
-    <div class="glyph-header" style="height:@(_HeaderHeight)px !important;">@($"Glyph {GlyphId}")</div>
-    <SKCanvasView class="glyph-canvas"
-                  Width="@_CanvasWidth"
-                  Height="@_CanvasHeight"
-                  OnPaintSurface="@OnPaintSurface"  />
+    <div class="glyph-header" style="height:@($"{_HeaderHeight}px") !important;">@MainViewModel.LVGLFont.Glyphs[GlyphId].Name</div>
+    <SKCanvasView OnPaintSurface="@OnPaintSurface"
+                  IgnorePixelScaling="false"
+                  class="glyph-canvas"
+                  @ref="@_SKCanvasView" />
 </div>
 

@@ -16,8 +16,8 @@ public partial class ToolbarComponent : ComponentBase, IRerenderable
         MainViewModel.RegisterComponent(nameof(ToolbarComponent), this);
     }
 
-    public void ForceRender()
+    public async Task ForceRender()
     {
-        StateHasChanged();
+        await InvokeAsync(StateHasChanged);
     }
 }

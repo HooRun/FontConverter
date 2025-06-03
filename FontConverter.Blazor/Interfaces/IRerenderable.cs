@@ -2,5 +2,5 @@
 
 public interface IRerenderable
 {
-    void ForceRender();
+    Task ForceRender();
 }

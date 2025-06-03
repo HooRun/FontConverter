@@ -28,8 +28,8 @@ public partial class FontAdjusmentsComponent : ComponentBase, IRerenderable
         MainViewModel.RegisterComponent(nameof(FontAdjusmentsComponent), this);
     }
 
-    public void ForceRender()
+    public async Task ForceRender()
     {
-        StateHasChanged();
+        await InvokeAsync(StateHasChanged);
     }
 }

@@ -1,80 +1,157 @@
-﻿using FontConverter.Blazor.Components.LeftSidebarComponents;
+﻿using BlazorPro.BlazorSize;
+using FontConverter.Blazor.Components.LeftSidebarComponents;
 using FontConverter.Blazor.Interfaces;
+using FontConverter.Blazor.Models;
 using FontConverter.Blazor.ViewModels;
+using FontConverter.SharedLibrary.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web.Virtualization;
 using Microsoft.JSInterop;
 
 namespace FontConverter.Blazor.Components.GlyphsListViewComponents;
 
-public partial class GlyphViewListComponent : ComponentBase, IRerenderable
+public partial class GlyphViewListComponent : ComponentBase, IRerenderable, IAsyncDisposable, IDisposable
 {
     [Inject]
     public MainViewModel MainViewModel { get; set; } = default!;
 
     [Inject]
-    public IJSRuntime JS { get; set; } = default!;
+    public IJSRuntime JSRuntime { get; set; } = default!;
 
-    [Parameter]
-    public EventCallback<(int GlyphID, bool IsSelected)> OnSelectionChanged { get; set; }
+    [Parameter] public EventCallback<(int GlyphID, bool IsSelected)> OnSelectionChanged { get; set; }
 
-    [Parameter]
-    public string Style { get; set; } = string.Empty;
+    private Virtualize<LVGLGlyph[]>? virtualizeComponent;
 
-    private bool isLoading = true;
-    private int listHeight;
-    private DotNetObjectReference<GlyphViewListComponent>? _dotNetRef;
+    private int _ListHorizontalGap = 10;
+    private int _ListVerticalGap = 0;
+    private int defaultVerticalGap = 4;
+    private int glyphHeaderSize = 20;
+    private int GlyphItemHeight = 0;
+    private int GlyphItemWidth = 0;
+    private int CountOfColumns = 1;
 
-    private int GlyphItemHeight => (MainViewModel.GlyphViewItemPropertiesViewModel.ItemHeight * MainViewModel.GlyphViewItemPropertiesViewModel.Zoom) + MainViewModel.GlyphViewItemPropertiesViewModel.ItemPadding + 20;
+    private DotNetObjectReference<GlyphViewListComponent>? _ObjRef;
+    private CancellationTokenSource? debounceCts;
+    private ElementDimensions itemsContainerDimensions = new();
+
+    private int _VirtualizeComponentKey = 0;
+    private int _VirtualizeItemsCount = 0;
+
+    private bool _Dispose = false;
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
         MainViewModel.RegisterComponent(nameof(GlyphViewListComponent), this);
-        if (MainViewModel.LVGLFont.Glyphs.Count>0) isLoading = false;
+        _Dispose = false;
     }
 
-    public void ForceRender()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (MainViewModel.LVGLFont.Glyphs.Count > 0) isLoading = false;
-        StateHasChanged();
+        if (firstRender)
+        {
+            _ObjRef = DotNetObjectReference.Create(this);
+            await JSRuntime.InvokeVoidAsync("elementResizeObserver.observe", "glyph-list-container", _ObjRef,"OnElementResized");
+        }
     }
 
-    //protected override async Task OnAfterRenderAsync(bool firstRender)
-    //{
-    //    if (firstRender)
-    //    {
+    public async Task ForceRender()
+    {
+        _VirtualizeComponentKey++;
+        await Task.Delay(100);
+        if (virtualizeComponent is not null)
+        {
+            await virtualizeComponent.RefreshDataAsync();
+        }
+        await InvokeAsync(StateHasChanged);
+    }
 
-    //        //await JS.InvokeVoidAsync("observeParentResize", "glyph_list_container",
-    //        //    DotNetObjectReference.Create(this), nameof(OnParentResized));
+    [JSInvokable]
+    public async Task OnElementResized(ElementDimensions size)
+    {
+        debounceCts?.Cancel();
+        debounceCts = new CancellationTokenSource();
+        try
+        {
+            await Task.Delay(100, debounceCts.Token);
+            itemsContainerDimensions = size;
+            if (virtualizeComponent is not null)
+            {
+                await virtualizeComponent.RefreshDataAsync();
+            }
+            await InvokeAsync(StateHasChanged);
 
-    //        //await JS.InvokeVoidAsync("observeSelfResize", "glyph_list_container",
-    //        //    DotNetObjectReference.Create(this), nameof(OnSelfResized));
+        }
+        catch (TaskCanceledException) { }
+    }
 
-    //        //// await JS.InvokeVoidAsync("unobserveResize", "glyph_list_container"); // Stop observing resize events
-    //    }
-    //}
+    private void UpdateCountOfRowsAndColumns()
+    {
+        GlyphItemWidth = MainViewModel.GlyphItemWidth;
+        GlyphItemHeight = MainViewModel.GlyphItemHeight;
+        if (GlyphItemWidth <= 0)
+        {
+            CountOfColumns = 1;
+            _ListVerticalGap = 0;
+            return;
+        }
+        (int columns, int gap) = CalculateColumnsAndGap(itemsContainerDimensions.Width, GlyphItemWidth);
+        CountOfColumns = columns;
+        _ListVerticalGap = gap;
+    }
 
-    //[JSInvokable]
-    //public async Task OnParentResized(double width, double height)
-    //{
-    //    await Task.Delay(1);
-    //    Console.WriteLine($"Parent Size: {width} x {height}");
-    //}
+    private (int columns, int gap) CalculateColumnsAndGap(double containerWidth, int itemWidth)
+    {
+        int maxColumns = Math.Max(1, (int)(containerWidth / itemWidth));
+        int gap = 0;
+        for (int c = maxColumns; c >= 1; c--)
+        {
+            gap = (int)((containerWidth - c * itemWidth) / (c - 1.0));
+            if (c == 1 || gap >= defaultVerticalGap)
+                return (c, gap);
+        }
+        return (1, 0);
+    }
 
-    //[JSInvokable]
-    //public async Task OnSelfResized(double width, double height)
-    //{
-    //    Console.WriteLine($"Self Size: {width} x {height}");
-    //    listHeight = (int)(height);
-    //    await InvokeAsync(StateHasChanged);
-    //}
+    private async ValueTask<ItemsProviderResult<LVGLGlyph[]>> LoadChunkedGlyphs(ItemsProviderRequest request)
+    {
+        UpdateCountOfRowsAndColumns();
 
-    //public void Dispose()
-    //{
-    //    _dotNetRef?.Dispose();
-    //}
+        int startIndex = request.StartIndex * CountOfColumns;
+        int count = request.Count * CountOfColumns;
+        int totalRowCount = (int)Math.Ceiling((double)MainViewModel.TotalGlyphsCount / CountOfColumns);
+        int endIndex = Math.Min(startIndex + count, MainViewModel.TotalGlyphsCount);
+
+        var flatGlyphs = await MainViewModel.GetGlyphsAsync(startIndex, endIndex - startIndex);
+
+        var rows = new List<LVGLGlyph[]>();
+        for (int i = 0; i < flatGlyphs.Count; i += CountOfColumns)
+            rows.Add(flatGlyphs.Skip(i).Take(CountOfColumns).ToArray());
+
+        return new ItemsProviderResult<LVGLGlyph[]>(rows, totalRowCount);
+    }
 
 
-    
 
+    public async ValueTask DisposeAsync()
+    {
+        if (!_Dispose)
+        {
+            if (_ObjRef != null)
+            {
+                await JSRuntime.InvokeVoidAsync("elementResizeObserver.unobserve", "glyph-list-container");
+            }
+            Dispose();
+        }
+    }
+
+    public void Dispose()
+    {
+        if (!_Dispose)
+        {
+            _Dispose = true;
+            _ObjRef?.Dispose();
+            debounceCts?.Dispose();
+        }
+    }
 }

@@ -1,6 +1,6 @@
 ﻿.main-background {
     background: #FFFFFF;
-    background-image: url('/images/main_background.jpg');
+    background-image: url('../images/main_background.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -12,9 +12,9 @@
 }
 
 .mica-background {
-    background-color: rgba(245, 245, 245, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(245, 245, 245, 0.9);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     height: 100vh;
     width: 100%;
     position: fixed;
@@ -51,6 +51,7 @@
         gap: 20px;
         width: 90px;
         height: 100%;
+        overflow: auto;
     }
 
         .toolbar-container .toolbar-content .toolbar-button {
@@ -77,12 +78,11 @@
     }
 
 .left-sidebar {
-    position: static !important;
-    margin: 5px;
+    position: relative;
+    margin: 0px;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.8) !important;
-    backdrop-filter: blur(5px) !important;
-    -webkit-backdrop-filter: blur(5px) !important;
+    background-color: rgba(255, 255, 255, 1) !important;
+    box-sizing: border-box !important;
 }
 
 .left-sidebar-mask {
@@ -111,7 +111,7 @@
     }
 
     .left-sidebar {
-        position: absolute !important;
+        position: absolute;
         z-index: 3 !important;
     }
 
@@ -128,22 +128,47 @@
         .left-sidebar-mask.hidden {
             display: none;
         }
-
 }
 
 
+.glyph-list-view {
+    grid-area: rz-body !important;
+    margin: 10px !important;
+    padding: 10px !important;
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+    border-radius: 5px;
+    border-color: rgba(160,160,160,0.5);
+    border-width: 1px;
+    border-style: solid;
+    background-color: rgba(255,255,255,0.5);
+}
 
+    .glyph-list-view .glyph-list-container {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box !important;
+    }
 
+        .glyph-list-view .glyph-list-container > div[style*="height: 0px; flex-shrink: 0;"] {
+            display: none !important;
+        }
 
+        .glyph-list-view .glyph-list-container .glyphs-row {
+            padding: 0px;
+            margin: 0px;
+        }
 
 .glyph-container {
     border: 2px solid transparent !important;
-    border-radius: 6px;
+    border-radius: 5px;
     display: block;
-    margin: 4px !important;
+    margin: 0px !important;
     cursor: pointer;
     overflow: hidden;
     background-color: white;
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
     .glyph-container:hover {
@@ -174,4 +199,17 @@
     margin: 0;
     padding: 0;
     line-height: 0;
+}
+
+.spinner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
 }

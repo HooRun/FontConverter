@@ -1,4 +1,5 @@
-﻿using FontConverter.Blazor.Components.FontAnalayzerDialogComponents;
+﻿using BlazorPro.BlazorSize;
+using FontConverter.Blazor.Components.FontAnalayzerDialogComponents;
 using FontConverter.Blazor.ViewModels;
 using Microsoft.AspNetCore.Components;
 using Radzen;
@@ -23,6 +24,9 @@ public partial class FontFileOperationComponent : ComponentBase
     private string fontFileType = "";
     private bool busy;
 
+    private SKTypeface? typeface = null;
+    private CancellationTokenSource? fontLoadingCancellationToken;
+
     private void OnChange(UploadChangeEventArgs args)
     {
         if (args.Files == null || args.Files.Count() == 0)
@@ -45,8 +49,8 @@ public partial class FontFileOperationComponent : ComponentBase
             busy = true;
             if (fontFile != null)
             {
-                SKTypeface? typeface = null;
-                CancellationTokenSource? fontLoadingCancellationToken = new CancellationTokenSource();
+                fontLoadingCancellationToken?.Cancel();
+                fontLoadingCancellationToken = new CancellationTokenSource();
                 MainViewModel.MappingsFromViewModelToModel();
                 var dialogResult = await dialogService.OpenAsync<FontAnalayzerDialogComponent>(
                     string.Empty,
@@ -71,10 +75,7 @@ public partial class FontFileOperationComponent : ComponentBase
                     MainViewModel.MappingsFromViewModelToModel();
                 }
                 await fontLoadingCancellationToken.CancelAsync();
-                fontLoadingCancellationToken?.Dispose();
-                fontLoadingCancellationToken = null;
-                typeface?.Dispose();
-                typeface = null;
+                
             }
             else
             {
@@ -102,5 +103,13 @@ public partial class FontFileOperationComponent : ComponentBase
             await InvokeAsync(StateHasChanged);
             busy = false;
         }
+    }
+
+    public void Dispose()
+    {
+        fontLoadingCancellationToken?.Dispose();
+        fontLoadingCancellationToken = null;
+        typeface?.Dispose();
+        typeface = null;
     }
 }

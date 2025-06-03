@@ -24,27 +24,14 @@ public partial class MainLayout : LayoutComponentBase, IRerenderable
         MainViewModel.RegisterComponent(nameof(MainLayout), this);
     }
 
-    public void ForceRender()
+    public async Task ForceRender()
     {
-        StateHasChanged();
+        await InvokeAsync(StateHasChanged);
     }
 
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    ResizeListener.OnResized += ResizeHandler;
-    //    var size = await ResizeListener.GetBrowserWindowSize();
-    //    isMobile = size.Width <= 768;
-    //}
-
-    //void ResizeHandler(object? sender, BrowserWindowSize size)
-    //{
-    //    isMobile = size.Width <= 768;
-    //    InvokeAsync(StateHasChanged);
-    //}
-
-    //public void Dispose()
-    //{
-    //    ResizeListener.OnResized -= ResizeHandler;
-    //}
+    private void OnGlyphSelection((int GhlyphID, bool IsSelected) args)
+    {
+        Console.WriteLine($"Glyph {args.GhlyphID} Selected: {args.IsSelected}");
+    }
 
 }

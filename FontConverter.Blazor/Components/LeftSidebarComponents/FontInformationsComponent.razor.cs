@@ -19,8 +19,8 @@ public partial class FontInformationsComponent : ComponentBase, IRerenderable
         MainViewModel.RegisterComponent(nameof(FontInformationsComponent), this);
     }
 
-    public void ForceRender()
+    public async Task ForceRender()
     {
-        StateHasChanged();
+        await InvokeAsync(StateHasChanged);
     }
 }
