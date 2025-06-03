@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "uMEhYQYG",
+  "version": "gOUZ7x1P",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -218,8 +218,8 @@ self.assetsManifest = {
       "url": "_framework/BlazorPro.BlazorSize.fjkic6tfmp.wasm"
     },
     {
-      "hash": "sha256-FEIKmraQS3xyUfmoNGTHSNhbZyoP5losdvgZPxV4Sj8=",
-      "url": "_framework/FontConverter.Blazor.4g9t9128o3.wasm"
+      "hash": "sha256-QsiTkQjgzddOL6m6LdJ8tdOjsDdMxSMVTQuHwq0S2uA=",
+      "url": "_framework/FontConverter.Blazor.mjk1qg9q0l.wasm"
     },
     {
       "hash": "sha256-vptrjUp/jbIwIoj7yGngB1MMfgDCgBxCtRyHSsLpLJg=",
@@ -482,7 +482,7 @@ self.assetsManifest = {
       "url": "_framework/System.icunsnzrqy.wasm"
     },
     {
-      "hash": "sha256-QjAqOpmsev1BzYSCLojjEEqyfkk9tQ+BgkvKXupr0dA=",
+      "hash": "sha256-0QmLnyY5GFI9h81UVbxgSRxwg5CRS7nb9vbGEspXdmc=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -526,7 +526,7 @@ self.assetsManifest = {
       "url": "css/fluent-base.css"
     },
     {
-      "hash": "sha256-EXaikdvkchImx6lGsewcfee670xLvMuC8MrMlJ+1dIM=",
+      "hash": "sha256-xmKXOHCcgElRSxWKZVDAoaBgHgH9FS4rQ7bfQQJREWw=",
       "url": "css/myapp.css"
     },
     {

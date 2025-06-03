@@ -78,11 +78,11 @@
     }
 
 .left-sidebar {
-    position: relative;
+    position: fixed !important;
     margin: 0px;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 1) !important;
-    box-sizing: border-box !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    box-sizing: border-box !important
 }
 
 .left-sidebar-mask {
@@ -111,7 +111,7 @@
     }
 
     .left-sidebar {
-        position: absolute;
+        position: absolute !important;
         z-index: 3 !important;
     }
 
