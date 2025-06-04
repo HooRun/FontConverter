@@ -13,7 +13,7 @@
             <EmptyContent>
                 <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Gap="20px" class="empty-content">
                     <RadzenIcon Icon="psychology_alt" Style="font-size: 100px !important; margin-top: 20px;" />
-                    <span  style="font-size: 20px !important;">No Data!</span>
+                    <span style="font-size: 20px !important;">No Data!</span>
                 </RadzenStack>
             </EmptyContent>
             <ItemContent Context="rowData">
@@ -22,7 +22,7 @@
                              class="glyphs-row">
                     @foreach (var item in rowData)
                     {
-                        <GlyphViewItemComponent GlyphId="@item.Index"
+                        <GlyphListItemComponent GlyphId="@item.Index"
                                                 OnSelectionChanged="@OnSelectionChanged" />
                     }
                 </RadzenStack>
@@ -31,7 +31,3 @@
     </RadzenStack>
 </RadzenStack>
 
-
-@* @key="@_VirtualizeComponentKey" *@
-
-@* @key="@($"{_VirtualizeComponentKey}_{item.Index}")" *@

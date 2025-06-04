@@ -10,7 +10,7 @@ using Microsoft.JSInterop;
 
 namespace FontConverter.Blazor.Components.GlyphsListViewComponents;
 
-public partial class GlyphViewListComponent : ComponentBase, IRerenderable, IAsyncDisposable, IDisposable
+public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDisposable, IDisposable
 {
     [Inject]
     public MainViewModel MainViewModel { get; set; } = default!;
@@ -30,7 +30,7 @@ public partial class GlyphViewListComponent : ComponentBase, IRerenderable, IAsy
     private int GlyphItemWidth = 0;
     private int CountOfColumns = 1;
 
-    private DotNetObjectReference<GlyphViewListComponent>? _ObjRef;
+    private DotNetObjectReference<GlyphListComponent>? _ObjRef;
     private CancellationTokenSource? debounceCts;
     private ElementDimensions itemsContainerDimensions = new();
 
@@ -42,7 +42,7 @@ public partial class GlyphViewListComponent : ComponentBase, IRerenderable, IAsy
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        MainViewModel.RegisterComponent(nameof(GlyphViewListComponent), this);
+        MainViewModel.RegisterComponent(nameof(GlyphListComponent), this);
         _Dispose = false;
     }
 

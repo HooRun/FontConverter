@@ -15,9 +15,6 @@
     <!-- Left Sidebar -->
     <LeftSidebarComponent />
 
-    <!-- Glyph List View -->
-    <GlyphViewListComponent OnSelectionChanged="OnGlyphSelection" />
-        
     <!-- Right Sidebar -->
     <RadzenSidebar @bind-Expanded="@MainViewModel.RightSidebarExpanded"
                    Responsive="false"
@@ -33,5 +30,13 @@
             Right Sidebar
         </div>
     </RadzenSidebar>
+
+    <!-- Glyphs toolbar -->
+    <GlyphsToolbarComponent />
+
+    <!-- Glyph List View -->
+    <GlyphListComponent OnSelectionChanged="OnGlyphSelection" />
+        
+    
 
 </RadzenLayout>

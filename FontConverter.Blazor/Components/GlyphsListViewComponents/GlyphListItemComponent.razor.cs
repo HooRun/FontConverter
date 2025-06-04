@@ -9,7 +9,7 @@ using System.Data;
 
 namespace FontConverter.Blazor.Components.GlyphsListViewComponents;
 
-public partial class GlyphViewItemComponent : ComponentBase, IAsyncDisposable, IDisposable
+public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, IDisposable
 {
     [Inject]
     public MainViewModel MainViewModel { get; set; } = default!;
