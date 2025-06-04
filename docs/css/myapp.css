@@ -33,12 +33,16 @@
 
 .main-layout {
     grid-template-columns: auto auto 1fr auto !important;
-    grid-template-areas: 'left-toolbar rz-sidebar rz-header rz-right-sidebar' 'left-toolbar rz-sidebar rz-body rz-right-sidebar' !important;
+    grid-template-rows: auto auto 1fr !important;
+    grid-template-areas:
+        'toolbar left-sidebar header right-sidebar'
+        'toolbar left-sidebar glyphs-toolbar right-sidebar'
+        'toolbar left-sidebar glyphs-list right-sidebar' !important;
     background-color: unset !important;
 }
 
 .toolbar-container {
-    grid-area: left-toolbar !important;
+    grid-area: toolbar !important;
 }
 
     .toolbar-container .toolbar-content {
@@ -65,11 +69,9 @@
         }
 
 .header-container {
-    grid-area: rz-header !important;
+    grid-area: header !important;
     padding: 10px;
 }
-
-
 
     .header-container .header-content {
         background-color: rgba(100, 100, 100, 0.1) !important;
@@ -78,10 +80,11 @@
     }
 
 .left-sidebar {
-    position: fixed !important;
+    grid-area: left-sidebar !important;
+    position: fixed;
     margin: 0px;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.9) !important;
+    background-color: rgba(255, 255, 255, 0.95) !important;
     box-sizing: border-box !important
 }
 
@@ -100,7 +103,13 @@
 @media (max-width: 768px) {
     .main-layout {
         grid-template-columns: auto 1fr auto !important;
-        grid-template-areas: 'rz-sidebar rz-header rz-right-sidebar' 'rz-sidebar rz-body rz-right-sidebar' 'left-toolbar left-toolbar left-toolbar' !important;
+        grid-template-rows: auto auto 1fr auto !important;
+        grid-template-areas:
+            'left-sidebar header right-sidebar'
+            'left-sidebar glyphs-toolbar right-sidebar'
+            'left-sidebar glyphs-list right-sidebar'
+            'toolbar toolbar toolbar' !important;
+        overflow: auto !important;
     }
 
     .toolbar-container .toolbar-content {
@@ -130,9 +139,13 @@
         }
 }
 
+.glyphs-toolbar {
+    grid-area: glyphs-toolbar !important;
+    margin: 0px 10px !important;
+}
 
 .glyph-list-view {
-    grid-area: rz-body !important;
+    grid-area: glyphs-list !important;
     margin: 10px !important;
     padding: 10px !important;
     overflow-x: hidden !important;
@@ -142,6 +155,7 @@
     border-width: 1px;
     border-style: solid;
     background-color: rgba(255,255,255,0.5);
+    box-sizing: border-box;
 }
 
     .glyph-list-view .glyph-list-container {
