@@ -10,7 +10,7 @@
     <div class="glyph-canvas-wrapper" style="@($"width:{_CanvasWidth}px; height:{_CanvasHeight}px; position: relative;")">
 
         <SKCanvasView OnPaintSurface="OnPaintSurface"
-                      IgnorePixelScaling="false"
+                      IgnorePixelScaling="true"
                       style="@($"width:{_CanvasWidth}px; height:{_CanvasHeight}px;")"
                       class="glyph-canvas"
                       @ref="_SKCanvasView" />
