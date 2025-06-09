@@ -72,7 +72,7 @@ public class RenderGlyphsToBitmapArrayHelper
         if (path == null || path.IsEmpty)
             return new LVGLGlyphBitmapData(glyphIndex, Array.Empty<byte>(), SKRectI.Empty);
 
-        SKRectI bounds = SKRectI.Ceiling(path.TightBounds);
+        SKRectI bounds = SKRectI.Ceiling(path.TightBounds, true);
         int width = Math.Max(1, bounds.Width);
         int height = Math.Max(1, bounds.Height);
         int dataSize = width * height;
@@ -108,31 +108,42 @@ public class RenderGlyphsToBitmapArrayHelper
         if (bpp == BIT_PER_PIXEL_ENUM.BPP_8)
             return alphaData;
 
+        int bppValue = (int)bpp;
+        int maxValue = (1 << bppValue) - 1;
+
         int pixelThreshold = threshold * 255 / 100;
-        byte bitperpixel = (byte)bpp;
-        int pixelsPerByte = 8 / (byte)bpp;
-        int totalPixels = width * height;
-        int byteCount = (totalPixels + pixelsPerByte - 1) / pixelsPerByte;
-        var output = new byte[byteCount];
+        int stride = (width * bppValue + 7) / 8;
+        var output = new byte[stride * height];
 
-        for (int i = 0, outIndex = 0, bitIndex = 0, currentByte = 0; i < totalPixels; i++)
+        for (int y = 0; y < height; y++)
         {
-            int value = (alphaData[i] >= pixelThreshold ? 255 : alphaData[i]) * ((1 << bitperpixel) - 1) / 255;
-            currentByte = (currentByte << bitperpixel) | value;
-            bitIndex += bitperpixel;
+            for (int x = 0; x < width; x++)
+            {
+                int i = y * width + x;
+                int alpha = alphaData[i];
 
-            if (bitIndex >= 8)
-            {
-                output[outIndex++] = (byte)currentByte;
-                bitIndex = 0;
-                currentByte = 0;
-            }
-            else if (i == totalPixels - 1 && bitIndex > 0)
-            {
-                output[outIndex] = (byte)(currentByte << (8 - bitIndex));
+                // Threshold cut
+                if (threshold > 0 && alpha < pixelThreshold)
+                    alpha = 0;
+
+                // Normalize alpha to BPP value range
+                int level = (int)Math.Round(alpha / 255.0 * maxValue);
+                level = Math.Clamp(level, 0, maxValue);
+
+                // Calculate bit position
+                int bitIndex = x * bppValue;
+                int byteIndex = y * stride + (bitIndex / 8);
+                int bitOffset = 8 - bppValue - (bitIndex % 8); // MSB-first
+
+                if (byteIndex < 0 || byteIndex >= output.Length || bitOffset < 0)
+                    continue;
+
+                output[byteIndex] |= (byte)(level << bitOffset);
             }
         }
 
         return output;
     }
+
+
 }

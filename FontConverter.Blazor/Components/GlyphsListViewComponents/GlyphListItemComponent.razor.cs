@@ -242,15 +242,17 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
 
     private void RenderGlyphToCanvas(SKCanvas canvas, byte[] bitmap, int width, int height, int bpp, int zoom, SKPoint offset)
     {
+        int stride = (width * bpp + 7) / 8; 
+
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
             {
-                byte value = GetPixel(bitmap, width, bpp, x, y);
-                if (value == 0)
-                    continue;
+                byte value = GetPixel(bitmap, stride, bpp, x, y);
+                if (value == 0) continue;
 
                 byte alpha = (byte)(value * 255 / ((1 << bpp) - 1));
+
                 var paint = new SKPaint
                 {
                     Color = new SKColor(0, 0, 0, alpha),
@@ -258,29 +260,32 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
                     Style = SKPaintStyle.Fill
                 };
 
-                var left = (int)(offset.X + x * zoom);
-                var top = (int)(offset.Y + y * zoom);
-                var right = (int)(offset.X + (x + 1) * zoom);
-                var bottom = (int)(offset.Y + (y + 1) * zoom);
+                float left = offset.X + x * zoom;
+                float top = offset.Y + y * zoom;
+                float right = offset.X + (x + 1) * zoom;
+                float bottom = offset.Y + (y + 1) * zoom;
 
-                var rect = new SKRect(left, top, right, bottom);
-                canvas.DrawRect(rect, paint);
+                canvas.DrawRect(new SKRect(left, top, right, bottom), paint);
             }
         }
     }
 
-    private byte GetPixel(byte[] data, int width, int bpp, int x, int y)
+
+    private byte GetPixel(byte[] data, int stride, int bpp, int x, int y)
     {
-        int index = y * width + x;
-        int pixelsPerByte = 8 / bpp;
-        int byteIndex = index / pixelsPerByte;
-        if (byteIndex >= data.Length)
+        int bitsPerRow = stride * 8;
+        int bitIndex = y * bitsPerRow + x * bpp;
+        int byteIndex = bitIndex / 8;
+        int bitOffset = 8 - bpp - (bitIndex % 8); 
+
+        if (byteIndex < 0 || byteIndex >= data.Length || bitOffset < 0)
             return 0;
 
         byte b = data[byteIndex];
-        int bitOffset = bpp * (pixelsPerByte - 1 - (index % pixelsPerByte));
         return (byte)((b >> bitOffset) & ((1 << bpp) - 1));
     }
+
+
 
     public void Dispose()
     {
