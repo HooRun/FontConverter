@@ -4,16 +4,20 @@ using FontConverter.Blazor.Components.GlyphsListViewComponents;
 using FontConverter.Blazor.Components.LeftSidebarComponents;
 using FontConverter.Blazor.Interfaces;
 using FontConverter.Blazor.Layout;
+using FontConverter.Blazor.Models.GlyphsView;
+using FontConverter.Blazor.Services;
 using FontConverter.SharedLibrary.Models;
 using Radzen.Blazor.Rendering;
+using System.Reflection.PortableExecutable;
 
 namespace FontConverter.Blazor.ViewModels;
 
 public class MainViewModel : BaseViewModel
 {
-    public MainViewModel(IMapper mapper)
+    public MainViewModel(IMapper mapper, GlyphRenderQueueService glyphRenderQueueService)
     {
-        _mapper = mapper;
+        _Mapper = mapper;
+        _GlyphRenderQueueService = glyphRenderQueueService;
         _OpenTypeFont = new();
         _LVGLFont = new();
         _FontSettingsViewModel = new();
@@ -21,14 +25,18 @@ public class MainViewModel : BaseViewModel
         _FontContentsViewModel = new();
         _FontInformationsViewModel = new();
         _GlyphViewItemPropertiesViewModel = new();
-
+        _GlyphsList = new();
+        _GlyphsGroupedList = new();
         _LeftSidebarExpanded = false;
         _RightSidebarExpanded = false;
 
         MappingsFromModelToViewModel();
     }
 
-    private readonly IMapper _mapper;
+    private readonly IMapper _Mapper;
+    private readonly GlyphRenderQueueService _GlyphRenderQueueService;
+    private readonly Dictionary<string, IRerenderable> _Components = new();
+
     private OpenTypeFont _OpenTypeFont;
     private LVGLFont _LVGLFont;
     private FontSettingsViewModel _FontSettingsViewModel;
@@ -36,9 +44,13 @@ public class MainViewModel : BaseViewModel
     private FontContentsViewModel _FontContentsViewModel;
     private FontInformationsViewModel _FontInformationsViewModel;
     private GlyphViewItemPropertiesViewModel _GlyphViewItemPropertiesViewModel;
-
+    private SortedList<int, GlyphItem> _GlyphsList;
+    private List<GlyphsGroup> _GlyphsGroupedList;
     private bool _LeftSidebarExpanded;
     private bool _RightSidebarExpanded;
+    private FontContentViewModel? _SelectedTreeViewItem;
+
+
 
     public OpenTypeFont OpenTypeFont
     {
@@ -75,6 +87,16 @@ public class MainViewModel : BaseViewModel
         get { return _GlyphViewItemPropertiesViewModel; }
         set { SetProperty(ref _GlyphViewItemPropertiesViewModel, value); }
     }
+    public SortedList<int, GlyphItem> GlyphsList
+    {
+        get { return _GlyphsList; }
+        set { SetProperty(ref _GlyphsList, value); }
+    }
+    public List<GlyphsGroup> GlyphsGroupedList
+    {
+        get { return _GlyphsGroupedList; }
+        set { SetProperty(ref _GlyphsGroupedList, value); }
+    }
     public bool LeftSidebarExpanded
     {
         get { return _LeftSidebarExpanded; }
@@ -100,11 +122,11 @@ public class MainViewModel : BaseViewModel
 
     public void MappingsFromModelToViewModel()
     {
-        _mapper.Map(LVGLFont.FontSettings, FontSettingsViewModel);
-        _mapper.Map(LVGLFont.FontAdjusments, FontAdjusmentsViewModel);
-        _mapper.Map(LVGLFont.FontContents, FontContentsViewModel);
-        _mapper.Map(LVGLFont.FontInformations, FontInformationsViewModel);
-        _mapper.Map(LVGLFont.GlyphViewItemProperties, GlyphViewItemPropertiesViewModel);
+        _Mapper.Map(LVGLFont.FontSettings, FontSettingsViewModel);
+        _Mapper.Map(LVGLFont.FontAdjusments, FontAdjusmentsViewModel);
+        _Mapper.Map(LVGLFont.FontContents, FontContentsViewModel);
+        _Mapper.Map(LVGLFont.FontInformations, FontInformationsViewModel);
+        _Mapper.Map(LVGLFont.GlyphViewItemProperties, GlyphViewItemPropertiesViewModel);
 
         //RerenderMany(
         //    nameof(FontSettingsComponent),
@@ -116,18 +138,21 @@ public class MainViewModel : BaseViewModel
 
     public void MappingsFromViewModelToModel()
     {
-        _mapper.Map(FontSettingsViewModel, LVGLFont.FontSettings);
-        _mapper.Map(FontAdjusmentsViewModel, LVGLFont.FontAdjusments);
-        //_mapper.Map(FontContentsViewModel, LVGLFont.FontContents);
-        //_mapper.Map(FontInformationsViewModel, LVGLFont.FontInformations);
+        _Mapper.Map(FontSettingsViewModel, LVGLFont.FontSettings);
+        _Mapper.Map(FontAdjusmentsViewModel, LVGLFont.FontAdjusments);
+        //_Mapper.Map(FontContentsViewModel, LVGLFont.FontContents);
+        //_Mapper.Map(FontInformationsViewModel, LVGLFont.FontInformations);
     }
 
     public async Task SelectTreeItemAsync(FontContentViewModel selectedItem)
     {
         if (selectedItem == null || FontContentsViewModel?.Contents == null)
             return;
-
+        _SelectedTreeViewItem = selectedItem;
         await Task.Run(() => UpdateTreeSelection(FontContentsViewModel.Contents.Values, selectedItem));
+        _GlyphRenderQueueService.ClearAll();
+        UpdateGlyphsListView(_SelectedTreeViewItem);
+        RerenderMany(nameof(MainLayout), nameof(GlyphListComponent));
     }
 
     private void UpdateTreeSelection(IEnumerable<FontContentViewModel> nodes, FontContentViewModel selectedItem)
@@ -142,20 +167,85 @@ public class MainViewModel : BaseViewModel
         }
     }
 
+    private void UpdateGlyphsListView(FontContentViewModel? selectedItem)
+    {
+        if (selectedItem is null) return;
 
-    private readonly Dictionary<string, IRerenderable> _components = new();
+        GlyphsGroupedList = new();
+        if (string.Equals(selectedItem.Header, LVGLFont.FontContents.UnicodesHeader))
+        {
+            if (selectedItem.Contents.Count > 0)
+            {
+                foreach (var content in selectedItem.Contents.Values)
+                {
+                    GlyphsGroup group = new();
+                    group.Icon = content.Icon;
+                    group.Header = content.Header;
+                    group.SubTitle = content.SubTitle;
+                    group.LoadItemsAsync = null;
+                    if (content.Items != null && content.Items.Count > 0)
+                    {
+                        group.Items.AddRange(content.Items);
+                    }
+                    else
+                    {
+                        group.Items = [];
+                    }
+                    group.Items.Sort();
+
+                    group.IsExpanded = true;
+                    group.IsLoaded = true;
+                    GlyphsGroupedList.Add(group);
+                }
+            }
+            else
+            {
+                GlyphsGroup group = new();
+                group.Icon = selectedItem.Icon;
+                group.Header = selectedItem.Header;
+                group.SubTitle = selectedItem.SubTitle;
+                group.LoadItemsAsync = null;
+                group.Items = [];
+                group.IsExpanded = true;
+                group.IsLoaded = true;
+                GlyphsGroupedList.Add(group);
+            }
+        }
+        else
+        {
+            GlyphsGroup group = new();
+            group.Icon = selectedItem.Icon;
+            group.Header = selectedItem.Header;
+            group.SubTitle = selectedItem.SubTitle;
+            group.LoadItemsAsync = null;
+            group.Items = selectedItem.Items;
+            group.Items.Sort();
+            group.IsExpanded = true;
+            group.IsLoaded = true;
+            GlyphsGroupedList.Add(group);
+        }
+    }
+    
 
     public void RegisterComponent(string name, IRerenderable? component)
     {
         if (component != null)
         {
-            _components[name] = component;
+            _Components[name] = component;
         }  
+    }
+
+    public void UnRegisterComponent(string name)
+    {
+        if (_Components.ContainsKey(name))
+        {
+            _Components.Remove(name);
+        }
     }
 
     public void Rerender(string name)
     {
-        if (_components.TryGetValue(name, out var component))
+        if (_Components.TryGetValue(name, out var component))
         {
             component.ForceRender();
         }
@@ -171,7 +261,7 @@ public class MainViewModel : BaseViewModel
 
     public void RerenderAll()
     {
-        foreach (var c in _components.Values)
+        foreach (var c in _Components.Values)
         {
             c.ForceRender();
         }
@@ -186,29 +276,30 @@ public class MainViewModel : BaseViewModel
 
 
 
-    public Task<List<LVGLGlyph>> GetGlyphsAsync(int startIndex, int count)
-    {
-        if (startIndex < 0 || count <= 0 || startIndex >= LVGLFont.Glyphs.Count)
-            return Task.FromResult(new List<LVGLGlyph>());
-        var endIndex = Math.Min(startIndex + count, LVGLFont.Glyphs.Count);
-        var glyphs = new List<LVGLGlyph>();
-        for (int i = startIndex; i < endIndex; i++)
-        {
-            if (LVGLFont.Glyphs.TryGetValue(i, out var glyph))
-            {
-                glyphs.Add(glyph);
-            }
-        }
-        return Task.FromResult(glyphs);
-    }
-
-
-    public int TotalGlyphsCount => LVGLFont.Glyphs.Count;
-
-
+  
+    public int TotalGlyphsCount => GlyphsList.Count;
     public int GlyphItemHeight => (GlyphViewItemPropertiesViewModel.ItemHeight * GlyphViewItemPropertiesViewModel.Zoom) + GlyphViewItemPropertiesViewModel.ItemPadding + 20;
     public int GlyphItemWidth => (GlyphViewItemPropertiesViewModel.ItemWidth * GlyphViewItemPropertiesViewModel.Zoom) + GlyphViewItemPropertiesViewModel.ItemPadding;
 
 
+
+    public bool ZoomInButtonDisabled => GlyphViewItemPropertiesViewModel.Zoom >= 10 ? true : false;
+    public bool ZoomOutButtonDisabled => GlyphViewItemPropertiesViewModel.Zoom <= 1 ? true : false;
+
+    public void ZoomInChanged()
+    {
+        GlyphViewItemPropertiesViewModel.Zoom++;
+        if (GlyphViewItemPropertiesViewModel.Zoom >= 10)
+            GlyphViewItemPropertiesViewModel.Zoom = 10;
+        RerenderMany(nameof(MainLayout), nameof(GlyphListComponent), nameof(GlyphsToolbarComponent));
+    }
+
+    public void ZoomOutChanged()
+    {
+        GlyphViewItemPropertiesViewModel.Zoom--;
+        if (GlyphViewItemPropertiesViewModel.Zoom <= 1)
+            GlyphViewItemPropertiesViewModel.Zoom = 1;
+        RerenderMany(nameof(MainLayout), nameof(GlyphListComponent), nameof(GlyphsToolbarComponent));
+    }
 
 }

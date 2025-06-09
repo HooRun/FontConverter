@@ -1,4 +1,4 @@
-﻿
+﻿// Get Element Size
 window.getElementDimensions = (selector) => {
     try {
         const element = document.querySelector(selector);
@@ -25,6 +25,8 @@ window.getElementDimensions = (selector) => {
     }
 };
 
+
+// Element Resize Observer 
 window.elementResizeObserver = {
     observers: {},
 
@@ -71,5 +73,45 @@ window.elementResizeObserver = {
             observer.disconnect();
             delete this.observers[elementId];
         }
+    }
+};
+
+
+
+// Glyph Visibility Observer Manager
+window._glyphVisibilityObservers = window._glyphVisibilityObservers || {};
+
+window.startGlyphVisibilityTracking = (element, dotNetRef, glyphId) => {
+    if (!('IntersectionObserver' in window)) return;
+    if (!element || !element.isConnected) return;
+
+    if (window._glyphVisibilityObservers[glyphId]) {
+        window.stopGlyphVisibilityTracking(glyphId);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const el = entry.target;
+            const isInDOM = document.body.contains(el);
+
+            if (!isInDOM) return;
+
+            if (entry.isIntersecting) {
+                dotNetRef.invokeMethodAsync('OnVisible', glyphId);
+            } else {
+                dotNetRef.invokeMethodAsync('OnInvisible', glyphId);
+            }
+        });
+    }, { root: null, threshold: 0.1 });
+
+    observer.observe(element);
+    window._glyphVisibilityObservers[glyphId] = observer;
+};
+
+window.stopGlyphVisibilityTracking = (glyphId) => {
+    const observer = window._glyphVisibilityObservers[glyphId];
+    if (observer) {
+        observer.disconnect();
+        delete window._glyphVisibilityObservers[glyphId];
     }
 };

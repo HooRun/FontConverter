@@ -37,8 +37,4 @@ public class LVGLGlyph
     public bool IsUnMapped { get; set; }
     public bool IsSingleMapped { get; set; }
     public bool IsMultiMapped { get; set; }
-
-
-    public bool IsRendered { get; set; } = false;
-
 }

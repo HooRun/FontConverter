@@ -1,33 +1,36 @@
 ﻿@using FontConverter.SharedLibrary.Models
 
-<RadzenStack class="glyph-list-view" id="glyph-list-view">
+<RadzenStack class="glyph-list-view"
+             id="glyph-list-view">
+
     <RadzenStack Gap="@($"{_ListHorizontalGap}px")"
                  id="glyph-list-container"
                  class="glyph-list-container">
+
         <Virtualize ItemsProvider="LoadChunkedGlyphs"
-                    ItemSize="@MainViewModel.GlyphItemHeight"
-                    TItem="LVGLGlyph[]"
-                    OverscanCount="2"
+                    ItemSize="5"
+                    TItem="GlyphsGroupedEntry"
+                    OverscanCount="1"
                     @ref="@virtualizeComponent"
-                    @key="@_VirtualizeComponentKey">
+                    @key="@_VirtualizeKey">
             <EmptyContent>
-                <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Gap="20px" class="empty-content">
-                    <RadzenIcon Icon="psychology_alt" Style="font-size: 100px !important; margin-top: 20px;" />
+                <RadzenStack Orientation="Orientation.Vertical"
+                             AlignItems="AlignItems.Center"
+                             JustifyContent="JustifyContent.Center"
+                             Gap="20px"
+                             class="empty-content">
+                    <RadzenIcon Icon="psychology_alt"
+                                Style="font-size: 100px !important; margin-top: 20px;" />
                     <span style="font-size: 20px !important;">No Data!</span>
                 </RadzenStack>
             </EmptyContent>
-            <ItemContent Context="rowData">
-                <RadzenStack Orientation="Orientation.Horizontal"
-                             Gap="@($"{_ListVerticalGap}px")"
-                             class="glyphs-row">
-                    @foreach (var item in rowData)
-                    {
-                        <GlyphListItemComponent GlyphId="@item.Index"
-                                                OnSelectionChanged="@OnSelectionChanged" />
-                    }
-                </RadzenStack>
+            <ItemContent Context="entry">
+
+                <GlyphListRowComponent GroupedEntry="entry"
+                                       OnSelectionChanged="@OnSelectionChanged" />
+
             </ItemContent>
         </Virtualize>
+
     </RadzenStack>
 </RadzenStack>
-

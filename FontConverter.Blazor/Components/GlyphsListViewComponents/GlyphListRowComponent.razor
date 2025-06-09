@@ -1,0 +1,38 @@
+﻿<RadzenStack Orientation="Orientation.Horizontal"
+             Gap="@($"{GroupedEntry.ColumnsGap}px")"
+             class="glyphs-row">
+    @for (int index = 0; index < GroupedEntry.Items.Count; index++)
+    {
+        <GlyphListItemComponent GlyphId="@GroupedEntry.Items[index]"
+                                VisibilityTrackingID="@((GroupedEntry.RowIndex * GroupedEntry.Items.Count) + (index + 1))"
+                                OnSelectionChanged="@OnSelectionChanged" />
+    }
+</RadzenStack>
+@if (GroupedEntry.IsGroupHeader)
+{
+    <RadzenCard Variant="Variant.Filled" Style="padding: 5px 15px !important;">
+        <RadzenStack Orientation="Orientation.Horizontal" Gap="20" AlignItems="AlignItems.Center">
+            <RadzenIcon Icon="@GroupedEntry.GroupIcon" />
+            <RadzenStack Orientation="Orientation.Vertical" Gap="5px">
+                <RadzenText TextStyle="TextStyle.Body1"><strong>@GroupedEntry.GroupHeader</strong></RadzenText>
+                @if (!string.IsNullOrEmpty(GroupedEntry.GroupSubTitle))
+                {
+                    <RadzenText TextStyle="TextStyle.Body2">@GroupedEntry.GroupSubTitle</RadzenText>
+                }
+                <RadzenText TextStyle="TextStyle.Body2">@($"Items Count: {GroupedEntry.GroupItemsCount}")</RadzenText>
+            </RadzenStack>
+        </RadzenStack>
+    </RadzenCard>
+}
+@if (GroupedEntry.GroupItemsCount <= 0)
+{
+    <RadzenStack Orientation="Orientation.Vertical"
+                 AlignItems="AlignItems.Center"
+                 JustifyContent="JustifyContent.Center"
+                 Gap="20px"
+                 class="empty-content">
+        <RadzenIcon Icon="psychology_alt"
+                    Style="font-size: 50px !important; margin-top: 20px;" />
+        <span style="font-size: 20px !important;">No Data!</span>
+    </RadzenStack>
+}

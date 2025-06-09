@@ -20,12 +20,16 @@
                           ButtonStyle="ButtonStyle.Dark"
                           Shade="Shade.Default" Size="ButtonSize.Medium"
                           Icon="zoom_in"
+                          Disabled=@MainViewModel.ZoomInButtonDisabled
+                          Click="@MainViewModel.ZoomInChanged"
                           class="rz-border-radius-10" />
 
             <RadzenButton Variant="Variant.Outlined"
                           ButtonStyle="ButtonStyle.Dark"
                           Shade="Shade.Default" Size="ButtonSize.Medium"
                           Icon="zoom_out"
+                          Disabled=@MainViewModel.ZoomOutButtonDisabled
+                          Click="@MainViewModel.ZoomOutChanged"
                           class="rz-border-radius-10" />
 
             <RadzenButton Variant="Variant.Outlined"

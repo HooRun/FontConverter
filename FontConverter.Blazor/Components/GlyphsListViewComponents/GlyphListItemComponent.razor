@@ -1,11 +1,26 @@
 ﻿<div class="glyph-container @(IsSelected ? "selected" : "")"
      @onclick="ToggleSelection"
-     style="width:@($"{_ItemWidth}px") !important; height:@($"{_ItemHeight}px") !important;">
+     style="width:@($"{_ItemWidth}px") !important; height:@($"{_ItemHeight}px") !important; display: @(GlyphId<0?"none":"block") !important;"
+     @ref="@_GlyphRef">
 
-    <div class="glyph-header" style="height:@($"{_HeaderHeight}px") !important;">@MainViewModel.LVGLFont.Glyphs[GlyphId].Name</div>
-    <SKCanvasView OnPaintSurface="@OnPaintSurface"
-                  IgnorePixelScaling="false"
-                  class="glyph-canvas"
-                  @ref="@_SKCanvasView" />
+    <div class="glyph-header" style="height:@($"{_HeaderHeight}px") !important;">
+        @_HeaderTitle
+    </div>
+
+    <div class="glyph-canvas-wrapper" style="@($"width:{_CanvasWidth}px; height:{_CanvasHeight}px; position: relative;")">
+
+        <SKCanvasView OnPaintSurface="OnPaintSurface"
+                      IgnorePixelScaling="false"
+                      style="@($"width:{_CanvasWidth}px; height:{_CanvasHeight}px;")"
+                      class="glyph-canvas"
+                      @ref="_SKCanvasView" />
+        @if (!_IsRenderAllowed)
+        {
+            <div class="glyph-loading">
+                <div class="loading-gradient" />
+            </div>
+        }
+
+    </div>
+
 </div>
-

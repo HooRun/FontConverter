@@ -19,6 +19,7 @@ try
     builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
     builder.Services.AddScoped<PredefinedDataService>();
+    builder.Services.AddScoped<GlyphRenderQueueService>();
     builder.Services.AddScoped<FontNameValidatorHelper>();
 
     builder.Services.AddScoped<MainViewModel>();

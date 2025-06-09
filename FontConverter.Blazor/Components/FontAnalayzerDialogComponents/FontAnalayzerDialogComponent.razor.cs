@@ -1,5 +1,6 @@
 ﻿using FontConverter.Blazor.Components.LeftSidebarComponents;
 using FontConverter.Blazor.Interfaces;
+using FontConverter.Blazor.Models.GlyphsView;
 using FontConverter.Blazor.Services;
 using FontConverter.Blazor.ViewModels;
 using FontConverter.SharedLibrary.Helpers;
@@ -314,7 +315,7 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         });
         try
         {
-            if (Typeface is not null)
+            if (Typeface is not null && font is not null)
             {
                 await FinalizingFontHelper.FinalizingFontAsync(
                     Typeface,
@@ -323,6 +324,15 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
                     MainViewModel.LVGLFont,
                     progressFinalizingFont,
                     cancellationToken).ConfigureAwait(false);
+                IProgress<double> iprogressFinalizingFont = progressFinalizingFont;
+                MainViewModel.GlyphsList.Clear();
+                foreach (var glyph in MainViewModel.LVGLFont.Glyphs)
+                {
+                    MainViewModel.GlyphsList.Add(glyph.Key, new GlyphItem(glyph.Value));
+                }
+                iprogressFinalizingFont.Report(100.0);
+                await Task.Delay(500, cancellationToken).ConfigureAwait(false);
+
                 finalizingFontIsValid = true;
             }
         }

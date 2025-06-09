@@ -1,9 +1,8 @@
-﻿using BlazorPro.BlazorSize;
-using FontConverter.Blazor.Components.LeftSidebarComponents;
-using FontConverter.Blazor.Interfaces;
+﻿using FontConverter.Blazor.Interfaces;
 using FontConverter.Blazor.Models;
+using FontConverter.Blazor.Models.GlyphsView;
+using FontConverter.Blazor.Services;
 using FontConverter.Blazor.ViewModels;
-using FontConverter.SharedLibrary.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 using Microsoft.JSInterop;
@@ -18,9 +17,12 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
     [Inject]
     public IJSRuntime JSRuntime { get; set; } = default!;
 
+    [Inject]
+    public GlyphRenderQueueService GlyphRenderQueueService { get; set; } = default!;
+
     [Parameter] public EventCallback<(int GlyphID, bool IsSelected)> OnSelectionChanged { get; set; }
 
-    private Virtualize<LVGLGlyph[]>? virtualizeComponent;
+    private Virtualize<GlyphsGroupedEntry>? virtualizeComponent;
 
     private int _ListHorizontalGap = 10;
     private int _ListVerticalGap = 0;
@@ -31,12 +33,11 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
     private int CountOfColumns = 1;
 
     private DotNetObjectReference<GlyphListComponent>? _ObjRef;
-    private CancellationTokenSource? debounceCts;
+    private CancellationTokenSource? _ResizeDebounceCts;
+    private CancellationTokenSource? _VirtualizeDebounceCts;
     private ElementDimensions itemsContainerDimensions = new();
 
-    private int _VirtualizeComponentKey = 0;
-    private int _VirtualizeItemsCount = 0;
-
+    private int _VirtualizeKey = 0;
     private bool _Dispose = false;
 
     protected override void OnInitialized()
@@ -57,8 +58,8 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
 
     public async Task ForceRender()
     {
-        _VirtualizeComponentKey++;
-        await Task.Delay(100);
+        _VirtualizeKey++;
+        //await Task.Delay(100);
         if (virtualizeComponent is not null)
         {
             await virtualizeComponent.RefreshDataAsync();
@@ -69,11 +70,11 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
     [JSInvokable]
     public async Task OnElementResized(ElementDimensions size)
     {
-        debounceCts?.Cancel();
-        debounceCts = new CancellationTokenSource();
+        _ResizeDebounceCts?.Cancel();
+        _ResizeDebounceCts = new CancellationTokenSource();
         try
         {
-            await Task.Delay(100, debounceCts.Token);
+            await Task.Delay(100, _ResizeDebounceCts.Token);
             itemsContainerDimensions = size;
             if (virtualizeComponent is not null)
             {
@@ -113,25 +114,74 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
         return (1, 0);
     }
 
-    private async ValueTask<ItemsProviderResult<LVGLGlyph[]>> LoadChunkedGlyphs(ItemsProviderRequest request)
+    private async ValueTask<ItemsProviderResult<GlyphsGroupedEntry>> LoadChunkedGlyphs(ItemsProviderRequest request)
     {
         UpdateCountOfRowsAndColumns();
 
-        int startIndex = request.StartIndex * CountOfColumns;
-        int count = request.Count * CountOfColumns;
-        int totalRowCount = (int)Math.Ceiling((double)MainViewModel.TotalGlyphsCount / CountOfColumns);
-        int endIndex = Math.Min(startIndex + count, MainViewModel.TotalGlyphsCount);
+        int startIndex = request.StartIndex;
+        int count = request.Count;
+        int endIndex = startIndex + count;
 
-        var flatGlyphs = await MainViewModel.GetGlyphsAsync(startIndex, endIndex - startIndex);
 
-        var rows = new List<LVGLGlyph[]>();
-        for (int i = 0; i < flatGlyphs.Count; i += CountOfColumns)
-            rows.Add(flatGlyphs.Skip(i).Take(CountOfColumns).ToArray());
+        int totalCount = 0;
+        int groupIndex = 0;
+        int currentIndex = 0;
 
-        return new ItemsProviderResult<LVGLGlyph[]>(rows, totalRowCount);
+        List<GlyphsGroupedEntry> resultEntries = [];
+        foreach (var group in MainViewModel.GlyphsGroupedList)
+        {
+            groupIndex++;
+            List<int> items = [];
+            for (int unmounted = 0; unmounted < CountOfColumns; unmounted++)
+                items.Add(-1);
+            resultEntries.Add(new GlyphsGroupedEntry
+            {
+                GroupItemsCount = group.Items?.Count ?? 0,
+                IsGroupHeader = true,
+                GroupIcon = group.Icon,
+                GroupHeader = group.Header,
+                GroupSubTitle = group.SubTitle,
+                Items = [.. items],
+                ColumnsGap = _ListVerticalGap,
+                RowIndex = currentIndex - groupIndex,
+            });
+            totalCount++;
+            if (group.Items is not null && group.Items.Count>0)
+            {
+                int rowCount = (int)Math.Ceiling((double)group.Items.Count / CountOfColumns);
+
+                for (int row=0; row<rowCount; row++)
+                {
+                    List<int> chunk = group.Items!.Skip(row * CountOfColumns).Take(CountOfColumns).ToList();
+                    if (chunk.Count > 0)
+                    {
+                        if (chunk.Count < CountOfColumns)
+                        {
+                            for (int unmounted = chunk.Count; unmounted < CountOfColumns; unmounted++)
+                                chunk.Add(-1);
+                        }
+
+                        resultEntries.Add(new GlyphsGroupedEntry
+                        {
+                            GroupItemsCount = group.Items?.Count ?? 0,
+                            IsGroupHeader = false,
+                            GroupIcon = group.Icon,
+                            GroupHeader = group.Header,
+                            GroupSubTitle = group.SubTitle,
+                            Items = [.. chunk],
+                            ColumnsGap = _ListVerticalGap,
+                            RowIndex = totalCount - groupIndex,
+                        });
+                        totalCount++;
+                    }
+                }
+            }
+            
+        }
+
+
+        return new ItemsProviderResult<GlyphsGroupedEntry>(resultEntries.Skip(startIndex).Take(count).ToList(), resultEntries.Count);
     }
-
-
 
     public async ValueTask DisposeAsync()
     {
@@ -151,7 +201,7 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
         {
             _Dispose = true;
             _ObjRef?.Dispose();
-            debounceCts?.Dispose();
+            _ResizeDebounceCts?.Dispose();
         }
     }
 }
