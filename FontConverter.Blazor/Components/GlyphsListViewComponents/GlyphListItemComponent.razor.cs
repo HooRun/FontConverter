@@ -100,6 +100,12 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
 
             _IsRenderAllowed = false;
 
+            //GlyphRenderQueueService.UnregisterGlyph(_PrevVisibilityTrackingID);
+            //GlyphRenderQueueService.UnregisterGlyph(VisibilityTrackingID);
+
+            //await JSRuntime.InvokeVoidAsync("stopGlyphVisibilityTracking", _PrevVisibilityTrackingID);
+            //await JSRuntime.InvokeVoidAsync("stopGlyphVisibilityTracking", VisibilityTrackingID);
+
             if (_DotNetRef is not null)
                 await JSRuntime.InvokeVoidAsync("startGlyphVisibilityTracking", _GlyphRef, _DotNetRef, VisibilityTrackingID);
 

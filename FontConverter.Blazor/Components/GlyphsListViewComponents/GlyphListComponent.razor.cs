@@ -127,32 +127,64 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
         int groupIndex = 0;
         int currentIndex = 0;
 
-        List<GlyphsGroupedEntry> resultEntries = [];
         foreach (var group in MainViewModel.GlyphsGroupedList)
         {
-            groupIndex++;
-            List<int> items = [];
-            for (int unmounted = 0; unmounted < CountOfColumns; unmounted++)
-                items.Add(-1);
-            resultEntries.Add(new GlyphsGroupedEntry
-            {
-                GroupItemsCount = group.Items?.Count ?? 0,
-                IsGroupHeader = true,
-                GroupIcon = group.Icon,
-                GroupHeader = group.Header,
-                GroupSubTitle = group.SubTitle,
-                Items = [.. items],
-                ColumnsGap = _ListVerticalGap,
-                RowIndex = currentIndex - groupIndex,
-            });
             totalCount++;
-            if (group.Items is not null && group.Items.Count>0)
+
+            if (group.IsExpanded && group.IsLoaded && group.Items != null && CountOfColumns > 0)
             {
                 int rowCount = (int)Math.Ceiling((double)group.Items.Count / CountOfColumns);
+                totalCount += rowCount;
+            }
+        }
 
-                for (int row=0; row<rowCount; row++)
+        List<GlyphsGroupedEntry> resultEntries = [];
+
+        foreach (GlyphsGroup group in MainViewModel.GlyphsGroupedList)
+        {
+            groupIndex++;
+            int rowCount = 0;
+            if (group.IsExpanded && group.IsLoaded && group.Items != null && CountOfColumns > 0)
+            {
+                rowCount = (int)Math.Ceiling((double)group.Items.Count / CountOfColumns);
+            }
+
+            int groupTotalRows = 1 + rowCount;
+
+            if (currentIndex + groupTotalRows <= startIndex)
+            {
+                currentIndex += groupTotalRows;
+                continue;
+            }
+
+            if (currentIndex >= endIndex)
+                break;
+
+
+            if (currentIndex >= startIndex && currentIndex < endIndex)
+            {
+                List<int> items = [];
+                for (int unmounted = 0; unmounted < CountOfColumns; unmounted++)
+                    items.Add(-1);
+                resultEntries.Add(new GlyphsGroupedEntry
                 {
-                    List<int> chunk = group.Items!.Skip(row * CountOfColumns).Take(CountOfColumns).ToList();
+                    GroupItemsCount = group.Items?.Count ?? 0,
+                    IsGroupHeader = true,
+                    GroupIcon = group.Icon,
+                    GroupHeader = group.Header,
+                    GroupSubTitle = group.SubTitle,
+                    Items = [.. items],
+                    ColumnsGap = _ListVerticalGap,
+                    RowIndex = currentIndex - groupIndex,
+                });
+            }
+            currentIndex++;
+
+            for (int i = 0; i < rowCount; i++)
+            {
+                if (currentIndex >= startIndex && currentIndex < endIndex)
+                {
+                    List<int> chunk = group.Items?.Skip(i * CountOfColumns).Take(CountOfColumns).ToList() ?? [];
                     if (chunk.Count > 0)
                     {
                         if (chunk.Count < CountOfColumns)
@@ -170,17 +202,20 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
                             GroupSubTitle = group.SubTitle,
                             Items = [.. chunk],
                             ColumnsGap = _ListVerticalGap,
-                            RowIndex = totalCount - groupIndex,
+                            RowIndex = currentIndex - groupIndex,
                         });
-                        totalCount++;
+
                     }
                 }
+                currentIndex++;
+
+                if (currentIndex >= endIndex)
+                    break;
             }
-            
+
         }
 
-
-        return new ItemsProviderResult<GlyphsGroupedEntry>(resultEntries.Skip(startIndex).Take(count).ToList(), resultEntries.Count);
+        return new ItemsProviderResult<GlyphsGroupedEntry>(resultEntries, totalCount);
     }
 
     public async ValueTask DisposeAsync()

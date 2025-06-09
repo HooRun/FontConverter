@@ -8,11 +8,10 @@
                  class="glyph-list-container">
 
         <Virtualize ItemsProvider="LoadChunkedGlyphs"
-                    ItemSize="5"
+                    ItemSize="20"
                     TItem="GlyphsGroupedEntry"
                     OverscanCount="1"
-                    @ref="@virtualizeComponent"
-                    @key="@_VirtualizeKey">
+                    @ref="@virtualizeComponent">
             <EmptyContent>
                 <RadzenStack Orientation="Orientation.Vertical"
                              AlignItems="AlignItems.Center"
