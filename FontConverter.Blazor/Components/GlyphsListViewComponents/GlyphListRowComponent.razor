@@ -11,7 +11,8 @@
 @if (GroupedEntry.IsGroupHeader)
 {
     <RadzenCard Variant="Variant.Filled" Style="padding: 5px 15px !important;">
-        <RadzenStack Orientation="Orientation.Horizontal" Gap="20" AlignItems="AlignItems.Center">
+        <RadzenStack Orientation="Orientation.Horizontal" Gap="10px" AlignItems="AlignItems.Center">
+            <RadzenCheckBox TriState="true" @bind-Value=@_CheckBoxValue />
             <RadzenIcon Icon="@GroupedEntry.GroupIcon" />
             <RadzenStack Orientation="Orientation.Vertical" Gap="5px">
                 <RadzenText TextStyle="TextStyle.Body1"><strong>@GroupedEntry.GroupHeader</strong></RadzenText>

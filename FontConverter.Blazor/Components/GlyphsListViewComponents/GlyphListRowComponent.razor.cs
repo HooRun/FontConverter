@@ -11,4 +11,6 @@ public partial class GlyphListRowComponent : ComponentBase
     [Parameter]
     public GlyphsGroupedEntry GroupedEntry { get; set; } = new();
 
+    private bool? _CheckBoxValue = false;
+
 }

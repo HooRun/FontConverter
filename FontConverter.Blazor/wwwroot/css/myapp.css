@@ -37,8 +37,9 @@
     grid-template-areas:
         'toolbar left-sidebar header right-sidebar'
         'toolbar left-sidebar glyphs-toolbar right-sidebar'
-        'toolbar left-sidebar glyphs-list right-sidebar';
+        'toolbar left-sidebar glyphs-list right-sidebar' !important;
     background-color: unset !important;
+    position: relative !important;
 }
 
 .toolbar-container {
@@ -81,7 +82,7 @@
 
 .left-sidebar {
     grid-area: left-sidebar !important;
-    position: fixed;
+    position: static;
     margin: 0px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.95) !important;
@@ -109,7 +110,7 @@
             'left-sidebar header right-sidebar'
             'left-sidebar glyphs-toolbar right-sidebar'
             'left-sidebar glyphs-list right-sidebar'
-            'toolbar toolbar toolbar' !important;
+            'left-sidebar toolbar right-sidebar' !important;
         overflow: auto !important;
     }
 
