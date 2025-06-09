@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "SE3f0vsb",
+  "version": "0crd7dYH",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -218,12 +218,12 @@ self.assetsManifest = {
       "url": "_framework/BlazorPro.BlazorSize.fjkic6tfmp.wasm"
     },
     {
-      "hash": "sha256-JPiqDjAnUSDT6F/TJRY2WSk7LgbgtzIZ3hLzXkgiTAI=",
-      "url": "_framework/FontConverter.Blazor.s8enchn64m.wasm"
+      "hash": "sha256-OgZJ7GHkKPKNr5S/eg0g+s23HgCVgEUhtDQiCYNlT3A=",
+      "url": "_framework/FontConverter.Blazor.q3kgomwc17.wasm"
     },
     {
-      "hash": "sha256-ctHiFvHHG7dH9j1vl8P1BHMvzVqCVONk4eJ7BEflDr0=",
-      "url": "_framework/FontConverter.SharedLibrary.2k2e1ru4zg.wasm"
+      "hash": "sha256-qdorXdFqQ6A73i8HXmPawSdgyYzMMlYLtCCOtVSXLPc=",
+      "url": "_framework/FontConverter.SharedLibrary.tjivjeowsj.wasm"
     },
     {
       "hash": "sha256-gSiULoBG02qoZU6SMViU8AU87nO1FhmG5UvQMrwN7Ew=",
@@ -306,8 +306,8 @@ self.assetsManifest = {
       "url": "_framework/SkiaSharp.Views.Blazor.rwyxjek1ea.wasm"
     },
     {
-      "hash": "sha256-v5UIDipG13meWrqRThQaImyfzPyJpXQUHah5KNW4uLo=",
-      "url": "_framework/SkiaSharp.thcgrvrhpv.wasm"
+      "hash": "sha256-Ld04ZFL71NnIdxLb8WcFCMFymevqnzPAxG7txdtbi4o=",
+      "url": "_framework/SkiaSharp.rady3m7l3o.wasm"
     },
     {
       "hash": "sha256-dcG/xPQtYYIQNjrN6sYvip01UQP7lXYWxECta6vFIaY=",
@@ -482,7 +482,7 @@ self.assetsManifest = {
       "url": "_framework/System.icunsnzrqy.wasm"
     },
     {
-      "hash": "sha256-G3oNQDtVGjadUxwTEU6bzwvIA6a9wJ0tKtUMnsyMkT4=",
+      "hash": "sha256-Hw5lIbKjwxstqZNQdjfSx3840BsGQEkm/k05IXJTWg8=",
       "url": "_framework/blazor.boot.json"
     },
     {
