@@ -143,7 +143,7 @@ public static class ParseOS2TableHelper
             os2Table.UsUpperOpticalPointSize = ReadUInt16BigEndian(reader);
         }
 
-        await Task.Delay(1).ConfigureAwait(false);
+        await Task.Delay(1, cancellationToken);
         return os2Table;
     }
 }

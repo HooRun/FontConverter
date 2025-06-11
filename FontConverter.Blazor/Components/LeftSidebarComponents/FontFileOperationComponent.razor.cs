@@ -57,7 +57,6 @@ public partial class FontFileOperationComponent : ComponentBase
                     new Dictionary<string, object>
                     {
                         { "FontFile", fontFile },
-                        { "Typeface", typeface! },
                         { "FontLoadingCancellationToken", fontLoadingCancellationToken },
                     },
                     new DialogOptions
@@ -74,7 +73,7 @@ public partial class FontFileOperationComponent : ComponentBase
                 {
                     MainViewModel.MappingsFromViewModelToModel();
                 }
-                await fontLoadingCancellationToken.CancelAsync();
+                fontLoadingCancellationToken.CancelAfter(1);
                 
             }
             else
@@ -109,7 +108,5 @@ public partial class FontFileOperationComponent : ComponentBase
     {
         fontLoadingCancellationToken?.Dispose();
         fontLoadingCancellationToken = null;
-        typeface?.Dispose();
-        typeface = null;
     }
 }

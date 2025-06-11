@@ -51,24 +51,23 @@ public static class ParseGlyfTableHelper
 
                 if (numberOfContours >= 0)
                 {
-                    //glyph.Simple = await ParseSimpleGlyph(reader, numberOfContours, cancellationToken).ConfigureAwait(false);
+                    //glyph.Simple = await ParseSimpleGlyph(reader, numberOfContours);
                 }
                 else
                 {
-                    //glyph.Composite = await ParseCompositeGlyph(reader, cancellationToken).ConfigureAwait(false);
+                    //glyph.Composite = await ParseCompositeGlyph(reader);
                 }
 
                 glyfTable.Glyphs.Add(glyph);
             }
-            await Task.Delay(1).ConfigureAwait(false);
+            await Task.Delay(1, cancellationToken);
         }
 
         return glyfTable;
     }
 
-    public static async Task<SimpleGlyph> ParseSimpleGlyph(BinaryReader reader, short numberOfContours, CancellationToken cancellationToken = default)
+    public static SimpleGlyph ParseSimpleGlyph(BinaryReader reader, short numberOfContours)
     {
-        cancellationToken.ThrowIfCancellationRequested();
         var glyph = new SimpleGlyph
         {
             EndPtsOfContours = new List<ushort>(numberOfContours)
@@ -88,7 +87,6 @@ public static class ParseGlyfTableHelper
         var flags = new List<SimpleGlyphFlags>(numPoints);
         for (int i = 0; i < numPoints;)
         {
-            cancellationToken.ThrowIfCancellationRequested();
             SimpleGlyphFlags flag = (SimpleGlyphFlags)reader.ReadByte();
             flags.Add(flag);
             i++;
@@ -101,12 +99,11 @@ public static class ParseGlyfTableHelper
                     i++;
                 }
             }
-            if (i % 500 == 0) await Task.Delay(1).ConfigureAwait(false);
         }
 
         // Coordinates
-        var xCoordinates = await DecodeCoordinates(reader, flags, true, cancellationToken);
-        var yCoordinates = await DecodeCoordinates(reader, flags, false, cancellationToken);
+        var xCoordinates = DecodeCoordinates(reader, flags, true);
+        var yCoordinates = DecodeCoordinates(reader, flags, false);
 
         glyph.Points = new List<GlyphPoint>(numPoints);
         for (int i = 0; i < numPoints; i++)
@@ -119,19 +116,16 @@ public static class ParseGlyfTableHelper
             });
         }
 
-        await Task.Delay(1).ConfigureAwait(false);
         return glyph;
     }
 
-    public static async Task<List<short>> DecodeCoordinates(BinaryReader reader, List<SimpleGlyphFlags> flags, bool isX, CancellationToken cancellationToken = default)
+    public static List<short> DecodeCoordinates(BinaryReader reader, List<SimpleGlyphFlags> flags, bool isX)
     {
-        cancellationToken.ThrowIfCancellationRequested();
         var coords = new List<short>(flags.Count);
         short current = 0;
 
         for (int i = 0; i < flags.Count; i += chunkSize)
         {
-            cancellationToken.ThrowIfCancellationRequested();
             int batchEnd = Math.Min(i + chunkSize, flags.Count);
             for (int j = i; j < batchEnd; j++)
             {
@@ -153,15 +147,13 @@ public static class ParseGlyfTableHelper
                 current += delta;
                 coords.Add(current);
             }
-            await Task.Delay(1).ConfigureAwait(false);
         }
 
         return coords;
     }
 
-    public static async Task<CompositeGlyph> ParseCompositeGlyph(BinaryReader reader, CancellationToken cancellationToken = default)
+    public static CompositeGlyph ParseCompositeGlyph(BinaryReader reader)
     {
-        cancellationToken.ThrowIfCancellationRequested();
         var composite = new CompositeGlyph
         {
             Components = new List<Component>()
@@ -170,7 +162,6 @@ public static class ParseGlyfTableHelper
 
         while (hasMore)
         {
-            cancellationToken.ThrowIfCancellationRequested();
             var flags = (ComponentGlyphFlags)ReadUInt16BigEndian(reader);
             ushort glyphIndex = ReadUInt16BigEndian(reader);
             short arg1, arg2;
@@ -210,7 +201,6 @@ public static class ParseGlyfTableHelper
 
             composite.Components.Add(component);
             hasMore = flags.HasFlag(ComponentGlyphFlags.MORE_COMPONENTS);
-            await Task.Delay(1).ConfigureAwait(false);
         }
 
         if (composite.Components[^1].Flags.HasFlag(ComponentGlyphFlags.WE_HAVE_INSTRUCTIONS))
@@ -219,7 +209,6 @@ public static class ParseGlyfTableHelper
             composite.Instructions = reader.ReadBytes(composite.InstructionLength);
         }
 
-        await Task.Delay(1).ConfigureAwait(false);
         return composite;
     }
 }

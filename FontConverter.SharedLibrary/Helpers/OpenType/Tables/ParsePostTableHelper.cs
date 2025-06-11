@@ -44,7 +44,7 @@ public static class ParsePostTableHelper
                 {
                     postTable.GlyphNameIndex.Add(ReadUInt16BigEndian(reader));
                 }
-                await Task.Delay(1).ConfigureAwait(false);
+                await Task.Delay(1, cancellationToken);
             }
 
             while (reader.BaseStream.Position < reader.BaseStream.Length)
@@ -60,7 +60,7 @@ public static class ParsePostTableHelper
                 postTable.PascalStrings.Add(Encoding.ASCII.GetString(strBytes));
 
                 if (postTable.PascalStrings.Count % chunkSize == 0)
-                    await Task.Delay(1).ConfigureAwait(false);
+                    await Task.Delay(1, cancellationToken);
             }
         }
         else if (postTable.Version == 2.5f)
@@ -75,7 +75,7 @@ public static class ParsePostTableHelper
                     sbyte offset = reader.ReadSByte();
                     postTable.GlyphOffsets.Add(offset);
                 }
-                await Task.Delay(1).ConfigureAwait(false);
+                await Task.Delay(1, cancellationToken);
             }
         }
 

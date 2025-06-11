@@ -1,91 +1,74 @@
-﻿namespace FontConverter.Blazor.Services;
+﻿using System.Collections.Concurrent;
+using System.Threading;
+
+namespace FontConverter.Blazor.Services;
 
 public class GlyphRenderQueueService
 {
-    private readonly Queue<int> _visibleQueue = new();
-    private readonly HashSet<int> _inQueue = new();
-    private readonly object _lock = new();
+    private readonly ConcurrentQueue<int> _visibleQueue = new();
+    private readonly ConcurrentDictionary<int, byte> _inQueue = new();
 
     public event Action<int>? OnRenderAllowed;
 
-    private bool _isProcessing = false;
-    private readonly int _delayMilliseconds = 10;
+    private int _isProcessing = 0;
+    private readonly int _delayMilliseconds = 0;
+    private readonly int _batchSize = 20;
 
     public void EnqueueVisibleGlyph(int trackingId)
     {
-
-        if (_inQueue.Contains(trackingId)) return;
+        if (!_inQueue.TryAdd(trackingId, 0))
+            return;
 
         _visibleQueue.Enqueue(trackingId);
-        _inQueue.Add(trackingId);
-
-
         _ = ProcessQueueAsync();
     }
 
     private async Task ProcessQueueAsync()
     {
-
-        if (_isProcessing)
+        if (Interlocked.CompareExchange(ref _isProcessing, 1, 0) != 0)
             return;
-
-        _isProcessing = true;
-
 
         try
         {
             while (true)
             {
-                int trackingId;
+                if (_visibleQueue.IsEmpty)
+                    break;
 
+                int processedCount = 0;
 
-
-                if (_visibleQueue.Count == 0)
+                while (processedCount < _batchSize && _visibleQueue.TryDequeue(out var trackingId))
                 {
-                    _isProcessing = false;
-                    return;
+                    if (!_inQueue.TryRemove(trackingId, out _))
+                        continue;
+
+                    OnRenderAllowed?.Invoke(trackingId);
+                    processedCount++;
                 }
 
-                trackingId = _visibleQueue.Dequeue();
-                _inQueue.Remove(trackingId);
-
-
-                var handler = OnRenderAllowed;
-                handler?.Invoke(trackingId);
+                if (processedCount == 0)
+                    break;
 
                 await Task.Delay(_delayMilliseconds);
             }
         }
         finally
         {
+            Interlocked.Exchange(ref _isProcessing, 0);
 
-            _isProcessing = false;
-
+            if (!_visibleQueue.IsEmpty)
+                _ = ProcessQueueAsync();
         }
     }
 
-
     public void UnregisterGlyph(int trackingId)
     {
-
-        var filteredQueue = _visibleQueue
-            .Where(id => id != trackingId)
-            .ToList();
-
-        _visibleQueue.Clear();
-        foreach (var id in filteredQueue)
-            _visibleQueue.Enqueue(id);
-
-        _inQueue.Remove(trackingId);
-
+        _inQueue.TryRemove(trackingId, out _);
     }
 
     public void ClearAll()
     {
-
-        _visibleQueue.Clear();
+        while (_visibleQueue.TryDequeue(out _)) { }
         _inQueue.Clear();
-
     }
-
 }

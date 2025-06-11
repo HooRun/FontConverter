@@ -37,7 +37,7 @@ public static class ParseVmtxTableHelper
                     TopSideBearing = topSideBearing
                 });
             }
-            await Task.Delay(1).ConfigureAwait(false);
+            await Task.Delay(1, cancellationToken);
         }
 
         // Remaining glyphs: only TopSideBearing is stored, AdvanceHeight = lastAdvanceHeight
@@ -54,7 +54,7 @@ public static class ParseVmtxTableHelper
                     TopSideBearing = topSideBearing
                 });
             }
-            await Task.Delay(1).ConfigureAwait(false);
+            await Task.Delay(1, cancellationToken);
         }
 
         return vmtxTable;

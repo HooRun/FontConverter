@@ -9,7 +9,6 @@ public class RenderGlyphsToBitmapArrayHelper
 {
 
     public static async Task<SortedList<int, LVGLGlyphBitmapData>> RenderGlyphsToBitmapArrayAsync(
-        SKFont font,
         OpenTypeFont openTypeFont,
         LVGLFont lVGLFont,
         IProgress<(int glyphIndex, double percentage)>? progress = null,
@@ -51,7 +50,7 @@ public class RenderGlyphsToBitmapArrayHelper
 
             for (int j = i; j < batchEnd; j++)
             {
-                glyphs.Add(j, RenderGlyphToBitmapArray(font, (ushort)j, lVGLFont.FontSettings.FontSize, lVGLFont.FontSettings.FontBitPerPixel, threshold, paint));
+                glyphs.Add(j, RenderGlyphToBitmapArray(openTypeFont.SKFont!, paint, (ushort)j, lVGLFont.FontSettings.FontSize, lVGLFont.FontSettings.FontBitPerPixel, threshold));
                 processedGlyphs++;
             }
             progress?.Report((processedGlyphs, (double)processedGlyphs / totalGlyphs * 100));
@@ -63,7 +62,7 @@ public class RenderGlyphsToBitmapArrayHelper
         return glyphs;
     }
 
-    public static LVGLGlyphBitmapData RenderGlyphToBitmapArray(SKFont font, ushort glyphIndex, int pixelHeight, BIT_PER_PIXEL_ENUM bpp, int threshold, SKPaint paint)
+    public static LVGLGlyphBitmapData RenderGlyphToBitmapArray(SKFont font, SKPaint paint, ushort glyphIndex, int pixelHeight, BIT_PER_PIXEL_ENUM bpp, int threshold)
     {
         if (bpp is not (BIT_PER_PIXEL_ENUM.BPP_1 or BIT_PER_PIXEL_ENUM.BPP_2 or BIT_PER_PIXEL_ENUM.BPP_4 or BIT_PER_PIXEL_ENUM.BPP_8))
             return new LVGLGlyphBitmapData(glyphIndex, Array.Empty<byte>(), SKRectI.Empty);

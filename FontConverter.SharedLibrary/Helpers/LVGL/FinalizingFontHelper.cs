@@ -12,19 +12,17 @@ namespace FontConverter.SharedLibrary.Helpers;
 public static class FinalizingFontHelper
 {
     public static async Task FinalizingFontAsync(
-        SKTypeface typeface,
-        SKFont font,
         OpenTypeFont openTypeFont,
         LVGLFont lvglFont,
         IProgress<double>? progress = null,
         CancellationToken cancellationToken = default)
     {
 
-        UpdateFontInformation(typeface, font, openTypeFont, lvglFont);
+        UpdateFontInformation(openTypeFont, lvglFont);
         progress?.Report(10.0);
         await Task.Delay(500, cancellationToken).ConfigureAwait(false);
 
-        UpdateGlyphViewItemProperties(font, openTypeFont, lvglFont);
+        UpdateGlyphViewItemProperties(openTypeFont, lvglFont);
         progress?.Report(40.0);
         await Task.Delay(500, cancellationToken).ConfigureAwait(false);
 
@@ -34,18 +32,16 @@ public static class FinalizingFontHelper
     }
 
     private static void UpdateFontInformation(
-        SKTypeface typeface,
-        SKFont font,
         OpenTypeFont openTypeFont, 
         LVGLFont lvglFont)
     {
         var scale = lvglFont.FontSettings.FontSize / (double)openTypeFont.HeadTable.UnitsPerEm;
 
         lvglFont.FontInformations = new();
-        lvglFont.FontInformations.FontName = typeface.FamilyName;
+        lvglFont.FontInformations.FontName = openTypeFont.SKTypeface!.FamilyName;
         lvglFont.FontInformations.LineHeight = ((int)(Math.Ceiling(scale * openTypeFont.OS2Table.UsWinAscent) + Math.Ceiling(scale * openTypeFont.OS2Table.UsWinDescent))).ToString();
         lvglFont.FontInformations.BaseLine = ((int)Math.Ceiling(scale * openTypeFont.OS2Table.UsWinDescent)).ToString();
-        lvglFont.FontInformations.CharWidthMax = ((int)Math.Ceiling(font.Metrics.MaxCharacterWidth)).ToString();
+        lvglFont.FontInformations.CharWidthMax = ((int)Math.Ceiling(openTypeFont.SKFont!.Metrics.MaxCharacterWidth)).ToString();
         lvglFont.FontInformations.AdvanceWidthMax = ((int)Math.Ceiling(scale * openTypeFont.HheaTable.AdvanceWidthMax)).ToString();
         lvglFont.FontInformations.UnderlinePosition = ((int)Math.Ceiling(scale * openTypeFont.PostTable.UnderlinePosition)).ToString();
         lvglFont.FontInformations.UnderlineThickness = ((int)Math.Ceiling(scale * openTypeFont.PostTable.UnderlineThickness)).ToString();
@@ -58,7 +54,6 @@ public static class FinalizingFontHelper
     }
 
     private static void UpdateGlyphViewItemProperties(
-        SKFont font,
         OpenTypeFont openTypeFont,
         LVGLFont lvglFont)
     {
@@ -66,7 +61,7 @@ public static class FinalizingFontHelper
 
         lvglFont.GlyphViewItemProperties.XMin = (int)Math.Ceiling(scale * openTypeFont.HeadTable.XMin);
         lvglFont.GlyphViewItemProperties.BaseLine = (int)Math.Ceiling(scale * openTypeFont.OS2Table.UsWinDescent);
-        lvglFont.GlyphViewItemProperties.ItemWidth = (int)Math.Max(Math.Ceiling(font.Metrics.MaxCharacterWidth), Math.Ceiling(scale * openTypeFont.HheaTable.AdvanceWidthMax));
+        lvglFont.GlyphViewItemProperties.ItemWidth = (int)Math.Max(Math.Ceiling(openTypeFont.SKFont!.Metrics.MaxCharacterWidth), Math.Ceiling(scale * openTypeFont.HheaTable.AdvanceWidthMax));
         lvglFont.GlyphViewItemProperties.ItemHeight = (int)(Math.Ceiling(scale * openTypeFont.OS2Table.UsWinAscent) + Math.Ceiling(scale * openTypeFont.OS2Table.UsWinDescent));
         lvglFont.GlyphViewItemProperties.Zoom = 1;
     }

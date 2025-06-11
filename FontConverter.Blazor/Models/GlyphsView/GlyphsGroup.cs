@@ -11,6 +11,7 @@ public class GlyphsGroup
         SubTitle = string.Empty;
         LoadItemsAsync = null;
         Items = [];
+        SelectedItems = [];
         IsExpanded = false;
         IsLoaded = false;
     }
@@ -20,6 +21,7 @@ public class GlyphsGroup
     public string SubTitle { get; set; }
     public Func<Task<List<int>>>? LoadItemsAsync { get; set; }
     public List<int> Items { get; set; }
+    public List<int> SelectedItems { get; set; }
     public bool IsExpanded { get; set; }
     public bool IsLoaded { get; set; }
 }

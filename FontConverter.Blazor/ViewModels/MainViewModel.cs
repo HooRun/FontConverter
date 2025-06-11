@@ -7,6 +7,7 @@ using FontConverter.Blazor.Layout;
 using FontConverter.Blazor.Models.GlyphsView;
 using FontConverter.Blazor.Services;
 using FontConverter.SharedLibrary.Models;
+using Microsoft.AspNetCore.Components;
 using Radzen.Blazor.Rendering;
 using System.Reflection.PortableExecutable;
 
@@ -120,6 +121,9 @@ public class MainViewModel : BaseViewModel
         }
     }
 
+    public Action<List<(int GroupID, int SelectedItemsCount)>>? OnGlyphSelectionChanged { get; set; }
+    public Action<(int GlyphID, bool Selected)>? OnSingleGlyphSelectionChanged { get; set; }
+
     public void MappingsFromModelToViewModel()
     {
         _Mapper.Map(LVGLFont.FontSettings, FontSettingsViewModel);
@@ -150,8 +154,9 @@ public class MainViewModel : BaseViewModel
             return;
         _SelectedTreeViewItem = selectedItem;
         await Task.Run(() => UpdateTreeSelection(FontContentsViewModel.Contents.Values, selectedItem));
-        _GlyphRenderQueueService.ClearAll();
+
         UpdateGlyphsListView(_SelectedTreeViewItem);
+        UpdateGroupSelectedItems();
         RerenderMany(nameof(MainLayout), nameof(GlyphListComponent));
     }
 
@@ -302,4 +307,87 @@ public class MainViewModel : BaseViewModel
         RerenderMany(nameof(MainLayout), nameof(GlyphListComponent), nameof(GlyphsToolbarComponent));
     }
 
+
+
+    public void GlyphSelectionChanged(int glyphID, bool isSelected)
+    {
+        foreach (var group in GlyphsGroupedList)
+        {
+            if (group.Items.Contains(glyphID))
+            {
+                if (isSelected)
+                {
+                    if (!group.SelectedItems.Contains(glyphID))
+                    {
+                        group.SelectedItems.Add(glyphID);
+                    }
+                }
+                else
+                {
+                    group.SelectedItems.Remove(glyphID);
+                }
+            }
+        }
+        UpdateGroupSelectedItems();
+        List<(int GroupID, int SelectedItemsCount)> selectionInfo = [];
+        int groupID = 0;
+        foreach (var group in GlyphsGroupedList)
+        {
+            if (group.Items.Contains(glyphID))
+            {
+                selectionInfo.Add((groupID, group.SelectedItems.Count));
+            }
+            groupID++;
+        }
+        OnGlyphSelectionChanged?.Invoke(selectionInfo);
+    }
+
+
+    public void GroupSelectionChanged(int groupID, bool isSelected)
+    {
+        if (groupID < 0 || groupID >= GlyphsGroupedList.Count)
+            return;
+        var group = GlyphsGroupedList[groupID];
+        if (isSelected)
+        {
+            group.SelectedItems.Clear();
+            group.SelectedItems.AddRange(group.Items);
+        }
+        else
+        {
+            group.SelectedItems.Clear();
+        }
+        foreach (var item in group.Items)
+        {
+            if (GlyphsList.ContainsKey(item))
+            {
+                GlyphsList[item].IsSelected = isSelected;
+            }
+        }
+        UpdateGroupSelectedItems();
+        List<(int GroupID, int SelectedItemsCount)> selectionInfo = [];
+        for (int i = 0; i < GlyphsGroupedList.Count; i++)
+        {
+            var g = GlyphsGroupedList[i];
+            selectionInfo.Add((i, g.SelectedItems.Count));
+        }
+        OnGlyphSelectionChanged?.Invoke(selectionInfo);
+    }
+
+    private void UpdateGroupSelectedItems()
+    {
+        foreach (var group in GlyphsGroupedList)
+        {
+            group.SelectedItems.Clear();
+            foreach (var item in group.Items)
+            {
+                if (GlyphsList.TryGetValue(item, out var glyph))
+                {
+                    if (glyph.IsSelected)
+                        group.SelectedItems.Add(item);
+                    OnSingleGlyphSelectionChanged?.Invoke((glyph.Index, glyph.IsSelected));
+                }
+            }
+        }
+    }
 }

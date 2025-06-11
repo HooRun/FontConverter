@@ -21,17 +21,12 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
     private IJSRuntime JSRuntime { get; set; } = default!;
 
     [Parameter]
-    public EventCallback<(int GlyphID, bool IsSelected)> OnSelectionChanged { get; set; }
-
-    [Parameter]
     public int GlyphId { get; set; } = -1;
 
     [Parameter]
     public int VisibilityTrackingID { get; set; }
 
     private SKCanvasView? _SKCanvasView;
-    private SKSurface? _SKSurface;
-    private SKCanvas? _SKCanvas;
 
     private bool IsSelected { get; set; } = false;
 
@@ -53,13 +48,12 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
     private int _BitPerPixel;
     private float _BitmapXOffset;
     private float _BitmapYOffset;
-    private bool _Dispose = false;
 
+    private bool _IsDisposed = false;
     private bool _IsRenderAllowed = false;
+    private bool _IsRendered = false;
     private ElementReference _GlyphRef;
     private int _PrevGlyphId = -1;
-    private int _PrevRowIndex = -1;
-    private int _PrevColumnIndex = -1;
     private DotNetObjectReference<GlyphListItemComponent>? _DotNetRef;
     private int _PrevVisibilityTrackingID = -1;
 
@@ -68,11 +62,16 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
     {
         base.OnInitialized();
         UpdateItemMetrics();
-        _Dispose = false;
+        _IsDisposed = false;
+        _IsRenderAllowed = false;
         _PrevGlyphId = GlyphId;
         _PrevVisibilityTrackingID = VisibilityTrackingID;
-        _DotNetRef = DotNetObjectReference.Create(this);
+        if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
+        {
+            IsSelected = glyphItem.IsSelected;
+        }
         GlyphRenderQueueService.OnRenderAllowed += HandleRenderAllowed;
+        MainViewModel.OnSingleGlyphSelectionChanged += UpdateSelectionStatus;
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -80,48 +79,58 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
         UpdateItemMetrics();
         if (firstRender)
         {
-            if (_DotNetRef is not null && GlyphId >= 0)
+            _IsRenderAllowed = false;
+            if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
             {
-                await JSRuntime.InvokeVoidAsync("startGlyphVisibilityTracking", _GlyphRef, _DotNetRef, VisibilityTrackingID);
+                IsSelected = glyphItem.IsSelected;
             }
+            _DotNetRef ??= DotNetObjectReference.Create(this);
+            await JSRuntime.InvokeVoidAsync("startGlyphVisibilityTracking", _GlyphRef, _DotNetRef, VisibilityTrackingID);
         }
-        
-        _SKCanvasView?.Invalidate();
     }
 
     protected override async Task OnParametersSetAsync()
     {
-        if (GlyphId < 0)
-            return;
+        //if (GlyphId < 0)
+        //{
+        //    //_IsRenderAllowed = false;
 
-        if (_PrevVisibilityTrackingID != VisibilityTrackingID)
+        //    GlyphRenderQueueService.UnregisterGlyph(_PrevVisibilityTrackingID);
+        //    await JSRuntime.InvokeVoidAsync("stopGlyphVisibilityTracking", _PrevVisibilityTrackingID);
+            
+        //    _PrevVisibilityTrackingID = VisibilityTrackingID;
+        //    _PrevGlyphId = GlyphId;
+        //    return;
+        //}
+
+        bool glyphIdChanged = _PrevGlyphId != GlyphId;
+        bool trackingIdChanged = _PrevVisibilityTrackingID != VisibilityTrackingID;
+
+        if (trackingIdChanged)
         {
-            UpdateItemMetrics();
+            //_IsRenderAllowed = false;
 
-            _IsRenderAllowed = false;
-
-            //GlyphRenderQueueService.UnregisterGlyph(_PrevVisibilityTrackingID);
-            //GlyphRenderQueueService.UnregisterGlyph(VisibilityTrackingID);
-
-            //await JSRuntime.InvokeVoidAsync("stopGlyphVisibilityTracking", _PrevVisibilityTrackingID);
-            //await JSRuntime.InvokeVoidAsync("stopGlyphVisibilityTracking", VisibilityTrackingID);
+            GlyphRenderQueueService.UnregisterGlyph(_PrevVisibilityTrackingID);
+            await JSRuntime.InvokeVoidAsync("stopGlyphVisibilityTracking", _PrevVisibilityTrackingID);
 
             if (_DotNetRef is not null)
+            {
                 await JSRuntime.InvokeVoidAsync("startGlyphVisibilityTracking", _GlyphRef, _DotNetRef, VisibilityTrackingID);
+            }
 
             _PrevVisibilityTrackingID = VisibilityTrackingID;
-
-            await InvokeAsync(StateHasChanged);
         }
-        if (_PrevGlyphId != GlyphId)
+
+        if (glyphIdChanged)
         {
-            UpdateItemMetrics();
-
             _PrevGlyphId = GlyphId;
-
-            await InvokeAsync(StateHasChanged);
+            if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
+            {
+                IsSelected = glyphItem.IsSelected;
+            }
         }
-        if (_IsRenderAllowed)
+
+        if (glyphIdChanged || trackingIdChanged || _IsRenderAllowed)
         {
             UpdateItemMetrics();
             _SKCanvasView?.Invalidate();
@@ -132,7 +141,12 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
     private async Task ToggleSelection()
     {
         IsSelected = !IsSelected;
-        await OnSelectionChanged.InvokeAsync((GlyphId, IsSelected));
+        if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
+        {
+            glyphItem.IsSelected = IsSelected;
+        }
+        MainViewModel.GlyphSelectionChanged(GlyphId, IsSelected);
+        await InvokeAsync(StateHasChanged);
     }
 
     private void UpdateItemMetrics()
@@ -168,6 +182,7 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
             _BitmapXOffset = _YAxis + (float)(glyphItem.Descriptor.OffsetX * _Zoom);
             _BitmapYOffset = _XAxis - (float)((_BitMapHeight + glyphItem.Descriptor.OffsetY) * _Zoom);
             _HeaderTitle = glyphItem.Name;
+            IsSelected = glyphItem.IsSelected;
         }
         else
         {
@@ -186,61 +201,51 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
         if (!_IsRenderAllowed)
             return;
 
-        if (_Dispose) return;
+        if (_IsDisposed) return;
 
         if (_SKCanvasView == null || e.Surface == null || e.Surface.Canvas == null)
             return;
 
-        _SKSurface = e.Surface;
-        _SKCanvas = e.Surface.Canvas;
         var info = e.Info;
         if (info.Width == 0 || info.Height == 0)
             return;
 
-        
-        
-        PaintCanvas();
-
+        PaintCanvas(e.Surface.Canvas);
     }
 
-    private void PaintCanvas()
+    private void PaintCanvas(SKCanvas canvas)
     {
-
-        if (_SKCanvasView is null) return;
-        if (_SKSurface is null) return;
-        if (_SKCanvas is null) return;
-
         UpdateItemMetrics();
-        _SKCanvas.Clear(SKColors.White);
+        canvas.Clear(SKColors.White);
 
-        using var mainRectPaint = new SKPaint
+        using SKPaint mainRectPaint = new SKPaint
         {
             Color = new SKColor(0xF6, 0xEA, 0xCB, 0x66),
             Style = SKPaintStyle.Fill
         };
-        _SKCanvas.DrawRect(0, 0, _CanvasWidth, _CanvasHeight, mainRectPaint);
+        canvas.DrawRect(0, 0, _CanvasWidth, _CanvasHeight, mainRectPaint);
 
-        using var advanceWidthPaint = new SKPaint
+        using SKPaint advanceWidthPaint = new SKPaint
         {
             Color = new SKColor(0xFF, 0xE3, 0xE3, 0x88),
             Style = SKPaintStyle.Fill
         };
-        _SKCanvas.DrawRect(_YAxis, 0, _AdvanceWidth, _CanvasHeight, advanceWidthPaint);
+        canvas.DrawRect(_YAxis, 0, _AdvanceWidth, _CanvasHeight, advanceWidthPaint);
 
-        using var axisPaint = new SKPaint
+        using SKPaint axisPaint = new SKPaint
         {
             Color = new SKColor(0xCD, 0x5C, 0x5C, (int)(255 * 0.25f)),
             StrokeWidth = 1,
             Style = SKPaintStyle.Stroke,
             IsAntialias = false,
         };
-        _SKCanvas.DrawLine(0, _XAxis, _CanvasWidth, _XAxis, axisPaint); // X Axis
-        _SKCanvas.DrawLine(_YAxis, 0, _YAxis, _CanvasHeight, axisPaint); // Y Axis
+        canvas.DrawLine(0, _XAxis, _CanvasWidth, _XAxis, axisPaint); // X Axis
+        canvas.DrawLine(_YAxis, 0, _YAxis, _CanvasHeight, axisPaint); // Y Axis
 
-        RenderGlyphToCanvas(_SKCanvas, _GlyphPixels, _BitMapWidth, _BitMapHeight, _BitPerPixel, _Zoom, new SKPoint(_BitmapXOffset, _BitmapYOffset));
+        DrawGlyphBitmapOnCanvas(canvas, _GlyphPixels, _BitMapWidth, _BitMapHeight, _BitPerPixel, _Zoom, new SKPoint(_BitmapXOffset, _BitmapYOffset));
     }
 
-    private void RenderGlyphToCanvas(SKCanvas canvas, byte[] bitmap, int width, int height, int bpp, int zoom, SKPoint offset)
+    private void DrawGlyphBitmapOnCanvas(SKCanvas canvas, byte[] bitmap, int width, int height, int bpp, int zoom, SKPoint offset)
     {
         int stride = (width * bpp + 7) / 8; 
 
@@ -253,7 +258,7 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
 
                 byte alpha = (byte)(value * 255 / ((1 << bpp) - 1));
 
-                var paint = new SKPaint
+                using SKPaint pixelPaint = new SKPaint
                 {
                     Color = new SKColor(0, 0, 0, alpha),
                     IsAntialias = false,
@@ -265,11 +270,10 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
                 float right = offset.X + (x + 1) * zoom;
                 float bottom = offset.Y + (y + 1) * zoom;
 
-                canvas.DrawRect(new SKRect(left, top, right, bottom), paint);
+                canvas.DrawRect(new SKRect(left, top, right, bottom), pixelPaint);
             }
         }
     }
-
 
     private byte GetPixel(byte[] data, int stride, int bpp, int x, int y)
     {
@@ -285,19 +289,23 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
         return (byte)((b >> bitOffset) & ((1 << bpp) - 1));
     }
 
-
-
     public void Dispose()
     {
-        if (_Dispose)
+        if (_IsDisposed)
             return;
-        _Dispose = true;
+
+        _IsDisposed = true;
         _IsRenderAllowed = false;
+
+        MainViewModel.OnSingleGlyphSelectionChanged -= UpdateSelectionStatus;
+        GlyphRenderQueueService.OnRenderAllowed -= HandleRenderAllowed;
         GlyphRenderQueueService.UnregisterGlyph(VisibilityTrackingID);
+
         _ = JSRuntime.InvokeVoidAsync("stopGlyphVisibilityTracking", VisibilityTrackingID);
+
         _DotNetRef?.Dispose();
         _DotNetRef = null;
-        GlyphRenderQueueService.OnRenderAllowed -= HandleRenderAllowed;
+
         _SKCanvasView = null;
     }
 
@@ -309,27 +317,46 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
 
     private void HandleRenderAllowed(int trackingID)
     {
-        if (_Dispose || VisibilityTrackingID != trackingID)
+        if (_IsDisposed)
             return;
-        _IsRenderAllowed = true;
-        InvokeAsync(StateHasChanged);
-    }
 
+        if (trackingID == VisibilityTrackingID)
+        {
+            _IsRenderAllowed = true;
+
+            _ = InvokeAsync(() =>
+            {
+                _SKCanvasView?.Invalidate();
+                StateHasChanged();
+            });
+        }
+    }
 
     [JSInvokable]
     public async Task OnVisible(int trackingID)
     {
-        if (_Dispose || VisibilityTrackingID != trackingID)
+        if (_IsDisposed || VisibilityTrackingID != trackingID)
             return;
+
         GlyphRenderQueueService.EnqueueVisibleGlyph(trackingID);
-        
     }
 
     [JSInvokable]
     public async Task OnInvisible(int trackingID)
     {
-        if (_Dispose || VisibilityTrackingID != trackingID)
+        if (_IsDisposed || VisibilityTrackingID != trackingID)
             return;
+
         GlyphRenderQueueService.UnregisterGlyph(trackingID);
+    }
+
+
+    private void UpdateSelectionStatus((int GlyphID, bool Selected) selectionArgs)
+    {
+        if (GlyphId == selectionArgs.GlyphID && IsSelected != selectionArgs.Selected)
+        {
+            IsSelected = selectionArgs.Selected;
+            StateHasChanged();
+        }
     }
 }

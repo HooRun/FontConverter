@@ -38,7 +38,7 @@ public static class ParseHmtxTableHelper
                     LeftSideBearing = lsb
                 });
             }
-            await Task.Delay(1).ConfigureAwait(false);
+            await Task.Delay(1, cancellationToken);
         }
 
         // Remaining glyphs: only LSB is stored, advanceWidth = lastAdvanceWidth
@@ -55,7 +55,7 @@ public static class ParseHmtxTableHelper
                     LeftSideBearing = lsb
                 });
             }
-            await Task.Delay(1).ConfigureAwait(false);
+            await Task.Delay(1, cancellationToken);
         }
 
 

@@ -10,7 +10,7 @@ public static class ParseTablesDataHelper
 
     public static async Task<OpenTypeFont> ParseTablesAsync(SortedList<OpenTypeTables, OpenTypeTableBinaryData> tables, [AllowNull] IProgress<(string tableName, double percentage)> progress = null, CancellationToken cancellationToken = default)
     {
-        await Task.Delay(1).ConfigureAwait(false);
+        await Task.Delay(1);
         OpenTypeFont fontData = new();
         if (tables == null || tables.Count == 0)
             return fontData;
@@ -52,116 +52,100 @@ public static class ParseTablesDataHelper
             {
                 independentTasks.Add(Task.Run(async () =>
                 {
-                    fontData.NameTable = await ParseNameTableHelper.ParseNameTable(nameTable, cancellationToken).ConfigureAwait(false);
+                    fontData.NameTable = await ParseNameTableHelper.ParseNameTable(nameTable, cancellationToken);
                     lock (reportLock)
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((nameTable.TagName, percentage));
-                        Console.WriteLine($"Parsed {nameTable.TagName} table at {DateTime.Now:HH:mm:ss.fff}, progress: {percentage:F2}%");
                     }
-                    //await Task.Delay(100).ConfigureAwait(false);
                 }, cancellationToken));
             }
             if (fontData.Tables.TryGetValue(OpenTypeTables.HEAD, out OpenTypeTableBinaryData? headTable) && headTable != null)
             {
                 independentTasks.Add(Task.Run(async () =>
                 {
-                    fontData.HeadTable = await ParseHeaderTableHelper.ParseHeaderTable(headTable, cancellationToken).ConfigureAwait(false);
+                    fontData.HeadTable = await ParseHeaderTableHelper.ParseHeaderTable(headTable, cancellationToken);
                     lock (reportLock)
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((headTable.TagName, percentage));
-                        Console.WriteLine($"Parsed {headTable.TagName} table at {DateTime.Now:HH:mm:ss.fff}, progress: {percentage:F2}%");
                     }
-                    //await Task.Delay(100).ConfigureAwait(false);
                 }, cancellationToken));
             }
             if (fontData.Tables.TryGetValue(OpenTypeTables.OS2, out OpenTypeTableBinaryData? os2Table) && os2Table != null)
             {
                 independentTasks.Add(Task.Run(async () =>
                 {
-                    fontData.OS2Table = await ParseOS2TableHelper.ParseOS2Table(os2Table, cancellationToken).ConfigureAwait(false);
+                    fontData.OS2Table = await ParseOS2TableHelper.ParseOS2Table(os2Table, cancellationToken);
                     lock (reportLock)
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((os2Table.TagName, percentage));
-                        Console.WriteLine($"Parsed {os2Table.TagName} table at {DateTime.Now:HH:mm:ss.fff}, progress: {percentage:F2}%");
                     }
-                    //await Task.Delay(100).ConfigureAwait(false);
                 }, cancellationToken));
             }
             if (fontData.Tables.TryGetValue(OpenTypeTables.MAXP, out OpenTypeTableBinaryData? maxpTable) && maxpTable != null)
             {
                 independentTasks.Add(Task.Run(async () =>
                 {
-                    fontData.MaxpTable = await ParseMaxpTableHelper.ParseMaxpTable(maxpTable, cancellationToken).ConfigureAwait(false);
+                    fontData.MaxpTable = await ParseMaxpTableHelper.ParseMaxpTable(maxpTable, cancellationToken);
                     lock (reportLock)
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((maxpTable.TagName, percentage));
-                        Console.WriteLine($"Parsed {maxpTable.TagName} table at {DateTime.Now:HH:mm:ss.fff}, progress: {percentage:F2}%");
                     }
-                    //await Task.Delay(100).ConfigureAwait(false);
                 }, cancellationToken));
             }
             if (fontData.Tables.TryGetValue(OpenTypeTables.HHEA, out OpenTypeTableBinaryData? hheaTable) && hheaTable != null)
             {
                 independentTasks.Add(Task.Run(async () =>
                 {
-                    fontData.HheaTable = await ParseHheaTableHelper.ParseHheaTable(hheaTable, cancellationToken).ConfigureAwait(false);
+                    fontData.HheaTable = await ParseHheaTableHelper.ParseHheaTable(hheaTable, cancellationToken);
                     lock (reportLock)
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((hheaTable.TagName, percentage));
-                        Console.WriteLine($"Parsed {hheaTable.TagName} table at {DateTime.Now:HH:mm:ss.fff}, progress: {percentage:F2}%");
                     }
-                    //await Task.Delay(100).ConfigureAwait(false);
                 }, cancellationToken));
             }
             if (fontData.Tables.TryGetValue(OpenTypeTables.VHEA, out OpenTypeTableBinaryData? vheaTable) && vheaTable != null)
             {
                 independentTasks.Add(Task.Run(async () =>
                 {
-                    fontData.VheaTable = await ParseVheaTableHelper.ParseVheaTable(vheaTable, cancellationToken).ConfigureAwait(false);
+                    fontData.VheaTable = await ParseVheaTableHelper.ParseVheaTable(vheaTable, cancellationToken);
                     lock (reportLock)
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((vheaTable.TagName, percentage));
-                        Console.WriteLine($"Parsed {vheaTable.TagName} table at {DateTime.Now:HH:mm:ss.fff}, progress: {percentage:F2}%");
                     }
-                    //await Task.Delay(100).ConfigureAwait(false);
                 }, cancellationToken));
             }
             if (fontData.Tables.TryGetValue(OpenTypeTables.KERN, out OpenTypeTableBinaryData? kernTable) && kernTable != null)
             {
                 independentTasks.Add(Task.Run(async () =>
                 {
-                    fontData.KernTable = await ParseKernTableHelper.ParseKernTable(kernTable, cancellationToken).ConfigureAwait(false);
+                    fontData.KernTable = await ParseKernTableHelper.ParseKernTable(kernTable, cancellationToken);
                     lock (reportLock)
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((kernTable.TagName, percentage));
-                        Console.WriteLine($"Parsed {kernTable.TagName} table at {DateTime.Now:HH:mm:ss.fff}, progress: {percentage:F2}%");
                     }
-                    //await Task.Delay(100).ConfigureAwait(false);
                 }, cancellationToken));
             }
             if (fontData.Tables.TryGetValue(OpenTypeTables.CMAP, out OpenTypeTableBinaryData? cmapTable) && cmapTable != null)
             {
                 independentTasks.Add(Task.Run(async () =>
                 {
-                    fontData.CmapTable = await ParseCmapTableHelper.ParseCmapTable(cmapTable, cancellationToken).ConfigureAwait(false);
+                    fontData.CmapTable = await ParseCmapTableHelper.ParseCmapTable(cmapTable, cancellationToken);
                     lock (reportLock)
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((cmapTable.TagName, percentage));
-                        Console.WriteLine($"Parsed {cmapTable.TagName} table at {DateTime.Now:HH:mm:ss.fff}, progress: {percentage:F2}%");
                     }
-                    //await Task.Delay(100).ConfigureAwait(false);
                 }, cancellationToken));
             }
 
-            await Task.WhenAll(independentTasks).ConfigureAwait(false);
+            await Task.WhenAll(independentTasks);
             independentTasks.Clear();
 
             // Phase 2: Parse LOCA table (depends on MAXP and HEAD)
@@ -170,19 +154,16 @@ public static class ParseTablesDataHelper
             {
                 locaTasks.Add(Task.Run(async () =>
                 {
-                    fontData.LocaTable = await ParseLocaTableHelper.ParseLocaTable(locaTable, fontData.MaxpTable.NumGlyphs, fontData.HeadTable.IndexToLocFormat, cancellationToken).ConfigureAwait(false);
+                    fontData.LocaTable = await ParseLocaTableHelper.ParseLocaTable(locaTable, fontData.MaxpTable.NumGlyphs, fontData.HeadTable.IndexToLocFormat, cancellationToken);
                     lock (reportLock)
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((locaTable.TagName, percentage));
-                        Console.WriteLine($"Parsed {locaTable.TagName} table at {DateTime.Now:HH:mm:ss.fff}, progress: {percentage:F2}%");
                     }
-                    await Task.Delay(100).ConfigureAwait(false);
                 }, cancellationToken));
             }
 
-            await Task.WhenAll(locaTasks).ConfigureAwait(false);
-            await Task.Delay(0);
+            await Task.WhenAll(locaTasks);
             locaTasks.Clear();
 
             // Phase 3: Parse dependent tables (POST, GLYF, HMTX, VMTX)
@@ -191,60 +172,52 @@ public static class ParseTablesDataHelper
             {
                 dependentTasks.Add(Task.Run(async () =>
                 {
-                    fontData.PostTable = await ParsePostTableHelper.ParsePostTable(postTable, fontData.MaxpTable.NumGlyphs, cancellationToken).ConfigureAwait(false);
+                    fontData.PostTable = await ParsePostTableHelper.ParsePostTable(postTable, fontData.MaxpTable.NumGlyphs, cancellationToken);
                     lock (reportLock)
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((postTable.TagName, percentage));
-                        Console.WriteLine($"Parsed {postTable.TagName} table at {DateTime.Now:HH:mm:ss.fff}, progress: {percentage:F2}%");
                     }
-                    //await Task.Delay(100).ConfigureAwait(false);
                 }, cancellationToken));
             }
             if (fontData.Tables.TryGetValue(OpenTypeTables.GLYF, out OpenTypeTableBinaryData? glyfTable) && glyfTable != null)
             {
                 dependentTasks.Add(Task.Run(async () =>
                 {
-                    fontData.GlyfTable = await ParseGlyfTableHelper.ParseGlyfTable(glyfTable, fontData.LocaTable.GlyphOffsets).ConfigureAwait(false);
+                    fontData.GlyfTable = await ParseGlyfTableHelper.ParseGlyfTable(glyfTable, fontData.LocaTable.GlyphOffsets);
                     lock (reportLock)
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((glyfTable.TagName, percentage));
-                        Console.WriteLine($"Parsed {glyfTable.TagName} table at {DateTime.Now:HH:mm:ss.fff}, progress: {percentage:F2}%");
                     }
-                    //await Task.Delay(100).ConfigureAwait(false);
                 }, cancellationToken));
             }
             if (fontData.Tables.TryGetValue(OpenTypeTables.HMTX, out OpenTypeTableBinaryData? hmtxTable) && hmtxTable != null)
             {
                 dependentTasks.Add(Task.Run(async () =>
                 {
-                    fontData.HmtxTable = await ParseHmtxTableHelper.ParseHmtxTable(hmtxTable, fontData.MaxpTable.NumGlyphs, fontData.HheaTable.NumberOfHMetrics, cancellationToken).ConfigureAwait(false);
+                    fontData.HmtxTable = await ParseHmtxTableHelper.ParseHmtxTable(hmtxTable, fontData.MaxpTable.NumGlyphs, fontData.HheaTable.NumberOfHMetrics, cancellationToken);
                     lock (reportLock)
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((hmtxTable.TagName, percentage));
-                        Console.WriteLine($"Parsed {hmtxTable.TagName} table at {DateTime.Now:HH:mm:ss.fff}, progress: {percentage:F2}%");
                     }
-                    //await Task.Delay(100).ConfigureAwait(false);
                 }, cancellationToken));
             }
             if (fontData.Tables.TryGetValue(OpenTypeTables.VMTX, out OpenTypeTableBinaryData? vmtxTable) && vmtxTable != null)
             {
                 dependentTasks.Add(Task.Run(async () =>
                 {
-                    fontData.VmtxTable = await ParseVmtxTableHelper.ParseVmtxTable(vmtxTable, fontData.MaxpTable.NumGlyphs, fontData.VheaTable.NumberOfLongVerMetrics, cancellationToken).ConfigureAwait(false);
+                    fontData.VmtxTable = await ParseVmtxTableHelper.ParseVmtxTable(vmtxTable, fontData.MaxpTable.NumGlyphs, fontData.VheaTable.NumberOfLongVerMetrics, cancellationToken);
                     lock (reportLock)
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((vmtxTable.TagName, percentage));
-                        Console.WriteLine($"Parsed {vmtxTable.TagName} table at {DateTime.Now:HH:mm:ss.fff}, progress: {percentage:F2}%");
                     }
-                    //await Task.Delay(100).ConfigureAwait(false);
                 }, cancellationToken));
             }
 
-            await Task.WhenAll(dependentTasks).ConfigureAwait(false);
+            await Task.WhenAll(dependentTasks);
             dependentTasks.Clear();
             return fontData;
         }

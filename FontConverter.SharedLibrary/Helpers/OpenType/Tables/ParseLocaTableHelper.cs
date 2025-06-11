@@ -31,7 +31,7 @@ public static class ParseLocaTableHelper
                     ushort val = ReadUInt16BigEndian(reader);
                     locaTable.GlyphOffsets.Add((uint)(val * 2)); // short format: offsets in units of 2 bytes
                 }
-                await Task.Delay(1).ConfigureAwait(false);
+                await Task.Delay(1, cancellationToken);
             }
         }
         else
@@ -45,7 +45,7 @@ public static class ParseLocaTableHelper
                     uint val = ReadUInt32BigEndian(reader);
                     locaTable.GlyphOffsets.Add(val); // long format: offsets in bytes
                 }
-                await Task.Delay(1).ConfigureAwait(false);
+                await Task.Delay(1, cancellationToken);
             }
         }
 

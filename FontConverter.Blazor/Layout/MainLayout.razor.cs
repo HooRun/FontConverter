@@ -29,9 +29,4 @@ public partial class MainLayout : LayoutComponentBase, IRerenderable
         await InvokeAsync(StateHasChanged);
     }
 
-    private void OnGlyphSelection((int GhlyphID, bool IsSelected) args)
-    {
-        Console.WriteLine($"Glyph {args.GhlyphID} Selected: {args.IsSelected}");
-    }
-
 }

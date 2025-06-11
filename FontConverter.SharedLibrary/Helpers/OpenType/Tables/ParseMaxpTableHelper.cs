@@ -34,7 +34,7 @@ public static class ParseMaxpTableHelper
             maxpTable.MaxComponentDepth = ReadUInt16BigEndian(reader);
         }
 
-        await Task.Delay(1).ConfigureAwait(false);
+        await Task.Delay(1, cancellationToken);
         return maxpTable;
     }
 }

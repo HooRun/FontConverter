@@ -8,9 +8,9 @@
                  class="glyph-list-container">
 
         <Virtualize ItemsProvider="LoadChunkedGlyphs"
-                    ItemSize="20"
+                    ItemSize="@_VirtualizeRowHeight"
                     TItem="GlyphsGroupedEntry"
-                    OverscanCount="1"
+                    OverscanCount="2"
                     @ref="@virtualizeComponent">
             <EmptyContent>
                 <RadzenStack Orientation="Orientation.Vertical"
@@ -24,10 +24,7 @@
                 </RadzenStack>
             </EmptyContent>
             <ItemContent Context="entry">
-
-                <GlyphListRowComponent GroupedEntry="entry"
-                                       OnSelectionChanged="@OnSelectionChanged" />
-
+                <GlyphListRowComponent GroupedEntry="entry" />
             </ItemContent>
         </Virtualize>
 

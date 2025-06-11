@@ -29,9 +29,6 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
     public Radzen.FileInfo? FontFile { get; set; }
 
     [Parameter]
-    public SKTypeface? Typeface { get; set; } = null;
-
-    [Parameter]
     public CancellationTokenSource? FontLoadingCancellationToken { get; set; } = default;
 
     private const string textIsValidClass = "rz-background-color-success-lighter rz-color-on-success-lighter rz-p-1";
@@ -92,7 +89,6 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
 
     private bool alertWarningApplyVisibilty = false;
 
-    SKFont? font;
     private SortedList<OpenTypeTables, OpenTypeTableBinaryData> tables = new();
     private SortedList<int, LVGLGlyphBitmapData> glyphsRenderData = new();
 
@@ -101,10 +97,15 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         if (FontFile is not null)
         {
 
-            Typeface = await GetOpenTypeFontFace(FontFile, FontLoadingCancellationToken!.Token);
+            SKTypeface? typeface = await GetOpenTypeFontFace(FontFile, FontLoadingCancellationToken!.Token);
 
-            if (Typeface is not null)
+            if (typeface is not null)
+            {
+                MainViewModel.OpenTypeFont.IsValid = false;
+                MainViewModel.OpenTypeFont.SKTypeface = typeface;
+                MainViewModel.OpenTypeFont.SKFont = new SKFont(MainViewModel.OpenTypeFont.SKTypeface, MainViewModel.LVGLFont.FontSettings.FontSize);
                 await UpdateFontNameSection(FontLoadingCancellationToken!.Token);
+            }
 
             if (fontIsValid)
                 await UpdateTablescountSection(FontLoadingCancellationToken!.Token);
@@ -130,8 +131,6 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
                 applyButonDisabled = false;
             }
 
-            font?.Dispose();
-            font = null;
         }
     }
 
@@ -152,7 +151,7 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
     private async Task UpdateFontNameSection(CancellationToken cancellationToken = default)
     {
         fontNameClass = textIsValidClass;
-        fontNameText = Typeface!.FamilyName;
+        fontNameText = MainViewModel.OpenTypeFont.SKTypeface!.FamilyName;
         fontIsValid = true;
         fontNameProgressVisibility = false;
         await InvokeAsync(StateHasChanged);
@@ -164,7 +163,7 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         tablesCountProgressMode = ProgressBarMode.Determinate;
         await InvokeAsync(StateHasChanged);
         tablesCountProgressValue = 0;
-        tablesCountProgressMaxValue = Typeface!.TableCount;
+        tablesCountProgressMaxValue = MainViewModel.OpenTypeFont.SKTypeface!.TableCount;
         tablesCountProgressShowValue = true;
         var progressTableList = new Progress<string>(message =>
         {
@@ -176,7 +175,7 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         });
         try
         {
-            tables = await ParseTablesBinaryDataHelper.GetFontTablesAsync(Typeface, progressTableList, cancellationToken).ConfigureAwait(false);
+            tables = await ParseTablesBinaryDataHelper.GetFontTablesAsync(MainViewModel.OpenTypeFont.SKTypeface, progressTableList, cancellationToken);
             tablesCountIsValid = tables.Count > 0;
         }
         catch (Exception)
@@ -203,7 +202,9 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         });
         try
         {
-            MainViewModel.OpenTypeFont = await ParseTablesDataHelper.ParseTablesAsync(tables, progressTablesData, cancellationToken).ConfigureAwait(false);
+            OpenTypeFont openTypeFont = await ParseTablesDataHelper.ParseTablesAsync(tables, progressTablesData, cancellationToken);
+            MainViewModel.OpenTypeFont.Tables = tables;
+            MainViewModel.OpenTypeFont.UpdateTables(openTypeFont);
             parsingTablesIsValid = MainViewModel.OpenTypeFont.Tables.Count > 0;
         }
         catch (Exception)
@@ -212,6 +213,7 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
             //throw;
         }
         parsingTablesProgressStyle = parsingTablesIsValid ? ProgressBarStyle.Success : ProgressBarStyle.Danger;
+        MainViewModel.OpenTypeFont.IsValid = parsingTablesIsValid;
         await InvokeAsync(StateHasChanged);
     }
 
@@ -244,17 +246,15 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         });
         try
         {
-            font = new SKFont(Typeface, MainViewModel.LVGLFont.FontSettings.FontSize);
             glyphsRenderData.Clear();
             glyphsRenderData = await RenderGlyphsToBitmapArrayHelper.RenderGlyphsToBitmapArrayAsync(
-                font, 
-                MainViewModel.OpenTypeFont,
-                MainViewModel.LVGLFont,
+                MainViewModel.OpenTypeFont!,
+                MainViewModel.LVGLFont!,
                 progressRenderGlyphs, 
-                cancellationToken).ConfigureAwait(false);
+                cancellationToken);
             renderingGlyphsIsValid = glyphsRenderData.Count > 0;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
             renderingGlyphsIsValid = false;
             //throw;
@@ -285,7 +285,7 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
                 MainViewModel.LVGLFont,
                 glyphsRenderData,
                 progressOrganizeGlyphs,
-                cancellationToken).ConfigureAwait(false);
+                cancellationToken);
             organizingGlyphsIsValid = glyphs.Count > 0;
             if (organizingGlyphsIsValid)
                 MainViewModel.LVGLFont.Glyphs = glyphs;
@@ -315,15 +315,13 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
         });
         try
         {
-            if (Typeface is not null && font is not null)
+            if (MainViewModel.OpenTypeFont.SKTypeface is not null && MainViewModel.OpenTypeFont.SKFont is not null)
             {
                 await FinalizingFontHelper.FinalizingFontAsync(
-                    Typeface,
-                    font,
                     MainViewModel.OpenTypeFont,
                     MainViewModel.LVGLFont,
                     progressFinalizingFont,
-                    cancellationToken).ConfigureAwait(false);
+                    cancellationToken);
                 IProgress<double> iprogressFinalizingFont = progressFinalizingFont;
                 MainViewModel.GlyphsList.Clear();
                 foreach (var glyph in MainViewModel.LVGLFont.Glyphs)
@@ -331,7 +329,7 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
                     MainViewModel.GlyphsList.Add(glyph.Key, new GlyphItem(glyph.Value));
                 }
                 iprogressFinalizingFont.Report(100.0);
-                await Task.Delay(500, cancellationToken).ConfigureAwait(false);
+                await Task.Delay(500, cancellationToken);
 
                 finalizingFontIsValid = true;
             }

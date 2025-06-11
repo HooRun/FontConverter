@@ -4,6 +4,8 @@ public class GlyphsGroupedEntry
 {
     public GlyphsGroupedEntry()
     {
+        GroupID = 0;
+        GroupSelectedItemsCount = 0;
         GroupItemsCount = 0;
         IsGroupHeader = false;
         GroupIcon = string.Empty;
@@ -13,6 +15,8 @@ public class GlyphsGroupedEntry
         ColumnsGap = 0;
         RowIndex = 0;
     }
+    public int GroupID { get; set; }
+    public int GroupSelectedItemsCount { get; set; }
     public int GroupItemsCount { get; set; }
     public bool IsGroupHeader { get; set; }
     public string GroupIcon { get; set; }

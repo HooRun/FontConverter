@@ -48,7 +48,7 @@ public static class ParseHeaderTableHelper
         headTable.IndexToLocFormat = ReadInt16BigEndian(reader);
         headTable.GlyphDataFormat = ReadInt16BigEndian(reader);
 
-        await Task.Delay(1).ConfigureAwait(false);
+        await Task.Delay(1, cancellationToken);
         return headTable;
     }
 }

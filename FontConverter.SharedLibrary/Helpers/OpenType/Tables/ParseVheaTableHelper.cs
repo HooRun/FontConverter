@@ -36,7 +36,7 @@ public static class ParseVheaTableHelper
         vheaTable.MetricDataFormat = ReadInt16BigEndian(reader);
         vheaTable.NumberOfLongVerMetrics = ReadUInt16BigEndian(reader);
 
-        await Task.Delay(1).ConfigureAwait(false);
+        await Task.Delay(1, cancellationToken);
         return vheaTable;
     }
 }

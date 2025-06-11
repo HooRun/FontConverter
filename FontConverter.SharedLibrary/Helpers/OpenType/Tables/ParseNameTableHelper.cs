@@ -190,7 +190,7 @@ public static class ParseNameTableHelper
                     throw;
                 }
             }
-            await Task.Delay(1).ConfigureAwait(false);
+            await Task.Delay(1, cancellationToken);
         }
 
         return nameTable;

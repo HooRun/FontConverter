@@ -33,7 +33,7 @@ public static class ParseHheaTableHelper
         hheaTable.MetricDataFormat = ReadInt16BigEndian(reader);
         hheaTable.NumberOfHMetrics = ReadUInt16BigEndian(reader);
 
-        await Task.Delay(1).ConfigureAwait(false);
+        await Task.Delay(1, cancellationToken);
         return hheaTable;
     }
 }
