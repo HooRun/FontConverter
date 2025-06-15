@@ -26,24 +26,16 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
     [Parameter]
     public int VisibilityTrackingID { get; set; }
 
+    private GlyphViewItemPropertiesViewModel _Dimentions => MainViewModel.GlyphViewItemPropertiesViewModel;
+
     private SKCanvasView? _SKCanvasView;
 
     private bool IsSelected { get; set; } = false;
 
-    private int _Padding = 0;
-
-    private int _ItemWidth;
-    private int _ItemHeight;
-    private int _Zoom;
-    private int _HeaderHeight = 20;
-    private float _CanvasWidth;
-    private float _CanvasHeight;
     private string _HeaderTitle = string.Empty;
     private byte[] _GlyphPixels = [];
     private int _BitMapWidth;
     private int _BitMapHeight;
-    private float _XAxis;
-    private float _YAxis;
     private int _AdvanceWidth;
     private int _BitPerPixel;
     private float _BitmapXOffset;
@@ -72,6 +64,7 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
         }
         GlyphRenderQueueService.OnRenderAllowed += HandleRenderAllowed;
         MainViewModel.OnSingleGlyphSelectionChanged += UpdateSelectionStatus;
+        MainViewModel.OnGlyphZoomChanged += GlyphZoomChanged;
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -151,26 +144,6 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
 
     private void UpdateItemMetrics()
     {
-        var props = MainViewModel.GlyphViewItemPropertiesViewModel;
-        _Padding = props.ItemPadding;
-        _Zoom = props.Zoom;
-
-        _ItemWidth = MainViewModel.GlyphItemWidth;
-        _ItemHeight = MainViewModel.GlyphItemHeight;
-
-        _CanvasWidth = _ItemWidth;
-        _CanvasHeight = _ItemHeight - _HeaderHeight;
-
-        _XAxis = (float)_CanvasHeight - (float)(props.BaseLine * _Zoom) - (float)(_Padding / 2.0f);
-        if (props.XMin >= 0)
-        {
-            _YAxis = (float)(_Padding / 2.0f);
-        }
-        else
-        {
-            _YAxis = (float)(-props.XMin * _Zoom) + (float)(_Padding / 2.0f);
-        }
-
         _BitPerPixel = (int)MainViewModel.FontSettingsViewModel.FontBitPerPixel;
 
         if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
@@ -178,9 +151,9 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
             _GlyphPixels = glyphItem.Bitmap;
             _BitMapWidth = glyphItem.Descriptor.Width;
             _BitMapHeight = glyphItem.Descriptor.Height;
-            _AdvanceWidth = glyphItem.Descriptor.AdvanceWidth * _Zoom;
-            _BitmapXOffset = _YAxis + (float)(glyphItem.Descriptor.OffsetX * _Zoom);
-            _BitmapYOffset = _XAxis - (float)((_BitMapHeight + glyphItem.Descriptor.OffsetY) * _Zoom);
+            _AdvanceWidth = glyphItem.Descriptor.AdvanceWidth * _Dimentions.Zoom;
+            _BitmapXOffset = _Dimentions.YAxis + (float)(glyphItem.Descriptor.OffsetX * _Dimentions.Zoom);
+            _BitmapYOffset = _Dimentions.XAxis - (float)((_BitMapHeight + glyphItem.Descriptor.OffsetY) * _Dimentions.Zoom);
             _HeaderTitle = glyphItem.Name;
             IsSelected = glyphItem.IsSelected;
         }
@@ -216,6 +189,7 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
     private void PaintCanvas(SKCanvas canvas)
     {
         UpdateItemMetrics();
+
         canvas.Clear(SKColors.White);
 
         using SKPaint mainRectPaint = new SKPaint
@@ -223,14 +197,14 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
             Color = new SKColor(0xF6, 0xEA, 0xCB, 0x66),
             Style = SKPaintStyle.Fill
         };
-        canvas.DrawRect(0, 0, _CanvasWidth, _CanvasHeight, mainRectPaint);
+        canvas.DrawRect(0, 0, _Dimentions.CanvasWidth, _Dimentions.CanvasHeight, mainRectPaint);
 
         using SKPaint advanceWidthPaint = new SKPaint
         {
             Color = new SKColor(0xFF, 0xE3, 0xE3, 0x88),
             Style = SKPaintStyle.Fill
         };
-        canvas.DrawRect(_YAxis, 0, _AdvanceWidth, _CanvasHeight, advanceWidthPaint);
+        canvas.DrawRect(_Dimentions.YAxis, 0, _AdvanceWidth, _Dimentions.CanvasHeight, advanceWidthPaint);
 
         using SKPaint axisPaint = new SKPaint
         {
@@ -239,10 +213,10 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
             Style = SKPaintStyle.Stroke,
             IsAntialias = false,
         };
-        canvas.DrawLine(0, _XAxis, _CanvasWidth, _XAxis, axisPaint); // X Axis
-        canvas.DrawLine(_YAxis, 0, _YAxis, _CanvasHeight, axisPaint); // Y Axis
+        canvas.DrawLine(0, _Dimentions.XAxis, _Dimentions.CanvasWidth, _Dimentions.XAxis, axisPaint); // X Axis
+        canvas.DrawLine(_Dimentions.YAxis, 0, _Dimentions.YAxis, _Dimentions.CanvasHeight, axisPaint); // Y Axis
 
-        DrawGlyphBitmapOnCanvas(canvas, _GlyphPixels, _BitMapWidth, _BitMapHeight, _BitPerPixel, _Zoom, new SKPoint(_BitmapXOffset, _BitmapYOffset));
+        DrawGlyphBitmapOnCanvas(canvas, _GlyphPixels, _BitMapWidth, _BitMapHeight, _BitPerPixel, _Dimentions.Zoom, new SKPoint(_BitmapXOffset, _BitmapYOffset));
     }
 
     private void DrawGlyphBitmapOnCanvas(SKCanvas canvas, byte[] bitmap, int width, int height, int bpp, int zoom, SKPoint offset)
@@ -299,6 +273,7 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
 
         MainViewModel.OnSingleGlyphSelectionChanged -= UpdateSelectionStatus;
         GlyphRenderQueueService.OnRenderAllowed -= HandleRenderAllowed;
+        MainViewModel.OnGlyphZoomChanged -= GlyphZoomChanged;
         GlyphRenderQueueService.UnregisterGlyph(VisibilityTrackingID);
 
         _ = JSRuntime.InvokeVoidAsync("stopGlyphVisibilityTracking", VisibilityTrackingID);
@@ -358,5 +333,12 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
             IsSelected = selectionArgs.Selected;
             StateHasChanged();
         }
+    }
+
+    private void GlyphZoomChanged()
+    {
+        UpdateItemMetrics();
+        _SKCanvasView.Invalidate();
+        StateHasChanged();
     }
 }

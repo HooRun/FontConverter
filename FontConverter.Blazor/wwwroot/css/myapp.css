@@ -176,7 +176,8 @@
         }
 
 .glyph-container {
-    border: 2px solid transparent !important;
+    border-style: solid;
+    border-color: #E0E0E0;
     border-radius: 5px;
     display: block;
     margin: 0px !important;

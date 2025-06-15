@@ -2,11 +2,12 @@
 
 <RadzenSidebar Responsive="false" @bind-Expanded="@MainViewModel.LeftSidebarExpanded" class="left-sidebar">
     <RadzenStack Orientation="Orientation.Horizontal" Style="display: flex; align-items:center !important; width: 100% !important;" class="rz-p-2">
-        <RadzenLabel Style="vertical-align:middle !important; " Text="Font Settings" Visible="false"/>
+        <RadzenLabel Style="vertical-align:middle !important; " Text="Font Settings" Visible="false" />
         <RadzenButton Style="margin-left: auto; font-weight: 700;" Icon="close" Variant="Variant.Flat" ButtonStyle="ButtonStyle.Base" Shade="Shade.Lighter" Size="ButtonSize.Large" class="rz-border-radius-10 rz-shadow-10" Click="@(() => MainViewModel.LeftSidebarExpanded = false)" />
     </RadzenStack>
     <FontFileOperationComponent />
     <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Stretch" Wrap="FlexWrap.NoWrap" Gap="15" style="padding: 15px;">
+        <UpdateGlyphsComponent />
         <FontSettingsComponent />
         <FontAdjusmentsComponent />
         <FontContentsComponent />

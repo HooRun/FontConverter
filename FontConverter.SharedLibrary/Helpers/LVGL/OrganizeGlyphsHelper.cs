@@ -14,7 +14,8 @@ public static class OrganizeGlyphsHelper
         LVGLFont lVGLFont,
         SortedList<int, LVGLGlyphBitmapData> glyphsRenderData,
         IProgress<(int glyphIndex, double percentage)>? progress = null,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken = default,
+        bool justRender = false)
     {
         var glyphs = new SortedList<int, LVGLGlyph>(openTypeFont.GlyfTable.Glyphs.Count);
         var totalGlyphs = openTypeFont.GlyfTable.Glyphs.Count;
@@ -39,16 +40,15 @@ public static class OrganizeGlyphsHelper
             {
                 var lvglGlyph = new LVGLGlyph
                 {
-                    Index = j,
-                    Description = $"Glyph {j}",
+                    Index = processedGlyphs,
+                    Description = $"Glyph {processedGlyphs}",
                     Adjusments = lVGLFont.FontAdjusments
                 };
 
-                lvglGlyph.Name = glyphNameIndex != null && j < glyphNameIndex.Count
-                    ? GetGlyphName(j, glyphNameIndex, pascalStrings, standardMacGlyphNames)
-                    : $"Glyph_{j}";
+                if (!justRender)
+                    lvglGlyph.Name = GetGlyphName(processedGlyphs, glyphNameIndex, pascalStrings, standardMacGlyphNames);
 
-                var renderData = glyphsRenderData[j];
+                var renderData = glyphsRenderData[processedGlyphs];
                 lvglGlyph.Bitmap = renderData.Bitmap;
                 lvglGlyph.Descriptor = new LVGLGlyphDescriptor
                 {
@@ -62,14 +62,14 @@ public static class OrganizeGlyphsHelper
                 bitmapIndex += lvglGlyph.Bitmap.Length;
                 lvglGlyph.IsEmpty = lvglGlyph.Bitmap.Length == 0;
 
+                if (!justRender)
+                {
+                    glyphToUnicodeMap.TryGetValue((ushort)processedGlyphs, out var codePoints);
+                    FillGlyphFromCodePoints(lvglGlyph, codePoints, predefinedData.UnicodeBlockCollection);
+                }
 
-                glyphToUnicodeMap.TryGetValue((ushort)j, out var codePoints);
 
-                FillGlyphFromCodePoints(lvglGlyph, codePoints, predefinedData.UnicodeBlockCollection);
-
-
-
-                glyphs.Add(j, lvglGlyph);
+                glyphs.Add(processedGlyphs, lvglGlyph);
                 processedGlyphs++;
             }
 
@@ -94,6 +94,10 @@ public static class OrganizeGlyphsHelper
         ushort nameIndex = glyphNameIndex[glyphIndex];
         if (nameIndex > 257 && pascalStrings != null && nameIndex - 258 < pascalStrings.Count)
             return pascalStrings[nameIndex - 258];
+        List<string> sm = [];
+        sm.AddRange(standardMacGlyphNames.Values);
+        if (nameIndex < sm.Count)
+            return sm[nameIndex];
 
         if (standardMacGlyphNames.TryGetValue(nameIndex, out string? glyphName))
             return glyphName;

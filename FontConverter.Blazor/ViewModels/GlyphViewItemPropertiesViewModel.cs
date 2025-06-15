@@ -18,6 +18,10 @@ public class GlyphViewItemPropertiesViewModel : BaseViewModel
     private int _ItemHeight;
     private int _Zoom;
 
+    public int HeaderHeight => 20;
+    public int BorderWidth => 2;
+    public int CanvasPadding => 5;
+
     public int ItemPadding { get; private set; }
     
     public int XMin
@@ -45,4 +49,12 @@ public class GlyphViewItemPropertiesViewModel : BaseViewModel
         get { return _Zoom; }
         set { SetProperty(ref _Zoom, value); }
     }
+
+    public int Width => (ItemWidth * Zoom) + (CanvasPadding * 2) + (BorderWidth * 2);
+    public int Height => (ItemHeight * Zoom) + (CanvasPadding * 2) + HeaderHeight + (BorderWidth * 2);
+    public int CanvasWidth => Width - (BorderWidth * 2);
+    public int CanvasHeight => Height - HeaderHeight - (BorderWidth * 2);
+    public int XAxis => CanvasHeight - (BaseLine * Zoom) - CanvasPadding;
+    public int YAxis => XMin > 0 ? CanvasPadding : (-XMin * _Zoom) + CanvasPadding;
+
 }

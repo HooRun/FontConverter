@@ -1,17 +1,17 @@
 ﻿<div class="glyph-container @(IsSelected ? "selected" : "")"
      @onclick="ToggleSelection"
-     style="width:@($"{_ItemWidth}px") !important; height:@($"{_ItemHeight}px") !important; display: @(GlyphId<0?"none":"block") !important;"
+     style="width:@($"{_Dimentions.Width}px") !important; height:@($"{_Dimentions.Height}px") !important; display: @(GlyphId<0?"none":"block") !important; border-width: @($"{_Dimentions.BorderWidth}px") !important;"
      @ref="@_GlyphRef">
 
-    <div class="glyph-header" style="height:@($"{_HeaderHeight}px") !important;">
+    <div class="glyph-header" style="height:@($"{_Dimentions.HeaderHeight}px") !important;">
         @_HeaderTitle
     </div>
 
-    <div class="glyph-canvas-wrapper" style="@($"width:{_CanvasWidth}px; height:{_CanvasHeight}px; position: relative;")">
+    <div class="glyph-canvas-wrapper" style="@($"width:{_Dimentions.CanvasWidth}px; height:{_Dimentions.CanvasHeight}px; position: relative;")">
 
         <SKCanvasView OnPaintSurface="OnPaintSurface"
                       IgnorePixelScaling="true"
-                      style="@($"width:{_CanvasWidth}px; height:{_CanvasHeight}px;")"
+                      style="@($"width:{_Dimentions.CanvasWidth}px; height:{_Dimentions.CanvasHeight}px;")"
                       class="glyph-canvas"
                       @ref="_SKCanvasView" />
         @if (!_IsRenderAllowed)

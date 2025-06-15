@@ -1,11 +1,10 @@
 ﻿using BlazorPro.BlazorSize;
-using FontConverter.Blazor.Components.FontAnalayzerDialogComponents;
 using FontConverter.Blazor.ViewModels;
 using Microsoft.AspNetCore.Components;
 using Radzen;
 using SkiaSharp;
 
-namespace FontConverter.Blazor.Components.LeftSidebarComponents;
+namespace FontConverter.Blazor.Components.LeftSidebarComponents.FontFileComponents;
 
 public partial class FontFileOperationComponent : ComponentBase
 {
@@ -24,7 +23,6 @@ public partial class FontFileOperationComponent : ComponentBase
     private string fontFileType = "";
     private bool busy;
 
-    private SKTypeface? typeface = null;
     private CancellationTokenSource? fontLoadingCancellationToken;
 
     private void OnChange(UploadChangeEventArgs args)

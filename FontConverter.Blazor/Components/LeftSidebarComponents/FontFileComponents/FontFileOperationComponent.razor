@@ -7,16 +7,18 @@
     <RadzenUpload Multiple="false"
                   Change="@OnChange"
                   Style="width: 100%;"
-                  Accept=".ttf,.otf,.c"
+                  Accept=".ttf,.otf"
                   Icon="@SharedResources.Icon_Button_Upload_Font"
                   ChooseText="@SharedResources.Text_Button_Upload_Font"
                   InputAttributes="@(new Dictionary<string,object>{ { "aria-label", "Select Font File" }, { "title", "Select Font File" },})" />
-    <RadzenButton style="width: 100%;"
+    <RadzenButton Style="width: 100%;"
                   Icon="@SharedResources.Icon_Button_Get_Font_Data"
                   BusyText="@SharedResources.Text_Button_Get_Font_Data_Busy"
                   IsBusy="@busy"
                   Click="@OnBusyClick"
-                  Text="@SharedResources.Text_Button_Get_Font_Data" />
+                  Text="@SharedResources.Text_Button_Get_Font_Data"
+                  Shade="Shade.Lighter"
+                  Disabled="@(fontFile is null?true:false)" />
 </RadzenStack>
 
 <style>

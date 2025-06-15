@@ -53,7 +53,7 @@ public static class FinalizingFontHelper
         lvglFont.FontInformations.YMax = ((int)Math.Ceiling(scale * openTypeFont.HeadTable.YMax)).ToString();
     }
 
-    private static void UpdateGlyphViewItemProperties(
+    public static void UpdateGlyphViewItemProperties(
         OpenTypeFont openTypeFont,
         LVGLFont lvglFont)
     {

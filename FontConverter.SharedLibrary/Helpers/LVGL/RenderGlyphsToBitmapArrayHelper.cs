@@ -32,16 +32,23 @@ public class RenderGlyphsToBitmapArrayHelper
             gamma = 1.0f + ((gammaValue - 50) * 9.0f / 50.0f);
         }
 
+        openTypeFont.SKFont!.Edging = SKFontEdging.Alias;
+        openTypeFont.SKFont!.Hinting = SKFontHinting.Full;
+        openTypeFont.SKFont!.BaselineSnap = true;
+        openTypeFont.SKFont!.Subpixel = false;
+
         using SKPaint paint = new()
-            {
-                IsAntialias = lVGLFont.FontAdjusments.AntiAlias,
-                IsDither = lVGLFont.FontAdjusments.Dither,
-                ColorFilter = lVGLFont.FontAdjusments.ColorFilter ? SKColorFilter.CreateBlendMode(SKColors.Black, SKBlendMode.SrcIn) : null,
-                Shader = lVGLFont.FontAdjusments.Shader ? SKShader.CreateColor(SKColors.Black) : null,
-                Style = (SKPaintStyle)lVGLFont.FontAdjusments.Style,
-                Color = SKColors.Black,
-                MaskFilter = SKMaskFilter.CreateGamma(gamma),
-            };
+        {
+            IsAntialias = lVGLFont.FontAdjusments.AntiAlias,
+            IsDither = lVGLFont.FontAdjusments.Dither,
+            ColorFilter = lVGLFont.FontAdjusments.ColorFilter ? SKColorFilter.CreateBlendMode(SKColors.Black, SKBlendMode.SrcIn) : null,
+            Shader = lVGLFont.FontAdjusments.Shader ? SKShader.CreateColor(SKColors.Black) : null,
+            Style = (SKPaintStyle)lVGLFont.FontAdjusments.Style,
+            Color = SKColors.Black,
+            MaskFilter = SKMaskFilter.CreateGamma(gamma),
+            StrokeWidth=5,
+            
+        };
 
         for (int i = 0; i < totalGlyphs; i += chunkSize)
         {
@@ -76,7 +83,7 @@ public class RenderGlyphsToBitmapArrayHelper
         int height = Math.Max(1, bounds.Height);
         int dataSize = width * height;
 
-        var imageInfo = new SKImageInfo(width, height, SKColorType.Alpha8, SKAlphaType.Premul);
+        var imageInfo = new SKImageInfo(width, height, SKColorType.Alpha8, SKAlphaType.Opaque);
         IntPtr alphaDataPtr = Marshal.AllocHGlobal(dataSize);
 
         try
@@ -86,7 +93,7 @@ public class RenderGlyphsToBitmapArrayHelper
                 return new LVGLGlyphBitmapData(glyphIndex, Array.Empty<byte>(), bounds);
 
             var canvas = surface.Canvas;
-            canvas.Clear();
+            canvas.Clear(SKColors.Transparent);
             canvas.SetMatrix(SKMatrix.CreateTranslation(-bounds.Left, -bounds.Top));
             canvas.DrawPath(path, paint);
             canvas.Flush();
@@ -104,13 +111,9 @@ public class RenderGlyphsToBitmapArrayHelper
 
     private static byte[] ConvertAlphaToBpp(byte[] alphaData, int width, int height, BIT_PER_PIXEL_ENUM bpp, int threshold)
     {
-        if (bpp == BIT_PER_PIXEL_ENUM.BPP_8)
-            return alphaData;
-
         int bppValue = (int)bpp;
         int maxValue = (1 << bppValue) - 1;
 
-        int pixelThreshold = threshold * 255 / 100;
         int stride = (width * bppValue + 7) / 8;
         var output = new byte[stride * height];
 
@@ -122,7 +125,7 @@ public class RenderGlyphsToBitmapArrayHelper
                 int alpha = alphaData[i];
 
                 // Threshold cut
-                if (threshold > 0 && alpha < pixelThreshold)
+                if (alpha < threshold)
                     alpha = 0;
 
                 // Normalize alpha to BPP value range

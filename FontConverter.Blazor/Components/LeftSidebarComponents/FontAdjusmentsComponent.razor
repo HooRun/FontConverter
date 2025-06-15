@@ -58,12 +58,17 @@
                         <span style="color:#605e5c; font-size: 0.75rem;">Gamma</span>
                     </RadzenColumn>
                     <RadzenColumn Size="@colRight">
-                        <RadzenSlider @bind-Value=@MainViewModel.FontAdjusmentsViewModel.Gamma
+                        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.SpaceBetween">
+                        <GradienSlider @bind-Value=@MainViewModel.FontAdjusmentsViewModel.Gamma
                                       TValue="int"
                                       Min="0"
                                       Max="100"
                                       TValue="int"
-                                      Style="width:90% !important;" />
+                                      IsReverse=true
+                                      Change="@GammaChanged"
+                                       Style="width:90% !important; height: 12px; background: #ffffff; background: linear-gradient(90deg, black 0%, white 100%); border: 2px solid #DDD !important;" />
+                            <RadzenBadge BadgeStyle="BadgeStyle.Base" Text="@(string.Format("{0:0.0}",_GammaValue))" Style="width: 35% !important;" />
+                        </RadzenStack>
                     </RadzenColumn>
                 </RadzenRow>
 
@@ -72,12 +77,15 @@
                         <span style="color:#605e5c; font-size: 0.75rem;">Threshold</span>
                     </RadzenColumn>
                     <RadzenColumn Size="@colRight">
-                        <RadzenSlider @bind-Value=@MainViewModel.FontAdjusmentsViewModel.Threshold
-                                      TValue="int"
-                                      Min="0"
-                                      Max="100"
-                                      TValue="int"
-                                      Style="width:90% !important;" />
+                        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.SpaceBetween">
+                            <GradienSlider @bind-Value=@MainViewModel.FontAdjusmentsViewModel.Threshold
+                                           TValue="int"
+                                           Min="0"
+                                           Max="255"
+                                           TValue="int"
+                                           Style="width:90% !important; height: 12px; background: #ffffff; background: linear-gradient(90deg, white 0%, black 100%); border: 2px solid #DDD !important;" />
+                            <RadzenBadge BadgeStyle="BadgeStyle.Base" Text="@(string.Format("{0:N0}",MainViewModel.FontAdjusmentsViewModel.Threshold))" Style="width: 35% !important;" />
+                        </RadzenStack>
                     </RadzenColumn>
                 </RadzenRow>
 

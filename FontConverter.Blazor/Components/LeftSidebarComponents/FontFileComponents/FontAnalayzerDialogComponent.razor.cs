@@ -12,7 +12,7 @@ using System.Threading;
 using static FontConverter.SharedLibrary.Helpers.FontTablesEnumHelper;
 using static FontConverter.SharedLibrary.Helpers.LVGLFontEnums;
 
-namespace FontConverter.Blazor.Components.FontAnalayzerDialogComponents;
+namespace FontConverter.Blazor.Components.LeftSidebarComponents.FontFileComponents;
 
 public partial class FontAnalayzerDialogComponent : ComponentBase
 {

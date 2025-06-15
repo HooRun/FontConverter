@@ -88,8 +88,8 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
 
     private void UpdateCountOfRowsAndColumns()
     {
-        GlyphItemWidth = MainViewModel.GlyphItemWidth;
-        GlyphItemHeight = MainViewModel.GlyphItemHeight;
+        GlyphItemWidth = MainViewModel.GlyphViewItemPropertiesViewModel.Width;
+        GlyphItemHeight = MainViewModel.GlyphViewItemPropertiesViewModel.Height;
         if (GlyphItemWidth <= 0)
         {
             CountOfColumns = 1;
@@ -230,7 +230,7 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
 
     private void UpdateVirtualizeRowHeight()
     {
-        _VirtualizeRowHeight = ((((_VirtualizeRowCounts - MainViewModel.GlyphsGroupedList.Count) * MainViewModel.GlyphItemHeight) + (MainViewModel.GlyphsGroupedList.Count * 75)) / (float)_VirtualizeRowCounts);
+        _VirtualizeRowHeight = ((((_VirtualizeRowCounts - MainViewModel.GlyphsGroupedList.Count) * MainViewModel.GlyphViewItemPropertiesViewModel.Height) + (MainViewModel.GlyphsGroupedList.Count * 75)) / (float)_VirtualizeRowCounts);
     }
 
     public async ValueTask DisposeAsync()

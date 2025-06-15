@@ -1,8 +1,6 @@
 ﻿using FontConverter.Blazor.Interfaces;
 using FontConverter.Blazor.Services;
 using FontConverter.Blazor.ViewModels;
-using FontConverter.SharedLibrary;
-using FontConverter.SharedLibrary.Helpers;
 using Microsoft.AspNetCore.Components;
 using Radzen;
 
@@ -21,6 +19,7 @@ public partial class FontAdjusmentsComponent : ComponentBase, IRerenderable
 
     Variant variant = Variant.Outlined;
     bool floatFieldLabel = true;
+    private double _GammaValue = 1.0;
 
     protected override void OnInitialized()
     {
@@ -31,5 +30,20 @@ public partial class FontAdjusmentsComponent : ComponentBase, IRerenderable
     public async Task ForceRender()
     {
         await InvokeAsync(StateHasChanged);
+    }
+
+    private void GammaChanged(int value)
+    {
+        int gammaValue = Math.Clamp(value, 0, 100);
+        float gamma;
+        if (gammaValue <= 50)
+        {
+            gamma = gammaValue / 50.0f;
+        }
+        else
+        {
+            gamma = 1.0f + ((gammaValue - 50) * 9.0f / 50.0f);
+        }
+        _GammaValue = gamma;
     }
 }
