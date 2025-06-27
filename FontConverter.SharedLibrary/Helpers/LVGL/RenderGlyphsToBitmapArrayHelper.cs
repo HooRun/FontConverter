@@ -46,8 +46,7 @@ public class RenderGlyphsToBitmapArrayHelper
             Style = (SKPaintStyle)lVGLFont.FontAdjusments.Style,
             Color = SKColors.Black,
             MaskFilter = SKMaskFilter.CreateGamma(gamma),
-            StrokeWidth=5,
-            
+            StrokeWidth= lVGLFont.FontAdjusments.StrokeWidth,
         };
 
         for (int i = 0; i < totalGlyphs; i += chunkSize)

@@ -7,7 +7,7 @@ using Radzen;
 
 namespace FontConverter.Blazor.Layout;
 
-public partial class MainLayout : LayoutComponentBase, IRerenderable
+public partial class MainLayout : LayoutComponentBase, IRerenderable, IDisposable
 {
     [Inject]
     public NotificationService NotificationService { get; set; } = default!;
@@ -18,10 +18,24 @@ public partial class MainLayout : LayoutComponentBase, IRerenderable
     [Inject]
     public MainViewModel MainViewModel { get; set; } = default!;
 
+    [Inject]
+    private IResizeListener ResizeListener { get; set; } = default!;
+
     protected override void OnInitialized()
     {
         base.OnInitialized(); 
         MainViewModel.RegisterComponent(nameof(MainLayout), this);
+        ResizeListener.OnResized += OnWindowResized;
+    }
+
+    private void OnWindowResized(object? sender, BrowserWindowSize e)
+    {
+        MainViewModel.BrowserWindowWidth = e.Width;
+    }
+
+    public void Dispose()
+    {
+        ResizeListener.OnResized -= OnWindowResized;
     }
 
     public async Task ForceRender()

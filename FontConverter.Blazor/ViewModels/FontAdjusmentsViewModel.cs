@@ -14,6 +14,7 @@ public class FontAdjusmentsViewModel : BaseViewModel
         _ColorFilter = true;
         _Shader = true;
         _Style = GLYPH_STYLE.STYLE_FILL;
+        _StrokeWidth = 0;
         _Gamma = 50;
         _Threshold = 0;
     }
@@ -24,6 +25,7 @@ public class FontAdjusmentsViewModel : BaseViewModel
     private bool _ColorFilter;
     private bool _Shader;
     private GLYPH_STYLE _Style;
+    private int _StrokeWidth;
     private int _Gamma;
     private int _Threshold;
 
@@ -52,6 +54,11 @@ public class FontAdjusmentsViewModel : BaseViewModel
         get { return _Style; }
         set { SetProperty(ref _Style, value); }
     }
+    public int StrokeWidth
+    {
+        get { return _StrokeWidth; }
+        set { SetProperty(ref _StrokeWidth, value); }
+    }
     public int Gamma
     {
         get { return _Gamma; }
@@ -70,6 +77,7 @@ public class FontAdjusmentsViewModel : BaseViewModel
         ColorFilter = true;
         Shader = true;
         Style = GLYPH_STYLE.STYLE_FILL;
+        StrokeWidth = 0;
         Gamma = 50;
         Threshold = 0;
     }

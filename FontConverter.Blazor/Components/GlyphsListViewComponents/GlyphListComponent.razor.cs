@@ -20,7 +20,7 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
     [Inject]
     public GlyphRenderQueueService GlyphRenderQueueService { get; set; } = default!;
 
-    private Virtualize<GlyphsGroupedEntry>? virtualizeComponent;
+    private Virtualize<GlyphsGroupedEntryModel>? virtualizeComponent;
 
     private int _ListHorizontalGap = 10;
     private int _ListVerticalGap = 0;
@@ -35,7 +35,7 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
     private DotNetObjectReference<GlyphListComponent>? _ObjRef;
     private CancellationTokenSource? _ResizeDebounceCts;
     private CancellationTokenSource? _VirtualizeDebounceCts;
-    private ElementDimensions itemsContainerDimensions = new();
+    private ElementDimensionsModel itemsContainerDimensions = new();
 
     private int _VirtualizeKey = 0;
     private bool _Dispose = false;
@@ -68,7 +68,7 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
     }
 
     [JSInvokable]
-    public async Task OnElementResized(ElementDimensions size)
+    public async Task OnElementResized(ElementDimensionsModel size)
     {
         _ResizeDebounceCts?.Cancel();
         _ResizeDebounceCts = new CancellationTokenSource();
@@ -114,7 +114,7 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
         return (1, 0);
     }
 
-    private async ValueTask<ItemsProviderResult<GlyphsGroupedEntry>> LoadChunkedGlyphs(ItemsProviderRequest request)
+    private async ValueTask<ItemsProviderResult<GlyphsGroupedEntryModel>> LoadChunkedGlyphs(ItemsProviderRequest request)
     {
         UpdateCountOfRowsAndColumns();
 
@@ -129,9 +129,9 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
         UpdateVirtualizeRowCount();
         UpdateVirtualizeRowHeight();
 
-        List<GlyphsGroupedEntry> resultEntries = [];
+        List<GlyphsGroupedEntryModel> resultEntries = [];
 
-        foreach (GlyphsGroup group in MainViewModel.GlyphsGroupedList)
+        foreach (GlyphsGroupModel group in MainViewModel.GlyphsGroupedList)
         {
             groupIndex++;
             int rowCount = 0;
@@ -157,7 +157,7 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
                 List<int> items = [];
                 for (int unmounted = 0; unmounted < CountOfColumns; unmounted++)
                     items.Add(-1);
-                resultEntries.Add(new GlyphsGroupedEntry
+                resultEntries.Add(new GlyphsGroupedEntryModel
                 {
                     GroupID = groupIndex - 1,
                     GroupItemsCount = group.Items?.Count ?? 0,
@@ -186,7 +186,7 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
                                 chunk.Add(-1);
                         }
 
-                        resultEntries.Add(new GlyphsGroupedEntry
+                        resultEntries.Add(new GlyphsGroupedEntryModel
                         {
                             GroupID = groupIndex - 1,
                             GroupItemsCount = group.Items?.Count ?? 0,
@@ -210,7 +210,7 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
 
         }
         
-        return new ItemsProviderResult<GlyphsGroupedEntry>(resultEntries, _VirtualizeRowCounts);
+        return new ItemsProviderResult<GlyphsGroupedEntryModel>(resultEntries, _VirtualizeRowCounts);
     }
 
     private void UpdateVirtualizeRowCount()

@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using BlazorPro.BlazorSize;
 using FontConverter.Blazor.Components;
 using FontConverter.Blazor.Components.GlyphsListViewComponents;
 using FontConverter.Blazor.Components.LeftSidebarComponents;
+using FontConverter.Blazor.EventsArgs;
 using FontConverter.Blazor.Interfaces;
 using FontConverter.Blazor.Layout;
 using FontConverter.Blazor.Models.GlyphsView;
@@ -31,6 +33,7 @@ public class MainViewModel : BaseViewModel
         _LeftSidebarExpanded = false;
         _RightSidebarExpanded = false;
         _HaveSelectedGlyph = false;
+        _BrowserWindowWidth = 0;
 
         MappingsFromModelToViewModel();
     }
@@ -46,16 +49,20 @@ public class MainViewModel : BaseViewModel
     private FontContentsViewModel _FontContentsViewModel;
     private FontInformationsViewModel _FontInformationsViewModel;
     private GlyphViewItemPropertiesViewModel _GlyphViewItemPropertiesViewModel;
-    private SortedList<int, GlyphItem> _GlyphsList;
-    private List<GlyphsGroup> _GlyphsGroupedList;
+    private SortedList<int, GlyphItemModel> _GlyphsList;
+    private List<GlyphsGroupModel> _GlyphsGroupedList;
     private bool _LeftSidebarExpanded;
     private bool _RightSidebarExpanded;
     private FontContentViewModel? _SelectedTreeViewItem;
     private bool _HaveSelectedGlyph;
+    private GlyphItemModel? _LastSelectedGlyph;
+    private int _BrowserWindowWidth;
 
-    public Action<List<(int GroupID, int SelectedItemsCount)>>? OnGlyphSelectionChanged { get; set; }
-    public Action<(int GlyphID, bool Selected)>? OnSingleGlyphSelectionChanged { get; set; }
+    public Action<GroupSelectionChangedEventArgs>? OnGroupSelectionChanged { get; set; }
+    public Action<GlyphSelectionChangedEventArgs>? OnGlyphSelectionChanged { get; set; }
+    public Action<LastSelectedGlyphEventArgs>? OnLastSelectedGlyphChanged { get; set; }
     public Action? OnGlyphZoomChanged { get; set; }
+    public Action<int>? OnGlyphPropertiesChanged { get; set; }
 
     public bool ZoomInButtonDisabled => GlyphViewItemPropertiesViewModel.Zoom >= 10 ? true : false;
     public bool ZoomOutButtonDisabled => GlyphViewItemPropertiesViewModel.Zoom <= 1 ? true : false;
@@ -96,12 +103,12 @@ public class MainViewModel : BaseViewModel
         get { return _GlyphViewItemPropertiesViewModel; }
         set { SetProperty(ref _GlyphViewItemPropertiesViewModel, value); }
     }
-    public SortedList<int, GlyphItem> GlyphsList
+    public SortedList<int, GlyphItemModel> GlyphsList
     {
         get { return _GlyphsList; }
         set { SetProperty(ref _GlyphsList, value); }
     }
-    public List<GlyphsGroup> GlyphsGroupedList
+    public List<GlyphsGroupModel> GlyphsGroupedList
     {
         get { return _GlyphsGroupedList; }
         set { SetProperty(ref _GlyphsGroupedList, value); }
@@ -113,7 +120,9 @@ public class MainViewModel : BaseViewModel
         {
             if (SetProperty(ref _LeftSidebarExpanded, value))
             {
-                RerenderMany(nameof(MainLayout), nameof(ToolbarComponent), nameof(LeftSidebarComponent));
+                RenderMainLayoutComponents();
+                if (BrowserWindowWidth <= 768 && value && RightSidebarExpanded)
+                    RightSidebarExpanded = false;
             }
         }
     }
@@ -124,12 +133,39 @@ public class MainViewModel : BaseViewModel
         {
             if (SetProperty(ref _RightSidebarExpanded, value))
             {
-                RerenderMany(nameof(MainLayout), nameof(ToolbarComponent), nameof(LeftSidebarComponent));
+                if (!value)
+                {
+                    if (LastSelectedGlyph is not null)
+                    {
+                        LastSelectedGlyph.LastSelected = false;
+                        OnLastSelectedGlyphChanged?.Invoke(new LastSelectedGlyphEventArgs(LastSelectedGlyph, false));
+                        LastSelectedGlyph = null;
+                    }
+                }
+            }
+            RenderMainLayoutComponents();
+        }
+    }
+    public GlyphItemModel? LastSelectedGlyph
+    {
+        get { return _LastSelectedGlyph; }
+        set
+        {
+            SetProperty(ref _LastSelectedGlyph, value);
+        }
+    }
+    public int BrowserWindowWidth
+    {
+        get { return _BrowserWindowWidth; }
+        set
+        {
+            if (SetProperty(ref _BrowserWindowWidth, value))
+            {
+                if (value <= 768 && LeftSidebarExpanded && RightSidebarExpanded)
+                    LeftSidebarExpanded = false;
             }
         }
     }
-
-
 
     public void MappingsFromModelToViewModel()
     {
@@ -164,7 +200,7 @@ public class MainViewModel : BaseViewModel
 
         UpdateGlyphsListView(_SelectedTreeViewItem);
         UpdateGroupSelectedItems();
-        RerenderMany(nameof(MainLayout), nameof(GlyphListComponent));
+        RenderMainLayoutComponents();
     }
 
     private void UpdateTreeSelection(IEnumerable<FontContentViewModel> nodes, FontContentViewModel selectedItem)
@@ -190,7 +226,7 @@ public class MainViewModel : BaseViewModel
             {
                 foreach (var content in selectedItem.Contents.Values)
                 {
-                    GlyphsGroup group = new();
+                    GlyphsGroupModel group = new();
                     group.Icon = content.Icon;
                     group.Header = content.Header;
                     group.SubTitle = content.SubTitle;
@@ -212,7 +248,7 @@ public class MainViewModel : BaseViewModel
             }
             else
             {
-                GlyphsGroup group = new();
+                GlyphsGroupModel group = new();
                 group.Icon = selectedItem.Icon;
                 group.Header = selectedItem.Header;
                 group.SubTitle = selectedItem.SubTitle;
@@ -225,7 +261,7 @@ public class MainViewModel : BaseViewModel
         }
         else
         {
-            GlyphsGroup group = new();
+            GlyphsGroupModel group = new();
             group.Icon = selectedItem.Icon;
             group.Header = selectedItem.Header;
             group.SubTitle = selectedItem.SubTitle;
@@ -300,7 +336,7 @@ public class MainViewModel : BaseViewModel
         if (GlyphViewItemPropertiesViewModel.Zoom >= 10)
             GlyphViewItemPropertiesViewModel.Zoom = 10;
         OnGlyphZoomChanged?.Invoke();
-        RerenderMany(nameof(MainLayout), nameof(GlyphListComponent), nameof(GlyphsToolbarComponent));
+        RenderMainLayoutComponents();
     }
 
     public void ZoomOutChanged()
@@ -309,10 +345,35 @@ public class MainViewModel : BaseViewModel
         if (GlyphViewItemPropertiesViewModel.Zoom <= 1)
             GlyphViewItemPropertiesViewModel.Zoom = 1;
         OnGlyphZoomChanged?.Invoke();
-        RerenderMany(nameof(MainLayout), nameof(GlyphListComponent), nameof(GlyphsToolbarComponent));
+        RenderMainLayoutComponents();
     }
 
+    public void LastSelectedGlyphChanged(int glyphID, bool isSelected)
+    {
+        if (GlyphsList.ContainsKey(glyphID))
+        {
+            GlyphsList[glyphID].LastSelected = isSelected;
+            if (LastSelectedGlyph is not null)
+            {
+                LastSelectedGlyph.LastSelected = false;
+                OnLastSelectedGlyphChanged?.Invoke(new LastSelectedGlyphEventArgs(LastSelectedGlyph, false));
+            }
+            if (isSelected)
+            {
 
+                LastSelectedGlyph = GlyphsList[glyphID];
+            }
+            else
+            {
+                LastSelectedGlyph = null;
+            }
+            OnLastSelectedGlyphChanged?.Invoke(new LastSelectedGlyphEventArgs(GlyphsList[glyphID], isSelected));
+
+            RightSidebarExpanded = LastSelectedGlyph == null ? false : true;
+            if (BrowserWindowWidth <= 768 && LeftSidebarExpanded)
+                LeftSidebarExpanded = false;
+        }
+    }
 
     public void GlyphSelectionChanged(int glyphID, bool isSelected)
     {
@@ -334,6 +395,7 @@ public class MainViewModel : BaseViewModel
             }
         }
         UpdateGroupSelectedItems();
+        
         List<(int GroupID, int SelectedItemsCount)> selectionInfo = [];
         int groupID = 0;
         foreach (var group in GlyphsGroupedList)
@@ -344,8 +406,10 @@ public class MainViewModel : BaseViewModel
             }
             groupID++;
         }
-        OnGlyphSelectionChanged?.Invoke(selectionInfo);
-        RerenderMany(nameof(MainLayout), nameof(GlyphListComponent), nameof(GlyphsToolbarComponent));
+        GroupSelectionChangedEventArgs groupSelectionChangedEventArgs = new(selectionInfo);
+        OnGroupSelectionChanged?.Invoke(groupSelectionChangedEventArgs);
+
+        RenderMainLayoutComponents();
     }
 
 
@@ -377,8 +441,9 @@ public class MainViewModel : BaseViewModel
             var g = GlyphsGroupedList[i];
             selectionInfo.Add((i, g.SelectedItems.Count));
         }
-        OnGlyphSelectionChanged?.Invoke(selectionInfo);
-        RerenderMany(nameof(MainLayout), nameof(GlyphListComponent), nameof(GlyphsToolbarComponent));
+        GroupSelectionChangedEventArgs groupSelectionChangedEventArgs = new(selectionInfo);
+        OnGroupSelectionChanged?.Invoke(groupSelectionChangedEventArgs);
+        RenderMainLayoutComponents();
     }
 
     private void UpdateGroupSelectedItems()
@@ -396,9 +461,22 @@ public class MainViewModel : BaseViewModel
                         group.SelectedItems.Add(item);
                         _HaveSelectedGlyph = true;
                     }
-                    OnSingleGlyphSelectionChanged?.Invoke((glyph.Index, glyph.IsSelected));
+
+                    OnGlyphSelectionChanged?.Invoke(new GlyphSelectionChangedEventArgs(glyph.Index, glyph.IsSelected));
                 }
             }
         }
+    }
+
+    private void RenderMainLayoutComponents()
+    {
+        RerenderMany(
+            nameof(ToolbarComponent), 
+            nameof(HeaderComponent), 
+            nameof(LeftSidebarComponent),
+            nameof(RightSidebarComponent),
+            nameof(GlyphsToolbarComponent),
+            nameof(GlyphListComponent)
+            );
     }
 }

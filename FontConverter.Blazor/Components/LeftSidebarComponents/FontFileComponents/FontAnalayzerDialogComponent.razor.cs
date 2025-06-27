@@ -326,7 +326,7 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
                 MainViewModel.GlyphsList.Clear();
                 foreach (var glyph in MainViewModel.LVGLFont.Glyphs)
                 {
-                    MainViewModel.GlyphsList.Add(glyph.Key, new GlyphItem(glyph.Value));
+                    MainViewModel.GlyphsList.Add(glyph.Key, new GlyphItemModel(glyph.Value));
                 }
                 iprogressFinalizingFont.Report(100.0);
                 await Task.Delay(500, cancellationToken);

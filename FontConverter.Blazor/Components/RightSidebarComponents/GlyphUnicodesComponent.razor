@@ -1,0 +1,26 @@
+﻿@using FontConverter.SharedLibrary.Models
+
+<RadzenAccordion Multiple="false">
+    <Items>
+        <RadzenAccordionItem Text="Glyph Unicodes" Icon="public">
+            <RadzenStack Orientation="Orientation.Vertical" Gap="15">
+
+                <RadzenListBox TValue="string"
+                               @bind-Value=@value
+                               Data="@MainViewModel.LastSelectedGlyph?.CodePoints.Values"
+                               TextProperty="@nameof(UnicodeCharacter.Name)"
+                               ValueProperty="@nameof(UnicodeCharacter.CodePoint)"
+                               Style="min-height:100px;">
+
+                    <Template>
+                        <RadzenStack Orientation="Orientation.Vertical" Gap="1px">
+                            <RadzenText Text="@($"U+{(context as UnicodeCharacter)?.CodePoint:X4}")"/>
+                            <RadzenText Style="font-size:10px" Text="@((context as UnicodeCharacter)?.Name)"/>
+                        </RadzenStack>
+                    </Template>
+                </RadzenListBox>
+
+            </RadzenStack>
+        </RadzenAccordionItem>
+    </Items>
+</RadzenAccordion>

@@ -1,4 +1,6 @@
-﻿using FontConverter.Blazor.Interfaces;
+﻿using FontConverter.Blazor.Components.RightSidebarComponents;
+using FontConverter.Blazor.EventsArgs;
+using FontConverter.Blazor.Interfaces;
 using FontConverter.Blazor.Models.GlyphsView;
 using FontConverter.Blazor.Services;
 using FontConverter.Blazor.ViewModels;
@@ -6,6 +8,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using SkiaSharp;
 using SkiaSharp.Views.Blazor;
+using System.Numerics;
 
 namespace FontConverter.Blazor.Components.GlyphsListViewComponents;
 
@@ -30,7 +33,9 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
 
     private SKCanvasView? _SKCanvasView;
 
-    private bool IsSelected { get; set; } = false;
+    private bool _IsSelected { get; set; } = false;
+    private bool _IsHovered { get; set; } = false;
+    private bool _LastSelected { get; set; } = false;
 
     private string _HeaderTitle = string.Empty;
     private byte[] _GlyphPixels = [];
@@ -48,6 +53,7 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
     private int _PrevGlyphId = -1;
     private DotNetObjectReference<GlyphListItemComponent>? _DotNetRef;
     private int _PrevVisibilityTrackingID = -1;
+    private CancellationTokenSource? _ClickCts;
 
 
     protected override void OnInitialized()
@@ -60,11 +66,15 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
         _PrevVisibilityTrackingID = VisibilityTrackingID;
         if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
         {
-            IsSelected = glyphItem.IsSelected;
+            _IsSelected = glyphItem.IsSelected;
+            _IsHovered = glyphItem.IsHovered;
+            _LastSelected = glyphItem.LastSelected;
         }
         GlyphRenderQueueService.OnRenderAllowed += HandleRenderAllowed;
-        MainViewModel.OnSingleGlyphSelectionChanged += UpdateSelectionStatus;
+        MainViewModel.OnGlyphSelectionChanged += UpdateSelectionStatus;
         MainViewModel.OnGlyphZoomChanged += GlyphZoomChanged;
+        MainViewModel.OnLastSelectedGlyphChanged += LastSelectedGlyphChanged;
+        MainViewModel.OnGlyphPropertiesChanged += PropertiesChanged;
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -75,7 +85,7 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
             _IsRenderAllowed = false;
             if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
             {
-                IsSelected = glyphItem.IsSelected;
+                _IsSelected = glyphItem.IsSelected;
             }
             _DotNetRef ??= DotNetObjectReference.Create(this);
             await JSRuntime.InvokeVoidAsync("startGlyphVisibilityTracking", _GlyphRef, _DotNetRef, VisibilityTrackingID);
@@ -119,7 +129,9 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
             _PrevGlyphId = GlyphId;
             if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
             {
-                IsSelected = glyphItem.IsSelected;
+                _IsSelected = glyphItem.IsSelected;
+                _IsHovered = glyphItem.IsHovered;
+                _LastSelected = glyphItem.LastSelected;
             }
         }
 
@@ -130,16 +142,59 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
             await InvokeAsync(StateHasChanged);
         }
     }
+    
+    private async Task OnClick()
+    {
+        _ClickCts?.Cancel();
+        _ClickCts = new CancellationTokenSource();
+        try
+        {
+            await Task.Delay(500, _ClickCts.Token);
+            _LastSelected = !_LastSelected;
+            if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
+            {
+                glyphItem.LastSelected = _LastSelected;
+            }
+            MainViewModel.LastSelectedGlyphChanged(GlyphId, _LastSelected);
+            await InvokeAsync(StateHasChanged);
+        }
+        catch (TaskCanceledException)
+        {
+
+        }
+    }
 
     private async Task ToggleSelection()
     {
-        IsSelected = !IsSelected;
+        _ClickCts?.Cancel();
+        _IsSelected = !_IsSelected;       
         if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
         {
-            glyphItem.IsSelected = IsSelected;
+            glyphItem.IsSelected = _IsSelected;
+            glyphItem.LastSelected = _IsSelected;
         }
-        MainViewModel.GlyphSelectionChanged(GlyphId, IsSelected);
+        MainViewModel.GlyphSelectionChanged(GlyphId, _IsSelected);
         await InvokeAsync(StateHasChanged);
+    }
+
+    private async Task OnMuseEnter()
+    {
+        if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
+        {
+            _IsHovered = true;
+            glyphItem.IsHovered = true;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private async Task OnMouseLeave()
+    {
+        if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
+        {
+            _IsHovered = false;
+            glyphItem.IsHovered = false;
+            await InvokeAsync(StateHasChanged);
+        }
     }
 
     private void UpdateItemMetrics()
@@ -155,7 +210,7 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
             _BitmapXOffset = _Dimentions.YAxis + (float)(glyphItem.Descriptor.OffsetX * _Dimentions.Zoom);
             _BitmapYOffset = _Dimentions.XAxis - (float)((_BitMapHeight + glyphItem.Descriptor.OffsetY) * _Dimentions.Zoom);
             _HeaderTitle = glyphItem.Name;
-            IsSelected = glyphItem.IsSelected;
+            _IsSelected = glyphItem.IsSelected;
         }
         else
         {
@@ -271,9 +326,11 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
         _IsDisposed = true;
         _IsRenderAllowed = false;
 
-        MainViewModel.OnSingleGlyphSelectionChanged -= UpdateSelectionStatus;
+        MainViewModel.OnGlyphSelectionChanged -= UpdateSelectionStatus;
         GlyphRenderQueueService.OnRenderAllowed -= HandleRenderAllowed;
         MainViewModel.OnGlyphZoomChanged -= GlyphZoomChanged;
+        MainViewModel.OnLastSelectedGlyphChanged -= LastSelectedGlyphChanged;
+        MainViewModel.OnGlyphPropertiesChanged -= PropertiesChanged;
         GlyphRenderQueueService.UnregisterGlyph(VisibilityTrackingID);
 
         _ = JSRuntime.InvokeVoidAsync("stopGlyphVisibilityTracking", VisibilityTrackingID);
@@ -326,11 +383,11 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
     }
 
 
-    private void UpdateSelectionStatus((int GlyphID, bool Selected) selectionArgs)
+    private void UpdateSelectionStatus(GlyphSelectionChangedEventArgs selectionArgs)
     {
-        if (GlyphId == selectionArgs.GlyphID && IsSelected != selectionArgs.Selected)
+        if (GlyphId == selectionArgs.GlyphID && _IsSelected != selectionArgs.Selected)
         {
-            IsSelected = selectionArgs.Selected;
+            _IsSelected = selectionArgs.Selected;
             StateHasChanged();
         }
     }
@@ -340,5 +397,24 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
         UpdateItemMetrics();
         _SKCanvasView.Invalidate();
         StateHasChanged();
+    }
+
+    private void LastSelectedGlyphChanged(LastSelectedGlyphEventArgs selectionArgs)
+    {
+        if (selectionArgs.Glyph.Index == GlyphId)
+        {
+            _LastSelected = selectionArgs.Selected;
+            StateHasChanged();
+        }
+    }
+
+    public void PropertiesChanged(int glyphID)
+    {
+        if (GlyphId == glyphID)
+        {
+            UpdateItemMetrics();
+            _SKCanvasView.Invalidate();
+            StateHasChanged();
+        }
     }
 }

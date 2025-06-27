@@ -1,5 +1,9 @@
-﻿<div class="glyph-container @(IsSelected ? "selected" : "")"
-     @onclick="ToggleSelection"
+﻿
+<div class="glyph-container @(_IsSelected ? "is-selected" : "") @(_IsHovered ? "is-hovered" : "")"
+     @onclick="OnClick"
+     @ondblclick="ToggleSelection"
+     @onmouseenter="OnMuseEnter"
+     @onmouseleave="OnMouseLeave"
      style="width:@($"{_Dimentions.Width}px") !important; height:@($"{_Dimentions.Height}px") !important; display: @(GlyphId<0?"none":"block") !important; border-width: @($"{_Dimentions.BorderWidth}px") !important;"
      @ref="@_GlyphRef">
 
@@ -21,6 +25,12 @@
             </div>
         }
 
+
     </div>
+
+    @if (_LastSelected)
+    {
+        <div class="last-selected"></div>
+    }
 
 </div>

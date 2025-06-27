@@ -16,20 +16,7 @@
     <LeftSidebarComponent />
 
     <!-- Right Sidebar -->
-    <RadzenSidebar @bind-Expanded="@MainViewModel.RightSidebarExpanded"
-                   Responsive="false"
-                   Style="position: absolute; z-index: 3; left:auto; right: 0; grid-area: rz-right-sidebar">
-        <RadzenStack AlignItems="AlignItems.End"
-                     class="rz-p-2">
-            <RadzenButton Icon="east"
-                          Variant="Variant.Text"
-                          ButtonStyle="ButtonStyle.Secondary"
-                          Click="@(() => MainViewModel.RightSidebarExpanded = false)" />
-        </RadzenStack>
-        <div class="rz-p-4">
-            Right Sidebar
-        </div>
-    </RadzenSidebar>
+    <RightSidebarComponent />
 
     <!-- Glyphs toolbar -->
     <GlyphsToolbarComponent />

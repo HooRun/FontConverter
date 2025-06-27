@@ -1,0 +1,29 @@
+﻿<RadzenSidebar @bind-Expanded="@MainViewModel.RightSidebarExpanded"
+               Responsive="false"
+               class="right-sidebar">
+    <RadzenStack Orientation="Orientation.Horizontal"
+                 AlignItems="AlignItems.Center"
+                 Style="width: 100% !important; background-color: whitesmoke;"
+                 class="rz-p-2">
+        <RadzenText Style="vertical-align:middle !important; "
+                    Text="Glyph Properties"
+                    Visible="true" />
+        <RadzenButton Style="margin-left: auto; font-weight: 700;"
+                      Icon="close" Variant="Variant.Flat"
+                      ButtonStyle="ButtonStyle.Base"
+                      Shade="Shade.Lighter"
+                      Size="ButtonSize.Large"
+                      class="rz-border-radius-10 rz-shadow-10"
+                      Click="@(() => MainViewModel.RightSidebarExpanded = false)" />
+    </RadzenStack>
+    <RadzenStack Orientation="Orientation.Vertical"
+                 AlignItems="AlignItems.Stretch"
+                 Wrap="FlexWrap.NoWrap"
+                 Gap="15px"
+                 style="padding: 15px;">
+        <GlyphParametersComponent />
+        <GlyphUnicodesComponent />
+        <GlyphKerningsComponent />
+        <GlyphAdjusmentsComponent />
+    </RadzenStack>
+</RadzenSidebar>

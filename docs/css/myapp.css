@@ -57,6 +57,7 @@
         width: 90px;
         height: 100%;
         overflow: auto;
+        border-radius: 0px !important;
     }
 
         .toolbar-container .toolbar-content .toolbar-button {
@@ -84,10 +85,11 @@
     grid-area: left-sidebar !important;
     position: static;
     margin: 0px;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 0px 15px 15px 0px;
+    background-color: rgba(255, 255, 255, 1) !important;
     box-sizing: border-box !important;
     height: 100% !important;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 }
 
 .left-sidebar-mask {
@@ -101,6 +103,20 @@
     .left-sidebar-mask.hidden {
         display: none;
     }
+
+.right-sidebar {
+    grid-area: right-sidebar !important;
+    position: absolute !important;
+    z-index: 3 !important;
+    left: auto !important;
+    right: 0 !important;
+    margin: 0px;
+    border-radius: 15px 0px 0px 15px;
+    background-color: rgba(255, 255, 255, 1) !important;
+    box-sizing: border-box !important;
+    height: 100% !important;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
 
 @media (max-width: 768px) {
     .main-layout {
@@ -176,7 +192,8 @@
         }
 
 .glyph-container {
-    border: 2px solid transparent !important;
+    border-style: solid;
+    border-color: #E0E0E0;
     border-radius: 5px;
     display: block;
     margin: 0px !important;
@@ -185,15 +202,27 @@
     background-color: white;
     box-sizing: border-box;
     flex-shrink: 0;
+    position: relative;
 }
 
-    .glyph-container:hover {
-        border-color: #90caf9 !important;
+    .glyph-container.is-hovered {
+        border-color: deepskyblue !important;
     }
 
-    .glyph-container.selected {
-        border-color: steelblue !important;
+    .glyph-container.is-selected {
+        border-color: steelblue;
     }
+
+.last-selected {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 123, 255, 0.3);
+    pointer-events: none;
+}
+
 
 .glyph-header {
     background-color: #cfd9e3;
@@ -216,21 +245,6 @@
     padding: 0;
     line-height: 0;
 }
-
-.spinner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-}
-
-
 
 .glyph-loading {
     position: absolute;

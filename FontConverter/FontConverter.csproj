@@ -50,6 +50,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\FontConverter.Blazor\Components\_Imports.razor" Link="_Imports.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FontConverter.Library\FontConverter.Library.csproj" />
   </ItemGroup>
 

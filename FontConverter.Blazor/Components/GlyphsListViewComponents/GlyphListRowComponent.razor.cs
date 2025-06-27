@@ -1,4 +1,5 @@
-﻿using FontConverter.Blazor.Models.GlyphsView;
+﻿using FontConverter.Blazor.EventsArgs;
+using FontConverter.Blazor.Models.GlyphsView;
 using FontConverter.Blazor.ViewModels;
 using Microsoft.AspNetCore.Components;
 
@@ -10,7 +11,7 @@ public partial class GlyphListRowComponent : ComponentBase, IDisposable
     public MainViewModel MainViewModel { get; set; } = default!;
 
     [Parameter]
-    public GlyphsGroupedEntry GroupedEntry { get; set; } = new();
+    public GlyphsGroupedEntryModel GroupedEntry { get; set; } = new();
 
     private bool? _CheckBoxValue = false;
     private int _SelectedItemsCount = 0;
@@ -18,7 +19,7 @@ public partial class GlyphListRowComponent : ComponentBase, IDisposable
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        MainViewModel.OnGlyphSelectionChanged += SelectionChanged;
+        MainViewModel.OnGroupSelectionChanged += SelectionChanged;
     }
 
     protected override async Task OnParametersSetAsync()
@@ -53,9 +54,9 @@ public partial class GlyphListRowComponent : ComponentBase, IDisposable
         }
     }
 
-    private void SelectionChanged(List<(int GroupID, int SelectedItemsCount)> selectionInfo)
+    private void SelectionChanged(GroupSelectionChangedEventArgs selectionInfo)
     {
-        foreach (var info in selectionInfo)
+        foreach (var info in selectionInfo.GroupsList)
         {
             if (info.GroupID == GroupedEntry.GroupID)
             {
@@ -80,6 +81,6 @@ public partial class GlyphListRowComponent : ComponentBase, IDisposable
 
     public void Dispose()
     {
-        MainViewModel.OnGlyphSelectionChanged -= SelectionChanged;
+        MainViewModel.OnGroupSelectionChanged -= SelectionChanged;
     }
 }

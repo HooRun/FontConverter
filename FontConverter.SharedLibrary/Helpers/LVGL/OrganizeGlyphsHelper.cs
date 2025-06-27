@@ -42,7 +42,6 @@ public static class OrganizeGlyphsHelper
                 {
                     Index = processedGlyphs,
                     Description = $"Glyph {processedGlyphs}",
-                    Adjusments = lVGLFont.FontAdjusments
                 };
 
                 if (!justRender)
@@ -59,6 +58,16 @@ public static class OrganizeGlyphsHelper
                     AdvanceWidth = (int)Math.Ceiling(scale * glyphMetrics[j].AdvanceWidth),
                     BitmapIndex = bitmapIndex
                 };
+                lvglGlyph.Adjusments = new LVGLFontAdjusments(
+                    lVGLFont.FontAdjusments.AntiAlias,
+                    lVGLFont.FontAdjusments.Dither,
+                    lVGLFont.FontAdjusments.ColorFilter,
+                    lVGLFont.FontAdjusments.Shader,
+                    lVGLFont.FontAdjusments.Style,
+                    lVGLFont.FontAdjusments.StrokeWidth,
+                    lVGLFont.FontAdjusments.Gamma,
+                    lVGLFont.FontAdjusments.Threshold
+                    );
                 bitmapIndex += lvglGlyph.Bitmap.Length;
                 lvglGlyph.IsEmpty = lvglGlyph.Bitmap.Length == 0;
 
