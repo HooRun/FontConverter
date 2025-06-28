@@ -14,7 +14,7 @@ public partial class GlyphUnicodesComponent : ComponentBase, IRerenderable
     Variant variant = Variant.Outlined;
     bool floatFieldLabel = true;
 
-    string? value;
+    int? value;
 
     protected override void OnInitialized()
     {

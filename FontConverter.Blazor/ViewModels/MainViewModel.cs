@@ -180,6 +180,7 @@ public class MainViewModel : BaseViewModel
         //    nameof(FontAdjusmentsComponent),
         //    nameof(FontContentsComponent),
         //    nameof(FontInformationsComponent));
+        OnGlyphZoomChanged?.Invoke();
         RerenderAll();
     }
 

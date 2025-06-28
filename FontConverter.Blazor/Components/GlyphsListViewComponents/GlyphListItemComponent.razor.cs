@@ -86,6 +86,8 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
             if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
             {
                 _IsSelected = glyphItem.IsSelected;
+                _IsHovered = glyphItem.IsHovered;
+                _LastSelected = glyphItem.LastSelected;
             }
             _DotNetRef ??= DotNetObjectReference.Create(this);
             await JSRuntime.InvokeVoidAsync("startGlyphVisibilityTracking", _GlyphRef, _DotNetRef, VisibilityTrackingID);
@@ -171,7 +173,6 @@ public partial class GlyphListItemComponent : ComponentBase, IAsyncDisposable, I
         if (MainViewModel.GlyphsList.TryGetValue(GlyphId, out var glyphItem))
         {
             glyphItem.IsSelected = _IsSelected;
-            glyphItem.LastSelected = _IsSelected;
         }
         MainViewModel.GlyphSelectionChanged(GlyphId, _IsSelected);
         await InvokeAsync(StateHasChanged);

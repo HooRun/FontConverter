@@ -1,8 +1,11 @@
 ﻿using FontConverter.Blazor.Interfaces;
 using FontConverter.Blazor.Services;
 using FontConverter.Blazor.ViewModels;
+using FontConverter.SharedLibrary.Helpers;
+using FontConverter.SharedLibrary.Models;
 using Microsoft.AspNetCore.Components;
 using Radzen;
+using SkiaSharp;
 using static FontConverter.SharedLibrary.Helpers.LVGLFontEnums;
 
 namespace FontConverter.Blazor.Components.RightSidebarComponents;
@@ -18,7 +21,7 @@ public partial class GlyphAdjusmentsComponent : ComponentBase, IRerenderable
     Variant variant = Variant.Outlined;
     bool floatFieldLabel = true;
 
-    private double _GammaValue = 1.0;
+    private float _GammaValue = 1.0f;
 
     protected override void OnInitialized()
     {
@@ -36,6 +39,7 @@ public partial class GlyphAdjusmentsComponent : ComponentBase, IRerenderable
         if (MainViewModel.LastSelectedGlyph != null && MainViewModel.LastSelectedGlyph.Adjusments.AntiAlias != newValue)
         {
             MainViewModel.LastSelectedGlyph.Adjusments.AntiAlias = newValue;
+            RenderGlyph();
         }
     }
 
@@ -44,6 +48,7 @@ public partial class GlyphAdjusmentsComponent : ComponentBase, IRerenderable
         if (MainViewModel.LastSelectedGlyph != null && MainViewModel.LastSelectedGlyph.Adjusments.Dither != newValue)
         {
             MainViewModel.LastSelectedGlyph.Adjusments.Dither = newValue;
+            RenderGlyph();
         }
     }
 
@@ -52,6 +57,7 @@ public partial class GlyphAdjusmentsComponent : ComponentBase, IRerenderable
         if (newValue != null && MainViewModel.LastSelectedGlyph != null && newValue is GLYPH_STYLE && MainViewModel.LastSelectedGlyph.Adjusments.Style != (GLYPH_STYLE)newValue)
         {
             MainViewModel.LastSelectedGlyph.Adjusments.Style = (GLYPH_STYLE)newValue;
+            RenderGlyph();
         }
     }
 
@@ -60,6 +66,7 @@ public partial class GlyphAdjusmentsComponent : ComponentBase, IRerenderable
         if (newValue != null && MainViewModel.LastSelectedGlyph != null && MainViewModel.LastSelectedGlyph.Adjusments.StrokeWidth != newValue)
         {
             MainViewModel.LastSelectedGlyph.Adjusments.StrokeWidth = (int)newValue;
+            RenderGlyph();
         }
     }
 
@@ -79,6 +86,7 @@ public partial class GlyphAdjusmentsComponent : ComponentBase, IRerenderable
             }
             _GammaValue = gamma;
             MainViewModel.LastSelectedGlyph.Adjusments.Gamma = (int)newValue;
+            RenderGlyph();
         }
     }
 
@@ -87,6 +95,46 @@ public partial class GlyphAdjusmentsComponent : ComponentBase, IRerenderable
         if (newValue != null && MainViewModel.LastSelectedGlyph != null && MainViewModel.LastSelectedGlyph.Adjusments.Threshold != newValue)
         {
             MainViewModel.LastSelectedGlyph.Adjusments.Threshold = (int)newValue;
+            RenderGlyph();
         }
+    }
+
+    private void RenderGlyph()
+    {
+        if (MainViewModel.LastSelectedGlyph == null || MainViewModel.OpenTypeFont == null || MainViewModel.OpenTypeFont.SKFont==null)
+            return;
+        using SKPaint paint = new()
+        {
+            IsAntialias = MainViewModel.LastSelectedGlyph.Adjusments.AntiAlias,
+            IsDither = MainViewModel.LastSelectedGlyph.Adjusments.Dither,
+            ColorFilter = MainViewModel.LastSelectedGlyph.Adjusments.ColorFilter ? SKColorFilter.CreateBlendMode(SKColors.Black, SKBlendMode.SrcIn) : null,
+            Shader = MainViewModel.LastSelectedGlyph.Adjusments.Shader ? SKShader.CreateColor(SKColors.Black) : null,
+            Style = (SKPaintStyle)MainViewModel.LastSelectedGlyph.Adjusments.Style,
+            Color = SKColors.Black,
+            MaskFilter = SKMaskFilter.CreateGamma(_GammaValue),
+            StrokeWidth = MainViewModel.LastSelectedGlyph.Adjusments.StrokeWidth,
+        };
+
+        LVGLGlyphBitmapData renderData = RenderGlyphsToBitmapArrayHelper.RenderGlyphToBitmapArray(
+            MainViewModel.OpenTypeFont.SKFont!, 
+            paint, 
+            (ushort)MainViewModel.LastSelectedGlyph.Index,
+            MainViewModel.LVGLFont.FontSettings.FontSize,
+            MainViewModel.LVGLFont.FontSettings.FontBitPerPixel,
+            MainViewModel.LastSelectedGlyph.Adjusments.Threshold
+            );
+        var scale = MainViewModel.LVGLFont.FontSettings.FontSize / (double)MainViewModel.OpenTypeFont.HeadTable.UnitsPerEm;
+        var glyphMetrics = MainViewModel.OpenTypeFont.HmtxTable.GlyphMetrics;
+        MainViewModel.LastSelectedGlyph.Bitmap = renderData.Bitmap;
+        MainViewModel.LastSelectedGlyph.Descriptor = new LVGLGlyphDescriptor
+        {
+            Width = renderData.Bounds.Width,
+            Height = renderData.Bounds.Height,
+            OffsetX = renderData.Bounds.Left,
+            OffsetY = -renderData.Bounds.Bottom,
+            AdvanceWidth = (int)Math.Ceiling(scale * glyphMetrics[MainViewModel.LastSelectedGlyph.Index].AdvanceWidth),
+        };
+
+        MainViewModel.OnGlyphPropertiesChanged?.Invoke(MainViewModel.LastSelectedGlyph.Index);
     }
 }

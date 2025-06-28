@@ -1,11 +1,11 @@
 {
   "mainAssemblyName": "FontConverter.Blazor",
   "resources": {
-    "hash": "sha256-4Ff3fY/rtw/FLuK7noa/GX/McMbfyu2GN0i+CEHAIwk=",
+    "hash": "sha256-oqs1/Ryl6wBS9NUY5Fqm4qbmZqU/nf6tvb3r9LqCfa8=",
     "fingerprinting": {
       "AutoMapper.totk3ghnq9.wasm": "AutoMapper.wasm",
       "BlazorPro.BlazorSize.fjkic6tfmp.wasm": "BlazorPro.BlazorSize.wasm",
-      "FontConverter.Blazor.99paob4aft.wasm": "FontConverter.Blazor.wasm",
+      "FontConverter.Blazor.hefgsfg8vj.wasm": "FontConverter.Blazor.wasm",
       "FontConverter.SharedLibrary.46i2dqps3c.wasm": "FontConverter.SharedLibrary.wasm",
       "Microsoft.AspNetCore.Components.Forms.enqcc7azlm.wasm": "Microsoft.AspNetCore.Components.Forms.wasm",
       "Microsoft.AspNetCore.Components.bmfcz1qkw4.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -100,7 +100,7 @@
     "assembly": {
       "AutoMapper.totk3ghnq9.wasm": "sha256-szmkSB5fPdjK2TpIYWEG1ESlm4/hlclUj8URR7+K+xI=",
       "BlazorPro.BlazorSize.fjkic6tfmp.wasm": "sha256-hdMaU5fRqDC+IQhVKHLCY42jcC+r1iizaeGx7dBAB1E=",
-      "FontConverter.Blazor.99paob4aft.wasm": "sha256-o33usruTEAiIZ1OsXdtglI3HJZs0TADRRjx4ApZm60A=",
+      "FontConverter.Blazor.hefgsfg8vj.wasm": "sha256-Bxb5Zmnjpqah8PTMq9vsHFm3QRqpShMLNKURKWB9O/M=",
       "FontConverter.SharedLibrary.46i2dqps3c.wasm": "sha256-hNIhqfBV7EzEBTUhqNOKJj9IeYhpSqASdtApaK07ecw=",
       "Microsoft.AspNetCore.Components.Forms.enqcc7azlm.wasm": "sha256-6nk9ihGrhExR2GEGpy8tgELoRJEr67bLvtcA6aYIyH8=",
       "Microsoft.AspNetCore.Components.bmfcz1qkw4.wasm": "sha256-7d6WDkfPlj2c3h6pPf+znE2b9BGjOJvBNx7MRAkHpsU=",
