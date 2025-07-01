@@ -1,12 +1,15 @@
 ﻿using FontConverter.SharedLibrary.Models;
 using SkiaSharp;
 using System.Runtime.InteropServices;
+using System.Text;
 using static FontConverter.SharedLibrary.Helpers.LVGLFontEnums;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace FontConverter.SharedLibrary.Helpers;
 
 public class RenderGlyphsToBitmapArrayHelper
 {
+    private const float _SVGPadding = 0.0f;
 
     public static async Task<SortedList<int, LVGLGlyphBitmapData>> RenderGlyphsToBitmapArrayAsync(
         OpenTypeFont openTypeFont,
@@ -37,7 +40,7 @@ public class RenderGlyphsToBitmapArrayHelper
         openTypeFont.SKFont!.BaselineSnap = true;
         openTypeFont.SKFont!.Subpixel = false;
 
-        using SKPaint paint = new()
+        using SKPaint bitmapPaint = new()
         {
             IsAntialias = lVGLFont.FontAdjusments.AntiAlias,
             IsDither = lVGLFont.FontAdjusments.Dither,
@@ -49,6 +52,13 @@ public class RenderGlyphsToBitmapArrayHelper
             StrokeWidth= lVGLFont.FontAdjusments.StrokeWidth,
         };
 
+        using SKFont svgFont = new SKFont(openTypeFont.SKTypeface!, lVGLFont.SVGTextSize);
+        var metrics = svgFont.Metrics;
+        float boxWidth = metrics.MaxCharacterWidth + 2 * _SVGPadding;
+        float boxHeight = -metrics.Top + metrics.Bottom + 2 * _SVGPadding;
+        float svgScale = 50.0f / Math.Max(boxWidth, boxHeight) ;
+        lVGLFont.SVGScale = svgScale;
+
         for (int i = 0; i < totalGlyphs; i += chunkSize)
         {
             cancellationToken.ThrowIfCancellationRequested();
@@ -56,7 +66,7 @@ public class RenderGlyphsToBitmapArrayHelper
 
             for (int j = i; j < batchEnd; j++)
             {
-                glyphs.Add(j, RenderGlyphToBitmapArray(openTypeFont.SKFont!, paint, (ushort)j, lVGLFont.FontSettings.FontSize, lVGLFont.FontSettings.FontBitPerPixel, threshold));
+                glyphs.Add(j, RenderGlyphToBitmapArray(openTypeFont.SKFont!, bitmapPaint, svgFont, (ushort)j, lVGLFont.FontSettings.FontSize, lVGLFont.FontSettings.FontBitPerPixel, threshold));
                 processedGlyphs++;
             }
             progress?.Report((processedGlyphs, (double)processedGlyphs / totalGlyphs * 100));
@@ -68,14 +78,14 @@ public class RenderGlyphsToBitmapArrayHelper
         return glyphs;
     }
 
-    public static LVGLGlyphBitmapData RenderGlyphToBitmapArray(SKFont font, SKPaint paint, ushort glyphIndex, int pixelHeight, BIT_PER_PIXEL_ENUM bpp, int threshold)
+    public static LVGLGlyphBitmapData RenderGlyphToBitmapArray(SKFont bitmapFont, SKPaint paint, SKFont svgFont, ushort glyphIndex, int pixelHeight, BIT_PER_PIXEL_ENUM bpp, int threshold)
     {
         if (bpp is not (BIT_PER_PIXEL_ENUM.BPP_1 or BIT_PER_PIXEL_ENUM.BPP_2 or BIT_PER_PIXEL_ENUM.BPP_4 or BIT_PER_PIXEL_ENUM.BPP_8))
-            return new LVGLGlyphBitmapData(glyphIndex, Array.Empty<byte>(), SKRectI.Empty);
+            return new LVGLGlyphBitmapData(glyphIndex, Array.Empty<byte>(), SKRectI.Empty, new());
 
-        using var path = font.GetGlyphPath(glyphIndex);
+        using var path = bitmapFont.GetGlyphPath(glyphIndex);
         if (path == null || path.IsEmpty)
-            return new LVGLGlyphBitmapData(glyphIndex, Array.Empty<byte>(), SKRectI.Empty);
+            return new LVGLGlyphBitmapData(glyphIndex, Array.Empty<byte>(), SKRectI.Empty, new());
 
         SKRectI bounds = SKRectI.Ceiling(path.TightBounds, true);
         int width = Math.Max(1, bounds.Width);
@@ -89,7 +99,7 @@ public class RenderGlyphsToBitmapArrayHelper
         {
             using var surface = SKSurface.Create(imageInfo, alphaDataPtr, width);
             if (surface == null)
-                return new LVGLGlyphBitmapData(glyphIndex, Array.Empty<byte>(), bounds);
+                return new LVGLGlyphBitmapData(glyphIndex, Array.Empty<byte>(), bounds, new());
 
             var canvas = surface.Canvas;
             canvas.Clear(SKColors.Transparent);
@@ -99,8 +109,8 @@ public class RenderGlyphsToBitmapArrayHelper
 
             var alphaData = new byte[dataSize];
             Marshal.Copy(alphaDataPtr, alphaData, 0, dataSize);
-
-            return new LVGLGlyphBitmapData(glyphIndex, ConvertAlphaToBpp(alphaData, width, height, bpp, threshold), bounds);
+            LVGLGlyphSVG svg = RenderGlyphToSVG(svgFont, glyphIndex);
+            return new LVGLGlyphBitmapData(glyphIndex, ConvertAlphaToBpp(alphaData, width, height, bpp, threshold), bounds, svg);
         }
         finally
         {
@@ -146,5 +156,27 @@ public class RenderGlyphsToBitmapArrayHelper
         return output;
     }
 
+    public static LVGLGlyphSVG RenderGlyphToSVG(SKFont svgFont, ushort glyphIndex)
+    {
+        LVGLGlyphSVG svg = new();
 
+        if (svgFont == null || svgFont.Typeface == null)
+            return svg;
+
+        using var path = svgFont.GetGlyphPath(glyphIndex);
+
+        if (path == null || path.IsEmpty)
+            return svg;
+
+        SKRect bounds = path.Bounds;
+        SKFontMetrics metrics = svgFont.Metrics;
+
+        svg.Width = bounds.Width;
+        svg.Height = -metrics.Top + metrics.Bottom;
+        svg.TranslateX = -bounds.Left;
+        svg.TranslateY = -metrics.Top;
+        svg.Path = path.ToSvgPathData();
+
+        return svg;
+    }
 }

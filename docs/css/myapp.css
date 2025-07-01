@@ -87,9 +87,10 @@
     margin: 0px;
     border-radius: 0px 15px 15px 0px;
     background-color: rgba(255, 255, 255, 1) !important;
-    box-sizing: border-box !important;
     height: 100% !important;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    display: flex;
+    flex-direction: column;
 }
 
 .left-sidebar-mask {
@@ -113,9 +114,10 @@
     margin: 0px;
     border-radius: 15px 0px 0px 15px;
     background-color: rgba(255, 255, 255, 1) !important;
-    box-sizing: border-box !important;
     height: 100% !important;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    display: flex;
+    flex-direction: column;
 }
 
 @media (max-width: 768px) {
@@ -127,7 +129,6 @@
             'left-sidebar glyphs-toolbar right-sidebar'
             'left-sidebar glyphs-list right-sidebar'
             'left-sidebar toolbar right-sidebar' !important;
-        overflow: auto !important;
     }
 
     .toolbar-container .toolbar-content {

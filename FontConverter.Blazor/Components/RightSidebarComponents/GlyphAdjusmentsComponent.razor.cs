@@ -115,9 +115,12 @@ public partial class GlyphAdjusmentsComponent : ComponentBase, IRerenderable
             StrokeWidth = MainViewModel.LastSelectedGlyph.Adjusments.StrokeWidth,
         };
 
+        using SKFont svgFont = new SKFont(MainViewModel.OpenTypeFont.SKTypeface!, MainViewModel.LVGLFont.SVGTextSize);
+
         LVGLGlyphBitmapData renderData = RenderGlyphsToBitmapArrayHelper.RenderGlyphToBitmapArray(
             MainViewModel.OpenTypeFont.SKFont!, 
-            paint, 
+            paint,
+            svgFont,
             (ushort)MainViewModel.LastSelectedGlyph.Index,
             MainViewModel.LVGLFont.FontSettings.FontSize,
             MainViewModel.LVGLFont.FontSettings.FontBitPerPixel,

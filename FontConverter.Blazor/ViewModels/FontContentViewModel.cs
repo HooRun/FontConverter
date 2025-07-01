@@ -15,6 +15,17 @@ public class FontContentViewModel : BaseViewModel
         _Contents = new();
     }
 
+    public FontContentViewModel(string header, string subTitle, string icon, int count, bool isSelected, List<int>? items, SortedList<string, FontContentViewModel> contents) :this()
+    {
+        Header = header;
+        SubTitle = subTitle;
+        Icon = icon;
+        Count = count;
+        IsSelected = isSelected;
+        Items = items ?? [];
+        Contents = contents;
+    }
+
     private string _Header;
     private string _SubTitle;
     private string _Icon;

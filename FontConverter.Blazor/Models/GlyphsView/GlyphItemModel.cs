@@ -37,6 +37,9 @@ public class GlyphItemModel : LVGLGlyph
         Adjusments = glyph.Adjusments;
         CodePoints = glyph.CodePoints;
         Blocks = glyph.Blocks;
+        LeftKernings = glyph.LeftKernings;
+        RightKernings = glyph.RightKernings;
+        SVG = glyph.SVG;
         IsEmpty = glyph.IsEmpty;
         IsUnMapped = glyph.IsUnMapped;
         IsSingleMapped = glyph.IsSingleMapped;

@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "ncRpeMky",
+  "version": "y1FsrXkD",
   "assets": [
     {
       "hash": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
@@ -218,12 +218,12 @@ self.assetsManifest = {
       "url": "_framework/BlazorPro.BlazorSize.fjkic6tfmp.wasm"
     },
     {
-      "hash": "sha256-Bxb5Zmnjpqah8PTMq9vsHFm3QRqpShMLNKURKWB9O/M=",
-      "url": "_framework/FontConverter.Blazor.hefgsfg8vj.wasm"
+      "hash": "sha256-Gw64W7ta3sOAoNRbdNqWOGGbUR9JwsFI2bXhNeUGR9k=",
+      "url": "_framework/FontConverter.Blazor.x12ybqutcl.wasm"
     },
     {
-      "hash": "sha256-hNIhqfBV7EzEBTUhqNOKJj9IeYhpSqASdtApaK07ecw=",
-      "url": "_framework/FontConverter.SharedLibrary.46i2dqps3c.wasm"
+      "hash": "sha256-9fm+j9K/5MIHqGF/qqchWmM/8NvAbZj0EKtuCtqZK6I=",
+      "url": "_framework/FontConverter.SharedLibrary.dqk488pwps.wasm"
     },
     {
       "hash": "sha256-6nk9ihGrhExR2GEGpy8tgELoRJEr67bLvtcA6aYIyH8=",
@@ -302,8 +302,8 @@ self.assetsManifest = {
       "url": "_framework/Radzen.Blazor.2ajjgw5gfi.wasm"
     },
     {
-      "hash": "sha256-JAghXN6EEFIOEa29l0RANQ7os4/K6P3CXq8nK7J777w=",
-      "url": "_framework/SkiaSharp.8rxl6xcztt.wasm"
+      "hash": "sha256-2CyM88tZmAsK/XvByBC8t2dHlI0SpIkJO+xTfrHxa9U=",
+      "url": "_framework/SkiaSharp.4p1hq4u54f.wasm"
     },
     {
       "hash": "sha256-+5lFYk11wwtJKUvTMwXiuQWKVngS/3Y0LQV5hARgV2Q=",
@@ -482,7 +482,7 @@ self.assetsManifest = {
       "url": "_framework/System.icunsnzrqy.wasm"
     },
     {
-      "hash": "sha256-NhIlDbbZqaaFonjWGBO7knvVFumUDP68zm0g1dMVF40=",
+      "hash": "sha256-qmO6aFwIwGD63jBzbKZKxsWMFZ7+jZ1uqqCHjTBBm5I=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -494,8 +494,8 @@ self.assetsManifest = {
       "url": "_framework/dotnet.js"
     },
     {
-      "hash": "sha256-cMV/Xu7c878UWz7T+1pyqxL2xfT7QJnXCPa3I77OmE8=",
-      "url": "_framework/dotnet.native.w8344mcegw.wasm"
+      "hash": "sha256-kJYiL6gUQjPTa/hCK0qyye9RPDrP0yuwCraDLE2j6KQ=",
+      "url": "_framework/dotnet.native.43c5lasl8b.wasm"
     },
     {
       "hash": "sha256-w3RftIBCJ06vR331GVwUdyQD5Hh7W6hMMrC4uSwtBAo=",
@@ -530,7 +530,7 @@ self.assetsManifest = {
       "url": "css/material.scss"
     },
     {
-      "hash": "sha256-MqqX/INodld97lC7q2U4B0g8qR+7GzcaFkLXJMm0jkU=",
+      "hash": "sha256-ff3zecETDMppUtD91IPF58Tx0r4uU1AE8ftCXKNq6w4=",
       "url": "css/myapp.css"
     },
     {

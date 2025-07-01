@@ -11,6 +11,8 @@ public class LVGLFont
         GlyphViewItemProperties = new();
         Glyphs = new();
         Blocks = new();
+        SVGTextSize = 120;
+        SVGScale = 1.0f;
     }
 
     public LVGLFontSettings FontSettings { get; set; }
@@ -22,6 +24,9 @@ public class LVGLFont
     public SortedList<int, LVGLGlyph> Glyphs { get; set; }
 
     public SortedList<(int Start, int End), UnicodeBlock> Blocks { get; set; }
+
+    public int SVGTextSize { get; set; }
+    public float SVGScale { get; set; }
 
 }
 

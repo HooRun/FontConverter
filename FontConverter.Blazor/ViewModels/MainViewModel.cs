@@ -1,17 +1,11 @@
 ﻿using AutoMapper;
-using BlazorPro.BlazorSize;
 using FontConverter.Blazor.Components;
 using FontConverter.Blazor.Components.GlyphsListViewComponents;
-using FontConverter.Blazor.Components.LeftSidebarComponents;
 using FontConverter.Blazor.EventsArgs;
 using FontConverter.Blazor.Interfaces;
-using FontConverter.Blazor.Layout;
 using FontConverter.Blazor.Models.GlyphsView;
 using FontConverter.Blazor.Services;
 using FontConverter.SharedLibrary.Models;
-using Microsoft.AspNetCore.Components;
-using Radzen.Blazor.Rendering;
-using System.Reflection.PortableExecutable;
 
 namespace FontConverter.Blazor.ViewModels;
 
@@ -190,6 +184,13 @@ public class MainViewModel : BaseViewModel
         _Mapper.Map(FontAdjusmentsViewModel, LVGLFont.FontAdjusments);
         //_Mapper.Map(FontContentsViewModel, LVGLFont.FontContents);
         //_Mapper.Map(FontInformationsViewModel, LVGLFont.FontInformations);
+    }
+
+    public void UpdateTreeItems()
+    {
+        if (_SelectedTreeViewItem == null)
+            _SelectedTreeViewItem = FontContentsViewModel.Contents[LVGLFont.FontContents.GlyphsHeader];
+        _=SelectTreeItemAsync(_SelectedTreeViewItem);
     }
 
     public async Task SelectTreeItemAsync(FontContentViewModel selectedItem)

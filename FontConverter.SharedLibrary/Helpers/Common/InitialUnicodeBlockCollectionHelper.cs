@@ -38,6 +38,7 @@ public static class InitialUnicodeBlockCollectionHelper
                 {
                     lock (containingBlock.Characters) 
                     {
+                        character.ParentBlock = containingBlock;
                         containingBlock.Characters.TryAdd(codePoint, character);
                     }
                 }
@@ -161,7 +162,7 @@ public static class InitialUnicodeBlockCollectionHelper
                 if (string.IsNullOrWhiteSpace(name))
                     name = $"U+{codePoint:X4}";
 
-                tempList.Add(new UnicodeCharacter(codePoint, name));
+                tempList.Add(new UnicodeCharacter(codePoint, name, null));
             });
 
             unicodeData.AddRange(tempList);

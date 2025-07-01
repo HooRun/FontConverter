@@ -6,10 +6,52 @@ public class FontKernTable
 {
     public FontKernTable()
     {
-        
+
     }
 
     public List<KernSubtable> Subtables { get; set; } = new();
+
+    public List<KernPair> AllPairs
+    {
+        get
+        {
+            var result = new List<KernPair>();
+
+            foreach (var sub in Subtables)
+            {
+                switch (sub)
+                {
+                    case KernFormat0Subtable fmt0:
+                        result.AddRange(fmt0.Pairs);
+                        break;
+
+                    case KernFormat2Subtable fmt2:
+                        if (fmt2.KerningValues != null)
+                        {
+                            for (int left = 0; left < fmt2.NumLeftClasses; left++)
+                            {
+                                for (int right = 0; right < fmt2.NumRightClasses; right++)
+                                {
+                                    short value = (short)fmt2.KerningValues[left, right];
+                                    if (value != 0)
+                                    {
+                                        result.Add(new KernPair
+                                        {
+                                            Left = (ushort)left,
+                                            Right = (ushort)right,
+                                            Value = value
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                }
+            }
+
+            return result;
+        }
+    }
 }
 
 public abstract class KernSubtable
@@ -40,5 +82,5 @@ public class KernFormat2Subtable : KernSubtable
     public ushort NumLeftClasses { get; set; }
     public ushort NumRightClasses { get; set; }
 
-    public ushort[,] KerningValues { get; set; }
+    public ushort[,]? KerningValues { get; set; }
 }

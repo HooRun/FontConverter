@@ -3,11 +3,30 @@
                class="right-sidebar">
     <RadzenStack Orientation="Orientation.Horizontal"
                  AlignItems="AlignItems.Center"
-                 Style="width: 100% !important; background-color: whitesmoke;"
+                 Style="position: sticky; top: 0; z-index: 4; width: 100% !important; background-color: whitesmoke;"
                  class="rz-p-2">
-        <RadzenText Style="vertical-align:middle !important; "
-                    Text="Glyph Properties"
-                    Visible="true" />
+        <RadzenStack Orientation="Orientation.Horizontal"
+                     AlignItems="AlignItems.Center"
+                     Gap="5px">
+            @if (MainViewModel.LastSelectedGlyph != null)
+            {
+                <RadzenStack Orientation="Orientation.Vertical"
+                             AlignItems="AlignItems.Center"
+                             JustifyContent="JustifyContent.Center"
+                             Style="width:60px; height:60px; padding: 5px; background-color: rgba(255,255,255,0.7); overflow: hidden;">
+                    <GlyphSVGComponent SVG="MainViewModel.LastSelectedGlyph.SVG" Height="50" MaxWidth="50" />
+                </RadzenStack>
+
+                <RadzenStack Orientation="Orientation.Vertical"
+                             AlignItems="AlignItems.Start"
+                             Gap="5px">
+                    <RadzenText Style="vertical-align:middle !important; "
+                                Text="Glyph Properties"
+                                Visible="true" />
+                    <RadzenText Text="@($"Glyph ID: {MainViewModel.LastSelectedGlyph.Index}")" Style="font-size: 12px;"/>
+                </RadzenStack>
+            }
+        </RadzenStack>
         <RadzenButton Style="margin-left: auto; font-weight: 700;"
                       Icon="close" Variant="Variant.Flat"
                       ButtonStyle="ButtonStyle.Base"

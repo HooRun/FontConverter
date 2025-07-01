@@ -1,12 +1,12 @@
 {
   "mainAssemblyName": "FontConverter.Blazor",
   "resources": {
-    "hash": "sha256-oqs1/Ryl6wBS9NUY5Fqm4qbmZqU/nf6tvb3r9LqCfa8=",
+    "hash": "sha256-ruWSpUEdaM8TyBx05+Fx9Q7ZZJ51AJicSrcDO0uR/ls=",
     "fingerprinting": {
       "AutoMapper.totk3ghnq9.wasm": "AutoMapper.wasm",
       "BlazorPro.BlazorSize.fjkic6tfmp.wasm": "BlazorPro.BlazorSize.wasm",
-      "FontConverter.Blazor.hefgsfg8vj.wasm": "FontConverter.Blazor.wasm",
-      "FontConverter.SharedLibrary.46i2dqps3c.wasm": "FontConverter.SharedLibrary.wasm",
+      "FontConverter.Blazor.x12ybqutcl.wasm": "FontConverter.Blazor.wasm",
+      "FontConverter.SharedLibrary.dqk488pwps.wasm": "FontConverter.SharedLibrary.wasm",
       "Microsoft.AspNetCore.Components.Forms.enqcc7azlm.wasm": "Microsoft.AspNetCore.Components.Forms.wasm",
       "Microsoft.AspNetCore.Components.bmfcz1qkw4.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.dmablk9qh6.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -27,7 +27,7 @@
       "Microsoft.JSInterop.WebAssembly.ynpjm7kaw7.wasm": "Microsoft.JSInterop.WebAssembly.wasm",
       "Radzen.Blazor.2ajjgw5gfi.wasm": "Radzen.Blazor.wasm",
       "SkiaSharp.Views.Blazor.rwyxjek1ea.wasm": "SkiaSharp.Views.Blazor.wasm",
-      "SkiaSharp.8rxl6xcztt.wasm": "SkiaSharp.wasm",
+      "SkiaSharp.4p1hq4u54f.wasm": "SkiaSharp.wasm",
       "System.Collections.Concurrent.g2ggvba9f4.wasm": "System.Collections.Concurrent.wasm",
       "System.Collections.Immutable.1in5jdiybm.wasm": "System.Collections.Immutable.wasm",
       "System.Collections.NonGeneric.t9vuglw5w6.wasm": "System.Collections.NonGeneric.wasm",
@@ -72,7 +72,7 @@
       "System.Xml.Linq.yiwjknpdq4.wasm": "System.Xml.Linq.wasm",
       "System.Xml.XDocument.sh85j4oe8l.wasm": "System.Xml.XDocument.wasm",
       "dotnet.native.xf8e98a0w9.js": "dotnet.native.js",
-      "dotnet.native.w8344mcegw.wasm": "dotnet.native.wasm",
+      "dotnet.native.43c5lasl8b.wasm": "dotnet.native.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.runtime.qrl1fuqt3c.js": "dotnet.runtime.js",
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
@@ -86,7 +86,7 @@
       "dotnet.runtime.qrl1fuqt3c.js": "sha256-ilTXrnUF4HKbIAFVIYlRmX3ryKNZpGUObkWMF0n2Kcg="
     },
     "wasmNative": {
-      "dotnet.native.w8344mcegw.wasm": "sha256-cMV/Xu7c878UWz7T+1pyqxL2xfT7QJnXCPa3I77OmE8="
+      "dotnet.native.43c5lasl8b.wasm": "sha256-kJYiL6gUQjPTa/hCK0qyye9RPDrP0yuwCraDLE2j6KQ="
     },
     "icu": {
       "icudt_CJK.tjcz0u77k5.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -100,8 +100,8 @@
     "assembly": {
       "AutoMapper.totk3ghnq9.wasm": "sha256-szmkSB5fPdjK2TpIYWEG1ESlm4/hlclUj8URR7+K+xI=",
       "BlazorPro.BlazorSize.fjkic6tfmp.wasm": "sha256-hdMaU5fRqDC+IQhVKHLCY42jcC+r1iizaeGx7dBAB1E=",
-      "FontConverter.Blazor.hefgsfg8vj.wasm": "sha256-Bxb5Zmnjpqah8PTMq9vsHFm3QRqpShMLNKURKWB9O/M=",
-      "FontConverter.SharedLibrary.46i2dqps3c.wasm": "sha256-hNIhqfBV7EzEBTUhqNOKJj9IeYhpSqASdtApaK07ecw=",
+      "FontConverter.Blazor.x12ybqutcl.wasm": "sha256-Gw64W7ta3sOAoNRbdNqWOGGbUR9JwsFI2bXhNeUGR9k=",
+      "FontConverter.SharedLibrary.dqk488pwps.wasm": "sha256-9fm+j9K/5MIHqGF/qqchWmM/8NvAbZj0EKtuCtqZK6I=",
       "Microsoft.AspNetCore.Components.Forms.enqcc7azlm.wasm": "sha256-6nk9ihGrhExR2GEGpy8tgELoRJEr67bLvtcA6aYIyH8=",
       "Microsoft.AspNetCore.Components.bmfcz1qkw4.wasm": "sha256-7d6WDkfPlj2c3h6pPf+znE2b9BGjOJvBNx7MRAkHpsU=",
       "Microsoft.AspNetCore.Components.Web.dmablk9qh6.wasm": "sha256-hR86wuaaGysocHvsWBfO2HyUBxT9xnG1VAEKCEch10g=",
@@ -122,7 +122,7 @@
       "Microsoft.JSInterop.WebAssembly.ynpjm7kaw7.wasm": "sha256-rhpkBOcrE3Jka5EriY0f6+d/lxnwAWpcDQrLBwRBYfg=",
       "Radzen.Blazor.2ajjgw5gfi.wasm": "sha256-pjetcsMaXhiIOSim0er+y6fTi7ehTMafLBQ/x8LAfls=",
       "SkiaSharp.Views.Blazor.rwyxjek1ea.wasm": "sha256-+5lFYk11wwtJKUvTMwXiuQWKVngS/3Y0LQV5hARgV2Q=",
-      "SkiaSharp.8rxl6xcztt.wasm": "sha256-JAghXN6EEFIOEa29l0RANQ7os4/K6P3CXq8nK7J777w=",
+      "SkiaSharp.4p1hq4u54f.wasm": "sha256-2CyM88tZmAsK/XvByBC8t2dHlI0SpIkJO+xTfrHxa9U=",
       "System.Collections.Concurrent.g2ggvba9f4.wasm": "sha256-qN9egfEMcqvznIqwaEAcZDK2CI4Hm8a7oIIhgxzF5JE=",
       "System.Collections.Immutable.1in5jdiybm.wasm": "sha256-Oe0rrFDEFh9XGUfZF+IjzoS2Yt8Gg+wQC19iDMCSY/w=",
       "System.Collections.NonGeneric.t9vuglw5w6.wasm": "sha256-L0Kfc4MmHF7p9E08Cz0xpS8S5cUOqK/3LjMBDkDkDTg=",

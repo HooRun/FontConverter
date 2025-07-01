@@ -31,6 +31,19 @@ public static class OrganizeGlyphsHelper
         var glyphMetrics = openTypeFont.HmtxTable.GlyphMetrics;
         var glyphToUnicodeMap = openTypeFont.CmapTable.GlyphToUnicodeMap;
 
+        List<KernPair> kernPairs = [];
+        if (!justRender)
+        {
+            kernPairs = openTypeFont.KernTable.AllPairs
+            .Select(k => new KernPair
+            {
+                Left = k.Left,
+                Right = k.Right,
+                Value = k.Value >= 0 ? (short)Math.Ceiling(scale * k.Value) : (short)Math.Floor(scale * k.Value)
+            })
+            .ToList();
+        }
+
         for (int i = 0; i < totalGlyphs; i += chunkSize)
         {
             cancellationToken.ThrowIfCancellationRequested();
@@ -45,10 +58,13 @@ public static class OrganizeGlyphsHelper
                 };
 
                 if (!justRender)
+                {
                     lvglGlyph.Name = GetGlyphName(processedGlyphs, glyphNameIndex, pascalStrings, standardMacGlyphNames);
+                }
 
                 var renderData = glyphsRenderData[processedGlyphs];
                 lvglGlyph.Bitmap = renderData.Bitmap;
+                lvglGlyph.SVG = renderData.SVG;
                 lvglGlyph.Descriptor = new LVGLGlyphDescriptor
                 {
                     Width = renderData.Bounds.Width,
@@ -75,7 +91,10 @@ public static class OrganizeGlyphsHelper
                 {
                     glyphToUnicodeMap.TryGetValue((ushort)processedGlyphs, out var codePoints);
                     FillGlyphFromCodePoints(lvglGlyph, codePoints, predefinedData.UnicodeBlockCollection);
+                    lvglGlyph.LeftKernings = kernPairs.Where(p => p.Left == processedGlyphs).OrderBy(p => p.Left).ToList();
+                    lvglGlyph.RightKernings = kernPairs.Where(p => p.Right == processedGlyphs).OrderBy(p => p.Right).ToList();
                 }
+
 
 
                 glyphs.Add(processedGlyphs, lvglGlyph);
@@ -129,7 +148,7 @@ public static class OrganizeGlyphsHelper
             {
                 if (!blockCollection.AllCharacters.TryGetValue(codePoint, out var unicodeChar))
                 {
-                    unicodeChar = new UnicodeCharacter(codePoint, $"U+{codePoint:X4}");
+                    unicodeChar = new UnicodeCharacter(codePoint, $"U+{codePoint:X4}",null);
                 }
 
                 glyph.CodePoints[codePoint] = unicodeChar;
@@ -143,6 +162,11 @@ public static class OrganizeGlyphsHelper
                         {
                             glyph.Blocks[(start, end)] = blockEntry.Value;
                         }
+                        if (blockEntry.Value.Characters.ContainsKey(codePoint))
+                        {
+                            blockEntry.Value.Characters[codePoint].GlyphID = glyph.Index;
+                        }
+                        glyph.CodePoints[codePoint].ParentBlock = blockEntry.Value;
                         break;
                     }
                 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,6 +19,12 @@ public class LVGLGlyph
         Adjusments = new();
         CodePoints = new();
         Blocks = new();
+
+        LeftKernings = [];
+        RightKernings = [];
+
+        SVG = new();
+
         IsEmpty = false;
         IsUnMapped = false;
         IsSingleMapped = false;
@@ -32,6 +39,11 @@ public class LVGLGlyph
     public LVGLFontAdjusments Adjusments { get; set; }
     public SortedList<uint, UnicodeCharacter> CodePoints { get; set; }
     public SortedList<(uint Start, uint End), UnicodeBlock> Blocks { get; set; }
+
+    public List<KernPair> LeftKernings { get; set; }
+    public List<KernPair> RightKernings { get; set; }
+
+    public LVGLGlyphSVG SVG { get; set; }
 
     public bool IsEmpty { get; set; }
     public bool IsUnMapped { get; set; }

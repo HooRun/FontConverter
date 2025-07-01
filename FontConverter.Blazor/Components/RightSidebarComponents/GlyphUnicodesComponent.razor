@@ -2,9 +2,11 @@
 
 <RadzenAccordion Multiple="false">
     <Items>
-        <RadzenAccordionItem Text="Glyph Unicodes" Icon="public">
+        <RadzenAccordionItem Text="Glyph Unicodes"
+                             Icon="public">
             <RadzenStack Orientation="Orientation.Vertical"
-                         Gap="15">
+                         Gap="15px">
+
                 <RadzenStack Orientation="Orientation.Horizontal"
                              AlignItems="AlignItems.Center"
                              JustifyContent="JustifyContent.SpaceBetween">
@@ -12,19 +14,21 @@
                                   Icon="add_circle"
                                   ButtonStyle="ButtonStyle.Primary"
                                   Size="ButtonSize.ExtraSmall"
-                                  Shade="Shade.Lighter" />
+                                  Shade="Shade.Lighter"
+                                  Click="@OnAddClick" />
                     <RadzenButton Text="Remove"
                                   Icon="do_not_disturb_on"
                                   ButtonStyle="ButtonStyle.Secondary"
                                   Size="ButtonSize.ExtraSmall"
-                                  Shade="Shade.Lighter" />
+                                  Shade="Shade.Lighter"
+                                  Click="OnRemoveClick" />
                 </RadzenStack>
-                <RadzenListBox TValue="int?"
-                               Value=@value
+
+                <RadzenListBox @bind-Value=@_SelectedChar
+                               TValue="UnicodeCharacter"
+                               AllowClear=true
                                Data="@MainViewModel.LastSelectedGlyph?.CodePoints.Values"
-                               TextProperty="@nameof(UnicodeCharacter.Name)"
-                               ValueProperty="@nameof(UnicodeCharacter.CodePoint)"
-                               Style="min-height:100px; width: 100%;">
+                               Style="min-height: 100px; max-height: 300px; width: 100%;">
                     <Template>
                         <RadzenStack Orientation="Orientation.Vertical"
                                      Gap="0px">
