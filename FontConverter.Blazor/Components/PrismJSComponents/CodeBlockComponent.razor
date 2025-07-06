@@ -1,0 +1,45 @@
+﻿<RadzenCard Variant="Variant.Outlined"
+            Style="padding: 0px;">
+
+    <RadzenStack Orientation="Orientation.Vertical"
+                 Gap="0px"
+                 Style="@Style">
+
+
+        <RadzenStack Orientation="Orientation.Horizontal"
+                     AlignItems="AlignItems.Center"
+                     JustifyContent="JustifyContent.SpaceBetween"
+                     Style="background-color: #F9F9F9; padding: 10px; border-bottom: 1px solid #E0E0E0;">
+            <RadzenStack Orientation="Orientation.Vertical"
+                         Gap="3px">
+                <RadzenText Text="@_FileName" TextStyle="TextStyle.Subtitle2" />
+                <RadzenText @bind-Text="@infoText" TextStyle="TextStyle.Overline" />
+            </RadzenStack>
+
+            <RadzenStack Orientation="Orientation.Horizontal"
+                         AlignItems="AlignItems.Center"
+                         Gap="10px">
+                <RadzenButton Text=""
+                              Icon="download"
+                              ButtonStyle="ButtonStyle.Base"
+                              Size="ButtonSize.Small" 
+                              Click="@OnDownloadFile" />
+                <RadzenButton Text=""
+                              Icon="content_copy"
+                              ButtonStyle="ButtonStyle.Base"
+                              Size="ButtonSize.Small"
+                              Click="@CopyToClipboard" />
+            </RadzenStack>
+
+
+        </RadzenStack>
+
+        <pre class="line-numbers" style="overflow: auto; margin: 0; padding: 0; white-space: pre;" @key="@($"{Language}-{key}")">
+        <code class="@($"language-{Language}")" style="display: inline-block; min-width: 100%; padding: 0px 15px; margin: 0px;">
+                @EscapedCode
+        </code>
+    </pre>
+    </RadzenStack>
+
+</RadzenCard>
+

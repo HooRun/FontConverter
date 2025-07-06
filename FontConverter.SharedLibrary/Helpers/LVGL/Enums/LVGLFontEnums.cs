@@ -27,4 +27,13 @@ public static class LVGLFontEnums
         STYLE_STROKE = 0x01,
         STYLE_FILL_STROKE = 0x02,
     }
+
+    public enum LVGL_CMAP_TYPE : int
+    {
+        LV_FONT_FMT_TXT_CMAP_FORMAT0_FULL,
+        LV_FONT_FMT_TXT_CMAP_SPARSE_FULL,
+        LV_FONT_FMT_TXT_CMAP_FORMAT0_TINY,
+        LV_FONT_FMT_TXT_CMAP_SPARSE_TINY,
+    }
+
 }

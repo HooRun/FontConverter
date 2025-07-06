@@ -1,0 +1,183 @@
+﻿@using FontConverter.SharedLibrary.Models
+
+<RadzenStack Orientation="Orientation.Vertical"
+             AlignItems="AlignItems.Normal"
+             JustifyContent="JustifyContent.Normal"
+             Gap="15px">
+
+    <RadzenDataGrid @bind-Data="@GridData"
+                    GridLines="DataGridGridLines.Both"
+                    SelectionMode="DataGridSelectionMode.Multiple"
+                    AllowColumnResize="true"
+                    AllowVirtualization="true"
+                    AllowSorting="true"
+                    AllowFiltering="true"
+                    FilterMode="FilterMode.CheckBoxList"
+                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                    LogicalFilterOperator="LogicalFilterOperator.Or"
+                    Density="Density.Compact"
+                    Value=@_SelectedGlyphsList
+                    TItem="LVGLGlyph"
+                    ValueChanged="@OnGlyphsChanged"
+                    FilterCleared=@FilterCleared
+                    Style="height: 300px; font-size:10px;"
+                    @ref="_GlyphsDataGrid">
+        <HeaderTemplate>
+            <RadzenStack Orientation="Orientation.Horizontal"
+                         AlignItems="AlignItems.Center"
+                         JustifyContent="JustifyContent.SpaceBetween"
+                         Style="width: 100%; padding: 5px;">
+                <RadzenText Text="Select Glyphs To Export" TextStyle="TextStyle.DisplayH6" />
+                <RadzenButton Text="Generate"
+                              Icon="order_play"
+                              ButtonStyle="ButtonStyle.Secondary"
+                              Shade="Shade.Lighter"
+                              Click="@OnGenerateClick"/>
+            </RadzenStack>
+        </HeaderTemplate>
+        <EmptyTemplate>
+            <span style="color: lightgrey; font-size: 14px; text-align: center;">No records to display.</span>
+        </EmptyTemplate>
+        <Columns>
+            <RadzenDataGridColumn Width="40px"
+                                  Sortable="false"
+                                  Filterable="false">
+                <HeaderTemplate>
+                    <RadzenCheckBox TabIndex="-1"
+                                    TriState="false"
+                                    TValue="bool?"
+                                    InputAttributes="@(new Dictionary<string,object>(){ { "aria-label", "Select all items" }})"
+                                    Value="@(_SelectedGlyphsList == null || _SelectedGlyphsList?.Any() != true ? false : !GridData.All(i => _SelectedGlyphsList.Contains(i)) ? null : GridData.Any(i => _SelectedGlyphsList.Contains(i)))"
+                                    Change="@(args => _SelectedGlyphsList = args == true ? GridData : null)" />
+                </HeaderTemplate>
+                <Template Context="data">
+                    <RadzenCheckBox TabIndex="-1"
+                                    TriState="false"
+                                    Value="@(_SelectedGlyphsList != null && _SelectedGlyphsList.Contains(data))" InputAttributes="@(new Dictionary<string,object>(){ { "aria-label", "Select item" }})"
+                                    TValue="bool" />
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Property="@nameof(GlyphItemModel.SVG)"
+                                  Title="Shape"
+                                  Width="70px"
+                                  TextAlign="TextAlign.Center"
+                                  Sortable="false"
+                                  
+                                  AllowCheckBoxListVirtualization=true>
+                <Template Context="data">
+                    <RadzenStack Orientation="Orientation.Horizontal"
+                                 AlignItems="AlignItems.Center"
+                                 JustifyContent="JustifyContent.Center"
+                                 Style="width:50px; height:50px; overflow: hidden;">
+                        <GlyphSVGComponent SVG="data.SVG" Height="40" MaxWidth="50" />
+                    </RadzenStack>
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Property="@nameof(GlyphItemModel.Index)"
+                                  Title="ID"
+                                  Width="80px"
+                                  TextAlign="TextAlign.Center"
+                                  AllowCheckBoxListVirtualization=true>
+                <Template Context="data">
+                    <span style="font-size: 12px;">@data.Index</span>
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Property="@nameof(GlyphItemModel.Name)"
+                                  Title="Glyph Name"
+                                  TextAlign="TextAlign.Left"
+                                  AllowCheckBoxListVirtualization=true>
+                <Template Context="data">
+                    <span style="font-size: 12px;">@data.Name</span>
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Property="Unicodes"
+                                  Title="Unicodes"
+                                  TextAlign="TextAlign.Left"
+                                  FilterValue="@_SelecedUnicodesFirstFilter"
+                                  FilterMode="FilterMode.CheckBoxList"
+                                  FilterOperator="FilterOperator.In"
+                                  FilterProperty="Unicodes"
+                                  Type="typeof(IList<string>)"
+                                  SortProperty="Unicodes.Count"
+                                  AllowCheckBoxListVirtualization=true>
+                <Template Context="data">
+                    <span style="font-size: 12px;">@string.Join(", ", data.Unicodes.Where(s => !string.IsNullOrWhiteSpace(s)))</span>
+                </Template>
+                <FilterValueTemplate>
+                    <RadzenListBox @bind-Value=@_SelecedUnicodesFirstFilter
+                                   Style="width:100%; height: 300px;"
+                                   Change=@OnSelecedUnicodesFirstFilterChange
+                                   Data="@(_AllUnicodesFilter)"
+                                   AllowClear="true"
+                                   Multiple="true"
+                                   TValue="IList<string>"
+                                   AllowFiltering="true"
+                                   Count="@(_AllUnicodesFilter.Count)"
+                                   AllowVirtualization=true />
+                </FilterValueTemplate>
+                
+            </RadzenDataGridColumn>
+        </Columns>
+    </RadzenDataGrid>
+
+    <RadzenTabs RenderMode="TabRenderMode.Client"
+                TabPosition="TabPosition.Top"
+                @bind-SelectedIndex=@_SelectedTabIndex>
+        <Tabs>
+            <RadzenTabsItem Text="C">
+                <RadzenStack Orientation="Orientation.Vertical"
+                             AlignItems="AlignItems.Normal"
+                             JustifyContent="JustifyContent.Normal"
+                             Gap="15px">
+                    <CodeBlockComponent Language="c"
+                                        Code=@_CFile
+                                        Style="width: 100%; height: 200px; "
+                                        @ref=@_CFileComponent/>
+                </RadzenStack>
+
+            </RadzenTabsItem>
+            <RadzenTabsItem Text="Binary">
+
+                <CodeBlockComponent Language="asciidoc"
+                                    Code=@sampleCode
+                                    Style="width: 100%; height: 200px; overflow: auto;" />
+
+            </RadzenTabsItem>
+            <RadzenTabsItem Text="SVG">
+
+                <CodeBlockComponent Language="xml"
+                                    Code=@sampleCode
+                                    Style="width: 100%; height: 200px;" />
+
+            </RadzenTabsItem>
+        </Tabs>
+    </RadzenTabs>
+</RadzenStack>
+
+<style>
+
+    .rz-custom-header {
+        width: 100%;
+    }
+
+    .hljs-ln-numbers {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-align: right;
+        color: #E0E0E0;
+        border-right: 1px dotted #E0E0E0;
+        vertical-align: top;
+    }
+
+    .hljs-ln td[class*="hljs-ln-numbers"] {
+        padding-right: 5px;
+    }
+
+    .hljs-ln td[class*="hljs-ln-code"] {
+        padding-left: 15px;
+    }
+</style>

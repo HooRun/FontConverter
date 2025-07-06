@@ -168,7 +168,7 @@ public class MainViewModel : BaseViewModel
         _Mapper.Map(LVGLFont.FontContents, FontContentsViewModel);
         _Mapper.Map(LVGLFont.FontInformations, FontInformationsViewModel);
         _Mapper.Map(LVGLFont.GlyphViewItemProperties, GlyphViewItemPropertiesViewModel);
-
+        
         //RerenderMany(
         //    nameof(FontSettingsComponent),
         //    nameof(FontAdjusmentsComponent),
@@ -178,10 +178,20 @@ public class MainViewModel : BaseViewModel
         RerenderAll();
     }
 
-    public void MappingsFromViewModelToModel()
+    public void MappingsFromViewModelToModel(bool isForExport = false)
     {
         _Mapper.Map(FontSettingsViewModel, LVGLFont.FontSettings);
         _Mapper.Map(FontAdjusmentsViewModel, LVGLFont.FontAdjusments);
+        if (isForExport)
+        {
+            _Mapper.Map(FontInformationsViewModel, LVGLFont.FontInformations);
+            LVGLFont.Glyphs.Clear();
+            foreach (var glyph in GlyphsList)
+            {
+                LVGLFont.Glyphs.Add(glyph.Key, glyph.Value);
+            }
+
+        }
         //_Mapper.Map(FontContentsViewModel, LVGLFont.FontContents);
         //_Mapper.Map(FontInformationsViewModel, LVGLFont.FontInformations);
     }

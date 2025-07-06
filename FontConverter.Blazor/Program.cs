@@ -6,6 +6,7 @@ using FontConverter.Blazor.ViewModels;
 using FontConverter.SharedLibrary.Models;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using Radzen;
 
 try
@@ -25,7 +26,7 @@ try
     builder.Services.AddScoped<MainViewModel>();
 
 
-    builder.Services.AddAutoMapper(typeof(MappingProfile));
+    builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MappingProfile>());
     var host = builder.Build();
 
     PredefinedDataService predefinedData = host.Services.GetRequiredService<PredefinedDataService>();

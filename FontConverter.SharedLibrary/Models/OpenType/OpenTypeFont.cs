@@ -22,6 +22,7 @@ public class OpenTypeFont
         HmtxTable = new();
         VmtxTable = new();
         KernTable = new();
+        CFFTable = [];
         IsValid = false;
     }
 
@@ -40,6 +41,7 @@ public class OpenTypeFont
         KernTable = openTypeFont.KernTable;
         LocaTable = openTypeFont.LocaTable;
         GlyfTable = openTypeFont.GlyfTable;
+        CFFTable = openTypeFont.CFFTable;
     }
 
     public SKTypeface? SKTypeface { get; set; }
@@ -72,6 +74,8 @@ public class OpenTypeFont
     public FontLocaTable LocaTable { get; set; }
 
     public FontGlyfTable GlyfTable { get; set; }
+
+    public List<string> CFFTable { get; set; }
 
     public bool IsValid { get; set; }
 

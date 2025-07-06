@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontConverter.Blazor", "Fon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontConverter.SharedLibrary", "FontConverter.SharedLibrary\FontConverter.SharedLibrary.csproj", "{44A53B06-7126-4D3D-939C-7A05CCBD625F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LVGL.Test", "LVGL.Test\LVGL.Test.vcxproj", "{FEB6692C-A903-4418-83F6-4FC03B4E9242}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -89,6 +91,18 @@ Global
 		{44A53B06-7126-4D3D-939C-7A05CCBD625F}.Release|x64.Build.0 = Release|Any CPU
 		{44A53B06-7126-4D3D-939C-7A05CCBD625F}.Release|x86.ActiveCfg = Release|Any CPU
 		{44A53B06-7126-4D3D-939C-7A05CCBD625F}.Release|x86.Build.0 = Release|Any CPU
+		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Debug|ARM64.ActiveCfg = Debug|x64
+		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Debug|ARM64.Build.0 = Debug|x64
+		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Debug|x64.ActiveCfg = Debug|x64
+		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Debug|x64.Build.0 = Debug|x64
+		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Debug|x86.ActiveCfg = Debug|Win32
+		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Debug|x86.Build.0 = Debug|Win32
+		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Release|ARM64.ActiveCfg = Release|x64
+		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Release|ARM64.Build.0 = Release|x64
+		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Release|x64.ActiveCfg = Release|x64
+		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Release|x64.Build.0 = Release|x64
+		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Release|x86.ActiveCfg = Release|Win32
+		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

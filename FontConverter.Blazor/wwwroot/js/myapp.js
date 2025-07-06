@@ -115,3 +115,27 @@ window.stopGlyphVisibilityTracking = (glyphId) => {
         delete window._glyphVisibilityObservers[glyphId];
     }
 };
+
+
+window.copyTextToClipboard = function (text) {
+    if (navigator.clipboard) {
+        return navigator.clipboard.writeText(text);
+    } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        return Promise.resolve();
+    }
+};
+
+window.downloadFileFromBytes = function (fileName, contentBytesBase64) {
+    const link = document.createElement('a');
+    link.download = fileName;
+    link.href = "data:application/octet-stream;base64," + contentBytesBase64;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};

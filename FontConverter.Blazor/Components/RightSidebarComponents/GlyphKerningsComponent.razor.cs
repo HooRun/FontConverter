@@ -44,7 +44,7 @@ public partial class GlyphKerningsComponent : ComponentBase, IRerenderable
     {
         try
         {
-            var dialogResult = await _DialogService.OpenAsync<AddLeftKerningComponent>(
+            var dialogResult = await _DialogService.OpenAsync<AddKerningComponent>(
                     string.Empty,
                     new Dictionary<string, object>
                     {
@@ -77,7 +77,7 @@ public partial class GlyphKerningsComponent : ComponentBase, IRerenderable
     {
         try
         {
-            var dialogResult = await _DialogService.OpenAsync<AddLeftKerningComponent>(
+            var dialogResult = await _DialogService.OpenAsync<AddKerningComponent>(
                     string.Empty,
                     new Dictionary<string, object>
                     {

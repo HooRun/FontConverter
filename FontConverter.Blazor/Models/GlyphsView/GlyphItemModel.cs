@@ -1,8 +1,10 @@
 ﻿using FontConverter.Blazor.ViewModels;
 using FontConverter.SharedLibrary.Models;
+using System.Diagnostics;
 
 namespace FontConverter.Blazor.Models.GlyphsView;
 
+[DebuggerDisplay("({Index})")]
 public class GlyphItemModel : LVGLGlyph
 {
     public GlyphItemModel()
@@ -51,4 +53,6 @@ public class GlyphItemModel : LVGLGlyph
     public bool IsHovered { get; set; }
     public bool LastSelected { get; set; }
     public string Tooltip { get; set; }
+
+    
 }

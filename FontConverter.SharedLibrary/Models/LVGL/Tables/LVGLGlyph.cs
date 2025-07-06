@@ -49,4 +49,7 @@ public class LVGLGlyph
     public bool IsUnMapped { get; set; }
     public bool IsSingleMapped { get; set; }
     public bool IsMultiMapped { get; set; }
+
+    public string UnicodesStrings => CodePoints.Count > 0 ? string.Join(", ", CodePoints.Values.Select(g => g.CodePointString)) : string.Empty;
+    public IList<string> Unicodes => CodePoints.Count > 0 ? CodePoints.Values.Select(g => g.CodePointString).Append(" ").ToList() : new List<string>() { string.Empty };
 }

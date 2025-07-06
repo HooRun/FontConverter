@@ -3,7 +3,7 @@
   position: relative;
   overflow: hidden;
 }
-.rz-button:not(.rz-state-disabled):before {
+.rz-button:before {
   content: "";
   position: absolute;
   inset: 0;
@@ -13,7 +13,10 @@
   transition: background-size 0.8s, opacity 0.8s;
   pointer-events: none;
 }
-.rz-button:not(.rz-state-disabled):active:before {
+.rz-button.rz-state-disabled:before {
+  background: transparent;
+}
+.rz-button:active:before {
   transition: background-size 0s, opacity 0s;
   opacity: 0.32;
   background-size: 0%;
@@ -29,7 +32,7 @@
   position: relative;
   overflow: hidden;
 }
-.sidebar-toggle:not(.rz-state-disabled):before {
+.sidebar-toggle:before {
   content: "";
   position: absolute;
   inset: 0;
@@ -39,7 +42,10 @@
   transition: background-size 0.8s, opacity 0.8s;
   pointer-events: none;
 }
-.sidebar-toggle:not(.rz-state-disabled):active:before {
+.sidebar-toggle.rz-state-disabled:before {
+  background: transparent;
+}
+.sidebar-toggle:active:before {
   transition: background-size 0s, opacity 0s;
   opacity: 0.32;
   background-size: 0%;
@@ -50,8 +56,8 @@
   position: relative;
   overflow: hidden;
 }
-.rz-navigation-item-link:not(.rz-state-disabled):before,
-.rz-menu-toggle:not(.rz-state-disabled):before {
+.rz-navigation-item-link:before,
+.rz-menu-toggle:before {
   content: "";
   position: absolute;
   inset: 0;
@@ -61,8 +67,12 @@
   transition: background-size 0.8s, opacity 0.8s;
   pointer-events: none;
 }
-.rz-navigation-item-link:not(.rz-state-disabled):active:before,
-.rz-menu-toggle:not(.rz-state-disabled):active:before {
+.rz-navigation-item-link.rz-state-disabled:before,
+.rz-menu-toggle.rz-state-disabled:before {
+  background: transparent;
+}
+.rz-navigation-item-link:active:before,
+.rz-menu-toggle:active:before {
   transition: background-size 0s, opacity 0s;
   opacity: 0.32;
   background-size: 0%;
@@ -77,10 +87,13 @@
   transition: background-size 0.8s;
   background: radial-gradient(circle, transparent 1%, var(--rz-base-300) 1%) center/15000%;
 }
-.rz-panel-menu .rz-navigation-item-link:not(.rz-state-disabled):active {
+.rz-panel-menu .rz-navigation-item-link:active {
   background-color: var(--rz-base-300);
   transition: background-size 0s;
   background-size: 0%;
+}
+.rz-panel-menu .rz-navigation-item-link.rz-state-disabled:active {
+  background-color: transparent;
 }
 .rz-panel-menu .rz-navigation-item-wrapper-active:before {
   display: none;
@@ -237,10 +250,13 @@
   transition: background-size 0.8s;
   background: radial-gradient(circle, transparent 1%, rgba(0, 0, 0, 0.12) 1%) center/15000%;
 }
-.rz-fileupload-choose.rz-button:not(.rz-state-disabled):active {
+.rz-fileupload-choose.rz-button:active {
   background-color: rgba(0, 0, 0, 0.12);
   transition: background-size 0s;
   background-size: 0%;
+}
+.rz-fileupload-choose.rz-button.rz-state-disabled:active {
+  background-color: transparent;
 }
 .rz-fileupload-choose.rz-button input {
   z-index: 1;
@@ -321,7 +337,7 @@
   position: relative;
   overflow: hidden;
 }
-.rz-tabview-nav > li > a:not(.rz-state-disabled):before {
+.rz-tabview-nav > li > a:before {
   content: "";
   position: absolute;
   inset: 0;
@@ -331,7 +347,10 @@
   transition: background-size 0.8s, opacity 0.8s;
   pointer-events: none;
 }
-.rz-tabview-nav > li > a:not(.rz-state-disabled):active:before {
+.rz-tabview-nav > li > a.rz-state-disabled:before {
+  background: transparent;
+}
+.rz-tabview-nav > li > a:active:before {
   transition: background-size 0s, opacity 0s;
   opacity: 0.32;
   background-size: 0%;
@@ -393,7 +412,7 @@
   position: relative;
   overflow: hidden;
 }
-.rz-html-editor-toolbar .rz-html-editor-button:not(.rz-state-disabled):before {
+.rz-html-editor-toolbar .rz-html-editor-button:before {
   content: "";
   position: absolute;
   inset: 0;
@@ -403,7 +422,10 @@
   transition: background-size 0.8s, opacity 0.8s;
   pointer-events: none;
 }
-.rz-html-editor-toolbar .rz-html-editor-button:not(.rz-state-disabled):active:before {
+.rz-html-editor-toolbar .rz-html-editor-button.rz-state-disabled:before {
+  background: transparent;
+}
+.rz-html-editor-toolbar .rz-html-editor-button:active:before {
   transition: background-size 0s, opacity 0s;
   opacity: 0.32;
   background-size: 0%;
@@ -413,7 +435,7 @@
   position: relative;
   overflow: hidden;
 }
-.rz-toc-link:not(.rz-state-disabled):before {
+.rz-toc-link:before {
   content: "";
   position: absolute;
   inset: 0;
@@ -423,7 +445,10 @@
   transition: background-size 0.8s, opacity 0.8s;
   pointer-events: none;
 }
-.rz-toc-link:not(.rz-state-disabled):active:before {
+.rz-toc-link.rz-state-disabled:before {
+  background: transparent;
+}
+.rz-toc-link:active:before {
   transition: background-size 0s, opacity 0s;
   opacity: 0.32;
   background-size: 0%;
@@ -439,6 +464,7 @@
   font-family: "Roboto";
   src: url("../fonts/RobotoFlex.woff2") format("woff2 supports variations"), url("../fonts/RobotoFlex.woff2") format("woff2-variations");
   font-weight: 100 1000;
+  font-display: swap;
 }
 [class^=rz-], [class^=rz-]::before, [class^=rz-]::after, [class^=rz-] *, [class^=rz-] *::before, [class^=rz-] *::after,
 [class*=" rz-"],
@@ -4241,7 +4267,7 @@
   position: relative;
   overflow: hidden;
 }
-.rz-ripple:not(.rz-state-disabled):before {
+.rz-ripple:before {
   content: "";
   position: absolute;
   inset: 0;
@@ -4251,7 +4277,10 @@
   transition: background-size 0.8s, opacity 0.8s;
   pointer-events: none;
 }
-.rz-ripple:not(.rz-state-disabled):active:before {
+.rz-ripple.rz-state-disabled:before {
+  background: transparent;
+}
+.rz-ripple:active:before {
   transition: background-size 0s, opacity 0s;
   opacity: 0.32;
   background-size: 0%;
@@ -13603,6 +13632,7 @@ a:focus-visible .rz-fieldset-toggler {
 .rz-multiselect-filter-container .rz-inputtext, .rz-dropdown-filter {
   background-color: transparent;
   color: var(--rz-text-color);
+  font-family: inherit;
 }
 
 .rz-multiselect-header {
@@ -13820,6 +13850,7 @@ a:focus-visible .rz-fieldset-toggler {
   width: 0;
   border: none;
   line-height: var(--rz-input-line-height);
+  font-family: inherit;
 }
 .rz-listbox-filter-container .rz-inputtext:focus, .rz-dropdown-filter-container .rz-inputtext:focus, .rz-multiselect-filter-container .rz-inputtext:focus {
   outline: none;
