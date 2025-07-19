@@ -1,44 +1,50 @@
 ﻿<RadzenCard Variant="Variant.Outlined"
-            Style="padding: 0px;">
+            Style="background-color: #F9F9F9; padding: 10px;">
 
-    <RadzenStack Orientation="Orientation.Vertical"
-                 Gap="0px"
-                 Style="@Style">
+    <RadzenStack Orientation="Orientation.Horizontal"
+                 AlignItems="AlignItems.Center"
+                 JustifyContent="JustifyContent.SpaceBetween">
 
+        <RadzenStack Orientation="Orientation.Vertical"
+                     Gap="3px"
+                     Style="min-width: 0; flex-shrink: 1;">
+            <RadzenText Text="@_FileName" TextStyle="TextStyle.Subtitle2" Style="white-space: normal; word-break: break-all;" />
+            <RadzenText Text="@_SizeText" TextStyle="TextStyle.Overline" Style="white-space: normal; word-break: break-all;" />
+        </RadzenStack>
 
         <RadzenStack Orientation="Orientation.Horizontal"
                      AlignItems="AlignItems.Center"
-                     JustifyContent="JustifyContent.SpaceBetween"
-                     Style="background-color: #F9F9F9; padding: 10px; border-bottom: 1px solid #E0E0E0;">
-            <RadzenStack Orientation="Orientation.Vertical"
-                         Gap="3px">
-                <RadzenText Text="@_FileName" TextStyle="TextStyle.Subtitle2" />
-                <RadzenText @bind-Text="@infoText" TextStyle="TextStyle.Overline" />
-            </RadzenStack>
+                     Gap="10px"
+                     Style="flex-shrink: 0;">
 
-            <RadzenStack Orientation="Orientation.Horizontal"
-                         AlignItems="AlignItems.Center"
-                         Gap="10px">
-                <RadzenButton Text=""
-                              Icon="download"
-                              ButtonStyle="ButtonStyle.Base"
-                              Size="ButtonSize.Small" 
-                              Click="@OnDownloadFile" />
-                <RadzenButton Text=""
-                              Icon="content_copy"
-                              ButtonStyle="ButtonStyle.Base"
-                              Size="ButtonSize.Small"
-                              Click="@CopyToClipboard" />
-            </RadzenStack>
+            <RadzenButton Text=""
+                          Icon="download"
+                          ButtonStyle="ButtonStyle.Base"
+                          Size="ButtonSize.Small"
+                          IsBusy="@_IsDownloadBusy"
+                          Disabled="@(string.IsNullOrEmpty(_Code))"
+                          Click="@OnDownloadFile" />
 
+            <RadzenButton Text=""
+                          Icon="content_copy"
+                          ButtonStyle="ButtonStyle.Base"
+                          Size="ButtonSize.Small"
+                          IsBusy="@_IsCopyBusy"
+                          Disabled="@(string.IsNullOrEmpty(_Code))"
+                          Click="@CopyToClipboard" />
+
+            <RadzenButton Text="@($"Generate ({_MergedGlyphs.Count})")"
+                          Icon="order_play"
+                          ButtonStyle="ButtonStyle.Secondary"
+                          Size="ButtonSize.Small"
+                          Shade="Shade.Lighter"
+                          IsBusy=@_IsGenerateBusy 
+                          BusyText="Generating"
+                          Disabled="@(Glyphs == null || Glyphs?.Count == 0)"
+                          Click="@OnGenerateClick" />
 
         </RadzenStack>
 
-        <pre class="line-numbers" style="overflow: auto; margin: 0; padding: 0; white-space: pre;" @key="@($"{Language}-{key}")">
-        <code class="@($"language-{Language}")" style="display: inline-block; min-width: 100%; padding: 0px 15px; margin: 0px;">
-                @EscapedCode
-        </code>
-    </pre>
     </RadzenStack>
 
 </RadzenCard>

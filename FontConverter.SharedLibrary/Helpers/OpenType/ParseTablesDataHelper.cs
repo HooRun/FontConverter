@@ -37,7 +37,8 @@ public static class ParseTablesDataHelper
             OpenTypeTables.GLYF,
             OpenTypeTables.HMTX,
             OpenTypeTables.VMTX,
-            OpenTypeTables.CFF
+            OpenTypeTables.CFF,
+            OpenTypeTables.GSUB,
         };
 
         // Count needed tasks
@@ -154,6 +155,18 @@ public static class ParseTablesDataHelper
                     {
                         double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
                         progress?.Report((cffTable.TagName, percentage));
+                    }
+                }, cancellationToken));
+            }
+            if (fontData.Tables.TryGetValue(OpenTypeTables.GSUB, out OpenTypeTableBinaryData? gsubTable) && gsubTable != null)
+            {
+                independentTasks.Add(Task.Run(() =>
+                {
+                    fontData.GSubTable = ParseGSubTableHelper.ParseGSubTable(gsubTable);
+                    lock (reportLock)
+                    {
+                        double percentage = Interlocked.Increment(ref completedTasks) / (double)totalTasks * 100;
+                        progress?.Report((gsubTable.TagName, percentage));
                     }
                 }, cancellationToken));
             }

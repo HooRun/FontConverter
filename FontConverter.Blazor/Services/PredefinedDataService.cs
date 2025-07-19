@@ -7,7 +7,7 @@ public class PredefinedDataService : PredefinedData
 {
     public PredefinedDataService() : base()
     {
-        
+        _ = InitializePrimaryDataAsync();
     }
 
     public async Task InitializePrimaryDataAsync(CancellationToken cancellationToken = default)

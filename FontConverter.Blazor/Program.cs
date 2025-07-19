@@ -29,8 +29,8 @@ try
     builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MappingProfile>());
     var host = builder.Build();
 
-    PredefinedDataService predefinedData = host.Services.GetRequiredService<PredefinedDataService>();
-    await predefinedData.InitializePrimaryDataAsync();
+    //PredefinedDataService predefinedData = host.Services.GetRequiredService<PredefinedDataService>();
+    //_ = predefinedData.InitializePrimaryDataAsync();
 
     await host.RunAsync();
 }

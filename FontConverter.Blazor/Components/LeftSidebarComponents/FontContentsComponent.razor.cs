@@ -2,6 +2,7 @@
 using FontConverter.Blazor.ViewModels;
 using Microsoft.AspNetCore.Components;
 using Radzen;
+using Radzen.Blazor;
 
 namespace FontConverter.Blazor.Components.LeftSidebarComponents;
 
@@ -9,6 +10,8 @@ public partial class FontContentsComponent : ComponentBase, IRerenderable
 {
     [Inject]
     public MainViewModel MainViewModel { get; set; } = default!;
+
+    private RadzenTree? contentTreeView;
 
     private async Task OnTreeChange(TreeEventArgs args)
     {
@@ -28,6 +31,10 @@ public partial class FontContentsComponent : ComponentBase, IRerenderable
 
     public async Task ForceRender()
     {
+        if (contentTreeView != null)
+        {
+            await contentTreeView.Reload();
+        }
         await InvokeAsync(StateHasChanged);
     }
 }

@@ -1,4 +1,5 @@
 ﻿@using FontConverter.SharedLibrary.Models
+@using static FontConverter.SharedLibrary.Helpers.LVGLFontEnums
 
 <RadzenStack Orientation="Orientation.Vertical"
              AlignItems="AlignItems.Normal"
@@ -6,63 +7,100 @@
              Gap="15px">
 
     <RadzenDataGrid @bind-Data="@GridData"
+                    Count="@_TotalGlyphCount"
+                    TItem="LVGLGlyph"
                     GridLines="DataGridGridLines.Both"
+                    Density="Density.Compact"
                     SelectionMode="DataGridSelectionMode.Multiple"
                     AllowColumnResize="true"
-                    AllowVirtualization="true"
+                    AllowVirtualization="@_GridAllowVirtualization"
+                    AllowPaging="@_GridllowPaging"
                     AllowSorting="true"
+                    AllowGrouping="true"
                     AllowFiltering="true"
+                    @bind-AllGroupsExpanded="@_GridAllGroupsExpanded"
+                    PageSize="50"                    
+                    HideGroupedColumn="false"
+                    ShowGroupExpandColumn="true"
                     FilterMode="FilterMode.CheckBoxList"
                     FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
                     LogicalFilterOperator="LogicalFilterOperator.Or"
-                    Density="Density.Compact"
-                    Value=@_SelectedGlyphsList
-                    TItem="LVGLGlyph"
-                    ValueChanged="@OnGlyphsChanged"
                     FilterCleared=@FilterCleared
+                    ExpandMode="DataGridExpandMode.Single"
                     Style="height: 300px; font-size:10px;"
                     @ref="_GlyphsDataGrid">
         <HeaderTemplate>
-            <RadzenStack Orientation="Orientation.Horizontal"
-                         AlignItems="AlignItems.Center"
-                         JustifyContent="JustifyContent.SpaceBetween"
+            <RadzenStack Orientation="Orientation.Vertical"
+                         AlignItems="AlignItems.Normal"
+                         JustifyContent="JustifyContent.Normal"
+                         Gap="10px"
                          Style="width: 100%; padding: 5px;">
-                <RadzenText Text="Select Glyphs To Export" TextStyle="TextStyle.DisplayH6" />
-                <RadzenButton Text="Generate"
-                              Icon="order_play"
-                              ButtonStyle="ButtonStyle.Secondary"
-                              Shade="Shade.Lighter"
-                              Click="@OnGenerateClick"/>
+                <RadzenText Text="Gropu By:" TextStyle="TextStyle.Overline" />
+                <RadzenRadioButtonList Value=@_GridGroupOption TValue="int" Change=@OnGridGroupOptionChange>
+                    <Items>
+                        <RadzenRadioButtonListItem Text="None" Value="1" />
+                        <RadzenRadioButtonListItem Text="Glyph Content" Value="2" />
+                        <RadzenRadioButtonListItem Text="Unicode Ranges" Value="3" />
+                    </Items>
+                </RadzenRadioButtonList>
+                <RadzenStack Orientation="Orientation.Horizontal"
+                             AlignItems="AlignItems.Center"
+                             Gap="10px">
+                    <RadzenButton Icon="expand_all"
+                                  Text=""
+                                  ButtonStyle="ButtonStyle.Base"
+                                  Size="ButtonSize.Small"
+                                  Click="@((args) =>_GridAllGroupsExpanded=true)" />
+                    <RadzenButton Icon="collapse_all"
+                                  Text=""
+                                  ButtonStyle="ButtonStyle.Base"
+                                  Size="ButtonSize.Small"
+                                  Click="@((args) =>_GridAllGroupsExpanded=false)" />
+                </RadzenStack>
             </RadzenStack>
         </HeaderTemplate>
         <EmptyTemplate>
             <span style="color: lightgrey; font-size: 14px; text-align: center;">No records to display.</span>
         </EmptyTemplate>
+        <GroupHeaderTemplate>
+            <RadzenStack Orientation="Orientation.Horizontal"
+                         AlignItems="AlignItems.Center"
+                         Gap="10px"
+                         Style="height: 50px;">
+                <RadzenCheckBox TabIndex="-1"
+                                TriState="false"
+                                TValue="bool?"
+                                Value="@GetGroupCheckBoxValue((string)context.Data.Key)"
+                                Change="@((args) => OnGroupCheckboxChanged((string)context.Data.Key, args))" />
+                <RadzenText Text="@GetGroupLabel((string)context.Data.Key)" TextStyle="TextStyle.Subtitle2"/>
+            </RadzenStack>
+        </GroupHeaderTemplate>
         <Columns>
-            <RadzenDataGridColumn Width="40px"
+            <RadzenDataGridColumn Width="35px"
+                                  TextAlign="TextAlign.Center"
                                   Sortable="false"
-                                  Filterable="false">
+                                  Filterable="false"
+                                  Groupable="false">
                 <HeaderTemplate>
                     <RadzenCheckBox TabIndex="-1"
                                     TriState="false"
                                     TValue="bool?"
-                                    InputAttributes="@(new Dictionary<string,object>(){ { "aria-label", "Select all items" }})"
-                                    Value="@(_SelectedGlyphsList == null || _SelectedGlyphsList?.Any() != true ? false : !GridData.All(i => _SelectedGlyphsList.Contains(i)) ? null : GridData.Any(i => _SelectedGlyphsList.Contains(i)))"
-                                    Change="@(args => _SelectedGlyphsList = args == true ? GridData : null)" />
+                                    Value="@GetSelectAllValue()"
+                                    Change="@(async args => await OnSelectAllChangedAsync(args))" />
                 </HeaderTemplate>
                 <Template Context="data">
                     <RadzenCheckBox TabIndex="-1"
                                     TriState="false"
-                                    Value="@(_SelectedGlyphsList != null && _SelectedGlyphsList.Contains(data))" InputAttributes="@(new Dictionary<string,object>(){ { "aria-label", "Select item" }})"
-                                    TValue="bool" />
+                                    TValue="bool"
+                                    Value="@(_SelectedGlyphsList.Contains(data))"
+                                    Change="@(async args => await OnRowCheckboxChangedAsync(data, args))" />
                 </Template>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn Property="@nameof(GlyphItemModel.SVG)"
+            <RadzenDataGridColumn Property="SVG"
                                   Title="Shape"
                                   Width="70px"
                                   TextAlign="TextAlign.Center"
                                   Sortable="false"
-                                  
                                   AllowCheckBoxListVirtualization=true>
                 <Template Context="data">
                     <RadzenStack Orientation="Orientation.Horizontal"
@@ -73,13 +111,13 @@
                     </RadzenStack>
                 </Template>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn Property="@nameof(GlyphItemModel.Index)"
+            <RadzenDataGridColumn Property="Index"
                                   Title="ID"
                                   Width="80px"
-                                  TextAlign="TextAlign.Center"
+                                  TextAlign="TextAlign.Left"
                                   AllowCheckBoxListVirtualization=true>
                 <Template Context="data">
-                    <span style="font-size: 12px;">@data.Index</span>
+                    <span style="font-size: 12px; text-align: center; width: 100%;">@data.Index</span>
                 </Template>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn Property="@nameof(GlyphItemModel.Name)"
@@ -115,7 +153,7 @@
                                    Count="@(_AllUnicodesFilter.Count)"
                                    AllowVirtualization=true />
                 </FilterValueTemplate>
-                
+
             </RadzenDataGridColumn>
         </Columns>
     </RadzenDataGrid>
@@ -125,29 +163,55 @@
                 @bind-SelectedIndex=@_SelectedTabIndex>
         <Tabs>
             <RadzenTabsItem Text="C">
+
                 <RadzenStack Orientation="Orientation.Vertical"
                              AlignItems="AlignItems.Normal"
                              JustifyContent="JustifyContent.Normal"
                              Gap="15px">
-                    <CodeBlockComponent Language="c"
-                                        Code=@_CFile
-                                        Style="width: 100%; height: 200px; "
-                                        @ref=@_CFileComponent/>
+
+                    <CodeBlockComponent FileType=LVGL_FILE_TYPE.LVGL_FILE_TYPE_C
+                                        Glyphs=@_SelectedGlyphsList
+                                        Blocks="@PredefinedData.UnicodeBlockCollection.Blocks"/>
+
                 </RadzenStack>
 
             </RadzenTabsItem>
-            <RadzenTabsItem Text="Binary">
 
-                <CodeBlockComponent Language="asciidoc"
-                                    Code=@sampleCode
-                                    Style="width: 100%; height: 200px; overflow: auto;" />
+            <RadzenTabsItem Text="Symbol">
+
+                <RadzenStack Orientation="Orientation.Vertical"
+                             AlignItems="AlignItems.Normal"
+                             JustifyContent="JustifyContent.Normal"
+                             Gap="15px">
+
+                    <CodeBlockComponent FileType=LVGL_FILE_TYPE.LVGL_FILE_TYPE_SYMBOL
+                                        Glyphs=@_SelectedGlyphsList
+                                        Blocks="@PredefinedData.UnicodeBlockCollection.Blocks" />
+
+                </RadzenStack>
 
             </RadzenTabsItem>
+
+            <RadzenTabsItem Text="Binary">
+
+                <CodeBlockComponent FileType=LVGL_FILE_TYPE.LVGL_FILE_TYPE_BINARY
+                                    Glyphs=@_SelectedGlyphsList 
+                                    Blocks="@PredefinedData.UnicodeBlockCollection.Blocks" />
+
+            </RadzenTabsItem>
+
             <RadzenTabsItem Text="SVG">
 
-                <CodeBlockComponent Language="xml"
-                                    Code=@sampleCode
-                                    Style="width: 100%; height: 200px;" />
+                <RadzenStack Orientation="Orientation.Vertical"
+                             AlignItems="AlignItems.Normal"
+                             JustifyContent="JustifyContent.Normal"
+                             Gap="15px">
+                    
+                    <CodeBlockComponent FileType=LVGL_FILE_TYPE.LVGL_FILE_TYPE_SVG_H
+                                        Glyphs=@_SelectedGlyphsList 
+                                        Blocks="@PredefinedData.UnicodeBlockCollection.Blocks" />
+
+                </RadzenStack>
 
             </RadzenTabsItem>
         </Tabs>
@@ -160,24 +224,24 @@
         width: 100%;
     }
 
-    .hljs-ln-numbers {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        text-align: right;
-        color: #E0E0E0;
-        border-right: 1px dotted #E0E0E0;
-        vertical-align: top;
+    .rz-group-header-drop {
+        display: none !important;
     }
 
-    .hljs-ln td[class*="hljs-ln-numbers"] {
-        padding-right: 5px;
+    .rz-group-header-items {
+        display: none !important;
     }
 
-    .hljs-ln td[class*="hljs-ln-code"] {
-        padding-left: 15px;
+    .rz-column-drag {
+        visibility: hidden !important;
     }
+
+    .rz-radiobutton-label {
+        margin-inline: 0.5rem !important;
+    }
+
+    .rz-row-toggler {
+        cursor: pointer;
+    }
+
 </style>

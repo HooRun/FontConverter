@@ -10,7 +10,8 @@
                 {
                     <RadzenTree Data="@MainViewModel.FontContentsViewModel.Contents.Values"
                                 Style="width: 100%;"
-                                Change="@(args => OnTreeChange(args))">
+                                Change="@(args => OnTreeChange(args))"
+                                @ref=@contentTreeView>
                         <RadzenTreeLevel TextProperty="@nameof(FontContentViewModel.Header)"
                                          ChildrenProperty="@nameof(FontContentViewModel.Children)"
                                          HasChildren="@(item => ((FontContentViewModel)item).Children.Any())"

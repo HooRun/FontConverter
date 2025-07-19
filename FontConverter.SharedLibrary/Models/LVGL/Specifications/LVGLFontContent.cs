@@ -19,7 +19,7 @@ public class LVGLFontContent
         Contents = new();
     }
 
-    public LVGLFontContent(string header, string subTitle, string icon, int count, bool isSelected, List<int>? items, SortedList<string, LVGLFontContent> contents) : this()
+    public LVGLFontContent(string header, string subTitle, string icon, int count, bool isSelected, List<int>? items, SortedList<string, LVGLFontContent> contents, uint sortIndex) : this()
     {
         Header = header;
         SubTitle = subTitle;
@@ -28,6 +28,7 @@ public class LVGLFontContent
         IsSelected = isSelected;
         Items = items ?? [];
         Contents = contents;
+        SortIndex = sortIndex;
     }
 
     public string Header { get; set; }
@@ -37,4 +38,5 @@ public class LVGLFontContent
     public bool IsSelected { get; set; }
     public List<int> Items { get; set; }
     public SortedList<string, LVGLFontContent> Contents { get; set; }
+    public uint SortIndex { get; set; }
 }

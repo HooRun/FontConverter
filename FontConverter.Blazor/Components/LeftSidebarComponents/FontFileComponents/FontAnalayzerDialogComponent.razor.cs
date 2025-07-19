@@ -318,6 +318,7 @@ public partial class FontAnalayzerDialogComponent : ComponentBase
             if (MainViewModel.OpenTypeFont.SKTypeface is not null && MainViewModel.OpenTypeFont.SKFont is not null)
             {
                 await FinalizingFontHelper.FinalizingFontAsync(
+                    PredefinedData,
                     MainViewModel.OpenTypeFont,
                     MainViewModel.LVGLFont,
                     progressFinalizingFont,

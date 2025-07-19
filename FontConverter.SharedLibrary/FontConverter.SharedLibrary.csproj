@@ -7,18 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\unicode_database.bin" />
+    <None Remove="Data\unicode_database.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="Data\StandardMacintoshGlyphNames.txt">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Data\UCD\Blocks.txt">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Data\UCD\UnicodeData.txt">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    <EmbeddedResource Include="Data\unicode_database.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MessagePack" Version="3.1.4" />
     <PackageReference Include="SkiaSharp" Version="3.119.0" />
   </ItemGroup>
 

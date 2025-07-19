@@ -4,12 +4,12 @@ public class LVGLFontContents : LVGLFontContent
 {
     public LVGLFontContents()
     {
-        Contents.Add(GlyphsHeader, new LVGLFontContent(GlyphsHeader, GlyphsSubTitle, GlyphsIcon, 0, true, null, new SortedList<string, LVGLFontContent>()));
-        Contents[GlyphsHeader].Contents.Add(EmptyGlyphsHeader, new LVGLFontContent(EmptyGlyphsHeader, EmptyGlyphsSubTitle, EmptyGlyphsIcon, 0, false, null, new SortedList<string, LVGLFontContent>()));
-        Contents[GlyphsHeader].Contents.Add(UnMappedGlyphsHeader, new LVGLFontContent(UnMappedGlyphsHeader, UnMappedGlyphsSubTitle, UnMappedGlyphsIcon, 0, false, null, new SortedList<string, LVGLFontContent>()));
-        Contents[GlyphsHeader].Contents.Add(SingleMappedGlyphsHeader, new LVGLFontContent(SingleMappedGlyphsHeader, SingleMappedGlyphsSubTitle, SingleMappedGlyphsIcon, 0, false, null, new SortedList<string, LVGLFontContent>()));
-        Contents[GlyphsHeader].Contents.Add(MultiMappedGlyphsHeader, new LVGLFontContent(MultiMappedGlyphsHeader, MultiMappedGlyphsSubTitle, MultiMappedGlyphsIcon, 0, false, null, new SortedList<string, LVGLFontContent>()));
-        Contents.Add(UnicodesHeader, new LVGLFontContent(UnicodesHeader, UnicodesSubTitle, UnicodesIcon, 0, false, null, new SortedList<string, LVGLFontContent>()));
+        Contents.Add(GlyphsHeader, new LVGLFontContent(GlyphsHeader, GlyphsSubTitle, GlyphsIcon, 0, true, null, new SortedList<string, LVGLFontContent>(), 0));
+        Contents[GlyphsHeader].Contents.Add(EmptyGlyphsHeader, new LVGLFontContent(EmptyGlyphsHeader, EmptyGlyphsSubTitle, EmptyGlyphsIcon, 0, false, null, new SortedList<string, LVGLFontContent>(), 1));
+        Contents[GlyphsHeader].Contents.Add(UnMappedGlyphsHeader, new LVGLFontContent(UnMappedGlyphsHeader, UnMappedGlyphsSubTitle, UnMappedGlyphsIcon, 0, false, null, new SortedList<string, LVGLFontContent>(), 2));
+        Contents[GlyphsHeader].Contents.Add(SingleMappedGlyphsHeader, new LVGLFontContent(SingleMappedGlyphsHeader, SingleMappedGlyphsSubTitle, SingleMappedGlyphsIcon, 0, false, null, new SortedList<string, LVGLFontContent>(), 3));
+        Contents[GlyphsHeader].Contents.Add(MultiMappedGlyphsHeader, new LVGLFontContent(MultiMappedGlyphsHeader, MultiMappedGlyphsSubTitle, MultiMappedGlyphsIcon, 0, false, null, new SortedList<string, LVGLFontContent>(), 4));
+        Contents.Add(UnicodesHeader, new LVGLFontContent(UnicodesHeader, UnicodesSubTitle, UnicodesIcon, 0, false, null, new SortedList<string, LVGLFontContent>(), 5));
     }
 
     public string GlyphsHeader { get; }  = "Glyphs";

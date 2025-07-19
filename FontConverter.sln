@@ -15,6 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontConverter.SharedLibrary
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LVGL.Test", "LVGL.Test\LVGL.Test.vcxproj", "{FEB6692C-A903-4418-83F6-4FC03B4E9242}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FonntConverter.CreateDB", "FonntConverter.CreateDB\FonntConverter.CreateDB.csproj", "{11D55030-0E8C-4CF6-9E41-DCDF6C0D35A5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{44A53B06-7126-4D3D-939C-7A05CCBD625F} = {44A53B06-7126-4D3D-939C-7A05CCBD625F}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -103,6 +108,18 @@ Global
 		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Release|x64.Build.0 = Release|x64
 		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Release|x86.ActiveCfg = Release|Win32
 		{FEB6692C-A903-4418-83F6-4FC03B4E9242}.Release|x86.Build.0 = Release|Win32
+		{11D55030-0E8C-4CF6-9E41-DCDF6C0D35A5}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{11D55030-0E8C-4CF6-9E41-DCDF6C0D35A5}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{11D55030-0E8C-4CF6-9E41-DCDF6C0D35A5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{11D55030-0E8C-4CF6-9E41-DCDF6C0D35A5}.Debug|x64.Build.0 = Debug|Any CPU
+		{11D55030-0E8C-4CF6-9E41-DCDF6C0D35A5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{11D55030-0E8C-4CF6-9E41-DCDF6C0D35A5}.Debug|x86.Build.0 = Debug|Any CPU
+		{11D55030-0E8C-4CF6-9E41-DCDF6C0D35A5}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{11D55030-0E8C-4CF6-9E41-DCDF6C0D35A5}.Release|ARM64.Build.0 = Release|Any CPU
+		{11D55030-0E8C-4CF6-9E41-DCDF6C0D35A5}.Release|x64.ActiveCfg = Release|Any CPU
+		{11D55030-0E8C-4CF6-9E41-DCDF6C0D35A5}.Release|x64.Build.0 = Release|Any CPU
+		{11D55030-0E8C-4CF6-9E41-DCDF6C0D35A5}.Release|x86.ActiveCfg = Release|Any CPU
+		{11D55030-0E8C-4CF6-9E41-DCDF6C0D35A5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

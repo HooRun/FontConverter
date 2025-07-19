@@ -8,6 +8,7 @@ using FontConverter.Blazor.Components.RightSidebarComponents.AddUnicodeComponent
 using FontConverter.Blazor.Models;
 using FontConverter.Blazor.Components.LeftSidebarComponents;
 using System;
+using FontConverter.Blazor.Services;
 
 namespace FontConverter.Blazor.Components.RightSidebarComponents;
 
@@ -15,6 +16,9 @@ public partial class GlyphUnicodesComponent : ComponentBase, IRerenderable
 {
     [Inject]
     private MainViewModel MainViewModel { get; set; } = default!;
+
+    [Inject]
+    private PredefinedDataService PredefinedData { get; set; } = default!; 
 
     [Inject]
     public DialogService dialogService { get; set; } = default!;
@@ -58,24 +62,24 @@ public partial class GlyphUnicodesComponent : ComponentBase, IRerenderable
 
                     foreach (var blockItem in res.SelectedBlocksList)
                     {
-                        if (!glyph.Blocks.ContainsKey((blockItem.Start, blockItem.End)))
+                        if (!glyph.Blocks.ContainsKey(blockItem.Start))
                         {
-                            glyph.Blocks.Add((blockItem.Start, blockItem.End), blockItem);
+                            glyph.Blocks.Add(blockItem.Start, blockItem);
                         }
                         fontContentVM.Contents[fontContent.UnicodesHeader].Count += res.SelectedCharachtersList.Count;
-                        if (!fontContentVM.Contents[fontContent.UnicodesHeader].Contents.ContainsKey(blockItem.Start.ToString()))
+                        if (!fontContentVM.Contents[fontContent.UnicodesHeader].Contents.ContainsKey(blockItem.StartString))
                         {
-                            string subTitle = $"Range: 0x{blockItem.Start:X04} - 0x{blockItem.End:X04}";
+                            string subTitle = $"Range: 0x{blockItem.StartString} - 0x{blockItem.EndString}";
                             fontContentVM.Contents[fontContent.UnicodesHeader]
                                 .Contents
-                                .TryAdd(blockItem.Start.ToString(), new FontContentViewModel(blockItem.Name, subTitle, fontContent.UnicodeRangeIcon, 1, false, null, new SortedList<string, FontContentViewModel>()));
+                                .TryAdd(blockItem.StartString, new FontContentViewModel(blockItem.Name, subTitle, fontContent.UnicodeRangeIcon, 1, false, null, new SortedList<string, FontContentViewModel>(), blockItem.Start));
                             fontContentVM.Contents[fontContent.UnicodesHeader]
-                                .Contents[blockItem.Start.ToString()]
+                                .Contents[blockItem.StartString]
                                 .Items.Add(glyph.Index);
                         }
                         else
                         {
-                            fontContentVM.Contents[fontContent.UnicodesHeader].Contents[blockItem.Start.ToString()].Count ++;
+                            fontContentVM.Contents[fontContent.UnicodesHeader].Contents[blockItem.StartString].Count ++;
                         }
                         break;
                     }
@@ -155,32 +159,38 @@ public partial class GlyphUnicodesComponent : ComponentBase, IRerenderable
 
     private void OnRemoveClick()
     {
-        if (MainViewModel.LastSelectedGlyph == null || _SelectedChar == null || _SelectedChar.ParentBlock == null) 
+        if (MainViewModel.LastSelectedGlyph == null || _SelectedChar == null) 
             return;
 
         var fontContent = MainViewModel.LVGLFont.FontContents;
         var fontContentVM = MainViewModel.FontContentsViewModel;
         var glyph = MainViewModel.LastSelectedGlyph;
-        string blockStart = _SelectedChar.ParentBlock.Start.ToString();
+        var ucContents = fontContentVM.Contents[fontContent.UnicodesHeader];
+        string blockStart = PredefinedData.UnicodeBlockCollection.Blocks[_SelectedChar.Block].StartString;
 
-        fontContentVM.Contents[fontContent.UnicodesHeader].Count--;
-        if (fontContentVM.Contents[fontContent.UnicodesHeader].Contents.ContainsKey(blockStart))
+        ucContents.Count--;
+        if (ucContents.Count <= 0)
+            ucContents.Count = 0;
+        if (ucContents.Contents.ContainsKey(blockStart))
         {
-            fontContentVM.Contents[fontContent.UnicodesHeader]
+            ucContents
                 .Contents[blockStart]
                 .Items.Remove(glyph.Index);
-            fontContentVM.Contents[fontContent.UnicodesHeader]
+            ucContents
                 .Contents[blockStart]
                 .Count--;
-            if (fontContentVM.Contents[fontContent.UnicodesHeader]
+            if (ucContents
                 .Contents[blockStart]
-                .Items.Count == 0)
+                .Items.Count <= 0)
             {
-                fontContentVM.Contents[fontContent.UnicodesHeader]
+                ucContents
+                .Contents[blockStart]
+                .Count = 0;
+                ucContents
                 .Contents.Remove(blockStart);
-                if (!glyph.Blocks.ContainsKey((_SelectedChar.ParentBlock.Start, _SelectedChar.ParentBlock.End)))
+                if (glyph.Blocks.ContainsKey(_SelectedChar.Block))
                 {
-                    glyph.Blocks.Remove((_SelectedChar.ParentBlock.Start, _SelectedChar.ParentBlock.End));
+                    glyph.Blocks.Remove(_SelectedChar.Block);
                 }
             }
         }
@@ -209,6 +219,12 @@ public partial class GlyphUnicodesComponent : ComponentBase, IRerenderable
                 fontContentVM.Contents[fontContent.GlyphsHeader]
                 .Contents[fontContent.MultiMappedGlyphsHeader]
                 .Count--;
+                if (fontContentVM.Contents[fontContent.GlyphsHeader]
+                        .Contents[fontContent.MultiMappedGlyphsHeader]
+                        .Count <= 0)
+                    fontContentVM.Contents[fontContent.GlyphsHeader]
+                        .Contents[fontContent.MultiMappedGlyphsHeader]
+                        .Count = 0;
             }
             if (fontContentVM.Contents[fontContent.GlyphsHeader]
                 .Contents[fontContent.SingleMappedGlyphsHeader]

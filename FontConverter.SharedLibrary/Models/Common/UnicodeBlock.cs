@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MessagePack;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace FontConverter.SharedLibrary.Models;
 
+[MessagePackObject]
 public class UnicodeBlock
 {
     public UnicodeBlock()
     {
         Start = 0;
-        StartString = string.Empty;
         End = 0;
-        EndString = string.Empty;
         Name = string.Empty;
         Characters = new();
     }
@@ -21,9 +21,7 @@ public class UnicodeBlock
     public UnicodeBlock(uint start, uint end, string name) : this()
     {
         Start = start;
-        StartString = $"U+{Start:X6}";
         End = end;
-        EndString = $"U+{End:X6}";
         Name = name ?? string.Empty;
     }
 
@@ -34,11 +32,19 @@ public class UnicodeBlock
         Name = block.Name ?? string.Empty;
     }
 
+    [Key(0)]
     public uint Start { get; set; }
-    public string StartString { get; set; }
+    [Key(1)]
     public uint End { get; set; }
-    public string EndString { get; set; }
+    [Key(2)]
     public string Name { get; set; }
+    [Key(3)]
+    public SortedDictionary<uint, UnicodeCharacter> Characters { get; set; }
+    [IgnoreMember]
+    public string StartString => $"U+{Start:X6}";
+    [IgnoreMember]
+    public string EndString => $"U+{End:X6}";
+    [IgnoreMember]
+    public uint Length => (End - Start + 1);
 
-    public SortedList<uint, UnicodeCharacter> Characters { get; set; }
 }

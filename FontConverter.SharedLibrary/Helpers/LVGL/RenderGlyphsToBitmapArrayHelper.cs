@@ -52,12 +52,7 @@ public class RenderGlyphsToBitmapArrayHelper
             StrokeWidth= lVGLFont.FontAdjusments.StrokeWidth,
         };
 
-        using SKFont svgFont = new SKFont(openTypeFont.SKTypeface!, lVGLFont.SVGTextSize);
-        var metrics = svgFont.Metrics;
-        float boxWidth = metrics.MaxCharacterWidth + 2 * _SVGPadding;
-        float boxHeight = -metrics.Top + metrics.Bottom + 2 * _SVGPadding;
-        float svgScale = 50.0f / Math.Max(boxWidth, boxHeight) ;
-        lVGLFont.SVGScale = svgScale;
+        using SKFont svgFont = new SKFont(openTypeFont.SKTypeface!, openTypeFont.SKTypeface!.UnitsPerEm);
 
         for (int i = 0; i < totalGlyphs; i += chunkSize)
         {
@@ -168,7 +163,7 @@ public class RenderGlyphsToBitmapArrayHelper
         if (path == null || path.IsEmpty)
             return svg;
 
-        SKRect bounds = path.Bounds;
+        SKRect bounds = SKRectI.Ceiling(path.Bounds, true);
         SKFontMetrics metrics = svgFont.Metrics;
 
         svg.Width = bounds.Width;

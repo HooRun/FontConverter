@@ -37,8 +37,8 @@ public partial class ToolbarComponent : ComponentBase, IRerenderable
                     new Dictionary<string, object>(),
                     new DialogOptions
                     {
-                        ShowClose = false,
-                        ShowTitle = false,
+                        ShowClose = true,
+                        ShowTitle = true,
                     });
         }
         catch (Exception)

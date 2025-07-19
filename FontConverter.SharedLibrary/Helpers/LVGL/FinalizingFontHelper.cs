@@ -12,6 +12,7 @@ namespace FontConverter.SharedLibrary.Helpers;
 public static class FinalizingFontHelper
 {
     public static async Task FinalizingFontAsync(
+        PredefinedData predefinedData,
         OpenTypeFont openTypeFont,
         LVGLFont lvglFont,
         IProgress<double>? progress = null,
@@ -125,32 +126,35 @@ public static class FinalizingFontHelper
 
             foreach (var range in glyph.Blocks.Values)
             {
+                string key = range.StartString;
                 if (!lvglFont.FontContents
                     .Contents[lvglFont.FontContents.UnicodesHeader]
-                    .Contents.ContainsKey(range.Start.ToString()))
+                    .Contents.ContainsKey(key))
                 {
-                    string subTitle = $"Range: 0x{range.Start:X04} - 0x{range.End:X04}";
+                    string subTitle = $"Range: {range.StartString}-{range.EndString}";
                     lvglFont.FontContents
                         .Contents[lvglFont.FontContents.UnicodesHeader]
                         .Contents
-                        .TryAdd(range.Start.ToString(), new LVGLFontContent(range.Name, subTitle, lvglFont.FontContents.UnicodeRangeIcon, 1, false, null, new SortedList<string, LVGLFontContent>()));
+                        .TryAdd(key, new LVGLFontContent(range.Name, subTitle, lvglFont.FontContents.UnicodeRangeIcon, 1, false, null, new SortedList<string, LVGLFontContent>(), range.Start));
                     lvglFont.FontContents
                         .Contents[lvglFont.FontContents.UnicodesHeader]
-                        .Contents[range.Start.ToString()]
+                        .Contents[key]
                         .Items.Add(glyph.Index);
                 }
                 else
                 {
                     lvglFont.FontContents
                         .Contents[lvglFont.FontContents.UnicodesHeader]
-                        .Contents[range.Start.ToString()]
+                        .Contents[key]
                         .Count++;
                     lvglFont.FontContents
                         .Contents[lvglFont.FontContents.UnicodesHeader]
-                        .Contents[range.Start.ToString()]
+                        .Contents[key]
                         .Items.Add(glyph.Index);
                 }
             }
         }
     }
+
+   
 }

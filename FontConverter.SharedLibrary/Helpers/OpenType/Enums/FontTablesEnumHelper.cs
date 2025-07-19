@@ -652,16 +652,28 @@ public static class FontTablesEnumHelper
         FormatMask = 0xFF00
     }
 
+    public enum GlyphSubstitutionType : ushort
+    {
+        Single = 1,
+        Multiple = 2,
+        Alternate = 3,
+        Ligature = 4,
+        Contextual = 5,
+        ChainedContext = 6,
+        Extension = 7,
+        ReverseChainingSingle = 8
+    }
+
+
 }
-	 
-	 
-   
-   
-   
-      
-     
-    
-   
-    
-   
-   
+
+
+
+
+
+
+
+
+
+
+

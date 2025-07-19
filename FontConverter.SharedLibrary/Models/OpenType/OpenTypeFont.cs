@@ -22,6 +22,7 @@ public class OpenTypeFont
         HmtxTable = new();
         VmtxTable = new();
         KernTable = new();
+        GSubTable = new();
         CFFTable = [];
         IsValid = false;
     }
@@ -42,6 +43,7 @@ public class OpenTypeFont
         LocaTable = openTypeFont.LocaTable;
         GlyfTable = openTypeFont.GlyfTable;
         CFFTable = openTypeFont.CFFTable;
+        GSubTable = openTypeFont.GSubTable;
     }
 
     public SKTypeface? SKTypeface { get; set; }
@@ -74,6 +76,8 @@ public class OpenTypeFont
     public FontLocaTable LocaTable { get; set; }
 
     public FontGlyfTable GlyfTable { get; set; }
+
+    public GlyphSubstitutionTable GSubTable { get; set; }
 
     public List<string> CFFTable { get; set; }
 

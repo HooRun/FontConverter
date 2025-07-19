@@ -12,8 +12,6 @@ public static class ExportToCHelper
 {
     private const string _Tab1 = "    ";
     private const string _Tab2 = "        ";
-    private const string _Tab3 = "            ";
-    private const string _Tab4 = "                ";
 
     private const string _BitmapArrayName = "glyph_bitmap";
     private const string _DescriptorArrayName = "glyph_dsc";
@@ -24,31 +22,21 @@ public static class ExportToCHelper
     private const string _KernClassesName = "kern_classes";
     private const string _FontDescriptorName = "font_dsc";
 
-    public static string ExportToC(LVGLFont lvglFont, IList<LVGLGlyph> glyphsToExport)
+    public static async Task<string> ExportToC(LVGLFont lvglFont, IList<LVGLGlyph> glyphsToExport, SortedDictionary<uint, UnicodeBlock> blocks)
     {
         if (lvglFont == null || glyphsToExport == null || glyphsToExport.Count <= 0)
             return string.Empty;
 
-        List<UnicodeCharacter> codePoints = GetGlyphsCodePoints(glyphsToExport);
-        
-        List<LVGLCMapRange> cmaps = GenerateCMapRanges(codePoints);
+        List<LVGLCMapRange> cmaps = ExportCmapHelper.GenerateCMapRangesByUnicodeBlocks(glyphsToExport, blocks);
         bool haveCMaps = cmaps.Count > 0;
         int cMapsCount = cmaps.Count;
 
-        int kerningScale = 0;
-        int kernClassesCount = 0;
-        bool haveKernings = false;
-        LVGLKerningClassResult kernResult = new();
-        List<KernPair> pairs = CollectUniqueKernPairs(glyphsToExport.ToList());
-        if (pairs.Count > 0)
-        {
-            kerningScale = ScaleKernPairsInPlace(pairs);
-            kernResult = GenerateKerningClassTables(glyphsToExport.ToList(), pairs);
-            haveKernings = kernResult.ClassValues.Length > 0;
-            kernClassesCount = 1;
-        }
-        
-        
+        LVGLKerningClassResult? kernResult = ExportKernHelper.CollectFormat3Data(glyphsToExport.ToList());
+        bool haveKernings = kernResult != null && kernResult.ClassValues.Length > 0;
+        int kerningScale = haveKernings ? kernResult!.Scale : 0;
+        int kernClassesCount = haveKernings ? 1 : 0;
+
+
         StringBuilder cFile = new();
 
         cFile.Append(HeaderSection(lvglFont));
@@ -58,14 +46,17 @@ public static class ExportToCHelper
         {
             cFile.Append(CMapSection(cmaps));
         }
-        if (haveCMaps && haveKernings)
+        if (haveCMaps && haveKernings && kernResult != null)
         {
             cFile.Append(KerningSection(kernResult));
         }
         cFile.Append(FooterSection(lvglFont, haveKernings, kerningScale, cMapsCount, kernClassesCount));
+
+        await Task.Yield();
         return cFile.ToString();
     }
 
+    // Header Section
     private static StringBuilder HeaderSection(LVGLFont lvglFont)
     {
         StringBuilder headerSection = new();
@@ -113,6 +104,7 @@ public static class ExportToCHelper
         return headerSection;
     }
 
+    // Bitmap Section
     private static StringBuilder BitmapSection(IList<LVGLGlyph> glyphsToExport)
     {
         StringBuilder bitmapSection = new();
@@ -158,6 +150,7 @@ public static class ExportToCHelper
         return bitmapSection;
     }
 
+    // Decriptor Section
     private static StringBuilder DescriptorSection(IList<LVGLGlyph> glyphsToExport)
     {
         StringBuilder descriptorSection = new();
@@ -190,6 +183,7 @@ public static class ExportToCHelper
         return descriptorSection;
     }
 
+    // Character Mapings Section
     private static StringBuilder CMapSection(List<LVGLCMapRange> cmaps)
     {
         StringBuilder cMapSection = new();
@@ -204,7 +198,7 @@ public static class ExportToCHelper
             if (cmap.UnicodeList.Count > 0)
             {
                 var listType = "uint16_t"; // LVGL uses uint16_t even for sparse tiny now
-
+                cMapSection.AppendLine($"/* (U+{cmap.Block.Start:X6} - U+{cmap.Block.End:X6}) {cmap.Block.Name} */");
                 cMapSection.AppendLine($"static const {listType} {cmap.UnicodeListName}[] = {{");
 
                 for (int i = 0; i < cmap.UnicodeList.Count; i += 16)
@@ -256,6 +250,7 @@ public static class ExportToCHelper
 
         foreach (var cmap in cmaps)
         {
+            cMapSection.AppendLine($"{_Tab1}/* (U+{cmap.Block.Start:X6} - U+{cmap.Block.End:X6}) {cmap.Block.Name} */");
             cMapSection.AppendLine($"{_Tab1}{{");
             cMapSection.Append($"{_Tab2}.range_start = 0x{cmap.RangeStart:X}, ");
             cMapSection.Append($".range_length = {cmap.RangeLength}, ");
@@ -271,134 +266,7 @@ public static class ExportToCHelper
         return cMapSection;
     }
 
-    private static List<UnicodeCharacter> GetGlyphsCodePoints(IList<LVGLGlyph> glyphsToExport)
-    {
-        List<UnicodeCharacter> codePoints = new();
-        foreach (var glyph in glyphsToExport)
-        {
-            if (glyph.CodePoints.Count > 0)
-            {
-                codePoints.AddRange(glyph.CodePoints.Values);
-            }
-        }
-        return codePoints;
-    }
-
-    public static List<LVGLCMapRange> GenerateCMapRanges(List<UnicodeCharacter> characters)
-    {
-        var sorted = characters
-            .Where(x => x.GlyphID.HasValue)
-            .OrderBy(x => x.CodePoint)
-            .ToList();
-
-        var blocks = SplitForCMapSubtables(sorted);
-        return blocks.Select(BuildCMapSubtable).ToList();
-    }
-
-    public static List<List<UnicodeCharacter>> SplitForCMapSubtables(List<UnicodeCharacter> sortedList)
-    {
-        const int maxRangeLength = 256;
-        const int maxItems = 256;
-
-        var result = new List<List<UnicodeCharacter>>();
-        var current = new List<UnicodeCharacter>();
-
-        uint? firstCodePoint = null;
-
-        foreach (var u in sortedList)
-        {
-            if (u.GlyphID == null)
-                continue;
-
-            if (current.Count == 0)
-            {
-                current.Add(u);
-                firstCodePoint = u.CodePoint;
-                continue;
-            }
-
-            bool rangeTooLong = (u.CodePoint - firstCodePoint) >= maxRangeLength;
-            bool tooManyItems = current.Count >= maxItems;
-
-            if (rangeTooLong || tooManyItems)
-            {
-                result.Add(new List<UnicodeCharacter>(current));
-                current.Clear();
-                current.Add(u);
-                firstCodePoint = u.CodePoint;
-            }
-            else
-            {
-                current.Add(u);
-            }
-        }
-
-        if (current.Count > 0)
-            result.Add(current);
-
-        return result;
-    }
-
-    public static LVGLCMapRange BuildCMapSubtable(List<UnicodeCharacter> block)
-    {
-        var cmap = new LVGLCMapRange();
-
-        var rangeStart = (int)block.First().CodePoint;
-        var rangeEnd = (int)block.Last().CodePoint;
-        var glyphStart = block.Min(x => x.GlyphID!.Value);
-
-        cmap.RangeStart = rangeStart;
-        cmap.RangeLength = rangeEnd - rangeStart + 1;
-        cmap.GlyphIDStart = glyphStart;
-
-        bool cpSequential = true;
-        bool gidSequential = true;
-        bool isDirectMap = true;
-
-        for (int i = 0; i < block.Count; i++)
-        {
-            int expectedCP = rangeStart + i;
-            int expectedGID = glyphStart + i;
-            int actualCP = (int)block[i].CodePoint;
-            int actualGID = block[i].GlyphID!.Value;
-
-            if (actualCP != expectedCP) cpSequential = false;
-            if (actualGID != expectedGID) gidSequential = false;
-            if ((actualGID - glyphStart) != (actualCP - rangeStart))
-                isDirectMap = false;
-        }
-
-        if (cpSequential && gidSequential && isDirectMap)
-        {
-            cmap.Type = LVGL_CMAP_TYPE.LV_FONT_FMT_TXT_CMAP_FORMAT0_TINY;
-        }
-        else if (gidSequential)
-        {
-            cmap.Type = LVGL_CMAP_TYPE.LV_FONT_FMT_TXT_CMAP_SPARSE_TINY;
-            cmap.UnicodeList = block.Select(x => x.CodePoint - (uint)rangeStart).ToList();
-            cmap.UnicodeListName = $"unicode_list_{rangeStart:X}";
-            cmap.ListLength = cmap.UnicodeList.Count;
-        }
-        else if (cpSequential)
-        {
-            cmap.Type = LVGL_CMAP_TYPE.LV_FONT_FMT_TXT_CMAP_FORMAT0_FULL;
-            cmap.GlyphIDOffsetList = block.Select(x => x.GlyphID!.Value - glyphStart).ToList();
-            cmap.GlyphIDOffsetListName = $"glyph_id_ofs_list_{rangeStart:X}";
-            cmap.ListLength = cmap.GlyphIDOffsetList.Count;
-        }
-        else
-        {
-            cmap.Type = LVGL_CMAP_TYPE.LV_FONT_FMT_TXT_CMAP_SPARSE_FULL;
-            cmap.UnicodeList = block.Select(x => x.CodePoint - (uint)rangeStart).ToList();
-            cmap.GlyphIDOffsetList = block.Select(x => x.GlyphID!.Value - glyphStart).ToList();
-            cmap.UnicodeListName = $"unicode_list_{rangeStart:X}";
-            cmap.GlyphIDOffsetListName = $"glyph_id_ofs_list_{rangeStart:X}";
-            cmap.ListLength = cmap.UnicodeList.Count;
-        }
-
-        return cmap;
-    }
-
+    // Kerning Section
     private static StringBuilder KerningSection(LVGLKerningClassResult kernResult)
     {
         StringBuilder kerningSection = new();
@@ -441,192 +309,7 @@ public static class ExportToCHelper
         return kerningSection;
     }
 
-    public static List<KernPair> CollectUniqueKernPairs(List<LVGLGlyph> glyphs)
-    {
-        var set = new HashSet<(ushort, ushort)>();
-        var result = new List<KernPair>();
-
-        foreach (var glyph in glyphs)
-        {
-            foreach (var kp in glyph.LeftKernings)
-            {
-                if (set.Add((kp.Left, kp.Right)))
-                    result.Add(kp);
-            }
-
-            foreach (var kp in glyph.RightKernings)
-            {
-                if (set.Add((kp.Left, kp.Right)))
-                    result.Add(kp);
-            }
-        }
-
-        return result;
-    }
-
-    public static int ScaleKernPairsInPlace(List<KernPair> pairs)
-    {
-        int maxAbs = pairs
-            .Select(p => Math.Abs((int)p.Value))
-            .DefaultIfEmpty(0)
-            .Max();
-
-        if (maxAbs <= 127)
-            return 16; // No scaling needed
-
-        double scaleFactor = 127.0 / maxAbs;
-        int kernScale = (int)Math.Round(16.0 / scaleFactor);
-
-        foreach (var p in pairs)
-        {
-            p.Value = (short)Math.Round(p.Value * scaleFactor);
-        }
-
-        return kernScale;
-    }
-
-    public static bool ShouldUseClassBasedKerning(List<LVGLGlyph> glyphs)
-    {
-        var pairs = CollectUniqueKernPairs(glyphs);
-        int pairCount = pairs.Count;
-        int glyphCount = glyphs.Count;
-
-        if (pairCount > glyphCount * 2) return true;
-
-        var sigs = new HashSet<string>();
-
-        foreach (var g in glyphs)
-        {
-            var left = string.Join(",", g.LeftKernings.OrderBy(k => k.Right).Select(k => k.Value));
-            var right = string.Join(",", g.RightKernings.OrderBy(k => k.Left).Select(k => k.Value));
-            sigs.Add($"{left}|{right}");
-        }
-
-        int classCandidates = sigs.Count;
-
-        return classCandidates < glyphCount * 0.5;
-    }
-
-    public static Dictionary<int, int> BuildKerningClassMap(
-    List<LVGLGlyph> glyphs,
-    bool isLeft)
-    {
-        var signatureToClass = new Dictionary<string, int>();
-        var glyphIdToClass = new Dictionary<int, int>();
-        int classCounter = 1;
-
-        foreach (var glyph in glyphs.OrderBy(g => g.Index))
-        {
-            var kernList = isLeft ? glyph.LeftKernings : glyph.RightKernings;
-
-            var signature = string.Join(",",
-                kernList.OrderBy(k => isLeft ? k.Right : k.Left)
-                        .Select(k => $"{(isLeft ? k.Right : k.Left)}:{k.Value}")
-            );
-
-            if (!signatureToClass.TryGetValue(signature, out int classId))
-            {
-                classId = classCounter++;
-                signatureToClass[signature] = classId;
-            }
-
-            glyphIdToClass[glyph.Index] = classId;
-        }
-
-        return glyphIdToClass;
-    }
-
-    public static List<byte> BuildClassMapping(List<LVGLGlyph> glyphs, Dictionary<int, int> glyphToClass)
-    {
-        int maxId = glyphs.Max(g => g.Index);
-        var mapping = new byte[maxId + 1];
-
-        foreach (var glyph in glyphs)
-        {
-            mapping[glyph.Index] = (byte)(glyphToClass.TryGetValue(glyph.Index, out var classId) ? classId : 0);
-        }
-
-        return mapping.ToList();
-    }
-
-    public static sbyte[] BuildClassPairValues(
-    Dictionary<int, int> leftMap,
-    Dictionary<int, int> rightMap,
-    List<KernPair> pairs,
-    out int leftClassCount,
-    out int rightClassCount)
-    {
-        leftClassCount = leftMap.Values.Max();
-        rightClassCount = rightMap.Values.Max();
-        var table = new sbyte[leftClassCount * rightClassCount];
-
-        foreach (var pair in pairs)
-        {
-            if (!leftMap.TryGetValue(pair.Left, out int leftClass) || leftClass == 0) continue;
-            if (!rightMap.TryGetValue(pair.Right, out int rightClass) || rightClass == 0) continue;
-
-            int index = (leftClass - 1) * rightClassCount + (rightClass - 1);
-            table[index] = (sbyte)pair.Value;
-        }
-
-        return table;
-    }
-
-    public class LVGLKerningClassResult
-    {
-        public List<byte> LeftClassMap { get; set; } = [];
-        public List<byte> RightClassMap { get; set; } = [];
-        public sbyte[] ClassValues { get; set; } = [];
-        public int LeftClassCount { get; set; }
-        public int RightClassCount { get; set; }
-    }
-
-    public static LVGLKerningClassResult GenerateKerningClassTables(List<LVGLGlyph> glyphs, List<KernPair> pairs)
-    {
-
-
-        var leftMap = BuildKerningClassMap(glyphs, isLeft: true);
-        var rightMap = BuildKerningClassMap(glyphs, isLeft: false);
-
-        var leftClassMap = BuildClassMapping(glyphs, leftMap);
-        var rightClassMap = BuildClassMapping(glyphs, rightMap);
-
-        var classValues = BuildClassPairValues(leftMap, rightMap, pairs,
-            out int leftClassCount,
-            out int rightClassCount);
-
-        return new LVGLKerningClassResult
-        {
-            LeftClassMap = leftClassMap,
-            RightClassMap = rightClassMap,
-            ClassValues = classValues,
-            LeftClassCount = leftClassCount,
-            RightClassCount = rightClassCount
-        };
-    }
-
-    private static void AppendByteArray(StringBuilder sb, List<byte> values, int perLine, string indent)
-    {
-        for (int i = 0; i < values.Count; i += perLine)
-        {
-            var line = values.Skip(i).Take(perLine).Select(v => $"{v}");
-            sb.Append(indent);
-            sb.AppendLine(string.Join(", ", line) + (i + perLine < values.Count ? "," : ""));
-        }
-    }
-
-    private static void AppendSByteArray(StringBuilder sb, sbyte[] values, int perLine, string indent)
-    {
-        for (int i = 0; i < values.Length; i += perLine)
-        {
-            var line = values.Skip(i).Take(perLine).Select(v => $"{v}");
-            sb.Append(indent);
-            sb.AppendLine(string.Join(", ", line) + (i + perLine < values.Length ? "," : ""));
-        }
-    }
-
-
-
+    // Footer Section
     private static StringBuilder FooterSection(LVGLFont lvglFont, bool haveKernings, int kerningScale, int cMapsCount, int kernClassesCount)
     {
         StringBuilder footerSection = new();
@@ -673,10 +356,34 @@ public static class ExportToCHelper
         footerSection.AppendLine($"{_Tab1}.underline_position = {lvglFont.FontInformations.UnderlinePosition},");
         footerSection.AppendLine($"{_Tab1}.underline_thickness = {lvglFont.FontInformations.UnderlineThickness},");
         footerSection.AppendLine("#endif");
-        footerSection.AppendLine($"{_Tab1}.dsc = &{_FontDescriptorName}           /*The custom font data. Will be accessed by `get_glyph_bitmap/dsc` */");
+        footerSection.AppendLine($"{_Tab1}.dsc = &{_FontDescriptorName},           /*The custom font data. Will be accessed by `get_glyph_bitmap/dsc` */");
+        footerSection.AppendLine("#if LV_VERSION_CHECK(8, 2, 0) || LVGL_VERSION_MAJOR >= 9");
+        footerSection.AppendLine($"{_Tab1}.fallback = {(!string.IsNullOrEmpty(lvglFont.FontSettings.Fallback) ? "&" + lvglFont.FontSettings.Fallback : "NULL")},");
+        footerSection.AppendLine("#endif");
+        footerSection.AppendLine($"{_Tab1}.user_data = NULL,");
         footerSection.AppendLine("};");
         footerSection.AppendLine();
         footerSection.AppendLine($"#endif /* #if CUSTOM_FONT_{lvglFont.FontSettings.FontName.ToUpper()} */");
         return footerSection;
+    }
+
+    public static void AppendByteArray(StringBuilder sb, List<byte> values, int perLine, string indent)
+    {
+        for (int i = 0; i < values.Count; i += perLine)
+        {
+            var line = values.Skip(i).Take(perLine).Select(v => $"{v}");
+            sb.Append(indent);
+            sb.AppendLine(string.Join(", ", line) + (i + perLine < values.Count ? "," : ""));
+        }
+    }
+
+    public static void AppendSByteArray(StringBuilder sb, sbyte[] values, int perLine, string indent)
+    {
+        for (int i = 0; i < values.Length; i += perLine)
+        {
+            var line = values.Skip(i).Take(perLine).Select(v => $"{v}");
+            sb.Append(indent);
+            sb.AppendLine(string.Join(", ", line) + (i + perLine < values.Length ? "," : ""));
+        }
     }
 }

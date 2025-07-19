@@ -1,5 +1,6 @@
 ﻿using FontConverter.SharedLibrary.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -140,33 +141,29 @@ public static class OrganizeGlyphsHelper
     {
         glyph.CodePoints.Clear();
         glyph.Blocks.Clear();
-
-        var addedBlocks = new HashSet<(uint Start, uint End)>();
         if (codePoints is not null)
         {
             foreach (uint codePoint in codePoints)
             {
-                if (!blockCollection.AllCharacters.TryGetValue(codePoint, out var unicodeChar))
+                foreach (var blockEntry in blockCollection.Blocks.Values)
                 {
-                    unicodeChar = new UnicodeCharacter(codePoint, $"U+{codePoint:X4}",null);
-                }
+                    if (blockEntry.Start > codePoint &&  codePoint > blockEntry.End)
+                        continue;
 
-                glyph.CodePoints[codePoint] = unicodeChar;
-
-                foreach (var blockEntry in blockCollection.Blocks)
-                {
-                    var (start, end) = blockEntry.Key;
-                    if (codePoint >= start && codePoint <= end)
+                    if (blockEntry.Start <=codePoint && codePoint <= blockEntry.End)
                     {
-                        if (addedBlocks.Add((start, end)))
+                        if (!glyph.Blocks.ContainsKey(blockEntry.Start))
                         {
-                            glyph.Blocks[(start, end)] = blockEntry.Value;
+                            glyph.Blocks.TryAdd(blockEntry.Start, blockEntry);
                         }
-                        if (blockEntry.Value.Characters.ContainsKey(codePoint))
+                        if (blockEntry.Characters.ContainsKey(codePoint))
                         {
-                            blockEntry.Value.Characters[codePoint].GlyphID = glyph.Index;
+                            blockEntry.Characters[codePoint].GlyphID = glyph.Index;
+                            if (!glyph.CodePoints.ContainsKey(codePoint))
+                            {
+                                glyph.CodePoints.TryAdd(codePoint, blockEntry.Characters[codePoint]);
+                            }
                         }
-                        glyph.CodePoints[codePoint].ParentBlock = blockEntry.Value;
                         break;
                     }
                 }
@@ -178,5 +175,6 @@ public static class OrganizeGlyphsHelper
         glyph.IsSingleMapped = count == 1;
         glyph.IsMultiMapped = count > 1;
     }
+
 
 }

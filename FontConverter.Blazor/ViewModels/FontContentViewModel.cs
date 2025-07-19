@@ -15,7 +15,7 @@ public class FontContentViewModel : BaseViewModel
         _Contents = new();
     }
 
-    public FontContentViewModel(string header, string subTitle, string icon, int count, bool isSelected, List<int>? items, SortedList<string, FontContentViewModel> contents) :this()
+    public FontContentViewModel(string header, string subTitle, string icon, int count, bool isSelected, List<int>? items, SortedList<string, FontContentViewModel> contents, uint sortIndex) :this()
     {
         Header = header;
         SubTitle = subTitle;
@@ -24,6 +24,7 @@ public class FontContentViewModel : BaseViewModel
         IsSelected = isSelected;
         Items = items ?? [];
         Contents = contents;
+        SortIndex = sortIndex;
     }
 
     private string _Header;
@@ -33,6 +34,9 @@ public class FontContentViewModel : BaseViewModel
     private bool _IsSelected;
     private List<int> _Items;
     private SortedList<string, FontContentViewModel> _Contents;
+    private uint _SortIndex;
+
+    private string _Key = string.Empty;
 
     public string Header
     {
@@ -69,6 +73,11 @@ public class FontContentViewModel : BaseViewModel
         get { return _Contents; }
         set { SetProperty(ref _Contents, value); }
     }
+    public uint SortIndex
+    {
+        get { return _SortIndex; }
+        set { SetProperty(ref _SortIndex, value); }
+    }
 
-    public IEnumerable<FontContentViewModel> Children => _Contents?.Values ?? Enumerable.Empty<FontContentViewModel>();
+    public IEnumerable<FontContentViewModel> Children => _Contents?.Values.OrderBy(cont => cont.SortIndex).ToList() ?? Enumerable.Empty<FontContentViewModel>();
 }

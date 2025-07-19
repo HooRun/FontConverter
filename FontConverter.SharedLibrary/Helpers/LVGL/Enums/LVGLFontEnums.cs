@@ -30,10 +30,20 @@ public static class LVGLFontEnums
 
     public enum LVGL_CMAP_TYPE : int
     {
-        LV_FONT_FMT_TXT_CMAP_FORMAT0_FULL,
+        LV_FONT_FMT_TXT_CMAP_FORMAT0_FULL = 0,
         LV_FONT_FMT_TXT_CMAP_SPARSE_FULL,
         LV_FONT_FMT_TXT_CMAP_FORMAT0_TINY,
         LV_FONT_FMT_TXT_CMAP_SPARSE_TINY,
+    }
+
+    public enum LVGL_FILE_TYPE : int
+    {
+        LVGL_FILE_TYPE_NONE,
+        LVGL_FILE_TYPE_C,
+        LVGL_FILE_TYPE_SYMBOL,
+        LVGL_FILE_TYPE_BINARY,
+        LVGL_FILE_TYPE_SVG_C,
+        LVGL_FILE_TYPE_SVG_H,
     }
 
 }
