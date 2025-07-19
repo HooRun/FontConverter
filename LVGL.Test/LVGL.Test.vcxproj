@@ -1242,9 +1242,9 @@
     <ResourceCompile Include="LvglWindowsIconResource\LvglWindowsIconResource.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="fonts\bin\merienda_24.bin" />
-    <None Include="fonts\bin\roboto_24.bin" />
-    <None Include="fonts\bin\roya_24.bin" />
+    <None Include="fonts\binary\merienda_24.bin" />
+    <None Include="fonts\binary\roboto_24.bin" />
+    <None Include="fonts\binary\roya_24.bin" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

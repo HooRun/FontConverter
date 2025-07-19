@@ -77,9 +77,9 @@ static symbols_t symbol_fonts[] = {
 
 const int bin_fonts_count = 3;
 static bin_t bin_fonts[] = {
-    {.font_name = "Roya 24", .path = "A:fonts/bin/roya_24.bin", .text = &persian_sample_text},
-    {.font_name = "Merienda 24", .path = "A:fonts/bin/merienda_24.bin", .text = &english_sample_text},
-    {.font_name = "Roboto 24", .path = "A:fonts/bin/roboto_24.bin", .text = &english_sample_text},
+    {.font_name = "Roya 24", .path = "A:fonts/binary/roya_24.bin", .text = &persian_sample_text},
+    {.font_name = "Merienda 24", .path = "A:fonts/binary/merienda_24.bin", .text = &english_sample_text},
+    {.font_name = "Roboto 24", .path = "A:fonts/binary/roboto_24.bin", .text = &english_sample_text},
 };
 
 const int svg_fonts_count = 1;
