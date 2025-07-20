@@ -62,8 +62,6 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
+# Ignore these folders in language statistics
 LVGL.Test/** linguist-vendored
-
 docs/** linguist-vendored
-
-docs/** linguist-language=Text
