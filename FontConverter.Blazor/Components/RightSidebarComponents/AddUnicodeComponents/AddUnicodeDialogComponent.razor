@@ -1,0 +1,155 @@
+﻿@using FontConverter.SharedLibrary.Models
+
+<RadzenStack Orientation="Orientation.Vertical"
+             Gap="15px">
+
+    <RadzenDataGrid Data="@PredefinedData.Blocks.Values"
+                    GridLines="DataGridGridLines.Both"
+                    SelectionMode="DataGridSelectionMode.Single"
+                    AllowColumnResize="true"
+                    AllowVirtualization="true"
+                    AllowSorting="true"
+                    AllowFiltering="true"
+                    FilterMode="FilterMode.CheckBoxList"
+                    Density="Density.Compact"
+                    Value=@_SelectedBlocksList
+                    TItem="UnicodeBlock"
+                    ValueChanged="@OnBlockChangedAsync"
+                    Style="height: 200px; font-size:10px;">
+        <HeaderTemplate>
+            <RadzenStack Orientation="Orientation.Horizontal"
+                         AlignItems="AlignItems.Center">
+                <RadzenText Text="Unicode Block Ranges" TextStyle="TextStyle.Body2" />
+            </RadzenStack>
+        </HeaderTemplate>
+        <EmptyTemplate>
+            <p style="color: lightgrey; font-size: 24px; text-align: center; margin: 2rem;">No records to display.</p>
+        </EmptyTemplate>
+        <Columns>
+            <RadzenDataGridColumn Property="@nameof(UnicodeBlock.StartString)"
+                                  Title="Start"
+                                  Width="100px"
+                                  TextAlign="TextAlign.Center"
+                                  AllowCheckBoxListVirtualization=true>
+                <Template Context="data">
+                    <span style="font-size: 12px;">@data.StartString</span>
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Property="@nameof(UnicodeBlock.EndString)"
+                                  Title="End"
+                                  Width="100px"
+                                  TextAlign="TextAlign.Center"
+                                  AllowCheckBoxListVirtualization=true>
+                <Template Context="data">
+                    <span style="font-size: 12px;">@data.EndString</span>
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Property="@nameof(UnicodeBlock.Name)"
+                                  Title="Block Name"
+                                  TextAlign="TextAlign.Left"
+                                  AllowCheckBoxListVirtualization=true >
+                <Template Context="data">
+                        <span style="font-size: 12px;">@data.Name</span>
+                </Template>
+            </RadzenDataGridColumn>
+        </Columns>
+    </RadzenDataGrid>
+
+    <RadzenDataGrid Data="@_SelectedBlock.Characters.Values"
+                    GridLines="DataGridGridLines.Both"
+                    AllowRowSelectOnRowClick="true"
+                    SelectionMode="DataGridSelectionMode.Multiple"
+                    AllowColumnResize="true"
+                    AllowVirtualization="true"
+                    AllowSorting="true"
+                    AllowFiltering="true"
+                    FilterMode="FilterMode.CheckBoxList"
+                    Density="Density.Compact"
+                    Value=@_SelectedCharachtersList
+                    TItem="UnicodeCharacter"
+                    ValueChanged="@OnCharacterChanged"
+                    Style="height: 200px; font-size:10px; ">
+        <HeaderTemplate>
+            <RadzenStack Orientation="Orientation.Vertical"
+                         AlignItems="AlignItems.Normal"
+                         Gap="0">
+                <RadzenText Text="Unicode Characters within the Block Range" TextStyle="TextStyle.Body2" />
+                <RadzenText Text="@($"{_SelectedBlocksList?.FirstOrDefault()?.StartString} - {_SelectedBlocksList?.FirstOrDefault()?.EndString}")" TextStyle="TextStyle.Body2" />
+            </RadzenStack>
+        </HeaderTemplate>
+        <EmptyTemplate>
+            <p style="color: lightgrey; font-size: 14px; text-align: center; margin: 2rem;">No records to display.</p>
+        </EmptyTemplate>
+        <Columns>
+            <RadzenDataGridColumn Property="@nameof(UnicodeCharacter.CodePointString)"
+                                  Title="Code"
+                                  Width="100px"
+                                  TextAlign="TextAlign.Center"
+                                  AllowCheckBoxListVirtualization=true>
+                <Template Context="data">
+                    <RadzenStack Orientation="Orientation.Horizontal"
+                                 AlignItems="AlignItems.Center"
+                                 Gap="15px"
+                                 Style="height:40px;">
+                        <span style="@(data.GlyphID == null || data.GlyphID < 0 ? "font-size: 12px;" : "color:gray; font-size: 12px;")">@data.CodePointString</span>
+                    </RadzenStack>
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Property="@nameof(UnicodeCharacter.GlyphID)"
+                                  Title="Glyph"
+                                  Width="100px"
+                                  TextAlign="TextAlign.Center"
+                                  AllowCheckBoxListVirtualization=true>
+                <Template Context="data">
+                    <RadzenStack Orientation="Orientation.Horizontal"
+                                 AlignItems="AlignItems.Center"
+                                 JustifyContent="JustifyContent.Normal"
+                                 Gap="5px"
+                                 Style="height:40px;">
+                        @if (data.GlyphID != null || data.GlyphID >= 0)
+                        {
+                            <RadzenStack Orientation="Orientation.Horizontal"
+                                         AlignItems="AlignItems.Center"
+                                         JustifyContent="JustifyContent.Center"
+                                         Gap="5px"
+                                         Style="width: 40px; height:40px; overflow: hidden;">
+                                <GlyphSVGComponent SVG="MainViewModel.GlyphsList[(int)data.GlyphID].SVG" Height="30" MaxWidth="40" />
+                            </RadzenStack>
+                            <span style="color:gray; font-size: 12px;">@data.GlyphID</span>
+                        }
+                    </RadzenStack>
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Property="@nameof(UnicodeCharacter.Name)"
+                                  Title="Character Name"
+                                  TextAlign="TextAlign.Left"
+                                  AllowCheckBoxListVirtualization=true>
+                <Template Context="data">
+                    <RadzenStack Orientation="Orientation.Horizontal"
+                                 AlignItems="AlignItems.Center"
+                                 Gap="15px"
+                                 Style="height:40px;">
+                        <span style="@(data.GlyphID == null || data.GlyphID < 0 ? "font-size: 12px;" : "color:gray; font-size: 12px;")">@data.Name</span>
+                    </RadzenStack>
+                </Template>
+            </RadzenDataGridColumn>
+        </Columns>
+    </RadzenDataGrid>
+
+    <RadzenRow JustifyContent="JustifyContent.Center"
+               AlignItems="AlignItems.Center"
+               class="rz-text-align-center">
+        <RadzenColumn>
+            <RadzenButton Text="@($"Add ({_SelectedCharachtersList?.Count??0})")"
+                          Click="@((args) => _DialogService.Close(new AddUnicodesResult(_SelectedBlocksList, _SelectedCharachtersList)))"
+                          Disabled="@(_SelectedCharachtersList?.Count<=0 || _SelectedCharachtersList==null)"
+                          ButtonStyle="ButtonStyle.Primary" />
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenButton Text="Close" Click="@((args) => _DialogService.Close(false))"
+                          ButtonStyle="ButtonStyle.Base" />
+        </RadzenColumn>
+    </RadzenRow>
+
+</RadzenStack>
+

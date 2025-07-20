@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="LVGLFontConverter.UserControls.FontPropertiesUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LVGLFontConverter.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:helper="using:LVGLFontConverter.Helpers"
+    mc:Ignorable="d">
+
+    <Expander 
+        IsExpanded="True" 
+        ExpandDirection="Down" 
+        VerticalAlignment="Top" 
+        HorizontalAlignment="Stretch" 
+        HorizontalContentAlignment="Stretch" 
+        Padding="10">
+        <Expander.Header>
+            <TextBlock 
+                Text="{helper:Loc Key=Text_Header_FontProperties}" 
+                Style="{StaticResource ExpanderHeaderTextBlock}"/>
+        </Expander.Header>
+        <Expander.Content>
+            <StackPanel 
+                Orientation="Vertical" 
+                Background="Transparent" 
+                Spacing="5" >
+                <!-- Font Name -->
+                <TextBox 
+                    VerticalAlignment="Center" 
+                    Text="{x:Bind ViewModel.FontName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontProperties_Name}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+                <!-- Bit Per Pixel -->
+                <ComboBox
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Stretch" 
+                    SelectedValue="{x:Bind ViewModel.FontBitPerPixel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                    ItemsSource="{x:Bind ViewModel.FontBitPerPixelList, Mode=OneWay}" 
+                    SelectedIndex="{x:Bind ViewModel.FontBitPerPixelSelectedIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedValuePath="BPP" 
+                    DisplayMemberPath="Description">
+                    <ComboBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontProperties_BitPerPixel}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </ComboBox.Header>
+                </ComboBox>
+                <!-- Font Size -->
+                <NumberBox 
+                    VerticalAlignment="Center" 
+                    SpinButtonPlacementMode="Inline" 
+                    Maximum="{x:Bind ViewModel.MaxFontSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Minimum="{x:Bind ViewModel.MinFontSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
+                    SmallChange="1"
+                    LargeChange="5"
+                    AcceptsExpression="False"
+                    Value="{x:Bind ViewModel.FontSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <NumberBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontProperties_Size}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </NumberBox.Header>
+                </NumberBox>
+                <!-- Line Height -->
+                <NumberBox 
+                    VerticalAlignment="Center" 
+                    SpinButtonPlacementMode="Inline" 
+                    Maximum="{x:Bind ViewModel.MaxLineHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Minimum="{x:Bind ViewModel.MinLineHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   
+                    SmallChange="1"
+                    LargeChange="5"
+                    AcceptsExpression="False"
+                    Value="{x:Bind ViewModel.LineHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <NumberBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontProperties_LineHeight}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </NumberBox.Header>
+                </NumberBox>
+                <!-- Base Line -->
+                <NumberBox 
+                    VerticalAlignment="Center" 
+                    SpinButtonPlacementMode="Inline" 
+                    Maximum="{x:Bind ViewModel.MaxBaseLine, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Minimum="{x:Bind ViewModel.MinBaseLine, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   
+                    SmallChange="1"
+                    LargeChange="5"
+                    AcceptsExpression="False"
+                    Value="{x:Bind ViewModel.BaseLine, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <NumberBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontProperties_BaseLine}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </NumberBox.Header>
+                </NumberBox>
+                <!-- Y Axis Position -->
+                <NumberBox 
+                    VerticalAlignment="Center" 
+                    SpinButtonPlacementMode="Inline" 
+                    Maximum="{x:Bind ViewModel.MaxYAxisPosition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Minimum="{x:Bind ViewModel.MinYAxisPosition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   
+                    SmallChange="1"
+                    LargeChange="5"
+                    AcceptsExpression="False"
+                    Value="{x:Bind ViewModel.YAxisPosition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <NumberBox.Header>
+                        <TextBlock 
+                        Text="{helper:Loc Key=Text_Header_FontProperties_YAxisPosition}" 
+                        Style="{StaticResource EntryTextBlock}"/>
+                    </NumberBox.Header>
+                </NumberBox>
+                <!-- Underline Position -->
+                <NumberBox 
+                    VerticalAlignment="Center" 
+                    SpinButtonPlacementMode="Inline" 
+                    Maximum="{x:Bind ViewModel.MaxUnderLinePosition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Minimum="{x:Bind ViewModel.MinUnderLinePosition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   
+                    SmallChange="1"
+                    LargeChange="5"
+                    AcceptsExpression="False"
+                    Value="{x:Bind ViewModel.UnderlinePosition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <NumberBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontProperties_UnderlinePosition}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </NumberBox.Header>
+                </NumberBox>
+                <!-- Underline Thickness -->
+                <NumberBox 
+                    VerticalAlignment="Center" 
+                    SpinButtonPlacementMode="Inline" 
+                    Maximum="{x:Bind ViewModel.MaxUnderlineThickness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Minimum="{x:Bind ViewModel.MinUnderlineThickness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   
+                    SmallChange="1"
+                    LargeChange="5"
+                    AcceptsExpression="False"
+                    Value="{x:Bind ViewModel.UnderlineThickness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <NumberBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontProperties_UnderlineThickness}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </NumberBox.Header>
+                </NumberBox>
+                <!-- Font Sub Pixel -->
+                <ComboBox 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Stretch" 
+                    SelectedValue="{x:Bind ViewModel.FontSubPixel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    ItemsSource="{x:Bind ViewModel.FontSubPixelList}" 
+                    SelectedIndex="{x:Bind ViewModel.FontSubPixelSelectedIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedValuePath="SubPixel" 
+                    DisplayMemberPath="Description">
+                    <ComboBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontProperties_SubPixel}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </ComboBox.Header>
+                </ComboBox>
+                <!-- Fallback Font Name -->
+                <TextBox 
+                    VerticalAlignment="Center"  
+                    Text="{x:Bind ViewModel.Fallback, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Header>
+                        <TextBlock 
+                            Text="{helper:Loc Key=Text_Header_FontProperties_Fallback}" 
+                            Style="{StaticResource EntryTextBlock}"/>
+                    </TextBox.Header>
+                </TextBox>
+            </StackPanel>
+        </Expander.Content>
+    </Expander>
+</UserControl>

@@ -1,0 +1,3843 @@
+/*******************************************************************************
+* Font Converter For LVGL
+* https://hoorun.github.io/FontConverter/
+*
+* OpenType Font Name: Noto Emoji
+* Font Name: noto_emoji_24
+* Font BPP: BPP_8
+* Font Size: 24
+* Font Adjusments: AntiAlias=True, Dither=True, Style=STYLE_FILL, StrokeWidth=0, Gamma=1, Threshold=0
+******************************************************************************/
+
+#ifndef CUSTOM_FONT_NOTO_EMOJI_24_SYMBOL_DEF_H
+#define CUSTOM_FONT_NOTO_EMOJI_24_SYMBOL_DEF_H
+
+#ifdef __cplusplus
+    extern "C" {
+#endif
+
+#ifndef CUSTOM_FONT_NOTO_EMOJI_24_SYMBOL
+    #define CUSTOM_FONT_NOTO_EMOJI_24_SYMBOL 1
+#endif
+
+#if CUSTOM_FONT_NOTO_EMOJI_24_SYMBOL
+
+#ifndef SYMBOLDEF_STRUCT_DEFINED
+    #define SYMBOLDEF_STRUCT_DEFINED
+
+    typedef struct {
+        const char* name;
+        const char* value;
+    } symbol_def_t;
+#endif /* #ifndef SYMBOLDEF_STRUCT_DEFINED */
+
+#define NOTO_EMOJI_24_SYMBOL_NOTDEF                                   "\x00"             /* Id: 0,    Name: .notdef,                                  CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_UNI0000                                  "\x00"             /* Id: 1,    Name: uni0000,                                  CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_UNI000D                                  "\x0D"             /* Id: 2,    Name: uni000D,                                  CodePoint: 13,      Unicode: U+00000D  */
+#define NOTO_EMOJI_24_SYMBOL_SPACE                                    "\x20"             /* Id: 3,    Name: space,                                    CodePoint: 32,      Unicode: U+000020  */
+#define NOTO_EMOJI_24_SYMBOL_NUMBERSIGN                               "\x23"             /* Id: 4,    Name: numbersign,                               CodePoint: 35,      Unicode: U+000023  */
+#define NOTO_EMOJI_24_SYMBOL_ASTERISK                                 "\x2A"             /* Id: 5,    Name: asterisk,                                 CodePoint: 42,      Unicode: U+00002A  */
+#define NOTO_EMOJI_24_SYMBOL_ZERO                                     "\x30"             /* Id: 6,    Name: zero,                                     CodePoint: 48,      Unicode: U+000030  */
+#define NOTO_EMOJI_24_SYMBOL_ONE                                      "\x31"             /* Id: 7,    Name: one,                                      CodePoint: 49,      Unicode: U+000031  */
+#define NOTO_EMOJI_24_SYMBOL_TWO                                      "\x32"             /* Id: 8,    Name: two,                                      CodePoint: 50,      Unicode: U+000032  */
+#define NOTO_EMOJI_24_SYMBOL_THREE                                    "\x33"             /* Id: 9,    Name: three,                                    CodePoint: 51,      Unicode: U+000033  */
+#define NOTO_EMOJI_24_SYMBOL_FOUR                                     "\x34"             /* Id: 10,   Name: four,                                     CodePoint: 52,      Unicode: U+000034  */
+#define NOTO_EMOJI_24_SYMBOL_FIVE                                     "\x35"             /* Id: 11,   Name: five,                                     CodePoint: 53,      Unicode: U+000035  */
+#define NOTO_EMOJI_24_SYMBOL_SIX                                      "\x36"             /* Id: 12,   Name: six,                                      CodePoint: 54,      Unicode: U+000036  */
+#define NOTO_EMOJI_24_SYMBOL_SEVEN                                    "\x37"             /* Id: 13,   Name: seven,                                    CodePoint: 55,      Unicode: U+000037  */
+#define NOTO_EMOJI_24_SYMBOL_EIGHT                                    "\x38"             /* Id: 14,   Name: eight,                                    CodePoint: 56,      Unicode: U+000038  */
+#define NOTO_EMOJI_24_SYMBOL_NINE                                     "\x39"             /* Id: 15,   Name: nine,                                     CodePoint: 57,      Unicode: U+000039  */
+#define NOTO_EMOJI_24_SYMBOL_COPYRIGHT                                "\xC2\xA9"         /* Id: 16,   Name: copyright,                                CodePoint: 169,     Unicode: U+0000A9  */
+#define NOTO_EMOJI_24_SYMBOL_REGISTERED                               "\xC2\xAE"         /* Id: 17,   Name: registered,                               CodePoint: 174,     Unicode: U+0000AE  */
+#define NOTO_EMOJI_24_SYMBOL_UNI200D                                  "\xE2\x80\x8D"     /* Id: 18,   Name: uni200D,                                  CodePoint: 8205,    Unicode: U+00200D  */
+#define NOTO_EMOJI_24_SYMBOL_UNIFE0E                                  "\xEF\xB8\x8E"     /* Id: 19,   Name: uniFE0E,                                  CodePoint: 65038,   Unicode: U+00FE0E  */
+#define NOTO_EMOJI_24_SYMBOL_UNIFE0F                                  "\xEF\xB8\x8F"     /* Id: 20,   Name: uniFE0F,                                  CodePoint: 65039,   Unicode: U+00FE0F  */
+#define NOTO_EMOJI_24_SYMBOL_DOUBLEEXCLAMATIONMARK                    "\xE2\x80\xBC"     /* Id: 21,   Name: doubleExclamationMark,                    CodePoint: 8252,    Unicode: U+00203C  */
+#define NOTO_EMOJI_24_SYMBOL_EXCLAMATIONQUESTIONMARK                  "\xE2\x81\x89"     /* Id: 22,   Name: exclamationQuestionMark,                  CodePoint: 8265,    Unicode: U+002049  */
+#define NOTO_EMOJI_24_SYMBOL_UNI20E3                                  "\xE2\x83\xA3"     /* Id: 23,   Name: uni20E3,                                  CodePoint: 8419,    Unicode: U+0020E3  */
+#define NOTO_EMOJI_24_SYMBOL_TRADEMARK                                "\xE2\x84\xA2"     /* Id: 24,   Name: tradeMark,                                CodePoint: 8482,    Unicode: U+002122  */
+#define NOTO_EMOJI_24_SYMBOL_INFORMATION                              "\xE2\x84\xB9"     /* Id: 25,   Name: information,                              CodePoint: 8505,    Unicode: U+002139  */
+#define NOTO_EMOJI_24_SYMBOL_ARROWBOTH                                "\xE2\x86\x94"     /* Id: 26,   Name: arrowboth,                                CodePoint: 8596,    Unicode: U+002194  */
+#define NOTO_EMOJI_24_SYMBOL_ARROWUPDN                                "\xE2\x86\x95"     /* Id: 27,   Name: arrowupdn,                                CodePoint: 8597,    Unicode: U+002195  */
+#define NOTO_EMOJI_24_SYMBOL_UPLEFTARROW                              "\xE2\x86\x96"     /* Id: 28,   Name: upLeftArrow,                              CodePoint: 8598,    Unicode: U+002196  */
+#define NOTO_EMOJI_24_SYMBOL_UPRIGHTARROW                             "\xE2\x86\x97"     /* Id: 29,   Name: upRightArrow,                             CodePoint: 8599,    Unicode: U+002197  */
+#define NOTO_EMOJI_24_SYMBOL_DOWNRIGHTARROW                           "\xE2\x86\x98"     /* Id: 30,   Name: downRightArrow,                           CodePoint: 8600,    Unicode: U+002198  */
+#define NOTO_EMOJI_24_SYMBOL_DOWNLEFTARROW                            "\xE2\x86\x99"     /* Id: 31,   Name: downLeftArrow,                            CodePoint: 8601,    Unicode: U+002199  */
+#define NOTO_EMOJI_24_SYMBOL_RIGHTARROWCURVINGLEFT                    "\xE2\x86\xA9"     /* Id: 32,   Name: rightArrowCurvingLeft,                    CodePoint: 8617,    Unicode: U+0021A9  */
+#define NOTO_EMOJI_24_SYMBOL_LEFTARROWCURVINGRIGHT                    "\xE2\x86\xAA"     /* Id: 33,   Name: leftArrowCurvingRight,                    CodePoint: 8618,    Unicode: U+0021AA  */
+#define NOTO_EMOJI_24_SYMBOL_UNI231A                                  "\xE2\x8C\x9A"     /* Id: 34,   Name: uni231A,                                  CodePoint: 8986,    Unicode: U+00231A  */
+#define NOTO_EMOJI_24_SYMBOL_HOURGLASSDONE                            "\xE2\x8C\x9B"     /* Id: 35,   Name: hourglassDone,                            CodePoint: 8987,    Unicode: U+00231B  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2328                                  "\xE2\x8C\xA8"     /* Id: 36,   Name: uni2328,                                  CodePoint: 9000,    Unicode: U+002328  */
+#define NOTO_EMOJI_24_SYMBOL_EJECTBUTTON                              "\xE2\x8F\x8F"     /* Id: 37,   Name: ejectButton,                              CodePoint: 9167,    Unicode: U+0023CF  */
+#define NOTO_EMOJI_24_SYMBOL_FASTFORWARDBUTTON                        "\xE2\x8F\xA9"     /* Id: 38,   Name: fastForwardButton,                        CodePoint: 9193,    Unicode: U+0023E9  */
+#define NOTO_EMOJI_24_SYMBOL_FASTREVERSEBUTTON                        "\xE2\x8F\xAA"     /* Id: 39,   Name: fastReverseButton,                        CodePoint: 9194,    Unicode: U+0023EA  */
+#define NOTO_EMOJI_24_SYMBOL_FASTUPBUTTON                             "\xE2\x8F\xAB"     /* Id: 40,   Name: fastUpButton,                             CodePoint: 9195,    Unicode: U+0023EB  */
+#define NOTO_EMOJI_24_SYMBOL_FASTDOWNBUTTON                           "\xE2\x8F\xAC"     /* Id: 41,   Name: fastDownButton,                           CodePoint: 9196,    Unicode: U+0023EC  */
+#define NOTO_EMOJI_24_SYMBOL_NEXTTRACKBUTTON                          "\xE2\x8F\xAD"     /* Id: 42,   Name: nextTrackButton,                          CodePoint: 9197,    Unicode: U+0023ED  */
+#define NOTO_EMOJI_24_SYMBOL_LASTTRACKBUTTON                          "\xE2\x8F\xAE"     /* Id: 43,   Name: lastTrackButton,                          CodePoint: 9198,    Unicode: U+0023EE  */
+#define NOTO_EMOJI_24_SYMBOL_PLAYORPAUSEBUTTON                        "\xE2\x8F\xAF"     /* Id: 44,   Name: playOrPauseButton,                        CodePoint: 9199,    Unicode: U+0023EF  */
+#define NOTO_EMOJI_24_SYMBOL_UNI23F0                                  "\xE2\x8F\xB0"     /* Id: 45,   Name: uni23F0,                                  CodePoint: 9200,    Unicode: U+0023F0  */
+#define NOTO_EMOJI_24_SYMBOL_UNI23F1                                  "\xE2\x8F\xB1"     /* Id: 46,   Name: uni23F1,                                  CodePoint: 9201,    Unicode: U+0023F1  */
+#define NOTO_EMOJI_24_SYMBOL_UNI23F2                                  "\xE2\x8F\xB2"     /* Id: 47,   Name: uni23F2,                                  CodePoint: 9202,    Unicode: U+0023F2  */
+#define NOTO_EMOJI_24_SYMBOL_HOURGLASSNOTDONE                         "\xE2\x8F\xB3"     /* Id: 48,   Name: hourglassNotDone,                         CodePoint: 9203,    Unicode: U+0023F3  */
+#define NOTO_EMOJI_24_SYMBOL_PAUSEBUTTON                              "\xE2\x8F\xB8"     /* Id: 49,   Name: pauseButton,                              CodePoint: 9208,    Unicode: U+0023F8  */
+#define NOTO_EMOJI_24_SYMBOL_STOPBUTTON                               "\xE2\x8F\xB9"     /* Id: 50,   Name: stopButton,                               CodePoint: 9209,    Unicode: U+0023F9  */
+#define NOTO_EMOJI_24_SYMBOL_RECORDBUTTON                             "\xE2\x8F\xBA"     /* Id: 51,   Name: recordButton,                             CodePoint: 9210,    Unicode: U+0023FA  */
+#define NOTO_EMOJI_24_SYMBOL_CIRCLEDM                                 "\xE2\x93\x82"     /* Id: 52,   Name: circledM,                                 CodePoint: 9410,    Unicode: U+0024C2  */
+#define NOTO_EMOJI_24_SYMBOL_UNI25AA                                  "\xE2\x96\xAA"     /* Id: 53,   Name: uni25AA,                                  CodePoint: 9642,    Unicode: U+0025AA  */
+#define NOTO_EMOJI_24_SYMBOL_UNI25AB                                  "\xE2\x96\xAB"     /* Id: 54,   Name: uni25AB,                                  CodePoint: 9643,    Unicode: U+0025AB  */
+#define NOTO_EMOJI_24_SYMBOL_PLAYBUTTON                               "\xE2\x96\xB6"     /* Id: 55,   Name: playButton,                               CodePoint: 9654,    Unicode: U+0025B6  */
+#define NOTO_EMOJI_24_SYMBOL_REVERSEBUTTON                            "\xE2\x97\x80"     /* Id: 56,   Name: reverseButton,                            CodePoint: 9664,    Unicode: U+0025C0  */
+#define NOTO_EMOJI_24_SYMBOL_WHITEMEDIUMSQUARE                        "\xE2\x97\xBB"     /* Id: 57,   Name: whiteMediumSquare,                        CodePoint: 9723,    Unicode: U+0025FB  */
+#define NOTO_EMOJI_24_SYMBOL_BLACKMEDIUMSQUARE                        "\xE2\x97\xBC"     /* Id: 58,   Name: blackMediumSquare,                        CodePoint: 9724,    Unicode: U+0025FC  */
+#define NOTO_EMOJI_24_SYMBOL_WHITEMEDIUMSMALLSQUARE                   "\xE2\x97\xBD"     /* Id: 59,   Name: whiteMediumSmallSquare,                   CodePoint: 9725,    Unicode: U+0025FD  */
+#define NOTO_EMOJI_24_SYMBOL_BLACKMEDIUMSMALLSQUARE                   "\xE2\x97\xBE"     /* Id: 60,   Name: blackMediumSmallSquare,                   CodePoint: 9726,    Unicode: U+0025FE  */
+#define NOTO_EMOJI_24_SYMBOL_SUN                                      "\xE2\x98\x80"     /* Id: 61,   Name: sun,                                      CodePoint: 9728,    Unicode: U+002600  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2601                                  "\xE2\x98\x81"     /* Id: 62,   Name: uni2601,                                  CodePoint: 9729,    Unicode: U+002601  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2602                                  "\xE2\x98\x82"     /* Id: 63,   Name: uni2602,                                  CodePoint: 9730,    Unicode: U+002602  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2603                                  "\xE2\x98\x83"     /* Id: 64,   Name: uni2603,                                  CodePoint: 9731,    Unicode: U+002603  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2604                                  "\xE2\x98\x84"     /* Id: 65,   Name: uni2604,                                  CodePoint: 9732,    Unicode: U+002604  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2121                                  "\xE2\x98\x8E"     /* Id: 66,   Name: uni2121,                                  CodePoint: 9742,    Unicode: U+00260E  */
+#define NOTO_EMOJI_24_SYMBOL_CHECKBOXWITHCHECK                        "\xE2\x98\x91"     /* Id: 67,   Name: checkBoxWithCheck,                        CodePoint: 9745,    Unicode: U+002611  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2614                                  "\xE2\x98\x94"     /* Id: 68,   Name: uni2614,                                  CodePoint: 9748,    Unicode: U+002614  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2615                                  "\xE2\x98\x95"     /* Id: 69,   Name: uni2615,                                  CodePoint: 9749,    Unicode: U+002615  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2618                                  "\xE2\x98\x98"     /* Id: 70,   Name: uni2618,                                  CodePoint: 9752,    Unicode: U+002618  */
+#define NOTO_EMOJI_24_SYMBOL_INDEXPOINTINGUP                          "\xE2\x98\x9D"     /* Id: 71,   Name: indexPointingUp,                          CodePoint: 9757,    Unicode: U+00261D  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2620                                  "\xE2\x98\xA0"     /* Id: 72,   Name: uni2620,                                  CodePoint: 9760,    Unicode: U+002620  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2622                                  "\xE2\x98\xA2"     /* Id: 73,   Name: uni2622,                                  CodePoint: 9762,    Unicode: U+002622  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2623                                  "\xE2\x98\xA3"     /* Id: 74,   Name: uni2623,                                  CodePoint: 9763,    Unicode: U+002623  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2626                                  "\xE2\x98\xA6"     /* Id: 75,   Name: uni2626,                                  CodePoint: 9766,    Unicode: U+002626  */
+#define NOTO_EMOJI_24_SYMBOL_UNI262A                                  "\xE2\x98\xAA"     /* Id: 76,   Name: uni262A,                                  CodePoint: 9770,    Unicode: U+00262A  */
+#define NOTO_EMOJI_24_SYMBOL_PEACESYMBOL                              "\xE2\x98\xAE"     /* Id: 77,   Name: peaceSymbol,                              CodePoint: 9774,    Unicode: U+00262E  */
+#define NOTO_EMOJI_24_SYMBOL_YINYANG                                  "\xE2\x98\xAF"     /* Id: 78,   Name: yinYang,                                  CodePoint: 9775,    Unicode: U+00262F  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2638                                  "\xE2\x98\xB8"     /* Id: 79,   Name: uni2638,                                  CodePoint: 9784,    Unicode: U+002638  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2639                                  "\xE2\x98\xB9"     /* Id: 80,   Name: uni2639,                                  CodePoint: 9785,    Unicode: U+002639  */
+#define NOTO_EMOJI_24_SYMBOL_SMILEFACE                                "\xE2\x98\xBA"     /* Id: 81,   Name: smileface,                                CodePoint: 9786,    Unicode: U+00263A  */
+#define NOTO_EMOJI_24_SYMBOL_FEMALESIGN                               "\xE2\x99\x80"     /* Id: 82,   Name: femaleSign,                               CodePoint: 9792,    Unicode: U+002640  */
+#define NOTO_EMOJI_24_SYMBOL_MALESIGN                                 "\xE2\x99\x82"     /* Id: 83,   Name: maleSign,                                 CodePoint: 9794,    Unicode: U+002642  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2648                                  "\xE2\x99\x88"     /* Id: 84,   Name: uni2648,                                  CodePoint: 9800,    Unicode: U+002648  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2649                                  "\xE2\x99\x89"     /* Id: 85,   Name: uni2649,                                  CodePoint: 9801,    Unicode: U+002649  */
+#define NOTO_EMOJI_24_SYMBOL_UNI264A                                  "\xE2\x99\x8A"     /* Id: 86,   Name: uni264A,                                  CodePoint: 9802,    Unicode: U+00264A  */
+#define NOTO_EMOJI_24_SYMBOL_UNI264B                                  "\xE2\x99\x8B"     /* Id: 87,   Name: uni264B,                                  CodePoint: 9803,    Unicode: U+00264B  */
+#define NOTO_EMOJI_24_SYMBOL_UNI264C                                  "\xE2\x99\x8C"     /* Id: 88,   Name: uni264C,                                  CodePoint: 9804,    Unicode: U+00264C  */
+#define NOTO_EMOJI_24_SYMBOL_UNI264D                                  "\xE2\x99\x8D"     /* Id: 89,   Name: uni264D,                                  CodePoint: 9805,    Unicode: U+00264D  */
+#define NOTO_EMOJI_24_SYMBOL_UNI264E                                  "\xE2\x99\x8E"     /* Id: 90,   Name: uni264E,                                  CodePoint: 9806,    Unicode: U+00264E  */
+#define NOTO_EMOJI_24_SYMBOL_SCORPIO                                  "\xE2\x99\x8F"     /* Id: 91,   Name: scorpio,                                  CodePoint: 9807,    Unicode: U+00264F  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2650                                  "\xE2\x99\x90"     /* Id: 92,   Name: uni2650,                                  CodePoint: 9808,    Unicode: U+002650  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2651                                  "\xE2\x99\x91"     /* Id: 93,   Name: uni2651,                                  CodePoint: 9809,    Unicode: U+002651  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2652                                  "\xE2\x99\x92"     /* Id: 94,   Name: uni2652,                                  CodePoint: 9810,    Unicode: U+002652  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2653                                  "\xE2\x99\x93"     /* Id: 95,   Name: uni2653,                                  CodePoint: 9811,    Unicode: U+002653  */
+#define NOTO_EMOJI_24_SYMBOL_BLACKCHESSPAWN                           "\xE2\x99\x9F"     /* Id: 96,   Name: blackChessPawn,                           CodePoint: 9823,    Unicode: U+00265F  */
+#define NOTO_EMOJI_24_SYMBOL_SPADESUIT                                "\xE2\x99\xA0"     /* Id: 97,   Name: spadeSuit,                                CodePoint: 9824,    Unicode: U+002660  */
+#define NOTO_EMOJI_24_SYMBOL_CLUBSUIT                                 "\xE2\x99\xA3"     /* Id: 98,   Name: clubSuit,                                 CodePoint: 9827,    Unicode: U+002663  */
+#define NOTO_EMOJI_24_SYMBOL_HEARTSUIT                                "\xE2\x99\xA5"     /* Id: 99,   Name: heartSuit,                                CodePoint: 9829,    Unicode: U+002665  */
+#define NOTO_EMOJI_24_SYMBOL_DIAMONDSUIT                              "\xE2\x99\xA6"     /* Id: 100,  Name: diamondSuit,                              CodePoint: 9830,    Unicode: U+002666  */
+#define NOTO_EMOJI_24_SYMBOL_HOTSPRINGS                               "\xE2\x99\xA8"     /* Id: 101,  Name: hotSprings,                               CodePoint: 9832,    Unicode: U+002668  */
+#define NOTO_EMOJI_24_SYMBOL_RECYCLINGSYMBOL                          "\xE2\x99\xBB"     /* Id: 102,  Name: recyclingSymbol,                          CodePoint: 9851,    Unicode: U+00267B  */
+#define NOTO_EMOJI_24_SYMBOL_UNI267E                                  "\xE2\x99\xBE"     /* Id: 103,  Name: uni267E,                                  CodePoint: 9854,    Unicode: U+00267E  */
+#define NOTO_EMOJI_24_SYMBOL_UNI267F                                  "\xE2\x99\xBF"     /* Id: 104,  Name: uni267F,                                  CodePoint: 9855,    Unicode: U+00267F  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2692                                  "\xE2\x9A\x92"     /* Id: 105,  Name: uni2692,                                  CodePoint: 9874,    Unicode: U+002692  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2693                                  "\xE2\x9A\x93"     /* Id: 106,  Name: uni2693,                                  CodePoint: 9875,    Unicode: U+002693  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2694                                  "\xE2\x9A\x94"     /* Id: 107,  Name: uni2694,                                  CodePoint: 9876,    Unicode: U+002694  */
+#define NOTO_EMOJI_24_SYMBOL_MEDICALSYMBOL                            "\xE2\x9A\x95"     /* Id: 108,  Name: medicalSymbol,                            CodePoint: 9877,    Unicode: U+002695  */
+#define NOTO_EMOJI_24_SYMBOL_BALANCESCALE                             "\xE2\x9A\x96"     /* Id: 109,  Name: balanceScale,                             CodePoint: 9878,    Unicode: U+002696  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2697                                  "\xE2\x9A\x97"     /* Id: 110,  Name: uni2697,                                  CodePoint: 9879,    Unicode: U+002697  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2699                                  "\xE2\x9A\x99"     /* Id: 111,  Name: uni2699,                                  CodePoint: 9881,    Unicode: U+002699  */
+#define NOTO_EMOJI_24_SYMBOL_UNI269B                                  "\xE2\x9A\x9B"     /* Id: 112,  Name: uni269B,                                  CodePoint: 9883,    Unicode: U+00269B  */
+#define NOTO_EMOJI_24_SYMBOL_UNI269C                                  "\xE2\x9A\x9C"     /* Id: 113,  Name: uni269C,                                  CodePoint: 9884,    Unicode: U+00269C  */
+#define NOTO_EMOJI_24_SYMBOL_WARNING                                  "\xE2\x9A\xA0"     /* Id: 114,  Name: warning,                                  CodePoint: 9888,    Unicode: U+0026A0  */
+#define NOTO_EMOJI_24_SYMBOL_HIGHVOLTAGE                              "\xE2\x9A\xA1"     /* Id: 115,  Name: highVoltage,                              CodePoint: 9889,    Unicode: U+0026A1  */
+#define NOTO_EMOJI_24_SYMBOL_TRANSGENDERSYMBOL                        "\xE2\x9A\xA7"     /* Id: 116,  Name: transgenderSymbol,                        CodePoint: 9895,    Unicode: U+0026A7  */
+#define NOTO_EMOJI_24_SYMBOL_CIRCLE                                   "\xE2\x9A\xAA"     /* Id: 117,  Name: circle,                                   CodePoint: 9898,    Unicode: U+0026AA  */
+#define NOTO_EMOJI_24_SYMBOL_UNI25CF                                  "\xE2\x9A\xAB"     /* Id: 118,  Name: uni25CF,                                  CodePoint: 9899,    Unicode: U+0026AB  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26B0                                  "\xE2\x9A\xB0"     /* Id: 119,  Name: uni26B0,                                  CodePoint: 9904,    Unicode: U+0026B0  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26B1                                  "\xE2\x9A\xB1"     /* Id: 120,  Name: uni26B1,                                  CodePoint: 9905,    Unicode: U+0026B1  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26BD                                  "\xE2\x9A\xBD"     /* Id: 121,  Name: uni26BD,                                  CodePoint: 9917,    Unicode: U+0026BD  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26BE                                  "\xE2\x9A\xBE"     /* Id: 122,  Name: uni26BE,                                  CodePoint: 9918,    Unicode: U+0026BE  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26C4                                  "\xE2\x9B\x84"     /* Id: 123,  Name: uni26C4,                                  CodePoint: 9924,    Unicode: U+0026C4  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26C5                                  "\xE2\x9B\x85"     /* Id: 124,  Name: uni26C5,                                  CodePoint: 9925,    Unicode: U+0026C5  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26C8                                  "\xE2\x9B\x88"     /* Id: 125,  Name: uni26C8,                                  CodePoint: 9928,    Unicode: U+0026C8  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26CE                                  "\xE2\x9B\x8E"     /* Id: 126,  Name: uni26CE,                                  CodePoint: 9934,    Unicode: U+0026CE  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26CF                                  "\xE2\x9B\x8F"     /* Id: 127,  Name: uni26CF,                                  CodePoint: 9935,    Unicode: U+0026CF  */
+#define NOTO_EMOJI_24_SYMBOL_RESCUEWORKERSHELMET                      "\xE2\x9B\x91"     /* Id: 128,  Name: rescueWorkerSHelmet,                      CodePoint: 9937,    Unicode: U+0026D1  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26D3                                  "\xE2\x9B\x93"     /* Id: 129,  Name: uni26D3,                                  CodePoint: 9939,    Unicode: U+0026D3  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26D4                                  "\xE2\x9B\x94"     /* Id: 130,  Name: uni26D4,                                  CodePoint: 9940,    Unicode: U+0026D4  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26E9                                  "\xE2\x9B\xA9"     /* Id: 131,  Name: uni26E9,                                  CodePoint: 9961,    Unicode: U+0026E9  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26EA                                  "\xE2\x9B\xAA"     /* Id: 132,  Name: uni26EA,                                  CodePoint: 9962,    Unicode: U+0026EA  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26F0                                  "\xE2\x9B\xB0"     /* Id: 133,  Name: uni26F0,                                  CodePoint: 9968,    Unicode: U+0026F0  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26F1                                  "\xE2\x9B\xB1"     /* Id: 134,  Name: uni26F1,                                  CodePoint: 9969,    Unicode: U+0026F1  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26F2                                  "\xE2\x9B\xB2"     /* Id: 135,  Name: uni26F2,                                  CodePoint: 9970,    Unicode: U+0026F2  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26F3                                  "\xE2\x9B\xB3"     /* Id: 136,  Name: uni26F3,                                  CodePoint: 9971,    Unicode: U+0026F3  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26F4                                  "\xE2\x9B\xB4"     /* Id: 137,  Name: uni26F4,                                  CodePoint: 9972,    Unicode: U+0026F4  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26F5                                  "\xE2\x9B\xB5"     /* Id: 138,  Name: uni26F5,                                  CodePoint: 9973,    Unicode: U+0026F5  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26F7                                  "\xE2\x9B\xB7"     /* Id: 139,  Name: uni26F7,                                  CodePoint: 9975,    Unicode: U+0026F7  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26F8                                  "\xE2\x9B\xB8"     /* Id: 140,  Name: uni26F8,                                  CodePoint: 9976,    Unicode: U+0026F8  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONBOUNCINGBALL                       "\xE2\x9B\xB9"     /* Id: 141,  Name: personBouncingBall,                       CodePoint: 9977,    Unicode: U+0026F9  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26FA                                  "\xE2\x9B\xBA"     /* Id: 142,  Name: uni26FA,                                  CodePoint: 9978,    Unicode: U+0026FA  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26FD                                  "\xE2\x9B\xBD"     /* Id: 143,  Name: uni26FD,                                  CodePoint: 9981,    Unicode: U+0026FD  */
+#define NOTO_EMOJI_24_SYMBOL_SCISSORS                                 "\xE2\x9C\x82"     /* Id: 144,  Name: scissors,                                 CodePoint: 9986,    Unicode: U+002702  */
+#define NOTO_EMOJI_24_SYMBOL_CHECKMARKBUTTON                          "\xE2\x9C\x85"     /* Id: 145,  Name: checkMarkButton,                          CodePoint: 9989,    Unicode: U+002705  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2708                                  "\xE2\x9C\x88"     /* Id: 146,  Name: uni2708,                                  CodePoint: 9992,    Unicode: U+002708  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2709                                  "\xE2\x9C\x89"     /* Id: 147,  Name: uni2709,                                  CodePoint: 9993,    Unicode: U+002709  */
+#define NOTO_EMOJI_24_SYMBOL_UNI270A                                  "\xE2\x9C\x8A"     /* Id: 148,  Name: uni270A,                                  CodePoint: 9994,    Unicode: U+00270A  */
+#define NOTO_EMOJI_24_SYMBOL_UNI270B                                  "\xE2\x9C\x8B"     /* Id: 149,  Name: uni270B,                                  CodePoint: 9995,    Unicode: U+00270B  */
+#define NOTO_EMOJI_24_SYMBOL_UNI270C                                  "\xE2\x9C\x8C"     /* Id: 150,  Name: uni270C,                                  CodePoint: 9996,    Unicode: U+00270C  */
+#define NOTO_EMOJI_24_SYMBOL_UNI270D                                  "\xE2\x9C\x8D"     /* Id: 151,  Name: uni270D,                                  CodePoint: 9997,    Unicode: U+00270D  */
+#define NOTO_EMOJI_24_SYMBOL_UNI270F                                  "\xE2\x9C\x8F"     /* Id: 152,  Name: uni270F,                                  CodePoint: 9999,    Unicode: U+00270F  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2712                                  "\xE2\x9C\x92"     /* Id: 153,  Name: uni2712,                                  CodePoint: 10002,   Unicode: U+002712  */
+#define NOTO_EMOJI_24_SYMBOL_CHECKMARK                                "\xE2\x9C\x94"     /* Id: 154,  Name: checkMark,                                CodePoint: 10004,   Unicode: U+002714  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2716                                  "\xE2\x9C\x96"     /* Id: 155,  Name: uni2716,                                  CodePoint: 10006,   Unicode: U+002716  */
+#define NOTO_EMOJI_24_SYMBOL_LATINCROSS                               "\xE2\x9C\x9D"     /* Id: 156,  Name: latinCross,                               CodePoint: 10013,   Unicode: U+00271D  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2721                                  "\xE2\x9C\xA1"     /* Id: 157,  Name: uni2721,                                  CodePoint: 10017,   Unicode: U+002721  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2728                                  "\xE2\x9C\xA8"     /* Id: 158,  Name: uni2728,                                  CodePoint: 10024,   Unicode: U+002728  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2733                                  "\xE2\x9C\xB3"     /* Id: 159,  Name: uni2733,                                  CodePoint: 10035,   Unicode: U+002733  */
+#define NOTO_EMOJI_24_SYMBOL_EIGHTPOINTEDSTAR                         "\xE2\x9C\xB4"     /* Id: 160,  Name: eightPointedStar,                         CodePoint: 10036,   Unicode: U+002734  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2744                                  "\xE2\x9D\x84"     /* Id: 161,  Name: uni2744,                                  CodePoint: 10052,   Unicode: U+002744  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2747                                  "\xE2\x9D\x87"     /* Id: 162,  Name: uni2747,                                  CodePoint: 10055,   Unicode: U+002747  */
+#define NOTO_EMOJI_24_SYMBOL_UNI274C                                  "\xE2\x9D\x8C"     /* Id: 163,  Name: uni274C,                                  CodePoint: 10060,   Unicode: U+00274C  */
+#define NOTO_EMOJI_24_SYMBOL_CROSSMARKBUTTON                          "\xE2\x9D\x8E"     /* Id: 164,  Name: crossMarkButton,                          CodePoint: 10062,   Unicode: U+00274E  */
+#define NOTO_EMOJI_24_SYMBOL_REDQUESTIONMARK                          "\xE2\x9D\x93"     /* Id: 165,  Name: redQuestionMark,                          CodePoint: 10067,   Unicode: U+002753  */
+#define NOTO_EMOJI_24_SYMBOL_WHITEQUESTIONMARK                        "\xE2\x9D\x94"     /* Id: 166,  Name: whiteQuestionMark,                        CodePoint: 10068,   Unicode: U+002754  */
+#define NOTO_EMOJI_24_SYMBOL_WHITEEXCLAMATIONMARK                     "\xE2\x9D\x95"     /* Id: 167,  Name: whiteExclamationMark,                     CodePoint: 10069,   Unicode: U+002755  */
+#define NOTO_EMOJI_24_SYMBOL_REDEXCLAMATIONMARK                       "\xE2\x9D\x97"     /* Id: 168,  Name: redExclamationMark,                       CodePoint: 10071,   Unicode: U+002757  */
+#define NOTO_EMOJI_24_SYMBOL_HEARTEXCLAMATION                         "\xE2\x9D\xA3"     /* Id: 169,  Name: heartExclamation,                         CodePoint: 10083,   Unicode: U+002763  */
+#define NOTO_EMOJI_24_SYMBOL_REDHEART                                 "\xE2\x9D\xA4"     /* Id: 170,  Name: redHeart,                                 CodePoint: 10084,   Unicode: U+002764  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2795                                  "\xE2\x9E\x95"     /* Id: 171,  Name: uni2795,                                  CodePoint: 10133,   Unicode: U+002795  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2796                                  "\xE2\x9E\x96"     /* Id: 172,  Name: uni2796,                                  CodePoint: 10134,   Unicode: U+002796  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2797                                  "\xE2\x9E\x97"     /* Id: 173,  Name: uni2797,                                  CodePoint: 10135,   Unicode: U+002797  */
+#define NOTO_EMOJI_24_SYMBOL_ARROWRIGHT                               "\xE2\x9E\xA1"     /* Id: 174,  Name: arrowright,                               CodePoint: 10145,   Unicode: U+0027A1  */
+#define NOTO_EMOJI_24_SYMBOL_UNI27B0                                  "\xE2\x9E\xB0"     /* Id: 175,  Name: uni27B0,                                  CodePoint: 10160,   Unicode: U+0027B0  */
+#define NOTO_EMOJI_24_SYMBOL_UNI27BF                                  "\xE2\x9E\xBF"     /* Id: 176,  Name: uni27BF,                                  CodePoint: 10175,   Unicode: U+0027BF  */
+#define NOTO_EMOJI_24_SYMBOL_RIGHTARROWCURVINGUP                      "\xE2\xA4\xB4"     /* Id: 177,  Name: rightArrowCurvingUp,                      CodePoint: 10548,   Unicode: U+002934  */
+#define NOTO_EMOJI_24_SYMBOL_RIGHTARROWCURVINGDOWN                    "\xE2\xA4\xB5"     /* Id: 178,  Name: rightArrowCurvingDown,                    CodePoint: 10549,   Unicode: U+002935  */
+#define NOTO_EMOJI_24_SYMBOL_ARROWLEFT                                "\xE2\xAC\x85"     /* Id: 179,  Name: arrowleft,                                CodePoint: 11013,   Unicode: U+002B05  */
+#define NOTO_EMOJI_24_SYMBOL_ARROWUP                                  "\xE2\xAC\x86"     /* Id: 180,  Name: arrowup,                                  CodePoint: 11014,   Unicode: U+002B06  */
+#define NOTO_EMOJI_24_SYMBOL_ARROWDOWN                                "\xE2\xAC\x87"     /* Id: 181,  Name: arrowdown,                                CodePoint: 11015,   Unicode: U+002B07  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2B1B                                  "\xE2\xAC\x9B"     /* Id: 182,  Name: uni2B1B,                                  CodePoint: 11035,   Unicode: U+002B1B  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2B1C                                  "\xE2\xAC\x9C"     /* Id: 183,  Name: uni2B1C,                                  CodePoint: 11036,   Unicode: U+002B1C  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2B50                                  "\xE2\xAD\x90"     /* Id: 184,  Name: uni2B50,                                  CodePoint: 11088,   Unicode: U+002B50  */
+#define NOTO_EMOJI_24_SYMBOL_HOLLOWREDCIRCLE                          "\xE2\xAD\x95"     /* Id: 185,  Name: hollowRedCircle,                          CodePoint: 11093,   Unicode: U+002B55  */
+#define NOTO_EMOJI_24_SYMBOL_WAVYDASH                                 "\xE3\x80\xB0"     /* Id: 186,  Name: wavyDash,                                 CodePoint: 12336,   Unicode: U+003030  */
+#define NOTO_EMOJI_24_SYMBOL_PARTALTERATIONMARK                       "\xE3\x80\xBD"     /* Id: 187,  Name: partAlterationMark,                       CodePoint: 12349,   Unicode: U+00303D  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESECONGRATULATIONSBUTTON            "\xE3\x8A\x97"     /* Id: 188,  Name: japaneseCongratulationsButton,            CodePoint: 12951,   Unicode: U+003297  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESESECRETBUTTON                     "\xE3\x8A\x99"     /* Id: 189,  Name: japaneseSecretButton,                     CodePoint: 12953,   Unicode: U+003299  */
+#define NOTO_EMOJI_24_SYMBOL_TILEREDDRAGON                            "\xF0\x9F\x80\x84" /* Id: 190,  Name: tileRedDragon,                            CodePoint: 126980,  Unicode: U+01F004  */
+#define NOTO_EMOJI_24_SYMBOL_JOKER                                    "\xF0\x9F\x83\x8F" /* Id: 191,  Name: joker,                                    CodePoint: 127183,  Unicode: U+01F0CF  */
+#define NOTO_EMOJI_24_SYMBOL_ABUTTONBLOODTYPE                         "\xF0\x9F\x85\xB0" /* Id: 192,  Name: aButtonBloodType,                         CodePoint: 127344,  Unicode: U+01F170  */
+#define NOTO_EMOJI_24_SYMBOL_BBUTTONBLOODTYPE                         "\xF0\x9F\x85\xB1" /* Id: 193,  Name: bButtonBloodType,                         CodePoint: 127345,  Unicode: U+01F171  */
+#define NOTO_EMOJI_24_SYMBOL_OBUTTONBLOODTYPE                         "\xF0\x9F\x85\xBE" /* Id: 194,  Name: oButtonBloodType,                         CodePoint: 127358,  Unicode: U+01F17E  */
+#define NOTO_EMOJI_24_SYMBOL_PBUTTON                                  "\xF0\x9F\x85\xBF" /* Id: 195,  Name: pButton,                                  CodePoint: 127359,  Unicode: U+01F17F  */
+#define NOTO_EMOJI_24_SYMBOL_ABBUTTONBLOODTYPE                        "\xF0\x9F\x86\x8E" /* Id: 196,  Name: abButtonBloodType,                        CodePoint: 127374,  Unicode: U+01F18E  */
+#define NOTO_EMOJI_24_SYMBOL_CLBUTTON                                 "\xF0\x9F\x86\x91" /* Id: 197,  Name: clButton,                                 CodePoint: 127377,  Unicode: U+01F191  */
+#define NOTO_EMOJI_24_SYMBOL_COOLBUTTON                               "\xF0\x9F\x86\x92" /* Id: 198,  Name: coolButton,                               CodePoint: 127378,  Unicode: U+01F192  */
+#define NOTO_EMOJI_24_SYMBOL_FREEBUTTON                               "\xF0\x9F\x86\x93" /* Id: 199,  Name: freeButton,                               CodePoint: 127379,  Unicode: U+01F193  */
+#define NOTO_EMOJI_24_SYMBOL_IDBUTTON                                 "\xF0\x9F\x86\x94" /* Id: 200,  Name: idButton,                                 CodePoint: 127380,  Unicode: U+01F194  */
+#define NOTO_EMOJI_24_SYMBOL_NEWBUTTON                                "\xF0\x9F\x86\x95" /* Id: 201,  Name: newButton,                                CodePoint: 127381,  Unicode: U+01F195  */
+#define NOTO_EMOJI_24_SYMBOL_NGBUTTON                                 "\xF0\x9F\x86\x96" /* Id: 202,  Name: ngButton,                                 CodePoint: 127382,  Unicode: U+01F196  */
+#define NOTO_EMOJI_24_SYMBOL_OKBUTTON                                 "\xF0\x9F\x86\x97" /* Id: 203,  Name: okButton,                                 CodePoint: 127383,  Unicode: U+01F197  */
+#define NOTO_EMOJI_24_SYMBOL_SOSBUTTON                                "\xF0\x9F\x86\x98" /* Id: 204,  Name: sosButton,                                CodePoint: 127384,  Unicode: U+01F198  */
+#define NOTO_EMOJI_24_SYMBOL_UPBUTTON                                 "\xF0\x9F\x86\x99" /* Id: 205,  Name: upButton,                                 CodePoint: 127385,  Unicode: U+01F199  */
+#define NOTO_EMOJI_24_SYMBOL_VSBUTTON                                 "\xF0\x9F\x86\x9A" /* Id: 206,  Name: vsButton,                                 CodePoint: 127386,  Unicode: U+01F19A  */
+#define NOTO_EMOJI_24_SYMBOL_AREGION                                  "\xF0\x9F\x87\xA6" /* Id: 207,  Name: ARegion,                                  CodePoint: 127462,  Unicode: U+01F1E6  */
+#define NOTO_EMOJI_24_SYMBOL_BREGION                                  "\xF0\x9F\x87\xA7" /* Id: 208,  Name: BRegion,                                  CodePoint: 127463,  Unicode: U+01F1E7  */
+#define NOTO_EMOJI_24_SYMBOL_CREGION                                  "\xF0\x9F\x87\xA8" /* Id: 209,  Name: CRegion,                                  CodePoint: 127464,  Unicode: U+01F1E8  */
+#define NOTO_EMOJI_24_SYMBOL_DREGION                                  "\xF0\x9F\x87\xA9" /* Id: 210,  Name: DRegion,                                  CodePoint: 127465,  Unicode: U+01F1E9  */
+#define NOTO_EMOJI_24_SYMBOL_EREGION                                  "\xF0\x9F\x87\xAA" /* Id: 211,  Name: ERegion,                                  CodePoint: 127466,  Unicode: U+01F1EA  */
+#define NOTO_EMOJI_24_SYMBOL_FREGION                                  "\xF0\x9F\x87\xAB" /* Id: 212,  Name: FRegion,                                  CodePoint: 127467,  Unicode: U+01F1EB  */
+#define NOTO_EMOJI_24_SYMBOL_GREGION                                  "\xF0\x9F\x87\xAC" /* Id: 213,  Name: GRegion,                                  CodePoint: 127468,  Unicode: U+01F1EC  */
+#define NOTO_EMOJI_24_SYMBOL_HREGION                                  "\xF0\x9F\x87\xAD" /* Id: 214,  Name: HRegion,                                  CodePoint: 127469,  Unicode: U+01F1ED  */
+#define NOTO_EMOJI_24_SYMBOL_IREGION                                  "\xF0\x9F\x87\xAE" /* Id: 215,  Name: IRegion,                                  CodePoint: 127470,  Unicode: U+01F1EE  */
+#define NOTO_EMOJI_24_SYMBOL_JREGION                                  "\xF0\x9F\x87\xAF" /* Id: 216,  Name: JRegion,                                  CodePoint: 127471,  Unicode: U+01F1EF  */
+#define NOTO_EMOJI_24_SYMBOL_KREGION                                  "\xF0\x9F\x87\xB0" /* Id: 217,  Name: KRegion,                                  CodePoint: 127472,  Unicode: U+01F1F0  */
+#define NOTO_EMOJI_24_SYMBOL_LREGION                                  "\xF0\x9F\x87\xB1" /* Id: 218,  Name: LRegion,                                  CodePoint: 127473,  Unicode: U+01F1F1  */
+#define NOTO_EMOJI_24_SYMBOL_MREGION                                  "\xF0\x9F\x87\xB2" /* Id: 219,  Name: MRegion,                                  CodePoint: 127474,  Unicode: U+01F1F2  */
+#define NOTO_EMOJI_24_SYMBOL_NREGION                                  "\xF0\x9F\x87\xB3" /* Id: 220,  Name: NRegion,                                  CodePoint: 127475,  Unicode: U+01F1F3  */
+#define NOTO_EMOJI_24_SYMBOL_OREGION                                  "\xF0\x9F\x87\xB4" /* Id: 221,  Name: ORegion,                                  CodePoint: 127476,  Unicode: U+01F1F4  */
+#define NOTO_EMOJI_24_SYMBOL_PREGION                                  "\xF0\x9F\x87\xB5" /* Id: 222,  Name: PRegion,                                  CodePoint: 127477,  Unicode: U+01F1F5  */
+#define NOTO_EMOJI_24_SYMBOL_QREGION                                  "\xF0\x9F\x87\xB6" /* Id: 223,  Name: QRegion,                                  CodePoint: 127478,  Unicode: U+01F1F6  */
+#define NOTO_EMOJI_24_SYMBOL_RREGION                                  "\xF0\x9F\x87\xB7" /* Id: 224,  Name: RRegion,                                  CodePoint: 127479,  Unicode: U+01F1F7  */
+#define NOTO_EMOJI_24_SYMBOL_SREGION                                  "\xF0\x9F\x87\xB8" /* Id: 225,  Name: SRegion,                                  CodePoint: 127480,  Unicode: U+01F1F8  */
+#define NOTO_EMOJI_24_SYMBOL_TREGION                                  "\xF0\x9F\x87\xB9" /* Id: 226,  Name: TRegion,                                  CodePoint: 127481,  Unicode: U+01F1F9  */
+#define NOTO_EMOJI_24_SYMBOL_UREGION                                  "\xF0\x9F\x87\xBA" /* Id: 227,  Name: URegion,                                  CodePoint: 127482,  Unicode: U+01F1FA  */
+#define NOTO_EMOJI_24_SYMBOL_VREGION                                  "\xF0\x9F\x87\xBB" /* Id: 228,  Name: VRegion,                                  CodePoint: 127483,  Unicode: U+01F1FB  */
+#define NOTO_EMOJI_24_SYMBOL_WREGION                                  "\xF0\x9F\x87\xBC" /* Id: 229,  Name: WRegion,                                  CodePoint: 127484,  Unicode: U+01F1FC  */
+#define NOTO_EMOJI_24_SYMBOL_XREGION                                  "\xF0\x9F\x87\xBD" /* Id: 230,  Name: XRegion,                                  CodePoint: 127485,  Unicode: U+01F1FD  */
+#define NOTO_EMOJI_24_SYMBOL_YREGION                                  "\xF0\x9F\x87\xBE" /* Id: 231,  Name: YRegion,                                  CodePoint: 127486,  Unicode: U+01F1FE  */
+#define NOTO_EMOJI_24_SYMBOL_ZREGION                                  "\xF0\x9F\x87\xBF" /* Id: 232,  Name: ZRegion,                                  CodePoint: 127487,  Unicode: U+01F1FF  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESEHEREBUTTON                       "\xF0\x9F\x88\x81" /* Id: 233,  Name: japaneseHereButton,                       CodePoint: 127489,  Unicode: U+01F201  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESESERVICECHARGEBUTTON              "\xF0\x9F\x88\x82" /* Id: 234,  Name: japaneseServiceChargeButton,              CodePoint: 127490,  Unicode: U+01F202  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESEFREEOFCHARGEBUTTON               "\xF0\x9F\x88\x9A" /* Id: 235,  Name: japaneseFreeOfChargeButton,               CodePoint: 127514,  Unicode: U+01F21A  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESERESERVEDBUTTON                   "\xF0\x9F\x88\xAF" /* Id: 236,  Name: japaneseReservedButton,                   CodePoint: 127535,  Unicode: U+01F22F  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESEPROHIBITEDBUTTON                 "\xF0\x9F\x88\xB2" /* Id: 237,  Name: japaneseProhibitedButton,                 CodePoint: 127538,  Unicode: U+01F232  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESEVACANCYBUTTON                    "\xF0\x9F\x88\xB3" /* Id: 238,  Name: japaneseVacancyButton,                    CodePoint: 127539,  Unicode: U+01F233  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESEPASSINGGRADEBUTTON               "\xF0\x9F\x88\xB4" /* Id: 239,  Name: japanesePassingGradeButton,               CodePoint: 127540,  Unicode: U+01F234  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESENOVACANCYBUTTON                  "\xF0\x9F\x88\xB5" /* Id: 240,  Name: japaneseNoVacancyButton,                  CodePoint: 127541,  Unicode: U+01F235  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESENOTFREEOFCHARGEBUTTON            "\xF0\x9F\x88\xB6" /* Id: 241,  Name: japaneseNotFreeOfChargeButton,            CodePoint: 127542,  Unicode: U+01F236  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESEMONTHLYAMOUNTBUTTON              "\xF0\x9F\x88\xB7" /* Id: 242,  Name: japaneseMonthlyAmountButton,              CodePoint: 127543,  Unicode: U+01F237  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESEAPPLICATIONBUTTON                "\xF0\x9F\x88\xB8" /* Id: 243,  Name: japaneseApplicationButton,                CodePoint: 127544,  Unicode: U+01F238  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESEDISCOUNTBUTTON                   "\xF0\x9F\x88\xB9" /* Id: 244,  Name: japaneseDiscountButton,                   CodePoint: 127545,  Unicode: U+01F239  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESEOPENFORBUSINESSBUTTON            "\xF0\x9F\x88\xBA" /* Id: 245,  Name: japaneseOpenForBusinessButton,            CodePoint: 127546,  Unicode: U+01F23A  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESEBARGAINBUTTON                    "\xF0\x9F\x89\x90" /* Id: 246,  Name: japaneseBargainButton,                    CodePoint: 127568,  Unicode: U+01F250  */
+#define NOTO_EMOJI_24_SYMBOL_JAPANESEACCEPTABLEBUTTON                 "\xF0\x9F\x89\x91" /* Id: 247,  Name: japaneseAcceptableButton,                 CodePoint: 127569,  Unicode: U+01F251  */
+#define NOTO_EMOJI_24_SYMBOL_U1F300                                   "\xF0\x9F\x8C\x80" /* Id: 248,  Name: u1F300,                                   CodePoint: 127744,  Unicode: U+01F300  */
+#define NOTO_EMOJI_24_SYMBOL_U1F301                                   "\xF0\x9F\x8C\x81" /* Id: 249,  Name: u1F301,                                   CodePoint: 127745,  Unicode: U+01F301  */
+#define NOTO_EMOJI_24_SYMBOL_U1F302                                   "\xF0\x9F\x8C\x82" /* Id: 250,  Name: u1F302,                                   CodePoint: 127746,  Unicode: U+01F302  */
+#define NOTO_EMOJI_24_SYMBOL_NIGHTWITHSTARS                           "\xF0\x9F\x8C\x83" /* Id: 251,  Name: nightWithStars,                           CodePoint: 127747,  Unicode: U+01F303  */
+#define NOTO_EMOJI_24_SYMBOL_U1F304                                   "\xF0\x9F\x8C\x84" /* Id: 252,  Name: u1F304,                                   CodePoint: 127748,  Unicode: U+01F304  */
+#define NOTO_EMOJI_24_SYMBOL_U1F305                                   "\xF0\x9F\x8C\x85" /* Id: 253,  Name: u1F305,                                   CodePoint: 127749,  Unicode: U+01F305  */
+#define NOTO_EMOJI_24_SYMBOL_U1F306                                   "\xF0\x9F\x8C\x86" /* Id: 254,  Name: u1F306,                                   CodePoint: 127750,  Unicode: U+01F306  */
+#define NOTO_EMOJI_24_SYMBOL_SUNSET                                   "\xF0\x9F\x8C\x87" /* Id: 255,  Name: sunset,                                   CodePoint: 127751,  Unicode: U+01F307  */
+#define NOTO_EMOJI_24_SYMBOL_U1F308                                   "\xF0\x9F\x8C\x88" /* Id: 256,  Name: u1F308,                                   CodePoint: 127752,  Unicode: U+01F308  */
+#define NOTO_EMOJI_24_SYMBOL_U1F309                                   "\xF0\x9F\x8C\x89" /* Id: 257,  Name: u1F309,                                   CodePoint: 127753,  Unicode: U+01F309  */
+#define NOTO_EMOJI_24_SYMBOL_U1F30A                                   "\xF0\x9F\x8C\x8A" /* Id: 258,  Name: u1F30A,                                   CodePoint: 127754,  Unicode: U+01F30A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F30B                                   "\xF0\x9F\x8C\x8B" /* Id: 259,  Name: u1F30B,                                   CodePoint: 127755,  Unicode: U+01F30B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F30C                                   "\xF0\x9F\x8C\x8C" /* Id: 260,  Name: u1F30C,                                   CodePoint: 127756,  Unicode: U+01F30C  */
+#define NOTO_EMOJI_24_SYMBOL_GLOBESHOWINGEUROPEAFRICA                 "\xF0\x9F\x8C\x8D" /* Id: 261,  Name: globeShowingEuropeAfrica,                 CodePoint: 127757,  Unicode: U+01F30D  */
+#define NOTO_EMOJI_24_SYMBOL_GLOBESHOWINAMERICAS                      "\xF0\x9F\x8C\x8E" /* Id: 262,  Name: globeShowinAmericas,                      CodePoint: 127758,  Unicode: U+01F30E  */
+#define NOTO_EMOJI_24_SYMBOL_GLOBESHOWINGASIAAUSTRALIA                "\xF0\x9F\x8C\x8F" /* Id: 263,  Name: globeShowingAsiaAustralia,                CodePoint: 127759,  Unicode: U+01F30F  */
+#define NOTO_EMOJI_24_SYMBOL_GLOBEWITHMERIDIANS                       "\xF0\x9F\x8C\x90" /* Id: 264,  Name: globeWithMeridians,                       CodePoint: 127760,  Unicode: U+01F310  */
+#define NOTO_EMOJI_24_SYMBOL_U1F311                                   "\xF0\x9F\x8C\x91" /* Id: 265,  Name: u1F311,                                   CodePoint: 127761,  Unicode: U+01F311  */
+#define NOTO_EMOJI_24_SYMBOL_U1F312                                   "\xF0\x9F\x8C\x92" /* Id: 266,  Name: u1F312,                                   CodePoint: 127762,  Unicode: U+01F312  */
+#define NOTO_EMOJI_24_SYMBOL_U1F313                                   "\xF0\x9F\x8C\x93" /* Id: 267,  Name: u1F313,                                   CodePoint: 127763,  Unicode: U+01F313  */
+#define NOTO_EMOJI_24_SYMBOL_U1F314                                   "\xF0\x9F\x8C\x94" /* Id: 268,  Name: u1F314,                                   CodePoint: 127764,  Unicode: U+01F314  */
+#define NOTO_EMOJI_24_SYMBOL_U1F315                                   "\xF0\x9F\x8C\x95" /* Id: 269,  Name: u1F315,                                   CodePoint: 127765,  Unicode: U+01F315  */
+#define NOTO_EMOJI_24_SYMBOL_U1F316                                   "\xF0\x9F\x8C\x96" /* Id: 270,  Name: u1F316,                                   CodePoint: 127766,  Unicode: U+01F316  */
+#define NOTO_EMOJI_24_SYMBOL_U1F317                                   "\xF0\x9F\x8C\x97" /* Id: 271,  Name: u1F317,                                   CodePoint: 127767,  Unicode: U+01F317  */
+#define NOTO_EMOJI_24_SYMBOL_U1F318                                   "\xF0\x9F\x8C\x98" /* Id: 272,  Name: u1F318,                                   CodePoint: 127768,  Unicode: U+01F318  */
+#define NOTO_EMOJI_24_SYMBOL_U1F319                                   "\xF0\x9F\x8C\x99" /* Id: 273,  Name: u1F319,                                   CodePoint: 127769,  Unicode: U+01F319  */
+#define NOTO_EMOJI_24_SYMBOL_U1F31A                                   "\xF0\x9F\x8C\x9A" /* Id: 274,  Name: u1F31A,                                   CodePoint: 127770,  Unicode: U+01F31A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F31B                                   "\xF0\x9F\x8C\x9B" /* Id: 275,  Name: u1F31B,                                   CodePoint: 127771,  Unicode: U+01F31B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F31C                                   "\xF0\x9F\x8C\x9C" /* Id: 276,  Name: u1F31C,                                   CodePoint: 127772,  Unicode: U+01F31C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F31D                                   "\xF0\x9F\x8C\x9D" /* Id: 277,  Name: u1F31D,                                   CodePoint: 127773,  Unicode: U+01F31D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F31E                                   "\xF0\x9F\x8C\x9E" /* Id: 278,  Name: u1F31E,                                   CodePoint: 127774,  Unicode: U+01F31E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F31F                                   "\xF0\x9F\x8C\x9F" /* Id: 279,  Name: u1F31F,                                   CodePoint: 127775,  Unicode: U+01F31F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F320                                   "\xF0\x9F\x8C\xA0" /* Id: 280,  Name: u1F320,                                   CodePoint: 127776,  Unicode: U+01F320  */
+#define NOTO_EMOJI_24_SYMBOL_U1F321                                   "\xF0\x9F\x8C\xA1" /* Id: 281,  Name: u1F321,                                   CodePoint: 127777,  Unicode: U+01F321  */
+#define NOTO_EMOJI_24_SYMBOL_U1F324                                   "\xF0\x9F\x8C\xA4" /* Id: 282,  Name: u1F324,                                   CodePoint: 127780,  Unicode: U+01F324  */
+#define NOTO_EMOJI_24_SYMBOL_U1F325                                   "\xF0\x9F\x8C\xA5" /* Id: 283,  Name: u1F325,                                   CodePoint: 127781,  Unicode: U+01F325  */
+#define NOTO_EMOJI_24_SYMBOL_U1F326                                   "\xF0\x9F\x8C\xA6" /* Id: 284,  Name: u1F326,                                   CodePoint: 127782,  Unicode: U+01F326  */
+#define NOTO_EMOJI_24_SYMBOL_CLOUDWITHRAIN                            "\xF0\x9F\x8C\xA7" /* Id: 285,  Name: cloudWithRain,                            CodePoint: 127783,  Unicode: U+01F327  */
+#define NOTO_EMOJI_24_SYMBOL_CLOUDWITHSNOW                            "\xF0\x9F\x8C\xA8" /* Id: 286,  Name: cloudWithSnow,                            CodePoint: 127784,  Unicode: U+01F328  */
+#define NOTO_EMOJI_24_SYMBOL_CLOUDWITHLIGHTNING                       "\xF0\x9F\x8C\xA9" /* Id: 287,  Name: cloudWithLightning,                       CodePoint: 127785,  Unicode: U+01F329  */
+#define NOTO_EMOJI_24_SYMBOL_TORNADO                                  "\xF0\x9F\x8C\xAA" /* Id: 288,  Name: tornado,                                  CodePoint: 127786,  Unicode: U+01F32A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F32B                                   "\xF0\x9F\x8C\xAB" /* Id: 289,  Name: u1F32B,                                   CodePoint: 127787,  Unicode: U+01F32B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F32C                                   "\xF0\x9F\x8C\xAC" /* Id: 290,  Name: u1F32C,                                   CodePoint: 127788,  Unicode: U+01F32C  */
+#define NOTO_EMOJI_24_SYMBOL_HOTDOG                                   "\xF0\x9F\x8C\xAD" /* Id: 291,  Name: hotdog,                                   CodePoint: 127789,  Unicode: U+01F32D  */
+#define NOTO_EMOJI_24_SYMBOL_TACO                                     "\xF0\x9F\x8C\xAE" /* Id: 292,  Name: taco,                                     CodePoint: 127790,  Unicode: U+01F32E  */
+#define NOTO_EMOJI_24_SYMBOL_BURRITO                                  "\xF0\x9F\x8C\xAF" /* Id: 293,  Name: burrito,                                  CodePoint: 127791,  Unicode: U+01F32F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F330                                   "\xF0\x9F\x8C\xB0" /* Id: 294,  Name: u1F330,                                   CodePoint: 127792,  Unicode: U+01F330  */
+#define NOTO_EMOJI_24_SYMBOL_U1F331                                   "\xF0\x9F\x8C\xB1" /* Id: 295,  Name: u1F331,                                   CodePoint: 127793,  Unicode: U+01F331  */
+#define NOTO_EMOJI_24_SYMBOL_U1F332                                   "\xF0\x9F\x8C\xB2" /* Id: 296,  Name: u1F332,                                   CodePoint: 127794,  Unicode: U+01F332  */
+#define NOTO_EMOJI_24_SYMBOL_U1F333                                   "\xF0\x9F\x8C\xB3" /* Id: 297,  Name: u1F333,                                   CodePoint: 127795,  Unicode: U+01F333  */
+#define NOTO_EMOJI_24_SYMBOL_U1F334                                   "\xF0\x9F\x8C\xB4" /* Id: 298,  Name: u1F334,                                   CodePoint: 127796,  Unicode: U+01F334  */
+#define NOTO_EMOJI_24_SYMBOL_U1F335                                   "\xF0\x9F\x8C\xB5" /* Id: 299,  Name: u1F335,                                   CodePoint: 127797,  Unicode: U+01F335  */
+#define NOTO_EMOJI_24_SYMBOL_U1F336                                   "\xF0\x9F\x8C\xB6" /* Id: 300,  Name: u1F336,                                   CodePoint: 127798,  Unicode: U+01F336  */
+#define NOTO_EMOJI_24_SYMBOL_U1F337                                   "\xF0\x9F\x8C\xB7" /* Id: 301,  Name: u1F337,                                   CodePoint: 127799,  Unicode: U+01F337  */
+#define NOTO_EMOJI_24_SYMBOL_U1F338                                   "\xF0\x9F\x8C\xB8" /* Id: 302,  Name: u1F338,                                   CodePoint: 127800,  Unicode: U+01F338  */
+#define NOTO_EMOJI_24_SYMBOL_U1F339                                   "\xF0\x9F\x8C\xB9" /* Id: 303,  Name: u1F339,                                   CodePoint: 127801,  Unicode: U+01F339  */
+#define NOTO_EMOJI_24_SYMBOL_U1F33A                                   "\xF0\x9F\x8C\xBA" /* Id: 304,  Name: u1F33A,                                   CodePoint: 127802,  Unicode: U+01F33A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F33B                                   "\xF0\x9F\x8C\xBB" /* Id: 305,  Name: u1F33B,                                   CodePoint: 127803,  Unicode: U+01F33B  */
+#define NOTO_EMOJI_24_SYMBOL_HYACINTH                                 "\xF0\x9F\xAA\xBB" /* Id: 306,  Name: hyacinth,                                 CodePoint: 129723,  Unicode: U+01FABB  */
+#define NOTO_EMOJI_24_SYMBOL_U1F33C                                   "\xF0\x9F\x8C\xBC" /* Id: 307,  Name: u1F33C,                                   CodePoint: 127804,  Unicode: U+01F33C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F33D                                   "\xF0\x9F\x8C\xBD" /* Id: 308,  Name: u1F33D,                                   CodePoint: 127805,  Unicode: U+01F33D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F33E                                   "\xF0\x9F\x8C\xBE" /* Id: 309,  Name: u1F33E,                                   CodePoint: 127806,  Unicode: U+01F33E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F33F                                   "\xF0\x9F\x8C\xBF" /* Id: 310,  Name: u1F33F,                                   CodePoint: 127807,  Unicode: U+01F33F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F340                                   "\xF0\x9F\x8D\x80" /* Id: 311,  Name: u1F340,                                   CodePoint: 127808,  Unicode: U+01F340  */
+#define NOTO_EMOJI_24_SYMBOL_U1F341                                   "\xF0\x9F\x8D\x81" /* Id: 312,  Name: u1F341,                                   CodePoint: 127809,  Unicode: U+01F341  */
+#define NOTO_EMOJI_24_SYMBOL_U1F342                                   "\xF0\x9F\x8D\x82" /* Id: 313,  Name: u1F342,                                   CodePoint: 127810,  Unicode: U+01F342  */
+#define NOTO_EMOJI_24_SYMBOL_U1F343                                   "\xF0\x9F\x8D\x83" /* Id: 314,  Name: u1F343,                                   CodePoint: 127811,  Unicode: U+01F343  */
+#define NOTO_EMOJI_24_SYMBOL_U1F344                                   "\xF0\x9F\x8D\x84" /* Id: 315,  Name: u1F344,                                   CodePoint: 127812,  Unicode: U+01F344  */
+#define NOTO_EMOJI_24_SYMBOL_U1F345                                   "\xF0\x9F\x8D\x85" /* Id: 316,  Name: u1F345,                                   CodePoint: 127813,  Unicode: U+01F345  */
+#define NOTO_EMOJI_24_SYMBOL_U1F346                                   "\xF0\x9F\x8D\x86" /* Id: 317,  Name: u1F346,                                   CodePoint: 127814,  Unicode: U+01F346  */
+#define NOTO_EMOJI_24_SYMBOL_U1F347                                   "\xF0\x9F\x8D\x87" /* Id: 318,  Name: u1F347,                                   CodePoint: 127815,  Unicode: U+01F347  */
+#define NOTO_EMOJI_24_SYMBOL_U1F348                                   "\xF0\x9F\x8D\x88" /* Id: 319,  Name: u1F348,                                   CodePoint: 127816,  Unicode: U+01F348  */
+#define NOTO_EMOJI_24_SYMBOL_U1F349                                   "\xF0\x9F\x8D\x89" /* Id: 320,  Name: u1F349,                                   CodePoint: 127817,  Unicode: U+01F349  */
+#define NOTO_EMOJI_24_SYMBOL_U1F34A                                   "\xF0\x9F\x8D\x8A" /* Id: 321,  Name: u1F34A,                                   CodePoint: 127818,  Unicode: U+01F34A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F34B                                   "\xF0\x9F\x8D\x8B" /* Id: 322,  Name: u1F34B,                                   CodePoint: 127819,  Unicode: U+01F34B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F34C                                   "\xF0\x9F\x8D\x8C" /* Id: 323,  Name: u1F34C,                                   CodePoint: 127820,  Unicode: U+01F34C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F34D                                   "\xF0\x9F\x8D\x8D" /* Id: 324,  Name: u1F34D,                                   CodePoint: 127821,  Unicode: U+01F34D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F34E                                   "\xF0\x9F\x8D\x8E" /* Id: 325,  Name: u1F34E,                                   CodePoint: 127822,  Unicode: U+01F34E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F34F                                   "\xF0\x9F\x8D\x8F" /* Id: 326,  Name: u1F34F,                                   CodePoint: 127823,  Unicode: U+01F34F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F350                                   "\xF0\x9F\x8D\x90" /* Id: 327,  Name: u1F350,                                   CodePoint: 127824,  Unicode: U+01F350  */
+#define NOTO_EMOJI_24_SYMBOL_U1F351                                   "\xF0\x9F\x8D\x91" /* Id: 328,  Name: u1F351,                                   CodePoint: 127825,  Unicode: U+01F351  */
+#define NOTO_EMOJI_24_SYMBOL_U1F352                                   "\xF0\x9F\x8D\x92" /* Id: 329,  Name: u1F352,                                   CodePoint: 127826,  Unicode: U+01F352  */
+#define NOTO_EMOJI_24_SYMBOL_U1F353                                   "\xF0\x9F\x8D\x93" /* Id: 330,  Name: u1F353,                                   CodePoint: 127827,  Unicode: U+01F353  */
+#define NOTO_EMOJI_24_SYMBOL_U1F354                                   "\xF0\x9F\x8D\x94" /* Id: 331,  Name: u1F354,                                   CodePoint: 127828,  Unicode: U+01F354  */
+#define NOTO_EMOJI_24_SYMBOL_U1F355                                   "\xF0\x9F\x8D\x95" /* Id: 332,  Name: u1F355,                                   CodePoint: 127829,  Unicode: U+01F355  */
+#define NOTO_EMOJI_24_SYMBOL_U1F356                                   "\xF0\x9F\x8D\x96" /* Id: 333,  Name: u1F356,                                   CodePoint: 127830,  Unicode: U+01F356  */
+#define NOTO_EMOJI_24_SYMBOL_U1F357                                   "\xF0\x9F\x8D\x97" /* Id: 334,  Name: u1F357,                                   CodePoint: 127831,  Unicode: U+01F357  */
+#define NOTO_EMOJI_24_SYMBOL_U1F358                                   "\xF0\x9F\x8D\x98" /* Id: 335,  Name: u1F358,                                   CodePoint: 127832,  Unicode: U+01F358  */
+#define NOTO_EMOJI_24_SYMBOL_U1F359                                   "\xF0\x9F\x8D\x99" /* Id: 336,  Name: u1F359,                                   CodePoint: 127833,  Unicode: U+01F359  */
+#define NOTO_EMOJI_24_SYMBOL_U1F35A                                   "\xF0\x9F\x8D\x9A" /* Id: 337,  Name: u1F35A,                                   CodePoint: 127834,  Unicode: U+01F35A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F35B                                   "\xF0\x9F\x8D\x9B" /* Id: 338,  Name: u1F35B,                                   CodePoint: 127835,  Unicode: U+01F35B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F35C                                   "\xF0\x9F\x8D\x9C" /* Id: 339,  Name: u1F35C,                                   CodePoint: 127836,  Unicode: U+01F35C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F35D                                   "\xF0\x9F\x8D\x9D" /* Id: 340,  Name: u1F35D,                                   CodePoint: 127837,  Unicode: U+01F35D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F35E                                   "\xF0\x9F\x8D\x9E" /* Id: 341,  Name: u1F35E,                                   CodePoint: 127838,  Unicode: U+01F35E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F35F                                   "\xF0\x9F\x8D\x9F" /* Id: 342,  Name: u1F35F,                                   CodePoint: 127839,  Unicode: U+01F35F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F360                                   "\xF0\x9F\x8D\xA0" /* Id: 343,  Name: u1F360,                                   CodePoint: 127840,  Unicode: U+01F360  */
+#define NOTO_EMOJI_24_SYMBOL_U1F361                                   "\xF0\x9F\x8D\xA1" /* Id: 344,  Name: u1F361,                                   CodePoint: 127841,  Unicode: U+01F361  */
+#define NOTO_EMOJI_24_SYMBOL_U1F362                                   "\xF0\x9F\x8D\xA2" /* Id: 345,  Name: u1F362,                                   CodePoint: 127842,  Unicode: U+01F362  */
+#define NOTO_EMOJI_24_SYMBOL_U1F363                                   "\xF0\x9F\x8D\xA3" /* Id: 346,  Name: u1F363,                                   CodePoint: 127843,  Unicode: U+01F363  */
+#define NOTO_EMOJI_24_SYMBOL_U1F364                                   "\xF0\x9F\x8D\xA4" /* Id: 347,  Name: u1F364,                                   CodePoint: 127844,  Unicode: U+01F364  */
+#define NOTO_EMOJI_24_SYMBOL_U1F365                                   "\xF0\x9F\x8D\xA5" /* Id: 348,  Name: u1F365,                                   CodePoint: 127845,  Unicode: U+01F365  */
+#define NOTO_EMOJI_24_SYMBOL_U1F366                                   "\xF0\x9F\x8D\xA6" /* Id: 349,  Name: u1F366,                                   CodePoint: 127846,  Unicode: U+01F366  */
+#define NOTO_EMOJI_24_SYMBOL_U1F367                                   "\xF0\x9F\x8D\xA7" /* Id: 350,  Name: u1F367,                                   CodePoint: 127847,  Unicode: U+01F367  */
+#define NOTO_EMOJI_24_SYMBOL_U1F368                                   "\xF0\x9F\x8D\xA8" /* Id: 351,  Name: u1F368,                                   CodePoint: 127848,  Unicode: U+01F368  */
+#define NOTO_EMOJI_24_SYMBOL_U1F369                                   "\xF0\x9F\x8D\xA9" /* Id: 352,  Name: u1F369,                                   CodePoint: 127849,  Unicode: U+01F369  */
+#define NOTO_EMOJI_24_SYMBOL_U1F36A                                   "\xF0\x9F\x8D\xAA" /* Id: 353,  Name: u1F36A,                                   CodePoint: 127850,  Unicode: U+01F36A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F36B                                   "\xF0\x9F\x8D\xAB" /* Id: 354,  Name: u1F36B,                                   CodePoint: 127851,  Unicode: U+01F36B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F36C                                   "\xF0\x9F\x8D\xAC" /* Id: 355,  Name: u1F36C,                                   CodePoint: 127852,  Unicode: U+01F36C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F36D                                   "\xF0\x9F\x8D\xAD" /* Id: 356,  Name: u1F36D,                                   CodePoint: 127853,  Unicode: U+01F36D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F36E                                   "\xF0\x9F\x8D\xAE" /* Id: 357,  Name: u1F36E,                                   CodePoint: 127854,  Unicode: U+01F36E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F36F                                   "\xF0\x9F\x8D\xAF" /* Id: 358,  Name: u1F36F,                                   CodePoint: 127855,  Unicode: U+01F36F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F370                                   "\xF0\x9F\x8D\xB0" /* Id: 359,  Name: u1F370,                                   CodePoint: 127856,  Unicode: U+01F370  */
+#define NOTO_EMOJI_24_SYMBOL_U1F371                                   "\xF0\x9F\x8D\xB1" /* Id: 360,  Name: u1F371,                                   CodePoint: 127857,  Unicode: U+01F371  */
+#define NOTO_EMOJI_24_SYMBOL_U1F372                                   "\xF0\x9F\x8D\xB2" /* Id: 361,  Name: u1F372,                                   CodePoint: 127858,  Unicode: U+01F372  */
+#define NOTO_EMOJI_24_SYMBOL_U1F373                                   "\xF0\x9F\x8D\xB3" /* Id: 362,  Name: u1F373,                                   CodePoint: 127859,  Unicode: U+01F373  */
+#define NOTO_EMOJI_24_SYMBOL_U1F374                                   "\xF0\x9F\x8D\xB4" /* Id: 363,  Name: u1F374,                                   CodePoint: 127860,  Unicode: U+01F374  */
+#define NOTO_EMOJI_24_SYMBOL_U1F375                                   "\xF0\x9F\x8D\xB5" /* Id: 364,  Name: u1F375,                                   CodePoint: 127861,  Unicode: U+01F375  */
+#define NOTO_EMOJI_24_SYMBOL_U1F376                                   "\xF0\x9F\x8D\xB6" /* Id: 365,  Name: u1F376,                                   CodePoint: 127862,  Unicode: U+01F376  */
+#define NOTO_EMOJI_24_SYMBOL_U1F377                                   "\xF0\x9F\x8D\xB7" /* Id: 366,  Name: u1F377,                                   CodePoint: 127863,  Unicode: U+01F377  */
+#define NOTO_EMOJI_24_SYMBOL_U1F378                                   "\xF0\x9F\x8D\xB8" /* Id: 367,  Name: u1F378,                                   CodePoint: 127864,  Unicode: U+01F378  */
+#define NOTO_EMOJI_24_SYMBOL_U1F379                                   "\xF0\x9F\x8D\xB9" /* Id: 368,  Name: u1F379,                                   CodePoint: 127865,  Unicode: U+01F379  */
+#define NOTO_EMOJI_24_SYMBOL_U1F37A                                   "\xF0\x9F\x8D\xBA" /* Id: 369,  Name: u1F37A,                                   CodePoint: 127866,  Unicode: U+01F37A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F37B                                   "\xF0\x9F\x8D\xBB" /* Id: 370,  Name: u1F37B,                                   CodePoint: 127867,  Unicode: U+01F37B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F37C                                   "\xF0\x9F\x8D\xBC" /* Id: 371,  Name: u1F37C,                                   CodePoint: 127868,  Unicode: U+01F37C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F37D                                   "\xF0\x9F\x8D\xBD" /* Id: 372,  Name: u1F37D,                                   CodePoint: 127869,  Unicode: U+01F37D  */
+#define NOTO_EMOJI_24_SYMBOL_BOTTLEWITHPOPPINGCORK                    "\xF0\x9F\x8D\xBE" /* Id: 373,  Name: bottleWithPoppingCork,                    CodePoint: 127870,  Unicode: U+01F37E  */
+#define NOTO_EMOJI_24_SYMBOL_POPCORN                                  "\xF0\x9F\x8D\xBF" /* Id: 374,  Name: popcorn,                                  CodePoint: 127871,  Unicode: U+01F37F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F380                                   "\xF0\x9F\x8E\x80" /* Id: 375,  Name: u1F380,                                   CodePoint: 127872,  Unicode: U+01F380  */
+#define NOTO_EMOJI_24_SYMBOL_WRAPPEDGIFT                              "\xF0\x9F\x8E\x81" /* Id: 376,  Name: wrappedGift,                              CodePoint: 127873,  Unicode: U+01F381  */
+#define NOTO_EMOJI_24_SYMBOL_U1F382                                   "\xF0\x9F\x8E\x82" /* Id: 377,  Name: u1F382,                                   CodePoint: 127874,  Unicode: U+01F382  */
+#define NOTO_EMOJI_24_SYMBOL_U1F383                                   "\xF0\x9F\x8E\x83" /* Id: 378,  Name: u1F383,                                   CodePoint: 127875,  Unicode: U+01F383  */
+#define NOTO_EMOJI_24_SYMBOL_U1F384                                   "\xF0\x9F\x8E\x84" /* Id: 379,  Name: u1F384,                                   CodePoint: 127876,  Unicode: U+01F384  */
+#define NOTO_EMOJI_24_SYMBOL_SANTACLAUS                               "\xF0\x9F\x8E\x85" /* Id: 380,  Name: santaClaus,                               CodePoint: 127877,  Unicode: U+01F385  */
+#define NOTO_EMOJI_24_SYMBOL_U1F386                                   "\xF0\x9F\x8E\x86" /* Id: 381,  Name: u1F386,                                   CodePoint: 127878,  Unicode: U+01F386  */
+#define NOTO_EMOJI_24_SYMBOL_SPARKLER                                 "\xF0\x9F\x8E\x87" /* Id: 382,  Name: sparkler,                                 CodePoint: 127879,  Unicode: U+01F387  */
+#define NOTO_EMOJI_24_SYMBOL_U1F388                                   "\xF0\x9F\x8E\x88" /* Id: 383,  Name: u1F388,                                   CodePoint: 127880,  Unicode: U+01F388  */
+#define NOTO_EMOJI_24_SYMBOL_U1F389                                   "\xF0\x9F\x8E\x89" /* Id: 384,  Name: u1F389,                                   CodePoint: 127881,  Unicode: U+01F389  */
+#define NOTO_EMOJI_24_SYMBOL_U1F38A                                   "\xF0\x9F\x8E\x8A" /* Id: 385,  Name: u1F38A,                                   CodePoint: 127882,  Unicode: U+01F38A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F38B                                   "\xF0\x9F\x8E\x8B" /* Id: 386,  Name: u1F38B,                                   CodePoint: 127883,  Unicode: U+01F38B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F38C                                   "\xF0\x9F\x8E\x8C" /* Id: 387,  Name: u1F38C,                                   CodePoint: 127884,  Unicode: U+01F38C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F38D                                   "\xF0\x9F\x8E\x8D" /* Id: 388,  Name: u1F38D,                                   CodePoint: 127885,  Unicode: U+01F38D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F38E                                   "\xF0\x9F\x8E\x8E" /* Id: 389,  Name: u1F38E,                                   CodePoint: 127886,  Unicode: U+01F38E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F38F                                   "\xF0\x9F\x8E\x8F" /* Id: 390,  Name: u1F38F,                                   CodePoint: 127887,  Unicode: U+01F38F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F390                                   "\xF0\x9F\x8E\x90" /* Id: 391,  Name: u1F390,                                   CodePoint: 127888,  Unicode: U+01F390  */
+#define NOTO_EMOJI_24_SYMBOL_U1F391                                   "\xF0\x9F\x8E\x91" /* Id: 392,  Name: u1F391,                                   CodePoint: 127889,  Unicode: U+01F391  */
+#define NOTO_EMOJI_24_SYMBOL_U1F392                                   "\xF0\x9F\x8E\x92" /* Id: 393,  Name: u1F392,                                   CodePoint: 127890,  Unicode: U+01F392  */
+#define NOTO_EMOJI_24_SYMBOL_U1F393                                   "\xF0\x9F\x8E\x93" /* Id: 394,  Name: u1F393,                                   CodePoint: 127891,  Unicode: U+01F393  */
+#define NOTO_EMOJI_24_SYMBOL_U1F396                                   "\xF0\x9F\x8E\x96" /* Id: 395,  Name: u1F396,                                   CodePoint: 127894,  Unicode: U+01F396  */
+#define NOTO_EMOJI_24_SYMBOL_U1F397                                   "\xF0\x9F\x8E\x97" /* Id: 396,  Name: u1F397,                                   CodePoint: 127895,  Unicode: U+01F397  */
+#define NOTO_EMOJI_24_SYMBOL_U1F399                                   "\xF0\x9F\x8E\x99" /* Id: 397,  Name: u1F399,                                   CodePoint: 127897,  Unicode: U+01F399  */
+#define NOTO_EMOJI_24_SYMBOL_U1F39A                                   "\xF0\x9F\x8E\x9A" /* Id: 398,  Name: u1F39A,                                   CodePoint: 127898,  Unicode: U+01F39A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F39B                                   "\xF0\x9F\x8E\x9B" /* Id: 399,  Name: u1F39B,                                   CodePoint: 127899,  Unicode: U+01F39B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F39E                                   "\xF0\x9F\x8E\x9E" /* Id: 400,  Name: u1F39E,                                   CodePoint: 127902,  Unicode: U+01F39E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F39F                                   "\xF0\x9F\x8E\x9F" /* Id: 401,  Name: u1F39F,                                   CodePoint: 127903,  Unicode: U+01F39F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3A0                                   "\xF0\x9F\x8E\xA0" /* Id: 402,  Name: u1F3A0,                                   CodePoint: 127904,  Unicode: U+01F3A0  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3A1                                   "\xF0\x9F\x8E\xA1" /* Id: 403,  Name: u1F3A1,                                   CodePoint: 127905,  Unicode: U+01F3A1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3A2                                   "\xF0\x9F\x8E\xA2" /* Id: 404,  Name: u1F3A2,                                   CodePoint: 127906,  Unicode: U+01F3A2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3A3                                   "\xF0\x9F\x8E\xA3" /* Id: 405,  Name: u1F3A3,                                   CodePoint: 127907,  Unicode: U+01F3A3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3A4                                   "\xF0\x9F\x8E\xA4" /* Id: 406,  Name: u1F3A4,                                   CodePoint: 127908,  Unicode: U+01F3A4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3A5                                   "\xF0\x9F\x8E\xA5" /* Id: 407,  Name: u1F3A5,                                   CodePoint: 127909,  Unicode: U+01F3A5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3A6                                   "\xF0\x9F\x8E\xA6" /* Id: 408,  Name: u1F3A6,                                   CodePoint: 127910,  Unicode: U+01F3A6  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3A7                                   "\xF0\x9F\x8E\xA7" /* Id: 409,  Name: u1F3A7,                                   CodePoint: 127911,  Unicode: U+01F3A7  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3A8                                   "\xF0\x9F\x8E\xA8" /* Id: 410,  Name: u1F3A8,                                   CodePoint: 127912,  Unicode: U+01F3A8  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3A9                                   "\xF0\x9F\x8E\xA9" /* Id: 411,  Name: u1F3A9,                                   CodePoint: 127913,  Unicode: U+01F3A9  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3AA                                   "\xF0\x9F\x8E\xAA" /* Id: 412,  Name: u1F3AA,                                   CodePoint: 127914,  Unicode: U+01F3AA  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3AB                                   "\xF0\x9F\x8E\xAB" /* Id: 413,  Name: u1F3AB,                                   CodePoint: 127915,  Unicode: U+01F3AB  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3AC                                   "\xF0\x9F\x8E\xAC" /* Id: 414,  Name: u1F3AC,                                   CodePoint: 127916,  Unicode: U+01F3AC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3AD                                   "\xF0\x9F\x8E\xAD" /* Id: 415,  Name: u1F3AD,                                   CodePoint: 127917,  Unicode: U+01F3AD  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3AE                                   "\xF0\x9F\x8E\xAE" /* Id: 416,  Name: u1F3AE,                                   CodePoint: 127918,  Unicode: U+01F3AE  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3AF                                   "\xF0\x9F\x8E\xAF" /* Id: 417,  Name: u1F3AF,                                   CodePoint: 127919,  Unicode: U+01F3AF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3B0                                   "\xF0\x9F\x8E\xB0" /* Id: 418,  Name: u1F3B0,                                   CodePoint: 127920,  Unicode: U+01F3B0  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3B1                                   "\xF0\x9F\x8E\xB1" /* Id: 419,  Name: u1F3B1,                                   CodePoint: 127921,  Unicode: U+01F3B1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3B2                                   "\xF0\x9F\x8E\xB2" /* Id: 420,  Name: u1F3B2,                                   CodePoint: 127922,  Unicode: U+01F3B2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3B3                                   "\xF0\x9F\x8E\xB3" /* Id: 421,  Name: u1F3B3,                                   CodePoint: 127923,  Unicode: U+01F3B3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3B4                                   "\xF0\x9F\x8E\xB4" /* Id: 422,  Name: u1F3B4,                                   CodePoint: 127924,  Unicode: U+01F3B4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3B5                                   "\xF0\x9F\x8E\xB5" /* Id: 423,  Name: u1F3B5,                                   CodePoint: 127925,  Unicode: U+01F3B5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3B6                                   "\xF0\x9F\x8E\xB6" /* Id: 424,  Name: u1F3B6,                                   CodePoint: 127926,  Unicode: U+01F3B6  */
+#define NOTO_EMOJI_24_SYMBOL_MARACAS                                  "\xF0\x9F\xAA\x87" /* Id: 425,  Name: maracas,                                  CodePoint: 129671,  Unicode: U+01FA87  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3B7                                   "\xF0\x9F\x8E\xB7" /* Id: 426,  Name: u1F3B7,                                   CodePoint: 127927,  Unicode: U+01F3B7  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3B8                                   "\xF0\x9F\x8E\xB8" /* Id: 427,  Name: u1F3B8,                                   CodePoint: 127928,  Unicode: U+01F3B8  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3B9                                   "\xF0\x9F\x8E\xB9" /* Id: 428,  Name: u1F3B9,                                   CodePoint: 127929,  Unicode: U+01F3B9  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3BA                                   "\xF0\x9F\x8E\xBA" /* Id: 429,  Name: u1F3BA,                                   CodePoint: 127930,  Unicode: U+01F3BA  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3BB                                   "\xF0\x9F\x8E\xBB" /* Id: 430,  Name: u1F3BB,                                   CodePoint: 127931,  Unicode: U+01F3BB  */
+#define NOTO_EMOJI_24_SYMBOL_FLUTE                                    "\xF0\x9F\xAA\x88" /* Id: 431,  Name: flute,                                    CodePoint: 129672,  Unicode: U+01FA88  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3BC                                   "\xF0\x9F\x8E\xBC" /* Id: 432,  Name: u1F3BC,                                   CodePoint: 127932,  Unicode: U+01F3BC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3BD                                   "\xF0\x9F\x8E\xBD" /* Id: 433,  Name: u1F3BD,                                   CodePoint: 127933,  Unicode: U+01F3BD  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3BE                                   "\xF0\x9F\x8E\xBE" /* Id: 434,  Name: u1F3BE,                                   CodePoint: 127934,  Unicode: U+01F3BE  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3BF                                   "\xF0\x9F\x8E\xBF" /* Id: 435,  Name: u1F3BF,                                   CodePoint: 127935,  Unicode: U+01F3BF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3C0                                   "\xF0\x9F\x8F\x80" /* Id: 436,  Name: u1F3C0,                                   CodePoint: 127936,  Unicode: U+01F3C0  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3C1                                   "\xF0\x9F\x8F\x81" /* Id: 437,  Name: u1F3C1,                                   CodePoint: 127937,  Unicode: U+01F3C1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3C2                                   "\xF0\x9F\x8F\x82" /* Id: 438,  Name: u1F3C2,                                   CodePoint: 127938,  Unicode: U+01F3C2  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONRUNNING                            "\xF0\x9F\x8F\x83" /* Id: 439,  Name: personRunning,                            CodePoint: 127939,  Unicode: U+01F3C3  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONSURFING                            "\xF0\x9F\x8F\x84" /* Id: 440,  Name: personSurfing,                            CodePoint: 127940,  Unicode: U+01F3C4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3C5                                   "\xF0\x9F\x8F\x85" /* Id: 441,  Name: u1F3C5,                                   CodePoint: 127941,  Unicode: U+01F3C5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3C6                                   "\xF0\x9F\x8F\x86" /* Id: 442,  Name: u1F3C6,                                   CodePoint: 127942,  Unicode: U+01F3C6  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3C7                                   "\xF0\x9F\x8F\x87" /* Id: 443,  Name: u1F3C7,                                   CodePoint: 127943,  Unicode: U+01F3C7  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3C8                                   "\xF0\x9F\x8F\x88" /* Id: 444,  Name: u1F3C8,                                   CodePoint: 127944,  Unicode: U+01F3C8  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3C9                                   "\xF0\x9F\x8F\x89" /* Id: 445,  Name: u1F3C9,                                   CodePoint: 127945,  Unicode: U+01F3C9  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONSWIMMING                           "\xF0\x9F\x8F\x8A" /* Id: 446,  Name: personSwimming,                           CodePoint: 127946,  Unicode: U+01F3CA  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONLIFTINGWEIGHTS                     "\xF0\x9F\x8F\x8B" /* Id: 447,  Name: personLiftingWeights,                     CodePoint: 127947,  Unicode: U+01F3CB  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONGOLFING                            "\xF0\x9F\x8F\x8C" /* Id: 448,  Name: personGolfing,                            CodePoint: 127948,  Unicode: U+01F3CC  */
+#define NOTO_EMOJI_24_SYMBOL_MOTORCYCLE                               "\xF0\x9F\x8F\x8D" /* Id: 449,  Name: motorcycle,                               CodePoint: 127949,  Unicode: U+01F3CD  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3CE                                   "\xF0\x9F\x8F\x8E" /* Id: 450,  Name: u1F3CE,                                   CodePoint: 127950,  Unicode: U+01F3CE  */
+#define NOTO_EMOJI_24_SYMBOL_CRICKETBATANDBALL                        "\xF0\x9F\x8F\x8F" /* Id: 451,  Name: cricketBatAndBall,                        CodePoint: 127951,  Unicode: U+01F3CF  */
+#define NOTO_EMOJI_24_SYMBOL_VOLLEYBALL                               "\xF0\x9F\x8F\x90" /* Id: 452,  Name: volleyball,                               CodePoint: 127952,  Unicode: U+01F3D0  */
+#define NOTO_EMOJI_24_SYMBOL_FIELDHOCKEYSTICKANDBALL                  "\xF0\x9F\x8F\x91" /* Id: 453,  Name: fieldHockeyStickAndBall,                  CodePoint: 127953,  Unicode: U+01F3D1  */
+#define NOTO_EMOJI_24_SYMBOL_HOCKEYSTICKANDPUCK                       "\xF0\x9F\x8F\x92" /* Id: 454,  Name: hockeyStickAndPuck,                       CodePoint: 127954,  Unicode: U+01F3D2  */
+#define NOTO_EMOJI_24_SYMBOL_TABLETENNISPADDLEANDBALL                 "\xF0\x9F\x8F\x93" /* Id: 455,  Name: tableTennisPaddleAndBall,                 CodePoint: 127955,  Unicode: U+01F3D3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3D4                                   "\xF0\x9F\x8F\x94" /* Id: 456,  Name: u1F3D4,                                   CodePoint: 127956,  Unicode: U+01F3D4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3D5                                   "\xF0\x9F\x8F\x95" /* Id: 457,  Name: u1F3D5,                                   CodePoint: 127957,  Unicode: U+01F3D5  */
+#define NOTO_EMOJI_24_SYMBOL_BEACHWITHUMBRELLA                        "\xF0\x9F\x8F\x96" /* Id: 458,  Name: beachWithUmbrella,                        CodePoint: 127958,  Unicode: U+01F3D6  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3D7                                   "\xF0\x9F\x8F\x97" /* Id: 459,  Name: u1F3D7,                                   CodePoint: 127959,  Unicode: U+01F3D7  */
+#define NOTO_EMOJI_24_SYMBOL_HOUSES                                   "\xF0\x9F\x8F\x98" /* Id: 460,  Name: houses,                                   CodePoint: 127960,  Unicode: U+01F3D8  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3D9                                   "\xF0\x9F\x8F\x99" /* Id: 461,  Name: u1F3D9,                                   CodePoint: 127961,  Unicode: U+01F3D9  */
+#define NOTO_EMOJI_24_SYMBOL_DERELICTHOUSE                            "\xF0\x9F\x8F\x9A" /* Id: 462,  Name: derelictHouse,                            CodePoint: 127962,  Unicode: U+01F3DA  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3DB                                   "\xF0\x9F\x8F\x9B" /* Id: 463,  Name: u1F3DB,                                   CodePoint: 127963,  Unicode: U+01F3DB  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3DC                                   "\xF0\x9F\x8F\x9C" /* Id: 464,  Name: u1F3DC,                                   CodePoint: 127964,  Unicode: U+01F3DC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3DD                                   "\xF0\x9F\x8F\x9D" /* Id: 465,  Name: u1F3DD,                                   CodePoint: 127965,  Unicode: U+01F3DD  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3DE                                   "\xF0\x9F\x8F\x9E" /* Id: 466,  Name: u1F3DE,                                   CodePoint: 127966,  Unicode: U+01F3DE  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3DF                                   "\xF0\x9F\x8F\x9F" /* Id: 467,  Name: u1F3DF,                                   CodePoint: 127967,  Unicode: U+01F3DF  */
+#define NOTO_EMOJI_24_SYMBOL_HOUSE                                    "\xF0\x9F\x8F\xA0" /* Id: 468,  Name: house,                                    CodePoint: 127968,  Unicode: U+01F3E0  */
+#define NOTO_EMOJI_24_SYMBOL_HOUSEWITHGARDEN                          "\xF0\x9F\x8F\xA1" /* Id: 469,  Name: houseWithGarden,                          CodePoint: 127969,  Unicode: U+01F3E1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3E2                                   "\xF0\x9F\x8F\xA2" /* Id: 470,  Name: u1F3E2,                                   CodePoint: 127970,  Unicode: U+01F3E2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3E3                                   "\xF0\x9F\x8F\xA3" /* Id: 471,  Name: u1F3E3,                                   CodePoint: 127971,  Unicode: U+01F3E3  */
+#define NOTO_EMOJI_24_SYMBOL_POSTOFFICE                               "\xF0\x9F\x8F\xA4" /* Id: 472,  Name: postOffice,                               CodePoint: 127972,  Unicode: U+01F3E4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3E5                                   "\xF0\x9F\x8F\xA5" /* Id: 473,  Name: u1F3E5,                                   CodePoint: 127973,  Unicode: U+01F3E5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3E6                                   "\xF0\x9F\x8F\xA6" /* Id: 474,  Name: u1F3E6,                                   CodePoint: 127974,  Unicode: U+01F3E6  */
+#define NOTO_EMOJI_24_SYMBOL_ATMSIGN                                  "\xF0\x9F\x8F\xA7" /* Id: 475,  Name: atmSign,                                  CodePoint: 127975,  Unicode: U+01F3E7  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3E8                                   "\xF0\x9F\x8F\xA8" /* Id: 476,  Name: u1F3E8,                                   CodePoint: 127976,  Unicode: U+01F3E8  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3E9                                   "\xF0\x9F\x8F\xA9" /* Id: 477,  Name: u1F3E9,                                   CodePoint: 127977,  Unicode: U+01F3E9  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3EA                                   "\xF0\x9F\x8F\xAA" /* Id: 478,  Name: u1F3EA,                                   CodePoint: 127978,  Unicode: U+01F3EA  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3EB                                   "\xF0\x9F\x8F\xAB" /* Id: 479,  Name: u1F3EB,                                   CodePoint: 127979,  Unicode: U+01F3EB  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3EC                                   "\xF0\x9F\x8F\xAC" /* Id: 480,  Name: u1F3EC,                                   CodePoint: 127980,  Unicode: U+01F3EC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3ED                                   "\xF0\x9F\x8F\xAD" /* Id: 481,  Name: u1F3ED,                                   CodePoint: 127981,  Unicode: U+01F3ED  */
+#define NOTO_EMOJI_24_SYMBOL_REDPAPERLANTERN                          "\xF0\x9F\x8F\xAE" /* Id: 482,  Name: redPaperLantern,                          CodePoint: 127982,  Unicode: U+01F3EE  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3EF                                   "\xF0\x9F\x8F\xAF" /* Id: 483,  Name: u1F3EF,                                   CodePoint: 127983,  Unicode: U+01F3EF  */
+#define NOTO_EMOJI_24_SYMBOL_UNI26EB                                  "\xF0\x9F\x8F\xB0" /* Id: 484,  Name: uni26EB,                                  CodePoint: 127984,  Unicode: U+01F3F0  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2690                                  "\xF0\x9F\x8F\xB3" /* Id: 485,  Name: uni2690,                                  CodePoint: 127987,  Unicode: U+01F3F3  */
+#define NOTO_EMOJI_24_SYMBOL_UNI2691                                  "\xF0\x9F\x8F\xB4" /* Id: 486,  Name: uni2691,                                  CodePoint: 127988,  Unicode: U+01F3F4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3F5                                   "\xF0\x9F\x8F\xB5" /* Id: 487,  Name: u1F3F5,                                   CodePoint: 127989,  Unicode: U+01F3F5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3F7                                   "\xF0\x9F\x8F\xB7" /* Id: 488,  Name: u1F3F7,                                   CodePoint: 127991,  Unicode: U+01F3F7  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3F8                                   "\xF0\x9F\x8F\xB8" /* Id: 489,  Name: u1F3F8,                                   CodePoint: 127992,  Unicode: U+01F3F8  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3F9                                   "\xF0\x9F\x8F\xB9" /* Id: 490,  Name: u1F3F9,                                   CodePoint: 127993,  Unicode: U+01F3F9  */
+#define NOTO_EMOJI_24_SYMBOL_U1F3FA                                   "\xF0\x9F\x8F\xBA" /* Id: 491,  Name: u1F3FA,                                   CodePoint: 127994,  Unicode: U+01F3FA  */
+#define NOTO_EMOJI_24_SYMBOL_SKINTONE1                                "\xF0\x9F\x8F\xBB" /* Id: 492,  Name: skinTone1,                                CodePoint: 127995,  Unicode: U+01F3FB  */
+#define NOTO_EMOJI_24_SYMBOL_SKINTONE2                                "\xF0\x9F\x8F\xBC" /* Id: 493,  Name: skinTone2,                                CodePoint: 127996,  Unicode: U+01F3FC  */
+#define NOTO_EMOJI_24_SYMBOL_SKINTONE3                                "\xF0\x9F\x8F\xBD" /* Id: 494,  Name: skinTone3,                                CodePoint: 127997,  Unicode: U+01F3FD  */
+#define NOTO_EMOJI_24_SYMBOL_SKINTONE4                                "\xF0\x9F\x8F\xBE" /* Id: 495,  Name: skinTone4,                                CodePoint: 127998,  Unicode: U+01F3FE  */
+#define NOTO_EMOJI_24_SYMBOL_SKINTONE5                                "\xF0\x9F\x8F\xBF" /* Id: 496,  Name: skinTone5,                                CodePoint: 127999,  Unicode: U+01F3FF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F400                                   "\xF0\x9F\x90\x80" /* Id: 497,  Name: u1F400,                                   CodePoint: 128000,  Unicode: U+01F400  */
+#define NOTO_EMOJI_24_SYMBOL_U1F401                                   "\xF0\x9F\x90\x81" /* Id: 498,  Name: u1F401,                                   CodePoint: 128001,  Unicode: U+01F401  */
+#define NOTO_EMOJI_24_SYMBOL_U1F402                                   "\xF0\x9F\x90\x82" /* Id: 499,  Name: u1F402,                                   CodePoint: 128002,  Unicode: U+01F402  */
+#define NOTO_EMOJI_24_SYMBOL_U1F403                                   "\xF0\x9F\x90\x83" /* Id: 500,  Name: u1F403,                                   CodePoint: 128003,  Unicode: U+01F403  */
+#define NOTO_EMOJI_24_SYMBOL_U1F404                                   "\xF0\x9F\x90\x84" /* Id: 501,  Name: u1F404,                                   CodePoint: 128004,  Unicode: U+01F404  */
+#define NOTO_EMOJI_24_SYMBOL_U1F405                                   "\xF0\x9F\x90\x85" /* Id: 502,  Name: u1F405,                                   CodePoint: 128005,  Unicode: U+01F405  */
+#define NOTO_EMOJI_24_SYMBOL_U1F406                                   "\xF0\x9F\x90\x86" /* Id: 503,  Name: u1F406,                                   CodePoint: 128006,  Unicode: U+01F406  */
+#define NOTO_EMOJI_24_SYMBOL_U1F407                                   "\xF0\x9F\x90\x87" /* Id: 504,  Name: u1F407,                                   CodePoint: 128007,  Unicode: U+01F407  */
+#define NOTO_EMOJI_24_SYMBOL_U1F408                                   "\xF0\x9F\x90\x88" /* Id: 505,  Name: u1F408,                                   CodePoint: 128008,  Unicode: U+01F408  */
+#define NOTO_EMOJI_24_SYMBOL_U1F409                                   "\xF0\x9F\x90\x89" /* Id: 506,  Name: u1F409,                                   CodePoint: 128009,  Unicode: U+01F409  */
+#define NOTO_EMOJI_24_SYMBOL_U1F40A                                   "\xF0\x9F\x90\x8A" /* Id: 507,  Name: u1F40A,                                   CodePoint: 128010,  Unicode: U+01F40A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F40B                                   "\xF0\x9F\x90\x8B" /* Id: 508,  Name: u1F40B,                                   CodePoint: 128011,  Unicode: U+01F40B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F40C                                   "\xF0\x9F\x90\x8C" /* Id: 509,  Name: u1F40C,                                   CodePoint: 128012,  Unicode: U+01F40C  */
+#define NOTO_EMOJI_24_SYMBOL_JELLYFISH                                "\xF0\x9F\xAA\xBC" /* Id: 510,  Name: jellyFish,                                CodePoint: 129724,  Unicode: U+01FABC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F40D                                   "\xF0\x9F\x90\x8D" /* Id: 511,  Name: u1F40D,                                   CodePoint: 128013,  Unicode: U+01F40D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F40E                                   "\xF0\x9F\x90\x8E" /* Id: 512,  Name: u1F40E,                                   CodePoint: 128014,  Unicode: U+01F40E  */
+#define NOTO_EMOJI_24_SYMBOL_DONKEY                                   "\xF0\x9F\xAB\x8F" /* Id: 513,  Name: donkey,                                   CodePoint: 129743,  Unicode: U+01FACF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F40F                                   "\xF0\x9F\x90\x8F" /* Id: 514,  Name: u1F40F,                                   CodePoint: 128015,  Unicode: U+01F40F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F410                                   "\xF0\x9F\x90\x90" /* Id: 515,  Name: u1F410,                                   CodePoint: 128016,  Unicode: U+01F410  */
+#define NOTO_EMOJI_24_SYMBOL_U1F411                                   "\xF0\x9F\x90\x91" /* Id: 516,  Name: u1F411,                                   CodePoint: 128017,  Unicode: U+01F411  */
+#define NOTO_EMOJI_24_SYMBOL_U1F412                                   "\xF0\x9F\x90\x92" /* Id: 517,  Name: u1F412,                                   CodePoint: 128018,  Unicode: U+01F412  */
+#define NOTO_EMOJI_24_SYMBOL_U1F413                                   "\xF0\x9F\x90\x93" /* Id: 518,  Name: u1F413,                                   CodePoint: 128019,  Unicode: U+01F413  */
+#define NOTO_EMOJI_24_SYMBOL_U1F414                                   "\xF0\x9F\x90\x94" /* Id: 519,  Name: u1F414,                                   CodePoint: 128020,  Unicode: U+01F414  */
+#define NOTO_EMOJI_24_SYMBOL_U1F415                                   "\xF0\x9F\x90\x95" /* Id: 520,  Name: u1F415,                                   CodePoint: 128021,  Unicode: U+01F415  */
+#define NOTO_EMOJI_24_SYMBOL_U1F416                                   "\xF0\x9F\x90\x96" /* Id: 521,  Name: u1F416,                                   CodePoint: 128022,  Unicode: U+01F416  */
+#define NOTO_EMOJI_24_SYMBOL_U1F417                                   "\xF0\x9F\x90\x97" /* Id: 522,  Name: u1F417,                                   CodePoint: 128023,  Unicode: U+01F417  */
+#define NOTO_EMOJI_24_SYMBOL_U1F418                                   "\xF0\x9F\x90\x98" /* Id: 523,  Name: u1F418,                                   CodePoint: 128024,  Unicode: U+01F418  */
+#define NOTO_EMOJI_24_SYMBOL_U1F419                                   "\xF0\x9F\x90\x99" /* Id: 524,  Name: u1F419,                                   CodePoint: 128025,  Unicode: U+01F419  */
+#define NOTO_EMOJI_24_SYMBOL_U1F41A                                   "\xF0\x9F\x90\x9A" /* Id: 525,  Name: u1F41A,                                   CodePoint: 128026,  Unicode: U+01F41A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F41B                                   "\xF0\x9F\x90\x9B" /* Id: 526,  Name: u1F41B,                                   CodePoint: 128027,  Unicode: U+01F41B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F41C                                   "\xF0\x9F\x90\x9C" /* Id: 527,  Name: u1F41C,                                   CodePoint: 128028,  Unicode: U+01F41C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F41D                                   "\xF0\x9F\x90\x9D" /* Id: 528,  Name: u1F41D,                                   CodePoint: 128029,  Unicode: U+01F41D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F41E                                   "\xF0\x9F\x90\x9E" /* Id: 529,  Name: u1F41E,                                   CodePoint: 128030,  Unicode: U+01F41E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F41F                                   "\xF0\x9F\x90\x9F" /* Id: 530,  Name: u1F41F,                                   CodePoint: 128031,  Unicode: U+01F41F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F420                                   "\xF0\x9F\x90\xA0" /* Id: 531,  Name: u1F420,                                   CodePoint: 128032,  Unicode: U+01F420  */
+#define NOTO_EMOJI_24_SYMBOL_U1F421                                   "\xF0\x9F\x90\xA1" /* Id: 532,  Name: u1F421,                                   CodePoint: 128033,  Unicode: U+01F421  */
+#define NOTO_EMOJI_24_SYMBOL_U1F422                                   "\xF0\x9F\x90\xA2" /* Id: 533,  Name: u1F422,                                   CodePoint: 128034,  Unicode: U+01F422  */
+#define NOTO_EMOJI_24_SYMBOL_U1F423                                   "\xF0\x9F\x90\xA3" /* Id: 534,  Name: u1F423,                                   CodePoint: 128035,  Unicode: U+01F423  */
+#define NOTO_EMOJI_24_SYMBOL_U1F424                                   "\xF0\x9F\x90\xA4" /* Id: 535,  Name: u1F424,                                   CodePoint: 128036,  Unicode: U+01F424  */
+#define NOTO_EMOJI_24_SYMBOL_U1F425                                   "\xF0\x9F\x90\xA5" /* Id: 536,  Name: u1F425,                                   CodePoint: 128037,  Unicode: U+01F425  */
+#define NOTO_EMOJI_24_SYMBOL_U1F426                                   "\xF0\x9F\x90\xA6" /* Id: 537,  Name: u1F426,                                   CodePoint: 128038,  Unicode: U+01F426  */
+#define NOTO_EMOJI_24_SYMBOL_BLACKBIRD                                "\x00"             /* Id: 538,  Name: blackBird,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_U1F427                                   "\xF0\x9F\x90\xA7" /* Id: 539,  Name: u1F427,                                   CodePoint: 128039,  Unicode: U+01F427  */
+#define NOTO_EMOJI_24_SYMBOL_GOOSE                                    "\xF0\x9F\xAA\xBF" /* Id: 540,  Name: goose,                                    CodePoint: 129727,  Unicode: U+01FABF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F428                                   "\xF0\x9F\x90\xA8" /* Id: 541,  Name: u1F428,                                   CodePoint: 128040,  Unicode: U+01F428  */
+#define NOTO_EMOJI_24_SYMBOL_U1F429                                   "\xF0\x9F\x90\xA9" /* Id: 542,  Name: u1F429,                                   CodePoint: 128041,  Unicode: U+01F429  */
+#define NOTO_EMOJI_24_SYMBOL_U1F42A                                   "\xF0\x9F\x90\xAA" /* Id: 543,  Name: u1F42A,                                   CodePoint: 128042,  Unicode: U+01F42A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F42B                                   "\xF0\x9F\x90\xAB" /* Id: 544,  Name: u1F42B,                                   CodePoint: 128043,  Unicode: U+01F42B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F42C                                   "\xF0\x9F\x90\xAC" /* Id: 545,  Name: u1F42C,                                   CodePoint: 128044,  Unicode: U+01F42C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F42D                                   "\xF0\x9F\x90\xAD" /* Id: 546,  Name: u1F42D,                                   CodePoint: 128045,  Unicode: U+01F42D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F42E                                   "\xF0\x9F\x90\xAE" /* Id: 547,  Name: u1F42E,                                   CodePoint: 128046,  Unicode: U+01F42E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F42F                                   "\xF0\x9F\x90\xAF" /* Id: 548,  Name: u1F42F,                                   CodePoint: 128047,  Unicode: U+01F42F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F430                                   "\xF0\x9F\x90\xB0" /* Id: 549,  Name: u1F430,                                   CodePoint: 128048,  Unicode: U+01F430  */
+#define NOTO_EMOJI_24_SYMBOL_U1F431                                   "\xF0\x9F\x90\xB1" /* Id: 550,  Name: u1F431,                                   CodePoint: 128049,  Unicode: U+01F431  */
+#define NOTO_EMOJI_24_SYMBOL_U1F432                                   "\xF0\x9F\x90\xB2" /* Id: 551,  Name: u1F432,                                   CodePoint: 128050,  Unicode: U+01F432  */
+#define NOTO_EMOJI_24_SYMBOL_U1F433                                   "\xF0\x9F\x90\xB3" /* Id: 552,  Name: u1F433,                                   CodePoint: 128051,  Unicode: U+01F433  */
+#define NOTO_EMOJI_24_SYMBOL_U1F434                                   "\xF0\x9F\x90\xB4" /* Id: 553,  Name: u1F434,                                   CodePoint: 128052,  Unicode: U+01F434  */
+#define NOTO_EMOJI_24_SYMBOL_U1F435                                   "\xF0\x9F\x90\xB5" /* Id: 554,  Name: u1F435,                                   CodePoint: 128053,  Unicode: U+01F435  */
+#define NOTO_EMOJI_24_SYMBOL_U1F436                                   "\xF0\x9F\x90\xB6" /* Id: 555,  Name: u1F436,                                   CodePoint: 128054,  Unicode: U+01F436  */
+#define NOTO_EMOJI_24_SYMBOL_U1F437                                   "\xF0\x9F\x90\xB7" /* Id: 556,  Name: u1F437,                                   CodePoint: 128055,  Unicode: U+01F437  */
+#define NOTO_EMOJI_24_SYMBOL_U1F438                                   "\xF0\x9F\x90\xB8" /* Id: 557,  Name: u1F438,                                   CodePoint: 128056,  Unicode: U+01F438  */
+#define NOTO_EMOJI_24_SYMBOL_U1F439                                   "\xF0\x9F\x90\xB9" /* Id: 558,  Name: u1F439,                                   CodePoint: 128057,  Unicode: U+01F439  */
+#define NOTO_EMOJI_24_SYMBOL_U1F43A                                   "\xF0\x9F\x90\xBA" /* Id: 559,  Name: u1F43A,                                   CodePoint: 128058,  Unicode: U+01F43A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F43B                                   "\xF0\x9F\x90\xBB" /* Id: 560,  Name: u1F43B,                                   CodePoint: 128059,  Unicode: U+01F43B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F43C                                   "\xF0\x9F\x90\xBC" /* Id: 561,  Name: u1F43C,                                   CodePoint: 128060,  Unicode: U+01F43C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F43D                                   "\xF0\x9F\x90\xBD" /* Id: 562,  Name: u1F43D,                                   CodePoint: 128061,  Unicode: U+01F43D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F43E                                   "\xF0\x9F\x90\xBE" /* Id: 563,  Name: u1F43E,                                   CodePoint: 128062,  Unicode: U+01F43E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F43F                                   "\xF0\x9F\x90\xBF" /* Id: 564,  Name: u1F43F,                                   CodePoint: 128063,  Unicode: U+01F43F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F440                                   "\xF0\x9F\x91\x80" /* Id: 565,  Name: u1F440,                                   CodePoint: 128064,  Unicode: U+01F440  */
+#define NOTO_EMOJI_24_SYMBOL_U1F441                                   "\xF0\x9F\x91\x81" /* Id: 566,  Name: u1F441,                                   CodePoint: 128065,  Unicode: U+01F441  */
+#define NOTO_EMOJI_24_SYMBOL_U1F442                                   "\xF0\x9F\x91\x82" /* Id: 567,  Name: u1F442,                                   CodePoint: 128066,  Unicode: U+01F442  */
+#define NOTO_EMOJI_24_SYMBOL_U1F443                                   "\xF0\x9F\x91\x83" /* Id: 568,  Name: u1F443,                                   CodePoint: 128067,  Unicode: U+01F443  */
+#define NOTO_EMOJI_24_SYMBOL_U1F444                                   "\xF0\x9F\x91\x84" /* Id: 569,  Name: u1F444,                                   CodePoint: 128068,  Unicode: U+01F444  */
+#define NOTO_EMOJI_24_SYMBOL_U1F445                                   "\xF0\x9F\x91\x85" /* Id: 570,  Name: u1F445,                                   CodePoint: 128069,  Unicode: U+01F445  */
+#define NOTO_EMOJI_24_SYMBOL_BACKHANDINDEXPOINTINGUP                  "\xF0\x9F\x91\x86" /* Id: 571,  Name: backhandIndexPointingUp,                  CodePoint: 128070,  Unicode: U+01F446  */
+#define NOTO_EMOJI_24_SYMBOL_BACKHANDINDEXPOINTINGDOWN                "\xF0\x9F\x91\x87" /* Id: 572,  Name: backhandIndexPointingDown,                CodePoint: 128071,  Unicode: U+01F447  */
+#define NOTO_EMOJI_24_SYMBOL_BACKHANDINDEXPOINTINGLEFT                "\xF0\x9F\x91\x88" /* Id: 573,  Name: backhandIndexPointingLeft,                CodePoint: 128072,  Unicode: U+01F448  */
+#define NOTO_EMOJI_24_SYMBOL_BACKHANDINDEXPOINTINGRIGHT               "\xF0\x9F\x91\x89" /* Id: 574,  Name: backhandIndexPointingRight,               CodePoint: 128073,  Unicode: U+01F449  */
+#define NOTO_EMOJI_24_SYMBOL_ONCOMINGFIST                             "\xF0\x9F\x91\x8A" /* Id: 575,  Name: oncomingFist,                             CodePoint: 128074,  Unicode: U+01F44A  */
+#define NOTO_EMOJI_24_SYMBOL_WAVINGHAND                               "\xF0\x9F\x91\x8B" /* Id: 576,  Name: wavingHand,                               CodePoint: 128075,  Unicode: U+01F44B  */
+#define NOTO_EMOJI_24_SYMBOL_OKHAND                                   "\xF0\x9F\x91\x8C" /* Id: 577,  Name: okHand,                                   CodePoint: 128076,  Unicode: U+01F44C  */
+#define NOTO_EMOJI_24_SYMBOL_THUMBSUP                                 "\xF0\x9F\x91\x8D" /* Id: 578,  Name: thumbsUp,                                 CodePoint: 128077,  Unicode: U+01F44D  */
+#define NOTO_EMOJI_24_SYMBOL_THUMBSDOWN                               "\xF0\x9F\x91\x8E" /* Id: 579,  Name: thumbsDown,                               CodePoint: 128078,  Unicode: U+01F44E  */
+#define NOTO_EMOJI_24_SYMBOL_CLAPPINGHANDS                            "\xF0\x9F\x91\x8F" /* Id: 580,  Name: clappingHands,                            CodePoint: 128079,  Unicode: U+01F44F  */
+#define NOTO_EMOJI_24_SYMBOL_OPENHANDS                                "\xF0\x9F\x91\x90" /* Id: 581,  Name: openHands,                                CodePoint: 128080,  Unicode: U+01F450  */
+#define NOTO_EMOJI_24_SYMBOL_U1F451                                   "\xF0\x9F\x91\x91" /* Id: 582,  Name: u1F451,                                   CodePoint: 128081,  Unicode: U+01F451  */
+#define NOTO_EMOJI_24_SYMBOL_U1F452                                   "\xF0\x9F\x91\x92" /* Id: 583,  Name: u1F452,                                   CodePoint: 128082,  Unicode: U+01F452  */
+#define NOTO_EMOJI_24_SYMBOL_U1F453                                   "\xF0\x9F\x91\x93" /* Id: 584,  Name: u1F453,                                   CodePoint: 128083,  Unicode: U+01F453  */
+#define NOTO_EMOJI_24_SYMBOL_U1F454                                   "\xF0\x9F\x91\x94" /* Id: 585,  Name: u1F454,                                   CodePoint: 128084,  Unicode: U+01F454  */
+#define NOTO_EMOJI_24_SYMBOL_U1F455                                   "\xF0\x9F\x91\x95" /* Id: 586,  Name: u1F455,                                   CodePoint: 128085,  Unicode: U+01F455  */
+#define NOTO_EMOJI_24_SYMBOL_U1F456                                   "\xF0\x9F\x91\x96" /* Id: 587,  Name: u1F456,                                   CodePoint: 128086,  Unicode: U+01F456  */
+#define NOTO_EMOJI_24_SYMBOL_U1F457                                   "\xF0\x9F\x91\x97" /* Id: 588,  Name: u1F457,                                   CodePoint: 128087,  Unicode: U+01F457  */
+#define NOTO_EMOJI_24_SYMBOL_U1F458                                   "\xF0\x9F\x91\x98" /* Id: 589,  Name: u1F458,                                   CodePoint: 128088,  Unicode: U+01F458  */
+#define NOTO_EMOJI_24_SYMBOL_U1F459                                   "\xF0\x9F\x91\x99" /* Id: 590,  Name: u1F459,                                   CodePoint: 128089,  Unicode: U+01F459  */
+#define NOTO_EMOJI_24_SYMBOL_U1F45A                                   "\xF0\x9F\x91\x9A" /* Id: 591,  Name: u1F45A,                                   CodePoint: 128090,  Unicode: U+01F45A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F45B                                   "\xF0\x9F\x91\x9B" /* Id: 592,  Name: u1F45B,                                   CodePoint: 128091,  Unicode: U+01F45B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F45C                                   "\xF0\x9F\x91\x9C" /* Id: 593,  Name: u1F45C,                                   CodePoint: 128092,  Unicode: U+01F45C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F45D                                   "\xF0\x9F\x91\x9D" /* Id: 594,  Name: u1F45D,                                   CodePoint: 128093,  Unicode: U+01F45D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F45E                                   "\xF0\x9F\x91\x9E" /* Id: 595,  Name: u1F45E,                                   CodePoint: 128094,  Unicode: U+01F45E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F45F                                   "\xF0\x9F\x91\x9F" /* Id: 596,  Name: u1F45F,                                   CodePoint: 128095,  Unicode: U+01F45F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F460                                   "\xF0\x9F\x91\xA0" /* Id: 597,  Name: u1F460,                                   CodePoint: 128096,  Unicode: U+01F460  */
+#define NOTO_EMOJI_24_SYMBOL_U1F461                                   "\xF0\x9F\x91\xA1" /* Id: 598,  Name: u1F461,                                   CodePoint: 128097,  Unicode: U+01F461  */
+#define NOTO_EMOJI_24_SYMBOL_WOMANSBOOT                               "\xF0\x9F\x91\xA2" /* Id: 599,  Name: womansBoot,                               CodePoint: 128098,  Unicode: U+01F462  */
+#define NOTO_EMOJI_24_SYMBOL_U1F463                                   "\xF0\x9F\x91\xA3" /* Id: 600,  Name: u1F463,                                   CodePoint: 128099,  Unicode: U+01F463  */
+#define NOTO_EMOJI_24_SYMBOL_U1F464                                   "\xF0\x9F\x91\xA4" /* Id: 601,  Name: u1F464,                                   CodePoint: 128100,  Unicode: U+01F464  */
+#define NOTO_EMOJI_24_SYMBOL_U1F465                                   "\xF0\x9F\x91\xA5" /* Id: 602,  Name: u1F465,                                   CodePoint: 128101,  Unicode: U+01F465  */
+#define NOTO_EMOJI_24_SYMBOL_U1F466                                   "\xF0\x9F\x91\xA6" /* Id: 603,  Name: u1F466,                                   CodePoint: 128102,  Unicode: U+01F466  */
+#define NOTO_EMOJI_24_SYMBOL_U1F467                                   "\xF0\x9F\x91\xA7" /* Id: 604,  Name: u1F467,                                   CodePoint: 128103,  Unicode: U+01F467  */
+#define NOTO_EMOJI_24_SYMBOL_U1F468                                   "\xF0\x9F\x91\xA8" /* Id: 605,  Name: u1F468,                                   CodePoint: 128104,  Unicode: U+01F468  */
+#define NOTO_EMOJI_24_SYMBOL_U1F469                                   "\xF0\x9F\x91\xA9" /* Id: 606,  Name: u1F469,                                   CodePoint: 128105,  Unicode: U+01F469  */
+#define NOTO_EMOJI_24_SYMBOL_U1F46A                                   "\xF0\x9F\x91\xAA" /* Id: 607,  Name: u1F46A,                                   CodePoint: 128106,  Unicode: U+01F46A  */
+#define NOTO_EMOJI_24_SYMBOL_WOMENANDMENHOLDINGHANDS                  "\xF0\x9F\x91\xAB" /* Id: 608,  Name: womenAndMenHoldingHands,                  CodePoint: 128107,  Unicode: U+01F46B  */
+#define NOTO_EMOJI_24_SYMBOL_MENHOLDINGHANDS                          "\xF0\x9F\x91\xAC" /* Id: 609,  Name: menHoldingHands,                          CodePoint: 128108,  Unicode: U+01F46C  */
+#define NOTO_EMOJI_24_SYMBOL_WOMENHOLDINGHANDS                        "\xF0\x9F\x91\xAD" /* Id: 610,  Name: womenHoldingHands,                        CodePoint: 128109,  Unicode: U+01F46D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F46E                                   "\xF0\x9F\x91\xAE" /* Id: 611,  Name: u1F46E,                                   CodePoint: 128110,  Unicode: U+01F46E  */
+#define NOTO_EMOJI_24_SYMBOL_PEOPLEWITHBUNNYEARS                      "\xF0\x9F\x91\xAF" /* Id: 612,  Name: peopleWithBunnyEars,                      CodePoint: 128111,  Unicode: U+01F46F  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONINVEIL                             "\xF0\x9F\x91\xB0" /* Id: 613,  Name: personInVeil,                             CodePoint: 128112,  Unicode: U+01F470  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONWITHBLONDEHAIR                     "\xF0\x9F\x91\xB1" /* Id: 614,  Name: personWithBlondeHair,                     CodePoint: 128113,  Unicode: U+01F471  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONWITHSKULLCAP                       "\xF0\x9F\x91\xB2" /* Id: 615,  Name: personWithSkullcap,                       CodePoint: 128114,  Unicode: U+01F472  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONWEARINGTURBAN                      "\xF0\x9F\x91\xB3" /* Id: 616,  Name: personWearingTurban,                      CodePoint: 128115,  Unicode: U+01F473  */
+#define NOTO_EMOJI_24_SYMBOL_U1F474                                   "\xF0\x9F\x91\xB4" /* Id: 617,  Name: u1F474,                                   CodePoint: 128116,  Unicode: U+01F474  */
+#define NOTO_EMOJI_24_SYMBOL_U1F475                                   "\xF0\x9F\x91\xB5" /* Id: 618,  Name: u1F475,                                   CodePoint: 128117,  Unicode: U+01F475  */
+#define NOTO_EMOJI_24_SYMBOL_U1F476                                   "\xF0\x9F\x91\xB6" /* Id: 619,  Name: u1F476,                                   CodePoint: 128118,  Unicode: U+01F476  */
+#define NOTO_EMOJI_24_SYMBOL_U1F477                                   "\xF0\x9F\x91\xB7" /* Id: 620,  Name: u1F477,                                   CodePoint: 128119,  Unicode: U+01F477  */
+#define NOTO_EMOJI_24_SYMBOL_U1F934                                   "\xF0\x9F\x91\xB8" /* Id: 621,  Name: u1F934,                                   CodePoint: 128120,  Unicode: U+01F478  */
+#define NOTO_EMOJI_24_SYMBOL_U1F479                                   "\xF0\x9F\x91\xB9" /* Id: 622,  Name: u1F479,                                   CodePoint: 128121,  Unicode: U+01F479  */
+#define NOTO_EMOJI_24_SYMBOL_U1F47A                                   "\xF0\x9F\x91\xBA" /* Id: 623,  Name: u1F47A,                                   CodePoint: 128122,  Unicode: U+01F47A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F47B                                   "\xF0\x9F\x91\xBB" /* Id: 624,  Name: u1F47B,                                   CodePoint: 128123,  Unicode: U+01F47B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F47C                                   "\xF0\x9F\x91\xBC" /* Id: 625,  Name: u1F47C,                                   CodePoint: 128124,  Unicode: U+01F47C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F47D                                   "\xF0\x9F\x91\xBD" /* Id: 626,  Name: u1F47D,                                   CodePoint: 128125,  Unicode: U+01F47D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F47E                                   "\xF0\x9F\x91\xBE" /* Id: 627,  Name: u1F47E,                                   CodePoint: 128126,  Unicode: U+01F47E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F47F                                   "\xF0\x9F\x91\xBF" /* Id: 628,  Name: u1F47F,                                   CodePoint: 128127,  Unicode: U+01F47F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F480                                   "\xF0\x9F\x92\x80" /* Id: 629,  Name: u1F480,                                   CodePoint: 128128,  Unicode: U+01F480  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONTIPPINGHAND                        "\xF0\x9F\x92\x81" /* Id: 630,  Name: personTippingHand,                        CodePoint: 128129,  Unicode: U+01F481  */
+#define NOTO_EMOJI_24_SYMBOL_GUARD                                    "\xF0\x9F\x92\x82" /* Id: 631,  Name: guard,                                    CodePoint: 128130,  Unicode: U+01F482  */
+#define NOTO_EMOJI_24_SYMBOL_WOMANDANCING                             "\xF0\x9F\x92\x83" /* Id: 632,  Name: womanDancing,                             CodePoint: 128131,  Unicode: U+01F483  */
+#define NOTO_EMOJI_24_SYMBOL_U1F484                                   "\xF0\x9F\x92\x84" /* Id: 633,  Name: u1F484,                                   CodePoint: 128132,  Unicode: U+01F484  */
+#define NOTO_EMOJI_24_SYMBOL_U1F485                                   "\xF0\x9F\x92\x85" /* Id: 634,  Name: u1F485,                                   CodePoint: 128133,  Unicode: U+01F485  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONGETTINGMASSAGE                     "\xF0\x9F\x92\x86" /* Id: 635,  Name: personGettingMassage,                     CodePoint: 128134,  Unicode: U+01F486  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONGETTINGHAIRCUT                     "\xF0\x9F\x92\x87" /* Id: 636,  Name: personGettingHaircut,                     CodePoint: 128135,  Unicode: U+01F487  */
+#define NOTO_EMOJI_24_SYMBOL_U1F488                                   "\xF0\x9F\x92\x88" /* Id: 637,  Name: u1F488,                                   CodePoint: 128136,  Unicode: U+01F488  */
+#define NOTO_EMOJI_24_SYMBOL_U1F489                                   "\xF0\x9F\x92\x89" /* Id: 638,  Name: u1F489,                                   CodePoint: 128137,  Unicode: U+01F489  */
+#define NOTO_EMOJI_24_SYMBOL_U1F48A                                   "\xF0\x9F\x92\x8A" /* Id: 639,  Name: u1F48A,                                   CodePoint: 128138,  Unicode: U+01F48A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F48B                                   "\xF0\x9F\x92\x8B" /* Id: 640,  Name: u1F48B,                                   CodePoint: 128139,  Unicode: U+01F48B  */
+#define NOTO_EMOJI_24_SYMBOL_LOVELETTER                               "\xF0\x9F\x92\x8C" /* Id: 641,  Name: loveLetter,                               CodePoint: 128140,  Unicode: U+01F48C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F48D                                   "\xF0\x9F\x92\x8D" /* Id: 642,  Name: u1F48D,                                   CodePoint: 128141,  Unicode: U+01F48D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F48E                                   "\xF0\x9F\x92\x8E" /* Id: 643,  Name: u1F48E,                                   CodePoint: 128142,  Unicode: U+01F48E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F48F                                   "\xF0\x9F\x92\x8F" /* Id: 644,  Name: u1F48F,                                   CodePoint: 128143,  Unicode: U+01F48F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F490                                   "\xF0\x9F\x92\x90" /* Id: 645,  Name: u1F490,                                   CodePoint: 128144,  Unicode: U+01F490  */
+#define NOTO_EMOJI_24_SYMBOL_COUPLEWITHHEART                          "\xF0\x9F\x92\x91" /* Id: 646,  Name: coupleWithHeart,                          CodePoint: 128145,  Unicode: U+01F491  */
+#define NOTO_EMOJI_24_SYMBOL_U1F492                                   "\xF0\x9F\x92\x92" /* Id: 647,  Name: u1F492,                                   CodePoint: 128146,  Unicode: U+01F492  */
+#define NOTO_EMOJI_24_SYMBOL_U1F493                                   "\xF0\x9F\x92\x93" /* Id: 648,  Name: u1F493,                                   CodePoint: 128147,  Unicode: U+01F493  */
+#define NOTO_EMOJI_24_SYMBOL_U1F494                                   "\xF0\x9F\x92\x94" /* Id: 649,  Name: u1F494,                                   CodePoint: 128148,  Unicode: U+01F494  */
+#define NOTO_EMOJI_24_SYMBOL_U1F495                                   "\xF0\x9F\x92\x95" /* Id: 650,  Name: u1F495,                                   CodePoint: 128149,  Unicode: U+01F495  */
+#define NOTO_EMOJI_24_SYMBOL_U1F496                                   "\xF0\x9F\x92\x96" /* Id: 651,  Name: u1F496,                                   CodePoint: 128150,  Unicode: U+01F496  */
+#define NOTO_EMOJI_24_SYMBOL_U1F497                                   "\xF0\x9F\x92\x97" /* Id: 652,  Name: u1F497,                                   CodePoint: 128151,  Unicode: U+01F497  */
+#define NOTO_EMOJI_24_SYMBOL_U1F498                                   "\xF0\x9F\x92\x98" /* Id: 653,  Name: u1F498,                                   CodePoint: 128152,  Unicode: U+01F498  */
+#define NOTO_EMOJI_24_SYMBOL_U1F499                                   "\xF0\x9F\x92\x99" /* Id: 654,  Name: u1F499,                                   CodePoint: 128153,  Unicode: U+01F499  */
+#define NOTO_EMOJI_24_SYMBOL_U1F49A                                   "\xF0\x9F\x92\x9A" /* Id: 655,  Name: u1F49A,                                   CodePoint: 128154,  Unicode: U+01F49A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F49B                                   "\xF0\x9F\x92\x9B" /* Id: 656,  Name: u1F49B,                                   CodePoint: 128155,  Unicode: U+01F49B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F49C                                   "\xF0\x9F\x92\x9C" /* Id: 657,  Name: u1F49C,                                   CodePoint: 128156,  Unicode: U+01F49C  */
+#define NOTO_EMOJI_24_SYMBOL_GREYHEART                                "\xF0\x9F\xA9\xB6" /* Id: 658,  Name: greyHeart,                                CodePoint: 129654,  Unicode: U+01FA76  */
+#define NOTO_EMOJI_24_SYMBOL_PINKHEART                                "\xF0\x9F\xA9\xB7" /* Id: 659,  Name: pinkHeart,                                CodePoint: 129655,  Unicode: U+01FA77  */
+#define NOTO_EMOJI_24_SYMBOL_LIGHTBLUEHEART                           "\xF0\x9F\xA9\xB5" /* Id: 660,  Name: lightBlueHeart,                           CodePoint: 129653,  Unicode: U+01FA75  */
+#define NOTO_EMOJI_24_SYMBOL_U1F49D                                   "\xF0\x9F\x92\x9D" /* Id: 661,  Name: u1F49D,                                   CodePoint: 128157,  Unicode: U+01F49D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F49E                                   "\xF0\x9F\x92\x9E" /* Id: 662,  Name: u1F49E,                                   CodePoint: 128158,  Unicode: U+01F49E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F49F                                   "\xF0\x9F\x92\x9F" /* Id: 663,  Name: u1F49F,                                   CodePoint: 128159,  Unicode: U+01F49F  */
+#define NOTO_EMOJI_24_SYMBOL_DIAMONDWITHDOT                           "\xF0\x9F\x92\xA0" /* Id: 664,  Name: diamondWithDot,                           CodePoint: 128160,  Unicode: U+01F4A0  */
+#define NOTO_EMOJI_24_SYMBOL_LIGHTBULB                                "\xF0\x9F\x92\xA1" /* Id: 665,  Name: lightBulb,                                CodePoint: 128161,  Unicode: U+01F4A1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4A2_ALT                               "\xF0\x9F\x92\xA2" /* Id: 666,  Name: u1F4A2.alt,                               CodePoint: 128162,  Unicode: U+01F4A2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4A3                                   "\xF0\x9F\x92\xA3" /* Id: 667,  Name: u1F4A3,                                   CodePoint: 128163,  Unicode: U+01F4A3  */
+#define NOTO_EMOJI_24_SYMBOL_ZZZ                                      "\xF0\x9F\x92\xA4" /* Id: 668,  Name: zzz,                                      CodePoint: 128164,  Unicode: U+01F4A4  */
+#define NOTO_EMOJI_24_SYMBOL_COLLISION                                "\xF0\x9F\x92\xA5" /* Id: 669,  Name: collision,                                CodePoint: 128165,  Unicode: U+01F4A5  */
+#define NOTO_EMOJI_24_SYMBOL_SWEATDROPLETS                            "\xF0\x9F\x92\xA6" /* Id: 670,  Name: sweatDroplets,                            CodePoint: 128166,  Unicode: U+01F4A6  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4A7                                   "\xF0\x9F\x92\xA7" /* Id: 671,  Name: u1F4A7,                                   CodePoint: 128167,  Unicode: U+01F4A7  */
+#define NOTO_EMOJI_24_SYMBOL_DASHINGAWAY                              "\xF0\x9F\x92\xA8" /* Id: 672,  Name: dashingAway,                              CodePoint: 128168,  Unicode: U+01F4A8  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4A9                                   "\xF0\x9F\x92\xA9" /* Id: 673,  Name: u1F4A9,                                   CodePoint: 128169,  Unicode: U+01F4A9  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4AA                                   "\xF0\x9F\x92\xAA" /* Id: 674,  Name: u1F4AA,                                   CodePoint: 128170,  Unicode: U+01F4AA  */
+#define NOTO_EMOJI_24_SYMBOL_DIZZY                                    "\xF0\x9F\x92\xAB" /* Id: 675,  Name: dizzy,                                    CodePoint: 128171,  Unicode: U+01F4AB  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4AC                                   "\xF0\x9F\x92\xAC" /* Id: 676,  Name: u1F4AC,                                   CodePoint: 128172,  Unicode: U+01F4AC  */
+#define NOTO_EMOJI_24_SYMBOL_THOUGHTBUBBLE                            "\xF0\x9F\x92\xAD" /* Id: 677,  Name: thoughtBubble,                            CodePoint: 128173,  Unicode: U+01F4AD  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4AE                                   "\xF0\x9F\x92\xAE" /* Id: 678,  Name: u1F4AE,                                   CodePoint: 128174,  Unicode: U+01F4AE  */
+#define NOTO_EMOJI_24_SYMBOL_HUNDREDPOINTS                            "\xF0\x9F\x92\xAF" /* Id: 679,  Name: hundredPoints,                            CodePoint: 128175,  Unicode: U+01F4AF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4B0                                   "\xF0\x9F\x92\xB0" /* Id: 680,  Name: u1F4B0,                                   CodePoint: 128176,  Unicode: U+01F4B0  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4B1                                   "\xF0\x9F\x92\xB1" /* Id: 681,  Name: u1F4B1,                                   CodePoint: 128177,  Unicode: U+01F4B1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4B2                                   "\xF0\x9F\x92\xB2" /* Id: 682,  Name: u1F4B2,                                   CodePoint: 128178,  Unicode: U+01F4B2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4B3                                   "\xF0\x9F\x92\xB3" /* Id: 683,  Name: u1F4B3,                                   CodePoint: 128179,  Unicode: U+01F4B3  */
+#define NOTO_EMOJI_24_SYMBOL_YENBANKNOTE                              "\xF0\x9F\x92\xB4" /* Id: 684,  Name: yenBanknote,                              CodePoint: 128180,  Unicode: U+01F4B4  */
+#define NOTO_EMOJI_24_SYMBOL_DOLLARBANKNOTE                           "\xF0\x9F\x92\xB5" /* Id: 685,  Name: dollarBanknote,                           CodePoint: 128181,  Unicode: U+01F4B5  */
+#define NOTO_EMOJI_24_SYMBOL_EUROBANKNOTE                             "\xF0\x9F\x92\xB6" /* Id: 686,  Name: euroBanknote,                             CodePoint: 128182,  Unicode: U+01F4B6  */
+#define NOTO_EMOJI_24_SYMBOL_POUNDBANKNOTE                            "\xF0\x9F\x92\xB7" /* Id: 687,  Name: poundBanknote,                            CodePoint: 128183,  Unicode: U+01F4B7  */
+#define NOTO_EMOJI_24_SYMBOL_MONEYWITHWINGS                           "\xF0\x9F\x92\xB8" /* Id: 688,  Name: moneyWithWings,                           CodePoint: 128184,  Unicode: U+01F4B8  */
+#define NOTO_EMOJI_24_SYMBOL_CHARTINCREASINGWITHYEN                   "\xF0\x9F\x92\xB9" /* Id: 689,  Name: chartIncreasingWithYen,                   CodePoint: 128185,  Unicode: U+01F4B9  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4BA                                   "\xF0\x9F\x92\xBA" /* Id: 690,  Name: u1F4BA,                                   CodePoint: 128186,  Unicode: U+01F4BA  */
+#define NOTO_EMOJI_24_SYMBOL_LAPTOP                                   "\xF0\x9F\x92\xBB" /* Id: 691,  Name: laptop,                                   CodePoint: 128187,  Unicode: U+01F4BB  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4BC                                   "\xF0\x9F\x92\xBC" /* Id: 692,  Name: u1F4BC,                                   CodePoint: 128188,  Unicode: U+01F4BC  */
+#define NOTO_EMOJI_24_SYMBOL_COMPUTERDISK                             "\xF0\x9F\x92\xBD" /* Id: 693,  Name: computerDisk,                             CodePoint: 128189,  Unicode: U+01F4BD  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4BE                                   "\xF0\x9F\x92\xBE" /* Id: 694,  Name: u1F4BE,                                   CodePoint: 128190,  Unicode: U+01F4BE  */
+#define NOTO_EMOJI_24_SYMBOL_OPTICALDISK                              "\xF0\x9F\x92\xBF" /* Id: 695,  Name: opticalDisk,                              CodePoint: 128191,  Unicode: U+01F4BF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4C0                                   "\xF0\x9F\x93\x80" /* Id: 696,  Name: u1F4C0,                                   CodePoint: 128192,  Unicode: U+01F4C0  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4C1                                   "\xF0\x9F\x93\x81" /* Id: 697,  Name: u1F4C1,                                   CodePoint: 128193,  Unicode: U+01F4C1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4C2                                   "\xF0\x9F\x93\x82" /* Id: 698,  Name: u1F4C2,                                   CodePoint: 128194,  Unicode: U+01F4C2  */
+#define NOTO_EMOJI_24_SYMBOL_PAGEWITHCURL                             "\xF0\x9F\x93\x83" /* Id: 699,  Name: pageWithCurl,                             CodePoint: 128195,  Unicode: U+01F4C3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4C4                                   "\xF0\x9F\x93\x84" /* Id: 700,  Name: u1F4C4,                                   CodePoint: 128196,  Unicode: U+01F4C4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4C5                                   "\xF0\x9F\x93\x85" /* Id: 701,  Name: u1F4C5,                                   CodePoint: 128197,  Unicode: U+01F4C5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4C6                                   "\xF0\x9F\x93\x86" /* Id: 702,  Name: u1F4C6,                                   CodePoint: 128198,  Unicode: U+01F4C6  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4C7                                   "\xF0\x9F\x93\x87" /* Id: 703,  Name: u1F4C7,                                   CodePoint: 128199,  Unicode: U+01F4C7  */
+#define NOTO_EMOJI_24_SYMBOL_CHARTINCREASING                          "\xF0\x9F\x93\x88" /* Id: 704,  Name: chartIncreasing,                          CodePoint: 128200,  Unicode: U+01F4C8  */
+#define NOTO_EMOJI_24_SYMBOL_CHARTDECREASING                          "\xF0\x9F\x93\x89" /* Id: 705,  Name: chartDecreasing,                          CodePoint: 128201,  Unicode: U+01F4C9  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4CA                                   "\xF0\x9F\x93\x8A" /* Id: 706,  Name: u1F4CA,                                   CodePoint: 128202,  Unicode: U+01F4CA  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4CB                                   "\xF0\x9F\x93\x8B" /* Id: 707,  Name: u1F4CB,                                   CodePoint: 128203,  Unicode: U+01F4CB  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4CC                                   "\xF0\x9F\x93\x8C" /* Id: 708,  Name: u1F4CC,                                   CodePoint: 128204,  Unicode: U+01F4CC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4CD                                   "\xF0\x9F\x93\x8D" /* Id: 709,  Name: u1F4CD,                                   CodePoint: 128205,  Unicode: U+01F4CD  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4CE                                   "\xF0\x9F\x93\x8E" /* Id: 710,  Name: u1F4CE,                                   CodePoint: 128206,  Unicode: U+01F4CE  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4CF                                   "\xF0\x9F\x93\x8F" /* Id: 711,  Name: u1F4CF,                                   CodePoint: 128207,  Unicode: U+01F4CF  */
+#define NOTO_EMOJI_24_SYMBOL_TRIANGULARRULAR                          "\xF0\x9F\x93\x90" /* Id: 712,  Name: triangularRular,                          CodePoint: 128208,  Unicode: U+01F4D0  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4D1                                   "\xF0\x9F\x93\x91" /* Id: 713,  Name: u1F4D1,                                   CodePoint: 128209,  Unicode: U+01F4D1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4D2                                   "\xF0\x9F\x93\x92" /* Id: 714,  Name: u1F4D2,                                   CodePoint: 128210,  Unicode: U+01F4D2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4D3                                   "\xF0\x9F\x93\x93" /* Id: 715,  Name: u1F4D3,                                   CodePoint: 128211,  Unicode: U+01F4D3  */
+#define NOTO_EMOJI_24_SYMBOL_NOTEBOOKWITHDECORATIVECOVER              "\xF0\x9F\x93\x94" /* Id: 716,  Name: notebookWithDecorativeCover,              CodePoint: 128212,  Unicode: U+01F4D4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4D5                                   "\xF0\x9F\x93\x95" /* Id: 717,  Name: u1F4D5,                                   CodePoint: 128213,  Unicode: U+01F4D5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4D6                                   "\xF0\x9F\x93\x96" /* Id: 718,  Name: u1F4D6,                                   CodePoint: 128214,  Unicode: U+01F4D6  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4D7                                   "\xF0\x9F\x93\x97" /* Id: 719,  Name: u1F4D7,                                   CodePoint: 128215,  Unicode: U+01F4D7  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4D8                                   "\xF0\x9F\x93\x98" /* Id: 720,  Name: u1F4D8,                                   CodePoint: 128216,  Unicode: U+01F4D8  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4D9                                   "\xF0\x9F\x93\x99" /* Id: 721,  Name: u1F4D9,                                   CodePoint: 128217,  Unicode: U+01F4D9  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4DA                                   "\xF0\x9F\x93\x9A" /* Id: 722,  Name: u1F4DA,                                   CodePoint: 128218,  Unicode: U+01F4DA  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4DB                                   "\xF0\x9F\x93\x9B" /* Id: 723,  Name: u1F4DB,                                   CodePoint: 128219,  Unicode: U+01F4DB  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4DC                                   "\xF0\x9F\x93\x9C" /* Id: 724,  Name: u1F4DC,                                   CodePoint: 128220,  Unicode: U+01F4DC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4DD                                   "\xF0\x9F\x93\x9D" /* Id: 725,  Name: u1F4DD,                                   CodePoint: 128221,  Unicode: U+01F4DD  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4DE                                   "\xF0\x9F\x93\x9E" /* Id: 726,  Name: u1F4DE,                                   CodePoint: 128222,  Unicode: U+01F4DE  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4DF                                   "\xF0\x9F\x93\x9F" /* Id: 727,  Name: u1F4DF,                                   CodePoint: 128223,  Unicode: U+01F4DF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4E0                                   "\xF0\x9F\x93\xA0" /* Id: 728,  Name: u1F4E0,                                   CodePoint: 128224,  Unicode: U+01F4E0  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4E1                                   "\xF0\x9F\x93\xA1" /* Id: 729,  Name: u1F4E1,                                   CodePoint: 128225,  Unicode: U+01F4E1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4E2                                   "\xF0\x9F\x93\xA2" /* Id: 730,  Name: u1F4E2,                                   CodePoint: 128226,  Unicode: U+01F4E2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4E3                                   "\xF0\x9F\x93\xA3" /* Id: 731,  Name: u1F4E3,                                   CodePoint: 128227,  Unicode: U+01F4E3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4E4                                   "\xF0\x9F\x93\xA4" /* Id: 732,  Name: u1F4E4,                                   CodePoint: 128228,  Unicode: U+01F4E4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4E5                                   "\xF0\x9F\x93\xA5" /* Id: 733,  Name: u1F4E5,                                   CodePoint: 128229,  Unicode: U+01F4E5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4E6                                   "\xF0\x9F\x93\xA6" /* Id: 734,  Name: u1F4E6,                                   CodePoint: 128230,  Unicode: U+01F4E6  */
+#define NOTO_EMOJI_24_SYMBOL_EMAIL                                    "\xF0\x9F\x93\xA7" /* Id: 735,  Name: eMail,                                    CodePoint: 128231,  Unicode: U+01F4E7  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4E8                                   "\xF0\x9F\x93\xA8" /* Id: 736,  Name: u1F4E8,                                   CodePoint: 128232,  Unicode: U+01F4E8  */
+#define NOTO_EMOJI_24_SYMBOL_ENVELOPEWITHARROW                        "\xF0\x9F\x93\xA9" /* Id: 737,  Name: envelopeWithArrow,                        CodePoint: 128233,  Unicode: U+01F4E9  */
+#define NOTO_EMOJI_24_SYMBOL_CLOSEDMAILBOXWITHLOWEREDFLAG             "\xF0\x9F\x93\xAA" /* Id: 738,  Name: closedMailboxWithLoweredFlag,             CodePoint: 128234,  Unicode: U+01F4EA  */
+#define NOTO_EMOJI_24_SYMBOL_CLOSEDMAILBOXWITHRAISEDFLAG              "\xF0\x9F\x93\xAB" /* Id: 739,  Name: closedMailboxWithRaisedFlag,              CodePoint: 128235,  Unicode: U+01F4EB  */
+#define NOTO_EMOJI_24_SYMBOL_OPENMAILBOXWITHRAISEDFLAG                "\xF0\x9F\x93\xAC" /* Id: 740,  Name: openMailboxWithRaisedFlag,                CodePoint: 128236,  Unicode: U+01F4EC  */
+#define NOTO_EMOJI_24_SYMBOL_OPENMAILBOXWITHLOWEREDFLAG               "\xF0\x9F\x93\xAD" /* Id: 741,  Name: openMailboxWithLoweredFlag,               CodePoint: 128237,  Unicode: U+01F4ED  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4EE                                   "\xF0\x9F\x93\xAE" /* Id: 742,  Name: u1F4EE,                                   CodePoint: 128238,  Unicode: U+01F4EE  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4EF                                   "\xF0\x9F\x93\xAF" /* Id: 743,  Name: u1F4EF,                                   CodePoint: 128239,  Unicode: U+01F4EF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4F0                                   "\xF0\x9F\x93\xB0" /* Id: 744,  Name: u1F4F0,                                   CodePoint: 128240,  Unicode: U+01F4F0  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4F1                                   "\xF0\x9F\x93\xB1" /* Id: 745,  Name: u1F4F1,                                   CodePoint: 128241,  Unicode: U+01F4F1  */
+#define NOTO_EMOJI_24_SYMBOL_MOBILEPHONEWITHARROW                     "\xF0\x9F\x93\xB2" /* Id: 746,  Name: mobilePhoneWithArrow,                     CodePoint: 128242,  Unicode: U+01F4F2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4F3                                   "\xF0\x9F\x93\xB3" /* Id: 747,  Name: u1F4F3,                                   CodePoint: 128243,  Unicode: U+01F4F3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4F4                                   "\xF0\x9F\x93\xB4" /* Id: 748,  Name: u1F4F4,                                   CodePoint: 128244,  Unicode: U+01F4F4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4F5                                   "\xF0\x9F\x93\xB5" /* Id: 749,  Name: u1F4F5,                                   CodePoint: 128245,  Unicode: U+01F4F5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4F6                                   "\xF0\x9F\x93\xB6" /* Id: 750,  Name: u1F4F6,                                   CodePoint: 128246,  Unicode: U+01F4F6  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4F7                                   "\xF0\x9F\x93\xB7" /* Id: 751,  Name: u1F4F7,                                   CodePoint: 128247,  Unicode: U+01F4F7  */
+#define NOTO_EMOJI_24_SYMBOL_CAMERAWITHFLASH                          "\xF0\x9F\x93\xB8" /* Id: 752,  Name: cameraWithFlash,                          CodePoint: 128248,  Unicode: U+01F4F8  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4F9                                   "\xF0\x9F\x93\xB9" /* Id: 753,  Name: u1F4F9,                                   CodePoint: 128249,  Unicode: U+01F4F9  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4FA                                   "\xF0\x9F\x93\xBA" /* Id: 754,  Name: u1F4FA,                                   CodePoint: 128250,  Unicode: U+01F4FA  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4FB                                   "\xF0\x9F\x93\xBB" /* Id: 755,  Name: u1F4FB,                                   CodePoint: 128251,  Unicode: U+01F4FB  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4FC                                   "\xF0\x9F\x93\xBC" /* Id: 756,  Name: u1F4FC,                                   CodePoint: 128252,  Unicode: U+01F4FC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F4FD                                   "\xF0\x9F\x93\xBD" /* Id: 757,  Name: u1F4FD,                                   CodePoint: 128253,  Unicode: U+01F4FD  */
+#define NOTO_EMOJI_24_SYMBOL_PRAYERBEADS                              "\xF0\x9F\x93\xBF" /* Id: 758,  Name: prayerBeads,                              CodePoint: 128255,  Unicode: U+01F4FF  */
+#define NOTO_EMOJI_24_SYMBOL_SHUFFLETRACKSBUTTON                      "\xF0\x9F\x94\x80" /* Id: 759,  Name: shuffleTracksButton,                      CodePoint: 128256,  Unicode: U+01F500  */
+#define NOTO_EMOJI_24_SYMBOL_REPEATBUTTON                             "\xF0\x9F\x94\x81" /* Id: 760,  Name: repeatButton,                             CodePoint: 128257,  Unicode: U+01F501  */
+#define NOTO_EMOJI_24_SYMBOL_REPEATSINGLEBUTTON                       "\xF0\x9F\x94\x82" /* Id: 761,  Name: repeatSingleButton,                       CodePoint: 128258,  Unicode: U+01F502  */
+#define NOTO_EMOJI_24_SYMBOL_CLOCKWISEVERTICALARROWS                  "\xF0\x9F\x94\x83" /* Id: 762,  Name: clockwiseVerticalArrows,                  CodePoint: 128259,  Unicode: U+01F503  */
+#define NOTO_EMOJI_24_SYMBOL_COUNTERCLOCKWISEARROWSBUTTON             "\xF0\x9F\x94\x84" /* Id: 763,  Name: counterclockwiseArrowsButton,             CodePoint: 128260,  Unicode: U+01F504  */
+#define NOTO_EMOJI_24_SYMBOL_DIMBUTTON                                "\xF0\x9F\x94\x85" /* Id: 764,  Name: dimButton,                                CodePoint: 128261,  Unicode: U+01F505  */
+#define NOTO_EMOJI_24_SYMBOL_BRIGHTBUTTON                             "\xF0\x9F\x94\x86" /* Id: 765,  Name: brightButton,                             CodePoint: 128262,  Unicode: U+01F506  */
+#define NOTO_EMOJI_24_SYMBOL_MUTEDSPEAKER                             "\xF0\x9F\x94\x87" /* Id: 766,  Name: mutedSpeaker,                             CodePoint: 128263,  Unicode: U+01F507  */
+#define NOTO_EMOJI_24_SYMBOL_SPEAKERLOWVOLUME                         "\xF0\x9F\x94\x88" /* Id: 767,  Name: speakerLowVolume,                         CodePoint: 128264,  Unicode: U+01F508  */
+#define NOTO_EMOJI_24_SYMBOL_SPEAKERMEDIUMVOLUME                      "\xF0\x9F\x94\x89" /* Id: 768,  Name: speakerMediumVolume,                      CodePoint: 128265,  Unicode: U+01F509  */
+#define NOTO_EMOJI_24_SYMBOL_SPEAKERHIGHVOLUME                        "\xF0\x9F\x94\x8A" /* Id: 769,  Name: speakerHighVolume,                        CodePoint: 128266,  Unicode: U+01F50A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F50B                                   "\xF0\x9F\x94\x8B" /* Id: 770,  Name: u1F50B,                                   CodePoint: 128267,  Unicode: U+01F50B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F50C                                   "\xF0\x9F\x94\x8C" /* Id: 771,  Name: u1F50C,                                   CodePoint: 128268,  Unicode: U+01F50C  */
+#define NOTO_EMOJI_24_SYMBOL_MAGNIFYINGGLASSTITLEDLEFT                "\xF0\x9F\x94\x8D" /* Id: 772,  Name: magnifyingGlassTitledLeft,                CodePoint: 128269,  Unicode: U+01F50D  */
+#define NOTO_EMOJI_24_SYMBOL_MAGNIFYINGGLASSTITLEDRIGHT               "\xF0\x9F\x94\x8E" /* Id: 773,  Name: magnifyingGlassTitledRight,               CodePoint: 128270,  Unicode: U+01F50E  */
+#define NOTO_EMOJI_24_SYMBOL_LOCKEDWITHPEN                            "\xF0\x9F\x94\x8F" /* Id: 774,  Name: lockedWithPen,                            CodePoint: 128271,  Unicode: U+01F50F  */
+#define NOTO_EMOJI_24_SYMBOL_LOCKEDWITHKEY                            "\xF0\x9F\x94\x90" /* Id: 775,  Name: lockedWithKey,                            CodePoint: 128272,  Unicode: U+01F510  */
+#define NOTO_EMOJI_24_SYMBOL_U1F511                                   "\xF0\x9F\x94\x91" /* Id: 776,  Name: u1F511,                                   CodePoint: 128273,  Unicode: U+01F511  */
+#define NOTO_EMOJI_24_SYMBOL_LOCKED                                   "\xF0\x9F\x94\x92" /* Id: 777,  Name: locked,                                   CodePoint: 128274,  Unicode: U+01F512  */
+#define NOTO_EMOJI_24_SYMBOL_UNLOCKED                                 "\xF0\x9F\x94\x93" /* Id: 778,  Name: unlocked,                                 CodePoint: 128275,  Unicode: U+01F513  */
+#define NOTO_EMOJI_24_SYMBOL_U1F514                                   "\xF0\x9F\x94\x94" /* Id: 779,  Name: u1F514,                                   CodePoint: 128276,  Unicode: U+01F514  */
+#define NOTO_EMOJI_24_SYMBOL_BELLWITHSLASH                            "\xF0\x9F\x94\x95" /* Id: 780,  Name: bellWithSlash,                            CodePoint: 128277,  Unicode: U+01F515  */
+#define NOTO_EMOJI_24_SYMBOL_U1F516                                   "\xF0\x9F\x94\x96" /* Id: 781,  Name: u1F516,                                   CodePoint: 128278,  Unicode: U+01F516  */
+#define NOTO_EMOJI_24_SYMBOL_LINK                                     "\xF0\x9F\x94\x97" /* Id: 782,  Name: link,                                     CodePoint: 128279,  Unicode: U+01F517  */
+#define NOTO_EMOJI_24_SYMBOL_U1F518                                   "\xF0\x9F\x94\x98" /* Id: 783,  Name: u1F518,                                   CodePoint: 128280,  Unicode: U+01F518  */
+#define NOTO_EMOJI_24_SYMBOL_BACKARROW                                "\xF0\x9F\x94\x99" /* Id: 784,  Name: backArrow,                                CodePoint: 128281,  Unicode: U+01F519  */
+#define NOTO_EMOJI_24_SYMBOL_ENDARROW                                 "\xF0\x9F\x94\x9A" /* Id: 785,  Name: endArrow,                                 CodePoint: 128282,  Unicode: U+01F51A  */
+#define NOTO_EMOJI_24_SYMBOL_ONARROW                                  "\xF0\x9F\x94\x9B" /* Id: 786,  Name: onArrow,                                  CodePoint: 128283,  Unicode: U+01F51B  */
+#define NOTO_EMOJI_24_SYMBOL_SOONARROW                                "\xF0\x9F\x94\x9C" /* Id: 787,  Name: soonArrow,                                CodePoint: 128284,  Unicode: U+01F51C  */
+#define NOTO_EMOJI_24_SYMBOL_TOPARROW                                 "\xF0\x9F\x94\x9D" /* Id: 788,  Name: topArrow,                                 CodePoint: 128285,  Unicode: U+01F51D  */
+#define NOTO_EMOJI_24_SYMBOL_NOONEUNDEREIGHTEEN                       "\xF0\x9F\x94\x9E" /* Id: 789,  Name: noOneUnderEighteen,                       CodePoint: 128286,  Unicode: U+01F51E  */
+#define NOTO_EMOJI_24_SYMBOL_INPUTLATINUPPERCASE                      "\xF0\x9F\x94\xA0" /* Id: 790,  Name: inputLatinUppercase,                      CodePoint: 128288,  Unicode: U+01F520  */
+#define NOTO_EMOJI_24_SYMBOL_INPUTLATINLOWERCASE                      "\xF0\x9F\x94\xA1" /* Id: 791,  Name: inputLatinLowercase,                      CodePoint: 128289,  Unicode: U+01F521  */
+#define NOTO_EMOJI_24_SYMBOL_U1F522                                   "\xF0\x9F\x94\xA2" /* Id: 792,  Name: u1F522,                                   CodePoint: 128290,  Unicode: U+01F522  */
+#define NOTO_EMOJI_24_SYMBOL_U1F523                                   "\xF0\x9F\x94\xA3" /* Id: 793,  Name: u1F523,                                   CodePoint: 128291,  Unicode: U+01F523  */
+#define NOTO_EMOJI_24_SYMBOL_U1F524                                   "\xF0\x9F\x94\xA4" /* Id: 794,  Name: u1F524,                                   CodePoint: 128292,  Unicode: U+01F524  */
+#define NOTO_EMOJI_24_SYMBOL_U1F525                                   "\xF0\x9F\x94\xA5" /* Id: 795,  Name: u1F525,                                   CodePoint: 128293,  Unicode: U+01F525  */
+#define NOTO_EMOJI_24_SYMBOL_FLASHLIGHT                               "\xF0\x9F\x94\xA6" /* Id: 796,  Name: flashlight,                               CodePoint: 128294,  Unicode: U+01F526  */
+#define NOTO_EMOJI_24_SYMBOL_U1F527                                   "\xF0\x9F\x94\xA7" /* Id: 797,  Name: u1F527,                                   CodePoint: 128295,  Unicode: U+01F527  */
+#define NOTO_EMOJI_24_SYMBOL_U1F528                                   "\xF0\x9F\x94\xA8" /* Id: 798,  Name: u1F528,                                   CodePoint: 128296,  Unicode: U+01F528  */
+#define NOTO_EMOJI_24_SYMBOL_U1F529                                   "\xF0\x9F\x94\xA9" /* Id: 799,  Name: u1F529,                                   CodePoint: 128297,  Unicode: U+01F529  */
+#define NOTO_EMOJI_24_SYMBOL_KNIFE                                    "\xF0\x9F\x94\xAA" /* Id: 800,  Name: knife,                                    CodePoint: 128298,  Unicode: U+01F52A  */
+#define NOTO_EMOJI_24_SYMBOL_WATERPISTOL                              "\xF0\x9F\x94\xAB" /* Id: 801,  Name: waterPistol,                              CodePoint: 128299,  Unicode: U+01F52B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F52C                                   "\xF0\x9F\x94\xAC" /* Id: 802,  Name: u1F52C,                                   CodePoint: 128300,  Unicode: U+01F52C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F52D                                   "\xF0\x9F\x94\xAD" /* Id: 803,  Name: u1F52D,                                   CodePoint: 128301,  Unicode: U+01F52D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F52E                                   "\xF0\x9F\x94\xAE" /* Id: 804,  Name: u1F52E,                                   CodePoint: 128302,  Unicode: U+01F52E  */
+#define NOTO_EMOJI_24_SYMBOL_DOTTEDSIXPOINTEDSTAR                     "\xF0\x9F\x94\xAF" /* Id: 805,  Name: dottedSixPointedStar,                     CodePoint: 128303,  Unicode: U+01F52F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F530                                   "\xF0\x9F\x94\xB0" /* Id: 806,  Name: u1F530,                                   CodePoint: 128304,  Unicode: U+01F530  */
+#define NOTO_EMOJI_24_SYMBOL_U1F531                                   "\xF0\x9F\x94\xB1" /* Id: 807,  Name: u1F531,                                   CodePoint: 128305,  Unicode: U+01F531  */
+#define NOTO_EMOJI_24_SYMBOL_U1F532                                   "\xF0\x9F\x94\xB2" /* Id: 808,  Name: u1F532,                                   CodePoint: 128306,  Unicode: U+01F532  */
+#define NOTO_EMOJI_24_SYMBOL_U1F533                                   "\xF0\x9F\x94\xB3" /* Id: 809,  Name: u1F533,                                   CodePoint: 128307,  Unicode: U+01F533  */
+#define NOTO_EMOJI_24_SYMBOL_REDCIRCLE                                "\xF0\x9F\x94\xB4" /* Id: 810,  Name: redCircle,                                CodePoint: 128308,  Unicode: U+01F534  */
+#define NOTO_EMOJI_24_SYMBOL_BLUECIRCLE                               "\xF0\x9F\x94\xB5" /* Id: 811,  Name: blueCircle,                               CodePoint: 128309,  Unicode: U+01F535  */
+#define NOTO_EMOJI_24_SYMBOL_U1F536                                   "\xF0\x9F\x94\xB6" /* Id: 812,  Name: u1F536,                                   CodePoint: 128310,  Unicode: U+01F536  */
+#define NOTO_EMOJI_24_SYMBOL_U1F537                                   "\xF0\x9F\x94\xB7" /* Id: 813,  Name: u1F537,                                   CodePoint: 128311,  Unicode: U+01F537  */
+#define NOTO_EMOJI_24_SYMBOL_SMALLORANGEDIAMOND                       "\xF0\x9F\x94\xB8" /* Id: 814,  Name: smallOrangeDiamond,                       CodePoint: 128312,  Unicode: U+01F538  */
+#define NOTO_EMOJI_24_SYMBOL_SMALLBLUEDIAMOND                         "\xF0\x9F\x94\xB9" /* Id: 815,  Name: smallBlueDiamond,                         CodePoint: 128313,  Unicode: U+01F539  */
+#define NOTO_EMOJI_24_SYMBOL_REDTRIANGLEPOINTEDUP                     "\xF0\x9F\x94\xBA" /* Id: 816,  Name: redTrianglePointedUp,                     CodePoint: 128314,  Unicode: U+01F53A  */
+#define NOTO_EMOJI_24_SYMBOL_REDTRIANGLEPOINTEDDOWN                   "\xF0\x9F\x94\xBB" /* Id: 817,  Name: redTrianglePointedDown,                   CodePoint: 128315,  Unicode: U+01F53B  */
+#define NOTO_EMOJI_24_SYMBOL_UPWARDSBUTTON                            "\xF0\x9F\x94\xBC" /* Id: 818,  Name: upwardsButton,                            CodePoint: 128316,  Unicode: U+01F53C  */
+#define NOTO_EMOJI_24_SYMBOL_DOWNWARDSBUTTON                          "\xF0\x9F\x94\xBD" /* Id: 819,  Name: downwardsButton,                          CodePoint: 128317,  Unicode: U+01F53D  */
+#define NOTO_EMOJI_24_SYMBOL_OM                                       "\xF0\x9F\x95\x89" /* Id: 820,  Name: om,                                       CodePoint: 128329,  Unicode: U+01F549  */
+#define NOTO_EMOJI_24_SYMBOL_DOVE                                     "\xF0\x9F\x95\x8A" /* Id: 821,  Name: dove,                                     CodePoint: 128330,  Unicode: U+01F54A  */
+#define NOTO_EMOJI_24_SYMBOL_KAABA                                    "\xF0\x9F\x95\x8B" /* Id: 822,  Name: kaaba,                                    CodePoint: 128331,  Unicode: U+01F54B  */
+#define NOTO_EMOJI_24_SYMBOL_MOSQUE                                   "\xF0\x9F\x95\x8C" /* Id: 823,  Name: mosque,                                   CodePoint: 128332,  Unicode: U+01F54C  */
+#define NOTO_EMOJI_24_SYMBOL_SYNAGOGUE                                "\xF0\x9F\x95\x8D" /* Id: 824,  Name: synagogue,                                CodePoint: 128333,  Unicode: U+01F54D  */
+#define NOTO_EMOJI_24_SYMBOL_MENORAH                                  "\xF0\x9F\x95\x8E" /* Id: 825,  Name: menorah,                                  CodePoint: 128334,  Unicode: U+01F54E  */
+#define NOTO_EMOJI_24_SYMBOL_KHANDA                                   "\xF0\x9F\xAA\xAF" /* Id: 826,  Name: khanda,                                   CodePoint: 129711,  Unicode: U+01FAAF  */
+#define NOTO_EMOJI_24_SYMBOL_ONEOCLOCK                                "\xF0\x9F\x95\x90" /* Id: 827,  Name: oneOClock,                                CodePoint: 128336,  Unicode: U+01F550  */
+#define NOTO_EMOJI_24_SYMBOL_TWOOCLOCK                                "\xF0\x9F\x95\x91" /* Id: 828,  Name: twoOClock,                                CodePoint: 128337,  Unicode: U+01F551  */
+#define NOTO_EMOJI_24_SYMBOL_THREEOCLOCK                              "\xF0\x9F\x95\x92" /* Id: 829,  Name: threeOClock,                              CodePoint: 128338,  Unicode: U+01F552  */
+#define NOTO_EMOJI_24_SYMBOL_FOUROCLOCK                               "\xF0\x9F\x95\x93" /* Id: 830,  Name: fourOClock,                               CodePoint: 128339,  Unicode: U+01F553  */
+#define NOTO_EMOJI_24_SYMBOL_FIVEOCLOCK                               "\xF0\x9F\x95\x94" /* Id: 831,  Name: fiveOClock,                               CodePoint: 128340,  Unicode: U+01F554  */
+#define NOTO_EMOJI_24_SYMBOL_SIXOCLOCK                                "\xF0\x9F\x95\x95" /* Id: 832,  Name: sixOClock,                                CodePoint: 128341,  Unicode: U+01F555  */
+#define NOTO_EMOJI_24_SYMBOL_SEVENOCLOCK                              "\xF0\x9F\x95\x96" /* Id: 833,  Name: sevenOClock,                              CodePoint: 128342,  Unicode: U+01F556  */
+#define NOTO_EMOJI_24_SYMBOL_EIGHTOCLOCK                              "\xF0\x9F\x95\x97" /* Id: 834,  Name: eightOClock,                              CodePoint: 128343,  Unicode: U+01F557  */
+#define NOTO_EMOJI_24_SYMBOL_NINEOCLOCK                               "\xF0\x9F\x95\x98" /* Id: 835,  Name: nineOClock,                               CodePoint: 128344,  Unicode: U+01F558  */
+#define NOTO_EMOJI_24_SYMBOL_TENOCLOCK                                "\xF0\x9F\x95\x99" /* Id: 836,  Name: tenOClock,                                CodePoint: 128345,  Unicode: U+01F559  */
+#define NOTO_EMOJI_24_SYMBOL_ELEVENOCLOCK                             "\xF0\x9F\x95\x9A" /* Id: 837,  Name: elevenOClock,                             CodePoint: 128346,  Unicode: U+01F55A  */
+#define NOTO_EMOJI_24_SYMBOL_TWELVEOCLOCK                             "\xF0\x9F\x95\x9B" /* Id: 838,  Name: twelveOClock,                             CodePoint: 128347,  Unicode: U+01F55B  */
+#define NOTO_EMOJI_24_SYMBOL_ONETHIRTY                                "\xF0\x9F\x95\x9C" /* Id: 839,  Name: oneThirty,                                CodePoint: 128348,  Unicode: U+01F55C  */
+#define NOTO_EMOJI_24_SYMBOL_TWOTHIRTY                                "\xF0\x9F\x95\x9D" /* Id: 840,  Name: twoThirty,                                CodePoint: 128349,  Unicode: U+01F55D  */
+#define NOTO_EMOJI_24_SYMBOL_THREETHIRTY                              "\xF0\x9F\x95\x9E" /* Id: 841,  Name: threeThirty,                              CodePoint: 128350,  Unicode: U+01F55E  */
+#define NOTO_EMOJI_24_SYMBOL_FOURTHIRTY                               "\xF0\x9F\x95\x9F" /* Id: 842,  Name: fourThirty,                               CodePoint: 128351,  Unicode: U+01F55F  */
+#define NOTO_EMOJI_24_SYMBOL_FIVETHIRTY                               "\xF0\x9F\x95\xA0" /* Id: 843,  Name: fiveThirty,                               CodePoint: 128352,  Unicode: U+01F560  */
+#define NOTO_EMOJI_24_SYMBOL_SIXTHIRTY                                "\xF0\x9F\x95\xA1" /* Id: 844,  Name: sixThirty,                                CodePoint: 128353,  Unicode: U+01F561  */
+#define NOTO_EMOJI_24_SYMBOL_SEVENTHIRTY                              "\xF0\x9F\x95\xA2" /* Id: 845,  Name: sevenThirty,                              CodePoint: 128354,  Unicode: U+01F562  */
+#define NOTO_EMOJI_24_SYMBOL_EIGHTTHIRTY                              "\xF0\x9F\x95\xA3" /* Id: 846,  Name: eightThirty,                              CodePoint: 128355,  Unicode: U+01F563  */
+#define NOTO_EMOJI_24_SYMBOL_NINETHIRTY                               "\xF0\x9F\x95\xA4" /* Id: 847,  Name: nineThirty,                               CodePoint: 128356,  Unicode: U+01F564  */
+#define NOTO_EMOJI_24_SYMBOL_TENTHIRTY                                "\xF0\x9F\x95\xA5" /* Id: 848,  Name: tenThirty,                                CodePoint: 128357,  Unicode: U+01F565  */
+#define NOTO_EMOJI_24_SYMBOL_ELEVENTHIRTY                             "\xF0\x9F\x95\xA6" /* Id: 849,  Name: elevenThirty,                             CodePoint: 128358,  Unicode: U+01F566  */
+#define NOTO_EMOJI_24_SYMBOL_TWELVETHIRTY                             "\xF0\x9F\x95\xA7" /* Id: 850,  Name: twelveThirty,                             CodePoint: 128359,  Unicode: U+01F567  */
+#define NOTO_EMOJI_24_SYMBOL_U1F56F                                   "\xF0\x9F\x95\xAF" /* Id: 851,  Name: u1F56F,                                   CodePoint: 128367,  Unicode: U+01F56F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F570                                   "\xF0\x9F\x95\xB0" /* Id: 852,  Name: u1F570,                                   CodePoint: 128368,  Unicode: U+01F570  */
+#define NOTO_EMOJI_24_SYMBOL_U1F573_ALT                               "\xF0\x9F\x95\xB3" /* Id: 853,  Name: u1F573.alt,                               CodePoint: 128371,  Unicode: U+01F573  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONINSUITLEVITATING                   "\xF0\x9F\x95\xB4" /* Id: 854,  Name: personInSuitLevitating,                   CodePoint: 128372,  Unicode: U+01F574  */
+#define NOTO_EMOJI_24_SYMBOL_DETECTIVE                                "\xF0\x9F\x95\xB5" /* Id: 855,  Name: detective,                                CodePoint: 128373,  Unicode: U+01F575  */
+#define NOTO_EMOJI_24_SYMBOL_U1F576                                   "\xF0\x9F\x95\xB6" /* Id: 856,  Name: u1F576,                                   CodePoint: 128374,  Unicode: U+01F576  */
+#define NOTO_EMOJI_24_SYMBOL_U1F577                                   "\xF0\x9F\x95\xB7" /* Id: 857,  Name: u1F577,                                   CodePoint: 128375,  Unicode: U+01F577  */
+#define NOTO_EMOJI_24_SYMBOL_U1F578                                   "\xF0\x9F\x95\xB8" /* Id: 858,  Name: u1F578,                                   CodePoint: 128376,  Unicode: U+01F578  */
+#define NOTO_EMOJI_24_SYMBOL_U1F579                                   "\xF0\x9F\x95\xB9" /* Id: 859,  Name: u1F579,                                   CodePoint: 128377,  Unicode: U+01F579  */
+#define NOTO_EMOJI_24_SYMBOL_MANDANCING                               "\xF0\x9F\x95\xBA" /* Id: 860,  Name: manDancing,                               CodePoint: 128378,  Unicode: U+01F57A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F587                                   "\xF0\x9F\x96\x87" /* Id: 861,  Name: u1F587,                                   CodePoint: 128391,  Unicode: U+01F587  */
+#define NOTO_EMOJI_24_SYMBOL_PEN                                      "\xF0\x9F\x96\x8A" /* Id: 862,  Name: pen,                                      CodePoint: 128394,  Unicode: U+01F58A  */
+#define NOTO_EMOJI_24_SYMBOL_FOUNTAINPEN                              "\xF0\x9F\x96\x8B" /* Id: 863,  Name: fountainPen,                              CodePoint: 128395,  Unicode: U+01F58B  */
+#define NOTO_EMOJI_24_SYMBOL_PAINTBRUSH                               "\xF0\x9F\x96\x8C" /* Id: 864,  Name: paintbrush,                               CodePoint: 128396,  Unicode: U+01F58C  */
+#define NOTO_EMOJI_24_SYMBOL_CRAYON                                   "\xF0\x9F\x96\x8D" /* Id: 865,  Name: crayon,                                   CodePoint: 128397,  Unicode: U+01F58D  */
+#define NOTO_EMOJI_24_SYMBOL_HANDWITHFINGERSSPLAYED                   "\xF0\x9F\x96\x90" /* Id: 866,  Name: handWithFingersSplayed,                   CodePoint: 128400,  Unicode: U+01F590  */
+#define NOTO_EMOJI_24_SYMBOL_MIDDLEFINGER                             "\xF0\x9F\x96\x95" /* Id: 867,  Name: middleFinger,                             CodePoint: 128405,  Unicode: U+01F595  */
+#define NOTO_EMOJI_24_SYMBOL_VULCANSALUTE                             "\xF0\x9F\x96\x96" /* Id: 868,  Name: vulcanSalute,                             CodePoint: 128406,  Unicode: U+01F596  */
+#define NOTO_EMOJI_24_SYMBOL_BLACKHEART                               "\xF0\x9F\x96\xA4" /* Id: 869,  Name: blackHeart,                               CodePoint: 128420,  Unicode: U+01F5A4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5A5                                   "\xF0\x9F\x96\xA5" /* Id: 870,  Name: u1F5A5,                                   CodePoint: 128421,  Unicode: U+01F5A5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5A8                                   "\xF0\x9F\x96\xA8" /* Id: 871,  Name: u1F5A8,                                   CodePoint: 128424,  Unicode: U+01F5A8  */
+#define NOTO_EMOJI_24_SYMBOL_COMPUTERMOUSE                            "\xF0\x9F\x96\xB1" /* Id: 872,  Name: computerMouse,                            CodePoint: 128433,  Unicode: U+01F5B1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5B2                                   "\xF0\x9F\x96\xB2" /* Id: 873,  Name: u1F5B2,                                   CodePoint: 128434,  Unicode: U+01F5B2  */
+#define NOTO_EMOJI_24_SYMBOL_FRAMEDPICTURE                            "\xF0\x9F\x96\xBC" /* Id: 874,  Name: framedPicture,                            CodePoint: 128444,  Unicode: U+01F5BC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5C2                                   "\xF0\x9F\x97\x82" /* Id: 875,  Name: u1F5C2,                                   CodePoint: 128450,  Unicode: U+01F5C2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5C3                                   "\xF0\x9F\x97\x83" /* Id: 876,  Name: u1F5C3,                                   CodePoint: 128451,  Unicode: U+01F5C3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5C4                                   "\xF0\x9F\x97\x84" /* Id: 877,  Name: u1F5C4,                                   CodePoint: 128452,  Unicode: U+01F5C4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5D1                                   "\xF0\x9F\x97\x91" /* Id: 878,  Name: u1F5D1,                                   CodePoint: 128465,  Unicode: U+01F5D1  */
+#define NOTO_EMOJI_24_SYMBOL_SPIRALNOTEBOOK                           "\xF0\x9F\x97\x92" /* Id: 879,  Name: spiralNotebook,                           CodePoint: 128466,  Unicode: U+01F5D2  */
+#define NOTO_EMOJI_24_SYMBOL_SPIRALCALENDAR                           "\xF0\x9F\x97\x93" /* Id: 880,  Name: spiralCalendar,                           CodePoint: 128467,  Unicode: U+01F5D3  */
+#define NOTO_EMOJI_24_SYMBOL_CLAMP                                    "\xF0\x9F\x97\x9C" /* Id: 881,  Name: clamp,                                    CodePoint: 128476,  Unicode: U+01F5DC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5DD                                   "\xF0\x9F\x97\x9D" /* Id: 882,  Name: u1F5DD,                                   CodePoint: 128477,  Unicode: U+01F5DD  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5DE                                   "\xF0\x9F\x97\x9E" /* Id: 883,  Name: u1F5DE,                                   CodePoint: 128478,  Unicode: U+01F5DE  */
+#define NOTO_EMOJI_24_SYMBOL_DAGGER                                   "\xF0\x9F\x97\xA1" /* Id: 884,  Name: dagger,                                   CodePoint: 128481,  Unicode: U+01F5E1  */
+#define NOTO_EMOJI_24_SYMBOL_SPEAKINGHEAD                             "\xF0\x9F\x97\xA3" /* Id: 885,  Name: speakingHead,                             CodePoint: 128483,  Unicode: U+01F5E3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5E8                                   "\xF0\x9F\x97\xA8" /* Id: 886,  Name: u1F5E8,                                   CodePoint: 128488,  Unicode: U+01F5E8  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5EF                                   "\xF0\x9F\x97\xAF" /* Id: 887,  Name: u1F5EF,                                   CodePoint: 128495,  Unicode: U+01F5EF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5F3                                   "\xF0\x9F\x97\xB3" /* Id: 888,  Name: u1F5F3,                                   CodePoint: 128499,  Unicode: U+01F5F3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5FA                                   "\xF0\x9F\x97\xBA" /* Id: 889,  Name: u1F5FA,                                   CodePoint: 128506,  Unicode: U+01F5FA  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5FB                                   "\xF0\x9F\x97\xBB" /* Id: 890,  Name: u1F5FB,                                   CodePoint: 128507,  Unicode: U+01F5FB  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5FC                                   "\xF0\x9F\x97\xBC" /* Id: 891,  Name: u1F5FC,                                   CodePoint: 128508,  Unicode: U+01F5FC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F5FD                                   "\xF0\x9F\x97\xBD" /* Id: 892,  Name: u1F5FD,                                   CodePoint: 128509,  Unicode: U+01F5FD  */
+#define NOTO_EMOJI_24_SYMBOL_MAPOFJAPAN                               "\xF0\x9F\x97\xBE" /* Id: 893,  Name: mapOfJapan,                               CodePoint: 128510,  Unicode: U+01F5FE  */
+#define NOTO_EMOJI_24_SYMBOL_MOAI                                     "\xF0\x9F\x97\xBF" /* Id: 894,  Name: moai,                                     CodePoint: 128511,  Unicode: U+01F5FF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F600                                   "\xF0\x9F\x98\x80" /* Id: 895,  Name: u1F600,                                   CodePoint: 128512,  Unicode: U+01F600  */
+#define NOTO_EMOJI_24_SYMBOL_U1F601                                   "\xF0\x9F\x98\x81" /* Id: 896,  Name: u1F601,                                   CodePoint: 128513,  Unicode: U+01F601  */
+#define NOTO_EMOJI_24_SYMBOL_U1F602                                   "\xF0\x9F\x98\x82" /* Id: 897,  Name: u1F602,                                   CodePoint: 128514,  Unicode: U+01F602  */
+#define NOTO_EMOJI_24_SYMBOL_GRINNINGFACEWITHBIGEYES                  "\xF0\x9F\x98\x83" /* Id: 898,  Name: grinningFaceWithBigEyes,                  CodePoint: 128515,  Unicode: U+01F603  */
+#define NOTO_EMOJI_24_SYMBOL_U1F604                                   "\xF0\x9F\x98\x84" /* Id: 899,  Name: u1F604,                                   CodePoint: 128516,  Unicode: U+01F604  */
+#define NOTO_EMOJI_24_SYMBOL_U1F605                                   "\xF0\x9F\x98\x85" /* Id: 900,  Name: u1F605,                                   CodePoint: 128517,  Unicode: U+01F605  */
+#define NOTO_EMOJI_24_SYMBOL_U1F606                                   "\xF0\x9F\x98\x86" /* Id: 901,  Name: u1F606,                                   CodePoint: 128518,  Unicode: U+01F606  */
+#define NOTO_EMOJI_24_SYMBOL_U1F607                                   "\xF0\x9F\x98\x87" /* Id: 902,  Name: u1F607,                                   CodePoint: 128519,  Unicode: U+01F607  */
+#define NOTO_EMOJI_24_SYMBOL_U1F608                                   "\xF0\x9F\x98\x88" /* Id: 903,  Name: u1F608,                                   CodePoint: 128520,  Unicode: U+01F608  */
+#define NOTO_EMOJI_24_SYMBOL_U1F609                                   "\xF0\x9F\x98\x89" /* Id: 904,  Name: u1F609,                                   CodePoint: 128521,  Unicode: U+01F609  */
+#define NOTO_EMOJI_24_SYMBOL_U1F60A                                   "\xF0\x9F\x98\x8A" /* Id: 905,  Name: u1F60A,                                   CodePoint: 128522,  Unicode: U+01F60A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F60B                                   "\xF0\x9F\x98\x8B" /* Id: 906,  Name: u1F60B,                                   CodePoint: 128523,  Unicode: U+01F60B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F60C                                   "\xF0\x9F\x98\x8C" /* Id: 907,  Name: u1F60C,                                   CodePoint: 128524,  Unicode: U+01F60C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F60D                                   "\xF0\x9F\x98\x8D" /* Id: 908,  Name: u1F60D,                                   CodePoint: 128525,  Unicode: U+01F60D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F60E                                   "\xF0\x9F\x98\x8E" /* Id: 909,  Name: u1F60E,                                   CodePoint: 128526,  Unicode: U+01F60E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F60F                                   "\xF0\x9F\x98\x8F" /* Id: 910,  Name: u1F60F,                                   CodePoint: 128527,  Unicode: U+01F60F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F610                                   "\xF0\x9F\x98\x90" /* Id: 911,  Name: u1F610,                                   CodePoint: 128528,  Unicode: U+01F610  */
+#define NOTO_EMOJI_24_SYMBOL_U1F611                                   "\xF0\x9F\x98\x91" /* Id: 912,  Name: u1F611,                                   CodePoint: 128529,  Unicode: U+01F611  */
+#define NOTO_EMOJI_24_SYMBOL_U1F612                                   "\xF0\x9F\x98\x92" /* Id: 913,  Name: u1F612,                                   CodePoint: 128530,  Unicode: U+01F612  */
+#define NOTO_EMOJI_24_SYMBOL_U1F613                                   "\xF0\x9F\x98\x93" /* Id: 914,  Name: u1F613,                                   CodePoint: 128531,  Unicode: U+01F613  */
+#define NOTO_EMOJI_24_SYMBOL_U1F614                                   "\xF0\x9F\x98\x94" /* Id: 915,  Name: u1F614,                                   CodePoint: 128532,  Unicode: U+01F614  */
+#define NOTO_EMOJI_24_SYMBOL_U1F615                                   "\xF0\x9F\x98\x95" /* Id: 916,  Name: u1F615,                                   CodePoint: 128533,  Unicode: U+01F615  */
+#define NOTO_EMOJI_24_SYMBOL_U1F616                                   "\xF0\x9F\x98\x96" /* Id: 917,  Name: u1F616,                                   CodePoint: 128534,  Unicode: U+01F616  */
+#define NOTO_EMOJI_24_SYMBOL_U1F617                                   "\xF0\x9F\x98\x97" /* Id: 918,  Name: u1F617,                                   CodePoint: 128535,  Unicode: U+01F617  */
+#define NOTO_EMOJI_24_SYMBOL_U1F618                                   "\xF0\x9F\x98\x98" /* Id: 919,  Name: u1F618,                                   CodePoint: 128536,  Unicode: U+01F618  */
+#define NOTO_EMOJI_24_SYMBOL_U1F619                                   "\xF0\x9F\x98\x99" /* Id: 920,  Name: u1F619,                                   CodePoint: 128537,  Unicode: U+01F619  */
+#define NOTO_EMOJI_24_SYMBOL_U1F61A                                   "\xF0\x9F\x98\x9A" /* Id: 921,  Name: u1F61A,                                   CodePoint: 128538,  Unicode: U+01F61A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F61B                                   "\xF0\x9F\x98\x9B" /* Id: 922,  Name: u1F61B,                                   CodePoint: 128539,  Unicode: U+01F61B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F61C                                   "\xF0\x9F\x98\x9C" /* Id: 923,  Name: u1F61C,                                   CodePoint: 128540,  Unicode: U+01F61C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F61D                                   "\xF0\x9F\x98\x9D" /* Id: 924,  Name: u1F61D,                                   CodePoint: 128541,  Unicode: U+01F61D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F61E                                   "\xF0\x9F\x98\x9E" /* Id: 925,  Name: u1F61E,                                   CodePoint: 128542,  Unicode: U+01F61E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F61F                                   "\xF0\x9F\x98\x9F" /* Id: 926,  Name: u1F61F,                                   CodePoint: 128543,  Unicode: U+01F61F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F620                                   "\xF0\x9F\x98\xA0" /* Id: 927,  Name: u1F620,                                   CodePoint: 128544,  Unicode: U+01F620  */
+#define NOTO_EMOJI_24_SYMBOL_U1F621                                   "\xF0\x9F\x98\xA1" /* Id: 928,  Name: u1F621,                                   CodePoint: 128545,  Unicode: U+01F621  */
+#define NOTO_EMOJI_24_SYMBOL_U1F622                                   "\xF0\x9F\x98\xA2" /* Id: 929,  Name: u1F622,                                   CodePoint: 128546,  Unicode: U+01F622  */
+#define NOTO_EMOJI_24_SYMBOL_U1F623                                   "\xF0\x9F\x98\xA3" /* Id: 930,  Name: u1F623,                                   CodePoint: 128547,  Unicode: U+01F623  */
+#define NOTO_EMOJI_24_SYMBOL_U1F624                                   "\xF0\x9F\x98\xA4" /* Id: 931,  Name: u1F624,                                   CodePoint: 128548,  Unicode: U+01F624  */
+#define NOTO_EMOJI_24_SYMBOL_U1F625                                   "\xF0\x9F\x98\xA5" /* Id: 932,  Name: u1F625,                                   CodePoint: 128549,  Unicode: U+01F625  */
+#define NOTO_EMOJI_24_SYMBOL_U1F626                                   "\xF0\x9F\x98\xA6" /* Id: 933,  Name: u1F626,                                   CodePoint: 128550,  Unicode: U+01F626  */
+#define NOTO_EMOJI_24_SYMBOL_U1F627                                   "\xF0\x9F\x98\xA7" /* Id: 934,  Name: u1F627,                                   CodePoint: 128551,  Unicode: U+01F627  */
+#define NOTO_EMOJI_24_SYMBOL_U1F628                                   "\xF0\x9F\x98\xA8" /* Id: 935,  Name: u1F628,                                   CodePoint: 128552,  Unicode: U+01F628  */
+#define NOTO_EMOJI_24_SYMBOL_U1F629                                   "\xF0\x9F\x98\xA9" /* Id: 936,  Name: u1F629,                                   CodePoint: 128553,  Unicode: U+01F629  */
+#define NOTO_EMOJI_24_SYMBOL_U1F62A                                   "\xF0\x9F\x98\xAA" /* Id: 937,  Name: u1F62A,                                   CodePoint: 128554,  Unicode: U+01F62A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F62B                                   "\xF0\x9F\x98\xAB" /* Id: 938,  Name: u1F62B,                                   CodePoint: 128555,  Unicode: U+01F62B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F62C                                   "\xF0\x9F\x98\xAC" /* Id: 939,  Name: u1F62C,                                   CodePoint: 128556,  Unicode: U+01F62C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F62D                                   "\xF0\x9F\x98\xAD" /* Id: 940,  Name: u1F62D,                                   CodePoint: 128557,  Unicode: U+01F62D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F62E                                   "\xF0\x9F\x98\xAE" /* Id: 941,  Name: u1F62E,                                   CodePoint: 128558,  Unicode: U+01F62E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F62F                                   "\xF0\x9F\x98\xAF" /* Id: 942,  Name: u1F62F,                                   CodePoint: 128559,  Unicode: U+01F62F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F630                                   "\xF0\x9F\x98\xB0" /* Id: 943,  Name: u1F630,                                   CodePoint: 128560,  Unicode: U+01F630  */
+#define NOTO_EMOJI_24_SYMBOL_U1F631                                   "\xF0\x9F\x98\xB1" /* Id: 944,  Name: u1F631,                                   CodePoint: 128561,  Unicode: U+01F631  */
+#define NOTO_EMOJI_24_SYMBOL_U1F632                                   "\xF0\x9F\x98\xB2" /* Id: 945,  Name: u1F632,                                   CodePoint: 128562,  Unicode: U+01F632  */
+#define NOTO_EMOJI_24_SYMBOL_U1F633                                   "\xF0\x9F\x98\xB3" /* Id: 946,  Name: u1F633,                                   CodePoint: 128563,  Unicode: U+01F633  */
+#define NOTO_EMOJI_24_SYMBOL_U1F634                                   "\xF0\x9F\x98\xB4" /* Id: 947,  Name: u1F634,                                   CodePoint: 128564,  Unicode: U+01F634  */
+#define NOTO_EMOJI_24_SYMBOL_U1F635                                   "\xF0\x9F\x98\xB5" /* Id: 948,  Name: u1F635,                                   CodePoint: 128565,  Unicode: U+01F635  */
+#define NOTO_EMOJI_24_SYMBOL_U1F636                                   "\xF0\x9F\x98\xB6" /* Id: 949,  Name: u1F636,                                   CodePoint: 128566,  Unicode: U+01F636  */
+#define NOTO_EMOJI_24_SYMBOL_U1F637                                   "\xF0\x9F\x98\xB7" /* Id: 950,  Name: u1F637,                                   CodePoint: 128567,  Unicode: U+01F637  */
+#define NOTO_EMOJI_24_SYMBOL_U1F638                                   "\xF0\x9F\x98\xB8" /* Id: 951,  Name: u1F638,                                   CodePoint: 128568,  Unicode: U+01F638  */
+#define NOTO_EMOJI_24_SYMBOL_U1F639                                   "\xF0\x9F\x98\xB9" /* Id: 952,  Name: u1F639,                                   CodePoint: 128569,  Unicode: U+01F639  */
+#define NOTO_EMOJI_24_SYMBOL_U1F63A                                   "\xF0\x9F\x98\xBA" /* Id: 953,  Name: u1F63A,                                   CodePoint: 128570,  Unicode: U+01F63A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F63B                                   "\xF0\x9F\x98\xBB" /* Id: 954,  Name: u1F63B,                                   CodePoint: 128571,  Unicode: U+01F63B  */
+#define NOTO_EMOJI_24_SYMBOL_SMILINGCATFACEWITHWRYSMILE               "\xF0\x9F\x98\xBC" /* Id: 955,  Name: smilingCatFaceWithWrySmile,               CodePoint: 128572,  Unicode: U+01F63C  */
+#define NOTO_EMOJI_24_SYMBOL_SMILINGCATFACEWITHCLOSEDEYES             "\xF0\x9F\x98\xBD" /* Id: 956,  Name: smilingCatFaceWithClosedEyes,             CodePoint: 128573,  Unicode: U+01F63D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F63E                                   "\xF0\x9F\x98\xBE" /* Id: 957,  Name: u1F63E,                                   CodePoint: 128574,  Unicode: U+01F63E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F63F                                   "\xF0\x9F\x98\xBF" /* Id: 958,  Name: u1F63F,                                   CodePoint: 128575,  Unicode: U+01F63F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F640                                   "\xF0\x9F\x99\x80" /* Id: 959,  Name: u1F640,                                   CodePoint: 128576,  Unicode: U+01F640  */
+#define NOTO_EMOJI_24_SYMBOL_U1F641                                   "\xF0\x9F\x99\x81" /* Id: 960,  Name: u1F641,                                   CodePoint: 128577,  Unicode: U+01F641  */
+#define NOTO_EMOJI_24_SYMBOL_U1F642                                   "\xF0\x9F\x99\x82" /* Id: 961,  Name: u1F642,                                   CodePoint: 128578,  Unicode: U+01F642  */
+#define NOTO_EMOJI_24_SYMBOL_UPSIDEDOWNFACE                           "\xF0\x9F\x99\x83" /* Id: 962,  Name: upsideDownFace,                           CodePoint: 128579,  Unicode: U+01F643  */
+#define NOTO_EMOJI_24_SYMBOL_FACEWITHROLLINGEYES                      "\xF0\x9F\x99\x84" /* Id: 963,  Name: faceWithRollingEyes,                      CodePoint: 128580,  Unicode: U+01F644  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONGESTURINGNO                        "\xF0\x9F\x99\x85" /* Id: 964,  Name: personGesturingNo,                        CodePoint: 128581,  Unicode: U+01F645  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONGESTURINGOK                        "\xF0\x9F\x99\x86" /* Id: 965,  Name: personGesturingOk,                        CodePoint: 128582,  Unicode: U+01F646  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONBOWING                             "\xF0\x9F\x99\x87" /* Id: 966,  Name: personBowing,                             CodePoint: 128583,  Unicode: U+01F647  */
+#define NOTO_EMOJI_24_SYMBOL_U1F648                                   "\xF0\x9F\x99\x88" /* Id: 967,  Name: u1F648,                                   CodePoint: 128584,  Unicode: U+01F648  */
+#define NOTO_EMOJI_24_SYMBOL_U1F649                                   "\xF0\x9F\x99\x89" /* Id: 968,  Name: u1F649,                                   CodePoint: 128585,  Unicode: U+01F649  */
+#define NOTO_EMOJI_24_SYMBOL_U1F64A                                   "\xF0\x9F\x99\x8A" /* Id: 969,  Name: u1F64A,                                   CodePoint: 128586,  Unicode: U+01F64A  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONRAISINGHAND                        "\xF0\x9F\x99\x8B" /* Id: 970,  Name: personRaisingHand,                        CodePoint: 128587,  Unicode: U+01F64B  */
+#define NOTO_EMOJI_24_SYMBOL_RAISINGHANDS                             "\xF0\x9F\x99\x8C" /* Id: 971,  Name: raisingHands,                             CodePoint: 128588,  Unicode: U+01F64C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F64D                                   "\xF0\x9F\x99\x8D" /* Id: 972,  Name: u1F64D,                                   CodePoint: 128589,  Unicode: U+01F64D  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONPOUTING                            "\xF0\x9F\x99\x8E" /* Id: 973,  Name: personPouting,                            CodePoint: 128590,  Unicode: U+01F64E  */
+#define NOTO_EMOJI_24_SYMBOL_FOLDEDHANDS                              "\xF0\x9F\x99\x8F" /* Id: 974,  Name: foldedHands,                              CodePoint: 128591,  Unicode: U+01F64F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F680                                   "\xF0\x9F\x9A\x80" /* Id: 975,  Name: u1F680,                                   CodePoint: 128640,  Unicode: U+01F680  */
+#define NOTO_EMOJI_24_SYMBOL_U1F681                                   "\xF0\x9F\x9A\x81" /* Id: 976,  Name: u1F681,                                   CodePoint: 128641,  Unicode: U+01F681  */
+#define NOTO_EMOJI_24_SYMBOL_LOCOMOTIVE                               "\xF0\x9F\x9A\x82" /* Id: 977,  Name: locomotive,                               CodePoint: 128642,  Unicode: U+01F682  */
+#define NOTO_EMOJI_24_SYMBOL_U1F683                                   "\xF0\x9F\x9A\x83" /* Id: 978,  Name: u1F683,                                   CodePoint: 128643,  Unicode: U+01F683  */
+#define NOTO_EMOJI_24_SYMBOL_U1F684                                   "\xF0\x9F\x9A\x84" /* Id: 979,  Name: u1F684,                                   CodePoint: 128644,  Unicode: U+01F684  */
+#define NOTO_EMOJI_24_SYMBOL_BULLETTRAIN                              "\xF0\x9F\x9A\x85" /* Id: 980,  Name: bulletTrain,                              CodePoint: 128645,  Unicode: U+01F685  */
+#define NOTO_EMOJI_24_SYMBOL_U1F686                                   "\xF0\x9F\x9A\x86" /* Id: 981,  Name: u1F686,                                   CodePoint: 128646,  Unicode: U+01F686  */
+#define NOTO_EMOJI_24_SYMBOL_U1F687                                   "\xF0\x9F\x9A\x87" /* Id: 982,  Name: u1F687,                                   CodePoint: 128647,  Unicode: U+01F687  */
+#define NOTO_EMOJI_24_SYMBOL_U1F688                                   "\xF0\x9F\x9A\x88" /* Id: 983,  Name: u1F688,                                   CodePoint: 128648,  Unicode: U+01F688  */
+#define NOTO_EMOJI_24_SYMBOL_U1F689                                   "\xF0\x9F\x9A\x89" /* Id: 984,  Name: u1F689,                                   CodePoint: 128649,  Unicode: U+01F689  */
+#define NOTO_EMOJI_24_SYMBOL_U1F68A                                   "\xF0\x9F\x9A\x8A" /* Id: 985,  Name: u1F68A,                                   CodePoint: 128650,  Unicode: U+01F68A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F68B                                   "\xF0\x9F\x9A\x8B" /* Id: 986,  Name: u1F68B,                                   CodePoint: 128651,  Unicode: U+01F68B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F68C                                   "\xF0\x9F\x9A\x8C" /* Id: 987,  Name: u1F68C,                                   CodePoint: 128652,  Unicode: U+01F68C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F68D                                   "\xF0\x9F\x9A\x8D" /* Id: 988,  Name: u1F68D,                                   CodePoint: 128653,  Unicode: U+01F68D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F68E                                   "\xF0\x9F\x9A\x8E" /* Id: 989,  Name: u1F68E,                                   CodePoint: 128654,  Unicode: U+01F68E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F68F                                   "\xF0\x9F\x9A\x8F" /* Id: 990,  Name: u1F68F,                                   CodePoint: 128655,  Unicode: U+01F68F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F690                                   "\xF0\x9F\x9A\x90" /* Id: 991,  Name: u1F690,                                   CodePoint: 128656,  Unicode: U+01F690  */
+#define NOTO_EMOJI_24_SYMBOL_U1F691                                   "\xF0\x9F\x9A\x91" /* Id: 992,  Name: u1F691,                                   CodePoint: 128657,  Unicode: U+01F691  */
+#define NOTO_EMOJI_24_SYMBOL_U1F692                                   "\xF0\x9F\x9A\x92" /* Id: 993,  Name: u1F692,                                   CodePoint: 128658,  Unicode: U+01F692  */
+#define NOTO_EMOJI_24_SYMBOL_U1F693                                   "\xF0\x9F\x9A\x93" /* Id: 994,  Name: u1F693,                                   CodePoint: 128659,  Unicode: U+01F693  */
+#define NOTO_EMOJI_24_SYMBOL_U1F694                                   "\xF0\x9F\x9A\x94" /* Id: 995,  Name: u1F694,                                   CodePoint: 128660,  Unicode: U+01F694  */
+#define NOTO_EMOJI_24_SYMBOL_U1F695                                   "\xF0\x9F\x9A\x95" /* Id: 996,  Name: u1F695,                                   CodePoint: 128661,  Unicode: U+01F695  */
+#define NOTO_EMOJI_24_SYMBOL_U1F696                                   "\xF0\x9F\x9A\x96" /* Id: 997,  Name: u1F696,                                   CodePoint: 128662,  Unicode: U+01F696  */
+#define NOTO_EMOJI_24_SYMBOL_U1F697                                   "\xF0\x9F\x9A\x97" /* Id: 998,  Name: u1F697,                                   CodePoint: 128663,  Unicode: U+01F697  */
+#define NOTO_EMOJI_24_SYMBOL_U1F698                                   "\xF0\x9F\x9A\x98" /* Id: 999,  Name: u1F698,                                   CodePoint: 128664,  Unicode: U+01F698  */
+#define NOTO_EMOJI_24_SYMBOL_SPORTUTILITYVEHICLE                      "\xF0\x9F\x9A\x99" /* Id: 1000, Name: sportUtilityVehicle,                      CodePoint: 128665,  Unicode: U+01F699  */
+#define NOTO_EMOJI_24_SYMBOL_U1F69A                                   "\xF0\x9F\x9A\x9A" /* Id: 1001, Name: u1F69A,                                   CodePoint: 128666,  Unicode: U+01F69A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F69B                                   "\xF0\x9F\x9A\x9B" /* Id: 1002, Name: u1F69B,                                   CodePoint: 128667,  Unicode: U+01F69B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F69C                                   "\xF0\x9F\x9A\x9C" /* Id: 1003, Name: u1F69C,                                   CodePoint: 128668,  Unicode: U+01F69C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F69D                                   "\xF0\x9F\x9A\x9D" /* Id: 1004, Name: u1F69D,                                   CodePoint: 128669,  Unicode: U+01F69D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F69E                                   "\xF0\x9F\x9A\x9E" /* Id: 1005, Name: u1F69E,                                   CodePoint: 128670,  Unicode: U+01F69E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F69F                                   "\xF0\x9F\x9A\x9F" /* Id: 1006, Name: u1F69F,                                   CodePoint: 128671,  Unicode: U+01F69F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6A0                                   "\xF0\x9F\x9A\xA0" /* Id: 1007, Name: u1F6A0,                                   CodePoint: 128672,  Unicode: U+01F6A0  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6A1                                   "\xF0\x9F\x9A\xA1" /* Id: 1008, Name: u1F6A1,                                   CodePoint: 128673,  Unicode: U+01F6A1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6A2                                   "\xF0\x9F\x9A\xA2" /* Id: 1009, Name: u1F6A2,                                   CodePoint: 128674,  Unicode: U+01F6A2  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONROWINGBOAT                         "\xF0\x9F\x9A\xA3" /* Id: 1010, Name: personRowingBoat,                         CodePoint: 128675,  Unicode: U+01F6A3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6A4                                   "\xF0\x9F\x9A\xA4" /* Id: 1011, Name: u1F6A4,                                   CodePoint: 128676,  Unicode: U+01F6A4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6A5                                   "\xF0\x9F\x9A\xA5" /* Id: 1012, Name: u1F6A5,                                   CodePoint: 128677,  Unicode: U+01F6A5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6A6                                   "\xF0\x9F\x9A\xA6" /* Id: 1013, Name: u1F6A6,                                   CodePoint: 128678,  Unicode: U+01F6A6  */
+#define NOTO_EMOJI_24_SYMBOL_CONSTRUCTION                             "\xF0\x9F\x9A\xA7" /* Id: 1014, Name: construction,                             CodePoint: 128679,  Unicode: U+01F6A7  */
+#define NOTO_EMOJI_24_SYMBOL_POLICECARLIGHT                           "\xF0\x9F\x9A\xA8" /* Id: 1015, Name: policeCarLight,                           CodePoint: 128680,  Unicode: U+01F6A8  */
+#define NOTO_EMOJI_24_SYMBOL_TRIANGULARFLAG                           "\xF0\x9F\x9A\xA9" /* Id: 1016, Name: triangularFlag,                           CodePoint: 128681,  Unicode: U+01F6A9  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6AA                                   "\xF0\x9F\x9A\xAA" /* Id: 1017, Name: u1F6AA,                                   CodePoint: 128682,  Unicode: U+01F6AA  */
+#define NOTO_EMOJI_24_SYMBOL_PROHIBITED                               "\xF0\x9F\x9A\xAB" /* Id: 1018, Name: prohibited,                               CodePoint: 128683,  Unicode: U+01F6AB  */
+#define NOTO_EMOJI_24_SYMBOL_CIGARETTE                                "\xF0\x9F\x9A\xAC" /* Id: 1019, Name: cigarette,                                CodePoint: 128684,  Unicode: U+01F6AC  */
+#define NOTO_EMOJI_24_SYMBOL_NOSMOKING                                "\xF0\x9F\x9A\xAD" /* Id: 1020, Name: noSmoking,                                CodePoint: 128685,  Unicode: U+01F6AD  */
+#define NOTO_EMOJI_24_SYMBOL_LITTERINBINSIGN                          "\xF0\x9F\x9A\xAE" /* Id: 1021, Name: litterInBinSign,                          CodePoint: 128686,  Unicode: U+01F6AE  */
+#define NOTO_EMOJI_24_SYMBOL_NOLITTERING                              "\xF0\x9F\x9A\xAF" /* Id: 1022, Name: noLittering,                              CodePoint: 128687,  Unicode: U+01F6AF  */
+#define NOTO_EMOJI_24_SYMBOL_POTABLEWATER                             "\xF0\x9F\x9A\xB0" /* Id: 1023, Name: potableWater,                             CodePoint: 128688,  Unicode: U+01F6B0  */
+#define NOTO_EMOJI_24_SYMBOL_NONPOTABLEWATER                          "\xF0\x9F\x9A\xB1" /* Id: 1024, Name: nonPotableWater,                          CodePoint: 128689,  Unicode: U+01F6B1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6B2                                   "\xF0\x9F\x9A\xB2" /* Id: 1025, Name: u1F6B2,                                   CodePoint: 128690,  Unicode: U+01F6B2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6B3                                   "\xF0\x9F\x9A\xB3" /* Id: 1026, Name: u1F6B3,                                   CodePoint: 128691,  Unicode: U+01F6B3  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONBIKING                             "\xF0\x9F\x9A\xB4" /* Id: 1027, Name: personBiking,                             CodePoint: 128692,  Unicode: U+01F6B4  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONMOUNTAINBIKING                     "\xF0\x9F\x9A\xB5" /* Id: 1028, Name: personMountainBiking,                     CodePoint: 128693,  Unicode: U+01F6B5  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONWALKING                            "\xF0\x9F\x9A\xB6" /* Id: 1029, Name: personWalking,                            CodePoint: 128694,  Unicode: U+01F6B6  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6B7                                   "\xF0\x9F\x9A\xB7" /* Id: 1030, Name: u1F6B7,                                   CodePoint: 128695,  Unicode: U+01F6B7  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6B8                                   "\xF0\x9F\x9A\xB8" /* Id: 1031, Name: u1F6B8,                                   CodePoint: 128696,  Unicode: U+01F6B8  */
+#define NOTO_EMOJI_24_SYMBOL_MENSROOM                                 "\xF0\x9F\x9A\xB9" /* Id: 1032, Name: menSRoom,                                 CodePoint: 128697,  Unicode: U+01F6B9  */
+#define NOTO_EMOJI_24_SYMBOL_WOMENSROOM                               "\xF0\x9F\x9A\xBA" /* Id: 1033, Name: womenSRoom,                               CodePoint: 128698,  Unicode: U+01F6BA  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6BB                                   "\xF0\x9F\x9A\xBB" /* Id: 1034, Name: u1F6BB,                                   CodePoint: 128699,  Unicode: U+01F6BB  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6BC                                   "\xF0\x9F\x9A\xBC" /* Id: 1035, Name: u1F6BC,                                   CodePoint: 128700,  Unicode: U+01F6BC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6BD                                   "\xF0\x9F\x9A\xBD" /* Id: 1036, Name: u1F6BD,                                   CodePoint: 128701,  Unicode: U+01F6BD  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6BE                                   "\xF0\x9F\x9A\xBE" /* Id: 1037, Name: u1F6BE,                                   CodePoint: 128702,  Unicode: U+01F6BE  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6BF                                   "\xF0\x9F\x9A\xBF" /* Id: 1038, Name: u1F6BF,                                   CodePoint: 128703,  Unicode: U+01F6BF  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONTAKINGBATH                         "\xF0\x9F\x9B\x80" /* Id: 1039, Name: personTakingBath,                         CodePoint: 128704,  Unicode: U+01F6C0  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6C1                                   "\xF0\x9F\x9B\x81" /* Id: 1040, Name: u1F6C1,                                   CodePoint: 128705,  Unicode: U+01F6C1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6C2                                   "\xF0\x9F\x9B\x82" /* Id: 1041, Name: u1F6C2,                                   CodePoint: 128706,  Unicode: U+01F6C2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6C3                                   "\xF0\x9F\x9B\x83" /* Id: 1042, Name: u1F6C3,                                   CodePoint: 128707,  Unicode: U+01F6C3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6C4                                   "\xF0\x9F\x9B\x84" /* Id: 1043, Name: u1F6C4,                                   CodePoint: 128708,  Unicode: U+01F6C4  */
+#define NOTO_EMOJI_24_SYMBOL_WIRELESS                                 "\xF0\x9F\x9B\x9C" /* Id: 1044, Name: wireless,                                 CodePoint: 128732,  Unicode: U+01F6DC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6C5                                   "\xF0\x9F\x9B\x85" /* Id: 1045, Name: u1F6C5,                                   CodePoint: 128709,  Unicode: U+01F6C5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6CB                                   "\xF0\x9F\x9B\x8B" /* Id: 1046, Name: u1F6CB,                                   CodePoint: 128715,  Unicode: U+01F6CB  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONINBED                              "\xF0\x9F\x9B\x8C" /* Id: 1047, Name: personInBed,                              CodePoint: 128716,  Unicode: U+01F6CC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6CD                                   "\xF0\x9F\x9B\x8D" /* Id: 1048, Name: u1F6CD,                                   CodePoint: 128717,  Unicode: U+01F6CD  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6CE                                   "\xF0\x9F\x9B\x8E" /* Id: 1049, Name: u1F6CE,                                   CodePoint: 128718,  Unicode: U+01F6CE  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6CF                                   "\xF0\x9F\x9B\x8F" /* Id: 1050, Name: u1F6CF,                                   CodePoint: 128719,  Unicode: U+01F6CF  */
+#define NOTO_EMOJI_24_SYMBOL_PLACEOFWORSHIP                           "\xF0\x9F\x9B\x90" /* Id: 1051, Name: placeOfWorship,                           CodePoint: 128720,  Unicode: U+01F6D0  */
+#define NOTO_EMOJI_24_SYMBOL_STOPSIGN                                 "\xF0\x9F\x9B\x91" /* Id: 1052, Name: stopSign,                                 CodePoint: 128721,  Unicode: U+01F6D1  */
+#define NOTO_EMOJI_24_SYMBOL_SHOPPINGCART                             "\xF0\x9F\x9B\x92" /* Id: 1053, Name: shoppingCart,                             CodePoint: 128722,  Unicode: U+01F6D2  */
+#define NOTO_EMOJI_24_SYMBOL_HINDUTEMPLE                              "\xF0\x9F\x9B\x95" /* Id: 1054, Name: hinduTemple,                              CodePoint: 128725,  Unicode: U+01F6D5  */
+#define NOTO_EMOJI_24_SYMBOL_HUT                                      "\xF0\x9F\x9B\x96" /* Id: 1055, Name: hut,                                      CodePoint: 128726,  Unicode: U+01F6D6  */
+#define NOTO_EMOJI_24_SYMBOL_ELEVATOR                                 "\xF0\x9F\x9B\x97" /* Id: 1056, Name: elevator,                                 CodePoint: 128727,  Unicode: U+01F6D7  */
+#define NOTO_EMOJI_24_SYMBOL_PLAYGROUNDSLIDE                          "\xF0\x9F\x9B\x9D" /* Id: 1057, Name: playgroundSlide,                          CodePoint: 128733,  Unicode: U+01F6DD  */
+#define NOTO_EMOJI_24_SYMBOL_WHEEL                                    "\xF0\x9F\x9B\x9E" /* Id: 1058, Name: wheel,                                    CodePoint: 128734,  Unicode: U+01F6DE  */
+#define NOTO_EMOJI_24_SYMBOL_RINGBUOY                                 "\xF0\x9F\x9B\x9F" /* Id: 1059, Name: ringBuoy,                                 CodePoint: 128735,  Unicode: U+01F6DF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6E0                                   "\xF0\x9F\x9B\xA0" /* Id: 1060, Name: u1F6E0,                                   CodePoint: 128736,  Unicode: U+01F6E0  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6E1                                   "\xF0\x9F\x9B\xA1" /* Id: 1061, Name: u1F6E1,                                   CodePoint: 128737,  Unicode: U+01F6E1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6E2                                   "\xF0\x9F\x9B\xA2" /* Id: 1062, Name: u1F6E2,                                   CodePoint: 128738,  Unicode: U+01F6E2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6E3                                   "\xF0\x9F\x9B\xA3" /* Id: 1063, Name: u1F6E3,                                   CodePoint: 128739,  Unicode: U+01F6E3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6E4                                   "\xF0\x9F\x9B\xA4" /* Id: 1064, Name: u1F6E4,                                   CodePoint: 128740,  Unicode: U+01F6E4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6E5                                   "\xF0\x9F\x9B\xA5" /* Id: 1065, Name: u1F6E5,                                   CodePoint: 128741,  Unicode: U+01F6E5  */
+#define NOTO_EMOJI_24_SYMBOL_SMALLAIRPLANE                            "\xF0\x9F\x9B\xA9" /* Id: 1066, Name: smallAirplane,                            CodePoint: 128745,  Unicode: U+01F6E9  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6EB                                   "\xF0\x9F\x9B\xAB" /* Id: 1067, Name: u1F6EB,                                   CodePoint: 128747,  Unicode: U+01F6EB  */
+#define NOTO_EMOJI_24_SYMBOL_AIRPLANEARRIVAL                          "\xF0\x9F\x9B\xAC" /* Id: 1068, Name: airplaneArrival,                          CodePoint: 128748,  Unicode: U+01F6EC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6F0                                   "\xF0\x9F\x9B\xB0" /* Id: 1069, Name: u1F6F0,                                   CodePoint: 128752,  Unicode: U+01F6F0  */
+#define NOTO_EMOJI_24_SYMBOL_U1F6F3                                   "\xF0\x9F\x9B\xB3" /* Id: 1070, Name: u1F6F3,                                   CodePoint: 128755,  Unicode: U+01F6F3  */
+#define NOTO_EMOJI_24_SYMBOL_KICKSCOOTER                              "\xF0\x9F\x9B\xB4" /* Id: 1071, Name: kickScooter,                              CodePoint: 128756,  Unicode: U+01F6F4  */
+#define NOTO_EMOJI_24_SYMBOL_MOTORSCOOTER                             "\xF0\x9F\x9B\xB5" /* Id: 1072, Name: motorScooter,                             CodePoint: 128757,  Unicode: U+01F6F5  */
+#define NOTO_EMOJI_24_SYMBOL_CANOE                                    "\xF0\x9F\x9B\xB6" /* Id: 1073, Name: canoe,                                    CodePoint: 128758,  Unicode: U+01F6F6  */
+#define NOTO_EMOJI_24_SYMBOL_SLED                                     "\xF0\x9F\x9B\xB7" /* Id: 1074, Name: sled,                                     CodePoint: 128759,  Unicode: U+01F6F7  */
+#define NOTO_EMOJI_24_SYMBOL_FLYINGSAUCER                             "\xF0\x9F\x9B\xB8" /* Id: 1075, Name: flyingSaucer,                             CodePoint: 128760,  Unicode: U+01F6F8  */
+#define NOTO_EMOJI_24_SYMBOL_SKATEBOARD                               "\xF0\x9F\x9B\xB9" /* Id: 1076, Name: skateboard,                               CodePoint: 128761,  Unicode: U+01F6F9  */
+#define NOTO_EMOJI_24_SYMBOL_AUTORICKSHAW                             "\xF0\x9F\x9B\xBA" /* Id: 1077, Name: autoRickshaw,                             CodePoint: 128762,  Unicode: U+01F6FA  */
+#define NOTO_EMOJI_24_SYMBOL_PICKUPTRUCK                              "\xF0\x9F\x9B\xBB" /* Id: 1078, Name: pickupTruck,                              CodePoint: 128763,  Unicode: U+01F6FB  */
+#define NOTO_EMOJI_24_SYMBOL_ROLLERSKATE                              "\xF0\x9F\x9B\xBC" /* Id: 1079, Name: rollerSkate,                              CodePoint: 128764,  Unicode: U+01F6FC  */
+#define NOTO_EMOJI_24_SYMBOL_ORANGECIRCLE                             "\xF0\x9F\x9F\xA0" /* Id: 1080, Name: orangeCircle,                             CodePoint: 128992,  Unicode: U+01F7E0  */
+#define NOTO_EMOJI_24_SYMBOL_YELLOWCIRCLE                             "\xF0\x9F\x9F\xA1" /* Id: 1081, Name: yellowCircle,                             CodePoint: 128993,  Unicode: U+01F7E1  */
+#define NOTO_EMOJI_24_SYMBOL_GREENCIRCLE                              "\xF0\x9F\x9F\xA2" /* Id: 1082, Name: greenCircle,                              CodePoint: 128994,  Unicode: U+01F7E2  */
+#define NOTO_EMOJI_24_SYMBOL_PURPLECIRCLE                             "\xF0\x9F\x9F\xA3" /* Id: 1083, Name: purpleCircle,                             CodePoint: 128995,  Unicode: U+01F7E3  */
+#define NOTO_EMOJI_24_SYMBOL_BROWNCIRCLE                              "\xF0\x9F\x9F\xA4" /* Id: 1084, Name: brownCircle,                              CodePoint: 128996,  Unicode: U+01F7E4  */
+#define NOTO_EMOJI_24_SYMBOL_REDSQUARE                                "\xF0\x9F\x9F\xA5" /* Id: 1085, Name: redSquare,                                CodePoint: 128997,  Unicode: U+01F7E5  */
+#define NOTO_EMOJI_24_SYMBOL_BLUESQUARE                               "\xF0\x9F\x9F\xA6" /* Id: 1086, Name: blueSquare,                               CodePoint: 128998,  Unicode: U+01F7E6  */
+#define NOTO_EMOJI_24_SYMBOL_ORANGESQUARE                             "\xF0\x9F\x9F\xA7" /* Id: 1087, Name: orangeSquare,                             CodePoint: 128999,  Unicode: U+01F7E7  */
+#define NOTO_EMOJI_24_SYMBOL_YELLOWSQUARE                             "\xF0\x9F\x9F\xA8" /* Id: 1088, Name: yellowSquare,                             CodePoint: 129000,  Unicode: U+01F7E8  */
+#define NOTO_EMOJI_24_SYMBOL_GREENSQUARE                              "\xF0\x9F\x9F\xA9" /* Id: 1089, Name: greenSquare,                              CodePoint: 129001,  Unicode: U+01F7E9  */
+#define NOTO_EMOJI_24_SYMBOL_PURPLESQUARE                             "\xF0\x9F\x9F\xAA" /* Id: 1090, Name: purpleSquare,                             CodePoint: 129002,  Unicode: U+01F7EA  */
+#define NOTO_EMOJI_24_SYMBOL_BROWNSQUARE                              "\xF0\x9F\x9F\xAB" /* Id: 1091, Name: brownSquare,                              CodePoint: 129003,  Unicode: U+01F7EB  */
+#define NOTO_EMOJI_24_SYMBOL_HEAVYEQUALSSIGN                          "\xF0\x9F\x9F\xB0" /* Id: 1092, Name: heavyEqualsSign,                          CodePoint: 129008,  Unicode: U+01F7F0  */
+#define NOTO_EMOJI_24_SYMBOL_PINCHEDFINGERS                           "\xF0\x9F\xA4\x8C" /* Id: 1093, Name: pinchedFingers,                           CodePoint: 129292,  Unicode: U+01F90C  */
+#define NOTO_EMOJI_24_SYMBOL_WHITEHEART                               "\xF0\x9F\xA4\x8D" /* Id: 1094, Name: whiteHeart,                               CodePoint: 129293,  Unicode: U+01F90D  */
+#define NOTO_EMOJI_24_SYMBOL_BROWNHEART                               "\xF0\x9F\xA4\x8E" /* Id: 1095, Name: brownHeart,                               CodePoint: 129294,  Unicode: U+01F90E  */
+#define NOTO_EMOJI_24_SYMBOL_PINCHINGHAND                             "\xF0\x9F\xA4\x8F" /* Id: 1096, Name: pinchingHand,                             CodePoint: 129295,  Unicode: U+01F90F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F910                                   "\xF0\x9F\xA4\x90" /* Id: 1097, Name: u1F910,                                   CodePoint: 129296,  Unicode: U+01F910  */
+#define NOTO_EMOJI_24_SYMBOL_U1F911                                   "\xF0\x9F\xA4\x91" /* Id: 1098, Name: u1F911,                                   CodePoint: 129297,  Unicode: U+01F911  */
+#define NOTO_EMOJI_24_SYMBOL_U1F912                                   "\xF0\x9F\xA4\x92" /* Id: 1099, Name: u1F912,                                   CodePoint: 129298,  Unicode: U+01F912  */
+#define NOTO_EMOJI_24_SYMBOL_U1F913                                   "\xF0\x9F\xA4\x93" /* Id: 1100, Name: u1F913,                                   CodePoint: 129299,  Unicode: U+01F913  */
+#define NOTO_EMOJI_24_SYMBOL_U1F914                                   "\xF0\x9F\xA4\x94" /* Id: 1101, Name: u1F914,                                   CodePoint: 129300,  Unicode: U+01F914  */
+#define NOTO_EMOJI_24_SYMBOL_U1F915                                   "\xF0\x9F\xA4\x95" /* Id: 1102, Name: u1F915,                                   CodePoint: 129301,  Unicode: U+01F915  */
+#define NOTO_EMOJI_24_SYMBOL_U1F916                                   "\xF0\x9F\xA4\x96" /* Id: 1103, Name: u1F916,                                   CodePoint: 129302,  Unicode: U+01F916  */
+#define NOTO_EMOJI_24_SYMBOL_U1F917                                   "\xF0\x9F\xA4\x97" /* Id: 1104, Name: u1F917,                                   CodePoint: 129303,  Unicode: U+01F917  */
+#define NOTO_EMOJI_24_SYMBOL_U1F918                                   "\xF0\x9F\xA4\x98" /* Id: 1105, Name: u1F918,                                   CodePoint: 129304,  Unicode: U+01F918  */
+#define NOTO_EMOJI_24_SYMBOL_U1F919                                   "\xF0\x9F\xA4\x99" /* Id: 1106, Name: u1F919,                                   CodePoint: 129305,  Unicode: U+01F919  */
+#define NOTO_EMOJI_24_SYMBOL_U1F91A                                   "\xF0\x9F\xA4\x9A" /* Id: 1107, Name: u1F91A,                                   CodePoint: 129306,  Unicode: U+01F91A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F91B                                   "\xF0\x9F\xA4\x9B" /* Id: 1108, Name: u1F91B,                                   CodePoint: 129307,  Unicode: U+01F91B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F91C                                   "\xF0\x9F\xA4\x9C" /* Id: 1109, Name: u1F91C,                                   CodePoint: 129308,  Unicode: U+01F91C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F91D                                   "\xF0\x9F\xA4\x9D" /* Id: 1110, Name: u1F91D,                                   CodePoint: 129309,  Unicode: U+01F91D  */
+#define NOTO_EMOJI_24_SYMBOL_CROSSEDFINGERS                           "\xF0\x9F\xA4\x9E" /* Id: 1111, Name: crossedFingers,                           CodePoint: 129310,  Unicode: U+01F91E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F91F                                   "\xF0\x9F\xA4\x9F" /* Id: 1112, Name: u1F91F,                                   CodePoint: 129311,  Unicode: U+01F91F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F920                                   "\xF0\x9F\xA4\xA0" /* Id: 1113, Name: u1F920,                                   CodePoint: 129312,  Unicode: U+01F920  */
+#define NOTO_EMOJI_24_SYMBOL_U1F921                                   "\xF0\x9F\xA4\xA1" /* Id: 1114, Name: u1F921,                                   CodePoint: 129313,  Unicode: U+01F921  */
+#define NOTO_EMOJI_24_SYMBOL_U1F922                                   "\xF0\x9F\xA4\xA2" /* Id: 1115, Name: u1F922,                                   CodePoint: 129314,  Unicode: U+01F922  */
+#define NOTO_EMOJI_24_SYMBOL_U1F923                                   "\xF0\x9F\xA4\xA3" /* Id: 1116, Name: u1F923,                                   CodePoint: 129315,  Unicode: U+01F923  */
+#define NOTO_EMOJI_24_SYMBOL_U1F924                                   "\xF0\x9F\xA4\xA4" /* Id: 1117, Name: u1F924,                                   CodePoint: 129316,  Unicode: U+01F924  */
+#define NOTO_EMOJI_24_SYMBOL_U1F925                                   "\xF0\x9F\xA4\xA5" /* Id: 1118, Name: u1F925,                                   CodePoint: 129317,  Unicode: U+01F925  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONFACEPALMING                        "\xF0\x9F\xA4\xA6" /* Id: 1119, Name: personFacepalming,                        CodePoint: 129318,  Unicode: U+01F926  */
+#define NOTO_EMOJI_24_SYMBOL_U1F927                                   "\xF0\x9F\xA4\xA7" /* Id: 1120, Name: u1F927,                                   CodePoint: 129319,  Unicode: U+01F927  */
+#define NOTO_EMOJI_24_SYMBOL_U1F928                                   "\xF0\x9F\xA4\xA8" /* Id: 1121, Name: u1F928,                                   CodePoint: 129320,  Unicode: U+01F928  */
+#define NOTO_EMOJI_24_SYMBOL_U1F929                                   "\xF0\x9F\xA4\xA9" /* Id: 1122, Name: u1F929,                                   CodePoint: 129321,  Unicode: U+01F929  */
+#define NOTO_EMOJI_24_SYMBOL_GRINNINGFACEWITHONELARGEANDONESMALLEYE   "\xF0\x9F\xA4\xAA" /* Id: 1123, Name: grinningFaceWithOneLargeAndOneSmallEye,   CodePoint: 129322,  Unicode: U+01F92A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F92B                                   "\xF0\x9F\xA4\xAB" /* Id: 1124, Name: u1F92B,                                   CodePoint: 129323,  Unicode: U+01F92B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F92C                                   "\xF0\x9F\xA4\xAC" /* Id: 1125, Name: u1F92C,                                   CodePoint: 129324,  Unicode: U+01F92C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F92D                                   "\xF0\x9F\xA4\xAD" /* Id: 1126, Name: u1F92D,                                   CodePoint: 129325,  Unicode: U+01F92D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F92E                                   "\xF0\x9F\xA4\xAE" /* Id: 1127, Name: u1F92E,                                   CodePoint: 129326,  Unicode: U+01F92E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F92F                                   "\xF0\x9F\xA4\xAF" /* Id: 1128, Name: u1F92F,                                   CodePoint: 129327,  Unicode: U+01F92F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F930                                   "\xF0\x9F\xA4\xB0" /* Id: 1129, Name: u1F930,                                   CodePoint: 129328,  Unicode: U+01F930  */
+#define NOTO_EMOJI_24_SYMBOL_U1F931                                   "\xF0\x9F\xA4\xB1" /* Id: 1130, Name: u1F931,                                   CodePoint: 129329,  Unicode: U+01F931  */
+#define NOTO_EMOJI_24_SYMBOL_U1F932                                   "\xF0\x9F\xA4\xB2" /* Id: 1131, Name: u1F932,                                   CodePoint: 129330,  Unicode: U+01F932  */
+#define NOTO_EMOJI_24_SYMBOL_U1F933                                   "\xF0\x9F\xA4\xB3" /* Id: 1132, Name: u1F933,                                   CodePoint: 129331,  Unicode: U+01F933  */
+#define NOTO_EMOJI_24_SYMBOL_U1F478                                   "\xF0\x9F\xA4\xB4" /* Id: 1133, Name: u1F478,                                   CodePoint: 129332,  Unicode: U+01F934  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONINTUXEDO                           "\xF0\x9F\xA4\xB5" /* Id: 1134, Name: personInTuxedo,                           CodePoint: 129333,  Unicode: U+01F935  */
+#define NOTO_EMOJI_24_SYMBOL_MRSCLAUS                                 "\xF0\x9F\xA4\xB6" /* Id: 1135, Name: mrsClaus,                                 CodePoint: 129334,  Unicode: U+01F936  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONSHRUGGING                          "\xF0\x9F\xA4\xB7" /* Id: 1136, Name: personShrugging,                          CodePoint: 129335,  Unicode: U+01F937  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONCARTWHEELING                       "\xF0\x9F\xA4\xB8" /* Id: 1137, Name: personCartwheeling,                       CodePoint: 129336,  Unicode: U+01F938  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONJUGGLING                           "\xF0\x9F\xA4\xB9" /* Id: 1138, Name: personJuggling,                           CodePoint: 129337,  Unicode: U+01F939  */
+#define NOTO_EMOJI_24_SYMBOL_U1F93A                                   "\xF0\x9F\xA4\xBA" /* Id: 1139, Name: u1F93A,                                   CodePoint: 129338,  Unicode: U+01F93A  */
+#define NOTO_EMOJI_24_SYMBOL_PEOPLEWRESTLING                          "\xF0\x9F\xA4\xBC" /* Id: 1140, Name: peopleWrestling,                          CodePoint: 129340,  Unicode: U+01F93C  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONPLAYINGWATERPOLO                   "\xF0\x9F\xA4\xBD" /* Id: 1141, Name: personPlayingWaterPolo,                   CodePoint: 129341,  Unicode: U+01F93D  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONPLAYINGHANDBALL                    "\xF0\x9F\xA4\xBE" /* Id: 1142, Name: personPlayingHandball,                    CodePoint: 129342,  Unicode: U+01F93E  */
+#define NOTO_EMOJI_24_SYMBOL_DIVINGMASK                               "\xF0\x9F\xA4\xBF" /* Id: 1143, Name: divingMask,                               CodePoint: 129343,  Unicode: U+01F93F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F940                                   "\xF0\x9F\xA5\x80" /* Id: 1144, Name: u1F940,                                   CodePoint: 129344,  Unicode: U+01F940  */
+#define NOTO_EMOJI_24_SYMBOL_U1F941                                   "\xF0\x9F\xA5\x81" /* Id: 1145, Name: u1F941,                                   CodePoint: 129345,  Unicode: U+01F941  */
+#define NOTO_EMOJI_24_SYMBOL_U1F942                                   "\xF0\x9F\xA5\x82" /* Id: 1146, Name: u1F942,                                   CodePoint: 129346,  Unicode: U+01F942  */
+#define NOTO_EMOJI_24_SYMBOL_U1F943                                   "\xF0\x9F\xA5\x83" /* Id: 1147, Name: u1F943,                                   CodePoint: 129347,  Unicode: U+01F943  */
+#define NOTO_EMOJI_24_SYMBOL_U1F944                                   "\xF0\x9F\xA5\x84" /* Id: 1148, Name: u1F944,                                   CodePoint: 129348,  Unicode: U+01F944  */
+#define NOTO_EMOJI_24_SYMBOL_U1F945                                   "\xF0\x9F\xA5\x85" /* Id: 1149, Name: u1F945,                                   CodePoint: 129349,  Unicode: U+01F945  */
+#define NOTO_EMOJI_24_SYMBOL_U1F947                                   "\xF0\x9F\xA5\x87" /* Id: 1150, Name: u1F947,                                   CodePoint: 129351,  Unicode: U+01F947  */
+#define NOTO_EMOJI_24_SYMBOL_U1F948                                   "\xF0\x9F\xA5\x88" /* Id: 1151, Name: u1F948,                                   CodePoint: 129352,  Unicode: U+01F948  */
+#define NOTO_EMOJI_24_SYMBOL_U1F949                                   "\xF0\x9F\xA5\x89" /* Id: 1152, Name: u1F949,                                   CodePoint: 129353,  Unicode: U+01F949  */
+#define NOTO_EMOJI_24_SYMBOL_U1F94A                                   "\xF0\x9F\xA5\x8A" /* Id: 1153, Name: u1F94A,                                   CodePoint: 129354,  Unicode: U+01F94A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F94B                                   "\xF0\x9F\xA5\x8B" /* Id: 1154, Name: u1F94B,                                   CodePoint: 129355,  Unicode: U+01F94B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F94C                                   "\xF0\x9F\xA5\x8C" /* Id: 1155, Name: u1F94C,                                   CodePoint: 129356,  Unicode: U+01F94C  */
+#define NOTO_EMOJI_24_SYMBOL_LACROSSESTICKANDBALL                     "\xF0\x9F\xA5\x8D" /* Id: 1156, Name: lacrosseStickAndBall,                     CodePoint: 129357,  Unicode: U+01F94D  */
+#define NOTO_EMOJI_24_SYMBOL_SOFTBALL                                 "\xF0\x9F\xA5\x8E" /* Id: 1157, Name: softball,                                 CodePoint: 129358,  Unicode: U+01F94E  */
+#define NOTO_EMOJI_24_SYMBOL_FLYINGDISK                               "\xF0\x9F\xA5\x8F" /* Id: 1158, Name: flyingDisk,                               CodePoint: 129359,  Unicode: U+01F94F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F950                                   "\xF0\x9F\xA5\x90" /* Id: 1159, Name: u1F950,                                   CodePoint: 129360,  Unicode: U+01F950  */
+#define NOTO_EMOJI_24_SYMBOL_U1F951                                   "\xF0\x9F\xA5\x91" /* Id: 1160, Name: u1F951,                                   CodePoint: 129361,  Unicode: U+01F951  */
+#define NOTO_EMOJI_24_SYMBOL_U1F952                                   "\xF0\x9F\xA5\x92" /* Id: 1161, Name: u1F952,                                   CodePoint: 129362,  Unicode: U+01F952  */
+#define NOTO_EMOJI_24_SYMBOL_U1F953                                   "\xF0\x9F\xA5\x93" /* Id: 1162, Name: u1F953,                                   CodePoint: 129363,  Unicode: U+01F953  */
+#define NOTO_EMOJI_24_SYMBOL_U1F954                                   "\xF0\x9F\xA5\x94" /* Id: 1163, Name: u1F954,                                   CodePoint: 129364,  Unicode: U+01F954  */
+#define NOTO_EMOJI_24_SYMBOL_U1F955                                   "\xF0\x9F\xA5\x95" /* Id: 1164, Name: u1F955,                                   CodePoint: 129365,  Unicode: U+01F955  */
+#define NOTO_EMOJI_24_SYMBOL_GINGERROOT                               "\xF0\x9F\xAB\x9A" /* Id: 1165, Name: gingerRoot,                               CodePoint: 129754,  Unicode: U+01FADA  */
+#define NOTO_EMOJI_24_SYMBOL_U1F956                                   "\xF0\x9F\xA5\x96" /* Id: 1166, Name: u1F956,                                   CodePoint: 129366,  Unicode: U+01F956  */
+#define NOTO_EMOJI_24_SYMBOL_U1F957                                   "\xF0\x9F\xA5\x97" /* Id: 1167, Name: u1F957,                                   CodePoint: 129367,  Unicode: U+01F957  */
+#define NOTO_EMOJI_24_SYMBOL_U1F958                                   "\xF0\x9F\xA5\x98" /* Id: 1168, Name: u1F958,                                   CodePoint: 129368,  Unicode: U+01F958  */
+#define NOTO_EMOJI_24_SYMBOL_U1F959                                   "\xF0\x9F\xA5\x99" /* Id: 1169, Name: u1F959,                                   CodePoint: 129369,  Unicode: U+01F959  */
+#define NOTO_EMOJI_24_SYMBOL_U1F95A                                   "\xF0\x9F\xA5\x9A" /* Id: 1170, Name: u1F95A,                                   CodePoint: 129370,  Unicode: U+01F95A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F95B                                   "\xF0\x9F\xA5\x9B" /* Id: 1171, Name: u1F95B,                                   CodePoint: 129371,  Unicode: U+01F95B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F95C                                   "\xF0\x9F\xA5\x9C" /* Id: 1172, Name: u1F95C,                                   CodePoint: 129372,  Unicode: U+01F95C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F95D                                   "\xF0\x9F\xA5\x9D" /* Id: 1173, Name: u1F95D,                                   CodePoint: 129373,  Unicode: U+01F95D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F95E                                   "\xF0\x9F\xA5\x9E" /* Id: 1174, Name: u1F95E,                                   CodePoint: 129374,  Unicode: U+01F95E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F95F                                   "\xF0\x9F\xA5\x9F" /* Id: 1175, Name: u1F95F,                                   CodePoint: 129375,  Unicode: U+01F95F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F960                                   "\xF0\x9F\xA5\xA0" /* Id: 1176, Name: u1F960,                                   CodePoint: 129376,  Unicode: U+01F960  */
+#define NOTO_EMOJI_24_SYMBOL_U1F961                                   "\xF0\x9F\xA5\xA1" /* Id: 1177, Name: u1F961,                                   CodePoint: 129377,  Unicode: U+01F961  */
+#define NOTO_EMOJI_24_SYMBOL_U1F962                                   "\xF0\x9F\xA5\xA2" /* Id: 1178, Name: u1F962,                                   CodePoint: 129378,  Unicode: U+01F962  */
+#define NOTO_EMOJI_24_SYMBOL_U1F963                                   "\xF0\x9F\xA5\xA3" /* Id: 1179, Name: u1F963,                                   CodePoint: 129379,  Unicode: U+01F963  */
+#define NOTO_EMOJI_24_SYMBOL_U1F964                                   "\xF0\x9F\xA5\xA4" /* Id: 1180, Name: u1F964,                                   CodePoint: 129380,  Unicode: U+01F964  */
+#define NOTO_EMOJI_24_SYMBOL_U1F965                                   "\xF0\x9F\xA5\xA5" /* Id: 1181, Name: u1F965,                                   CodePoint: 129381,  Unicode: U+01F965  */
+#define NOTO_EMOJI_24_SYMBOL_U1F966                                   "\xF0\x9F\xA5\xA6" /* Id: 1182, Name: u1F966,                                   CodePoint: 129382,  Unicode: U+01F966  */
+#define NOTO_EMOJI_24_SYMBOL_PEAPOD                                   "\xF0\x9F\xAB\x9B" /* Id: 1183, Name: peaPod,                                   CodePoint: 129755,  Unicode: U+01FADB  */
+#define NOTO_EMOJI_24_SYMBOL_U1F967                                   "\xF0\x9F\xA5\xA7" /* Id: 1184, Name: u1F967,                                   CodePoint: 129383,  Unicode: U+01F967  */
+#define NOTO_EMOJI_24_SYMBOL_U1F968                                   "\xF0\x9F\xA5\xA8" /* Id: 1185, Name: u1F968,                                   CodePoint: 129384,  Unicode: U+01F968  */
+#define NOTO_EMOJI_24_SYMBOL_U1F969                                   "\xF0\x9F\xA5\xA9" /* Id: 1186, Name: u1F969,                                   CodePoint: 129385,  Unicode: U+01F969  */
+#define NOTO_EMOJI_24_SYMBOL_U1F96A                                   "\xF0\x9F\xA5\xAA" /* Id: 1187, Name: u1F96A,                                   CodePoint: 129386,  Unicode: U+01F96A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F96B                                   "\xF0\x9F\xA5\xAB" /* Id: 1188, Name: u1F96B,                                   CodePoint: 129387,  Unicode: U+01F96B  */
+#define NOTO_EMOJI_24_SYMBOL_LEAFYGREEN                               "\xF0\x9F\xA5\xAC" /* Id: 1189, Name: leafyGreen,                               CodePoint: 129388,  Unicode: U+01F96C  */
+#define NOTO_EMOJI_24_SYMBOL_MANGO                                    "\xF0\x9F\xA5\xAD" /* Id: 1190, Name: mango,                                    CodePoint: 129389,  Unicode: U+01F96D  */
+#define NOTO_EMOJI_24_SYMBOL_MOONCAKE                                 "\xF0\x9F\xA5\xAE" /* Id: 1191, Name: moonCake,                                 CodePoint: 129390,  Unicode: U+01F96E  */
+#define NOTO_EMOJI_24_SYMBOL_BAGEL                                    "\xF0\x9F\xA5\xAF" /* Id: 1192, Name: bagel,                                    CodePoint: 129391,  Unicode: U+01F96F  */
+#define NOTO_EMOJI_24_SYMBOL_SMILINGFACEWITHSMILINGEYESANDTHREEHEARTS "\xF0\x9F\xA5\xB0" /* Id: 1193, Name: smilingFaceWithSmilingEyesAndThreeHearts, CodePoint: 129392,  Unicode: U+01F970  */
+#define NOTO_EMOJI_24_SYMBOL_YAWNINGFACE                              "\xF0\x9F\xA5\xB1" /* Id: 1194, Name: yawningFace,                              CodePoint: 129393,  Unicode: U+01F971  */
+#define NOTO_EMOJI_24_SYMBOL_SMILINGFACEWITHTEAR                      "\xF0\x9F\xA5\xB2" /* Id: 1195, Name: smilingFaceWithTear,                      CodePoint: 129394,  Unicode: U+01F972  */
+#define NOTO_EMOJI_24_SYMBOL_FACEWITHPARTYHORNANDPARTYHAT             "\xF0\x9F\xA5\xB3" /* Id: 1196, Name: faceWithPartyHornAndPartyHat,             CodePoint: 129395,  Unicode: U+01F973  */
+#define NOTO_EMOJI_24_SYMBOL_FACEWITHUNEVENEYESANDWAVYMOUTH           "\xF0\x9F\xA5\xB4" /* Id: 1197, Name: faceWithUnevenEyesAndWavyMouth,           CodePoint: 129396,  Unicode: U+01F974  */
+#define NOTO_EMOJI_24_SYMBOL_OVERHEATEDFACE                           "\xF0\x9F\xA5\xB5" /* Id: 1198, Name: overheatedFace,                           CodePoint: 129397,  Unicode: U+01F975  */
+#define NOTO_EMOJI_24_SYMBOL_FREEZINGFACE                             "\xF0\x9F\xA5\xB6" /* Id: 1199, Name: freezingFace,                             CodePoint: 129398,  Unicode: U+01F976  */
+#define NOTO_EMOJI_24_SYMBOL_NINJA                                    "\xF0\x9F\xA5\xB7" /* Id: 1200, Name: ninja,                                    CodePoint: 129399,  Unicode: U+01F977  */
+#define NOTO_EMOJI_24_SYMBOL_DISGUISEDFACE                            "\xF0\x9F\xA5\xB8" /* Id: 1201, Name: disguisedFace,                            CodePoint: 129400,  Unicode: U+01F978  */
+#define NOTO_EMOJI_24_SYMBOL_FACEHOLDINGBACKTEARS                     "\xF0\x9F\xA5\xB9" /* Id: 1202, Name: faceHoldingBackTears,                     CodePoint: 129401,  Unicode: U+01F979  */
+#define NOTO_EMOJI_24_SYMBOL_FACEWITHPLEADINGEYES                     "\xF0\x9F\xA5\xBA" /* Id: 1203, Name: faceWithPleadingEyes,                     CodePoint: 129402,  Unicode: U+01F97A  */
+#define NOTO_EMOJI_24_SYMBOL_SARI                                     "\xF0\x9F\xA5\xBB" /* Id: 1204, Name: sari,                                     CodePoint: 129403,  Unicode: U+01F97B  */
+#define NOTO_EMOJI_24_SYMBOL_LABCOAT                                  "\xF0\x9F\xA5\xBC" /* Id: 1205, Name: labCoat,                                  CodePoint: 129404,  Unicode: U+01F97C  */
+#define NOTO_EMOJI_24_SYMBOL_GOGGLES                                  "\xF0\x9F\xA5\xBD" /* Id: 1206, Name: goggles,                                  CodePoint: 129405,  Unicode: U+01F97D  */
+#define NOTO_EMOJI_24_SYMBOL_HIKINGBOOT                               "\xF0\x9F\xA5\xBE" /* Id: 1207, Name: hikingBoot,                               CodePoint: 129406,  Unicode: U+01F97E  */
+#define NOTO_EMOJI_24_SYMBOL_FLATSHOE                                 "\xF0\x9F\xA5\xBF" /* Id: 1208, Name: flatShoe,                                 CodePoint: 129407,  Unicode: U+01F97F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F980                                   "\xF0\x9F\xA6\x80" /* Id: 1209, Name: u1F980,                                   CodePoint: 129408,  Unicode: U+01F980  */
+#define NOTO_EMOJI_24_SYMBOL_U1F981                                   "\xF0\x9F\xA6\x81" /* Id: 1210, Name: u1F981,                                   CodePoint: 129409,  Unicode: U+01F981  */
+#define NOTO_EMOJI_24_SYMBOL_U1F982                                   "\xF0\x9F\xA6\x82" /* Id: 1211, Name: u1F982,                                   CodePoint: 129410,  Unicode: U+01F982  */
+#define NOTO_EMOJI_24_SYMBOL_U1F983                                   "\xF0\x9F\xA6\x83" /* Id: 1212, Name: u1F983,                                   CodePoint: 129411,  Unicode: U+01F983  */
+#define NOTO_EMOJI_24_SYMBOL_U1F984                                   "\xF0\x9F\xA6\x84" /* Id: 1213, Name: u1F984,                                   CodePoint: 129412,  Unicode: U+01F984  */
+#define NOTO_EMOJI_24_SYMBOL_U1F985                                   "\xF0\x9F\xA6\x85" /* Id: 1214, Name: u1F985,                                   CodePoint: 129413,  Unicode: U+01F985  */
+#define NOTO_EMOJI_24_SYMBOL_U1F986                                   "\xF0\x9F\xA6\x86" /* Id: 1215, Name: u1F986,                                   CodePoint: 129414,  Unicode: U+01F986  */
+#define NOTO_EMOJI_24_SYMBOL_U1F987                                   "\xF0\x9F\xA6\x87" /* Id: 1216, Name: u1F987,                                   CodePoint: 129415,  Unicode: U+01F987  */
+#define NOTO_EMOJI_24_SYMBOL_U1F988                                   "\xF0\x9F\xA6\x88" /* Id: 1217, Name: u1F988,                                   CodePoint: 129416,  Unicode: U+01F988  */
+#define NOTO_EMOJI_24_SYMBOL_U1F989                                   "\xF0\x9F\xA6\x89" /* Id: 1218, Name: u1F989,                                   CodePoint: 129417,  Unicode: U+01F989  */
+#define NOTO_EMOJI_24_SYMBOL_U1F98A                                   "\xF0\x9F\xA6\x8A" /* Id: 1219, Name: u1F98A,                                   CodePoint: 129418,  Unicode: U+01F98A  */
+#define NOTO_EMOJI_24_SYMBOL_U1F98B                                   "\xF0\x9F\xA6\x8B" /* Id: 1220, Name: u1F98B,                                   CodePoint: 129419,  Unicode: U+01F98B  */
+#define NOTO_EMOJI_24_SYMBOL_U1F98C                                   "\xF0\x9F\xA6\x8C" /* Id: 1221, Name: u1F98C,                                   CodePoint: 129420,  Unicode: U+01F98C  */
+#define NOTO_EMOJI_24_SYMBOL_U1F98D                                   "\xF0\x9F\xA6\x8D" /* Id: 1222, Name: u1F98D,                                   CodePoint: 129421,  Unicode: U+01F98D  */
+#define NOTO_EMOJI_24_SYMBOL_U1F98E                                   "\xF0\x9F\xA6\x8E" /* Id: 1223, Name: u1F98E,                                   CodePoint: 129422,  Unicode: U+01F98E  */
+#define NOTO_EMOJI_24_SYMBOL_U1F98F                                   "\xF0\x9F\xA6\x8F" /* Id: 1224, Name: u1F98F,                                   CodePoint: 129423,  Unicode: U+01F98F  */
+#define NOTO_EMOJI_24_SYMBOL_U1F990                                   "\xF0\x9F\xA6\x90" /* Id: 1225, Name: u1F990,                                   CodePoint: 129424,  Unicode: U+01F990  */
+#define NOTO_EMOJI_24_SYMBOL_U1F991                                   "\xF0\x9F\xA6\x91" /* Id: 1226, Name: u1F991,                                   CodePoint: 129425,  Unicode: U+01F991  */
+#define NOTO_EMOJI_24_SYMBOL_U1F992                                   "\xF0\x9F\xA6\x92" /* Id: 1227, Name: u1F992,                                   CodePoint: 129426,  Unicode: U+01F992  */
+#define NOTO_EMOJI_24_SYMBOL_U1F993                                   "\xF0\x9F\xA6\x93" /* Id: 1228, Name: u1F993,                                   CodePoint: 129427,  Unicode: U+01F993  */
+#define NOTO_EMOJI_24_SYMBOL_MOOSE                                    "\xF0\x9F\xAB\x8E" /* Id: 1229, Name: moose,                                    CodePoint: 129742,  Unicode: U+01FACE  */
+#define NOTO_EMOJI_24_SYMBOL_U1F994                                   "\xF0\x9F\xA6\x94" /* Id: 1230, Name: u1F994,                                   CodePoint: 129428,  Unicode: U+01F994  */
+#define NOTO_EMOJI_24_SYMBOL_U1F995                                   "\xF0\x9F\xA6\x95" /* Id: 1231, Name: u1F995,                                   CodePoint: 129429,  Unicode: U+01F995  */
+#define NOTO_EMOJI_24_SYMBOL_U1F996                                   "\xF0\x9F\xA6\x96" /* Id: 1232, Name: u1F996,                                   CodePoint: 129430,  Unicode: U+01F996  */
+#define NOTO_EMOJI_24_SYMBOL_U1F997                                   "\xF0\x9F\xA6\x97" /* Id: 1233, Name: u1F997,                                   CodePoint: 129431,  Unicode: U+01F997  */
+#define NOTO_EMOJI_24_SYMBOL_KANGAROO                                 "\xF0\x9F\xA6\x98" /* Id: 1234, Name: kangaroo,                                 CodePoint: 129432,  Unicode: U+01F998  */
+#define NOTO_EMOJI_24_SYMBOL_LLAMA                                    "\xF0\x9F\xA6\x99" /* Id: 1235, Name: llama,                                    CodePoint: 129433,  Unicode: U+01F999  */
+#define NOTO_EMOJI_24_SYMBOL_PEACOCK                                  "\xF0\x9F\xA6\x9A" /* Id: 1236, Name: peacock,                                  CodePoint: 129434,  Unicode: U+01F99A  */
+#define NOTO_EMOJI_24_SYMBOL_HIPPOPOTAMUS                             "\xF0\x9F\xA6\x9B" /* Id: 1237, Name: hippopotamus,                             CodePoint: 129435,  Unicode: U+01F99B  */
+#define NOTO_EMOJI_24_SYMBOL_PARROT                                   "\xF0\x9F\xA6\x9C" /* Id: 1238, Name: parrot,                                   CodePoint: 129436,  Unicode: U+01F99C  */
+#define NOTO_EMOJI_24_SYMBOL_RACCOON                                  "\xF0\x9F\xA6\x9D" /* Id: 1239, Name: raccoon,                                  CodePoint: 129437,  Unicode: U+01F99D  */
+#define NOTO_EMOJI_24_SYMBOL_LOBSTER                                  "\xF0\x9F\xA6\x9E" /* Id: 1240, Name: lobster,                                  CodePoint: 129438,  Unicode: U+01F99E  */
+#define NOTO_EMOJI_24_SYMBOL_MOSQUITO                                 "\xF0\x9F\xA6\x9F" /* Id: 1241, Name: mosquito,                                 CodePoint: 129439,  Unicode: U+01F99F  */
+#define NOTO_EMOJI_24_SYMBOL_MICROBE                                  "\xF0\x9F\xA6\xA0" /* Id: 1242, Name: microbe,                                  CodePoint: 129440,  Unicode: U+01F9A0  */
+#define NOTO_EMOJI_24_SYMBOL_BADGER                                   "\xF0\x9F\xA6\xA1" /* Id: 1243, Name: badger,                                   CodePoint: 129441,  Unicode: U+01F9A1  */
+#define NOTO_EMOJI_24_SYMBOL_SWAN                                     "\xF0\x9F\xA6\xA2" /* Id: 1244, Name: swan,                                     CodePoint: 129442,  Unicode: U+01F9A2  */
+#define NOTO_EMOJI_24_SYMBOL_MAMMOTH                                  "\xF0\x9F\xA6\xA3" /* Id: 1245, Name: mammoth,                                  CodePoint: 129443,  Unicode: U+01F9A3  */
+#define NOTO_EMOJI_24_SYMBOL_DODO                                     "\xF0\x9F\xA6\xA4" /* Id: 1246, Name: dodo,                                     CodePoint: 129444,  Unicode: U+01F9A4  */
+#define NOTO_EMOJI_24_SYMBOL_SLOTH                                    "\xF0\x9F\xA6\xA5" /* Id: 1247, Name: sloth,                                    CodePoint: 129445,  Unicode: U+01F9A5  */
+#define NOTO_EMOJI_24_SYMBOL_OTTER                                    "\xF0\x9F\xA6\xA6" /* Id: 1248, Name: otter,                                    CodePoint: 129446,  Unicode: U+01F9A6  */
+#define NOTO_EMOJI_24_SYMBOL_ORANGUTAN                                "\xF0\x9F\xA6\xA7" /* Id: 1249, Name: orangutan,                                CodePoint: 129447,  Unicode: U+01F9A7  */
+#define NOTO_EMOJI_24_SYMBOL_SKUNK                                    "\xF0\x9F\xA6\xA8" /* Id: 1250, Name: skunk,                                    CodePoint: 129448,  Unicode: U+01F9A8  */
+#define NOTO_EMOJI_24_SYMBOL_FLAMINGO                                 "\xF0\x9F\xA6\xA9" /* Id: 1251, Name: flamingo,                                 CodePoint: 129449,  Unicode: U+01F9A9  */
+#define NOTO_EMOJI_24_SYMBOL_OYSTER                                   "\xF0\x9F\xA6\xAA" /* Id: 1252, Name: oyster,                                   CodePoint: 129450,  Unicode: U+01F9AA  */
+#define NOTO_EMOJI_24_SYMBOL_BEAVER                                   "\xF0\x9F\xA6\xAB" /* Id: 1253, Name: beaver,                                   CodePoint: 129451,  Unicode: U+01F9AB  */
+#define NOTO_EMOJI_24_SYMBOL_BISON                                    "\xF0\x9F\xA6\xAC" /* Id: 1254, Name: bison,                                    CodePoint: 129452,  Unicode: U+01F9AC  */
+#define NOTO_EMOJI_24_SYMBOL_SEAL                                     "\xF0\x9F\xA6\xAD" /* Id: 1255, Name: seal,                                     CodePoint: 129453,  Unicode: U+01F9AD  */
+#define NOTO_EMOJI_24_SYMBOL_GUIDEDOG                                 "\xF0\x9F\xA6\xAE" /* Id: 1256, Name: guideDog,                                 CodePoint: 129454,  Unicode: U+01F9AE  */
+#define NOTO_EMOJI_24_SYMBOL_WING                                     "\xF0\x9F\xAA\xBD" /* Id: 1257, Name: wing,                                     CodePoint: 129725,  Unicode: U+01FABD  */
+#define NOTO_EMOJI_24_SYMBOL_WHITECANE                                "\xF0\x9F\xA6\xAF" /* Id: 1258, Name: whiteCane,                                CodePoint: 129455,  Unicode: U+01F9AF  */
+#define NOTO_EMOJI_24_SYMBOL_EMOJICOMPONENTREDHAIR                    "\xF0\x9F\xA6\xB0" /* Id: 1259, Name: emojiComponentRedHair,                    CodePoint: 129456,  Unicode: U+01F9B0  */
+#define NOTO_EMOJI_24_SYMBOL_EMOJICOMPONENTCURLYHAIR                  "\xF0\x9F\xA6\xB1" /* Id: 1260, Name: emojiComponentCurlyHair,                  CodePoint: 129457,  Unicode: U+01F9B1  */
+#define NOTO_EMOJI_24_SYMBOL_EMOJICOMPONENTBALD                       "\xF0\x9F\xA6\xB2" /* Id: 1261, Name: emojiComponentBald,                       CodePoint: 129458,  Unicode: U+01F9B2  */
+#define NOTO_EMOJI_24_SYMBOL_EMOJICOMPONENTWHITEHAIR                  "\xF0\x9F\xA6\xB3" /* Id: 1262, Name: emojiComponentWhiteHair,                  CodePoint: 129459,  Unicode: U+01F9B3  */
+#define NOTO_EMOJI_24_SYMBOL_BONE                                     "\xF0\x9F\xA6\xB4" /* Id: 1263, Name: bone,                                     CodePoint: 129460,  Unicode: U+01F9B4  */
+#define NOTO_EMOJI_24_SYMBOL_LEG                                      "\xF0\x9F\xA6\xB5" /* Id: 1264, Name: leg,                                      CodePoint: 129461,  Unicode: U+01F9B5  */
+#define NOTO_EMOJI_24_SYMBOL_FOOT                                     "\xF0\x9F\xA6\xB6" /* Id: 1265, Name: foot,                                     CodePoint: 129462,  Unicode: U+01F9B6  */
+#define NOTO_EMOJI_24_SYMBOL_TOOTH                                    "\xF0\x9F\xA6\xB7" /* Id: 1266, Name: tooth,                                    CodePoint: 129463,  Unicode: U+01F9B7  */
+#define NOTO_EMOJI_24_SYMBOL_SUPERHERO                                "\xF0\x9F\xA6\xB8" /* Id: 1267, Name: superhero,                                CodePoint: 129464,  Unicode: U+01F9B8  */
+#define NOTO_EMOJI_24_SYMBOL_SUPERVILLAIN                             "\xF0\x9F\xA6\xB9" /* Id: 1268, Name: supervillain,                             CodePoint: 129465,  Unicode: U+01F9B9  */
+#define NOTO_EMOJI_24_SYMBOL_SAFETYVEST                               "\xF0\x9F\xA6\xBA" /* Id: 1269, Name: safetyVest,                               CodePoint: 129466,  Unicode: U+01F9BA  */
+#define NOTO_EMOJI_24_SYMBOL_EARWITHHEARINGAID                        "\xF0\x9F\xA6\xBB" /* Id: 1270, Name: earWithHearingAid,                        CodePoint: 129467,  Unicode: U+01F9BB  */
+#define NOTO_EMOJI_24_SYMBOL_MOTORIZEDWHEELCHAIR                      "\xF0\x9F\xA6\xBC" /* Id: 1271, Name: motorizedWheelchair,                      CodePoint: 129468,  Unicode: U+01F9BC  */
+#define NOTO_EMOJI_24_SYMBOL_MANUALWHEELCHAIR                         "\xF0\x9F\xA6\xBD" /* Id: 1272, Name: manualWheelchair,                         CodePoint: 129469,  Unicode: U+01F9BD  */
+#define NOTO_EMOJI_24_SYMBOL_MECHANICALARM                            "\xF0\x9F\xA6\xBE" /* Id: 1273, Name: mechanicalArm,                            CodePoint: 129470,  Unicode: U+01F9BE  */
+#define NOTO_EMOJI_24_SYMBOL_MECHANICALLEG                            "\xF0\x9F\xA6\xBF" /* Id: 1274, Name: mechanicalLeg,                            CodePoint: 129471,  Unicode: U+01F9BF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9C0                                   "\xF0\x9F\xA7\x80" /* Id: 1275, Name: u1F9C0,                                   CodePoint: 129472,  Unicode: U+01F9C0  */
+#define NOTO_EMOJI_24_SYMBOL_CUPCAKE                                  "\xF0\x9F\xA7\x81" /* Id: 1276, Name: cupcake,                                  CodePoint: 129473,  Unicode: U+01F9C1  */
+#define NOTO_EMOJI_24_SYMBOL_SALTSHAKER                               "\xF0\x9F\xA7\x82" /* Id: 1277, Name: saltShaker,                               CodePoint: 129474,  Unicode: U+01F9C2  */
+#define NOTO_EMOJI_24_SYMBOL_BEVERAGEBOX                              "\xF0\x9F\xA7\x83" /* Id: 1278, Name: beverageBox,                              CodePoint: 129475,  Unicode: U+01F9C3  */
+#define NOTO_EMOJI_24_SYMBOL_GARLIC                                   "\xF0\x9F\xA7\x84" /* Id: 1279, Name: garlic,                                   CodePoint: 129476,  Unicode: U+01F9C4  */
+#define NOTO_EMOJI_24_SYMBOL_ONION                                    "\xF0\x9F\xA7\x85" /* Id: 1280, Name: onion,                                    CodePoint: 129477,  Unicode: U+01F9C5  */
+#define NOTO_EMOJI_24_SYMBOL_FALAFEL                                  "\xF0\x9F\xA7\x86" /* Id: 1281, Name: falafel,                                  CodePoint: 129478,  Unicode: U+01F9C6  */
+#define NOTO_EMOJI_24_SYMBOL_WAFFLE                                   "\xF0\x9F\xA7\x87" /* Id: 1282, Name: waffle,                                   CodePoint: 129479,  Unicode: U+01F9C7  */
+#define NOTO_EMOJI_24_SYMBOL_BUTTER                                   "\xF0\x9F\xA7\x88" /* Id: 1283, Name: butter,                                   CodePoint: 129480,  Unicode: U+01F9C8  */
+#define NOTO_EMOJI_24_SYMBOL_MATEDRINK                                "\xF0\x9F\xA7\x89" /* Id: 1284, Name: mateDrink,                                CodePoint: 129481,  Unicode: U+01F9C9  */
+#define NOTO_EMOJI_24_SYMBOL_ICECUBE                                  "\xF0\x9F\xA7\x8A" /* Id: 1285, Name: iceCube,                                  CodePoint: 129482,  Unicode: U+01F9CA  */
+#define NOTO_EMOJI_24_SYMBOL_BUBBLETEA                                "\xF0\x9F\xA7\x8B" /* Id: 1286, Name: bubbleTea,                                CodePoint: 129483,  Unicode: U+01F9CB  */
+#define NOTO_EMOJI_24_SYMBOL_TROLL                                    "\xF0\x9F\xA7\x8C" /* Id: 1287, Name: troll,                                    CodePoint: 129484,  Unicode: U+01F9CC  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONSTANDING                           "\xF0\x9F\xA7\x8D" /* Id: 1288, Name: personStanding,                           CodePoint: 129485,  Unicode: U+01F9CD  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONKNEELING                           "\xF0\x9F\xA7\x8E" /* Id: 1289, Name: personKneeling,                           CodePoint: 129486,  Unicode: U+01F9CE  */
+#define NOTO_EMOJI_24_SYMBOL_DEAFPERSON                               "\xF0\x9F\xA7\x8F" /* Id: 1290, Name: deafPerson,                               CodePoint: 129487,  Unicode: U+01F9CF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9D0                                   "\xF0\x9F\xA7\x90" /* Id: 1291, Name: u1F9D0,                                   CodePoint: 129488,  Unicode: U+01F9D0  */
+#define NOTO_EMOJI_24_SYMBOL_PERSON                                   "\xF0\x9F\xA7\x91" /* Id: 1292, Name: person,                                   CodePoint: 129489,  Unicode: U+01F9D1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9D2                                   "\xF0\x9F\xA7\x92" /* Id: 1293, Name: u1F9D2,                                   CodePoint: 129490,  Unicode: U+01F9D2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9D3                                   "\xF0\x9F\xA7\x93" /* Id: 1294, Name: u1F9D3,                                   CodePoint: 129491,  Unicode: U+01F9D3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9D4                                   "\xF0\x9F\xA7\x94" /* Id: 1295, Name: u1F9D4,                                   CodePoint: 129492,  Unicode: U+01F9D4  */
+#define NOTO_EMOJI_24_SYMBOL_WOMANWITHHEADSCARF                       "\xF0\x9F\xA7\x95" /* Id: 1296, Name: womanWithHeadscarf,                       CodePoint: 129493,  Unicode: U+01F9D5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9D6                                   "\xF0\x9F\xA7\x96" /* Id: 1297, Name: u1F9D6,                                   CodePoint: 129494,  Unicode: U+01F9D6  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9D7                                   "\xF0\x9F\xA7\x97" /* Id: 1298, Name: u1F9D7,                                   CodePoint: 129495,  Unicode: U+01F9D7  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9D8                                   "\xF0\x9F\xA7\x98" /* Id: 1299, Name: u1F9D8,                                   CodePoint: 129496,  Unicode: U+01F9D8  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9D9                                   "\xF0\x9F\xA7\x99" /* Id: 1300, Name: u1F9D9,                                   CodePoint: 129497,  Unicode: U+01F9D9  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9DA                                   "\xF0\x9F\xA7\x9A" /* Id: 1301, Name: u1F9DA,                                   CodePoint: 129498,  Unicode: U+01F9DA  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9DB                                   "\xF0\x9F\xA7\x9B" /* Id: 1302, Name: u1F9DB,                                   CodePoint: 129499,  Unicode: U+01F9DB  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9DC                                   "\xF0\x9F\xA7\x9C" /* Id: 1303, Name: u1F9DC,                                   CodePoint: 129500,  Unicode: U+01F9DC  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9DD                                   "\xF0\x9F\xA7\x9D" /* Id: 1304, Name: u1F9DD,                                   CodePoint: 129501,  Unicode: U+01F9DD  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9DE                                   "\xF0\x9F\xA7\x9E" /* Id: 1305, Name: u1F9DE,                                   CodePoint: 129502,  Unicode: U+01F9DE  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9DF                                   "\xF0\x9F\xA7\x9F" /* Id: 1306, Name: u1F9DF,                                   CodePoint: 129503,  Unicode: U+01F9DF  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9E0                                   "\xF0\x9F\xA7\xA0" /* Id: 1307, Name: u1F9E0,                                   CodePoint: 129504,  Unicode: U+01F9E0  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9E1                                   "\xF0\x9F\xA7\xA1" /* Id: 1308, Name: u1F9E1,                                   CodePoint: 129505,  Unicode: U+01F9E1  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9E2                                   "\xF0\x9F\xA7\xA2" /* Id: 1309, Name: u1F9E2,                                   CodePoint: 129506,  Unicode: U+01F9E2  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9E3                                   "\xF0\x9F\xA7\xA3" /* Id: 1310, Name: u1F9E3,                                   CodePoint: 129507,  Unicode: U+01F9E3  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9E4                                   "\xF0\x9F\xA7\xA4" /* Id: 1311, Name: u1F9E4,                                   CodePoint: 129508,  Unicode: U+01F9E4  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9E5                                   "\xF0\x9F\xA7\xA5" /* Id: 1312, Name: u1F9E5,                                   CodePoint: 129509,  Unicode: U+01F9E5  */
+#define NOTO_EMOJI_24_SYMBOL_U1F9E6                                   "\xF0\x9F\xA7\xA6" /* Id: 1313, Name: u1F9E6,                                   CodePoint: 129510,  Unicode: U+01F9E6  */
+#define NOTO_EMOJI_24_SYMBOL_FOLDINGHANDFAN                           "\xF0\x9F\xAA\xAD" /* Id: 1314, Name: foldingHandFan,                           CodePoint: 129709,  Unicode: U+01FAAD  */
+#define NOTO_EMOJI_24_SYMBOL_REDENVELOPE                              "\xF0\x9F\xA7\xA7" /* Id: 1315, Name: redEnvelope,                              CodePoint: 129511,  Unicode: U+01F9E7  */
+#define NOTO_EMOJI_24_SYMBOL_FIRECRACKER                              "\xF0\x9F\xA7\xA8" /* Id: 1316, Name: firecracker,                              CodePoint: 129512,  Unicode: U+01F9E8  */
+#define NOTO_EMOJI_24_SYMBOL_PUZZLEPIECE                              "\xF0\x9F\xA7\xA9" /* Id: 1317, Name: puzzlePiece,                              CodePoint: 129513,  Unicode: U+01F9E9  */
+#define NOTO_EMOJI_24_SYMBOL_TESTTUBE                                 "\xF0\x9F\xA7\xAA" /* Id: 1318, Name: testTube,                                 CodePoint: 129514,  Unicode: U+01F9EA  */
+#define NOTO_EMOJI_24_SYMBOL_PETRIDISH                                "\xF0\x9F\xA7\xAB" /* Id: 1319, Name: petriDish,                                CodePoint: 129515,  Unicode: U+01F9EB  */
+#define NOTO_EMOJI_24_SYMBOL_DNA                                      "\xF0\x9F\xA7\xAC" /* Id: 1320, Name: dna,                                      CodePoint: 129516,  Unicode: U+01F9EC  */
+#define NOTO_EMOJI_24_SYMBOL_SUN_1                                    "\xF0\x9F\xA7\xAD" /* Id: 1321, Name: sun.1,                                    CodePoint: 129517,  Unicode: U+01F9ED  */
+#define NOTO_EMOJI_24_SYMBOL_ABACUS                                   "\xF0\x9F\xA7\xAE" /* Id: 1322, Name: abacus,                                   CodePoint: 129518,  Unicode: U+01F9EE  */
+#define NOTO_EMOJI_24_SYMBOL_FIREEXTINGUISHER                         "\xF0\x9F\xA7\xAF" /* Id: 1323, Name: fireExtinguisher,                         CodePoint: 129519,  Unicode: U+01F9EF  */
+#define NOTO_EMOJI_24_SYMBOL_TOOLBOX                                  "\xF0\x9F\xA7\xB0" /* Id: 1324, Name: toolbox,                                  CodePoint: 129520,  Unicode: U+01F9F0  */
+#define NOTO_EMOJI_24_SYMBOL_BRICK                                    "\xF0\x9F\xA7\xB1" /* Id: 1325, Name: brick,                                    CodePoint: 129521,  Unicode: U+01F9F1  */
+#define NOTO_EMOJI_24_SYMBOL_MAGNET                                   "\xF0\x9F\xA7\xB2" /* Id: 1326, Name: magnet,                                   CodePoint: 129522,  Unicode: U+01F9F2  */
+#define NOTO_EMOJI_24_SYMBOL_LUGGAGE                                  "\xF0\x9F\xA7\xB3" /* Id: 1327, Name: luggage,                                  CodePoint: 129523,  Unicode: U+01F9F3  */
+#define NOTO_EMOJI_24_SYMBOL_LOTIONBOTTLE                             "\xF0\x9F\xA7\xB4" /* Id: 1328, Name: lotionBottle,                             CodePoint: 129524,  Unicode: U+01F9F4  */
+#define NOTO_EMOJI_24_SYMBOL_THREAD                                   "\xF0\x9F\xA7\xB5" /* Id: 1329, Name: thread,                                   CodePoint: 129525,  Unicode: U+01F9F5  */
+#define NOTO_EMOJI_24_SYMBOL_YARN                                     "\xF0\x9F\xA7\xB6" /* Id: 1330, Name: yarn,                                     CodePoint: 129526,  Unicode: U+01F9F6  */
+#define NOTO_EMOJI_24_SYMBOL_SAFETYPIN                                "\xF0\x9F\xA7\xB7" /* Id: 1331, Name: safetyPin,                                CodePoint: 129527,  Unicode: U+01F9F7  */
+#define NOTO_EMOJI_24_SYMBOL_TEDDYBEAR                                "\xF0\x9F\xA7\xB8" /* Id: 1332, Name: teddyBear,                                CodePoint: 129528,  Unicode: U+01F9F8  */
+#define NOTO_EMOJI_24_SYMBOL_BROOM                                    "\xF0\x9F\xA7\xB9" /* Id: 1333, Name: broom,                                    CodePoint: 129529,  Unicode: U+01F9F9  */
+#define NOTO_EMOJI_24_SYMBOL_BASKET                                   "\xF0\x9F\xA7\xBA" /* Id: 1334, Name: basket,                                   CodePoint: 129530,  Unicode: U+01F9FA  */
+#define NOTO_EMOJI_24_SYMBOL_ROLLOFPAPER                              "\xF0\x9F\xA7\xBB" /* Id: 1335, Name: rollOfPaper,                              CodePoint: 129531,  Unicode: U+01F9FB  */
+#define NOTO_EMOJI_24_SYMBOL_SOAP                                     "\xF0\x9F\xA7\xBC" /* Id: 1336, Name: soap,                                     CodePoint: 129532,  Unicode: U+01F9FC  */
+#define NOTO_EMOJI_24_SYMBOL_SPONGE                                   "\xF0\x9F\xA7\xBD" /* Id: 1337, Name: sponge,                                   CodePoint: 129533,  Unicode: U+01F9FD  */
+#define NOTO_EMOJI_24_SYMBOL_RECEIPT                                  "\xF0\x9F\xA7\xBE" /* Id: 1338, Name: receipt,                                  CodePoint: 129534,  Unicode: U+01F9FE  */
+#define NOTO_EMOJI_24_SYMBOL_NAZARAMULET                              "\xF0\x9F\xA7\xBF" /* Id: 1339, Name: nazarAmulet,                              CodePoint: 129535,  Unicode: U+01F9FF  */
+#define NOTO_EMOJI_24_SYMBOL_BALLETSHOES                              "\xF0\x9F\xA9\xB0" /* Id: 1340, Name: balletShoes,                              CodePoint: 129648,  Unicode: U+01FA70  */
+#define NOTO_EMOJI_24_SYMBOL_ONEPIECESWIMSUIT                         "\xF0\x9F\xA9\xB1" /* Id: 1341, Name: onePieceSwimsuit,                         CodePoint: 129649,  Unicode: U+01FA71  */
+#define NOTO_EMOJI_24_SYMBOL_BRIEFS                                   "\xF0\x9F\xA9\xB2" /* Id: 1342, Name: briefs,                                   CodePoint: 129650,  Unicode: U+01FA72  */
+#define NOTO_EMOJI_24_SYMBOL_SHORTS                                   "\xF0\x9F\xA9\xB3" /* Id: 1343, Name: shorts,                                   CodePoint: 129651,  Unicode: U+01FA73  */
+#define NOTO_EMOJI_24_SYMBOL_THONGSANDAL                              "\xF0\x9F\xA9\xB4" /* Id: 1344, Name: thongSandal,                              CodePoint: 129652,  Unicode: U+01FA74  */
+#define NOTO_EMOJI_24_SYMBOL_DROPOFBLOOD                              "\xF0\x9F\xA9\xB8" /* Id: 1345, Name: dropOfBlood,                              CodePoint: 129656,  Unicode: U+01FA78  */
+#define NOTO_EMOJI_24_SYMBOL_ADHESIVEBANDAGE                          "\xF0\x9F\xA9\xB9" /* Id: 1346, Name: adhesiveBandage,                          CodePoint: 129657,  Unicode: U+01FA79  */
+#define NOTO_EMOJI_24_SYMBOL_STETHOSCOPE                              "\xF0\x9F\xA9\xBA" /* Id: 1347, Name: stethoscope,                              CodePoint: 129658,  Unicode: U+01FA7A  */
+#define NOTO_EMOJI_24_SYMBOL_XRAY                                     "\xF0\x9F\xA9\xBB" /* Id: 1348, Name: xRay,                                     CodePoint: 129659,  Unicode: U+01FA7B  */
+#define NOTO_EMOJI_24_SYMBOL_CRUTCH                                   "\xF0\x9F\xA9\xBC" /* Id: 1349, Name: crutch,                                   CodePoint: 129660,  Unicode: U+01FA7C  */
+#define NOTO_EMOJI_24_SYMBOL_YOYO                                     "\xF0\x9F\xAA\x80" /* Id: 1350, Name: yoYo,                                     CodePoint: 129664,  Unicode: U+01FA80  */
+#define NOTO_EMOJI_24_SYMBOL_KITE                                     "\xF0\x9F\xAA\x81" /* Id: 1351, Name: kite,                                     CodePoint: 129665,  Unicode: U+01FA81  */
+#define NOTO_EMOJI_24_SYMBOL_PARACHUTE                                "\xF0\x9F\xAA\x82" /* Id: 1352, Name: parachute,                                CodePoint: 129666,  Unicode: U+01FA82  */
+#define NOTO_EMOJI_24_SYMBOL_BOOMERANG                                "\xF0\x9F\xAA\x83" /* Id: 1353, Name: boomerang,                                CodePoint: 129667,  Unicode: U+01FA83  */
+#define NOTO_EMOJI_24_SYMBOL_MAGICWAND                                "\xF0\x9F\xAA\x84" /* Id: 1354, Name: magicWand,                                CodePoint: 129668,  Unicode: U+01FA84  */
+#define NOTO_EMOJI_24_SYMBOL_PINATA                                   "\xF0\x9F\xAA\x85" /* Id: 1355, Name: pinata,                                   CodePoint: 129669,  Unicode: U+01FA85  */
+#define NOTO_EMOJI_24_SYMBOL_NESTINGDOLLS                             "\xF0\x9F\xAA\x86" /* Id: 1356, Name: nestingDolls,                             CodePoint: 129670,  Unicode: U+01FA86  */
+#define NOTO_EMOJI_24_SYMBOL_RINGEDPLANET                             "\xF0\x9F\xAA\x90" /* Id: 1357, Name: ringedPlanet,                             CodePoint: 129680,  Unicode: U+01FA90  */
+#define NOTO_EMOJI_24_SYMBOL_CHAIR                                    "\xF0\x9F\xAA\x91" /* Id: 1358, Name: chair,                                    CodePoint: 129681,  Unicode: U+01FA91  */
+#define NOTO_EMOJI_24_SYMBOL_RAZOR                                    "\xF0\x9F\xAA\x92" /* Id: 1359, Name: razor,                                    CodePoint: 129682,  Unicode: U+01FA92  */
+#define NOTO_EMOJI_24_SYMBOL_HAIRPICK                                 "\xF0\x9F\xAA\xAE" /* Id: 1360, Name: hairPick,                                 CodePoint: 129710,  Unicode: U+01FAAE  */
+#define NOTO_EMOJI_24_SYMBOL_AXE                                      "\xF0\x9F\xAA\x93" /* Id: 1361, Name: axe,                                      CodePoint: 129683,  Unicode: U+01FA93  */
+#define NOTO_EMOJI_24_SYMBOL_DIYALAMP                                 "\xF0\x9F\xAA\x94" /* Id: 1362, Name: diyaLamp,                                 CodePoint: 129684,  Unicode: U+01FA94  */
+#define NOTO_EMOJI_24_SYMBOL_BANJO                                    "\xF0\x9F\xAA\x95" /* Id: 1363, Name: banjo,                                    CodePoint: 129685,  Unicode: U+01FA95  */
+#define NOTO_EMOJI_24_SYMBOL_MILITARYHELMET                           "\xF0\x9F\xAA\x96" /* Id: 1364, Name: militaryHelmet,                           CodePoint: 129686,  Unicode: U+01FA96  */
+#define NOTO_EMOJI_24_SYMBOL_ACCORDIAN                                "\xF0\x9F\xAA\x97" /* Id: 1365, Name: accordian,                                CodePoint: 129687,  Unicode: U+01FA97  */
+#define NOTO_EMOJI_24_SYMBOL_LONGDRUM                                 "\xF0\x9F\xAA\x98" /* Id: 1366, Name: longDrum,                                 CodePoint: 129688,  Unicode: U+01FA98  */
+#define NOTO_EMOJI_24_SYMBOL_COIN                                     "\xF0\x9F\xAA\x99" /* Id: 1367, Name: coin,                                     CodePoint: 129689,  Unicode: U+01FA99  */
+#define NOTO_EMOJI_24_SYMBOL_CARPENTRYSAW                             "\xF0\x9F\xAA\x9A" /* Id: 1368, Name: carpentrySaw,                             CodePoint: 129690,  Unicode: U+01FA9A  */
+#define NOTO_EMOJI_24_SYMBOL_SCREWDRIVER                              "\xF0\x9F\xAA\x9B" /* Id: 1369, Name: screwdriver,                              CodePoint: 129691,  Unicode: U+01FA9B  */
+#define NOTO_EMOJI_24_SYMBOL_LADDER                                   "\xF0\x9F\xAA\x9C" /* Id: 1370, Name: ladder,                                   CodePoint: 129692,  Unicode: U+01FA9C  */
+#define NOTO_EMOJI_24_SYMBOL_HOOK                                     "\xF0\x9F\xAA\x9D" /* Id: 1371, Name: hook,                                     CodePoint: 129693,  Unicode: U+01FA9D  */
+#define NOTO_EMOJI_24_SYMBOL_MIRROR                                   "\xF0\x9F\xAA\x9E" /* Id: 1372, Name: mirror,                                   CodePoint: 129694,  Unicode: U+01FA9E  */
+#define NOTO_EMOJI_24_SYMBOL_WINDOW                                   "\xF0\x9F\xAA\x9F" /* Id: 1373, Name: window,                                   CodePoint: 129695,  Unicode: U+01FA9F  */
+#define NOTO_EMOJI_24_SYMBOL_PLUNGER                                  "\xF0\x9F\xAA\xA0" /* Id: 1374, Name: plunger,                                  CodePoint: 129696,  Unicode: U+01FAA0  */
+#define NOTO_EMOJI_24_SYMBOL_SEWINGNEEDLE                             "\xF0\x9F\xAA\xA1" /* Id: 1375, Name: sewingNeedle,                             CodePoint: 129697,  Unicode: U+01FAA1  */
+#define NOTO_EMOJI_24_SYMBOL_KNOT                                     "\xF0\x9F\xAA\xA2" /* Id: 1376, Name: knot,                                     CodePoint: 129698,  Unicode: U+01FAA2  */
+#define NOTO_EMOJI_24_SYMBOL_BUCKET                                   "\xF0\x9F\xAA\xA3" /* Id: 1377, Name: bucket,                                   CodePoint: 129699,  Unicode: U+01FAA3  */
+#define NOTO_EMOJI_24_SYMBOL_MOUSETRAP                                "\xF0\x9F\xAA\xA4" /* Id: 1378, Name: mouseTrap,                                CodePoint: 129700,  Unicode: U+01FAA4  */
+#define NOTO_EMOJI_24_SYMBOL_TOOTHBRUSH                               "\xF0\x9F\xAA\xA5" /* Id: 1379, Name: toothbrush,                               CodePoint: 129701,  Unicode: U+01FAA5  */
+#define NOTO_EMOJI_24_SYMBOL_HEADSTONE                                "\xF0\x9F\xAA\xA6" /* Id: 1380, Name: headstone,                                CodePoint: 129702,  Unicode: U+01FAA6  */
+#define NOTO_EMOJI_24_SYMBOL_PLACARD                                  "\xF0\x9F\xAA\xA7" /* Id: 1381, Name: placard,                                  CodePoint: 129703,  Unicode: U+01FAA7  */
+#define NOTO_EMOJI_24_SYMBOL_ROCK                                     "\xF0\x9F\xAA\xA8" /* Id: 1382, Name: rock,                                     CodePoint: 129704,  Unicode: U+01FAA8  */
+#define NOTO_EMOJI_24_SYMBOL_MIRRORBALL                               "\xF0\x9F\xAA\xA9" /* Id: 1383, Name: mirrorBall,                               CodePoint: 129705,  Unicode: U+01FAA9  */
+#define NOTO_EMOJI_24_SYMBOL_IDENTIFICATIONCARD                       "\xF0\x9F\xAA\xAA" /* Id: 1384, Name: identificationCard,                       CodePoint: 129706,  Unicode: U+01FAAA  */
+#define NOTO_EMOJI_24_SYMBOL_LOWBATTERY                               "\xF0\x9F\xAA\xAB" /* Id: 1385, Name: lowBattery,                               CodePoint: 129707,  Unicode: U+01FAAB  */
+#define NOTO_EMOJI_24_SYMBOL_HAMSA                                    "\xF0\x9F\xAA\xAC" /* Id: 1386, Name: hamsa,                                    CodePoint: 129708,  Unicode: U+01FAAC  */
+#define NOTO_EMOJI_24_SYMBOL_FLY                                      "\xF0\x9F\xAA\xB0" /* Id: 1387, Name: fly,                                      CodePoint: 129712,  Unicode: U+01FAB0  */
+#define NOTO_EMOJI_24_SYMBOL_WORM                                     "\xF0\x9F\xAA\xB1" /* Id: 1388, Name: worm,                                     CodePoint: 129713,  Unicode: U+01FAB1  */
+#define NOTO_EMOJI_24_SYMBOL_BEETLE                                   "\xF0\x9F\xAA\xB2" /* Id: 1389, Name: beetle,                                   CodePoint: 129714,  Unicode: U+01FAB2  */
+#define NOTO_EMOJI_24_SYMBOL_COCKROACH                                "\xF0\x9F\xAA\xB3" /* Id: 1390, Name: cockroach,                                CodePoint: 129715,  Unicode: U+01FAB3  */
+#define NOTO_EMOJI_24_SYMBOL_POTTEDPLANT                              "\xF0\x9F\xAA\xB4" /* Id: 1391, Name: pottedPlant,                              CodePoint: 129716,  Unicode: U+01FAB4  */
+#define NOTO_EMOJI_24_SYMBOL_WOOD                                     "\xF0\x9F\xAA\xB5" /* Id: 1392, Name: wood,                                     CodePoint: 129717,  Unicode: U+01FAB5  */
+#define NOTO_EMOJI_24_SYMBOL_FEATHER                                  "\xF0\x9F\xAA\xB6" /* Id: 1393, Name: feather,                                  CodePoint: 129718,  Unicode: U+01FAB6  */
+#define NOTO_EMOJI_24_SYMBOL_LOTUS                                    "\xF0\x9F\xAA\xB7" /* Id: 1394, Name: lotus,                                    CodePoint: 129719,  Unicode: U+01FAB7  */
+#define NOTO_EMOJI_24_SYMBOL_CORAL                                    "\xF0\x9F\xAA\xB8" /* Id: 1395, Name: coral,                                    CodePoint: 129720,  Unicode: U+01FAB8  */
+#define NOTO_EMOJI_24_SYMBOL_EMPTYNEST                                "\xF0\x9F\xAA\xB9" /* Id: 1396, Name: emptyNest,                                CodePoint: 129721,  Unicode: U+01FAB9  */
+#define NOTO_EMOJI_24_SYMBOL_NESTWITHEGGS                             "\xF0\x9F\xAA\xBA" /* Id: 1397, Name: nestWithEggs,                             CodePoint: 129722,  Unicode: U+01FABA  */
+#define NOTO_EMOJI_24_SYMBOL_ANATOMICALHEART                          "\xF0\x9F\xAB\x80" /* Id: 1398, Name: anatomicalHeart,                          CodePoint: 129728,  Unicode: U+01FAC0  */
+#define NOTO_EMOJI_24_SYMBOL_LUNGS                                    "\xF0\x9F\xAB\x81" /* Id: 1399, Name: lungs,                                    CodePoint: 129729,  Unicode: U+01FAC1  */
+#define NOTO_EMOJI_24_SYMBOL_PEOPLEHUGGING                            "\xF0\x9F\xAB\x82" /* Id: 1400, Name: peopleHugging,                            CodePoint: 129730,  Unicode: U+01FAC2  */
+#define NOTO_EMOJI_24_SYMBOL_PREGNANTMAN                              "\xF0\x9F\xAB\x83" /* Id: 1401, Name: pregnantMan,                              CodePoint: 129731,  Unicode: U+01FAC3  */
+#define NOTO_EMOJI_24_SYMBOL_PREGNANTPERSON                           "\xF0\x9F\xAB\x84" /* Id: 1402, Name: pregnantPerson,                           CodePoint: 129732,  Unicode: U+01FAC4  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONWITHCROWN                          "\xF0\x9F\xAB\x85" /* Id: 1403, Name: personWithCrown,                          CodePoint: 129733,  Unicode: U+01FAC5  */
+#define NOTO_EMOJI_24_SYMBOL_BLUEBERRIES                              "\xF0\x9F\xAB\x90" /* Id: 1404, Name: blueberries,                              CodePoint: 129744,  Unicode: U+01FAD0  */
+#define NOTO_EMOJI_24_SYMBOL_BELLPEPPER                               "\xF0\x9F\xAB\x91" /* Id: 1405, Name: bellPepper,                               CodePoint: 129745,  Unicode: U+01FAD1  */
+#define NOTO_EMOJI_24_SYMBOL_OLIVE                                    "\xF0\x9F\xAB\x92" /* Id: 1406, Name: olive,                                    CodePoint: 129746,  Unicode: U+01FAD2  */
+#define NOTO_EMOJI_24_SYMBOL_FLATBREAD                                "\xF0\x9F\xAB\x93" /* Id: 1407, Name: flatBread,                                CodePoint: 129747,  Unicode: U+01FAD3  */
+#define NOTO_EMOJI_24_SYMBOL_TAMALE                                   "\xF0\x9F\xAB\x94" /* Id: 1408, Name: tamale,                                   CodePoint: 129748,  Unicode: U+01FAD4  */
+#define NOTO_EMOJI_24_SYMBOL_FONDUE                                   "\xF0\x9F\xAB\x95" /* Id: 1409, Name: fondue,                                   CodePoint: 129749,  Unicode: U+01FAD5  */
+#define NOTO_EMOJI_24_SYMBOL_TEAPOT                                   "\xF0\x9F\xAB\x96" /* Id: 1410, Name: teapot,                                   CodePoint: 129750,  Unicode: U+01FAD6  */
+#define NOTO_EMOJI_24_SYMBOL_POURINGLIQUID                            "\xF0\x9F\xAB\x97" /* Id: 1411, Name: pouringLiquid,                            CodePoint: 129751,  Unicode: U+01FAD7  */
+#define NOTO_EMOJI_24_SYMBOL_BEANS                                    "\xF0\x9F\xAB\x98" /* Id: 1412, Name: beans,                                    CodePoint: 129752,  Unicode: U+01FAD8  */
+#define NOTO_EMOJI_24_SYMBOL_JAR                                      "\xF0\x9F\xAB\x99" /* Id: 1413, Name: jar,                                      CodePoint: 129753,  Unicode: U+01FAD9  */
+#define NOTO_EMOJI_24_SYMBOL_MELTINGFACE                              "\xF0\x9F\xAB\xA0" /* Id: 1414, Name: meltingFace,                              CodePoint: 129760,  Unicode: U+01FAE0  */
+#define NOTO_EMOJI_24_SYMBOL_SALUTINGFACE                             "\xF0\x9F\xAB\xA1" /* Id: 1415, Name: salutingFace,                             CodePoint: 129761,  Unicode: U+01FAE1  */
+#define NOTO_EMOJI_24_SYMBOL_FACEWITHOPENEYESANDHANDOVERMOUTH         "\xF0\x9F\xAB\xA2" /* Id: 1416, Name: faceWithOpenEyesAndHandOverMouth,         CodePoint: 129762,  Unicode: U+01FAE2  */
+#define NOTO_EMOJI_24_SYMBOL_FACEWITHPEEKINGEYE                       "\xF0\x9F\xAB\xA3" /* Id: 1417, Name: faceWithPeekingEye,                       CodePoint: 129763,  Unicode: U+01FAE3  */
+#define NOTO_EMOJI_24_SYMBOL_FACEWITHDIAGONALMOUTH                    "\xF0\x9F\xAB\xA4" /* Id: 1418, Name: faceWithDiagonalMouth,                    CodePoint: 129764,  Unicode: U+01FAE4  */
+#define NOTO_EMOJI_24_SYMBOL_DOTTEDLINEFACE                           "\xF0\x9F\xAB\xA5" /* Id: 1419, Name: dottedLineFace,                           CodePoint: 129765,  Unicode: U+01FAE5  */
+#define NOTO_EMOJI_24_SYMBOL_SHAKINGFACE                              "\xF0\x9F\xAB\xA8" /* Id: 1420, Name: shakingFace,                              CodePoint: 129768,  Unicode: U+01FAE8  */
+#define NOTO_EMOJI_24_SYMBOL_BITINGLIP                                "\xF0\x9F\xAB\xA6" /* Id: 1421, Name: bitingLip,                                CodePoint: 129766,  Unicode: U+01FAE6  */
+#define NOTO_EMOJI_24_SYMBOL_BUBBLES                                  "\xF0\x9F\xAB\xA7" /* Id: 1422, Name: bubbles,                                  CodePoint: 129767,  Unicode: U+01FAE7  */
+#define NOTO_EMOJI_24_SYMBOL_HANDWITHINDEXFINGERANDTHUMBCROSSED       "\xF0\x9F\xAB\xB0" /* Id: 1423, Name: handWithIndexFingerAndThumbCrossed,       CodePoint: 129776,  Unicode: U+01FAF0  */
+#define NOTO_EMOJI_24_SYMBOL_RIGHTWARDSHAND                           "\xF0\x9F\xAB\xB1" /* Id: 1424, Name: rightwardsHand,                           CodePoint: 129777,  Unicode: U+01FAF1  */
+#define NOTO_EMOJI_24_SYMBOL_LEFTWARDSHAND                            "\xF0\x9F\xAB\xB2" /* Id: 1425, Name: leftwardsHand,                            CodePoint: 129778,  Unicode: U+01FAF2  */
+#define NOTO_EMOJI_24_SYMBOL_PALMDOWNHAND                             "\xF0\x9F\xAB\xB3" /* Id: 1426, Name: palmDownHand,                             CodePoint: 129779,  Unicode: U+01FAF3  */
+#define NOTO_EMOJI_24_SYMBOL_PALMUPHAND                               "\xF0\x9F\xAB\xB4" /* Id: 1427, Name: palmUpHand,                               CodePoint: 129780,  Unicode: U+01FAF4  */
+#define NOTO_EMOJI_24_SYMBOL_INDEXPOINTINGATTHEVIEWER                 "\xF0\x9F\xAB\xB5" /* Id: 1428, Name: indexPointingAtTheViewer,                 CodePoint: 129781,  Unicode: U+01FAF5  */
+#define NOTO_EMOJI_24_SYMBOL_HEARTHANDS                               "\xF0\x9F\xAB\xB6" /* Id: 1429, Name: heartHands,                               CodePoint: 129782,  Unicode: U+01FAF6  */
+#define NOTO_EMOJI_24_SYMBOL_RIGHTWARDSPUSHINGHAND                    "\xF0\x9F\xAB\xB8" /* Id: 1430, Name: rightwardsPushingHand,                    CodePoint: 129784,  Unicode: U+01FAF8  */
+#define NOTO_EMOJI_24_SYMBOL_LEFTWARDSPUSHINGHAND                     "\xF0\x9F\xAB\xB7" /* Id: 1431, Name: leftwardsPushingHand,                     CodePoint: 129783,  Unicode: U+01FAF7  */
+#define NOTO_EMOJI_24_SYMBOL_EYEINSPEECHBUBBLE                        "\x00"             /* Id: 1432, Name: eyeInSpeechBubble,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_HEARTONFIRE                              "\x00"             /* Id: 1433, Name: heartOnFire,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_MENDINGHEART                             "\x00"             /* Id: 1434, Name: mendingHeart,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_ARTIST                                   "\x00"             /* Id: 1435, Name: artist,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_ASTRONAUT                                "\x00"             /* Id: 1436, Name: astronaut,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_COOK                                     "\x00"             /* Id: 1437, Name: cook,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FACTORYWORKER                            "\x00"             /* Id: 1438, Name: factoryWorker,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FARMER                                   "\x00"             /* Id: 1439, Name: farmer,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FIREFIGHTER                              "\x00"             /* Id: 1440, Name: firefighter,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_HEALTHWORKER                             "\x00"             /* Id: 1441, Name: healthWorker,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_JUDGE                                    "\x00"             /* Id: 1442, Name: judge,                                    CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_MECHANIC                                 "\x00"             /* Id: 1443, Name: mechanic,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_MENWITHBUNNYEARS                         "\x00"             /* Id: 1444, Name: menWithBunnyEars,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_OFFICEWORKER                             "\x00"             /* Id: 1445, Name: officeWorker,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONFEEDINGBABY                        "\x00"             /* Id: 1446, Name: personFeedingBaby,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONINMANUALWHEELCHAIR                 "\x00"             /* Id: 1447, Name: personInManualWheelchair,                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONINMOTORIZEDWHEELCHAIR              "\x00"             /* Id: 1448, Name: personInMotorizedWheelchair,              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONWITHWHITECANE                      "\x00"             /* Id: 1449, Name: personWithWhiteCane,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PILOT                                    "\x00"             /* Id: 1450, Name: pilot,                                    CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_SCIENTIST                                "\x00"             /* Id: 1451, Name: scientist,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_SINGER                                   "\x00"             /* Id: 1452, Name: singer,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_STUDENT                                  "\x00"             /* Id: 1453, Name: student,                                  CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_TEACHER                                  "\x00"             /* Id: 1454, Name: teacher,                                  CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_TECHNOLOGIST                             "\x00"             /* Id: 1455, Name: technologist,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_WOMENWITHBUNNYEARS                       "\x00"             /* Id: 1456, Name: womenWithBunnyEars,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_BLACKCAT                                 "\x00"             /* Id: 1457, Name: blackCat,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_POLARBEARFACE                            "\x00"             /* Id: 1458, Name: polarBearFace,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_SERVICEDOG                               "\x00"             /* Id: 1459, Name: serviceDog,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FACEEXHALING                             "\x00"             /* Id: 1460, Name: faceExhaling,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FACEINCLOUDS                             "\x00"             /* Id: 1461, Name: faceInClouds,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FACEWITHSPIRALEYES                       "\x00"             /* Id: 1462, Name: faceWithSpiralEyes,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILY_BOY_CENTER                        "\x00"             /* Id: 1463, Name: family_boy_center,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILY_BOY_LEFT                          "\x00"             /* Id: 1464, Name: family_boy_left,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILY_BOY_RIGHT                         "\x00"             /* Id: 1465, Name: family_boy_right,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILY_GIRL_CENTER                       "\x00"             /* Id: 1466, Name: family_girl_center,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILY_GIRL_LEFT                         "\x00"             /* Id: 1467, Name: family_girl_left,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILY_GIRL_RIGHT                        "\x00"             /* Id: 1468, Name: family_girl_right,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_U1F46A_U1F468                            "\x00"             /* Id: 1469, Name: u1F46A_u1F468,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILY_MAN_LEFT                          "\x00"             /* Id: 1470, Name: family_man_left,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILY_MAN_RIGHT                         "\x00"             /* Id: 1471, Name: family_man_right,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_U1F46A_U1F469                            "\x00"             /* Id: 1472, Name: u1F46A_u1F469,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANBOY                             "\x00"             /* Id: 1473, Name: familyManBoy,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANBOYBOY                          "\x00"             /* Id: 1474, Name: familyManBoyBoy,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANGIRL                            "\x00"             /* Id: 1475, Name: familyManGirl,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANGIRLBOY                         "\x00"             /* Id: 1476, Name: familyManGirlBoy,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANGIRLGIRL                        "\x00"             /* Id: 1477, Name: familyManGirlGirl,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANMANBOY                          "\x00"             /* Id: 1478, Name: familyManManBoy,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANMANBOYBOY                       "\x00"             /* Id: 1479, Name: familyManManBoyBoy,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANMANGIRL                         "\x00"             /* Id: 1480, Name: familyManManGirl,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANMANGIRLBOY                      "\x00"             /* Id: 1481, Name: familyManManGirlBoy,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANMANGIRLGIRL                     "\x00"             /* Id: 1482, Name: familyManManGirlGirl,                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANWOMANBOY                        "\x00"             /* Id: 1483, Name: familyManWomanBoy,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANWOMANBOYBOY                     "\x00"             /* Id: 1484, Name: familyManWomanBoyBoy,                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANWOMANGIRL                       "\x00"             /* Id: 1485, Name: familyManWomanGirl,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANWOMANGIRLBOY                    "\x00"             /* Id: 1486, Name: familyManWomanGirlBoy,                    CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYMANWOMANGIRLGIRL                   "\x00"             /* Id: 1487, Name: familyManWomanGirlGirl,                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYWOMANBOY                           "\x00"             /* Id: 1488, Name: familyWomanBoy,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYWOMANBOYBOY                        "\x00"             /* Id: 1489, Name: familyWomanBoyBoy,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYWOMANGIRL                          "\x00"             /* Id: 1490, Name: familyWomanGirl,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYWOMANGIRLBOY                       "\x00"             /* Id: 1491, Name: familyWomanGirlBoy,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYWOMANGIRLGIRL                      "\x00"             /* Id: 1492, Name: familyWomanGirlGirl,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYWOMANWOMANBOY                      "\x00"             /* Id: 1493, Name: familyWomanWomanBoy,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYWOMANWOMANBOYBOY                   "\x00"             /* Id: 1494, Name: familyWomanWomanBoyBoy,                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYWOMANWOMANGIRL                     "\x00"             /* Id: 1495, Name: familyWomanWomanGirl,                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYWOMANWOMANGIRLBOY                  "\x00"             /* Id: 1496, Name: familyWomanWomanGirlBoy,                  CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FAMILYWOMANWOMANGIRLGIRL                 "\x00"             /* Id: 1497, Name: familyWomanWomanGirlGirl,                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_MANWITHBEARD                             "\x00"             /* Id: 1498, Name: manWithBeard,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_MANWITHBLONDEHAIR                        "\x00"             /* Id: 1499, Name: manWithBlondeHair,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_MANWITHREDHAIR                           "\x00"             /* Id: 1500, Name: manWithRedHair,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_MANWITHWHITEHAIR                         "\x00"             /* Id: 1501, Name: manWithWhiteHair,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PEOPLEHOLDINGHANDS                       "\x00"             /* Id: 1502, Name: peopleHoldingHands,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONBALD                               "\x00"             /* Id: 1503, Name: personBald,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONWITHCURLYHAIR                      "\x00"             /* Id: 1504, Name: personWithCurlyHair,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONWITHREDHAIR                        "\x00"             /* Id: 1505, Name: personWithRedHair,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONWITHWHITEHAIR                      "\x00"             /* Id: 1506, Name: personWithWhiteHair,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_WOMANWITHBEARD                           "\x00"             /* Id: 1507, Name: womanWithBeard,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_WOMANWITHBLONDEHAIR                      "\x00"             /* Id: 1508, Name: womanWithBlondeHair,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_WOMANWITHREDHAIR                         "\x00"             /* Id: 1509, Name: womanWithRedHair,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_WOMANWITHWHITEHAIR                       "\x00"             /* Id: 1510, Name: womanWithWhiteHair,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_ZERO_TAG                                 "\xF3\xA0\x80\xB0" /* Id: 1511, Name: zero.tag,                                 CodePoint: 917552,  Unicode: U+0E0030  */
+#define NOTO_EMOJI_24_SYMBOL_ONE_TAG                                  "\xF3\xA0\x80\xB1" /* Id: 1512, Name: one.tag,                                  CodePoint: 917553,  Unicode: U+0E0031  */
+#define NOTO_EMOJI_24_SYMBOL_TWO_TAG                                  "\xF3\xA0\x80\xB2" /* Id: 1513, Name: two.tag,                                  CodePoint: 917554,  Unicode: U+0E0032  */
+#define NOTO_EMOJI_24_SYMBOL_THREE_TAG                                "\xF3\xA0\x80\xB3" /* Id: 1514, Name: three.tag,                                CodePoint: 917555,  Unicode: U+0E0033  */
+#define NOTO_EMOJI_24_SYMBOL_FOUR_TAG                                 "\xF3\xA0\x80\xB4" /* Id: 1515, Name: four.tag,                                 CodePoint: 917556,  Unicode: U+0E0034  */
+#define NOTO_EMOJI_24_SYMBOL_FIVE_TAG                                 "\xF3\xA0\x80\xB5" /* Id: 1516, Name: five.tag,                                 CodePoint: 917557,  Unicode: U+0E0035  */
+#define NOTO_EMOJI_24_SYMBOL_SIX_TAG                                  "\xF3\xA0\x80\xB6" /* Id: 1517, Name: six.tag,                                  CodePoint: 917558,  Unicode: U+0E0036  */
+#define NOTO_EMOJI_24_SYMBOL_SEVEN_TAG                                "\xF3\xA0\x80\xB7" /* Id: 1518, Name: seven.tag,                                CodePoint: 917559,  Unicode: U+0E0037  */
+#define NOTO_EMOJI_24_SYMBOL_EIGHT_TAG                                "\xF3\xA0\x80\xB8" /* Id: 1519, Name: eight.tag,                                CodePoint: 917560,  Unicode: U+0E0038  */
+#define NOTO_EMOJI_24_SYMBOL_NINE_TAG                                 "\xF3\xA0\x80\xB9" /* Id: 1520, Name: nine.tag,                                 CodePoint: 917561,  Unicode: U+0E0039  */
+#define NOTO_EMOJI_24_SYMBOL_A_TAG                                    "\xF3\xA0\x81\xA1" /* Id: 1521, Name: a.tag,                                    CodePoint: 917601,  Unicode: U+0E0061  */
+#define NOTO_EMOJI_24_SYMBOL_B_TAG                                    "\xF3\xA0\x81\xA2" /* Id: 1522, Name: b.tag,                                    CodePoint: 917602,  Unicode: U+0E0062  */
+#define NOTO_EMOJI_24_SYMBOL_C_TAG                                    "\xF3\xA0\x81\xA3" /* Id: 1523, Name: c.tag,                                    CodePoint: 917603,  Unicode: U+0E0063  */
+#define NOTO_EMOJI_24_SYMBOL_D_TAG                                    "\xF3\xA0\x81\xA4" /* Id: 1524, Name: d.tag,                                    CodePoint: 917604,  Unicode: U+0E0064  */
+#define NOTO_EMOJI_24_SYMBOL_E_TAG                                    "\xF3\xA0\x81\xA5" /* Id: 1525, Name: e.tag,                                    CodePoint: 917605,  Unicode: U+0E0065  */
+#define NOTO_EMOJI_24_SYMBOL_F_TAG                                    "\xF3\xA0\x81\xA6" /* Id: 1526, Name: f.tag,                                    CodePoint: 917606,  Unicode: U+0E0066  */
+#define NOTO_EMOJI_24_SYMBOL_G_TAG                                    "\xF3\xA0\x81\xA7" /* Id: 1527, Name: g.tag,                                    CodePoint: 917607,  Unicode: U+0E0067  */
+#define NOTO_EMOJI_24_SYMBOL_H_TAG                                    "\xF3\xA0\x81\xA8" /* Id: 1528, Name: h.tag,                                    CodePoint: 917608,  Unicode: U+0E0068  */
+#define NOTO_EMOJI_24_SYMBOL_I_TAG                                    "\xF3\xA0\x81\xA9" /* Id: 1529, Name: i.tag,                                    CodePoint: 917609,  Unicode: U+0E0069  */
+#define NOTO_EMOJI_24_SYMBOL_J_TAG                                    "\xF3\xA0\x81\xAA" /* Id: 1530, Name: j.tag,                                    CodePoint: 917610,  Unicode: U+0E006A  */
+#define NOTO_EMOJI_24_SYMBOL_K_TAG                                    "\xF3\xA0\x81\xAB" /* Id: 1531, Name: k.tag,                                    CodePoint: 917611,  Unicode: U+0E006B  */
+#define NOTO_EMOJI_24_SYMBOL_L_TAG                                    "\xF3\xA0\x81\xAC" /* Id: 1532, Name: l.tag,                                    CodePoint: 917612,  Unicode: U+0E006C  */
+#define NOTO_EMOJI_24_SYMBOL_M_TAG                                    "\xF3\xA0\x81\xAD" /* Id: 1533, Name: m.tag,                                    CodePoint: 917613,  Unicode: U+0E006D  */
+#define NOTO_EMOJI_24_SYMBOL_N_TAG                                    "\xF3\xA0\x81\xAE" /* Id: 1534, Name: n.tag,                                    CodePoint: 917614,  Unicode: U+0E006E  */
+#define NOTO_EMOJI_24_SYMBOL_O_TAG                                    "\xF3\xA0\x81\xAF" /* Id: 1535, Name: o.tag,                                    CodePoint: 917615,  Unicode: U+0E006F  */
+#define NOTO_EMOJI_24_SYMBOL_P_TAG                                    "\xF3\xA0\x81\xB0" /* Id: 1536, Name: p.tag,                                    CodePoint: 917616,  Unicode: U+0E0070  */
+#define NOTO_EMOJI_24_SYMBOL_Q_TAG                                    "\xF3\xA0\x81\xB1" /* Id: 1537, Name: q.tag,                                    CodePoint: 917617,  Unicode: U+0E0071  */
+#define NOTO_EMOJI_24_SYMBOL_R_TAG                                    "\xF3\xA0\x81\xB2" /* Id: 1538, Name: r.tag,                                    CodePoint: 917618,  Unicode: U+0E0072  */
+#define NOTO_EMOJI_24_SYMBOL_S_TAG                                    "\xF3\xA0\x81\xB3" /* Id: 1539, Name: s.tag,                                    CodePoint: 917619,  Unicode: U+0E0073  */
+#define NOTO_EMOJI_24_SYMBOL_T_TAG                                    "\xF3\xA0\x81\xB4" /* Id: 1540, Name: t.tag,                                    CodePoint: 917620,  Unicode: U+0E0074  */
+#define NOTO_EMOJI_24_SYMBOL_U_TAG                                    "\xF3\xA0\x81\xB5" /* Id: 1541, Name: u.tag,                                    CodePoint: 917621,  Unicode: U+0E0075  */
+#define NOTO_EMOJI_24_SYMBOL_V_TAG                                    "\xF3\xA0\x81\xB6" /* Id: 1542, Name: v.tag,                                    CodePoint: 917622,  Unicode: U+0E0076  */
+#define NOTO_EMOJI_24_SYMBOL_W_TAG                                    "\xF3\xA0\x81\xB7" /* Id: 1543, Name: w.tag,                                    CodePoint: 917623,  Unicode: U+0E0077  */
+#define NOTO_EMOJI_24_SYMBOL_X_TAG                                    "\xF3\xA0\x81\xB8" /* Id: 1544, Name: x.tag,                                    CodePoint: 917624,  Unicode: U+0E0078  */
+#define NOTO_EMOJI_24_SYMBOL_Y_TAG                                    "\xF3\xA0\x81\xB9" /* Id: 1545, Name: y.tag,                                    CodePoint: 917625,  Unicode: U+0E0079  */
+#define NOTO_EMOJI_24_SYMBOL_Z_TAG                                    "\xF3\xA0\x81\xBA" /* Id: 1546, Name: z.tag,                                    CodePoint: 917626,  Unicode: U+0E007A  */
+#define NOTO_EMOJI_24_SYMBOL_CANCEL_TAG                               "\xF3\xA0\x81\xBF" /* Id: 1547, Name: cancel.tag,                               CodePoint: 917631,  Unicode: U+0E007F  */
+#define NOTO_EMOJI_24_SYMBOL_KEYCAP_HASH                              "\xF3\xBE\xA0\xAC" /* Id: 1548, Name: keycap_hash,                              CodePoint: 1042476, Unicode: U+0FE82C  */
+#define NOTO_EMOJI_24_SYMBOL_KEYCAP_ASTERISK                          "\x00"             /* Id: 1549, Name: keycap_asterisk,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_KEYCAP1                                  "\xF3\xBE\xA0\xAE" /* Id: 1550, Name: keycap1,                                  CodePoint: 1042478, Unicode: U+0FE82E  */
+#define NOTO_EMOJI_24_SYMBOL_KEYCAP2                                  "\xF3\xBE\xA0\xAF" /* Id: 1551, Name: keycap2,                                  CodePoint: 1042479, Unicode: U+0FE82F  */
+#define NOTO_EMOJI_24_SYMBOL_KEYCAP3                                  "\xF3\xBE\xA0\xB0" /* Id: 1552, Name: keycap3,                                  CodePoint: 1042480, Unicode: U+0FE830  */
+#define NOTO_EMOJI_24_SYMBOL_KEYCAP4                                  "\xF3\xBE\xA0\xB1" /* Id: 1553, Name: keycap4,                                  CodePoint: 1042481, Unicode: U+0FE831  */
+#define NOTO_EMOJI_24_SYMBOL_KEYCAP5                                  "\xF3\xBE\xA0\xB2" /* Id: 1554, Name: keycap5,                                  CodePoint: 1042482, Unicode: U+0FE832  */
+#define NOTO_EMOJI_24_SYMBOL_KEYCAP6                                  "\xF3\xBE\xA0\xB3" /* Id: 1555, Name: keycap6,                                  CodePoint: 1042483, Unicode: U+0FE833  */
+#define NOTO_EMOJI_24_SYMBOL_KEYCAP7                                  "\xF3\xBE\xA0\xB4" /* Id: 1556, Name: keycap7,                                  CodePoint: 1042484, Unicode: U+0FE834  */
+#define NOTO_EMOJI_24_SYMBOL_KEYCAP8                                  "\xF3\xBE\xA0\xB5" /* Id: 1557, Name: keycap8,                                  CodePoint: 1042485, Unicode: U+0FE835  */
+#define NOTO_EMOJI_24_SYMBOL_KEYCAP9                                  "\xF3\xBE\xA0\xB6" /* Id: 1558, Name: keycap9,                                  CodePoint: 1042486, Unicode: U+0FE836  */
+#define NOTO_EMOJI_24_SYMBOL_KEYCAP0                                  "\xF3\xBE\xA0\xB7" /* Id: 1559, Name: keycap0,                                  CodePoint: 1042487, Unicode: U+0FE837  */
+#define NOTO_EMOJI_24_SYMBOL_KEYCAP10                                 "\xF0\x9F\x94\x9F" /* Id: 1560, Name: keycap10,                                 CodePoint: 128287,  Unicode: U+01F51F  */
+#define NOTO_EMOJI_24_SYMBOL_A_DOWN                                   "\x00"             /* Id: 1561, Name: A.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_B_DOWN                                   "\x00"             /* Id: 1562, Name: B.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_C_DOWN                                   "\x00"             /* Id: 1563, Name: C.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_D_DOWN                                   "\x00"             /* Id: 1564, Name: D.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_E_DOWN                                   "\x00"             /* Id: 1565, Name: E.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_F_DOWN                                   "\x00"             /* Id: 1566, Name: F.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_G_DOWN                                   "\x00"             /* Id: 1567, Name: G.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_H_DOWN                                   "\x00"             /* Id: 1568, Name: H.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_I_DOWN                                   "\x00"             /* Id: 1569, Name: I.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_J_DOWN                                   "\x00"             /* Id: 1570, Name: J.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_K_DOWN                                   "\x00"             /* Id: 1571, Name: K.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_L_DOWN                                   "\x00"             /* Id: 1572, Name: L.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_M_DOWN                                   "\x00"             /* Id: 1573, Name: M.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_N_DOWN                                   "\x00"             /* Id: 1574, Name: N.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_O_DOWN                                   "\x00"             /* Id: 1575, Name: O.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_P_DOWN                                   "\x00"             /* Id: 1576, Name: P.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_Q_DOWN                                   "\x00"             /* Id: 1577, Name: Q.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_R_DOWN                                   "\x00"             /* Id: 1578, Name: R.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_S_DOWN                                   "\x00"             /* Id: 1579, Name: S.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_T_DOWN                                   "\x00"             /* Id: 1580, Name: T.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_U_DOWN                                   "\x00"             /* Id: 1581, Name: U.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_V_DOWN                                   "\x00"             /* Id: 1582, Name: V.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_W_DOWN                                   "\x00"             /* Id: 1583, Name: W.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_X_DOWN                                   "\x00"             /* Id: 1584, Name: X.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_Y_DOWN                                   "\x00"             /* Id: 1585, Name: Y.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_Z_DOWN                                   "\x00"             /* Id: 1586, Name: Z.down,                                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_A_UP                                     "\x00"             /* Id: 1587, Name: A.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_B_UP                                     "\x00"             /* Id: 1588, Name: B.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_C_UP                                     "\x00"             /* Id: 1589, Name: C.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_D_UP                                     "\x00"             /* Id: 1590, Name: D.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_E_UP                                     "\x00"             /* Id: 1591, Name: E.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_F_UP                                     "\x00"             /* Id: 1592, Name: F.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_G_UP                                     "\x00"             /* Id: 1593, Name: G.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_H_UP                                     "\x00"             /* Id: 1594, Name: H.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_I_UP                                     "\x00"             /* Id: 1595, Name: I.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_J_UP                                     "\x00"             /* Id: 1596, Name: J.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_K_UP                                     "\x00"             /* Id: 1597, Name: K.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_L_UP                                     "\x00"             /* Id: 1598, Name: L.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_M_UP                                     "\x00"             /* Id: 1599, Name: M.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_N_UP                                     "\x00"             /* Id: 1600, Name: N.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_O_UP                                     "\x00"             /* Id: 1601, Name: O.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_P_UP                                     "\x00"             /* Id: 1602, Name: P.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_Q_UP                                     "\x00"             /* Id: 1603, Name: Q.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_R_UP                                     "\x00"             /* Id: 1604, Name: R.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_S_UP                                     "\x00"             /* Id: 1605, Name: S.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_T_UP                                     "\x00"             /* Id: 1606, Name: T.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_U_UP                                     "\x00"             /* Id: 1607, Name: U.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_V_UP                                     "\x00"             /* Id: 1608, Name: V.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_W_UP                                     "\x00"             /* Id: 1609, Name: W.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_X_UP                                     "\x00"             /* Id: 1610, Name: X.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_Y_UP                                     "\x00"             /* Id: 1611, Name: Y.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_Z_UP                                     "\x00"             /* Id: 1612, Name: Z.up,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGAFGHANISTAN                          "\x00"             /* Id: 1613, Name: flagAfghanistan,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGALBANIA                              "\x00"             /* Id: 1614, Name: flagAlbania,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGALGERIA                              "\x00"             /* Id: 1615, Name: flagAlgeria,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGAMERICANSAMOA                        "\x00"             /* Id: 1616, Name: flagAmericanSamoa,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGANDORRA                              "\x00"             /* Id: 1617, Name: flagAndorra,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGANGOLA                               "\x00"             /* Id: 1618, Name: flagAngola,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGANGUILLA                             "\x00"             /* Id: 1619, Name: flagAnguilla,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGANTARCTICA                           "\x00"             /* Id: 1620, Name: flagAntarctica,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGANTIGUABARBUDA                       "\x00"             /* Id: 1621, Name: flagAntiguaBarbuda,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGARGENTINA                            "\x00"             /* Id: 1622, Name: flagArgentina,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGARMENIA                              "\x00"             /* Id: 1623, Name: flagArmenia,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGARUBA                                "\x00"             /* Id: 1624, Name: flagAruba,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGASCENSIONISLAND                      "\x00"             /* Id: 1625, Name: flagAscensionIsland,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGAUSTRALIA                            "\x00"             /* Id: 1626, Name: flagAustralia,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGAUSTRIA                              "\x00"             /* Id: 1627, Name: flagAustria,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGLANDISLANDS                          "\x00"             /* Id: 1628, Name: flaglandIslands,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGAZERBAIJAN                           "\x00"             /* Id: 1629, Name: flagAzerbaijan,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBAHAMAS                              "\x00"             /* Id: 1630, Name: flagBahamas,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBAHRAIN                              "\x00"             /* Id: 1631, Name: flagBahrain,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBANGLADESH                           "\x00"             /* Id: 1632, Name: flagBangladesh,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBARBADOS                             "\x00"             /* Id: 1633, Name: flagBarbados,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBELARUS                              "\x00"             /* Id: 1634, Name: flagBelarus,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBELGIUM                              "\x00"             /* Id: 1635, Name: flagBelgium,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBELIZE                               "\x00"             /* Id: 1636, Name: flagBelize,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBENIN                                "\x00"             /* Id: 1637, Name: flagBenin,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSTBARTHLEMY                          "\x00"             /* Id: 1638, Name: flagStBarthlemy,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBERMUDA                              "\x00"             /* Id: 1639, Name: flagBermuda,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBHUTAN                               "\x00"             /* Id: 1640, Name: flagBhutan,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBOLIVIA                              "\x00"             /* Id: 1641, Name: flagBolivia,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBOSNIAHERZEGOVINA                    "\x00"             /* Id: 1642, Name: flagBosniaHerzegovina,                    CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBOTSWANA                             "\x00"             /* Id: 1643, Name: flagBotswana,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBOUVETISLAND                         "\x00"             /* Id: 1644, Name: flagBouvetIsland,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBRAZIL                               "\x00"             /* Id: 1645, Name: flagBrazil,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBRITISHVIRGINISLANDS                 "\x00"             /* Id: 1646, Name: flagBritishVirginIslands,                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBRUNEI                               "\x00"             /* Id: 1647, Name: flagBrunei,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBULGARIA                             "\x00"             /* Id: 1648, Name: flagBulgaria,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBURKINAFASO                          "\x00"             /* Id: 1649, Name: flagBurkinaFaso,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGBURUNDI                              "\x00"             /* Id: 1650, Name: flagBurundi,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCAMBODIA                             "\x00"             /* Id: 1651, Name: flagCambodia,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCAMEROON                             "\x00"             /* Id: 1652, Name: flagCameroon,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCANADA                               "\x00"             /* Id: 1653, Name: flagCanada,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCTEDIVOIRE                           "\x00"             /* Id: 1654, Name: flagCteDIvoire,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCANARYISLANDS                        "\x00"             /* Id: 1655, Name: flagCanaryIslands,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCAPEVERDE                            "\x00"             /* Id: 1656, Name: flagCapeVerde,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCURAAO                               "\x00"             /* Id: 1657, Name: flagCuraao,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCARIBBEANNETHERLANDS                 "\x00"             /* Id: 1658, Name: flagCaribbeanNetherlands,                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCAYMANISLANDS                        "\x00"             /* Id: 1659, Name: flagCaymanIslands,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCENTRALAFRICANREPUBLIC               "\x00"             /* Id: 1660, Name: flagCentralAfricanRepublic,               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCEUTAMELILLA                         "\x00"             /* Id: 1661, Name: flagCeutaMelilla,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCHAD                                 "\x00"             /* Id: 1662, Name: flagChad,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCHILE                                "\x00"             /* Id: 1663, Name: flagChile,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCHRISTMASISLAND                      "\x00"             /* Id: 1664, Name: flagChristmasIsland,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCLIPPERTONISLAND                     "\x00"             /* Id: 1665, Name: flagClippertonIsland,                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCOCOSKEELINGISLANDS                  "\x00"             /* Id: 1666, Name: flagCocosKeelingIslands,                  CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCOLOMBIA                             "\x00"             /* Id: 1667, Name: flagColombia,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCOMOROS                              "\x00"             /* Id: 1668, Name: flagComoros,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCONGOBRAZZAVILLE                     "\x00"             /* Id: 1669, Name: flagCongoBrazzaville,                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCONGOKINSHASA                        "\x00"             /* Id: 1670, Name: flagCongoKinshasa,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCOOKISLANDS                          "\x00"             /* Id: 1671, Name: flagCookIslands,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCHINA                                "\xF3\xBE\x93\xAD" /* Id: 1672, Name: flagChina,                                CodePoint: 1041645, Unicode: U+0FE4ED  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCOSTARICA                            "\x00"             /* Id: 1673, Name: flagCostaRica,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCROATIA                              "\x00"             /* Id: 1674, Name: flagCroatia,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCUBA                                 "\x00"             /* Id: 1675, Name: flagCuba,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCYPRUS                               "\x00"             /* Id: 1676, Name: flagCyprus,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGCZECHIA                              "\x00"             /* Id: 1677, Name: flagCzechia,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGDENMARK                              "\x00"             /* Id: 1678, Name: flagDenmark,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGERMANY                              "\xF3\xBE\x93\xA8" /* Id: 1679, Name: flagGermany,                              CodePoint: 1041640, Unicode: U+0FE4E8  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGDIEGOGARCIA                          "\x00"             /* Id: 1680, Name: flagDiegoGarcia,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGDJIBOUTI                             "\x00"             /* Id: 1681, Name: flagDjibouti,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGDOMINICA                             "\x00"             /* Id: 1682, Name: flagDominica,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGDOMINICANREPUBLIC                    "\x00"             /* Id: 1683, Name: flagDominicanRepublic,                    CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGECUADOR                              "\x00"             /* Id: 1684, Name: flagEcuador,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGEGYPT                                "\x00"             /* Id: 1685, Name: flagEgypt,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGELSALVADOR                           "\x00"             /* Id: 1686, Name: flagElSalvador,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGENGLAND                              "\x00"             /* Id: 1687, Name: flagEngland,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGEQUATORIALGUINEA                     "\x00"             /* Id: 1688, Name: flagEquatorialGuinea,                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGERITREA                              "\x00"             /* Id: 1689, Name: flagEritrea,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGESTONIA                              "\x00"             /* Id: 1690, Name: flagEstonia,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGESWATINI                             "\x00"             /* Id: 1691, Name: flagEswatini,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSPAIN                                "\xF3\xBE\x93\xAB" /* Id: 1692, Name: flagSpain,                                CodePoint: 1041643, Unicode: U+0FE4EB  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGETHIOPIA                             "\x00"             /* Id: 1693, Name: flagEthiopia,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGEUROPEANUNION                        "\x00"             /* Id: 1694, Name: flagEuropeanUnion,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGFALKLANDISLANDS                      "\x00"             /* Id: 1695, Name: flagFalklandIslands,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGFAROEISLANDS                         "\x00"             /* Id: 1696, Name: flagFaroeIslands,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGFIJI                                 "\x00"             /* Id: 1697, Name: flagFiji,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGFINLAND                              "\x00"             /* Id: 1698, Name: flagFinland,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGFRENCHGUIANA                         "\x00"             /* Id: 1699, Name: flagFrenchGuiana,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGFRANCE                               "\xF3\xBE\x93\xA7" /* Id: 1700, Name: flagFrance,                               CodePoint: 1041639, Unicode: U+0FE4E7  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGFRENCHPOLYNESIA                      "\x00"             /* Id: 1701, Name: flagFrenchPolynesia,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGFRENCHSOUTHERNTERRITORIES            "\x00"             /* Id: 1702, Name: flagFrenchSouthernTerritories,            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGABON                                "\x00"             /* Id: 1703, Name: flagGabon,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGAMBIA                               "\x00"             /* Id: 1704, Name: flagGambia,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGEORGIA                              "\x00"             /* Id: 1705, Name: flagGeorgia,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGHANA                                "\x00"             /* Id: 1706, Name: flagGhana,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGIBRALTAR                            "\x00"             /* Id: 1707, Name: flagGibraltar,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGREECE                               "\x00"             /* Id: 1708, Name: flagGreece,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGREENLAND                            "\x00"             /* Id: 1709, Name: flagGreenland,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGRENADA                              "\x00"             /* Id: 1710, Name: flagGrenada,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGUADELOUPE                           "\x00"             /* Id: 1711, Name: flagGuadeloupe,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGUAM                                 "\x00"             /* Id: 1712, Name: flagGuam,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGUATEMALA                            "\x00"             /* Id: 1713, Name: flagGuatemala,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGUERNSEY                             "\x00"             /* Id: 1714, Name: flagGuernsey,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGUINEA                               "\x00"             /* Id: 1715, Name: flagGuinea,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGUINEABISSAU                         "\x00"             /* Id: 1716, Name: flagGuineaBissau,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGUYANA                               "\x00"             /* Id: 1717, Name: flagGuyana,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGHAITI                                "\x00"             /* Id: 1718, Name: flagHaiti,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGHONDURAS                             "\x00"             /* Id: 1719, Name: flagHonduras,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGHONGKONGSARCHINA                     "\x00"             /* Id: 1720, Name: flagHongKongSarChina,                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGHUNGARY                              "\x00"             /* Id: 1721, Name: flagHungary,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGICELAND                              "\x00"             /* Id: 1722, Name: flagIceland,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGINDIA                                "\x00"             /* Id: 1723, Name: flagIndia,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGINDONESIA                            "\x00"             /* Id: 1724, Name: flagIndonesia,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGIRAN                                 "\x00"             /* Id: 1725, Name: flagIran,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGIRAQ                                 "\x00"             /* Id: 1726, Name: flagIraq,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGIRELAND                              "\x00"             /* Id: 1727, Name: flagIreland,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGISLEOFMAN                            "\x00"             /* Id: 1728, Name: flagIsleOfMan,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGISRAEL                               "\x00"             /* Id: 1729, Name: flagIsrael,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGITALY                                "\xF3\xBE\x93\xA9" /* Id: 1730, Name: flagItaly,                                CodePoint: 1041641, Unicode: U+0FE4E9  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGJAMAICA                              "\x00"             /* Id: 1731, Name: flagJamaica,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGJERSEY                               "\x00"             /* Id: 1732, Name: flagJersey,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGJORDAN                               "\x00"             /* Id: 1733, Name: flagJordan,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGJAPAN                                "\xF3\xBE\x93\xA5" /* Id: 1734, Name: flagJapan,                                CodePoint: 1041637, Unicode: U+0FE4E5  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGKAZAKHSTAN                           "\x00"             /* Id: 1735, Name: flagKazakhstan,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGKENYA                                "\x00"             /* Id: 1736, Name: flagKenya,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGKIRIBATI                             "\x00"             /* Id: 1737, Name: flagKiribati,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGKOSOVO                               "\x00"             /* Id: 1738, Name: flagKosovo,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSOUTHKOREA                           "\xF3\xBE\x93\xAE" /* Id: 1739, Name: flagSouthKorea,                           CodePoint: 1041646, Unicode: U+0FE4EE  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGKUWAIT                               "\x00"             /* Id: 1740, Name: flagKuwait,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGKYRGYZSTAN                           "\x00"             /* Id: 1741, Name: flagKyrgyzstan,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGLAOS                                 "\x00"             /* Id: 1742, Name: flagLaos,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGLATVIA                               "\x00"             /* Id: 1743, Name: flagLatvia,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGLEBANON                              "\x00"             /* Id: 1744, Name: flagLebanon,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGLESOTHO                              "\x00"             /* Id: 1745, Name: flagLesotho,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGLIBERIA                              "\x00"             /* Id: 1746, Name: flagLiberia,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGLIBYA                                "\x00"             /* Id: 1747, Name: flagLibya,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGLIECHTENSTEIN                        "\x00"             /* Id: 1748, Name: flagLiechtenstein,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGLITHUANIA                            "\x00"             /* Id: 1749, Name: flagLithuania,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGLUXEMBOURG                           "\x00"             /* Id: 1750, Name: flagLuxembourg,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMACAOSARCHINA                        "\x00"             /* Id: 1751, Name: flagMacaoSarChina,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMADAGASCAR                           "\x00"             /* Id: 1752, Name: flagMadagascar,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMALAWI                               "\x00"             /* Id: 1753, Name: flagMalawi,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMALAYSIA                             "\x00"             /* Id: 1754, Name: flagMalaysia,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMALDIVES                             "\x00"             /* Id: 1755, Name: flagMaldives,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMALI                                 "\x00"             /* Id: 1756, Name: flagMali,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMALTA                                "\x00"             /* Id: 1757, Name: flagMalta,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMARSHALLISLANDS                      "\x00"             /* Id: 1758, Name: flagMarshallIslands,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMARTINIQUE                           "\x00"             /* Id: 1759, Name: flagMartinique,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMAURITANIA                           "\x00"             /* Id: 1760, Name: flagMauritania,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMAURITIUS                            "\x00"             /* Id: 1761, Name: flagMauritius,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMAYOTTE                              "\x00"             /* Id: 1762, Name: flagMayotte,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMEXICO                               "\x00"             /* Id: 1763, Name: flagMexico,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMICRONESIA                           "\x00"             /* Id: 1764, Name: flagMicronesia,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMOLDOVA                              "\x00"             /* Id: 1765, Name: flagMoldova,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMONACO                               "\x00"             /* Id: 1766, Name: flagMonaco,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMONGOLIA                             "\x00"             /* Id: 1767, Name: flagMongolia,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMONTENEGRO                           "\x00"             /* Id: 1768, Name: flagMontenegro,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMONTSERRAT                           "\x00"             /* Id: 1769, Name: flagMontserrat,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMOROCCO                              "\x00"             /* Id: 1770, Name: flagMorocco,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMOZAMBIQUE                           "\x00"             /* Id: 1771, Name: flagMozambique,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGMYANMARBURMA                         "\x00"             /* Id: 1772, Name: flagMyanmarBurma,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNAMIBIA                              "\x00"             /* Id: 1773, Name: flagNamibia,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNAURU                                "\x00"             /* Id: 1774, Name: flagNauru,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNEPAL                                "\x00"             /* Id: 1775, Name: flagNepal,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNETHERLANDS                          "\x00"             /* Id: 1776, Name: flagNetherlands,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNEWCALEDONIA                         "\x00"             /* Id: 1777, Name: flagNewCaledonia,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNEWZEALAND                           "\x00"             /* Id: 1778, Name: flagNewZealand,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNICARAGUA                            "\x00"             /* Id: 1779, Name: flagNicaragua,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNIGER                                "\x00"             /* Id: 1780, Name: flagNiger,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNIGERIA                              "\x00"             /* Id: 1781, Name: flagNigeria,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNIUE                                 "\x00"             /* Id: 1782, Name: flagNiue,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNORFOLKISLAND                        "\x00"             /* Id: 1783, Name: flagNorfolkIsland,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNORTHKOREA                           "\x00"             /* Id: 1784, Name: flagNorthKorea,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNORTHMACEDONIA                       "\x00"             /* Id: 1785, Name: flagNorthMacedonia,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGNORTHERNMARIANAISLANDS               "\x00"             /* Id: 1786, Name: flagNorthernMarianaIslands,               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGOMAN                                 "\x00"             /* Id: 1787, Name: flagOman,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGPAKISTAN                             "\x00"             /* Id: 1788, Name: flagPakistan,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGPALAU                                "\x00"             /* Id: 1789, Name: flagPalau,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGPALESTINIANTERRITORIES               "\x00"             /* Id: 1790, Name: flagPalestinianTerritories,               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGPANAMA                               "\x00"             /* Id: 1791, Name: flagPanama,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGPAPUANEWGUINEA                       "\x00"             /* Id: 1792, Name: flagPapuaNewGuinea,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGPARAGUAY                             "\x00"             /* Id: 1793, Name: flagParaguay,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGPERU                                 "\x00"             /* Id: 1794, Name: flagPeru,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGPHILIPPINES                          "\x00"             /* Id: 1795, Name: flagPhilippines,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGPITCAIRNISLANDS                      "\x00"             /* Id: 1796, Name: flagPitcairnIslands,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGPOLAND                               "\x00"             /* Id: 1797, Name: flagPoland,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGPORTUGAL                             "\x00"             /* Id: 1798, Name: flagPortugal,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGPUERTORICO                           "\x00"             /* Id: 1799, Name: flagPuertoRico,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGQATAR                                "\x00"             /* Id: 1800, Name: flagQatar,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGRUNION                               "\x00"             /* Id: 1801, Name: flagRunion,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGROMANIA                              "\x00"             /* Id: 1802, Name: flagRomania,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGRWANDA                               "\x00"             /* Id: 1803, Name: flagRwanda,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGRUSSIA                               "\xF3\xBE\x93\xAC" /* Id: 1804, Name: flagRussia,                               CodePoint: 1041644, Unicode: U+0FE4EC  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSAMOA                                "\x00"             /* Id: 1805, Name: flagSamoa,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSANMARINO                            "\x00"             /* Id: 1806, Name: flagSanMarino,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSAUDIARABIA                          "\x00"             /* Id: 1807, Name: flagSaudiArabia,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSCOTLAND                             "\x00"             /* Id: 1808, Name: flagScotland,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSENEGAL                              "\x00"             /* Id: 1809, Name: flagSenegal,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSERBIA                               "\x00"             /* Id: 1810, Name: flagSerbia,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSEYCHELLES                           "\x00"             /* Id: 1811, Name: flagSeychelles,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSIERRALEONE                          "\x00"             /* Id: 1812, Name: flagSierraLeone,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSINGAPORE                            "\x00"             /* Id: 1813, Name: flagSingapore,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSINTMAARTEN                          "\x00"             /* Id: 1814, Name: flagSintMaarten,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSLOVAKIA                             "\x00"             /* Id: 1815, Name: flagSlovakia,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSLOVENIA                             "\x00"             /* Id: 1816, Name: flagSlovenia,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSOLOMONISLANDS                       "\x00"             /* Id: 1817, Name: flagSolomonIslands,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSOMALIA                              "\x00"             /* Id: 1818, Name: flagSomalia,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSOUTHAFRICA                          "\x00"             /* Id: 1819, Name: flagSouthAfrica,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSOUTHGEORGIASOUTHSANDWICHISLANDS     "\x00"             /* Id: 1820, Name: flagSouthGeorgiaSouthSandwichIslands,     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSOUTHSUDAN                           "\x00"             /* Id: 1821, Name: flagSouthSudan,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSOTOMPRNCIPE                         "\x00"             /* Id: 1822, Name: flagSoTomPrncipe,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSRILANKA                             "\x00"             /* Id: 1823, Name: flagSriLanka,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSTHELENA                             "\x00"             /* Id: 1824, Name: flagStHelena,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSTKITTSNEVIS                         "\x00"             /* Id: 1825, Name: flagStKittsNevis,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSTLUCIA                              "\x00"             /* Id: 1826, Name: flagStLucia,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSTMARTIN                             "\x00"             /* Id: 1827, Name: flagStMartin,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSTPIERREMIQUELON                     "\x00"             /* Id: 1828, Name: flagStPierreMiquelon,                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSTVINCENTGRENADINES                  "\x00"             /* Id: 1829, Name: flagStVincentGrenadines,                  CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSUDAN                                "\x00"             /* Id: 1830, Name: flagSudan,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSURINAME                             "\x00"             /* Id: 1831, Name: flagSuriname,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSWEDEN                               "\x00"             /* Id: 1832, Name: flagSweden,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSWITZERLAND                          "\x00"             /* Id: 1833, Name: flagSwitzerland,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSYRIA                                "\x00"             /* Id: 1834, Name: flagSyria,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTAIWAN                               "\x00"             /* Id: 1835, Name: flagTaiwan,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTAJIKISTAN                           "\x00"             /* Id: 1836, Name: flagTajikistan,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTANZANIA                             "\x00"             /* Id: 1837, Name: flagTanzania,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTHAILAND                             "\x00"             /* Id: 1838, Name: flagThailand,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTIMORLESTE                           "\x00"             /* Id: 1839, Name: flagTimorLeste,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTOGO                                 "\x00"             /* Id: 1840, Name: flagTogo,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTOKELAU                              "\x00"             /* Id: 1841, Name: flagTokelau,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTONGA                                "\x00"             /* Id: 1842, Name: flagTonga,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTRINIDADTOBAGO                       "\x00"             /* Id: 1843, Name: flagTrinidadTobago,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTRISTANDACUNHA                       "\x00"             /* Id: 1844, Name: flagTristanDaCunha,                       CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTUNISIA                              "\x00"             /* Id: 1845, Name: flagTunisia,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTURKEY                               "\x00"             /* Id: 1846, Name: flagTurkey,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTURKMENISTAN                         "\x00"             /* Id: 1847, Name: flagTurkmenistan,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTURKSCAICOSISLANDS                   "\x00"             /* Id: 1848, Name: flagTurksCaicosIslands,                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGTUVALU                               "\x00"             /* Id: 1849, Name: flagTuvalu,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGUSOUTLYINGISLANDS                    "\x00"             /* Id: 1850, Name: flagUSOutlyingIslands,                    CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGUSVIRGINISLANDS                      "\x00"             /* Id: 1851, Name: flagUSVirginIslands,                      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGUGANDA                               "\x00"             /* Id: 1852, Name: flagUganda,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGUKRAINE                              "\x00"             /* Id: 1853, Name: flagUkraine,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGUNITEDARABEMIRATES                   "\x00"             /* Id: 1854, Name: flagUnitedArabEmirates,                   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGGREATBRITAIN                         "\xF3\xBE\x93\xAA" /* Id: 1855, Name: flagGreatBritain,                         CodePoint: 1041642, Unicode: U+0FE4EA  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGUNITEDNATIONS                        "\x00"             /* Id: 1856, Name: flagUnitedNations,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGUNITEDSTATES                         "\xF3\xBE\x93\xA6" /* Id: 1857, Name: flagUnitedStates,                         CodePoint: 1041638, Unicode: U+0FE4E6  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGURUGUAY                              "\x00"             /* Id: 1858, Name: flagUruguay,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGUZBEKISTAN                           "\x00"             /* Id: 1859, Name: flagUzbekistan,                           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGVANUATU                              "\x00"             /* Id: 1860, Name: flagVanuatu,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGVATICANCITY                          "\x00"             /* Id: 1861, Name: flagVaticanCity,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGVENEZUELA                            "\x00"             /* Id: 1862, Name: flagVenezuela,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGVIETNAM                              "\x00"             /* Id: 1863, Name: flagVietnam,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGWALES                                "\x00"             /* Id: 1864, Name: flagWales,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGWALLISFUTUNA                         "\x00"             /* Id: 1865, Name: flagWallisFutuna,                         CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGWESTERNSAHARA                        "\x00"             /* Id: 1866, Name: flagWesternSahara,                        CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGYEMEN                                "\x00"             /* Id: 1867, Name: flagYemen,                                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGZAMBIA                               "\x00"             /* Id: 1868, Name: flagZambia,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGZIMBABWE                             "\x00"             /* Id: 1869, Name: flagZimbabwe,                             CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PIRATEFLAG                               "\x00"             /* Id: 1870, Name: pirateFlag,                               CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_RAINBOWFLAG                              "\x00"             /* Id: 1871, Name: rainbowFlag,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_TRANSGENDERFLAG                          "\x00"             /* Id: 1872, Name: transgenderFlag,                          CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_BASEFLAG                                 "\x00"             /* Id: 1873, Name: Baseflag,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_UNKNOWNFLAG                              "\x00"             /* Id: 1874, Name: unknownFlag,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_1FAE9                                    "\xF0\x9F\xAB\xA9" /* Id: 1875, Name: 1FAE9,                                    CodePoint: 129769,  Unicode: U+01FAE9  */
+#define NOTO_EMOJI_24_SYMBOL_1FAC6                                    "\xF0\x9F\xAB\x86" /* Id: 1876, Name: 1FAC6,                                    CodePoint: 129734,  Unicode: U+01FAC6  */
+#define NOTO_EMOJI_24_SYMBOL_1FADC                                    "\xF0\x9F\xAB\x9C" /* Id: 1877, Name: 1FADC,                                    CodePoint: 129756,  Unicode: U+01FADC  */
+#define NOTO_EMOJI_24_SYMBOL_1FABE                                    "\xF0\x9F\xAA\xBE" /* Id: 1878, Name: 1FABE,                                    CodePoint: 129726,  Unicode: U+01FABE  */
+#define NOTO_EMOJI_24_SYMBOL_1FA89                                    "\xF0\x9F\xAA\x89" /* Id: 1879, Name: 1FA89,                                    CodePoint: 129673,  Unicode: U+01FA89  */
+#define NOTO_EMOJI_24_SYMBOL_1FA8F                                    "\xF0\x9F\xAA\x8F" /* Id: 1880, Name: 1FA8F,                                    CodePoint: 129679,  Unicode: U+01FA8F  */
+#define NOTO_EMOJI_24_SYMBOL_1FADF                                    "\xF0\x9F\xAB\x9F" /* Id: 1881, Name: 1FADF,                                    CodePoint: 129759,  Unicode: U+01FADF  */
+#define NOTO_EMOJI_24_SYMBOL_FLAGSARK                                 "\x00"             /* Id: 1882, Name: flagSark,                                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_BROKENCHAIN                              "\x00"             /* Id: 1883, Name: brokenChain,                              CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_BROWNMUSHROOM                            "\x00"             /* Id: 1884, Name: brownMushroom,                            CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_HEADSHAKINGHORIZONTALLY                  "\x00"             /* Id: 1885, Name: headShakingHorizontally,                  CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_HEADSHAKINGVERTICALLY                    "\x00"             /* Id: 1886, Name: headShakingVertically,                    CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_LIME                                     "\x00"             /* Id: 1887, Name: lime,                                     CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONINMANUALWHEELCHAIRFACINGRIGHT      "\x00"             /* Id: 1888, Name: personInManualWheelchairFacingRight,      CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONINMOTORIZEDWHEELCHAIRFACINGRIGHT   "\x00"             /* Id: 1889, Name: personInMotorizedWheelchairFacingRight,   CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONKNEELINGFACINGRIGHT                "\x00"             /* Id: 1890, Name: personKneelingFacingRight,                CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONRUNNINGFACINGRIGHT                 "\x00"             /* Id: 1891, Name: personRunningFacingRight,                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONWALKINGFACINGRIGHT                 "\x00"             /* Id: 1892, Name: personWalkingFacingRight,                 CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PERSONWITHWHITECANEFACINGRIGHT           "\x00"             /* Id: 1893, Name: personWithWhiteCaneFacingRight,           CodePoint: 0,       Unicode: U+000000  */
+#define NOTO_EMOJI_24_SYMBOL_PHOENIX                                  "\x00"             /* Id: 1894, Name: phoenix,                                  CodePoint: 0,       Unicode: U+000000  */
+
+#define NOTO_EMOJI_24_DEFINE_SYMBOL(name, value) { name, value },
+
+#define NOTO_EMOJI_24_SYMBOLS_LIST \
+    NOTO_EMOJI_24_DEFINE_SYMBOL(".notdef",                                  "\x00")             /* Id: 0,    Name: .notdef,                                  CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni0000",                                  "\x00")             /* Id: 1,    Name: uni0000,                                  CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni000D",                                  "\x0D")             /* Id: 2,    Name: uni000D,                                  CodePoint: 13,      Unicode: U+00000D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("space",                                    "\x20")             /* Id: 3,    Name: space,                                    CodePoint: 32,      Unicode: U+000020  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("numbersign",                               "\x23")             /* Id: 4,    Name: numbersign,                               CodePoint: 35,      Unicode: U+000023  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("asterisk",                                 "\x2A")             /* Id: 5,    Name: asterisk,                                 CodePoint: 42,      Unicode: U+00002A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("zero",                                     "\x30")             /* Id: 6,    Name: zero,                                     CodePoint: 48,      Unicode: U+000030  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("one",                                      "\x31")             /* Id: 7,    Name: one,                                      CodePoint: 49,      Unicode: U+000031  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("two",                                      "\x32")             /* Id: 8,    Name: two,                                      CodePoint: 50,      Unicode: U+000032  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("three",                                    "\x33")             /* Id: 9,    Name: three,                                    CodePoint: 51,      Unicode: U+000033  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("four",                                     "\x34")             /* Id: 10,   Name: four,                                     CodePoint: 52,      Unicode: U+000034  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("five",                                     "\x35")             /* Id: 11,   Name: five,                                     CodePoint: 53,      Unicode: U+000035  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("six",                                      "\x36")             /* Id: 12,   Name: six,                                      CodePoint: 54,      Unicode: U+000036  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("seven",                                    "\x37")             /* Id: 13,   Name: seven,                                    CodePoint: 55,      Unicode: U+000037  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("eight",                                    "\x38")             /* Id: 14,   Name: eight,                                    CodePoint: 56,      Unicode: U+000038  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("nine",                                     "\x39")             /* Id: 15,   Name: nine,                                     CodePoint: 57,      Unicode: U+000039  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("copyright",                                "\xC2\xA9")         /* Id: 16,   Name: copyright,                                CodePoint: 169,     Unicode: U+0000A9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("registered",                               "\xC2\xAE")         /* Id: 17,   Name: registered,                               CodePoint: 174,     Unicode: U+0000AE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni200D",                                  "\xE2\x80\x8D")     /* Id: 18,   Name: uni200D,                                  CodePoint: 8205,    Unicode: U+00200D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uniFE0E",                                  "\xEF\xB8\x8E")     /* Id: 19,   Name: uniFE0E,                                  CodePoint: 65038,   Unicode: U+00FE0E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uniFE0F",                                  "\xEF\xB8\x8F")     /* Id: 20,   Name: uniFE0F,                                  CodePoint: 65039,   Unicode: U+00FE0F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("doubleExclamationMark",                    "\xE2\x80\xBC")     /* Id: 21,   Name: doubleExclamationMark,                    CodePoint: 8252,    Unicode: U+00203C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("exclamationQuestionMark",                  "\xE2\x81\x89")     /* Id: 22,   Name: exclamationQuestionMark,                  CodePoint: 8265,    Unicode: U+002049  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni20E3",                                  "\xE2\x83\xA3")     /* Id: 23,   Name: uni20E3,                                  CodePoint: 8419,    Unicode: U+0020E3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("tradeMark",                                "\xE2\x84\xA2")     /* Id: 24,   Name: tradeMark,                                CodePoint: 8482,    Unicode: U+002122  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("information",                              "\xE2\x84\xB9")     /* Id: 25,   Name: information,                              CodePoint: 8505,    Unicode: U+002139  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("arrowboth",                                "\xE2\x86\x94")     /* Id: 26,   Name: arrowboth,                                CodePoint: 8596,    Unicode: U+002194  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("arrowupdn",                                "\xE2\x86\x95")     /* Id: 27,   Name: arrowupdn,                                CodePoint: 8597,    Unicode: U+002195  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("upLeftArrow",                              "\xE2\x86\x96")     /* Id: 28,   Name: upLeftArrow,                              CodePoint: 8598,    Unicode: U+002196  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("upRightArrow",                             "\xE2\x86\x97")     /* Id: 29,   Name: upRightArrow,                             CodePoint: 8599,    Unicode: U+002197  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("downRightArrow",                           "\xE2\x86\x98")     /* Id: 30,   Name: downRightArrow,                           CodePoint: 8600,    Unicode: U+002198  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("downLeftArrow",                            "\xE2\x86\x99")     /* Id: 31,   Name: downLeftArrow,                            CodePoint: 8601,    Unicode: U+002199  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("rightArrowCurvingLeft",                    "\xE2\x86\xA9")     /* Id: 32,   Name: rightArrowCurvingLeft,                    CodePoint: 8617,    Unicode: U+0021A9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("leftArrowCurvingRight",                    "\xE2\x86\xAA")     /* Id: 33,   Name: leftArrowCurvingRight,                    CodePoint: 8618,    Unicode: U+0021AA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni231A",                                  "\xE2\x8C\x9A")     /* Id: 34,   Name: uni231A,                                  CodePoint: 8986,    Unicode: U+00231A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hourglassDone",                            "\xE2\x8C\x9B")     /* Id: 35,   Name: hourglassDone,                            CodePoint: 8987,    Unicode: U+00231B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2328",                                  "\xE2\x8C\xA8")     /* Id: 36,   Name: uni2328,                                  CodePoint: 9000,    Unicode: U+002328  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("ejectButton",                              "\xE2\x8F\x8F")     /* Id: 37,   Name: ejectButton,                              CodePoint: 9167,    Unicode: U+0023CF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("fastForwardButton",                        "\xE2\x8F\xA9")     /* Id: 38,   Name: fastForwardButton,                        CodePoint: 9193,    Unicode: U+0023E9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("fastReverseButton",                        "\xE2\x8F\xAA")     /* Id: 39,   Name: fastReverseButton,                        CodePoint: 9194,    Unicode: U+0023EA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("fastUpButton",                             "\xE2\x8F\xAB")     /* Id: 40,   Name: fastUpButton,                             CodePoint: 9195,    Unicode: U+0023EB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("fastDownButton",                           "\xE2\x8F\xAC")     /* Id: 41,   Name: fastDownButton,                           CodePoint: 9196,    Unicode: U+0023EC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("nextTrackButton",                          "\xE2\x8F\xAD")     /* Id: 42,   Name: nextTrackButton,                          CodePoint: 9197,    Unicode: U+0023ED  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("lastTrackButton",                          "\xE2\x8F\xAE")     /* Id: 43,   Name: lastTrackButton,                          CodePoint: 9198,    Unicode: U+0023EE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("playOrPauseButton",                        "\xE2\x8F\xAF")     /* Id: 44,   Name: playOrPauseButton,                        CodePoint: 9199,    Unicode: U+0023EF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni23F0",                                  "\xE2\x8F\xB0")     /* Id: 45,   Name: uni23F0,                                  CodePoint: 9200,    Unicode: U+0023F0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni23F1",                                  "\xE2\x8F\xB1")     /* Id: 46,   Name: uni23F1,                                  CodePoint: 9201,    Unicode: U+0023F1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni23F2",                                  "\xE2\x8F\xB2")     /* Id: 47,   Name: uni23F2,                                  CodePoint: 9202,    Unicode: U+0023F2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hourglassNotDone",                         "\xE2\x8F\xB3")     /* Id: 48,   Name: hourglassNotDone,                         CodePoint: 9203,    Unicode: U+0023F3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pauseButton",                              "\xE2\x8F\xB8")     /* Id: 49,   Name: pauseButton,                              CodePoint: 9208,    Unicode: U+0023F8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("stopButton",                               "\xE2\x8F\xB9")     /* Id: 50,   Name: stopButton,                               CodePoint: 9209,    Unicode: U+0023F9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("recordButton",                             "\xE2\x8F\xBA")     /* Id: 51,   Name: recordButton,                             CodePoint: 9210,    Unicode: U+0023FA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("circledM",                                 "\xE2\x93\x82")     /* Id: 52,   Name: circledM,                                 CodePoint: 9410,    Unicode: U+0024C2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni25AA",                                  "\xE2\x96\xAA")     /* Id: 53,   Name: uni25AA,                                  CodePoint: 9642,    Unicode: U+0025AA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni25AB",                                  "\xE2\x96\xAB")     /* Id: 54,   Name: uni25AB,                                  CodePoint: 9643,    Unicode: U+0025AB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("playButton",                               "\xE2\x96\xB6")     /* Id: 55,   Name: playButton,                               CodePoint: 9654,    Unicode: U+0025B6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("reverseButton",                            "\xE2\x97\x80")     /* Id: 56,   Name: reverseButton,                            CodePoint: 9664,    Unicode: U+0025C0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("whiteMediumSquare",                        "\xE2\x97\xBB")     /* Id: 57,   Name: whiteMediumSquare,                        CodePoint: 9723,    Unicode: U+0025FB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("blackMediumSquare",                        "\xE2\x97\xBC")     /* Id: 58,   Name: blackMediumSquare,                        CodePoint: 9724,    Unicode: U+0025FC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("whiteMediumSmallSquare",                   "\xE2\x97\xBD")     /* Id: 59,   Name: whiteMediumSmallSquare,                   CodePoint: 9725,    Unicode: U+0025FD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("blackMediumSmallSquare",                   "\xE2\x97\xBE")     /* Id: 60,   Name: blackMediumSmallSquare,                   CodePoint: 9726,    Unicode: U+0025FE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sun",                                      "\xE2\x98\x80")     /* Id: 61,   Name: sun,                                      CodePoint: 9728,    Unicode: U+002600  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2601",                                  "\xE2\x98\x81")     /* Id: 62,   Name: uni2601,                                  CodePoint: 9729,    Unicode: U+002601  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2602",                                  "\xE2\x98\x82")     /* Id: 63,   Name: uni2602,                                  CodePoint: 9730,    Unicode: U+002602  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2603",                                  "\xE2\x98\x83")     /* Id: 64,   Name: uni2603,                                  CodePoint: 9731,    Unicode: U+002603  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2604",                                  "\xE2\x98\x84")     /* Id: 65,   Name: uni2604,                                  CodePoint: 9732,    Unicode: U+002604  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2121",                                  "\xE2\x98\x8E")     /* Id: 66,   Name: uni2121,                                  CodePoint: 9742,    Unicode: U+00260E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("checkBoxWithCheck",                        "\xE2\x98\x91")     /* Id: 67,   Name: checkBoxWithCheck,                        CodePoint: 9745,    Unicode: U+002611  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2614",                                  "\xE2\x98\x94")     /* Id: 68,   Name: uni2614,                                  CodePoint: 9748,    Unicode: U+002614  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2615",                                  "\xE2\x98\x95")     /* Id: 69,   Name: uni2615,                                  CodePoint: 9749,    Unicode: U+002615  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2618",                                  "\xE2\x98\x98")     /* Id: 70,   Name: uni2618,                                  CodePoint: 9752,    Unicode: U+002618  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("indexPointingUp",                          "\xE2\x98\x9D")     /* Id: 71,   Name: indexPointingUp,                          CodePoint: 9757,    Unicode: U+00261D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2620",                                  "\xE2\x98\xA0")     /* Id: 72,   Name: uni2620,                                  CodePoint: 9760,    Unicode: U+002620  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2622",                                  "\xE2\x98\xA2")     /* Id: 73,   Name: uni2622,                                  CodePoint: 9762,    Unicode: U+002622  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2623",                                  "\xE2\x98\xA3")     /* Id: 74,   Name: uni2623,                                  CodePoint: 9763,    Unicode: U+002623  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2626",                                  "\xE2\x98\xA6")     /* Id: 75,   Name: uni2626,                                  CodePoint: 9766,    Unicode: U+002626  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni262A",                                  "\xE2\x98\xAA")     /* Id: 76,   Name: uni262A,                                  CodePoint: 9770,    Unicode: U+00262A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("peaceSymbol",                              "\xE2\x98\xAE")     /* Id: 77,   Name: peaceSymbol,                              CodePoint: 9774,    Unicode: U+00262E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("yinYang",                                  "\xE2\x98\xAF")     /* Id: 78,   Name: yinYang,                                  CodePoint: 9775,    Unicode: U+00262F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2638",                                  "\xE2\x98\xB8")     /* Id: 79,   Name: uni2638,                                  CodePoint: 9784,    Unicode: U+002638  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2639",                                  "\xE2\x98\xB9")     /* Id: 80,   Name: uni2639,                                  CodePoint: 9785,    Unicode: U+002639  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("smileface",                                "\xE2\x98\xBA")     /* Id: 81,   Name: smileface,                                CodePoint: 9786,    Unicode: U+00263A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("femaleSign",                               "\xE2\x99\x80")     /* Id: 82,   Name: femaleSign,                               CodePoint: 9792,    Unicode: U+002640  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("maleSign",                                 "\xE2\x99\x82")     /* Id: 83,   Name: maleSign,                                 CodePoint: 9794,    Unicode: U+002642  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2648",                                  "\xE2\x99\x88")     /* Id: 84,   Name: uni2648,                                  CodePoint: 9800,    Unicode: U+002648  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2649",                                  "\xE2\x99\x89")     /* Id: 85,   Name: uni2649,                                  CodePoint: 9801,    Unicode: U+002649  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni264A",                                  "\xE2\x99\x8A")     /* Id: 86,   Name: uni264A,                                  CodePoint: 9802,    Unicode: U+00264A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni264B",                                  "\xE2\x99\x8B")     /* Id: 87,   Name: uni264B,                                  CodePoint: 9803,    Unicode: U+00264B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni264C",                                  "\xE2\x99\x8C")     /* Id: 88,   Name: uni264C,                                  CodePoint: 9804,    Unicode: U+00264C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni264D",                                  "\xE2\x99\x8D")     /* Id: 89,   Name: uni264D,                                  CodePoint: 9805,    Unicode: U+00264D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni264E",                                  "\xE2\x99\x8E")     /* Id: 90,   Name: uni264E,                                  CodePoint: 9806,    Unicode: U+00264E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("scorpio",                                  "\xE2\x99\x8F")     /* Id: 91,   Name: scorpio,                                  CodePoint: 9807,    Unicode: U+00264F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2650",                                  "\xE2\x99\x90")     /* Id: 92,   Name: uni2650,                                  CodePoint: 9808,    Unicode: U+002650  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2651",                                  "\xE2\x99\x91")     /* Id: 93,   Name: uni2651,                                  CodePoint: 9809,    Unicode: U+002651  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2652",                                  "\xE2\x99\x92")     /* Id: 94,   Name: uni2652,                                  CodePoint: 9810,    Unicode: U+002652  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2653",                                  "\xE2\x99\x93")     /* Id: 95,   Name: uni2653,                                  CodePoint: 9811,    Unicode: U+002653  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("blackChessPawn",                           "\xE2\x99\x9F")     /* Id: 96,   Name: blackChessPawn,                           CodePoint: 9823,    Unicode: U+00265F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("spadeSuit",                                "\xE2\x99\xA0")     /* Id: 97,   Name: spadeSuit,                                CodePoint: 9824,    Unicode: U+002660  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("clubSuit",                                 "\xE2\x99\xA3")     /* Id: 98,   Name: clubSuit,                                 CodePoint: 9827,    Unicode: U+002663  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("heartSuit",                                "\xE2\x99\xA5")     /* Id: 99,   Name: heartSuit,                                CodePoint: 9829,    Unicode: U+002665  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("diamondSuit",                              "\xE2\x99\xA6")     /* Id: 100,  Name: diamondSuit,                              CodePoint: 9830,    Unicode: U+002666  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hotSprings",                               "\xE2\x99\xA8")     /* Id: 101,  Name: hotSprings,                               CodePoint: 9832,    Unicode: U+002668  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("recyclingSymbol",                          "\xE2\x99\xBB")     /* Id: 102,  Name: recyclingSymbol,                          CodePoint: 9851,    Unicode: U+00267B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni267E",                                  "\xE2\x99\xBE")     /* Id: 103,  Name: uni267E,                                  CodePoint: 9854,    Unicode: U+00267E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni267F",                                  "\xE2\x99\xBF")     /* Id: 104,  Name: uni267F,                                  CodePoint: 9855,    Unicode: U+00267F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2692",                                  "\xE2\x9A\x92")     /* Id: 105,  Name: uni2692,                                  CodePoint: 9874,    Unicode: U+002692  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2693",                                  "\xE2\x9A\x93")     /* Id: 106,  Name: uni2693,                                  CodePoint: 9875,    Unicode: U+002693  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2694",                                  "\xE2\x9A\x94")     /* Id: 107,  Name: uni2694,                                  CodePoint: 9876,    Unicode: U+002694  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("medicalSymbol",                            "\xE2\x9A\x95")     /* Id: 108,  Name: medicalSymbol,                            CodePoint: 9877,    Unicode: U+002695  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("balanceScale",                             "\xE2\x9A\x96")     /* Id: 109,  Name: balanceScale,                             CodePoint: 9878,    Unicode: U+002696  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2697",                                  "\xE2\x9A\x97")     /* Id: 110,  Name: uni2697,                                  CodePoint: 9879,    Unicode: U+002697  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2699",                                  "\xE2\x9A\x99")     /* Id: 111,  Name: uni2699,                                  CodePoint: 9881,    Unicode: U+002699  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni269B",                                  "\xE2\x9A\x9B")     /* Id: 112,  Name: uni269B,                                  CodePoint: 9883,    Unicode: U+00269B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni269C",                                  "\xE2\x9A\x9C")     /* Id: 113,  Name: uni269C,                                  CodePoint: 9884,    Unicode: U+00269C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("warning",                                  "\xE2\x9A\xA0")     /* Id: 114,  Name: warning,                                  CodePoint: 9888,    Unicode: U+0026A0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("highVoltage",                              "\xE2\x9A\xA1")     /* Id: 115,  Name: highVoltage,                              CodePoint: 9889,    Unicode: U+0026A1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("transgenderSymbol",                        "\xE2\x9A\xA7")     /* Id: 116,  Name: transgenderSymbol,                        CodePoint: 9895,    Unicode: U+0026A7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("circle",                                   "\xE2\x9A\xAA")     /* Id: 117,  Name: circle,                                   CodePoint: 9898,    Unicode: U+0026AA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni25CF",                                  "\xE2\x9A\xAB")     /* Id: 118,  Name: uni25CF,                                  CodePoint: 9899,    Unicode: U+0026AB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26B0",                                  "\xE2\x9A\xB0")     /* Id: 119,  Name: uni26B0,                                  CodePoint: 9904,    Unicode: U+0026B0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26B1",                                  "\xE2\x9A\xB1")     /* Id: 120,  Name: uni26B1,                                  CodePoint: 9905,    Unicode: U+0026B1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26BD",                                  "\xE2\x9A\xBD")     /* Id: 121,  Name: uni26BD,                                  CodePoint: 9917,    Unicode: U+0026BD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26BE",                                  "\xE2\x9A\xBE")     /* Id: 122,  Name: uni26BE,                                  CodePoint: 9918,    Unicode: U+0026BE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26C4",                                  "\xE2\x9B\x84")     /* Id: 123,  Name: uni26C4,                                  CodePoint: 9924,    Unicode: U+0026C4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26C5",                                  "\xE2\x9B\x85")     /* Id: 124,  Name: uni26C5,                                  CodePoint: 9925,    Unicode: U+0026C5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26C8",                                  "\xE2\x9B\x88")     /* Id: 125,  Name: uni26C8,                                  CodePoint: 9928,    Unicode: U+0026C8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26CE",                                  "\xE2\x9B\x8E")     /* Id: 126,  Name: uni26CE,                                  CodePoint: 9934,    Unicode: U+0026CE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26CF",                                  "\xE2\x9B\x8F")     /* Id: 127,  Name: uni26CF,                                  CodePoint: 9935,    Unicode: U+0026CF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("rescueWorkerSHelmet",                      "\xE2\x9B\x91")     /* Id: 128,  Name: rescueWorkerSHelmet,                      CodePoint: 9937,    Unicode: U+0026D1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26D3",                                  "\xE2\x9B\x93")     /* Id: 129,  Name: uni26D3,                                  CodePoint: 9939,    Unicode: U+0026D3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26D4",                                  "\xE2\x9B\x94")     /* Id: 130,  Name: uni26D4,                                  CodePoint: 9940,    Unicode: U+0026D4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26E9",                                  "\xE2\x9B\xA9")     /* Id: 131,  Name: uni26E9,                                  CodePoint: 9961,    Unicode: U+0026E9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26EA",                                  "\xE2\x9B\xAA")     /* Id: 132,  Name: uni26EA,                                  CodePoint: 9962,    Unicode: U+0026EA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26F0",                                  "\xE2\x9B\xB0")     /* Id: 133,  Name: uni26F0,                                  CodePoint: 9968,    Unicode: U+0026F0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26F1",                                  "\xE2\x9B\xB1")     /* Id: 134,  Name: uni26F1,                                  CodePoint: 9969,    Unicode: U+0026F1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26F2",                                  "\xE2\x9B\xB2")     /* Id: 135,  Name: uni26F2,                                  CodePoint: 9970,    Unicode: U+0026F2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26F3",                                  "\xE2\x9B\xB3")     /* Id: 136,  Name: uni26F3,                                  CodePoint: 9971,    Unicode: U+0026F3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26F4",                                  "\xE2\x9B\xB4")     /* Id: 137,  Name: uni26F4,                                  CodePoint: 9972,    Unicode: U+0026F4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26F5",                                  "\xE2\x9B\xB5")     /* Id: 138,  Name: uni26F5,                                  CodePoint: 9973,    Unicode: U+0026F5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26F7",                                  "\xE2\x9B\xB7")     /* Id: 139,  Name: uni26F7,                                  CodePoint: 9975,    Unicode: U+0026F7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26F8",                                  "\xE2\x9B\xB8")     /* Id: 140,  Name: uni26F8,                                  CodePoint: 9976,    Unicode: U+0026F8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personBouncingBall",                       "\xE2\x9B\xB9")     /* Id: 141,  Name: personBouncingBall,                       CodePoint: 9977,    Unicode: U+0026F9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26FA",                                  "\xE2\x9B\xBA")     /* Id: 142,  Name: uni26FA,                                  CodePoint: 9978,    Unicode: U+0026FA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26FD",                                  "\xE2\x9B\xBD")     /* Id: 143,  Name: uni26FD,                                  CodePoint: 9981,    Unicode: U+0026FD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("scissors",                                 "\xE2\x9C\x82")     /* Id: 144,  Name: scissors,                                 CodePoint: 9986,    Unicode: U+002702  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("checkMarkButton",                          "\xE2\x9C\x85")     /* Id: 145,  Name: checkMarkButton,                          CodePoint: 9989,    Unicode: U+002705  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2708",                                  "\xE2\x9C\x88")     /* Id: 146,  Name: uni2708,                                  CodePoint: 9992,    Unicode: U+002708  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2709",                                  "\xE2\x9C\x89")     /* Id: 147,  Name: uni2709,                                  CodePoint: 9993,    Unicode: U+002709  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni270A",                                  "\xE2\x9C\x8A")     /* Id: 148,  Name: uni270A,                                  CodePoint: 9994,    Unicode: U+00270A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni270B",                                  "\xE2\x9C\x8B")     /* Id: 149,  Name: uni270B,                                  CodePoint: 9995,    Unicode: U+00270B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni270C",                                  "\xE2\x9C\x8C")     /* Id: 150,  Name: uni270C,                                  CodePoint: 9996,    Unicode: U+00270C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni270D",                                  "\xE2\x9C\x8D")     /* Id: 151,  Name: uni270D,                                  CodePoint: 9997,    Unicode: U+00270D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni270F",                                  "\xE2\x9C\x8F")     /* Id: 152,  Name: uni270F,                                  CodePoint: 9999,    Unicode: U+00270F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2712",                                  "\xE2\x9C\x92")     /* Id: 153,  Name: uni2712,                                  CodePoint: 10002,   Unicode: U+002712  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("checkMark",                                "\xE2\x9C\x94")     /* Id: 154,  Name: checkMark,                                CodePoint: 10004,   Unicode: U+002714  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2716",                                  "\xE2\x9C\x96")     /* Id: 155,  Name: uni2716,                                  CodePoint: 10006,   Unicode: U+002716  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("latinCross",                               "\xE2\x9C\x9D")     /* Id: 156,  Name: latinCross,                               CodePoint: 10013,   Unicode: U+00271D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2721",                                  "\xE2\x9C\xA1")     /* Id: 157,  Name: uni2721,                                  CodePoint: 10017,   Unicode: U+002721  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2728",                                  "\xE2\x9C\xA8")     /* Id: 158,  Name: uni2728,                                  CodePoint: 10024,   Unicode: U+002728  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2733",                                  "\xE2\x9C\xB3")     /* Id: 159,  Name: uni2733,                                  CodePoint: 10035,   Unicode: U+002733  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("eightPointedStar",                         "\xE2\x9C\xB4")     /* Id: 160,  Name: eightPointedStar,                         CodePoint: 10036,   Unicode: U+002734  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2744",                                  "\xE2\x9D\x84")     /* Id: 161,  Name: uni2744,                                  CodePoint: 10052,   Unicode: U+002744  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2747",                                  "\xE2\x9D\x87")     /* Id: 162,  Name: uni2747,                                  CodePoint: 10055,   Unicode: U+002747  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni274C",                                  "\xE2\x9D\x8C")     /* Id: 163,  Name: uni274C,                                  CodePoint: 10060,   Unicode: U+00274C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("crossMarkButton",                          "\xE2\x9D\x8E")     /* Id: 164,  Name: crossMarkButton,                          CodePoint: 10062,   Unicode: U+00274E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("redQuestionMark",                          "\xE2\x9D\x93")     /* Id: 165,  Name: redQuestionMark,                          CodePoint: 10067,   Unicode: U+002753  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("whiteQuestionMark",                        "\xE2\x9D\x94")     /* Id: 166,  Name: whiteQuestionMark,                        CodePoint: 10068,   Unicode: U+002754  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("whiteExclamationMark",                     "\xE2\x9D\x95")     /* Id: 167,  Name: whiteExclamationMark,                     CodePoint: 10069,   Unicode: U+002755  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("redExclamationMark",                       "\xE2\x9D\x97")     /* Id: 168,  Name: redExclamationMark,                       CodePoint: 10071,   Unicode: U+002757  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("heartExclamation",                         "\xE2\x9D\xA3")     /* Id: 169,  Name: heartExclamation,                         CodePoint: 10083,   Unicode: U+002763  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("redHeart",                                 "\xE2\x9D\xA4")     /* Id: 170,  Name: redHeart,                                 CodePoint: 10084,   Unicode: U+002764  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2795",                                  "\xE2\x9E\x95")     /* Id: 171,  Name: uni2795,                                  CodePoint: 10133,   Unicode: U+002795  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2796",                                  "\xE2\x9E\x96")     /* Id: 172,  Name: uni2796,                                  CodePoint: 10134,   Unicode: U+002796  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2797",                                  "\xE2\x9E\x97")     /* Id: 173,  Name: uni2797,                                  CodePoint: 10135,   Unicode: U+002797  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("arrowright",                               "\xE2\x9E\xA1")     /* Id: 174,  Name: arrowright,                               CodePoint: 10145,   Unicode: U+0027A1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni27B0",                                  "\xE2\x9E\xB0")     /* Id: 175,  Name: uni27B0,                                  CodePoint: 10160,   Unicode: U+0027B0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni27BF",                                  "\xE2\x9E\xBF")     /* Id: 176,  Name: uni27BF,                                  CodePoint: 10175,   Unicode: U+0027BF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("rightArrowCurvingUp",                      "\xE2\xA4\xB4")     /* Id: 177,  Name: rightArrowCurvingUp,                      CodePoint: 10548,   Unicode: U+002934  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("rightArrowCurvingDown",                    "\xE2\xA4\xB5")     /* Id: 178,  Name: rightArrowCurvingDown,                    CodePoint: 10549,   Unicode: U+002935  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("arrowleft",                                "\xE2\xAC\x85")     /* Id: 179,  Name: arrowleft,                                CodePoint: 11013,   Unicode: U+002B05  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("arrowup",                                  "\xE2\xAC\x86")     /* Id: 180,  Name: arrowup,                                  CodePoint: 11014,   Unicode: U+002B06  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("arrowdown",                                "\xE2\xAC\x87")     /* Id: 181,  Name: arrowdown,                                CodePoint: 11015,   Unicode: U+002B07  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2B1B",                                  "\xE2\xAC\x9B")     /* Id: 182,  Name: uni2B1B,                                  CodePoint: 11035,   Unicode: U+002B1B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2B1C",                                  "\xE2\xAC\x9C")     /* Id: 183,  Name: uni2B1C,                                  CodePoint: 11036,   Unicode: U+002B1C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2B50",                                  "\xE2\xAD\x90")     /* Id: 184,  Name: uni2B50,                                  CodePoint: 11088,   Unicode: U+002B50  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hollowRedCircle",                          "\xE2\xAD\x95")     /* Id: 185,  Name: hollowRedCircle,                          CodePoint: 11093,   Unicode: U+002B55  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("wavyDash",                                 "\xE3\x80\xB0")     /* Id: 186,  Name: wavyDash,                                 CodePoint: 12336,   Unicode: U+003030  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("partAlterationMark",                       "\xE3\x80\xBD")     /* Id: 187,  Name: partAlterationMark,                       CodePoint: 12349,   Unicode: U+00303D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseCongratulationsButton",            "\xE3\x8A\x97")     /* Id: 188,  Name: japaneseCongratulationsButton,            CodePoint: 12951,   Unicode: U+003297  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseSecretButton",                     "\xE3\x8A\x99")     /* Id: 189,  Name: japaneseSecretButton,                     CodePoint: 12953,   Unicode: U+003299  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("tileRedDragon",                            "\xF0\x9F\x80\x84") /* Id: 190,  Name: tileRedDragon,                            CodePoint: 126980,  Unicode: U+01F004  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("joker",                                    "\xF0\x9F\x83\x8F") /* Id: 191,  Name: joker,                                    CodePoint: 127183,  Unicode: U+01F0CF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("aButtonBloodType",                         "\xF0\x9F\x85\xB0") /* Id: 192,  Name: aButtonBloodType,                         CodePoint: 127344,  Unicode: U+01F170  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("bButtonBloodType",                         "\xF0\x9F\x85\xB1") /* Id: 193,  Name: bButtonBloodType,                         CodePoint: 127345,  Unicode: U+01F171  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("oButtonBloodType",                         "\xF0\x9F\x85\xBE") /* Id: 194,  Name: oButtonBloodType,                         CodePoint: 127358,  Unicode: U+01F17E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pButton",                                  "\xF0\x9F\x85\xBF") /* Id: 195,  Name: pButton,                                  CodePoint: 127359,  Unicode: U+01F17F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("abButtonBloodType",                        "\xF0\x9F\x86\x8E") /* Id: 196,  Name: abButtonBloodType,                        CodePoint: 127374,  Unicode: U+01F18E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("clButton",                                 "\xF0\x9F\x86\x91") /* Id: 197,  Name: clButton,                                 CodePoint: 127377,  Unicode: U+01F191  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("coolButton",                               "\xF0\x9F\x86\x92") /* Id: 198,  Name: coolButton,                               CodePoint: 127378,  Unicode: U+01F192  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("freeButton",                               "\xF0\x9F\x86\x93") /* Id: 199,  Name: freeButton,                               CodePoint: 127379,  Unicode: U+01F193  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("idButton",                                 "\xF0\x9F\x86\x94") /* Id: 200,  Name: idButton,                                 CodePoint: 127380,  Unicode: U+01F194  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("newButton",                                "\xF0\x9F\x86\x95") /* Id: 201,  Name: newButton,                                CodePoint: 127381,  Unicode: U+01F195  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("ngButton",                                 "\xF0\x9F\x86\x96") /* Id: 202,  Name: ngButton,                                 CodePoint: 127382,  Unicode: U+01F196  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("okButton",                                 "\xF0\x9F\x86\x97") /* Id: 203,  Name: okButton,                                 CodePoint: 127383,  Unicode: U+01F197  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sosButton",                                "\xF0\x9F\x86\x98") /* Id: 204,  Name: sosButton,                                CodePoint: 127384,  Unicode: U+01F198  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("upButton",                                 "\xF0\x9F\x86\x99") /* Id: 205,  Name: upButton,                                 CodePoint: 127385,  Unicode: U+01F199  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("vsButton",                                 "\xF0\x9F\x86\x9A") /* Id: 206,  Name: vsButton,                                 CodePoint: 127386,  Unicode: U+01F19A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("ARegion",                                  "\xF0\x9F\x87\xA6") /* Id: 207,  Name: ARegion,                                  CodePoint: 127462,  Unicode: U+01F1E6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("BRegion",                                  "\xF0\x9F\x87\xA7") /* Id: 208,  Name: BRegion,                                  CodePoint: 127463,  Unicode: U+01F1E7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("CRegion",                                  "\xF0\x9F\x87\xA8") /* Id: 209,  Name: CRegion,                                  CodePoint: 127464,  Unicode: U+01F1E8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("DRegion",                                  "\xF0\x9F\x87\xA9") /* Id: 210,  Name: DRegion,                                  CodePoint: 127465,  Unicode: U+01F1E9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("ERegion",                                  "\xF0\x9F\x87\xAA") /* Id: 211,  Name: ERegion,                                  CodePoint: 127466,  Unicode: U+01F1EA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("FRegion",                                  "\xF0\x9F\x87\xAB") /* Id: 212,  Name: FRegion,                                  CodePoint: 127467,  Unicode: U+01F1EB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("GRegion",                                  "\xF0\x9F\x87\xAC") /* Id: 213,  Name: GRegion,                                  CodePoint: 127468,  Unicode: U+01F1EC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("HRegion",                                  "\xF0\x9F\x87\xAD") /* Id: 214,  Name: HRegion,                                  CodePoint: 127469,  Unicode: U+01F1ED  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("IRegion",                                  "\xF0\x9F\x87\xAE") /* Id: 215,  Name: IRegion,                                  CodePoint: 127470,  Unicode: U+01F1EE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("JRegion",                                  "\xF0\x9F\x87\xAF") /* Id: 216,  Name: JRegion,                                  CodePoint: 127471,  Unicode: U+01F1EF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("KRegion",                                  "\xF0\x9F\x87\xB0") /* Id: 217,  Name: KRegion,                                  CodePoint: 127472,  Unicode: U+01F1F0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("LRegion",                                  "\xF0\x9F\x87\xB1") /* Id: 218,  Name: LRegion,                                  CodePoint: 127473,  Unicode: U+01F1F1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("MRegion",                                  "\xF0\x9F\x87\xB2") /* Id: 219,  Name: MRegion,                                  CodePoint: 127474,  Unicode: U+01F1F2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("NRegion",                                  "\xF0\x9F\x87\xB3") /* Id: 220,  Name: NRegion,                                  CodePoint: 127475,  Unicode: U+01F1F3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("ORegion",                                  "\xF0\x9F\x87\xB4") /* Id: 221,  Name: ORegion,                                  CodePoint: 127476,  Unicode: U+01F1F4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("PRegion",                                  "\xF0\x9F\x87\xB5") /* Id: 222,  Name: PRegion,                                  CodePoint: 127477,  Unicode: U+01F1F5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("QRegion",                                  "\xF0\x9F\x87\xB6") /* Id: 223,  Name: QRegion,                                  CodePoint: 127478,  Unicode: U+01F1F6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("RRegion",                                  "\xF0\x9F\x87\xB7") /* Id: 224,  Name: RRegion,                                  CodePoint: 127479,  Unicode: U+01F1F7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("SRegion",                                  "\xF0\x9F\x87\xB8") /* Id: 225,  Name: SRegion,                                  CodePoint: 127480,  Unicode: U+01F1F8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("TRegion",                                  "\xF0\x9F\x87\xB9") /* Id: 226,  Name: TRegion,                                  CodePoint: 127481,  Unicode: U+01F1F9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("URegion",                                  "\xF0\x9F\x87\xBA") /* Id: 227,  Name: URegion,                                  CodePoint: 127482,  Unicode: U+01F1FA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("VRegion",                                  "\xF0\x9F\x87\xBB") /* Id: 228,  Name: VRegion,                                  CodePoint: 127483,  Unicode: U+01F1FB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("WRegion",                                  "\xF0\x9F\x87\xBC") /* Id: 229,  Name: WRegion,                                  CodePoint: 127484,  Unicode: U+01F1FC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("XRegion",                                  "\xF0\x9F\x87\xBD") /* Id: 230,  Name: XRegion,                                  CodePoint: 127485,  Unicode: U+01F1FD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("YRegion",                                  "\xF0\x9F\x87\xBE") /* Id: 231,  Name: YRegion,                                  CodePoint: 127486,  Unicode: U+01F1FE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("ZRegion",                                  "\xF0\x9F\x87\xBF") /* Id: 232,  Name: ZRegion,                                  CodePoint: 127487,  Unicode: U+01F1FF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseHereButton",                       "\xF0\x9F\x88\x81") /* Id: 233,  Name: japaneseHereButton,                       CodePoint: 127489,  Unicode: U+01F201  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseServiceChargeButton",              "\xF0\x9F\x88\x82") /* Id: 234,  Name: japaneseServiceChargeButton,              CodePoint: 127490,  Unicode: U+01F202  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseFreeOfChargeButton",               "\xF0\x9F\x88\x9A") /* Id: 235,  Name: japaneseFreeOfChargeButton,               CodePoint: 127514,  Unicode: U+01F21A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseReservedButton",                   "\xF0\x9F\x88\xAF") /* Id: 236,  Name: japaneseReservedButton,                   CodePoint: 127535,  Unicode: U+01F22F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseProhibitedButton",                 "\xF0\x9F\x88\xB2") /* Id: 237,  Name: japaneseProhibitedButton,                 CodePoint: 127538,  Unicode: U+01F232  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseVacancyButton",                    "\xF0\x9F\x88\xB3") /* Id: 238,  Name: japaneseVacancyButton,                    CodePoint: 127539,  Unicode: U+01F233  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japanesePassingGradeButton",               "\xF0\x9F\x88\xB4") /* Id: 239,  Name: japanesePassingGradeButton,               CodePoint: 127540,  Unicode: U+01F234  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseNoVacancyButton",                  "\xF0\x9F\x88\xB5") /* Id: 240,  Name: japaneseNoVacancyButton,                  CodePoint: 127541,  Unicode: U+01F235  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseNotFreeOfChargeButton",            "\xF0\x9F\x88\xB6") /* Id: 241,  Name: japaneseNotFreeOfChargeButton,            CodePoint: 127542,  Unicode: U+01F236  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseMonthlyAmountButton",              "\xF0\x9F\x88\xB7") /* Id: 242,  Name: japaneseMonthlyAmountButton,              CodePoint: 127543,  Unicode: U+01F237  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseApplicationButton",                "\xF0\x9F\x88\xB8") /* Id: 243,  Name: japaneseApplicationButton,                CodePoint: 127544,  Unicode: U+01F238  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseDiscountButton",                   "\xF0\x9F\x88\xB9") /* Id: 244,  Name: japaneseDiscountButton,                   CodePoint: 127545,  Unicode: U+01F239  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseOpenForBusinessButton",            "\xF0\x9F\x88\xBA") /* Id: 245,  Name: japaneseOpenForBusinessButton,            CodePoint: 127546,  Unicode: U+01F23A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseBargainButton",                    "\xF0\x9F\x89\x90") /* Id: 246,  Name: japaneseBargainButton,                    CodePoint: 127568,  Unicode: U+01F250  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("japaneseAcceptableButton",                 "\xF0\x9F\x89\x91") /* Id: 247,  Name: japaneseAcceptableButton,                 CodePoint: 127569,  Unicode: U+01F251  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F300",                                   "\xF0\x9F\x8C\x80") /* Id: 248,  Name: u1F300,                                   CodePoint: 127744,  Unicode: U+01F300  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F301",                                   "\xF0\x9F\x8C\x81") /* Id: 249,  Name: u1F301,                                   CodePoint: 127745,  Unicode: U+01F301  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F302",                                   "\xF0\x9F\x8C\x82") /* Id: 250,  Name: u1F302,                                   CodePoint: 127746,  Unicode: U+01F302  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("nightWithStars",                           "\xF0\x9F\x8C\x83") /* Id: 251,  Name: nightWithStars,                           CodePoint: 127747,  Unicode: U+01F303  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F304",                                   "\xF0\x9F\x8C\x84") /* Id: 252,  Name: u1F304,                                   CodePoint: 127748,  Unicode: U+01F304  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F305",                                   "\xF0\x9F\x8C\x85") /* Id: 253,  Name: u1F305,                                   CodePoint: 127749,  Unicode: U+01F305  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F306",                                   "\xF0\x9F\x8C\x86") /* Id: 254,  Name: u1F306,                                   CodePoint: 127750,  Unicode: U+01F306  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sunset",                                   "\xF0\x9F\x8C\x87") /* Id: 255,  Name: sunset,                                   CodePoint: 127751,  Unicode: U+01F307  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F308",                                   "\xF0\x9F\x8C\x88") /* Id: 256,  Name: u1F308,                                   CodePoint: 127752,  Unicode: U+01F308  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F309",                                   "\xF0\x9F\x8C\x89") /* Id: 257,  Name: u1F309,                                   CodePoint: 127753,  Unicode: U+01F309  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F30A",                                   "\xF0\x9F\x8C\x8A") /* Id: 258,  Name: u1F30A,                                   CodePoint: 127754,  Unicode: U+01F30A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F30B",                                   "\xF0\x9F\x8C\x8B") /* Id: 259,  Name: u1F30B,                                   CodePoint: 127755,  Unicode: U+01F30B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F30C",                                   "\xF0\x9F\x8C\x8C") /* Id: 260,  Name: u1F30C,                                   CodePoint: 127756,  Unicode: U+01F30C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("globeShowingEuropeAfrica",                 "\xF0\x9F\x8C\x8D") /* Id: 261,  Name: globeShowingEuropeAfrica,                 CodePoint: 127757,  Unicode: U+01F30D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("globeShowinAmericas",                      "\xF0\x9F\x8C\x8E") /* Id: 262,  Name: globeShowinAmericas,                      CodePoint: 127758,  Unicode: U+01F30E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("globeShowingAsiaAustralia",                "\xF0\x9F\x8C\x8F") /* Id: 263,  Name: globeShowingAsiaAustralia,                CodePoint: 127759,  Unicode: U+01F30F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("globeWithMeridians",                       "\xF0\x9F\x8C\x90") /* Id: 264,  Name: globeWithMeridians,                       CodePoint: 127760,  Unicode: U+01F310  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F311",                                   "\xF0\x9F\x8C\x91") /* Id: 265,  Name: u1F311,                                   CodePoint: 127761,  Unicode: U+01F311  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F312",                                   "\xF0\x9F\x8C\x92") /* Id: 266,  Name: u1F312,                                   CodePoint: 127762,  Unicode: U+01F312  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F313",                                   "\xF0\x9F\x8C\x93") /* Id: 267,  Name: u1F313,                                   CodePoint: 127763,  Unicode: U+01F313  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F314",                                   "\xF0\x9F\x8C\x94") /* Id: 268,  Name: u1F314,                                   CodePoint: 127764,  Unicode: U+01F314  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F315",                                   "\xF0\x9F\x8C\x95") /* Id: 269,  Name: u1F315,                                   CodePoint: 127765,  Unicode: U+01F315  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F316",                                   "\xF0\x9F\x8C\x96") /* Id: 270,  Name: u1F316,                                   CodePoint: 127766,  Unicode: U+01F316  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F317",                                   "\xF0\x9F\x8C\x97") /* Id: 271,  Name: u1F317,                                   CodePoint: 127767,  Unicode: U+01F317  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F318",                                   "\xF0\x9F\x8C\x98") /* Id: 272,  Name: u1F318,                                   CodePoint: 127768,  Unicode: U+01F318  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F319",                                   "\xF0\x9F\x8C\x99") /* Id: 273,  Name: u1F319,                                   CodePoint: 127769,  Unicode: U+01F319  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F31A",                                   "\xF0\x9F\x8C\x9A") /* Id: 274,  Name: u1F31A,                                   CodePoint: 127770,  Unicode: U+01F31A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F31B",                                   "\xF0\x9F\x8C\x9B") /* Id: 275,  Name: u1F31B,                                   CodePoint: 127771,  Unicode: U+01F31B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F31C",                                   "\xF0\x9F\x8C\x9C") /* Id: 276,  Name: u1F31C,                                   CodePoint: 127772,  Unicode: U+01F31C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F31D",                                   "\xF0\x9F\x8C\x9D") /* Id: 277,  Name: u1F31D,                                   CodePoint: 127773,  Unicode: U+01F31D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F31E",                                   "\xF0\x9F\x8C\x9E") /* Id: 278,  Name: u1F31E,                                   CodePoint: 127774,  Unicode: U+01F31E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F31F",                                   "\xF0\x9F\x8C\x9F") /* Id: 279,  Name: u1F31F,                                   CodePoint: 127775,  Unicode: U+01F31F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F320",                                   "\xF0\x9F\x8C\xA0") /* Id: 280,  Name: u1F320,                                   CodePoint: 127776,  Unicode: U+01F320  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F321",                                   "\xF0\x9F\x8C\xA1") /* Id: 281,  Name: u1F321,                                   CodePoint: 127777,  Unicode: U+01F321  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F324",                                   "\xF0\x9F\x8C\xA4") /* Id: 282,  Name: u1F324,                                   CodePoint: 127780,  Unicode: U+01F324  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F325",                                   "\xF0\x9F\x8C\xA5") /* Id: 283,  Name: u1F325,                                   CodePoint: 127781,  Unicode: U+01F325  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F326",                                   "\xF0\x9F\x8C\xA6") /* Id: 284,  Name: u1F326,                                   CodePoint: 127782,  Unicode: U+01F326  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("cloudWithRain",                            "\xF0\x9F\x8C\xA7") /* Id: 285,  Name: cloudWithRain,                            CodePoint: 127783,  Unicode: U+01F327  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("cloudWithSnow",                            "\xF0\x9F\x8C\xA8") /* Id: 286,  Name: cloudWithSnow,                            CodePoint: 127784,  Unicode: U+01F328  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("cloudWithLightning",                       "\xF0\x9F\x8C\xA9") /* Id: 287,  Name: cloudWithLightning,                       CodePoint: 127785,  Unicode: U+01F329  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("tornado",                                  "\xF0\x9F\x8C\xAA") /* Id: 288,  Name: tornado,                                  CodePoint: 127786,  Unicode: U+01F32A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F32B",                                   "\xF0\x9F\x8C\xAB") /* Id: 289,  Name: u1F32B,                                   CodePoint: 127787,  Unicode: U+01F32B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F32C",                                   "\xF0\x9F\x8C\xAC") /* Id: 290,  Name: u1F32C,                                   CodePoint: 127788,  Unicode: U+01F32C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hotdog",                                   "\xF0\x9F\x8C\xAD") /* Id: 291,  Name: hotdog,                                   CodePoint: 127789,  Unicode: U+01F32D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("taco",                                     "\xF0\x9F\x8C\xAE") /* Id: 292,  Name: taco,                                     CodePoint: 127790,  Unicode: U+01F32E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("burrito",                                  "\xF0\x9F\x8C\xAF") /* Id: 293,  Name: burrito,                                  CodePoint: 127791,  Unicode: U+01F32F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F330",                                   "\xF0\x9F\x8C\xB0") /* Id: 294,  Name: u1F330,                                   CodePoint: 127792,  Unicode: U+01F330  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F331",                                   "\xF0\x9F\x8C\xB1") /* Id: 295,  Name: u1F331,                                   CodePoint: 127793,  Unicode: U+01F331  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F332",                                   "\xF0\x9F\x8C\xB2") /* Id: 296,  Name: u1F332,                                   CodePoint: 127794,  Unicode: U+01F332  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F333",                                   "\xF0\x9F\x8C\xB3") /* Id: 297,  Name: u1F333,                                   CodePoint: 127795,  Unicode: U+01F333  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F334",                                   "\xF0\x9F\x8C\xB4") /* Id: 298,  Name: u1F334,                                   CodePoint: 127796,  Unicode: U+01F334  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F335",                                   "\xF0\x9F\x8C\xB5") /* Id: 299,  Name: u1F335,                                   CodePoint: 127797,  Unicode: U+01F335  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F336",                                   "\xF0\x9F\x8C\xB6") /* Id: 300,  Name: u1F336,                                   CodePoint: 127798,  Unicode: U+01F336  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F337",                                   "\xF0\x9F\x8C\xB7") /* Id: 301,  Name: u1F337,                                   CodePoint: 127799,  Unicode: U+01F337  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F338",                                   "\xF0\x9F\x8C\xB8") /* Id: 302,  Name: u1F338,                                   CodePoint: 127800,  Unicode: U+01F338  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F339",                                   "\xF0\x9F\x8C\xB9") /* Id: 303,  Name: u1F339,                                   CodePoint: 127801,  Unicode: U+01F339  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F33A",                                   "\xF0\x9F\x8C\xBA") /* Id: 304,  Name: u1F33A,                                   CodePoint: 127802,  Unicode: U+01F33A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F33B",                                   "\xF0\x9F\x8C\xBB") /* Id: 305,  Name: u1F33B,                                   CodePoint: 127803,  Unicode: U+01F33B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hyacinth",                                 "\xF0\x9F\xAA\xBB") /* Id: 306,  Name: hyacinth,                                 CodePoint: 129723,  Unicode: U+01FABB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F33C",                                   "\xF0\x9F\x8C\xBC") /* Id: 307,  Name: u1F33C,                                   CodePoint: 127804,  Unicode: U+01F33C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F33D",                                   "\xF0\x9F\x8C\xBD") /* Id: 308,  Name: u1F33D,                                   CodePoint: 127805,  Unicode: U+01F33D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F33E",                                   "\xF0\x9F\x8C\xBE") /* Id: 309,  Name: u1F33E,                                   CodePoint: 127806,  Unicode: U+01F33E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F33F",                                   "\xF0\x9F\x8C\xBF") /* Id: 310,  Name: u1F33F,                                   CodePoint: 127807,  Unicode: U+01F33F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F340",                                   "\xF0\x9F\x8D\x80") /* Id: 311,  Name: u1F340,                                   CodePoint: 127808,  Unicode: U+01F340  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F341",                                   "\xF0\x9F\x8D\x81") /* Id: 312,  Name: u1F341,                                   CodePoint: 127809,  Unicode: U+01F341  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F342",                                   "\xF0\x9F\x8D\x82") /* Id: 313,  Name: u1F342,                                   CodePoint: 127810,  Unicode: U+01F342  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F343",                                   "\xF0\x9F\x8D\x83") /* Id: 314,  Name: u1F343,                                   CodePoint: 127811,  Unicode: U+01F343  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F344",                                   "\xF0\x9F\x8D\x84") /* Id: 315,  Name: u1F344,                                   CodePoint: 127812,  Unicode: U+01F344  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F345",                                   "\xF0\x9F\x8D\x85") /* Id: 316,  Name: u1F345,                                   CodePoint: 127813,  Unicode: U+01F345  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F346",                                   "\xF0\x9F\x8D\x86") /* Id: 317,  Name: u1F346,                                   CodePoint: 127814,  Unicode: U+01F346  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F347",                                   "\xF0\x9F\x8D\x87") /* Id: 318,  Name: u1F347,                                   CodePoint: 127815,  Unicode: U+01F347  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F348",                                   "\xF0\x9F\x8D\x88") /* Id: 319,  Name: u1F348,                                   CodePoint: 127816,  Unicode: U+01F348  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F349",                                   "\xF0\x9F\x8D\x89") /* Id: 320,  Name: u1F349,                                   CodePoint: 127817,  Unicode: U+01F349  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F34A",                                   "\xF0\x9F\x8D\x8A") /* Id: 321,  Name: u1F34A,                                   CodePoint: 127818,  Unicode: U+01F34A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F34B",                                   "\xF0\x9F\x8D\x8B") /* Id: 322,  Name: u1F34B,                                   CodePoint: 127819,  Unicode: U+01F34B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F34C",                                   "\xF0\x9F\x8D\x8C") /* Id: 323,  Name: u1F34C,                                   CodePoint: 127820,  Unicode: U+01F34C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F34D",                                   "\xF0\x9F\x8D\x8D") /* Id: 324,  Name: u1F34D,                                   CodePoint: 127821,  Unicode: U+01F34D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F34E",                                   "\xF0\x9F\x8D\x8E") /* Id: 325,  Name: u1F34E,                                   CodePoint: 127822,  Unicode: U+01F34E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F34F",                                   "\xF0\x9F\x8D\x8F") /* Id: 326,  Name: u1F34F,                                   CodePoint: 127823,  Unicode: U+01F34F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F350",                                   "\xF0\x9F\x8D\x90") /* Id: 327,  Name: u1F350,                                   CodePoint: 127824,  Unicode: U+01F350  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F351",                                   "\xF0\x9F\x8D\x91") /* Id: 328,  Name: u1F351,                                   CodePoint: 127825,  Unicode: U+01F351  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F352",                                   "\xF0\x9F\x8D\x92") /* Id: 329,  Name: u1F352,                                   CodePoint: 127826,  Unicode: U+01F352  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F353",                                   "\xF0\x9F\x8D\x93") /* Id: 330,  Name: u1F353,                                   CodePoint: 127827,  Unicode: U+01F353  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F354",                                   "\xF0\x9F\x8D\x94") /* Id: 331,  Name: u1F354,                                   CodePoint: 127828,  Unicode: U+01F354  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F355",                                   "\xF0\x9F\x8D\x95") /* Id: 332,  Name: u1F355,                                   CodePoint: 127829,  Unicode: U+01F355  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F356",                                   "\xF0\x9F\x8D\x96") /* Id: 333,  Name: u1F356,                                   CodePoint: 127830,  Unicode: U+01F356  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F357",                                   "\xF0\x9F\x8D\x97") /* Id: 334,  Name: u1F357,                                   CodePoint: 127831,  Unicode: U+01F357  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F358",                                   "\xF0\x9F\x8D\x98") /* Id: 335,  Name: u1F358,                                   CodePoint: 127832,  Unicode: U+01F358  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F359",                                   "\xF0\x9F\x8D\x99") /* Id: 336,  Name: u1F359,                                   CodePoint: 127833,  Unicode: U+01F359  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F35A",                                   "\xF0\x9F\x8D\x9A") /* Id: 337,  Name: u1F35A,                                   CodePoint: 127834,  Unicode: U+01F35A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F35B",                                   "\xF0\x9F\x8D\x9B") /* Id: 338,  Name: u1F35B,                                   CodePoint: 127835,  Unicode: U+01F35B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F35C",                                   "\xF0\x9F\x8D\x9C") /* Id: 339,  Name: u1F35C,                                   CodePoint: 127836,  Unicode: U+01F35C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F35D",                                   "\xF0\x9F\x8D\x9D") /* Id: 340,  Name: u1F35D,                                   CodePoint: 127837,  Unicode: U+01F35D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F35E",                                   "\xF0\x9F\x8D\x9E") /* Id: 341,  Name: u1F35E,                                   CodePoint: 127838,  Unicode: U+01F35E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F35F",                                   "\xF0\x9F\x8D\x9F") /* Id: 342,  Name: u1F35F,                                   CodePoint: 127839,  Unicode: U+01F35F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F360",                                   "\xF0\x9F\x8D\xA0") /* Id: 343,  Name: u1F360,                                   CodePoint: 127840,  Unicode: U+01F360  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F361",                                   "\xF0\x9F\x8D\xA1") /* Id: 344,  Name: u1F361,                                   CodePoint: 127841,  Unicode: U+01F361  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F362",                                   "\xF0\x9F\x8D\xA2") /* Id: 345,  Name: u1F362,                                   CodePoint: 127842,  Unicode: U+01F362  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F363",                                   "\xF0\x9F\x8D\xA3") /* Id: 346,  Name: u1F363,                                   CodePoint: 127843,  Unicode: U+01F363  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F364",                                   "\xF0\x9F\x8D\xA4") /* Id: 347,  Name: u1F364,                                   CodePoint: 127844,  Unicode: U+01F364  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F365",                                   "\xF0\x9F\x8D\xA5") /* Id: 348,  Name: u1F365,                                   CodePoint: 127845,  Unicode: U+01F365  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F366",                                   "\xF0\x9F\x8D\xA6") /* Id: 349,  Name: u1F366,                                   CodePoint: 127846,  Unicode: U+01F366  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F367",                                   "\xF0\x9F\x8D\xA7") /* Id: 350,  Name: u1F367,                                   CodePoint: 127847,  Unicode: U+01F367  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F368",                                   "\xF0\x9F\x8D\xA8") /* Id: 351,  Name: u1F368,                                   CodePoint: 127848,  Unicode: U+01F368  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F369",                                   "\xF0\x9F\x8D\xA9") /* Id: 352,  Name: u1F369,                                   CodePoint: 127849,  Unicode: U+01F369  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F36A",                                   "\xF0\x9F\x8D\xAA") /* Id: 353,  Name: u1F36A,                                   CodePoint: 127850,  Unicode: U+01F36A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F36B",                                   "\xF0\x9F\x8D\xAB") /* Id: 354,  Name: u1F36B,                                   CodePoint: 127851,  Unicode: U+01F36B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F36C",                                   "\xF0\x9F\x8D\xAC") /* Id: 355,  Name: u1F36C,                                   CodePoint: 127852,  Unicode: U+01F36C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F36D",                                   "\xF0\x9F\x8D\xAD") /* Id: 356,  Name: u1F36D,                                   CodePoint: 127853,  Unicode: U+01F36D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F36E",                                   "\xF0\x9F\x8D\xAE") /* Id: 357,  Name: u1F36E,                                   CodePoint: 127854,  Unicode: U+01F36E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F36F",                                   "\xF0\x9F\x8D\xAF") /* Id: 358,  Name: u1F36F,                                   CodePoint: 127855,  Unicode: U+01F36F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F370",                                   "\xF0\x9F\x8D\xB0") /* Id: 359,  Name: u1F370,                                   CodePoint: 127856,  Unicode: U+01F370  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F371",                                   "\xF0\x9F\x8D\xB1") /* Id: 360,  Name: u1F371,                                   CodePoint: 127857,  Unicode: U+01F371  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F372",                                   "\xF0\x9F\x8D\xB2") /* Id: 361,  Name: u1F372,                                   CodePoint: 127858,  Unicode: U+01F372  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F373",                                   "\xF0\x9F\x8D\xB3") /* Id: 362,  Name: u1F373,                                   CodePoint: 127859,  Unicode: U+01F373  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F374",                                   "\xF0\x9F\x8D\xB4") /* Id: 363,  Name: u1F374,                                   CodePoint: 127860,  Unicode: U+01F374  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F375",                                   "\xF0\x9F\x8D\xB5") /* Id: 364,  Name: u1F375,                                   CodePoint: 127861,  Unicode: U+01F375  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F376",                                   "\xF0\x9F\x8D\xB6") /* Id: 365,  Name: u1F376,                                   CodePoint: 127862,  Unicode: U+01F376  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F377",                                   "\xF0\x9F\x8D\xB7") /* Id: 366,  Name: u1F377,                                   CodePoint: 127863,  Unicode: U+01F377  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F378",                                   "\xF0\x9F\x8D\xB8") /* Id: 367,  Name: u1F378,                                   CodePoint: 127864,  Unicode: U+01F378  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F379",                                   "\xF0\x9F\x8D\xB9") /* Id: 368,  Name: u1F379,                                   CodePoint: 127865,  Unicode: U+01F379  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F37A",                                   "\xF0\x9F\x8D\xBA") /* Id: 369,  Name: u1F37A,                                   CodePoint: 127866,  Unicode: U+01F37A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F37B",                                   "\xF0\x9F\x8D\xBB") /* Id: 370,  Name: u1F37B,                                   CodePoint: 127867,  Unicode: U+01F37B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F37C",                                   "\xF0\x9F\x8D\xBC") /* Id: 371,  Name: u1F37C,                                   CodePoint: 127868,  Unicode: U+01F37C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F37D",                                   "\xF0\x9F\x8D\xBD") /* Id: 372,  Name: u1F37D,                                   CodePoint: 127869,  Unicode: U+01F37D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("bottleWithPoppingCork",                    "\xF0\x9F\x8D\xBE") /* Id: 373,  Name: bottleWithPoppingCork,                    CodePoint: 127870,  Unicode: U+01F37E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("popcorn",                                  "\xF0\x9F\x8D\xBF") /* Id: 374,  Name: popcorn,                                  CodePoint: 127871,  Unicode: U+01F37F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F380",                                   "\xF0\x9F\x8E\x80") /* Id: 375,  Name: u1F380,                                   CodePoint: 127872,  Unicode: U+01F380  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("wrappedGift",                              "\xF0\x9F\x8E\x81") /* Id: 376,  Name: wrappedGift,                              CodePoint: 127873,  Unicode: U+01F381  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F382",                                   "\xF0\x9F\x8E\x82") /* Id: 377,  Name: u1F382,                                   CodePoint: 127874,  Unicode: U+01F382  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F383",                                   "\xF0\x9F\x8E\x83") /* Id: 378,  Name: u1F383,                                   CodePoint: 127875,  Unicode: U+01F383  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F384",                                   "\xF0\x9F\x8E\x84") /* Id: 379,  Name: u1F384,                                   CodePoint: 127876,  Unicode: U+01F384  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("santaClaus",                               "\xF0\x9F\x8E\x85") /* Id: 380,  Name: santaClaus,                               CodePoint: 127877,  Unicode: U+01F385  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F386",                                   "\xF0\x9F\x8E\x86") /* Id: 381,  Name: u1F386,                                   CodePoint: 127878,  Unicode: U+01F386  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sparkler",                                 "\xF0\x9F\x8E\x87") /* Id: 382,  Name: sparkler,                                 CodePoint: 127879,  Unicode: U+01F387  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F388",                                   "\xF0\x9F\x8E\x88") /* Id: 383,  Name: u1F388,                                   CodePoint: 127880,  Unicode: U+01F388  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F389",                                   "\xF0\x9F\x8E\x89") /* Id: 384,  Name: u1F389,                                   CodePoint: 127881,  Unicode: U+01F389  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F38A",                                   "\xF0\x9F\x8E\x8A") /* Id: 385,  Name: u1F38A,                                   CodePoint: 127882,  Unicode: U+01F38A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F38B",                                   "\xF0\x9F\x8E\x8B") /* Id: 386,  Name: u1F38B,                                   CodePoint: 127883,  Unicode: U+01F38B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F38C",                                   "\xF0\x9F\x8E\x8C") /* Id: 387,  Name: u1F38C,                                   CodePoint: 127884,  Unicode: U+01F38C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F38D",                                   "\xF0\x9F\x8E\x8D") /* Id: 388,  Name: u1F38D,                                   CodePoint: 127885,  Unicode: U+01F38D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F38E",                                   "\xF0\x9F\x8E\x8E") /* Id: 389,  Name: u1F38E,                                   CodePoint: 127886,  Unicode: U+01F38E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F38F",                                   "\xF0\x9F\x8E\x8F") /* Id: 390,  Name: u1F38F,                                   CodePoint: 127887,  Unicode: U+01F38F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F390",                                   "\xF0\x9F\x8E\x90") /* Id: 391,  Name: u1F390,                                   CodePoint: 127888,  Unicode: U+01F390  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F391",                                   "\xF0\x9F\x8E\x91") /* Id: 392,  Name: u1F391,                                   CodePoint: 127889,  Unicode: U+01F391  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F392",                                   "\xF0\x9F\x8E\x92") /* Id: 393,  Name: u1F392,                                   CodePoint: 127890,  Unicode: U+01F392  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F393",                                   "\xF0\x9F\x8E\x93") /* Id: 394,  Name: u1F393,                                   CodePoint: 127891,  Unicode: U+01F393  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F396",                                   "\xF0\x9F\x8E\x96") /* Id: 395,  Name: u1F396,                                   CodePoint: 127894,  Unicode: U+01F396  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F397",                                   "\xF0\x9F\x8E\x97") /* Id: 396,  Name: u1F397,                                   CodePoint: 127895,  Unicode: U+01F397  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F399",                                   "\xF0\x9F\x8E\x99") /* Id: 397,  Name: u1F399,                                   CodePoint: 127897,  Unicode: U+01F399  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F39A",                                   "\xF0\x9F\x8E\x9A") /* Id: 398,  Name: u1F39A,                                   CodePoint: 127898,  Unicode: U+01F39A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F39B",                                   "\xF0\x9F\x8E\x9B") /* Id: 399,  Name: u1F39B,                                   CodePoint: 127899,  Unicode: U+01F39B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F39E",                                   "\xF0\x9F\x8E\x9E") /* Id: 400,  Name: u1F39E,                                   CodePoint: 127902,  Unicode: U+01F39E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F39F",                                   "\xF0\x9F\x8E\x9F") /* Id: 401,  Name: u1F39F,                                   CodePoint: 127903,  Unicode: U+01F39F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3A0",                                   "\xF0\x9F\x8E\xA0") /* Id: 402,  Name: u1F3A0,                                   CodePoint: 127904,  Unicode: U+01F3A0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3A1",                                   "\xF0\x9F\x8E\xA1") /* Id: 403,  Name: u1F3A1,                                   CodePoint: 127905,  Unicode: U+01F3A1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3A2",                                   "\xF0\x9F\x8E\xA2") /* Id: 404,  Name: u1F3A2,                                   CodePoint: 127906,  Unicode: U+01F3A2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3A3",                                   "\xF0\x9F\x8E\xA3") /* Id: 405,  Name: u1F3A3,                                   CodePoint: 127907,  Unicode: U+01F3A3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3A4",                                   "\xF0\x9F\x8E\xA4") /* Id: 406,  Name: u1F3A4,                                   CodePoint: 127908,  Unicode: U+01F3A4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3A5",                                   "\xF0\x9F\x8E\xA5") /* Id: 407,  Name: u1F3A5,                                   CodePoint: 127909,  Unicode: U+01F3A5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3A6",                                   "\xF0\x9F\x8E\xA6") /* Id: 408,  Name: u1F3A6,                                   CodePoint: 127910,  Unicode: U+01F3A6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3A7",                                   "\xF0\x9F\x8E\xA7") /* Id: 409,  Name: u1F3A7,                                   CodePoint: 127911,  Unicode: U+01F3A7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3A8",                                   "\xF0\x9F\x8E\xA8") /* Id: 410,  Name: u1F3A8,                                   CodePoint: 127912,  Unicode: U+01F3A8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3A9",                                   "\xF0\x9F\x8E\xA9") /* Id: 411,  Name: u1F3A9,                                   CodePoint: 127913,  Unicode: U+01F3A9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3AA",                                   "\xF0\x9F\x8E\xAA") /* Id: 412,  Name: u1F3AA,                                   CodePoint: 127914,  Unicode: U+01F3AA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3AB",                                   "\xF0\x9F\x8E\xAB") /* Id: 413,  Name: u1F3AB,                                   CodePoint: 127915,  Unicode: U+01F3AB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3AC",                                   "\xF0\x9F\x8E\xAC") /* Id: 414,  Name: u1F3AC,                                   CodePoint: 127916,  Unicode: U+01F3AC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3AD",                                   "\xF0\x9F\x8E\xAD") /* Id: 415,  Name: u1F3AD,                                   CodePoint: 127917,  Unicode: U+01F3AD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3AE",                                   "\xF0\x9F\x8E\xAE") /* Id: 416,  Name: u1F3AE,                                   CodePoint: 127918,  Unicode: U+01F3AE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3AF",                                   "\xF0\x9F\x8E\xAF") /* Id: 417,  Name: u1F3AF,                                   CodePoint: 127919,  Unicode: U+01F3AF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3B0",                                   "\xF0\x9F\x8E\xB0") /* Id: 418,  Name: u1F3B0,                                   CodePoint: 127920,  Unicode: U+01F3B0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3B1",                                   "\xF0\x9F\x8E\xB1") /* Id: 419,  Name: u1F3B1,                                   CodePoint: 127921,  Unicode: U+01F3B1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3B2",                                   "\xF0\x9F\x8E\xB2") /* Id: 420,  Name: u1F3B2,                                   CodePoint: 127922,  Unicode: U+01F3B2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3B3",                                   "\xF0\x9F\x8E\xB3") /* Id: 421,  Name: u1F3B3,                                   CodePoint: 127923,  Unicode: U+01F3B3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3B4",                                   "\xF0\x9F\x8E\xB4") /* Id: 422,  Name: u1F3B4,                                   CodePoint: 127924,  Unicode: U+01F3B4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3B5",                                   "\xF0\x9F\x8E\xB5") /* Id: 423,  Name: u1F3B5,                                   CodePoint: 127925,  Unicode: U+01F3B5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3B6",                                   "\xF0\x9F\x8E\xB6") /* Id: 424,  Name: u1F3B6,                                   CodePoint: 127926,  Unicode: U+01F3B6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("maracas",                                  "\xF0\x9F\xAA\x87") /* Id: 425,  Name: maracas,                                  CodePoint: 129671,  Unicode: U+01FA87  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3B7",                                   "\xF0\x9F\x8E\xB7") /* Id: 426,  Name: u1F3B7,                                   CodePoint: 127927,  Unicode: U+01F3B7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3B8",                                   "\xF0\x9F\x8E\xB8") /* Id: 427,  Name: u1F3B8,                                   CodePoint: 127928,  Unicode: U+01F3B8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3B9",                                   "\xF0\x9F\x8E\xB9") /* Id: 428,  Name: u1F3B9,                                   CodePoint: 127929,  Unicode: U+01F3B9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3BA",                                   "\xF0\x9F\x8E\xBA") /* Id: 429,  Name: u1F3BA,                                   CodePoint: 127930,  Unicode: U+01F3BA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3BB",                                   "\xF0\x9F\x8E\xBB") /* Id: 430,  Name: u1F3BB,                                   CodePoint: 127931,  Unicode: U+01F3BB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flute",                                    "\xF0\x9F\xAA\x88") /* Id: 431,  Name: flute,                                    CodePoint: 129672,  Unicode: U+01FA88  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3BC",                                   "\xF0\x9F\x8E\xBC") /* Id: 432,  Name: u1F3BC,                                   CodePoint: 127932,  Unicode: U+01F3BC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3BD",                                   "\xF0\x9F\x8E\xBD") /* Id: 433,  Name: u1F3BD,                                   CodePoint: 127933,  Unicode: U+01F3BD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3BE",                                   "\xF0\x9F\x8E\xBE") /* Id: 434,  Name: u1F3BE,                                   CodePoint: 127934,  Unicode: U+01F3BE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3BF",                                   "\xF0\x9F\x8E\xBF") /* Id: 435,  Name: u1F3BF,                                   CodePoint: 127935,  Unicode: U+01F3BF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3C0",                                   "\xF0\x9F\x8F\x80") /* Id: 436,  Name: u1F3C0,                                   CodePoint: 127936,  Unicode: U+01F3C0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3C1",                                   "\xF0\x9F\x8F\x81") /* Id: 437,  Name: u1F3C1,                                   CodePoint: 127937,  Unicode: U+01F3C1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3C2",                                   "\xF0\x9F\x8F\x82") /* Id: 438,  Name: u1F3C2,                                   CodePoint: 127938,  Unicode: U+01F3C2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personRunning",                            "\xF0\x9F\x8F\x83") /* Id: 439,  Name: personRunning,                            CodePoint: 127939,  Unicode: U+01F3C3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personSurfing",                            "\xF0\x9F\x8F\x84") /* Id: 440,  Name: personSurfing,                            CodePoint: 127940,  Unicode: U+01F3C4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3C5",                                   "\xF0\x9F\x8F\x85") /* Id: 441,  Name: u1F3C5,                                   CodePoint: 127941,  Unicode: U+01F3C5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3C6",                                   "\xF0\x9F\x8F\x86") /* Id: 442,  Name: u1F3C6,                                   CodePoint: 127942,  Unicode: U+01F3C6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3C7",                                   "\xF0\x9F\x8F\x87") /* Id: 443,  Name: u1F3C7,                                   CodePoint: 127943,  Unicode: U+01F3C7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3C8",                                   "\xF0\x9F\x8F\x88") /* Id: 444,  Name: u1F3C8,                                   CodePoint: 127944,  Unicode: U+01F3C8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3C9",                                   "\xF0\x9F\x8F\x89") /* Id: 445,  Name: u1F3C9,                                   CodePoint: 127945,  Unicode: U+01F3C9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personSwimming",                           "\xF0\x9F\x8F\x8A") /* Id: 446,  Name: personSwimming,                           CodePoint: 127946,  Unicode: U+01F3CA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personLiftingWeights",                     "\xF0\x9F\x8F\x8B") /* Id: 447,  Name: personLiftingWeights,                     CodePoint: 127947,  Unicode: U+01F3CB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personGolfing",                            "\xF0\x9F\x8F\x8C") /* Id: 448,  Name: personGolfing,                            CodePoint: 127948,  Unicode: U+01F3CC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("motorcycle",                               "\xF0\x9F\x8F\x8D") /* Id: 449,  Name: motorcycle,                               CodePoint: 127949,  Unicode: U+01F3CD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3CE",                                   "\xF0\x9F\x8F\x8E") /* Id: 450,  Name: u1F3CE,                                   CodePoint: 127950,  Unicode: U+01F3CE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("cricketBatAndBall",                        "\xF0\x9F\x8F\x8F") /* Id: 451,  Name: cricketBatAndBall,                        CodePoint: 127951,  Unicode: U+01F3CF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("volleyball",                               "\xF0\x9F\x8F\x90") /* Id: 452,  Name: volleyball,                               CodePoint: 127952,  Unicode: U+01F3D0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("fieldHockeyStickAndBall",                  "\xF0\x9F\x8F\x91") /* Id: 453,  Name: fieldHockeyStickAndBall,                  CodePoint: 127953,  Unicode: U+01F3D1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hockeyStickAndPuck",                       "\xF0\x9F\x8F\x92") /* Id: 454,  Name: hockeyStickAndPuck,                       CodePoint: 127954,  Unicode: U+01F3D2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("tableTennisPaddleAndBall",                 "\xF0\x9F\x8F\x93") /* Id: 455,  Name: tableTennisPaddleAndBall,                 CodePoint: 127955,  Unicode: U+01F3D3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3D4",                                   "\xF0\x9F\x8F\x94") /* Id: 456,  Name: u1F3D4,                                   CodePoint: 127956,  Unicode: U+01F3D4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3D5",                                   "\xF0\x9F\x8F\x95") /* Id: 457,  Name: u1F3D5,                                   CodePoint: 127957,  Unicode: U+01F3D5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("beachWithUmbrella",                        "\xF0\x9F\x8F\x96") /* Id: 458,  Name: beachWithUmbrella,                        CodePoint: 127958,  Unicode: U+01F3D6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3D7",                                   "\xF0\x9F\x8F\x97") /* Id: 459,  Name: u1F3D7,                                   CodePoint: 127959,  Unicode: U+01F3D7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("houses",                                   "\xF0\x9F\x8F\x98") /* Id: 460,  Name: houses,                                   CodePoint: 127960,  Unicode: U+01F3D8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3D9",                                   "\xF0\x9F\x8F\x99") /* Id: 461,  Name: u1F3D9,                                   CodePoint: 127961,  Unicode: U+01F3D9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("derelictHouse",                            "\xF0\x9F\x8F\x9A") /* Id: 462,  Name: derelictHouse,                            CodePoint: 127962,  Unicode: U+01F3DA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3DB",                                   "\xF0\x9F\x8F\x9B") /* Id: 463,  Name: u1F3DB,                                   CodePoint: 127963,  Unicode: U+01F3DB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3DC",                                   "\xF0\x9F\x8F\x9C") /* Id: 464,  Name: u1F3DC,                                   CodePoint: 127964,  Unicode: U+01F3DC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3DD",                                   "\xF0\x9F\x8F\x9D") /* Id: 465,  Name: u1F3DD,                                   CodePoint: 127965,  Unicode: U+01F3DD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3DE",                                   "\xF0\x9F\x8F\x9E") /* Id: 466,  Name: u1F3DE,                                   CodePoint: 127966,  Unicode: U+01F3DE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3DF",                                   "\xF0\x9F\x8F\x9F") /* Id: 467,  Name: u1F3DF,                                   CodePoint: 127967,  Unicode: U+01F3DF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("house",                                    "\xF0\x9F\x8F\xA0") /* Id: 468,  Name: house,                                    CodePoint: 127968,  Unicode: U+01F3E0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("houseWithGarden",                          "\xF0\x9F\x8F\xA1") /* Id: 469,  Name: houseWithGarden,                          CodePoint: 127969,  Unicode: U+01F3E1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3E2",                                   "\xF0\x9F\x8F\xA2") /* Id: 470,  Name: u1F3E2,                                   CodePoint: 127970,  Unicode: U+01F3E2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3E3",                                   "\xF0\x9F\x8F\xA3") /* Id: 471,  Name: u1F3E3,                                   CodePoint: 127971,  Unicode: U+01F3E3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("postOffice",                               "\xF0\x9F\x8F\xA4") /* Id: 472,  Name: postOffice,                               CodePoint: 127972,  Unicode: U+01F3E4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3E5",                                   "\xF0\x9F\x8F\xA5") /* Id: 473,  Name: u1F3E5,                                   CodePoint: 127973,  Unicode: U+01F3E5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3E6",                                   "\xF0\x9F\x8F\xA6") /* Id: 474,  Name: u1F3E6,                                   CodePoint: 127974,  Unicode: U+01F3E6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("atmSign",                                  "\xF0\x9F\x8F\xA7") /* Id: 475,  Name: atmSign,                                  CodePoint: 127975,  Unicode: U+01F3E7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3E8",                                   "\xF0\x9F\x8F\xA8") /* Id: 476,  Name: u1F3E8,                                   CodePoint: 127976,  Unicode: U+01F3E8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3E9",                                   "\xF0\x9F\x8F\xA9") /* Id: 477,  Name: u1F3E9,                                   CodePoint: 127977,  Unicode: U+01F3E9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3EA",                                   "\xF0\x9F\x8F\xAA") /* Id: 478,  Name: u1F3EA,                                   CodePoint: 127978,  Unicode: U+01F3EA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3EB",                                   "\xF0\x9F\x8F\xAB") /* Id: 479,  Name: u1F3EB,                                   CodePoint: 127979,  Unicode: U+01F3EB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3EC",                                   "\xF0\x9F\x8F\xAC") /* Id: 480,  Name: u1F3EC,                                   CodePoint: 127980,  Unicode: U+01F3EC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3ED",                                   "\xF0\x9F\x8F\xAD") /* Id: 481,  Name: u1F3ED,                                   CodePoint: 127981,  Unicode: U+01F3ED  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("redPaperLantern",                          "\xF0\x9F\x8F\xAE") /* Id: 482,  Name: redPaperLantern,                          CodePoint: 127982,  Unicode: U+01F3EE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3EF",                                   "\xF0\x9F\x8F\xAF") /* Id: 483,  Name: u1F3EF,                                   CodePoint: 127983,  Unicode: U+01F3EF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni26EB",                                  "\xF0\x9F\x8F\xB0") /* Id: 484,  Name: uni26EB,                                  CodePoint: 127984,  Unicode: U+01F3F0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2690",                                  "\xF0\x9F\x8F\xB3") /* Id: 485,  Name: uni2690,                                  CodePoint: 127987,  Unicode: U+01F3F3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("uni2691",                                  "\xF0\x9F\x8F\xB4") /* Id: 486,  Name: uni2691,                                  CodePoint: 127988,  Unicode: U+01F3F4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3F5",                                   "\xF0\x9F\x8F\xB5") /* Id: 487,  Name: u1F3F5,                                   CodePoint: 127989,  Unicode: U+01F3F5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3F7",                                   "\xF0\x9F\x8F\xB7") /* Id: 488,  Name: u1F3F7,                                   CodePoint: 127991,  Unicode: U+01F3F7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3F8",                                   "\xF0\x9F\x8F\xB8") /* Id: 489,  Name: u1F3F8,                                   CodePoint: 127992,  Unicode: U+01F3F8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3F9",                                   "\xF0\x9F\x8F\xB9") /* Id: 490,  Name: u1F3F9,                                   CodePoint: 127993,  Unicode: U+01F3F9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F3FA",                                   "\xF0\x9F\x8F\xBA") /* Id: 491,  Name: u1F3FA,                                   CodePoint: 127994,  Unicode: U+01F3FA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("skinTone1",                                "\xF0\x9F\x8F\xBB") /* Id: 492,  Name: skinTone1,                                CodePoint: 127995,  Unicode: U+01F3FB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("skinTone2",                                "\xF0\x9F\x8F\xBC") /* Id: 493,  Name: skinTone2,                                CodePoint: 127996,  Unicode: U+01F3FC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("skinTone3",                                "\xF0\x9F\x8F\xBD") /* Id: 494,  Name: skinTone3,                                CodePoint: 127997,  Unicode: U+01F3FD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("skinTone4",                                "\xF0\x9F\x8F\xBE") /* Id: 495,  Name: skinTone4,                                CodePoint: 127998,  Unicode: U+01F3FE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("skinTone5",                                "\xF0\x9F\x8F\xBF") /* Id: 496,  Name: skinTone5,                                CodePoint: 127999,  Unicode: U+01F3FF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F400",                                   "\xF0\x9F\x90\x80") /* Id: 497,  Name: u1F400,                                   CodePoint: 128000,  Unicode: U+01F400  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F401",                                   "\xF0\x9F\x90\x81") /* Id: 498,  Name: u1F401,                                   CodePoint: 128001,  Unicode: U+01F401  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F402",                                   "\xF0\x9F\x90\x82") /* Id: 499,  Name: u1F402,                                   CodePoint: 128002,  Unicode: U+01F402  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F403",                                   "\xF0\x9F\x90\x83") /* Id: 500,  Name: u1F403,                                   CodePoint: 128003,  Unicode: U+01F403  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F404",                                   "\xF0\x9F\x90\x84") /* Id: 501,  Name: u1F404,                                   CodePoint: 128004,  Unicode: U+01F404  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F405",                                   "\xF0\x9F\x90\x85") /* Id: 502,  Name: u1F405,                                   CodePoint: 128005,  Unicode: U+01F405  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F406",                                   "\xF0\x9F\x90\x86") /* Id: 503,  Name: u1F406,                                   CodePoint: 128006,  Unicode: U+01F406  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F407",                                   "\xF0\x9F\x90\x87") /* Id: 504,  Name: u1F407,                                   CodePoint: 128007,  Unicode: U+01F407  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F408",                                   "\xF0\x9F\x90\x88") /* Id: 505,  Name: u1F408,                                   CodePoint: 128008,  Unicode: U+01F408  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F409",                                   "\xF0\x9F\x90\x89") /* Id: 506,  Name: u1F409,                                   CodePoint: 128009,  Unicode: U+01F409  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F40A",                                   "\xF0\x9F\x90\x8A") /* Id: 507,  Name: u1F40A,                                   CodePoint: 128010,  Unicode: U+01F40A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F40B",                                   "\xF0\x9F\x90\x8B") /* Id: 508,  Name: u1F40B,                                   CodePoint: 128011,  Unicode: U+01F40B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F40C",                                   "\xF0\x9F\x90\x8C") /* Id: 509,  Name: u1F40C,                                   CodePoint: 128012,  Unicode: U+01F40C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("jellyFish",                                "\xF0\x9F\xAA\xBC") /* Id: 510,  Name: jellyFish,                                CodePoint: 129724,  Unicode: U+01FABC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F40D",                                   "\xF0\x9F\x90\x8D") /* Id: 511,  Name: u1F40D,                                   CodePoint: 128013,  Unicode: U+01F40D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F40E",                                   "\xF0\x9F\x90\x8E") /* Id: 512,  Name: u1F40E,                                   CodePoint: 128014,  Unicode: U+01F40E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("donkey",                                   "\xF0\x9F\xAB\x8F") /* Id: 513,  Name: donkey,                                   CodePoint: 129743,  Unicode: U+01FACF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F40F",                                   "\xF0\x9F\x90\x8F") /* Id: 514,  Name: u1F40F,                                   CodePoint: 128015,  Unicode: U+01F40F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F410",                                   "\xF0\x9F\x90\x90") /* Id: 515,  Name: u1F410,                                   CodePoint: 128016,  Unicode: U+01F410  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F411",                                   "\xF0\x9F\x90\x91") /* Id: 516,  Name: u1F411,                                   CodePoint: 128017,  Unicode: U+01F411  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F412",                                   "\xF0\x9F\x90\x92") /* Id: 517,  Name: u1F412,                                   CodePoint: 128018,  Unicode: U+01F412  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F413",                                   "\xF0\x9F\x90\x93") /* Id: 518,  Name: u1F413,                                   CodePoint: 128019,  Unicode: U+01F413  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F414",                                   "\xF0\x9F\x90\x94") /* Id: 519,  Name: u1F414,                                   CodePoint: 128020,  Unicode: U+01F414  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F415",                                   "\xF0\x9F\x90\x95") /* Id: 520,  Name: u1F415,                                   CodePoint: 128021,  Unicode: U+01F415  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F416",                                   "\xF0\x9F\x90\x96") /* Id: 521,  Name: u1F416,                                   CodePoint: 128022,  Unicode: U+01F416  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F417",                                   "\xF0\x9F\x90\x97") /* Id: 522,  Name: u1F417,                                   CodePoint: 128023,  Unicode: U+01F417  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F418",                                   "\xF0\x9F\x90\x98") /* Id: 523,  Name: u1F418,                                   CodePoint: 128024,  Unicode: U+01F418  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F419",                                   "\xF0\x9F\x90\x99") /* Id: 524,  Name: u1F419,                                   CodePoint: 128025,  Unicode: U+01F419  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F41A",                                   "\xF0\x9F\x90\x9A") /* Id: 525,  Name: u1F41A,                                   CodePoint: 128026,  Unicode: U+01F41A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F41B",                                   "\xF0\x9F\x90\x9B") /* Id: 526,  Name: u1F41B,                                   CodePoint: 128027,  Unicode: U+01F41B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F41C",                                   "\xF0\x9F\x90\x9C") /* Id: 527,  Name: u1F41C,                                   CodePoint: 128028,  Unicode: U+01F41C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F41D",                                   "\xF0\x9F\x90\x9D") /* Id: 528,  Name: u1F41D,                                   CodePoint: 128029,  Unicode: U+01F41D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F41E",                                   "\xF0\x9F\x90\x9E") /* Id: 529,  Name: u1F41E,                                   CodePoint: 128030,  Unicode: U+01F41E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F41F",                                   "\xF0\x9F\x90\x9F") /* Id: 530,  Name: u1F41F,                                   CodePoint: 128031,  Unicode: U+01F41F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F420",                                   "\xF0\x9F\x90\xA0") /* Id: 531,  Name: u1F420,                                   CodePoint: 128032,  Unicode: U+01F420  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F421",                                   "\xF0\x9F\x90\xA1") /* Id: 532,  Name: u1F421,                                   CodePoint: 128033,  Unicode: U+01F421  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F422",                                   "\xF0\x9F\x90\xA2") /* Id: 533,  Name: u1F422,                                   CodePoint: 128034,  Unicode: U+01F422  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F423",                                   "\xF0\x9F\x90\xA3") /* Id: 534,  Name: u1F423,                                   CodePoint: 128035,  Unicode: U+01F423  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F424",                                   "\xF0\x9F\x90\xA4") /* Id: 535,  Name: u1F424,                                   CodePoint: 128036,  Unicode: U+01F424  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F425",                                   "\xF0\x9F\x90\xA5") /* Id: 536,  Name: u1F425,                                   CodePoint: 128037,  Unicode: U+01F425  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F426",                                   "\xF0\x9F\x90\xA6") /* Id: 537,  Name: u1F426,                                   CodePoint: 128038,  Unicode: U+01F426  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("blackBird",                                "\x00")             /* Id: 538,  Name: blackBird,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F427",                                   "\xF0\x9F\x90\xA7") /* Id: 539,  Name: u1F427,                                   CodePoint: 128039,  Unicode: U+01F427  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("goose",                                    "\xF0\x9F\xAA\xBF") /* Id: 540,  Name: goose,                                    CodePoint: 129727,  Unicode: U+01FABF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F428",                                   "\xF0\x9F\x90\xA8") /* Id: 541,  Name: u1F428,                                   CodePoint: 128040,  Unicode: U+01F428  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F429",                                   "\xF0\x9F\x90\xA9") /* Id: 542,  Name: u1F429,                                   CodePoint: 128041,  Unicode: U+01F429  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F42A",                                   "\xF0\x9F\x90\xAA") /* Id: 543,  Name: u1F42A,                                   CodePoint: 128042,  Unicode: U+01F42A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F42B",                                   "\xF0\x9F\x90\xAB") /* Id: 544,  Name: u1F42B,                                   CodePoint: 128043,  Unicode: U+01F42B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F42C",                                   "\xF0\x9F\x90\xAC") /* Id: 545,  Name: u1F42C,                                   CodePoint: 128044,  Unicode: U+01F42C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F42D",                                   "\xF0\x9F\x90\xAD") /* Id: 546,  Name: u1F42D,                                   CodePoint: 128045,  Unicode: U+01F42D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F42E",                                   "\xF0\x9F\x90\xAE") /* Id: 547,  Name: u1F42E,                                   CodePoint: 128046,  Unicode: U+01F42E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F42F",                                   "\xF0\x9F\x90\xAF") /* Id: 548,  Name: u1F42F,                                   CodePoint: 128047,  Unicode: U+01F42F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F430",                                   "\xF0\x9F\x90\xB0") /* Id: 549,  Name: u1F430,                                   CodePoint: 128048,  Unicode: U+01F430  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F431",                                   "\xF0\x9F\x90\xB1") /* Id: 550,  Name: u1F431,                                   CodePoint: 128049,  Unicode: U+01F431  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F432",                                   "\xF0\x9F\x90\xB2") /* Id: 551,  Name: u1F432,                                   CodePoint: 128050,  Unicode: U+01F432  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F433",                                   "\xF0\x9F\x90\xB3") /* Id: 552,  Name: u1F433,                                   CodePoint: 128051,  Unicode: U+01F433  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F434",                                   "\xF0\x9F\x90\xB4") /* Id: 553,  Name: u1F434,                                   CodePoint: 128052,  Unicode: U+01F434  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F435",                                   "\xF0\x9F\x90\xB5") /* Id: 554,  Name: u1F435,                                   CodePoint: 128053,  Unicode: U+01F435  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F436",                                   "\xF0\x9F\x90\xB6") /* Id: 555,  Name: u1F436,                                   CodePoint: 128054,  Unicode: U+01F436  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F437",                                   "\xF0\x9F\x90\xB7") /* Id: 556,  Name: u1F437,                                   CodePoint: 128055,  Unicode: U+01F437  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F438",                                   "\xF0\x9F\x90\xB8") /* Id: 557,  Name: u1F438,                                   CodePoint: 128056,  Unicode: U+01F438  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F439",                                   "\xF0\x9F\x90\xB9") /* Id: 558,  Name: u1F439,                                   CodePoint: 128057,  Unicode: U+01F439  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F43A",                                   "\xF0\x9F\x90\xBA") /* Id: 559,  Name: u1F43A,                                   CodePoint: 128058,  Unicode: U+01F43A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F43B",                                   "\xF0\x9F\x90\xBB") /* Id: 560,  Name: u1F43B,                                   CodePoint: 128059,  Unicode: U+01F43B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F43C",                                   "\xF0\x9F\x90\xBC") /* Id: 561,  Name: u1F43C,                                   CodePoint: 128060,  Unicode: U+01F43C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F43D",                                   "\xF0\x9F\x90\xBD") /* Id: 562,  Name: u1F43D,                                   CodePoint: 128061,  Unicode: U+01F43D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F43E",                                   "\xF0\x9F\x90\xBE") /* Id: 563,  Name: u1F43E,                                   CodePoint: 128062,  Unicode: U+01F43E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F43F",                                   "\xF0\x9F\x90\xBF") /* Id: 564,  Name: u1F43F,                                   CodePoint: 128063,  Unicode: U+01F43F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F440",                                   "\xF0\x9F\x91\x80") /* Id: 565,  Name: u1F440,                                   CodePoint: 128064,  Unicode: U+01F440  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F441",                                   "\xF0\x9F\x91\x81") /* Id: 566,  Name: u1F441,                                   CodePoint: 128065,  Unicode: U+01F441  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F442",                                   "\xF0\x9F\x91\x82") /* Id: 567,  Name: u1F442,                                   CodePoint: 128066,  Unicode: U+01F442  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F443",                                   "\xF0\x9F\x91\x83") /* Id: 568,  Name: u1F443,                                   CodePoint: 128067,  Unicode: U+01F443  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F444",                                   "\xF0\x9F\x91\x84") /* Id: 569,  Name: u1F444,                                   CodePoint: 128068,  Unicode: U+01F444  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F445",                                   "\xF0\x9F\x91\x85") /* Id: 570,  Name: u1F445,                                   CodePoint: 128069,  Unicode: U+01F445  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("backhandIndexPointingUp",                  "\xF0\x9F\x91\x86") /* Id: 571,  Name: backhandIndexPointingUp,                  CodePoint: 128070,  Unicode: U+01F446  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("backhandIndexPointingDown",                "\xF0\x9F\x91\x87") /* Id: 572,  Name: backhandIndexPointingDown,                CodePoint: 128071,  Unicode: U+01F447  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("backhandIndexPointingLeft",                "\xF0\x9F\x91\x88") /* Id: 573,  Name: backhandIndexPointingLeft,                CodePoint: 128072,  Unicode: U+01F448  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("backhandIndexPointingRight",               "\xF0\x9F\x91\x89") /* Id: 574,  Name: backhandIndexPointingRight,               CodePoint: 128073,  Unicode: U+01F449  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("oncomingFist",                             "\xF0\x9F\x91\x8A") /* Id: 575,  Name: oncomingFist,                             CodePoint: 128074,  Unicode: U+01F44A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("wavingHand",                               "\xF0\x9F\x91\x8B") /* Id: 576,  Name: wavingHand,                               CodePoint: 128075,  Unicode: U+01F44B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("okHand",                                   "\xF0\x9F\x91\x8C") /* Id: 577,  Name: okHand,                                   CodePoint: 128076,  Unicode: U+01F44C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("thumbsUp",                                 "\xF0\x9F\x91\x8D") /* Id: 578,  Name: thumbsUp,                                 CodePoint: 128077,  Unicode: U+01F44D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("thumbsDown",                               "\xF0\x9F\x91\x8E") /* Id: 579,  Name: thumbsDown,                               CodePoint: 128078,  Unicode: U+01F44E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("clappingHands",                            "\xF0\x9F\x91\x8F") /* Id: 580,  Name: clappingHands,                            CodePoint: 128079,  Unicode: U+01F44F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("openHands",                                "\xF0\x9F\x91\x90") /* Id: 581,  Name: openHands,                                CodePoint: 128080,  Unicode: U+01F450  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F451",                                   "\xF0\x9F\x91\x91") /* Id: 582,  Name: u1F451,                                   CodePoint: 128081,  Unicode: U+01F451  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F452",                                   "\xF0\x9F\x91\x92") /* Id: 583,  Name: u1F452,                                   CodePoint: 128082,  Unicode: U+01F452  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F453",                                   "\xF0\x9F\x91\x93") /* Id: 584,  Name: u1F453,                                   CodePoint: 128083,  Unicode: U+01F453  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F454",                                   "\xF0\x9F\x91\x94") /* Id: 585,  Name: u1F454,                                   CodePoint: 128084,  Unicode: U+01F454  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F455",                                   "\xF0\x9F\x91\x95") /* Id: 586,  Name: u1F455,                                   CodePoint: 128085,  Unicode: U+01F455  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F456",                                   "\xF0\x9F\x91\x96") /* Id: 587,  Name: u1F456,                                   CodePoint: 128086,  Unicode: U+01F456  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F457",                                   "\xF0\x9F\x91\x97") /* Id: 588,  Name: u1F457,                                   CodePoint: 128087,  Unicode: U+01F457  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F458",                                   "\xF0\x9F\x91\x98") /* Id: 589,  Name: u1F458,                                   CodePoint: 128088,  Unicode: U+01F458  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F459",                                   "\xF0\x9F\x91\x99") /* Id: 590,  Name: u1F459,                                   CodePoint: 128089,  Unicode: U+01F459  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F45A",                                   "\xF0\x9F\x91\x9A") /* Id: 591,  Name: u1F45A,                                   CodePoint: 128090,  Unicode: U+01F45A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F45B",                                   "\xF0\x9F\x91\x9B") /* Id: 592,  Name: u1F45B,                                   CodePoint: 128091,  Unicode: U+01F45B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F45C",                                   "\xF0\x9F\x91\x9C") /* Id: 593,  Name: u1F45C,                                   CodePoint: 128092,  Unicode: U+01F45C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F45D",                                   "\xF0\x9F\x91\x9D") /* Id: 594,  Name: u1F45D,                                   CodePoint: 128093,  Unicode: U+01F45D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F45E",                                   "\xF0\x9F\x91\x9E") /* Id: 595,  Name: u1F45E,                                   CodePoint: 128094,  Unicode: U+01F45E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F45F",                                   "\xF0\x9F\x91\x9F") /* Id: 596,  Name: u1F45F,                                   CodePoint: 128095,  Unicode: U+01F45F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F460",                                   "\xF0\x9F\x91\xA0") /* Id: 597,  Name: u1F460,                                   CodePoint: 128096,  Unicode: U+01F460  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F461",                                   "\xF0\x9F\x91\xA1") /* Id: 598,  Name: u1F461,                                   CodePoint: 128097,  Unicode: U+01F461  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("womansBoot",                               "\xF0\x9F\x91\xA2") /* Id: 599,  Name: womansBoot,                               CodePoint: 128098,  Unicode: U+01F462  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F463",                                   "\xF0\x9F\x91\xA3") /* Id: 600,  Name: u1F463,                                   CodePoint: 128099,  Unicode: U+01F463  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F464",                                   "\xF0\x9F\x91\xA4") /* Id: 601,  Name: u1F464,                                   CodePoint: 128100,  Unicode: U+01F464  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F465",                                   "\xF0\x9F\x91\xA5") /* Id: 602,  Name: u1F465,                                   CodePoint: 128101,  Unicode: U+01F465  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F466",                                   "\xF0\x9F\x91\xA6") /* Id: 603,  Name: u1F466,                                   CodePoint: 128102,  Unicode: U+01F466  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F467",                                   "\xF0\x9F\x91\xA7") /* Id: 604,  Name: u1F467,                                   CodePoint: 128103,  Unicode: U+01F467  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F468",                                   "\xF0\x9F\x91\xA8") /* Id: 605,  Name: u1F468,                                   CodePoint: 128104,  Unicode: U+01F468  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F469",                                   "\xF0\x9F\x91\xA9") /* Id: 606,  Name: u1F469,                                   CodePoint: 128105,  Unicode: U+01F469  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F46A",                                   "\xF0\x9F\x91\xAA") /* Id: 607,  Name: u1F46A,                                   CodePoint: 128106,  Unicode: U+01F46A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("womenAndMenHoldingHands",                  "\xF0\x9F\x91\xAB") /* Id: 608,  Name: womenAndMenHoldingHands,                  CodePoint: 128107,  Unicode: U+01F46B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("menHoldingHands",                          "\xF0\x9F\x91\xAC") /* Id: 609,  Name: menHoldingHands,                          CodePoint: 128108,  Unicode: U+01F46C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("womenHoldingHands",                        "\xF0\x9F\x91\xAD") /* Id: 610,  Name: womenHoldingHands,                        CodePoint: 128109,  Unicode: U+01F46D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F46E",                                   "\xF0\x9F\x91\xAE") /* Id: 611,  Name: u1F46E,                                   CodePoint: 128110,  Unicode: U+01F46E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("peopleWithBunnyEars",                      "\xF0\x9F\x91\xAF") /* Id: 612,  Name: peopleWithBunnyEars,                      CodePoint: 128111,  Unicode: U+01F46F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personInVeil",                             "\xF0\x9F\x91\xB0") /* Id: 613,  Name: personInVeil,                             CodePoint: 128112,  Unicode: U+01F470  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personWithBlondeHair",                     "\xF0\x9F\x91\xB1") /* Id: 614,  Name: personWithBlondeHair,                     CodePoint: 128113,  Unicode: U+01F471  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personWithSkullcap",                       "\xF0\x9F\x91\xB2") /* Id: 615,  Name: personWithSkullcap,                       CodePoint: 128114,  Unicode: U+01F472  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personWearingTurban",                      "\xF0\x9F\x91\xB3") /* Id: 616,  Name: personWearingTurban,                      CodePoint: 128115,  Unicode: U+01F473  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F474",                                   "\xF0\x9F\x91\xB4") /* Id: 617,  Name: u1F474,                                   CodePoint: 128116,  Unicode: U+01F474  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F475",                                   "\xF0\x9F\x91\xB5") /* Id: 618,  Name: u1F475,                                   CodePoint: 128117,  Unicode: U+01F475  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F476",                                   "\xF0\x9F\x91\xB6") /* Id: 619,  Name: u1F476,                                   CodePoint: 128118,  Unicode: U+01F476  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F477",                                   "\xF0\x9F\x91\xB7") /* Id: 620,  Name: u1F477,                                   CodePoint: 128119,  Unicode: U+01F477  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F934",                                   "\xF0\x9F\x91\xB8") /* Id: 621,  Name: u1F934,                                   CodePoint: 128120,  Unicode: U+01F478  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F479",                                   "\xF0\x9F\x91\xB9") /* Id: 622,  Name: u1F479,                                   CodePoint: 128121,  Unicode: U+01F479  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F47A",                                   "\xF0\x9F\x91\xBA") /* Id: 623,  Name: u1F47A,                                   CodePoint: 128122,  Unicode: U+01F47A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F47B",                                   "\xF0\x9F\x91\xBB") /* Id: 624,  Name: u1F47B,                                   CodePoint: 128123,  Unicode: U+01F47B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F47C",                                   "\xF0\x9F\x91\xBC") /* Id: 625,  Name: u1F47C,                                   CodePoint: 128124,  Unicode: U+01F47C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F47D",                                   "\xF0\x9F\x91\xBD") /* Id: 626,  Name: u1F47D,                                   CodePoint: 128125,  Unicode: U+01F47D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F47E",                                   "\xF0\x9F\x91\xBE") /* Id: 627,  Name: u1F47E,                                   CodePoint: 128126,  Unicode: U+01F47E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F47F",                                   "\xF0\x9F\x91\xBF") /* Id: 628,  Name: u1F47F,                                   CodePoint: 128127,  Unicode: U+01F47F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F480",                                   "\xF0\x9F\x92\x80") /* Id: 629,  Name: u1F480,                                   CodePoint: 128128,  Unicode: U+01F480  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personTippingHand",                        "\xF0\x9F\x92\x81") /* Id: 630,  Name: personTippingHand,                        CodePoint: 128129,  Unicode: U+01F481  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("guard",                                    "\xF0\x9F\x92\x82") /* Id: 631,  Name: guard,                                    CodePoint: 128130,  Unicode: U+01F482  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("womanDancing",                             "\xF0\x9F\x92\x83") /* Id: 632,  Name: womanDancing,                             CodePoint: 128131,  Unicode: U+01F483  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F484",                                   "\xF0\x9F\x92\x84") /* Id: 633,  Name: u1F484,                                   CodePoint: 128132,  Unicode: U+01F484  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F485",                                   "\xF0\x9F\x92\x85") /* Id: 634,  Name: u1F485,                                   CodePoint: 128133,  Unicode: U+01F485  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personGettingMassage",                     "\xF0\x9F\x92\x86") /* Id: 635,  Name: personGettingMassage,                     CodePoint: 128134,  Unicode: U+01F486  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personGettingHaircut",                     "\xF0\x9F\x92\x87") /* Id: 636,  Name: personGettingHaircut,                     CodePoint: 128135,  Unicode: U+01F487  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F488",                                   "\xF0\x9F\x92\x88") /* Id: 637,  Name: u1F488,                                   CodePoint: 128136,  Unicode: U+01F488  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F489",                                   "\xF0\x9F\x92\x89") /* Id: 638,  Name: u1F489,                                   CodePoint: 128137,  Unicode: U+01F489  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F48A",                                   "\xF0\x9F\x92\x8A") /* Id: 639,  Name: u1F48A,                                   CodePoint: 128138,  Unicode: U+01F48A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F48B",                                   "\xF0\x9F\x92\x8B") /* Id: 640,  Name: u1F48B,                                   CodePoint: 128139,  Unicode: U+01F48B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("loveLetter",                               "\xF0\x9F\x92\x8C") /* Id: 641,  Name: loveLetter,                               CodePoint: 128140,  Unicode: U+01F48C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F48D",                                   "\xF0\x9F\x92\x8D") /* Id: 642,  Name: u1F48D,                                   CodePoint: 128141,  Unicode: U+01F48D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F48E",                                   "\xF0\x9F\x92\x8E") /* Id: 643,  Name: u1F48E,                                   CodePoint: 128142,  Unicode: U+01F48E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F48F",                                   "\xF0\x9F\x92\x8F") /* Id: 644,  Name: u1F48F,                                   CodePoint: 128143,  Unicode: U+01F48F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F490",                                   "\xF0\x9F\x92\x90") /* Id: 645,  Name: u1F490,                                   CodePoint: 128144,  Unicode: U+01F490  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("coupleWithHeart",                          "\xF0\x9F\x92\x91") /* Id: 646,  Name: coupleWithHeart,                          CodePoint: 128145,  Unicode: U+01F491  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F492",                                   "\xF0\x9F\x92\x92") /* Id: 647,  Name: u1F492,                                   CodePoint: 128146,  Unicode: U+01F492  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F493",                                   "\xF0\x9F\x92\x93") /* Id: 648,  Name: u1F493,                                   CodePoint: 128147,  Unicode: U+01F493  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F494",                                   "\xF0\x9F\x92\x94") /* Id: 649,  Name: u1F494,                                   CodePoint: 128148,  Unicode: U+01F494  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F495",                                   "\xF0\x9F\x92\x95") /* Id: 650,  Name: u1F495,                                   CodePoint: 128149,  Unicode: U+01F495  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F496",                                   "\xF0\x9F\x92\x96") /* Id: 651,  Name: u1F496,                                   CodePoint: 128150,  Unicode: U+01F496  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F497",                                   "\xF0\x9F\x92\x97") /* Id: 652,  Name: u1F497,                                   CodePoint: 128151,  Unicode: U+01F497  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F498",                                   "\xF0\x9F\x92\x98") /* Id: 653,  Name: u1F498,                                   CodePoint: 128152,  Unicode: U+01F498  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F499",                                   "\xF0\x9F\x92\x99") /* Id: 654,  Name: u1F499,                                   CodePoint: 128153,  Unicode: U+01F499  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F49A",                                   "\xF0\x9F\x92\x9A") /* Id: 655,  Name: u1F49A,                                   CodePoint: 128154,  Unicode: U+01F49A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F49B",                                   "\xF0\x9F\x92\x9B") /* Id: 656,  Name: u1F49B,                                   CodePoint: 128155,  Unicode: U+01F49B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F49C",                                   "\xF0\x9F\x92\x9C") /* Id: 657,  Name: u1F49C,                                   CodePoint: 128156,  Unicode: U+01F49C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("greyHeart",                                "\xF0\x9F\xA9\xB6") /* Id: 658,  Name: greyHeart,                                CodePoint: 129654,  Unicode: U+01FA76  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pinkHeart",                                "\xF0\x9F\xA9\xB7") /* Id: 659,  Name: pinkHeart,                                CodePoint: 129655,  Unicode: U+01FA77  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("lightBlueHeart",                           "\xF0\x9F\xA9\xB5") /* Id: 660,  Name: lightBlueHeart,                           CodePoint: 129653,  Unicode: U+01FA75  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F49D",                                   "\xF0\x9F\x92\x9D") /* Id: 661,  Name: u1F49D,                                   CodePoint: 128157,  Unicode: U+01F49D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F49E",                                   "\xF0\x9F\x92\x9E") /* Id: 662,  Name: u1F49E,                                   CodePoint: 128158,  Unicode: U+01F49E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F49F",                                   "\xF0\x9F\x92\x9F") /* Id: 663,  Name: u1F49F,                                   CodePoint: 128159,  Unicode: U+01F49F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("diamondWithDot",                           "\xF0\x9F\x92\xA0") /* Id: 664,  Name: diamondWithDot,                           CodePoint: 128160,  Unicode: U+01F4A0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("lightBulb",                                "\xF0\x9F\x92\xA1") /* Id: 665,  Name: lightBulb,                                CodePoint: 128161,  Unicode: U+01F4A1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4A2.alt",                               "\xF0\x9F\x92\xA2") /* Id: 666,  Name: u1F4A2.alt,                               CodePoint: 128162,  Unicode: U+01F4A2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4A3",                                   "\xF0\x9F\x92\xA3") /* Id: 667,  Name: u1F4A3,                                   CodePoint: 128163,  Unicode: U+01F4A3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("zzz",                                      "\xF0\x9F\x92\xA4") /* Id: 668,  Name: zzz,                                      CodePoint: 128164,  Unicode: U+01F4A4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("collision",                                "\xF0\x9F\x92\xA5") /* Id: 669,  Name: collision,                                CodePoint: 128165,  Unicode: U+01F4A5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sweatDroplets",                            "\xF0\x9F\x92\xA6") /* Id: 670,  Name: sweatDroplets,                            CodePoint: 128166,  Unicode: U+01F4A6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4A7",                                   "\xF0\x9F\x92\xA7") /* Id: 671,  Name: u1F4A7,                                   CodePoint: 128167,  Unicode: U+01F4A7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("dashingAway",                              "\xF0\x9F\x92\xA8") /* Id: 672,  Name: dashingAway,                              CodePoint: 128168,  Unicode: U+01F4A8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4A9",                                   "\xF0\x9F\x92\xA9") /* Id: 673,  Name: u1F4A9,                                   CodePoint: 128169,  Unicode: U+01F4A9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4AA",                                   "\xF0\x9F\x92\xAA") /* Id: 674,  Name: u1F4AA,                                   CodePoint: 128170,  Unicode: U+01F4AA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("dizzy",                                    "\xF0\x9F\x92\xAB") /* Id: 675,  Name: dizzy,                                    CodePoint: 128171,  Unicode: U+01F4AB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4AC",                                   "\xF0\x9F\x92\xAC") /* Id: 676,  Name: u1F4AC,                                   CodePoint: 128172,  Unicode: U+01F4AC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("thoughtBubble",                            "\xF0\x9F\x92\xAD") /* Id: 677,  Name: thoughtBubble,                            CodePoint: 128173,  Unicode: U+01F4AD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4AE",                                   "\xF0\x9F\x92\xAE") /* Id: 678,  Name: u1F4AE,                                   CodePoint: 128174,  Unicode: U+01F4AE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hundredPoints",                            "\xF0\x9F\x92\xAF") /* Id: 679,  Name: hundredPoints,                            CodePoint: 128175,  Unicode: U+01F4AF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4B0",                                   "\xF0\x9F\x92\xB0") /* Id: 680,  Name: u1F4B0,                                   CodePoint: 128176,  Unicode: U+01F4B0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4B1",                                   "\xF0\x9F\x92\xB1") /* Id: 681,  Name: u1F4B1,                                   CodePoint: 128177,  Unicode: U+01F4B1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4B2",                                   "\xF0\x9F\x92\xB2") /* Id: 682,  Name: u1F4B2,                                   CodePoint: 128178,  Unicode: U+01F4B2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4B3",                                   "\xF0\x9F\x92\xB3") /* Id: 683,  Name: u1F4B3,                                   CodePoint: 128179,  Unicode: U+01F4B3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("yenBanknote",                              "\xF0\x9F\x92\xB4") /* Id: 684,  Name: yenBanknote,                              CodePoint: 128180,  Unicode: U+01F4B4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("dollarBanknote",                           "\xF0\x9F\x92\xB5") /* Id: 685,  Name: dollarBanknote,                           CodePoint: 128181,  Unicode: U+01F4B5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("euroBanknote",                             "\xF0\x9F\x92\xB6") /* Id: 686,  Name: euroBanknote,                             CodePoint: 128182,  Unicode: U+01F4B6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("poundBanknote",                            "\xF0\x9F\x92\xB7") /* Id: 687,  Name: poundBanknote,                            CodePoint: 128183,  Unicode: U+01F4B7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("moneyWithWings",                           "\xF0\x9F\x92\xB8") /* Id: 688,  Name: moneyWithWings,                           CodePoint: 128184,  Unicode: U+01F4B8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("chartIncreasingWithYen",                   "\xF0\x9F\x92\xB9") /* Id: 689,  Name: chartIncreasingWithYen,                   CodePoint: 128185,  Unicode: U+01F4B9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4BA",                                   "\xF0\x9F\x92\xBA") /* Id: 690,  Name: u1F4BA,                                   CodePoint: 128186,  Unicode: U+01F4BA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("laptop",                                   "\xF0\x9F\x92\xBB") /* Id: 691,  Name: laptop,                                   CodePoint: 128187,  Unicode: U+01F4BB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4BC",                                   "\xF0\x9F\x92\xBC") /* Id: 692,  Name: u1F4BC,                                   CodePoint: 128188,  Unicode: U+01F4BC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("computerDisk",                             "\xF0\x9F\x92\xBD") /* Id: 693,  Name: computerDisk,                             CodePoint: 128189,  Unicode: U+01F4BD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4BE",                                   "\xF0\x9F\x92\xBE") /* Id: 694,  Name: u1F4BE,                                   CodePoint: 128190,  Unicode: U+01F4BE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("opticalDisk",                              "\xF0\x9F\x92\xBF") /* Id: 695,  Name: opticalDisk,                              CodePoint: 128191,  Unicode: U+01F4BF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4C0",                                   "\xF0\x9F\x93\x80") /* Id: 696,  Name: u1F4C0,                                   CodePoint: 128192,  Unicode: U+01F4C0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4C1",                                   "\xF0\x9F\x93\x81") /* Id: 697,  Name: u1F4C1,                                   CodePoint: 128193,  Unicode: U+01F4C1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4C2",                                   "\xF0\x9F\x93\x82") /* Id: 698,  Name: u1F4C2,                                   CodePoint: 128194,  Unicode: U+01F4C2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pageWithCurl",                             "\xF0\x9F\x93\x83") /* Id: 699,  Name: pageWithCurl,                             CodePoint: 128195,  Unicode: U+01F4C3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4C4",                                   "\xF0\x9F\x93\x84") /* Id: 700,  Name: u1F4C4,                                   CodePoint: 128196,  Unicode: U+01F4C4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4C5",                                   "\xF0\x9F\x93\x85") /* Id: 701,  Name: u1F4C5,                                   CodePoint: 128197,  Unicode: U+01F4C5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4C6",                                   "\xF0\x9F\x93\x86") /* Id: 702,  Name: u1F4C6,                                   CodePoint: 128198,  Unicode: U+01F4C6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4C7",                                   "\xF0\x9F\x93\x87") /* Id: 703,  Name: u1F4C7,                                   CodePoint: 128199,  Unicode: U+01F4C7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("chartIncreasing",                          "\xF0\x9F\x93\x88") /* Id: 704,  Name: chartIncreasing,                          CodePoint: 128200,  Unicode: U+01F4C8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("chartDecreasing",                          "\xF0\x9F\x93\x89") /* Id: 705,  Name: chartDecreasing,                          CodePoint: 128201,  Unicode: U+01F4C9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4CA",                                   "\xF0\x9F\x93\x8A") /* Id: 706,  Name: u1F4CA,                                   CodePoint: 128202,  Unicode: U+01F4CA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4CB",                                   "\xF0\x9F\x93\x8B") /* Id: 707,  Name: u1F4CB,                                   CodePoint: 128203,  Unicode: U+01F4CB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4CC",                                   "\xF0\x9F\x93\x8C") /* Id: 708,  Name: u1F4CC,                                   CodePoint: 128204,  Unicode: U+01F4CC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4CD",                                   "\xF0\x9F\x93\x8D") /* Id: 709,  Name: u1F4CD,                                   CodePoint: 128205,  Unicode: U+01F4CD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4CE",                                   "\xF0\x9F\x93\x8E") /* Id: 710,  Name: u1F4CE,                                   CodePoint: 128206,  Unicode: U+01F4CE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4CF",                                   "\xF0\x9F\x93\x8F") /* Id: 711,  Name: u1F4CF,                                   CodePoint: 128207,  Unicode: U+01F4CF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("triangularRular",                          "\xF0\x9F\x93\x90") /* Id: 712,  Name: triangularRular,                          CodePoint: 128208,  Unicode: U+01F4D0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4D1",                                   "\xF0\x9F\x93\x91") /* Id: 713,  Name: u1F4D1,                                   CodePoint: 128209,  Unicode: U+01F4D1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4D2",                                   "\xF0\x9F\x93\x92") /* Id: 714,  Name: u1F4D2,                                   CodePoint: 128210,  Unicode: U+01F4D2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4D3",                                   "\xF0\x9F\x93\x93") /* Id: 715,  Name: u1F4D3,                                   CodePoint: 128211,  Unicode: U+01F4D3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("notebookWithDecorativeCover",              "\xF0\x9F\x93\x94") /* Id: 716,  Name: notebookWithDecorativeCover,              CodePoint: 128212,  Unicode: U+01F4D4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4D5",                                   "\xF0\x9F\x93\x95") /* Id: 717,  Name: u1F4D5,                                   CodePoint: 128213,  Unicode: U+01F4D5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4D6",                                   "\xF0\x9F\x93\x96") /* Id: 718,  Name: u1F4D6,                                   CodePoint: 128214,  Unicode: U+01F4D6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4D7",                                   "\xF0\x9F\x93\x97") /* Id: 719,  Name: u1F4D7,                                   CodePoint: 128215,  Unicode: U+01F4D7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4D8",                                   "\xF0\x9F\x93\x98") /* Id: 720,  Name: u1F4D8,                                   CodePoint: 128216,  Unicode: U+01F4D8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4D9",                                   "\xF0\x9F\x93\x99") /* Id: 721,  Name: u1F4D9,                                   CodePoint: 128217,  Unicode: U+01F4D9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4DA",                                   "\xF0\x9F\x93\x9A") /* Id: 722,  Name: u1F4DA,                                   CodePoint: 128218,  Unicode: U+01F4DA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4DB",                                   "\xF0\x9F\x93\x9B") /* Id: 723,  Name: u1F4DB,                                   CodePoint: 128219,  Unicode: U+01F4DB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4DC",                                   "\xF0\x9F\x93\x9C") /* Id: 724,  Name: u1F4DC,                                   CodePoint: 128220,  Unicode: U+01F4DC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4DD",                                   "\xF0\x9F\x93\x9D") /* Id: 725,  Name: u1F4DD,                                   CodePoint: 128221,  Unicode: U+01F4DD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4DE",                                   "\xF0\x9F\x93\x9E") /* Id: 726,  Name: u1F4DE,                                   CodePoint: 128222,  Unicode: U+01F4DE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4DF",                                   "\xF0\x9F\x93\x9F") /* Id: 727,  Name: u1F4DF,                                   CodePoint: 128223,  Unicode: U+01F4DF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4E0",                                   "\xF0\x9F\x93\xA0") /* Id: 728,  Name: u1F4E0,                                   CodePoint: 128224,  Unicode: U+01F4E0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4E1",                                   "\xF0\x9F\x93\xA1") /* Id: 729,  Name: u1F4E1,                                   CodePoint: 128225,  Unicode: U+01F4E1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4E2",                                   "\xF0\x9F\x93\xA2") /* Id: 730,  Name: u1F4E2,                                   CodePoint: 128226,  Unicode: U+01F4E2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4E3",                                   "\xF0\x9F\x93\xA3") /* Id: 731,  Name: u1F4E3,                                   CodePoint: 128227,  Unicode: U+01F4E3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4E4",                                   "\xF0\x9F\x93\xA4") /* Id: 732,  Name: u1F4E4,                                   CodePoint: 128228,  Unicode: U+01F4E4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4E5",                                   "\xF0\x9F\x93\xA5") /* Id: 733,  Name: u1F4E5,                                   CodePoint: 128229,  Unicode: U+01F4E5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4E6",                                   "\xF0\x9F\x93\xA6") /* Id: 734,  Name: u1F4E6,                                   CodePoint: 128230,  Unicode: U+01F4E6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("eMail",                                    "\xF0\x9F\x93\xA7") /* Id: 735,  Name: eMail,                                    CodePoint: 128231,  Unicode: U+01F4E7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4E8",                                   "\xF0\x9F\x93\xA8") /* Id: 736,  Name: u1F4E8,                                   CodePoint: 128232,  Unicode: U+01F4E8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("envelopeWithArrow",                        "\xF0\x9F\x93\xA9") /* Id: 737,  Name: envelopeWithArrow,                        CodePoint: 128233,  Unicode: U+01F4E9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("closedMailboxWithLoweredFlag",             "\xF0\x9F\x93\xAA") /* Id: 738,  Name: closedMailboxWithLoweredFlag,             CodePoint: 128234,  Unicode: U+01F4EA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("closedMailboxWithRaisedFlag",              "\xF0\x9F\x93\xAB") /* Id: 739,  Name: closedMailboxWithRaisedFlag,              CodePoint: 128235,  Unicode: U+01F4EB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("openMailboxWithRaisedFlag",                "\xF0\x9F\x93\xAC") /* Id: 740,  Name: openMailboxWithRaisedFlag,                CodePoint: 128236,  Unicode: U+01F4EC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("openMailboxWithLoweredFlag",               "\xF0\x9F\x93\xAD") /* Id: 741,  Name: openMailboxWithLoweredFlag,               CodePoint: 128237,  Unicode: U+01F4ED  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4EE",                                   "\xF0\x9F\x93\xAE") /* Id: 742,  Name: u1F4EE,                                   CodePoint: 128238,  Unicode: U+01F4EE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4EF",                                   "\xF0\x9F\x93\xAF") /* Id: 743,  Name: u1F4EF,                                   CodePoint: 128239,  Unicode: U+01F4EF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4F0",                                   "\xF0\x9F\x93\xB0") /* Id: 744,  Name: u1F4F0,                                   CodePoint: 128240,  Unicode: U+01F4F0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4F1",                                   "\xF0\x9F\x93\xB1") /* Id: 745,  Name: u1F4F1,                                   CodePoint: 128241,  Unicode: U+01F4F1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mobilePhoneWithArrow",                     "\xF0\x9F\x93\xB2") /* Id: 746,  Name: mobilePhoneWithArrow,                     CodePoint: 128242,  Unicode: U+01F4F2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4F3",                                   "\xF0\x9F\x93\xB3") /* Id: 747,  Name: u1F4F3,                                   CodePoint: 128243,  Unicode: U+01F4F3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4F4",                                   "\xF0\x9F\x93\xB4") /* Id: 748,  Name: u1F4F4,                                   CodePoint: 128244,  Unicode: U+01F4F4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4F5",                                   "\xF0\x9F\x93\xB5") /* Id: 749,  Name: u1F4F5,                                   CodePoint: 128245,  Unicode: U+01F4F5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4F6",                                   "\xF0\x9F\x93\xB6") /* Id: 750,  Name: u1F4F6,                                   CodePoint: 128246,  Unicode: U+01F4F6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4F7",                                   "\xF0\x9F\x93\xB7") /* Id: 751,  Name: u1F4F7,                                   CodePoint: 128247,  Unicode: U+01F4F7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("cameraWithFlash",                          "\xF0\x9F\x93\xB8") /* Id: 752,  Name: cameraWithFlash,                          CodePoint: 128248,  Unicode: U+01F4F8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4F9",                                   "\xF0\x9F\x93\xB9") /* Id: 753,  Name: u1F4F9,                                   CodePoint: 128249,  Unicode: U+01F4F9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4FA",                                   "\xF0\x9F\x93\xBA") /* Id: 754,  Name: u1F4FA,                                   CodePoint: 128250,  Unicode: U+01F4FA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4FB",                                   "\xF0\x9F\x93\xBB") /* Id: 755,  Name: u1F4FB,                                   CodePoint: 128251,  Unicode: U+01F4FB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4FC",                                   "\xF0\x9F\x93\xBC") /* Id: 756,  Name: u1F4FC,                                   CodePoint: 128252,  Unicode: U+01F4FC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F4FD",                                   "\xF0\x9F\x93\xBD") /* Id: 757,  Name: u1F4FD,                                   CodePoint: 128253,  Unicode: U+01F4FD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("prayerBeads",                              "\xF0\x9F\x93\xBF") /* Id: 758,  Name: prayerBeads,                              CodePoint: 128255,  Unicode: U+01F4FF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("shuffleTracksButton",                      "\xF0\x9F\x94\x80") /* Id: 759,  Name: shuffleTracksButton,                      CodePoint: 128256,  Unicode: U+01F500  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("repeatButton",                             "\xF0\x9F\x94\x81") /* Id: 760,  Name: repeatButton,                             CodePoint: 128257,  Unicode: U+01F501  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("repeatSingleButton",                       "\xF0\x9F\x94\x82") /* Id: 761,  Name: repeatSingleButton,                       CodePoint: 128258,  Unicode: U+01F502  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("clockwiseVerticalArrows",                  "\xF0\x9F\x94\x83") /* Id: 762,  Name: clockwiseVerticalArrows,                  CodePoint: 128259,  Unicode: U+01F503  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("counterclockwiseArrowsButton",             "\xF0\x9F\x94\x84") /* Id: 763,  Name: counterclockwiseArrowsButton,             CodePoint: 128260,  Unicode: U+01F504  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("dimButton",                                "\xF0\x9F\x94\x85") /* Id: 764,  Name: dimButton,                                CodePoint: 128261,  Unicode: U+01F505  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("brightButton",                             "\xF0\x9F\x94\x86") /* Id: 765,  Name: brightButton,                             CodePoint: 128262,  Unicode: U+01F506  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mutedSpeaker",                             "\xF0\x9F\x94\x87") /* Id: 766,  Name: mutedSpeaker,                             CodePoint: 128263,  Unicode: U+01F507  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("speakerLowVolume",                         "\xF0\x9F\x94\x88") /* Id: 767,  Name: speakerLowVolume,                         CodePoint: 128264,  Unicode: U+01F508  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("speakerMediumVolume",                      "\xF0\x9F\x94\x89") /* Id: 768,  Name: speakerMediumVolume,                      CodePoint: 128265,  Unicode: U+01F509  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("speakerHighVolume",                        "\xF0\x9F\x94\x8A") /* Id: 769,  Name: speakerHighVolume,                        CodePoint: 128266,  Unicode: U+01F50A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F50B",                                   "\xF0\x9F\x94\x8B") /* Id: 770,  Name: u1F50B,                                   CodePoint: 128267,  Unicode: U+01F50B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F50C",                                   "\xF0\x9F\x94\x8C") /* Id: 771,  Name: u1F50C,                                   CodePoint: 128268,  Unicode: U+01F50C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("magnifyingGlassTitledLeft",                "\xF0\x9F\x94\x8D") /* Id: 772,  Name: magnifyingGlassTitledLeft,                CodePoint: 128269,  Unicode: U+01F50D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("magnifyingGlassTitledRight",               "\xF0\x9F\x94\x8E") /* Id: 773,  Name: magnifyingGlassTitledRight,               CodePoint: 128270,  Unicode: U+01F50E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("lockedWithPen",                            "\xF0\x9F\x94\x8F") /* Id: 774,  Name: lockedWithPen,                            CodePoint: 128271,  Unicode: U+01F50F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("lockedWithKey",                            "\xF0\x9F\x94\x90") /* Id: 775,  Name: lockedWithKey,                            CodePoint: 128272,  Unicode: U+01F510  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F511",                                   "\xF0\x9F\x94\x91") /* Id: 776,  Name: u1F511,                                   CodePoint: 128273,  Unicode: U+01F511  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("locked",                                   "\xF0\x9F\x94\x92") /* Id: 777,  Name: locked,                                   CodePoint: 128274,  Unicode: U+01F512  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("unlocked",                                 "\xF0\x9F\x94\x93") /* Id: 778,  Name: unlocked,                                 CodePoint: 128275,  Unicode: U+01F513  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F514",                                   "\xF0\x9F\x94\x94") /* Id: 779,  Name: u1F514,                                   CodePoint: 128276,  Unicode: U+01F514  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("bellWithSlash",                            "\xF0\x9F\x94\x95") /* Id: 780,  Name: bellWithSlash,                            CodePoint: 128277,  Unicode: U+01F515  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F516",                                   "\xF0\x9F\x94\x96") /* Id: 781,  Name: u1F516,                                   CodePoint: 128278,  Unicode: U+01F516  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("link",                                     "\xF0\x9F\x94\x97") /* Id: 782,  Name: link,                                     CodePoint: 128279,  Unicode: U+01F517  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F518",                                   "\xF0\x9F\x94\x98") /* Id: 783,  Name: u1F518,                                   CodePoint: 128280,  Unicode: U+01F518  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("backArrow",                                "\xF0\x9F\x94\x99") /* Id: 784,  Name: backArrow,                                CodePoint: 128281,  Unicode: U+01F519  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("endArrow",                                 "\xF0\x9F\x94\x9A") /* Id: 785,  Name: endArrow,                                 CodePoint: 128282,  Unicode: U+01F51A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("onArrow",                                  "\xF0\x9F\x94\x9B") /* Id: 786,  Name: onArrow,                                  CodePoint: 128283,  Unicode: U+01F51B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("soonArrow",                                "\xF0\x9F\x94\x9C") /* Id: 787,  Name: soonArrow,                                CodePoint: 128284,  Unicode: U+01F51C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("topArrow",                                 "\xF0\x9F\x94\x9D") /* Id: 788,  Name: topArrow,                                 CodePoint: 128285,  Unicode: U+01F51D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("noOneUnderEighteen",                       "\xF0\x9F\x94\x9E") /* Id: 789,  Name: noOneUnderEighteen,                       CodePoint: 128286,  Unicode: U+01F51E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("inputLatinUppercase",                      "\xF0\x9F\x94\xA0") /* Id: 790,  Name: inputLatinUppercase,                      CodePoint: 128288,  Unicode: U+01F520  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("inputLatinLowercase",                      "\xF0\x9F\x94\xA1") /* Id: 791,  Name: inputLatinLowercase,                      CodePoint: 128289,  Unicode: U+01F521  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F522",                                   "\xF0\x9F\x94\xA2") /* Id: 792,  Name: u1F522,                                   CodePoint: 128290,  Unicode: U+01F522  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F523",                                   "\xF0\x9F\x94\xA3") /* Id: 793,  Name: u1F523,                                   CodePoint: 128291,  Unicode: U+01F523  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F524",                                   "\xF0\x9F\x94\xA4") /* Id: 794,  Name: u1F524,                                   CodePoint: 128292,  Unicode: U+01F524  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F525",                                   "\xF0\x9F\x94\xA5") /* Id: 795,  Name: u1F525,                                   CodePoint: 128293,  Unicode: U+01F525  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flashlight",                               "\xF0\x9F\x94\xA6") /* Id: 796,  Name: flashlight,                               CodePoint: 128294,  Unicode: U+01F526  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F527",                                   "\xF0\x9F\x94\xA7") /* Id: 797,  Name: u1F527,                                   CodePoint: 128295,  Unicode: U+01F527  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F528",                                   "\xF0\x9F\x94\xA8") /* Id: 798,  Name: u1F528,                                   CodePoint: 128296,  Unicode: U+01F528  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F529",                                   "\xF0\x9F\x94\xA9") /* Id: 799,  Name: u1F529,                                   CodePoint: 128297,  Unicode: U+01F529  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("knife",                                    "\xF0\x9F\x94\xAA") /* Id: 800,  Name: knife,                                    CodePoint: 128298,  Unicode: U+01F52A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("waterPistol",                              "\xF0\x9F\x94\xAB") /* Id: 801,  Name: waterPistol,                              CodePoint: 128299,  Unicode: U+01F52B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F52C",                                   "\xF0\x9F\x94\xAC") /* Id: 802,  Name: u1F52C,                                   CodePoint: 128300,  Unicode: U+01F52C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F52D",                                   "\xF0\x9F\x94\xAD") /* Id: 803,  Name: u1F52D,                                   CodePoint: 128301,  Unicode: U+01F52D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F52E",                                   "\xF0\x9F\x94\xAE") /* Id: 804,  Name: u1F52E,                                   CodePoint: 128302,  Unicode: U+01F52E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("dottedSixPointedStar",                     "\xF0\x9F\x94\xAF") /* Id: 805,  Name: dottedSixPointedStar,                     CodePoint: 128303,  Unicode: U+01F52F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F530",                                   "\xF0\x9F\x94\xB0") /* Id: 806,  Name: u1F530,                                   CodePoint: 128304,  Unicode: U+01F530  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F531",                                   "\xF0\x9F\x94\xB1") /* Id: 807,  Name: u1F531,                                   CodePoint: 128305,  Unicode: U+01F531  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F532",                                   "\xF0\x9F\x94\xB2") /* Id: 808,  Name: u1F532,                                   CodePoint: 128306,  Unicode: U+01F532  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F533",                                   "\xF0\x9F\x94\xB3") /* Id: 809,  Name: u1F533,                                   CodePoint: 128307,  Unicode: U+01F533  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("redCircle",                                "\xF0\x9F\x94\xB4") /* Id: 810,  Name: redCircle,                                CodePoint: 128308,  Unicode: U+01F534  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("blueCircle",                               "\xF0\x9F\x94\xB5") /* Id: 811,  Name: blueCircle,                               CodePoint: 128309,  Unicode: U+01F535  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F536",                                   "\xF0\x9F\x94\xB6") /* Id: 812,  Name: u1F536,                                   CodePoint: 128310,  Unicode: U+01F536  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F537",                                   "\xF0\x9F\x94\xB7") /* Id: 813,  Name: u1F537,                                   CodePoint: 128311,  Unicode: U+01F537  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("smallOrangeDiamond",                       "\xF0\x9F\x94\xB8") /* Id: 814,  Name: smallOrangeDiamond,                       CodePoint: 128312,  Unicode: U+01F538  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("smallBlueDiamond",                         "\xF0\x9F\x94\xB9") /* Id: 815,  Name: smallBlueDiamond,                         CodePoint: 128313,  Unicode: U+01F539  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("redTrianglePointedUp",                     "\xF0\x9F\x94\xBA") /* Id: 816,  Name: redTrianglePointedUp,                     CodePoint: 128314,  Unicode: U+01F53A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("redTrianglePointedDown",                   "\xF0\x9F\x94\xBB") /* Id: 817,  Name: redTrianglePointedDown,                   CodePoint: 128315,  Unicode: U+01F53B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("upwardsButton",                            "\xF0\x9F\x94\xBC") /* Id: 818,  Name: upwardsButton,                            CodePoint: 128316,  Unicode: U+01F53C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("downwardsButton",                          "\xF0\x9F\x94\xBD") /* Id: 819,  Name: downwardsButton,                          CodePoint: 128317,  Unicode: U+01F53D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("om",                                       "\xF0\x9F\x95\x89") /* Id: 820,  Name: om,                                       CodePoint: 128329,  Unicode: U+01F549  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("dove",                                     "\xF0\x9F\x95\x8A") /* Id: 821,  Name: dove,                                     CodePoint: 128330,  Unicode: U+01F54A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("kaaba",                                    "\xF0\x9F\x95\x8B") /* Id: 822,  Name: kaaba,                                    CodePoint: 128331,  Unicode: U+01F54B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mosque",                                   "\xF0\x9F\x95\x8C") /* Id: 823,  Name: mosque,                                   CodePoint: 128332,  Unicode: U+01F54C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("synagogue",                                "\xF0\x9F\x95\x8D") /* Id: 824,  Name: synagogue,                                CodePoint: 128333,  Unicode: U+01F54D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("menorah",                                  "\xF0\x9F\x95\x8E") /* Id: 825,  Name: menorah,                                  CodePoint: 128334,  Unicode: U+01F54E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("khanda",                                   "\xF0\x9F\xAA\xAF") /* Id: 826,  Name: khanda,                                   CodePoint: 129711,  Unicode: U+01FAAF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("oneOClock",                                "\xF0\x9F\x95\x90") /* Id: 827,  Name: oneOClock,                                CodePoint: 128336,  Unicode: U+01F550  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("twoOClock",                                "\xF0\x9F\x95\x91") /* Id: 828,  Name: twoOClock,                                CodePoint: 128337,  Unicode: U+01F551  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("threeOClock",                              "\xF0\x9F\x95\x92") /* Id: 829,  Name: threeOClock,                              CodePoint: 128338,  Unicode: U+01F552  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("fourOClock",                               "\xF0\x9F\x95\x93") /* Id: 830,  Name: fourOClock,                               CodePoint: 128339,  Unicode: U+01F553  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("fiveOClock",                               "\xF0\x9F\x95\x94") /* Id: 831,  Name: fiveOClock,                               CodePoint: 128340,  Unicode: U+01F554  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sixOClock",                                "\xF0\x9F\x95\x95") /* Id: 832,  Name: sixOClock,                                CodePoint: 128341,  Unicode: U+01F555  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sevenOClock",                              "\xF0\x9F\x95\x96") /* Id: 833,  Name: sevenOClock,                              CodePoint: 128342,  Unicode: U+01F556  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("eightOClock",                              "\xF0\x9F\x95\x97") /* Id: 834,  Name: eightOClock,                              CodePoint: 128343,  Unicode: U+01F557  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("nineOClock",                               "\xF0\x9F\x95\x98") /* Id: 835,  Name: nineOClock,                               CodePoint: 128344,  Unicode: U+01F558  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("tenOClock",                                "\xF0\x9F\x95\x99") /* Id: 836,  Name: tenOClock,                                CodePoint: 128345,  Unicode: U+01F559  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("elevenOClock",                             "\xF0\x9F\x95\x9A") /* Id: 837,  Name: elevenOClock,                             CodePoint: 128346,  Unicode: U+01F55A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("twelveOClock",                             "\xF0\x9F\x95\x9B") /* Id: 838,  Name: twelveOClock,                             CodePoint: 128347,  Unicode: U+01F55B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("oneThirty",                                "\xF0\x9F\x95\x9C") /* Id: 839,  Name: oneThirty,                                CodePoint: 128348,  Unicode: U+01F55C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("twoThirty",                                "\xF0\x9F\x95\x9D") /* Id: 840,  Name: twoThirty,                                CodePoint: 128349,  Unicode: U+01F55D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("threeThirty",                              "\xF0\x9F\x95\x9E") /* Id: 841,  Name: threeThirty,                              CodePoint: 128350,  Unicode: U+01F55E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("fourThirty",                               "\xF0\x9F\x95\x9F") /* Id: 842,  Name: fourThirty,                               CodePoint: 128351,  Unicode: U+01F55F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("fiveThirty",                               "\xF0\x9F\x95\xA0") /* Id: 843,  Name: fiveThirty,                               CodePoint: 128352,  Unicode: U+01F560  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sixThirty",                                "\xF0\x9F\x95\xA1") /* Id: 844,  Name: sixThirty,                                CodePoint: 128353,  Unicode: U+01F561  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sevenThirty",                              "\xF0\x9F\x95\xA2") /* Id: 845,  Name: sevenThirty,                              CodePoint: 128354,  Unicode: U+01F562  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("eightThirty",                              "\xF0\x9F\x95\xA3") /* Id: 846,  Name: eightThirty,                              CodePoint: 128355,  Unicode: U+01F563  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("nineThirty",                               "\xF0\x9F\x95\xA4") /* Id: 847,  Name: nineThirty,                               CodePoint: 128356,  Unicode: U+01F564  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("tenThirty",                                "\xF0\x9F\x95\xA5") /* Id: 848,  Name: tenThirty,                                CodePoint: 128357,  Unicode: U+01F565  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("elevenThirty",                             "\xF0\x9F\x95\xA6") /* Id: 849,  Name: elevenThirty,                             CodePoint: 128358,  Unicode: U+01F566  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("twelveThirty",                             "\xF0\x9F\x95\xA7") /* Id: 850,  Name: twelveThirty,                             CodePoint: 128359,  Unicode: U+01F567  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F56F",                                   "\xF0\x9F\x95\xAF") /* Id: 851,  Name: u1F56F,                                   CodePoint: 128367,  Unicode: U+01F56F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F570",                                   "\xF0\x9F\x95\xB0") /* Id: 852,  Name: u1F570,                                   CodePoint: 128368,  Unicode: U+01F570  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F573.alt",                               "\xF0\x9F\x95\xB3") /* Id: 853,  Name: u1F573.alt,                               CodePoint: 128371,  Unicode: U+01F573  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personInSuitLevitating",                   "\xF0\x9F\x95\xB4") /* Id: 854,  Name: personInSuitLevitating,                   CodePoint: 128372,  Unicode: U+01F574  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("detective",                                "\xF0\x9F\x95\xB5") /* Id: 855,  Name: detective,                                CodePoint: 128373,  Unicode: U+01F575  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F576",                                   "\xF0\x9F\x95\xB6") /* Id: 856,  Name: u1F576,                                   CodePoint: 128374,  Unicode: U+01F576  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F577",                                   "\xF0\x9F\x95\xB7") /* Id: 857,  Name: u1F577,                                   CodePoint: 128375,  Unicode: U+01F577  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F578",                                   "\xF0\x9F\x95\xB8") /* Id: 858,  Name: u1F578,                                   CodePoint: 128376,  Unicode: U+01F578  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F579",                                   "\xF0\x9F\x95\xB9") /* Id: 859,  Name: u1F579,                                   CodePoint: 128377,  Unicode: U+01F579  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("manDancing",                               "\xF0\x9F\x95\xBA") /* Id: 860,  Name: manDancing,                               CodePoint: 128378,  Unicode: U+01F57A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F587",                                   "\xF0\x9F\x96\x87") /* Id: 861,  Name: u1F587,                                   CodePoint: 128391,  Unicode: U+01F587  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pen",                                      "\xF0\x9F\x96\x8A") /* Id: 862,  Name: pen,                                      CodePoint: 128394,  Unicode: U+01F58A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("fountainPen",                              "\xF0\x9F\x96\x8B") /* Id: 863,  Name: fountainPen,                              CodePoint: 128395,  Unicode: U+01F58B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("paintbrush",                               "\xF0\x9F\x96\x8C") /* Id: 864,  Name: paintbrush,                               CodePoint: 128396,  Unicode: U+01F58C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("crayon",                                   "\xF0\x9F\x96\x8D") /* Id: 865,  Name: crayon,                                   CodePoint: 128397,  Unicode: U+01F58D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("handWithFingersSplayed",                   "\xF0\x9F\x96\x90") /* Id: 866,  Name: handWithFingersSplayed,                   CodePoint: 128400,  Unicode: U+01F590  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("middleFinger",                             "\xF0\x9F\x96\x95") /* Id: 867,  Name: middleFinger,                             CodePoint: 128405,  Unicode: U+01F595  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("vulcanSalute",                             "\xF0\x9F\x96\x96") /* Id: 868,  Name: vulcanSalute,                             CodePoint: 128406,  Unicode: U+01F596  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("blackHeart",                               "\xF0\x9F\x96\xA4") /* Id: 869,  Name: blackHeart,                               CodePoint: 128420,  Unicode: U+01F5A4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5A5",                                   "\xF0\x9F\x96\xA5") /* Id: 870,  Name: u1F5A5,                                   CodePoint: 128421,  Unicode: U+01F5A5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5A8",                                   "\xF0\x9F\x96\xA8") /* Id: 871,  Name: u1F5A8,                                   CodePoint: 128424,  Unicode: U+01F5A8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("computerMouse",                            "\xF0\x9F\x96\xB1") /* Id: 872,  Name: computerMouse,                            CodePoint: 128433,  Unicode: U+01F5B1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5B2",                                   "\xF0\x9F\x96\xB2") /* Id: 873,  Name: u1F5B2,                                   CodePoint: 128434,  Unicode: U+01F5B2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("framedPicture",                            "\xF0\x9F\x96\xBC") /* Id: 874,  Name: framedPicture,                            CodePoint: 128444,  Unicode: U+01F5BC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5C2",                                   "\xF0\x9F\x97\x82") /* Id: 875,  Name: u1F5C2,                                   CodePoint: 128450,  Unicode: U+01F5C2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5C3",                                   "\xF0\x9F\x97\x83") /* Id: 876,  Name: u1F5C3,                                   CodePoint: 128451,  Unicode: U+01F5C3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5C4",                                   "\xF0\x9F\x97\x84") /* Id: 877,  Name: u1F5C4,                                   CodePoint: 128452,  Unicode: U+01F5C4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5D1",                                   "\xF0\x9F\x97\x91") /* Id: 878,  Name: u1F5D1,                                   CodePoint: 128465,  Unicode: U+01F5D1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("spiralNotebook",                           "\xF0\x9F\x97\x92") /* Id: 879,  Name: spiralNotebook,                           CodePoint: 128466,  Unicode: U+01F5D2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("spiralCalendar",                           "\xF0\x9F\x97\x93") /* Id: 880,  Name: spiralCalendar,                           CodePoint: 128467,  Unicode: U+01F5D3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("clamp",                                    "\xF0\x9F\x97\x9C") /* Id: 881,  Name: clamp,                                    CodePoint: 128476,  Unicode: U+01F5DC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5DD",                                   "\xF0\x9F\x97\x9D") /* Id: 882,  Name: u1F5DD,                                   CodePoint: 128477,  Unicode: U+01F5DD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5DE",                                   "\xF0\x9F\x97\x9E") /* Id: 883,  Name: u1F5DE,                                   CodePoint: 128478,  Unicode: U+01F5DE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("dagger",                                   "\xF0\x9F\x97\xA1") /* Id: 884,  Name: dagger,                                   CodePoint: 128481,  Unicode: U+01F5E1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("speakingHead",                             "\xF0\x9F\x97\xA3") /* Id: 885,  Name: speakingHead,                             CodePoint: 128483,  Unicode: U+01F5E3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5E8",                                   "\xF0\x9F\x97\xA8") /* Id: 886,  Name: u1F5E8,                                   CodePoint: 128488,  Unicode: U+01F5E8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5EF",                                   "\xF0\x9F\x97\xAF") /* Id: 887,  Name: u1F5EF,                                   CodePoint: 128495,  Unicode: U+01F5EF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5F3",                                   "\xF0\x9F\x97\xB3") /* Id: 888,  Name: u1F5F3,                                   CodePoint: 128499,  Unicode: U+01F5F3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5FA",                                   "\xF0\x9F\x97\xBA") /* Id: 889,  Name: u1F5FA,                                   CodePoint: 128506,  Unicode: U+01F5FA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5FB",                                   "\xF0\x9F\x97\xBB") /* Id: 890,  Name: u1F5FB,                                   CodePoint: 128507,  Unicode: U+01F5FB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5FC",                                   "\xF0\x9F\x97\xBC") /* Id: 891,  Name: u1F5FC,                                   CodePoint: 128508,  Unicode: U+01F5FC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F5FD",                                   "\xF0\x9F\x97\xBD") /* Id: 892,  Name: u1F5FD,                                   CodePoint: 128509,  Unicode: U+01F5FD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mapOfJapan",                               "\xF0\x9F\x97\xBE") /* Id: 893,  Name: mapOfJapan,                               CodePoint: 128510,  Unicode: U+01F5FE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("moai",                                     "\xF0\x9F\x97\xBF") /* Id: 894,  Name: moai,                                     CodePoint: 128511,  Unicode: U+01F5FF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F600",                                   "\xF0\x9F\x98\x80") /* Id: 895,  Name: u1F600,                                   CodePoint: 128512,  Unicode: U+01F600  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F601",                                   "\xF0\x9F\x98\x81") /* Id: 896,  Name: u1F601,                                   CodePoint: 128513,  Unicode: U+01F601  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F602",                                   "\xF0\x9F\x98\x82") /* Id: 897,  Name: u1F602,                                   CodePoint: 128514,  Unicode: U+01F602  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("grinningFaceWithBigEyes",                  "\xF0\x9F\x98\x83") /* Id: 898,  Name: grinningFaceWithBigEyes,                  CodePoint: 128515,  Unicode: U+01F603  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F604",                                   "\xF0\x9F\x98\x84") /* Id: 899,  Name: u1F604,                                   CodePoint: 128516,  Unicode: U+01F604  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F605",                                   "\xF0\x9F\x98\x85") /* Id: 900,  Name: u1F605,                                   CodePoint: 128517,  Unicode: U+01F605  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F606",                                   "\xF0\x9F\x98\x86") /* Id: 901,  Name: u1F606,                                   CodePoint: 128518,  Unicode: U+01F606  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F607",                                   "\xF0\x9F\x98\x87") /* Id: 902,  Name: u1F607,                                   CodePoint: 128519,  Unicode: U+01F607  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F608",                                   "\xF0\x9F\x98\x88") /* Id: 903,  Name: u1F608,                                   CodePoint: 128520,  Unicode: U+01F608  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F609",                                   "\xF0\x9F\x98\x89") /* Id: 904,  Name: u1F609,                                   CodePoint: 128521,  Unicode: U+01F609  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F60A",                                   "\xF0\x9F\x98\x8A") /* Id: 905,  Name: u1F60A,                                   CodePoint: 128522,  Unicode: U+01F60A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F60B",                                   "\xF0\x9F\x98\x8B") /* Id: 906,  Name: u1F60B,                                   CodePoint: 128523,  Unicode: U+01F60B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F60C",                                   "\xF0\x9F\x98\x8C") /* Id: 907,  Name: u1F60C,                                   CodePoint: 128524,  Unicode: U+01F60C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F60D",                                   "\xF0\x9F\x98\x8D") /* Id: 908,  Name: u1F60D,                                   CodePoint: 128525,  Unicode: U+01F60D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F60E",                                   "\xF0\x9F\x98\x8E") /* Id: 909,  Name: u1F60E,                                   CodePoint: 128526,  Unicode: U+01F60E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F60F",                                   "\xF0\x9F\x98\x8F") /* Id: 910,  Name: u1F60F,                                   CodePoint: 128527,  Unicode: U+01F60F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F610",                                   "\xF0\x9F\x98\x90") /* Id: 911,  Name: u1F610,                                   CodePoint: 128528,  Unicode: U+01F610  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F611",                                   "\xF0\x9F\x98\x91") /* Id: 912,  Name: u1F611,                                   CodePoint: 128529,  Unicode: U+01F611  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F612",                                   "\xF0\x9F\x98\x92") /* Id: 913,  Name: u1F612,                                   CodePoint: 128530,  Unicode: U+01F612  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F613",                                   "\xF0\x9F\x98\x93") /* Id: 914,  Name: u1F613,                                   CodePoint: 128531,  Unicode: U+01F613  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F614",                                   "\xF0\x9F\x98\x94") /* Id: 915,  Name: u1F614,                                   CodePoint: 128532,  Unicode: U+01F614  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F615",                                   "\xF0\x9F\x98\x95") /* Id: 916,  Name: u1F615,                                   CodePoint: 128533,  Unicode: U+01F615  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F616",                                   "\xF0\x9F\x98\x96") /* Id: 917,  Name: u1F616,                                   CodePoint: 128534,  Unicode: U+01F616  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F617",                                   "\xF0\x9F\x98\x97") /* Id: 918,  Name: u1F617,                                   CodePoint: 128535,  Unicode: U+01F617  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F618",                                   "\xF0\x9F\x98\x98") /* Id: 919,  Name: u1F618,                                   CodePoint: 128536,  Unicode: U+01F618  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F619",                                   "\xF0\x9F\x98\x99") /* Id: 920,  Name: u1F619,                                   CodePoint: 128537,  Unicode: U+01F619  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F61A",                                   "\xF0\x9F\x98\x9A") /* Id: 921,  Name: u1F61A,                                   CodePoint: 128538,  Unicode: U+01F61A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F61B",                                   "\xF0\x9F\x98\x9B") /* Id: 922,  Name: u1F61B,                                   CodePoint: 128539,  Unicode: U+01F61B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F61C",                                   "\xF0\x9F\x98\x9C") /* Id: 923,  Name: u1F61C,                                   CodePoint: 128540,  Unicode: U+01F61C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F61D",                                   "\xF0\x9F\x98\x9D") /* Id: 924,  Name: u1F61D,                                   CodePoint: 128541,  Unicode: U+01F61D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F61E",                                   "\xF0\x9F\x98\x9E") /* Id: 925,  Name: u1F61E,                                   CodePoint: 128542,  Unicode: U+01F61E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F61F",                                   "\xF0\x9F\x98\x9F") /* Id: 926,  Name: u1F61F,                                   CodePoint: 128543,  Unicode: U+01F61F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F620",                                   "\xF0\x9F\x98\xA0") /* Id: 927,  Name: u1F620,                                   CodePoint: 128544,  Unicode: U+01F620  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F621",                                   "\xF0\x9F\x98\xA1") /* Id: 928,  Name: u1F621,                                   CodePoint: 128545,  Unicode: U+01F621  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F622",                                   "\xF0\x9F\x98\xA2") /* Id: 929,  Name: u1F622,                                   CodePoint: 128546,  Unicode: U+01F622  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F623",                                   "\xF0\x9F\x98\xA3") /* Id: 930,  Name: u1F623,                                   CodePoint: 128547,  Unicode: U+01F623  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F624",                                   "\xF0\x9F\x98\xA4") /* Id: 931,  Name: u1F624,                                   CodePoint: 128548,  Unicode: U+01F624  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F625",                                   "\xF0\x9F\x98\xA5") /* Id: 932,  Name: u1F625,                                   CodePoint: 128549,  Unicode: U+01F625  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F626",                                   "\xF0\x9F\x98\xA6") /* Id: 933,  Name: u1F626,                                   CodePoint: 128550,  Unicode: U+01F626  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F627",                                   "\xF0\x9F\x98\xA7") /* Id: 934,  Name: u1F627,                                   CodePoint: 128551,  Unicode: U+01F627  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F628",                                   "\xF0\x9F\x98\xA8") /* Id: 935,  Name: u1F628,                                   CodePoint: 128552,  Unicode: U+01F628  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F629",                                   "\xF0\x9F\x98\xA9") /* Id: 936,  Name: u1F629,                                   CodePoint: 128553,  Unicode: U+01F629  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F62A",                                   "\xF0\x9F\x98\xAA") /* Id: 937,  Name: u1F62A,                                   CodePoint: 128554,  Unicode: U+01F62A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F62B",                                   "\xF0\x9F\x98\xAB") /* Id: 938,  Name: u1F62B,                                   CodePoint: 128555,  Unicode: U+01F62B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F62C",                                   "\xF0\x9F\x98\xAC") /* Id: 939,  Name: u1F62C,                                   CodePoint: 128556,  Unicode: U+01F62C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F62D",                                   "\xF0\x9F\x98\xAD") /* Id: 940,  Name: u1F62D,                                   CodePoint: 128557,  Unicode: U+01F62D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F62E",                                   "\xF0\x9F\x98\xAE") /* Id: 941,  Name: u1F62E,                                   CodePoint: 128558,  Unicode: U+01F62E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F62F",                                   "\xF0\x9F\x98\xAF") /* Id: 942,  Name: u1F62F,                                   CodePoint: 128559,  Unicode: U+01F62F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F630",                                   "\xF0\x9F\x98\xB0") /* Id: 943,  Name: u1F630,                                   CodePoint: 128560,  Unicode: U+01F630  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F631",                                   "\xF0\x9F\x98\xB1") /* Id: 944,  Name: u1F631,                                   CodePoint: 128561,  Unicode: U+01F631  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F632",                                   "\xF0\x9F\x98\xB2") /* Id: 945,  Name: u1F632,                                   CodePoint: 128562,  Unicode: U+01F632  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F633",                                   "\xF0\x9F\x98\xB3") /* Id: 946,  Name: u1F633,                                   CodePoint: 128563,  Unicode: U+01F633  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F634",                                   "\xF0\x9F\x98\xB4") /* Id: 947,  Name: u1F634,                                   CodePoint: 128564,  Unicode: U+01F634  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F635",                                   "\xF0\x9F\x98\xB5") /* Id: 948,  Name: u1F635,                                   CodePoint: 128565,  Unicode: U+01F635  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F636",                                   "\xF0\x9F\x98\xB6") /* Id: 949,  Name: u1F636,                                   CodePoint: 128566,  Unicode: U+01F636  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F637",                                   "\xF0\x9F\x98\xB7") /* Id: 950,  Name: u1F637,                                   CodePoint: 128567,  Unicode: U+01F637  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F638",                                   "\xF0\x9F\x98\xB8") /* Id: 951,  Name: u1F638,                                   CodePoint: 128568,  Unicode: U+01F638  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F639",                                   "\xF0\x9F\x98\xB9") /* Id: 952,  Name: u1F639,                                   CodePoint: 128569,  Unicode: U+01F639  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F63A",                                   "\xF0\x9F\x98\xBA") /* Id: 953,  Name: u1F63A,                                   CodePoint: 128570,  Unicode: U+01F63A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F63B",                                   "\xF0\x9F\x98\xBB") /* Id: 954,  Name: u1F63B,                                   CodePoint: 128571,  Unicode: U+01F63B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("smilingCatFaceWithWrySmile",               "\xF0\x9F\x98\xBC") /* Id: 955,  Name: smilingCatFaceWithWrySmile,               CodePoint: 128572,  Unicode: U+01F63C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("smilingCatFaceWithClosedEyes",             "\xF0\x9F\x98\xBD") /* Id: 956,  Name: smilingCatFaceWithClosedEyes,             CodePoint: 128573,  Unicode: U+01F63D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F63E",                                   "\xF0\x9F\x98\xBE") /* Id: 957,  Name: u1F63E,                                   CodePoint: 128574,  Unicode: U+01F63E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F63F",                                   "\xF0\x9F\x98\xBF") /* Id: 958,  Name: u1F63F,                                   CodePoint: 128575,  Unicode: U+01F63F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F640",                                   "\xF0\x9F\x99\x80") /* Id: 959,  Name: u1F640,                                   CodePoint: 128576,  Unicode: U+01F640  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F641",                                   "\xF0\x9F\x99\x81") /* Id: 960,  Name: u1F641,                                   CodePoint: 128577,  Unicode: U+01F641  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F642",                                   "\xF0\x9F\x99\x82") /* Id: 961,  Name: u1F642,                                   CodePoint: 128578,  Unicode: U+01F642  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("upsideDownFace",                           "\xF0\x9F\x99\x83") /* Id: 962,  Name: upsideDownFace,                           CodePoint: 128579,  Unicode: U+01F643  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("faceWithRollingEyes",                      "\xF0\x9F\x99\x84") /* Id: 963,  Name: faceWithRollingEyes,                      CodePoint: 128580,  Unicode: U+01F644  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personGesturingNo",                        "\xF0\x9F\x99\x85") /* Id: 964,  Name: personGesturingNo,                        CodePoint: 128581,  Unicode: U+01F645  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personGesturingOk",                        "\xF0\x9F\x99\x86") /* Id: 965,  Name: personGesturingOk,                        CodePoint: 128582,  Unicode: U+01F646  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personBowing",                             "\xF0\x9F\x99\x87") /* Id: 966,  Name: personBowing,                             CodePoint: 128583,  Unicode: U+01F647  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F648",                                   "\xF0\x9F\x99\x88") /* Id: 967,  Name: u1F648,                                   CodePoint: 128584,  Unicode: U+01F648  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F649",                                   "\xF0\x9F\x99\x89") /* Id: 968,  Name: u1F649,                                   CodePoint: 128585,  Unicode: U+01F649  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F64A",                                   "\xF0\x9F\x99\x8A") /* Id: 969,  Name: u1F64A,                                   CodePoint: 128586,  Unicode: U+01F64A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personRaisingHand",                        "\xF0\x9F\x99\x8B") /* Id: 970,  Name: personRaisingHand,                        CodePoint: 128587,  Unicode: U+01F64B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("raisingHands",                             "\xF0\x9F\x99\x8C") /* Id: 971,  Name: raisingHands,                             CodePoint: 128588,  Unicode: U+01F64C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F64D",                                   "\xF0\x9F\x99\x8D") /* Id: 972,  Name: u1F64D,                                   CodePoint: 128589,  Unicode: U+01F64D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personPouting",                            "\xF0\x9F\x99\x8E") /* Id: 973,  Name: personPouting,                            CodePoint: 128590,  Unicode: U+01F64E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("foldedHands",                              "\xF0\x9F\x99\x8F") /* Id: 974,  Name: foldedHands,                              CodePoint: 128591,  Unicode: U+01F64F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F680",                                   "\xF0\x9F\x9A\x80") /* Id: 975,  Name: u1F680,                                   CodePoint: 128640,  Unicode: U+01F680  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F681",                                   "\xF0\x9F\x9A\x81") /* Id: 976,  Name: u1F681,                                   CodePoint: 128641,  Unicode: U+01F681  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("locomotive",                               "\xF0\x9F\x9A\x82") /* Id: 977,  Name: locomotive,                               CodePoint: 128642,  Unicode: U+01F682  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F683",                                   "\xF0\x9F\x9A\x83") /* Id: 978,  Name: u1F683,                                   CodePoint: 128643,  Unicode: U+01F683  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F684",                                   "\xF0\x9F\x9A\x84") /* Id: 979,  Name: u1F684,                                   CodePoint: 128644,  Unicode: U+01F684  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("bulletTrain",                              "\xF0\x9F\x9A\x85") /* Id: 980,  Name: bulletTrain,                              CodePoint: 128645,  Unicode: U+01F685  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F686",                                   "\xF0\x9F\x9A\x86") /* Id: 981,  Name: u1F686,                                   CodePoint: 128646,  Unicode: U+01F686  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F687",                                   "\xF0\x9F\x9A\x87") /* Id: 982,  Name: u1F687,                                   CodePoint: 128647,  Unicode: U+01F687  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F688",                                   "\xF0\x9F\x9A\x88") /* Id: 983,  Name: u1F688,                                   CodePoint: 128648,  Unicode: U+01F688  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F689",                                   "\xF0\x9F\x9A\x89") /* Id: 984,  Name: u1F689,                                   CodePoint: 128649,  Unicode: U+01F689  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F68A",                                   "\xF0\x9F\x9A\x8A") /* Id: 985,  Name: u1F68A,                                   CodePoint: 128650,  Unicode: U+01F68A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F68B",                                   "\xF0\x9F\x9A\x8B") /* Id: 986,  Name: u1F68B,                                   CodePoint: 128651,  Unicode: U+01F68B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F68C",                                   "\xF0\x9F\x9A\x8C") /* Id: 987,  Name: u1F68C,                                   CodePoint: 128652,  Unicode: U+01F68C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F68D",                                   "\xF0\x9F\x9A\x8D") /* Id: 988,  Name: u1F68D,                                   CodePoint: 128653,  Unicode: U+01F68D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F68E",                                   "\xF0\x9F\x9A\x8E") /* Id: 989,  Name: u1F68E,                                   CodePoint: 128654,  Unicode: U+01F68E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F68F",                                   "\xF0\x9F\x9A\x8F") /* Id: 990,  Name: u1F68F,                                   CodePoint: 128655,  Unicode: U+01F68F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F690",                                   "\xF0\x9F\x9A\x90") /* Id: 991,  Name: u1F690,                                   CodePoint: 128656,  Unicode: U+01F690  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F691",                                   "\xF0\x9F\x9A\x91") /* Id: 992,  Name: u1F691,                                   CodePoint: 128657,  Unicode: U+01F691  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F692",                                   "\xF0\x9F\x9A\x92") /* Id: 993,  Name: u1F692,                                   CodePoint: 128658,  Unicode: U+01F692  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F693",                                   "\xF0\x9F\x9A\x93") /* Id: 994,  Name: u1F693,                                   CodePoint: 128659,  Unicode: U+01F693  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F694",                                   "\xF0\x9F\x9A\x94") /* Id: 995,  Name: u1F694,                                   CodePoint: 128660,  Unicode: U+01F694  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F695",                                   "\xF0\x9F\x9A\x95") /* Id: 996,  Name: u1F695,                                   CodePoint: 128661,  Unicode: U+01F695  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F696",                                   "\xF0\x9F\x9A\x96") /* Id: 997,  Name: u1F696,                                   CodePoint: 128662,  Unicode: U+01F696  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F697",                                   "\xF0\x9F\x9A\x97") /* Id: 998,  Name: u1F697,                                   CodePoint: 128663,  Unicode: U+01F697  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F698",                                   "\xF0\x9F\x9A\x98") /* Id: 999,  Name: u1F698,                                   CodePoint: 128664,  Unicode: U+01F698  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sportUtilityVehicle",                      "\xF0\x9F\x9A\x99") /* Id: 1000, Name: sportUtilityVehicle,                      CodePoint: 128665,  Unicode: U+01F699  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F69A",                                   "\xF0\x9F\x9A\x9A") /* Id: 1001, Name: u1F69A,                                   CodePoint: 128666,  Unicode: U+01F69A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F69B",                                   "\xF0\x9F\x9A\x9B") /* Id: 1002, Name: u1F69B,                                   CodePoint: 128667,  Unicode: U+01F69B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F69C",                                   "\xF0\x9F\x9A\x9C") /* Id: 1003, Name: u1F69C,                                   CodePoint: 128668,  Unicode: U+01F69C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F69D",                                   "\xF0\x9F\x9A\x9D") /* Id: 1004, Name: u1F69D,                                   CodePoint: 128669,  Unicode: U+01F69D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F69E",                                   "\xF0\x9F\x9A\x9E") /* Id: 1005, Name: u1F69E,                                   CodePoint: 128670,  Unicode: U+01F69E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F69F",                                   "\xF0\x9F\x9A\x9F") /* Id: 1006, Name: u1F69F,                                   CodePoint: 128671,  Unicode: U+01F69F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6A0",                                   "\xF0\x9F\x9A\xA0") /* Id: 1007, Name: u1F6A0,                                   CodePoint: 128672,  Unicode: U+01F6A0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6A1",                                   "\xF0\x9F\x9A\xA1") /* Id: 1008, Name: u1F6A1,                                   CodePoint: 128673,  Unicode: U+01F6A1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6A2",                                   "\xF0\x9F\x9A\xA2") /* Id: 1009, Name: u1F6A2,                                   CodePoint: 128674,  Unicode: U+01F6A2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personRowingBoat",                         "\xF0\x9F\x9A\xA3") /* Id: 1010, Name: personRowingBoat,                         CodePoint: 128675,  Unicode: U+01F6A3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6A4",                                   "\xF0\x9F\x9A\xA4") /* Id: 1011, Name: u1F6A4,                                   CodePoint: 128676,  Unicode: U+01F6A4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6A5",                                   "\xF0\x9F\x9A\xA5") /* Id: 1012, Name: u1F6A5,                                   CodePoint: 128677,  Unicode: U+01F6A5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6A6",                                   "\xF0\x9F\x9A\xA6") /* Id: 1013, Name: u1F6A6,                                   CodePoint: 128678,  Unicode: U+01F6A6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("construction",                             "\xF0\x9F\x9A\xA7") /* Id: 1014, Name: construction,                             CodePoint: 128679,  Unicode: U+01F6A7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("policeCarLight",                           "\xF0\x9F\x9A\xA8") /* Id: 1015, Name: policeCarLight,                           CodePoint: 128680,  Unicode: U+01F6A8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("triangularFlag",                           "\xF0\x9F\x9A\xA9") /* Id: 1016, Name: triangularFlag,                           CodePoint: 128681,  Unicode: U+01F6A9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6AA",                                   "\xF0\x9F\x9A\xAA") /* Id: 1017, Name: u1F6AA,                                   CodePoint: 128682,  Unicode: U+01F6AA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("prohibited",                               "\xF0\x9F\x9A\xAB") /* Id: 1018, Name: prohibited,                               CodePoint: 128683,  Unicode: U+01F6AB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("cigarette",                                "\xF0\x9F\x9A\xAC") /* Id: 1019, Name: cigarette,                                CodePoint: 128684,  Unicode: U+01F6AC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("noSmoking",                                "\xF0\x9F\x9A\xAD") /* Id: 1020, Name: noSmoking,                                CodePoint: 128685,  Unicode: U+01F6AD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("litterInBinSign",                          "\xF0\x9F\x9A\xAE") /* Id: 1021, Name: litterInBinSign,                          CodePoint: 128686,  Unicode: U+01F6AE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("noLittering",                              "\xF0\x9F\x9A\xAF") /* Id: 1022, Name: noLittering,                              CodePoint: 128687,  Unicode: U+01F6AF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("potableWater",                             "\xF0\x9F\x9A\xB0") /* Id: 1023, Name: potableWater,                             CodePoint: 128688,  Unicode: U+01F6B0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("nonPotableWater",                          "\xF0\x9F\x9A\xB1") /* Id: 1024, Name: nonPotableWater,                          CodePoint: 128689,  Unicode: U+01F6B1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6B2",                                   "\xF0\x9F\x9A\xB2") /* Id: 1025, Name: u1F6B2,                                   CodePoint: 128690,  Unicode: U+01F6B2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6B3",                                   "\xF0\x9F\x9A\xB3") /* Id: 1026, Name: u1F6B3,                                   CodePoint: 128691,  Unicode: U+01F6B3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personBiking",                             "\xF0\x9F\x9A\xB4") /* Id: 1027, Name: personBiking,                             CodePoint: 128692,  Unicode: U+01F6B4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personMountainBiking",                     "\xF0\x9F\x9A\xB5") /* Id: 1028, Name: personMountainBiking,                     CodePoint: 128693,  Unicode: U+01F6B5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personWalking",                            "\xF0\x9F\x9A\xB6") /* Id: 1029, Name: personWalking,                            CodePoint: 128694,  Unicode: U+01F6B6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6B7",                                   "\xF0\x9F\x9A\xB7") /* Id: 1030, Name: u1F6B7,                                   CodePoint: 128695,  Unicode: U+01F6B7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6B8",                                   "\xF0\x9F\x9A\xB8") /* Id: 1031, Name: u1F6B8,                                   CodePoint: 128696,  Unicode: U+01F6B8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("menSRoom",                                 "\xF0\x9F\x9A\xB9") /* Id: 1032, Name: menSRoom,                                 CodePoint: 128697,  Unicode: U+01F6B9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("womenSRoom",                               "\xF0\x9F\x9A\xBA") /* Id: 1033, Name: womenSRoom,                               CodePoint: 128698,  Unicode: U+01F6BA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6BB",                                   "\xF0\x9F\x9A\xBB") /* Id: 1034, Name: u1F6BB,                                   CodePoint: 128699,  Unicode: U+01F6BB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6BC",                                   "\xF0\x9F\x9A\xBC") /* Id: 1035, Name: u1F6BC,                                   CodePoint: 128700,  Unicode: U+01F6BC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6BD",                                   "\xF0\x9F\x9A\xBD") /* Id: 1036, Name: u1F6BD,                                   CodePoint: 128701,  Unicode: U+01F6BD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6BE",                                   "\xF0\x9F\x9A\xBE") /* Id: 1037, Name: u1F6BE,                                   CodePoint: 128702,  Unicode: U+01F6BE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6BF",                                   "\xF0\x9F\x9A\xBF") /* Id: 1038, Name: u1F6BF,                                   CodePoint: 128703,  Unicode: U+01F6BF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personTakingBath",                         "\xF0\x9F\x9B\x80") /* Id: 1039, Name: personTakingBath,                         CodePoint: 128704,  Unicode: U+01F6C0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6C1",                                   "\xF0\x9F\x9B\x81") /* Id: 1040, Name: u1F6C1,                                   CodePoint: 128705,  Unicode: U+01F6C1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6C2",                                   "\xF0\x9F\x9B\x82") /* Id: 1041, Name: u1F6C2,                                   CodePoint: 128706,  Unicode: U+01F6C2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6C3",                                   "\xF0\x9F\x9B\x83") /* Id: 1042, Name: u1F6C3,                                   CodePoint: 128707,  Unicode: U+01F6C3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6C4",                                   "\xF0\x9F\x9B\x84") /* Id: 1043, Name: u1F6C4,                                   CodePoint: 128708,  Unicode: U+01F6C4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("wireless",                                 "\xF0\x9F\x9B\x9C") /* Id: 1044, Name: wireless,                                 CodePoint: 128732,  Unicode: U+01F6DC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6C5",                                   "\xF0\x9F\x9B\x85") /* Id: 1045, Name: u1F6C5,                                   CodePoint: 128709,  Unicode: U+01F6C5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6CB",                                   "\xF0\x9F\x9B\x8B") /* Id: 1046, Name: u1F6CB,                                   CodePoint: 128715,  Unicode: U+01F6CB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personInBed",                              "\xF0\x9F\x9B\x8C") /* Id: 1047, Name: personInBed,                              CodePoint: 128716,  Unicode: U+01F6CC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6CD",                                   "\xF0\x9F\x9B\x8D") /* Id: 1048, Name: u1F6CD,                                   CodePoint: 128717,  Unicode: U+01F6CD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6CE",                                   "\xF0\x9F\x9B\x8E") /* Id: 1049, Name: u1F6CE,                                   CodePoint: 128718,  Unicode: U+01F6CE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6CF",                                   "\xF0\x9F\x9B\x8F") /* Id: 1050, Name: u1F6CF,                                   CodePoint: 128719,  Unicode: U+01F6CF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("placeOfWorship",                           "\xF0\x9F\x9B\x90") /* Id: 1051, Name: placeOfWorship,                           CodePoint: 128720,  Unicode: U+01F6D0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("stopSign",                                 "\xF0\x9F\x9B\x91") /* Id: 1052, Name: stopSign,                                 CodePoint: 128721,  Unicode: U+01F6D1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("shoppingCart",                             "\xF0\x9F\x9B\x92") /* Id: 1053, Name: shoppingCart,                             CodePoint: 128722,  Unicode: U+01F6D2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hinduTemple",                              "\xF0\x9F\x9B\x95") /* Id: 1054, Name: hinduTemple,                              CodePoint: 128725,  Unicode: U+01F6D5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hut",                                      "\xF0\x9F\x9B\x96") /* Id: 1055, Name: hut,                                      CodePoint: 128726,  Unicode: U+01F6D6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("elevator",                                 "\xF0\x9F\x9B\x97") /* Id: 1056, Name: elevator,                                 CodePoint: 128727,  Unicode: U+01F6D7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("playgroundSlide",                          "\xF0\x9F\x9B\x9D") /* Id: 1057, Name: playgroundSlide,                          CodePoint: 128733,  Unicode: U+01F6DD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("wheel",                                    "\xF0\x9F\x9B\x9E") /* Id: 1058, Name: wheel,                                    CodePoint: 128734,  Unicode: U+01F6DE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("ringBuoy",                                 "\xF0\x9F\x9B\x9F") /* Id: 1059, Name: ringBuoy,                                 CodePoint: 128735,  Unicode: U+01F6DF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6E0",                                   "\xF0\x9F\x9B\xA0") /* Id: 1060, Name: u1F6E0,                                   CodePoint: 128736,  Unicode: U+01F6E0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6E1",                                   "\xF0\x9F\x9B\xA1") /* Id: 1061, Name: u1F6E1,                                   CodePoint: 128737,  Unicode: U+01F6E1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6E2",                                   "\xF0\x9F\x9B\xA2") /* Id: 1062, Name: u1F6E2,                                   CodePoint: 128738,  Unicode: U+01F6E2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6E3",                                   "\xF0\x9F\x9B\xA3") /* Id: 1063, Name: u1F6E3,                                   CodePoint: 128739,  Unicode: U+01F6E3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6E4",                                   "\xF0\x9F\x9B\xA4") /* Id: 1064, Name: u1F6E4,                                   CodePoint: 128740,  Unicode: U+01F6E4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6E5",                                   "\xF0\x9F\x9B\xA5") /* Id: 1065, Name: u1F6E5,                                   CodePoint: 128741,  Unicode: U+01F6E5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("smallAirplane",                            "\xF0\x9F\x9B\xA9") /* Id: 1066, Name: smallAirplane,                            CodePoint: 128745,  Unicode: U+01F6E9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6EB",                                   "\xF0\x9F\x9B\xAB") /* Id: 1067, Name: u1F6EB,                                   CodePoint: 128747,  Unicode: U+01F6EB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("airplaneArrival",                          "\xF0\x9F\x9B\xAC") /* Id: 1068, Name: airplaneArrival,                          CodePoint: 128748,  Unicode: U+01F6EC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6F0",                                   "\xF0\x9F\x9B\xB0") /* Id: 1069, Name: u1F6F0,                                   CodePoint: 128752,  Unicode: U+01F6F0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F6F3",                                   "\xF0\x9F\x9B\xB3") /* Id: 1070, Name: u1F6F3,                                   CodePoint: 128755,  Unicode: U+01F6F3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("kickScooter",                              "\xF0\x9F\x9B\xB4") /* Id: 1071, Name: kickScooter,                              CodePoint: 128756,  Unicode: U+01F6F4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("motorScooter",                             "\xF0\x9F\x9B\xB5") /* Id: 1072, Name: motorScooter,                             CodePoint: 128757,  Unicode: U+01F6F5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("canoe",                                    "\xF0\x9F\x9B\xB6") /* Id: 1073, Name: canoe,                                    CodePoint: 128758,  Unicode: U+01F6F6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sled",                                     "\xF0\x9F\x9B\xB7") /* Id: 1074, Name: sled,                                     CodePoint: 128759,  Unicode: U+01F6F7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flyingSaucer",                             "\xF0\x9F\x9B\xB8") /* Id: 1075, Name: flyingSaucer,                             CodePoint: 128760,  Unicode: U+01F6F8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("skateboard",                               "\xF0\x9F\x9B\xB9") /* Id: 1076, Name: skateboard,                               CodePoint: 128761,  Unicode: U+01F6F9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("autoRickshaw",                             "\xF0\x9F\x9B\xBA") /* Id: 1077, Name: autoRickshaw,                             CodePoint: 128762,  Unicode: U+01F6FA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pickupTruck",                              "\xF0\x9F\x9B\xBB") /* Id: 1078, Name: pickupTruck,                              CodePoint: 128763,  Unicode: U+01F6FB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("rollerSkate",                              "\xF0\x9F\x9B\xBC") /* Id: 1079, Name: rollerSkate,                              CodePoint: 128764,  Unicode: U+01F6FC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("orangeCircle",                             "\xF0\x9F\x9F\xA0") /* Id: 1080, Name: orangeCircle,                             CodePoint: 128992,  Unicode: U+01F7E0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("yellowCircle",                             "\xF0\x9F\x9F\xA1") /* Id: 1081, Name: yellowCircle,                             CodePoint: 128993,  Unicode: U+01F7E1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("greenCircle",                              "\xF0\x9F\x9F\xA2") /* Id: 1082, Name: greenCircle,                              CodePoint: 128994,  Unicode: U+01F7E2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("purpleCircle",                             "\xF0\x9F\x9F\xA3") /* Id: 1083, Name: purpleCircle,                             CodePoint: 128995,  Unicode: U+01F7E3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("brownCircle",                              "\xF0\x9F\x9F\xA4") /* Id: 1084, Name: brownCircle,                              CodePoint: 128996,  Unicode: U+01F7E4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("redSquare",                                "\xF0\x9F\x9F\xA5") /* Id: 1085, Name: redSquare,                                CodePoint: 128997,  Unicode: U+01F7E5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("blueSquare",                               "\xF0\x9F\x9F\xA6") /* Id: 1086, Name: blueSquare,                               CodePoint: 128998,  Unicode: U+01F7E6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("orangeSquare",                             "\xF0\x9F\x9F\xA7") /* Id: 1087, Name: orangeSquare,                             CodePoint: 128999,  Unicode: U+01F7E7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("yellowSquare",                             "\xF0\x9F\x9F\xA8") /* Id: 1088, Name: yellowSquare,                             CodePoint: 129000,  Unicode: U+01F7E8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("greenSquare",                              "\xF0\x9F\x9F\xA9") /* Id: 1089, Name: greenSquare,                              CodePoint: 129001,  Unicode: U+01F7E9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("purpleSquare",                             "\xF0\x9F\x9F\xAA") /* Id: 1090, Name: purpleSquare,                             CodePoint: 129002,  Unicode: U+01F7EA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("brownSquare",                              "\xF0\x9F\x9F\xAB") /* Id: 1091, Name: brownSquare,                              CodePoint: 129003,  Unicode: U+01F7EB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("heavyEqualsSign",                          "\xF0\x9F\x9F\xB0") /* Id: 1092, Name: heavyEqualsSign,                          CodePoint: 129008,  Unicode: U+01F7F0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pinchedFingers",                           "\xF0\x9F\xA4\x8C") /* Id: 1093, Name: pinchedFingers,                           CodePoint: 129292,  Unicode: U+01F90C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("whiteHeart",                               "\xF0\x9F\xA4\x8D") /* Id: 1094, Name: whiteHeart,                               CodePoint: 129293,  Unicode: U+01F90D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("brownHeart",                               "\xF0\x9F\xA4\x8E") /* Id: 1095, Name: brownHeart,                               CodePoint: 129294,  Unicode: U+01F90E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pinchingHand",                             "\xF0\x9F\xA4\x8F") /* Id: 1096, Name: pinchingHand,                             CodePoint: 129295,  Unicode: U+01F90F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F910",                                   "\xF0\x9F\xA4\x90") /* Id: 1097, Name: u1F910,                                   CodePoint: 129296,  Unicode: U+01F910  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F911",                                   "\xF0\x9F\xA4\x91") /* Id: 1098, Name: u1F911,                                   CodePoint: 129297,  Unicode: U+01F911  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F912",                                   "\xF0\x9F\xA4\x92") /* Id: 1099, Name: u1F912,                                   CodePoint: 129298,  Unicode: U+01F912  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F913",                                   "\xF0\x9F\xA4\x93") /* Id: 1100, Name: u1F913,                                   CodePoint: 129299,  Unicode: U+01F913  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F914",                                   "\xF0\x9F\xA4\x94") /* Id: 1101, Name: u1F914,                                   CodePoint: 129300,  Unicode: U+01F914  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F915",                                   "\xF0\x9F\xA4\x95") /* Id: 1102, Name: u1F915,                                   CodePoint: 129301,  Unicode: U+01F915  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F916",                                   "\xF0\x9F\xA4\x96") /* Id: 1103, Name: u1F916,                                   CodePoint: 129302,  Unicode: U+01F916  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F917",                                   "\xF0\x9F\xA4\x97") /* Id: 1104, Name: u1F917,                                   CodePoint: 129303,  Unicode: U+01F917  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F918",                                   "\xF0\x9F\xA4\x98") /* Id: 1105, Name: u1F918,                                   CodePoint: 129304,  Unicode: U+01F918  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F919",                                   "\xF0\x9F\xA4\x99") /* Id: 1106, Name: u1F919,                                   CodePoint: 129305,  Unicode: U+01F919  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F91A",                                   "\xF0\x9F\xA4\x9A") /* Id: 1107, Name: u1F91A,                                   CodePoint: 129306,  Unicode: U+01F91A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F91B",                                   "\xF0\x9F\xA4\x9B") /* Id: 1108, Name: u1F91B,                                   CodePoint: 129307,  Unicode: U+01F91B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F91C",                                   "\xF0\x9F\xA4\x9C") /* Id: 1109, Name: u1F91C,                                   CodePoint: 129308,  Unicode: U+01F91C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F91D",                                   "\xF0\x9F\xA4\x9D") /* Id: 1110, Name: u1F91D,                                   CodePoint: 129309,  Unicode: U+01F91D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("crossedFingers",                           "\xF0\x9F\xA4\x9E") /* Id: 1111, Name: crossedFingers,                           CodePoint: 129310,  Unicode: U+01F91E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F91F",                                   "\xF0\x9F\xA4\x9F") /* Id: 1112, Name: u1F91F,                                   CodePoint: 129311,  Unicode: U+01F91F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F920",                                   "\xF0\x9F\xA4\xA0") /* Id: 1113, Name: u1F920,                                   CodePoint: 129312,  Unicode: U+01F920  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F921",                                   "\xF0\x9F\xA4\xA1") /* Id: 1114, Name: u1F921,                                   CodePoint: 129313,  Unicode: U+01F921  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F922",                                   "\xF0\x9F\xA4\xA2") /* Id: 1115, Name: u1F922,                                   CodePoint: 129314,  Unicode: U+01F922  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F923",                                   "\xF0\x9F\xA4\xA3") /* Id: 1116, Name: u1F923,                                   CodePoint: 129315,  Unicode: U+01F923  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F924",                                   "\xF0\x9F\xA4\xA4") /* Id: 1117, Name: u1F924,                                   CodePoint: 129316,  Unicode: U+01F924  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F925",                                   "\xF0\x9F\xA4\xA5") /* Id: 1118, Name: u1F925,                                   CodePoint: 129317,  Unicode: U+01F925  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personFacepalming",                        "\xF0\x9F\xA4\xA6") /* Id: 1119, Name: personFacepalming,                        CodePoint: 129318,  Unicode: U+01F926  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F927",                                   "\xF0\x9F\xA4\xA7") /* Id: 1120, Name: u1F927,                                   CodePoint: 129319,  Unicode: U+01F927  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F928",                                   "\xF0\x9F\xA4\xA8") /* Id: 1121, Name: u1F928,                                   CodePoint: 129320,  Unicode: U+01F928  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F929",                                   "\xF0\x9F\xA4\xA9") /* Id: 1122, Name: u1F929,                                   CodePoint: 129321,  Unicode: U+01F929  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("grinningFaceWithOneLargeAndOneSmallEye",   "\xF0\x9F\xA4\xAA") /* Id: 1123, Name: grinningFaceWithOneLargeAndOneSmallEye,   CodePoint: 129322,  Unicode: U+01F92A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F92B",                                   "\xF0\x9F\xA4\xAB") /* Id: 1124, Name: u1F92B,                                   CodePoint: 129323,  Unicode: U+01F92B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F92C",                                   "\xF0\x9F\xA4\xAC") /* Id: 1125, Name: u1F92C,                                   CodePoint: 129324,  Unicode: U+01F92C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F92D",                                   "\xF0\x9F\xA4\xAD") /* Id: 1126, Name: u1F92D,                                   CodePoint: 129325,  Unicode: U+01F92D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F92E",                                   "\xF0\x9F\xA4\xAE") /* Id: 1127, Name: u1F92E,                                   CodePoint: 129326,  Unicode: U+01F92E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F92F",                                   "\xF0\x9F\xA4\xAF") /* Id: 1128, Name: u1F92F,                                   CodePoint: 129327,  Unicode: U+01F92F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F930",                                   "\xF0\x9F\xA4\xB0") /* Id: 1129, Name: u1F930,                                   CodePoint: 129328,  Unicode: U+01F930  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F931",                                   "\xF0\x9F\xA4\xB1") /* Id: 1130, Name: u1F931,                                   CodePoint: 129329,  Unicode: U+01F931  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F932",                                   "\xF0\x9F\xA4\xB2") /* Id: 1131, Name: u1F932,                                   CodePoint: 129330,  Unicode: U+01F932  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F933",                                   "\xF0\x9F\xA4\xB3") /* Id: 1132, Name: u1F933,                                   CodePoint: 129331,  Unicode: U+01F933  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F478",                                   "\xF0\x9F\xA4\xB4") /* Id: 1133, Name: u1F478,                                   CodePoint: 129332,  Unicode: U+01F934  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personInTuxedo",                           "\xF0\x9F\xA4\xB5") /* Id: 1134, Name: personInTuxedo,                           CodePoint: 129333,  Unicode: U+01F935  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mrsClaus",                                 "\xF0\x9F\xA4\xB6") /* Id: 1135, Name: mrsClaus,                                 CodePoint: 129334,  Unicode: U+01F936  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personShrugging",                          "\xF0\x9F\xA4\xB7") /* Id: 1136, Name: personShrugging,                          CodePoint: 129335,  Unicode: U+01F937  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personCartwheeling",                       "\xF0\x9F\xA4\xB8") /* Id: 1137, Name: personCartwheeling,                       CodePoint: 129336,  Unicode: U+01F938  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personJuggling",                           "\xF0\x9F\xA4\xB9") /* Id: 1138, Name: personJuggling,                           CodePoint: 129337,  Unicode: U+01F939  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F93A",                                   "\xF0\x9F\xA4\xBA") /* Id: 1139, Name: u1F93A,                                   CodePoint: 129338,  Unicode: U+01F93A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("peopleWrestling",                          "\xF0\x9F\xA4\xBC") /* Id: 1140, Name: peopleWrestling,                          CodePoint: 129340,  Unicode: U+01F93C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personPlayingWaterPolo",                   "\xF0\x9F\xA4\xBD") /* Id: 1141, Name: personPlayingWaterPolo,                   CodePoint: 129341,  Unicode: U+01F93D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personPlayingHandball",                    "\xF0\x9F\xA4\xBE") /* Id: 1142, Name: personPlayingHandball,                    CodePoint: 129342,  Unicode: U+01F93E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("divingMask",                               "\xF0\x9F\xA4\xBF") /* Id: 1143, Name: divingMask,                               CodePoint: 129343,  Unicode: U+01F93F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F940",                                   "\xF0\x9F\xA5\x80") /* Id: 1144, Name: u1F940,                                   CodePoint: 129344,  Unicode: U+01F940  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F941",                                   "\xF0\x9F\xA5\x81") /* Id: 1145, Name: u1F941,                                   CodePoint: 129345,  Unicode: U+01F941  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F942",                                   "\xF0\x9F\xA5\x82") /* Id: 1146, Name: u1F942,                                   CodePoint: 129346,  Unicode: U+01F942  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F943",                                   "\xF0\x9F\xA5\x83") /* Id: 1147, Name: u1F943,                                   CodePoint: 129347,  Unicode: U+01F943  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F944",                                   "\xF0\x9F\xA5\x84") /* Id: 1148, Name: u1F944,                                   CodePoint: 129348,  Unicode: U+01F944  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F945",                                   "\xF0\x9F\xA5\x85") /* Id: 1149, Name: u1F945,                                   CodePoint: 129349,  Unicode: U+01F945  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F947",                                   "\xF0\x9F\xA5\x87") /* Id: 1150, Name: u1F947,                                   CodePoint: 129351,  Unicode: U+01F947  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F948",                                   "\xF0\x9F\xA5\x88") /* Id: 1151, Name: u1F948,                                   CodePoint: 129352,  Unicode: U+01F948  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F949",                                   "\xF0\x9F\xA5\x89") /* Id: 1152, Name: u1F949,                                   CodePoint: 129353,  Unicode: U+01F949  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F94A",                                   "\xF0\x9F\xA5\x8A") /* Id: 1153, Name: u1F94A,                                   CodePoint: 129354,  Unicode: U+01F94A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F94B",                                   "\xF0\x9F\xA5\x8B") /* Id: 1154, Name: u1F94B,                                   CodePoint: 129355,  Unicode: U+01F94B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F94C",                                   "\xF0\x9F\xA5\x8C") /* Id: 1155, Name: u1F94C,                                   CodePoint: 129356,  Unicode: U+01F94C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("lacrosseStickAndBall",                     "\xF0\x9F\xA5\x8D") /* Id: 1156, Name: lacrosseStickAndBall,                     CodePoint: 129357,  Unicode: U+01F94D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("softball",                                 "\xF0\x9F\xA5\x8E") /* Id: 1157, Name: softball,                                 CodePoint: 129358,  Unicode: U+01F94E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flyingDisk",                               "\xF0\x9F\xA5\x8F") /* Id: 1158, Name: flyingDisk,                               CodePoint: 129359,  Unicode: U+01F94F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F950",                                   "\xF0\x9F\xA5\x90") /* Id: 1159, Name: u1F950,                                   CodePoint: 129360,  Unicode: U+01F950  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F951",                                   "\xF0\x9F\xA5\x91") /* Id: 1160, Name: u1F951,                                   CodePoint: 129361,  Unicode: U+01F951  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F952",                                   "\xF0\x9F\xA5\x92") /* Id: 1161, Name: u1F952,                                   CodePoint: 129362,  Unicode: U+01F952  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F953",                                   "\xF0\x9F\xA5\x93") /* Id: 1162, Name: u1F953,                                   CodePoint: 129363,  Unicode: U+01F953  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F954",                                   "\xF0\x9F\xA5\x94") /* Id: 1163, Name: u1F954,                                   CodePoint: 129364,  Unicode: U+01F954  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F955",                                   "\xF0\x9F\xA5\x95") /* Id: 1164, Name: u1F955,                                   CodePoint: 129365,  Unicode: U+01F955  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("gingerRoot",                               "\xF0\x9F\xAB\x9A") /* Id: 1165, Name: gingerRoot,                               CodePoint: 129754,  Unicode: U+01FADA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F956",                                   "\xF0\x9F\xA5\x96") /* Id: 1166, Name: u1F956,                                   CodePoint: 129366,  Unicode: U+01F956  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F957",                                   "\xF0\x9F\xA5\x97") /* Id: 1167, Name: u1F957,                                   CodePoint: 129367,  Unicode: U+01F957  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F958",                                   "\xF0\x9F\xA5\x98") /* Id: 1168, Name: u1F958,                                   CodePoint: 129368,  Unicode: U+01F958  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F959",                                   "\xF0\x9F\xA5\x99") /* Id: 1169, Name: u1F959,                                   CodePoint: 129369,  Unicode: U+01F959  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F95A",                                   "\xF0\x9F\xA5\x9A") /* Id: 1170, Name: u1F95A,                                   CodePoint: 129370,  Unicode: U+01F95A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F95B",                                   "\xF0\x9F\xA5\x9B") /* Id: 1171, Name: u1F95B,                                   CodePoint: 129371,  Unicode: U+01F95B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F95C",                                   "\xF0\x9F\xA5\x9C") /* Id: 1172, Name: u1F95C,                                   CodePoint: 129372,  Unicode: U+01F95C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F95D",                                   "\xF0\x9F\xA5\x9D") /* Id: 1173, Name: u1F95D,                                   CodePoint: 129373,  Unicode: U+01F95D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F95E",                                   "\xF0\x9F\xA5\x9E") /* Id: 1174, Name: u1F95E,                                   CodePoint: 129374,  Unicode: U+01F95E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F95F",                                   "\xF0\x9F\xA5\x9F") /* Id: 1175, Name: u1F95F,                                   CodePoint: 129375,  Unicode: U+01F95F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F960",                                   "\xF0\x9F\xA5\xA0") /* Id: 1176, Name: u1F960,                                   CodePoint: 129376,  Unicode: U+01F960  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F961",                                   "\xF0\x9F\xA5\xA1") /* Id: 1177, Name: u1F961,                                   CodePoint: 129377,  Unicode: U+01F961  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F962",                                   "\xF0\x9F\xA5\xA2") /* Id: 1178, Name: u1F962,                                   CodePoint: 129378,  Unicode: U+01F962  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F963",                                   "\xF0\x9F\xA5\xA3") /* Id: 1179, Name: u1F963,                                   CodePoint: 129379,  Unicode: U+01F963  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F964",                                   "\xF0\x9F\xA5\xA4") /* Id: 1180, Name: u1F964,                                   CodePoint: 129380,  Unicode: U+01F964  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F965",                                   "\xF0\x9F\xA5\xA5") /* Id: 1181, Name: u1F965,                                   CodePoint: 129381,  Unicode: U+01F965  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F966",                                   "\xF0\x9F\xA5\xA6") /* Id: 1182, Name: u1F966,                                   CodePoint: 129382,  Unicode: U+01F966  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("peaPod",                                   "\xF0\x9F\xAB\x9B") /* Id: 1183, Name: peaPod,                                   CodePoint: 129755,  Unicode: U+01FADB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F967",                                   "\xF0\x9F\xA5\xA7") /* Id: 1184, Name: u1F967,                                   CodePoint: 129383,  Unicode: U+01F967  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F968",                                   "\xF0\x9F\xA5\xA8") /* Id: 1185, Name: u1F968,                                   CodePoint: 129384,  Unicode: U+01F968  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F969",                                   "\xF0\x9F\xA5\xA9") /* Id: 1186, Name: u1F969,                                   CodePoint: 129385,  Unicode: U+01F969  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F96A",                                   "\xF0\x9F\xA5\xAA") /* Id: 1187, Name: u1F96A,                                   CodePoint: 129386,  Unicode: U+01F96A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F96B",                                   "\xF0\x9F\xA5\xAB") /* Id: 1188, Name: u1F96B,                                   CodePoint: 129387,  Unicode: U+01F96B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("leafyGreen",                               "\xF0\x9F\xA5\xAC") /* Id: 1189, Name: leafyGreen,                               CodePoint: 129388,  Unicode: U+01F96C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mango",                                    "\xF0\x9F\xA5\xAD") /* Id: 1190, Name: mango,                                    CodePoint: 129389,  Unicode: U+01F96D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("moonCake",                                 "\xF0\x9F\xA5\xAE") /* Id: 1191, Name: moonCake,                                 CodePoint: 129390,  Unicode: U+01F96E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("bagel",                                    "\xF0\x9F\xA5\xAF") /* Id: 1192, Name: bagel,                                    CodePoint: 129391,  Unicode: U+01F96F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("smilingFaceWithSmilingEyesAndThreeHearts", "\xF0\x9F\xA5\xB0") /* Id: 1193, Name: smilingFaceWithSmilingEyesAndThreeHearts, CodePoint: 129392,  Unicode: U+01F970  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("yawningFace",                              "\xF0\x9F\xA5\xB1") /* Id: 1194, Name: yawningFace,                              CodePoint: 129393,  Unicode: U+01F971  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("smilingFaceWithTear",                      "\xF0\x9F\xA5\xB2") /* Id: 1195, Name: smilingFaceWithTear,                      CodePoint: 129394,  Unicode: U+01F972  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("faceWithPartyHornAndPartyHat",             "\xF0\x9F\xA5\xB3") /* Id: 1196, Name: faceWithPartyHornAndPartyHat,             CodePoint: 129395,  Unicode: U+01F973  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("faceWithUnevenEyesAndWavyMouth",           "\xF0\x9F\xA5\xB4") /* Id: 1197, Name: faceWithUnevenEyesAndWavyMouth,           CodePoint: 129396,  Unicode: U+01F974  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("overheatedFace",                           "\xF0\x9F\xA5\xB5") /* Id: 1198, Name: overheatedFace,                           CodePoint: 129397,  Unicode: U+01F975  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("freezingFace",                             "\xF0\x9F\xA5\xB6") /* Id: 1199, Name: freezingFace,                             CodePoint: 129398,  Unicode: U+01F976  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("ninja",                                    "\xF0\x9F\xA5\xB7") /* Id: 1200, Name: ninja,                                    CodePoint: 129399,  Unicode: U+01F977  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("disguisedFace",                            "\xF0\x9F\xA5\xB8") /* Id: 1201, Name: disguisedFace,                            CodePoint: 129400,  Unicode: U+01F978  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("faceHoldingBackTears",                     "\xF0\x9F\xA5\xB9") /* Id: 1202, Name: faceHoldingBackTears,                     CodePoint: 129401,  Unicode: U+01F979  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("faceWithPleadingEyes",                     "\xF0\x9F\xA5\xBA") /* Id: 1203, Name: faceWithPleadingEyes,                     CodePoint: 129402,  Unicode: U+01F97A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sari",                                     "\xF0\x9F\xA5\xBB") /* Id: 1204, Name: sari,                                     CodePoint: 129403,  Unicode: U+01F97B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("labCoat",                                  "\xF0\x9F\xA5\xBC") /* Id: 1205, Name: labCoat,                                  CodePoint: 129404,  Unicode: U+01F97C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("goggles",                                  "\xF0\x9F\xA5\xBD") /* Id: 1206, Name: goggles,                                  CodePoint: 129405,  Unicode: U+01F97D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hikingBoot",                               "\xF0\x9F\xA5\xBE") /* Id: 1207, Name: hikingBoot,                               CodePoint: 129406,  Unicode: U+01F97E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flatShoe",                                 "\xF0\x9F\xA5\xBF") /* Id: 1208, Name: flatShoe,                                 CodePoint: 129407,  Unicode: U+01F97F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F980",                                   "\xF0\x9F\xA6\x80") /* Id: 1209, Name: u1F980,                                   CodePoint: 129408,  Unicode: U+01F980  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F981",                                   "\xF0\x9F\xA6\x81") /* Id: 1210, Name: u1F981,                                   CodePoint: 129409,  Unicode: U+01F981  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F982",                                   "\xF0\x9F\xA6\x82") /* Id: 1211, Name: u1F982,                                   CodePoint: 129410,  Unicode: U+01F982  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F983",                                   "\xF0\x9F\xA6\x83") /* Id: 1212, Name: u1F983,                                   CodePoint: 129411,  Unicode: U+01F983  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F984",                                   "\xF0\x9F\xA6\x84") /* Id: 1213, Name: u1F984,                                   CodePoint: 129412,  Unicode: U+01F984  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F985",                                   "\xF0\x9F\xA6\x85") /* Id: 1214, Name: u1F985,                                   CodePoint: 129413,  Unicode: U+01F985  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F986",                                   "\xF0\x9F\xA6\x86") /* Id: 1215, Name: u1F986,                                   CodePoint: 129414,  Unicode: U+01F986  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F987",                                   "\xF0\x9F\xA6\x87") /* Id: 1216, Name: u1F987,                                   CodePoint: 129415,  Unicode: U+01F987  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F988",                                   "\xF0\x9F\xA6\x88") /* Id: 1217, Name: u1F988,                                   CodePoint: 129416,  Unicode: U+01F988  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F989",                                   "\xF0\x9F\xA6\x89") /* Id: 1218, Name: u1F989,                                   CodePoint: 129417,  Unicode: U+01F989  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F98A",                                   "\xF0\x9F\xA6\x8A") /* Id: 1219, Name: u1F98A,                                   CodePoint: 129418,  Unicode: U+01F98A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F98B",                                   "\xF0\x9F\xA6\x8B") /* Id: 1220, Name: u1F98B,                                   CodePoint: 129419,  Unicode: U+01F98B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F98C",                                   "\xF0\x9F\xA6\x8C") /* Id: 1221, Name: u1F98C,                                   CodePoint: 129420,  Unicode: U+01F98C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F98D",                                   "\xF0\x9F\xA6\x8D") /* Id: 1222, Name: u1F98D,                                   CodePoint: 129421,  Unicode: U+01F98D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F98E",                                   "\xF0\x9F\xA6\x8E") /* Id: 1223, Name: u1F98E,                                   CodePoint: 129422,  Unicode: U+01F98E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F98F",                                   "\xF0\x9F\xA6\x8F") /* Id: 1224, Name: u1F98F,                                   CodePoint: 129423,  Unicode: U+01F98F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F990",                                   "\xF0\x9F\xA6\x90") /* Id: 1225, Name: u1F990,                                   CodePoint: 129424,  Unicode: U+01F990  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F991",                                   "\xF0\x9F\xA6\x91") /* Id: 1226, Name: u1F991,                                   CodePoint: 129425,  Unicode: U+01F991  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F992",                                   "\xF0\x9F\xA6\x92") /* Id: 1227, Name: u1F992,                                   CodePoint: 129426,  Unicode: U+01F992  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F993",                                   "\xF0\x9F\xA6\x93") /* Id: 1228, Name: u1F993,                                   CodePoint: 129427,  Unicode: U+01F993  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("moose",                                    "\xF0\x9F\xAB\x8E") /* Id: 1229, Name: moose,                                    CodePoint: 129742,  Unicode: U+01FACE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F994",                                   "\xF0\x9F\xA6\x94") /* Id: 1230, Name: u1F994,                                   CodePoint: 129428,  Unicode: U+01F994  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F995",                                   "\xF0\x9F\xA6\x95") /* Id: 1231, Name: u1F995,                                   CodePoint: 129429,  Unicode: U+01F995  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F996",                                   "\xF0\x9F\xA6\x96") /* Id: 1232, Name: u1F996,                                   CodePoint: 129430,  Unicode: U+01F996  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F997",                                   "\xF0\x9F\xA6\x97") /* Id: 1233, Name: u1F997,                                   CodePoint: 129431,  Unicode: U+01F997  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("kangaroo",                                 "\xF0\x9F\xA6\x98") /* Id: 1234, Name: kangaroo,                                 CodePoint: 129432,  Unicode: U+01F998  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("llama",                                    "\xF0\x9F\xA6\x99") /* Id: 1235, Name: llama,                                    CodePoint: 129433,  Unicode: U+01F999  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("peacock",                                  "\xF0\x9F\xA6\x9A") /* Id: 1236, Name: peacock,                                  CodePoint: 129434,  Unicode: U+01F99A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hippopotamus",                             "\xF0\x9F\xA6\x9B") /* Id: 1237, Name: hippopotamus,                             CodePoint: 129435,  Unicode: U+01F99B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("parrot",                                   "\xF0\x9F\xA6\x9C") /* Id: 1238, Name: parrot,                                   CodePoint: 129436,  Unicode: U+01F99C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("raccoon",                                  "\xF0\x9F\xA6\x9D") /* Id: 1239, Name: raccoon,                                  CodePoint: 129437,  Unicode: U+01F99D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("lobster",                                  "\xF0\x9F\xA6\x9E") /* Id: 1240, Name: lobster,                                  CodePoint: 129438,  Unicode: U+01F99E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mosquito",                                 "\xF0\x9F\xA6\x9F") /* Id: 1241, Name: mosquito,                                 CodePoint: 129439,  Unicode: U+01F99F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("microbe",                                  "\xF0\x9F\xA6\xA0") /* Id: 1242, Name: microbe,                                  CodePoint: 129440,  Unicode: U+01F9A0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("badger",                                   "\xF0\x9F\xA6\xA1") /* Id: 1243, Name: badger,                                   CodePoint: 129441,  Unicode: U+01F9A1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("swan",                                     "\xF0\x9F\xA6\xA2") /* Id: 1244, Name: swan,                                     CodePoint: 129442,  Unicode: U+01F9A2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mammoth",                                  "\xF0\x9F\xA6\xA3") /* Id: 1245, Name: mammoth,                                  CodePoint: 129443,  Unicode: U+01F9A3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("dodo",                                     "\xF0\x9F\xA6\xA4") /* Id: 1246, Name: dodo,                                     CodePoint: 129444,  Unicode: U+01F9A4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sloth",                                    "\xF0\x9F\xA6\xA5") /* Id: 1247, Name: sloth,                                    CodePoint: 129445,  Unicode: U+01F9A5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("otter",                                    "\xF0\x9F\xA6\xA6") /* Id: 1248, Name: otter,                                    CodePoint: 129446,  Unicode: U+01F9A6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("orangutan",                                "\xF0\x9F\xA6\xA7") /* Id: 1249, Name: orangutan,                                CodePoint: 129447,  Unicode: U+01F9A7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("skunk",                                    "\xF0\x9F\xA6\xA8") /* Id: 1250, Name: skunk,                                    CodePoint: 129448,  Unicode: U+01F9A8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flamingo",                                 "\xF0\x9F\xA6\xA9") /* Id: 1251, Name: flamingo,                                 CodePoint: 129449,  Unicode: U+01F9A9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("oyster",                                   "\xF0\x9F\xA6\xAA") /* Id: 1252, Name: oyster,                                   CodePoint: 129450,  Unicode: U+01F9AA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("beaver",                                   "\xF0\x9F\xA6\xAB") /* Id: 1253, Name: beaver,                                   CodePoint: 129451,  Unicode: U+01F9AB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("bison",                                    "\xF0\x9F\xA6\xAC") /* Id: 1254, Name: bison,                                    CodePoint: 129452,  Unicode: U+01F9AC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("seal",                                     "\xF0\x9F\xA6\xAD") /* Id: 1255, Name: seal,                                     CodePoint: 129453,  Unicode: U+01F9AD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("guideDog",                                 "\xF0\x9F\xA6\xAE") /* Id: 1256, Name: guideDog,                                 CodePoint: 129454,  Unicode: U+01F9AE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("wing",                                     "\xF0\x9F\xAA\xBD") /* Id: 1257, Name: wing,                                     CodePoint: 129725,  Unicode: U+01FABD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("whiteCane",                                "\xF0\x9F\xA6\xAF") /* Id: 1258, Name: whiteCane,                                CodePoint: 129455,  Unicode: U+01F9AF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("emojiComponentRedHair",                    "\xF0\x9F\xA6\xB0") /* Id: 1259, Name: emojiComponentRedHair,                    CodePoint: 129456,  Unicode: U+01F9B0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("emojiComponentCurlyHair",                  "\xF0\x9F\xA6\xB1") /* Id: 1260, Name: emojiComponentCurlyHair,                  CodePoint: 129457,  Unicode: U+01F9B1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("emojiComponentBald",                       "\xF0\x9F\xA6\xB2") /* Id: 1261, Name: emojiComponentBald,                       CodePoint: 129458,  Unicode: U+01F9B2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("emojiComponentWhiteHair",                  "\xF0\x9F\xA6\xB3") /* Id: 1262, Name: emojiComponentWhiteHair,                  CodePoint: 129459,  Unicode: U+01F9B3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("bone",                                     "\xF0\x9F\xA6\xB4") /* Id: 1263, Name: bone,                                     CodePoint: 129460,  Unicode: U+01F9B4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("leg",                                      "\xF0\x9F\xA6\xB5") /* Id: 1264, Name: leg,                                      CodePoint: 129461,  Unicode: U+01F9B5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("foot",                                     "\xF0\x9F\xA6\xB6") /* Id: 1265, Name: foot,                                     CodePoint: 129462,  Unicode: U+01F9B6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("tooth",                                    "\xF0\x9F\xA6\xB7") /* Id: 1266, Name: tooth,                                    CodePoint: 129463,  Unicode: U+01F9B7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("superhero",                                "\xF0\x9F\xA6\xB8") /* Id: 1267, Name: superhero,                                CodePoint: 129464,  Unicode: U+01F9B8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("supervillain",                             "\xF0\x9F\xA6\xB9") /* Id: 1268, Name: supervillain,                             CodePoint: 129465,  Unicode: U+01F9B9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("safetyVest",                               "\xF0\x9F\xA6\xBA") /* Id: 1269, Name: safetyVest,                               CodePoint: 129466,  Unicode: U+01F9BA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("earWithHearingAid",                        "\xF0\x9F\xA6\xBB") /* Id: 1270, Name: earWithHearingAid,                        CodePoint: 129467,  Unicode: U+01F9BB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("motorizedWheelchair",                      "\xF0\x9F\xA6\xBC") /* Id: 1271, Name: motorizedWheelchair,                      CodePoint: 129468,  Unicode: U+01F9BC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("manualWheelchair",                         "\xF0\x9F\xA6\xBD") /* Id: 1272, Name: manualWheelchair,                         CodePoint: 129469,  Unicode: U+01F9BD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mechanicalArm",                            "\xF0\x9F\xA6\xBE") /* Id: 1273, Name: mechanicalArm,                            CodePoint: 129470,  Unicode: U+01F9BE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mechanicalLeg",                            "\xF0\x9F\xA6\xBF") /* Id: 1274, Name: mechanicalLeg,                            CodePoint: 129471,  Unicode: U+01F9BF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9C0",                                   "\xF0\x9F\xA7\x80") /* Id: 1275, Name: u1F9C0,                                   CodePoint: 129472,  Unicode: U+01F9C0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("cupcake",                                  "\xF0\x9F\xA7\x81") /* Id: 1276, Name: cupcake,                                  CodePoint: 129473,  Unicode: U+01F9C1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("saltShaker",                               "\xF0\x9F\xA7\x82") /* Id: 1277, Name: saltShaker,                               CodePoint: 129474,  Unicode: U+01F9C2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("beverageBox",                              "\xF0\x9F\xA7\x83") /* Id: 1278, Name: beverageBox,                              CodePoint: 129475,  Unicode: U+01F9C3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("garlic",                                   "\xF0\x9F\xA7\x84") /* Id: 1279, Name: garlic,                                   CodePoint: 129476,  Unicode: U+01F9C4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("onion",                                    "\xF0\x9F\xA7\x85") /* Id: 1280, Name: onion,                                    CodePoint: 129477,  Unicode: U+01F9C5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("falafel",                                  "\xF0\x9F\xA7\x86") /* Id: 1281, Name: falafel,                                  CodePoint: 129478,  Unicode: U+01F9C6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("waffle",                                   "\xF0\x9F\xA7\x87") /* Id: 1282, Name: waffle,                                   CodePoint: 129479,  Unicode: U+01F9C7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("butter",                                   "\xF0\x9F\xA7\x88") /* Id: 1283, Name: butter,                                   CodePoint: 129480,  Unicode: U+01F9C8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mateDrink",                                "\xF0\x9F\xA7\x89") /* Id: 1284, Name: mateDrink,                                CodePoint: 129481,  Unicode: U+01F9C9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("iceCube",                                  "\xF0\x9F\xA7\x8A") /* Id: 1285, Name: iceCube,                                  CodePoint: 129482,  Unicode: U+01F9CA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("bubbleTea",                                "\xF0\x9F\xA7\x8B") /* Id: 1286, Name: bubbleTea,                                CodePoint: 129483,  Unicode: U+01F9CB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("troll",                                    "\xF0\x9F\xA7\x8C") /* Id: 1287, Name: troll,                                    CodePoint: 129484,  Unicode: U+01F9CC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personStanding",                           "\xF0\x9F\xA7\x8D") /* Id: 1288, Name: personStanding,                           CodePoint: 129485,  Unicode: U+01F9CD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personKneeling",                           "\xF0\x9F\xA7\x8E") /* Id: 1289, Name: personKneeling,                           CodePoint: 129486,  Unicode: U+01F9CE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("deafPerson",                               "\xF0\x9F\xA7\x8F") /* Id: 1290, Name: deafPerson,                               CodePoint: 129487,  Unicode: U+01F9CF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9D0",                                   "\xF0\x9F\xA7\x90") /* Id: 1291, Name: u1F9D0,                                   CodePoint: 129488,  Unicode: U+01F9D0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("person",                                   "\xF0\x9F\xA7\x91") /* Id: 1292, Name: person,                                   CodePoint: 129489,  Unicode: U+01F9D1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9D2",                                   "\xF0\x9F\xA7\x92") /* Id: 1293, Name: u1F9D2,                                   CodePoint: 129490,  Unicode: U+01F9D2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9D3",                                   "\xF0\x9F\xA7\x93") /* Id: 1294, Name: u1F9D3,                                   CodePoint: 129491,  Unicode: U+01F9D3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9D4",                                   "\xF0\x9F\xA7\x94") /* Id: 1295, Name: u1F9D4,                                   CodePoint: 129492,  Unicode: U+01F9D4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("womanWithHeadscarf",                       "\xF0\x9F\xA7\x95") /* Id: 1296, Name: womanWithHeadscarf,                       CodePoint: 129493,  Unicode: U+01F9D5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9D6",                                   "\xF0\x9F\xA7\x96") /* Id: 1297, Name: u1F9D6,                                   CodePoint: 129494,  Unicode: U+01F9D6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9D7",                                   "\xF0\x9F\xA7\x97") /* Id: 1298, Name: u1F9D7,                                   CodePoint: 129495,  Unicode: U+01F9D7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9D8",                                   "\xF0\x9F\xA7\x98") /* Id: 1299, Name: u1F9D8,                                   CodePoint: 129496,  Unicode: U+01F9D8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9D9",                                   "\xF0\x9F\xA7\x99") /* Id: 1300, Name: u1F9D9,                                   CodePoint: 129497,  Unicode: U+01F9D9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9DA",                                   "\xF0\x9F\xA7\x9A") /* Id: 1301, Name: u1F9DA,                                   CodePoint: 129498,  Unicode: U+01F9DA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9DB",                                   "\xF0\x9F\xA7\x9B") /* Id: 1302, Name: u1F9DB,                                   CodePoint: 129499,  Unicode: U+01F9DB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9DC",                                   "\xF0\x9F\xA7\x9C") /* Id: 1303, Name: u1F9DC,                                   CodePoint: 129500,  Unicode: U+01F9DC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9DD",                                   "\xF0\x9F\xA7\x9D") /* Id: 1304, Name: u1F9DD,                                   CodePoint: 129501,  Unicode: U+01F9DD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9DE",                                   "\xF0\x9F\xA7\x9E") /* Id: 1305, Name: u1F9DE,                                   CodePoint: 129502,  Unicode: U+01F9DE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9DF",                                   "\xF0\x9F\xA7\x9F") /* Id: 1306, Name: u1F9DF,                                   CodePoint: 129503,  Unicode: U+01F9DF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9E0",                                   "\xF0\x9F\xA7\xA0") /* Id: 1307, Name: u1F9E0,                                   CodePoint: 129504,  Unicode: U+01F9E0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9E1",                                   "\xF0\x9F\xA7\xA1") /* Id: 1308, Name: u1F9E1,                                   CodePoint: 129505,  Unicode: U+01F9E1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9E2",                                   "\xF0\x9F\xA7\xA2") /* Id: 1309, Name: u1F9E2,                                   CodePoint: 129506,  Unicode: U+01F9E2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9E3",                                   "\xF0\x9F\xA7\xA3") /* Id: 1310, Name: u1F9E3,                                   CodePoint: 129507,  Unicode: U+01F9E3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9E4",                                   "\xF0\x9F\xA7\xA4") /* Id: 1311, Name: u1F9E4,                                   CodePoint: 129508,  Unicode: U+01F9E4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9E5",                                   "\xF0\x9F\xA7\xA5") /* Id: 1312, Name: u1F9E5,                                   CodePoint: 129509,  Unicode: U+01F9E5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F9E6",                                   "\xF0\x9F\xA7\xA6") /* Id: 1313, Name: u1F9E6,                                   CodePoint: 129510,  Unicode: U+01F9E6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("foldingHandFan",                           "\xF0\x9F\xAA\xAD") /* Id: 1314, Name: foldingHandFan,                           CodePoint: 129709,  Unicode: U+01FAAD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("redEnvelope",                              "\xF0\x9F\xA7\xA7") /* Id: 1315, Name: redEnvelope,                              CodePoint: 129511,  Unicode: U+01F9E7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("firecracker",                              "\xF0\x9F\xA7\xA8") /* Id: 1316, Name: firecracker,                              CodePoint: 129512,  Unicode: U+01F9E8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("puzzlePiece",                              "\xF0\x9F\xA7\xA9") /* Id: 1317, Name: puzzlePiece,                              CodePoint: 129513,  Unicode: U+01F9E9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("testTube",                                 "\xF0\x9F\xA7\xAA") /* Id: 1318, Name: testTube,                                 CodePoint: 129514,  Unicode: U+01F9EA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("petriDish",                                "\xF0\x9F\xA7\xAB") /* Id: 1319, Name: petriDish,                                CodePoint: 129515,  Unicode: U+01F9EB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("dna",                                      "\xF0\x9F\xA7\xAC") /* Id: 1320, Name: dna,                                      CodePoint: 129516,  Unicode: U+01F9EC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sun.1",                                    "\xF0\x9F\xA7\xAD") /* Id: 1321, Name: sun.1,                                    CodePoint: 129517,  Unicode: U+01F9ED  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("abacus",                                   "\xF0\x9F\xA7\xAE") /* Id: 1322, Name: abacus,                                   CodePoint: 129518,  Unicode: U+01F9EE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("fireExtinguisher",                         "\xF0\x9F\xA7\xAF") /* Id: 1323, Name: fireExtinguisher,                         CodePoint: 129519,  Unicode: U+01F9EF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("toolbox",                                  "\xF0\x9F\xA7\xB0") /* Id: 1324, Name: toolbox,                                  CodePoint: 129520,  Unicode: U+01F9F0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("brick",                                    "\xF0\x9F\xA7\xB1") /* Id: 1325, Name: brick,                                    CodePoint: 129521,  Unicode: U+01F9F1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("magnet",                                   "\xF0\x9F\xA7\xB2") /* Id: 1326, Name: magnet,                                   CodePoint: 129522,  Unicode: U+01F9F2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("luggage",                                  "\xF0\x9F\xA7\xB3") /* Id: 1327, Name: luggage,                                  CodePoint: 129523,  Unicode: U+01F9F3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("lotionBottle",                             "\xF0\x9F\xA7\xB4") /* Id: 1328, Name: lotionBottle,                             CodePoint: 129524,  Unicode: U+01F9F4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("thread",                                   "\xF0\x9F\xA7\xB5") /* Id: 1329, Name: thread,                                   CodePoint: 129525,  Unicode: U+01F9F5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("yarn",                                     "\xF0\x9F\xA7\xB6") /* Id: 1330, Name: yarn,                                     CodePoint: 129526,  Unicode: U+01F9F6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("safetyPin",                                "\xF0\x9F\xA7\xB7") /* Id: 1331, Name: safetyPin,                                CodePoint: 129527,  Unicode: U+01F9F7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("teddyBear",                                "\xF0\x9F\xA7\xB8") /* Id: 1332, Name: teddyBear,                                CodePoint: 129528,  Unicode: U+01F9F8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("broom",                                    "\xF0\x9F\xA7\xB9") /* Id: 1333, Name: broom,                                    CodePoint: 129529,  Unicode: U+01F9F9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("basket",                                   "\xF0\x9F\xA7\xBA") /* Id: 1334, Name: basket,                                   CodePoint: 129530,  Unicode: U+01F9FA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("rollOfPaper",                              "\xF0\x9F\xA7\xBB") /* Id: 1335, Name: rollOfPaper,                              CodePoint: 129531,  Unicode: U+01F9FB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("soap",                                     "\xF0\x9F\xA7\xBC") /* Id: 1336, Name: soap,                                     CodePoint: 129532,  Unicode: U+01F9FC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sponge",                                   "\xF0\x9F\xA7\xBD") /* Id: 1337, Name: sponge,                                   CodePoint: 129533,  Unicode: U+01F9FD  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("receipt",                                  "\xF0\x9F\xA7\xBE") /* Id: 1338, Name: receipt,                                  CodePoint: 129534,  Unicode: U+01F9FE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("nazarAmulet",                              "\xF0\x9F\xA7\xBF") /* Id: 1339, Name: nazarAmulet,                              CodePoint: 129535,  Unicode: U+01F9FF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("balletShoes",                              "\xF0\x9F\xA9\xB0") /* Id: 1340, Name: balletShoes,                              CodePoint: 129648,  Unicode: U+01FA70  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("onePieceSwimsuit",                         "\xF0\x9F\xA9\xB1") /* Id: 1341, Name: onePieceSwimsuit,                         CodePoint: 129649,  Unicode: U+01FA71  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("briefs",                                   "\xF0\x9F\xA9\xB2") /* Id: 1342, Name: briefs,                                   CodePoint: 129650,  Unicode: U+01FA72  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("shorts",                                   "\xF0\x9F\xA9\xB3") /* Id: 1343, Name: shorts,                                   CodePoint: 129651,  Unicode: U+01FA73  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("thongSandal",                              "\xF0\x9F\xA9\xB4") /* Id: 1344, Name: thongSandal,                              CodePoint: 129652,  Unicode: U+01FA74  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("dropOfBlood",                              "\xF0\x9F\xA9\xB8") /* Id: 1345, Name: dropOfBlood,                              CodePoint: 129656,  Unicode: U+01FA78  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("adhesiveBandage",                          "\xF0\x9F\xA9\xB9") /* Id: 1346, Name: adhesiveBandage,                          CodePoint: 129657,  Unicode: U+01FA79  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("stethoscope",                              "\xF0\x9F\xA9\xBA") /* Id: 1347, Name: stethoscope,                              CodePoint: 129658,  Unicode: U+01FA7A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("xRay",                                     "\xF0\x9F\xA9\xBB") /* Id: 1348, Name: xRay,                                     CodePoint: 129659,  Unicode: U+01FA7B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("crutch",                                   "\xF0\x9F\xA9\xBC") /* Id: 1349, Name: crutch,                                   CodePoint: 129660,  Unicode: U+01FA7C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("yoYo",                                     "\xF0\x9F\xAA\x80") /* Id: 1350, Name: yoYo,                                     CodePoint: 129664,  Unicode: U+01FA80  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("kite",                                     "\xF0\x9F\xAA\x81") /* Id: 1351, Name: kite,                                     CodePoint: 129665,  Unicode: U+01FA81  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("parachute",                                "\xF0\x9F\xAA\x82") /* Id: 1352, Name: parachute,                                CodePoint: 129666,  Unicode: U+01FA82  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("boomerang",                                "\xF0\x9F\xAA\x83") /* Id: 1353, Name: boomerang,                                CodePoint: 129667,  Unicode: U+01FA83  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("magicWand",                                "\xF0\x9F\xAA\x84") /* Id: 1354, Name: magicWand,                                CodePoint: 129668,  Unicode: U+01FA84  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pinata",                                   "\xF0\x9F\xAA\x85") /* Id: 1355, Name: pinata,                                   CodePoint: 129669,  Unicode: U+01FA85  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("nestingDolls",                             "\xF0\x9F\xAA\x86") /* Id: 1356, Name: nestingDolls,                             CodePoint: 129670,  Unicode: U+01FA86  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("ringedPlanet",                             "\xF0\x9F\xAA\x90") /* Id: 1357, Name: ringedPlanet,                             CodePoint: 129680,  Unicode: U+01FA90  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("chair",                                    "\xF0\x9F\xAA\x91") /* Id: 1358, Name: chair,                                    CodePoint: 129681,  Unicode: U+01FA91  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("razor",                                    "\xF0\x9F\xAA\x92") /* Id: 1359, Name: razor,                                    CodePoint: 129682,  Unicode: U+01FA92  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hairPick",                                 "\xF0\x9F\xAA\xAE") /* Id: 1360, Name: hairPick,                                 CodePoint: 129710,  Unicode: U+01FAAE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("axe",                                      "\xF0\x9F\xAA\x93") /* Id: 1361, Name: axe,                                      CodePoint: 129683,  Unicode: U+01FA93  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("diyaLamp",                                 "\xF0\x9F\xAA\x94") /* Id: 1362, Name: diyaLamp,                                 CodePoint: 129684,  Unicode: U+01FA94  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("banjo",                                    "\xF0\x9F\xAA\x95") /* Id: 1363, Name: banjo,                                    CodePoint: 129685,  Unicode: U+01FA95  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("militaryHelmet",                           "\xF0\x9F\xAA\x96") /* Id: 1364, Name: militaryHelmet,                           CodePoint: 129686,  Unicode: U+01FA96  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("accordian",                                "\xF0\x9F\xAA\x97") /* Id: 1365, Name: accordian,                                CodePoint: 129687,  Unicode: U+01FA97  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("longDrum",                                 "\xF0\x9F\xAA\x98") /* Id: 1366, Name: longDrum,                                 CodePoint: 129688,  Unicode: U+01FA98  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("coin",                                     "\xF0\x9F\xAA\x99") /* Id: 1367, Name: coin,                                     CodePoint: 129689,  Unicode: U+01FA99  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("carpentrySaw",                             "\xF0\x9F\xAA\x9A") /* Id: 1368, Name: carpentrySaw,                             CodePoint: 129690,  Unicode: U+01FA9A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("screwdriver",                              "\xF0\x9F\xAA\x9B") /* Id: 1369, Name: screwdriver,                              CodePoint: 129691,  Unicode: U+01FA9B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("ladder",                                   "\xF0\x9F\xAA\x9C") /* Id: 1370, Name: ladder,                                   CodePoint: 129692,  Unicode: U+01FA9C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hook",                                     "\xF0\x9F\xAA\x9D") /* Id: 1371, Name: hook,                                     CodePoint: 129693,  Unicode: U+01FA9D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mirror",                                   "\xF0\x9F\xAA\x9E") /* Id: 1372, Name: mirror,                                   CodePoint: 129694,  Unicode: U+01FA9E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("window",                                   "\xF0\x9F\xAA\x9F") /* Id: 1373, Name: window,                                   CodePoint: 129695,  Unicode: U+01FA9F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("plunger",                                  "\xF0\x9F\xAA\xA0") /* Id: 1374, Name: plunger,                                  CodePoint: 129696,  Unicode: U+01FAA0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("sewingNeedle",                             "\xF0\x9F\xAA\xA1") /* Id: 1375, Name: sewingNeedle,                             CodePoint: 129697,  Unicode: U+01FAA1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("knot",                                     "\xF0\x9F\xAA\xA2") /* Id: 1376, Name: knot,                                     CodePoint: 129698,  Unicode: U+01FAA2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("bucket",                                   "\xF0\x9F\xAA\xA3") /* Id: 1377, Name: bucket,                                   CodePoint: 129699,  Unicode: U+01FAA3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mouseTrap",                                "\xF0\x9F\xAA\xA4") /* Id: 1378, Name: mouseTrap,                                CodePoint: 129700,  Unicode: U+01FAA4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("toothbrush",                               "\xF0\x9F\xAA\xA5") /* Id: 1379, Name: toothbrush,                               CodePoint: 129701,  Unicode: U+01FAA5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("headstone",                                "\xF0\x9F\xAA\xA6") /* Id: 1380, Name: headstone,                                CodePoint: 129702,  Unicode: U+01FAA6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("placard",                                  "\xF0\x9F\xAA\xA7") /* Id: 1381, Name: placard,                                  CodePoint: 129703,  Unicode: U+01FAA7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("rock",                                     "\xF0\x9F\xAA\xA8") /* Id: 1382, Name: rock,                                     CodePoint: 129704,  Unicode: U+01FAA8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mirrorBall",                               "\xF0\x9F\xAA\xA9") /* Id: 1383, Name: mirrorBall,                               CodePoint: 129705,  Unicode: U+01FAA9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("identificationCard",                       "\xF0\x9F\xAA\xAA") /* Id: 1384, Name: identificationCard,                       CodePoint: 129706,  Unicode: U+01FAAA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("lowBattery",                               "\xF0\x9F\xAA\xAB") /* Id: 1385, Name: lowBattery,                               CodePoint: 129707,  Unicode: U+01FAAB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("hamsa",                                    "\xF0\x9F\xAA\xAC") /* Id: 1386, Name: hamsa,                                    CodePoint: 129708,  Unicode: U+01FAAC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("fly",                                      "\xF0\x9F\xAA\xB0") /* Id: 1387, Name: fly,                                      CodePoint: 129712,  Unicode: U+01FAB0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("worm",                                     "\xF0\x9F\xAA\xB1") /* Id: 1388, Name: worm,                                     CodePoint: 129713,  Unicode: U+01FAB1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("beetle",                                   "\xF0\x9F\xAA\xB2") /* Id: 1389, Name: beetle,                                   CodePoint: 129714,  Unicode: U+01FAB2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("cockroach",                                "\xF0\x9F\xAA\xB3") /* Id: 1390, Name: cockroach,                                CodePoint: 129715,  Unicode: U+01FAB3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pottedPlant",                              "\xF0\x9F\xAA\xB4") /* Id: 1391, Name: pottedPlant,                              CodePoint: 129716,  Unicode: U+01FAB4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("wood",                                     "\xF0\x9F\xAA\xB5") /* Id: 1392, Name: wood,                                     CodePoint: 129717,  Unicode: U+01FAB5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("feather",                                  "\xF0\x9F\xAA\xB6") /* Id: 1393, Name: feather,                                  CodePoint: 129718,  Unicode: U+01FAB6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("lotus",                                    "\xF0\x9F\xAA\xB7") /* Id: 1394, Name: lotus,                                    CodePoint: 129719,  Unicode: U+01FAB7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("coral",                                    "\xF0\x9F\xAA\xB8") /* Id: 1395, Name: coral,                                    CodePoint: 129720,  Unicode: U+01FAB8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("emptyNest",                                "\xF0\x9F\xAA\xB9") /* Id: 1396, Name: emptyNest,                                CodePoint: 129721,  Unicode: U+01FAB9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("nestWithEggs",                             "\xF0\x9F\xAA\xBA") /* Id: 1397, Name: nestWithEggs,                             CodePoint: 129722,  Unicode: U+01FABA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("anatomicalHeart",                          "\xF0\x9F\xAB\x80") /* Id: 1398, Name: anatomicalHeart,                          CodePoint: 129728,  Unicode: U+01FAC0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("lungs",                                    "\xF0\x9F\xAB\x81") /* Id: 1399, Name: lungs,                                    CodePoint: 129729,  Unicode: U+01FAC1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("peopleHugging",                            "\xF0\x9F\xAB\x82") /* Id: 1400, Name: peopleHugging,                            CodePoint: 129730,  Unicode: U+01FAC2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pregnantMan",                              "\xF0\x9F\xAB\x83") /* Id: 1401, Name: pregnantMan,                              CodePoint: 129731,  Unicode: U+01FAC3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pregnantPerson",                           "\xF0\x9F\xAB\x84") /* Id: 1402, Name: pregnantPerson,                           CodePoint: 129732,  Unicode: U+01FAC4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personWithCrown",                          "\xF0\x9F\xAB\x85") /* Id: 1403, Name: personWithCrown,                          CodePoint: 129733,  Unicode: U+01FAC5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("blueberries",                              "\xF0\x9F\xAB\x90") /* Id: 1404, Name: blueberries,                              CodePoint: 129744,  Unicode: U+01FAD0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("bellPepper",                               "\xF0\x9F\xAB\x91") /* Id: 1405, Name: bellPepper,                               CodePoint: 129745,  Unicode: U+01FAD1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("olive",                                    "\xF0\x9F\xAB\x92") /* Id: 1406, Name: olive,                                    CodePoint: 129746,  Unicode: U+01FAD2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flatBread",                                "\xF0\x9F\xAB\x93") /* Id: 1407, Name: flatBread,                                CodePoint: 129747,  Unicode: U+01FAD3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("tamale",                                   "\xF0\x9F\xAB\x94") /* Id: 1408, Name: tamale,                                   CodePoint: 129748,  Unicode: U+01FAD4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("fondue",                                   "\xF0\x9F\xAB\x95") /* Id: 1409, Name: fondue,                                   CodePoint: 129749,  Unicode: U+01FAD5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("teapot",                                   "\xF0\x9F\xAB\x96") /* Id: 1410, Name: teapot,                                   CodePoint: 129750,  Unicode: U+01FAD6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pouringLiquid",                            "\xF0\x9F\xAB\x97") /* Id: 1411, Name: pouringLiquid,                            CodePoint: 129751,  Unicode: U+01FAD7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("beans",                                    "\xF0\x9F\xAB\x98") /* Id: 1412, Name: beans,                                    CodePoint: 129752,  Unicode: U+01FAD8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("jar",                                      "\xF0\x9F\xAB\x99") /* Id: 1413, Name: jar,                                      CodePoint: 129753,  Unicode: U+01FAD9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("meltingFace",                              "\xF0\x9F\xAB\xA0") /* Id: 1414, Name: meltingFace,                              CodePoint: 129760,  Unicode: U+01FAE0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("salutingFace",                             "\xF0\x9F\xAB\xA1") /* Id: 1415, Name: salutingFace,                             CodePoint: 129761,  Unicode: U+01FAE1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("faceWithOpenEyesAndHandOverMouth",         "\xF0\x9F\xAB\xA2") /* Id: 1416, Name: faceWithOpenEyesAndHandOverMouth,         CodePoint: 129762,  Unicode: U+01FAE2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("faceWithPeekingEye",                       "\xF0\x9F\xAB\xA3") /* Id: 1417, Name: faceWithPeekingEye,                       CodePoint: 129763,  Unicode: U+01FAE3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("faceWithDiagonalMouth",                    "\xF0\x9F\xAB\xA4") /* Id: 1418, Name: faceWithDiagonalMouth,                    CodePoint: 129764,  Unicode: U+01FAE4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("dottedLineFace",                           "\xF0\x9F\xAB\xA5") /* Id: 1419, Name: dottedLineFace,                           CodePoint: 129765,  Unicode: U+01FAE5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("shakingFace",                              "\xF0\x9F\xAB\xA8") /* Id: 1420, Name: shakingFace,                              CodePoint: 129768,  Unicode: U+01FAE8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("bitingLip",                                "\xF0\x9F\xAB\xA6") /* Id: 1421, Name: bitingLip,                                CodePoint: 129766,  Unicode: U+01FAE6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("bubbles",                                  "\xF0\x9F\xAB\xA7") /* Id: 1422, Name: bubbles,                                  CodePoint: 129767,  Unicode: U+01FAE7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("handWithIndexFingerAndThumbCrossed",       "\xF0\x9F\xAB\xB0") /* Id: 1423, Name: handWithIndexFingerAndThumbCrossed,       CodePoint: 129776,  Unicode: U+01FAF0  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("rightwardsHand",                           "\xF0\x9F\xAB\xB1") /* Id: 1424, Name: rightwardsHand,                           CodePoint: 129777,  Unicode: U+01FAF1  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("leftwardsHand",                            "\xF0\x9F\xAB\xB2") /* Id: 1425, Name: leftwardsHand,                            CodePoint: 129778,  Unicode: U+01FAF2  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("palmDownHand",                             "\xF0\x9F\xAB\xB3") /* Id: 1426, Name: palmDownHand,                             CodePoint: 129779,  Unicode: U+01FAF3  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("palmUpHand",                               "\xF0\x9F\xAB\xB4") /* Id: 1427, Name: palmUpHand,                               CodePoint: 129780,  Unicode: U+01FAF4  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("indexPointingAtTheViewer",                 "\xF0\x9F\xAB\xB5") /* Id: 1428, Name: indexPointingAtTheViewer,                 CodePoint: 129781,  Unicode: U+01FAF5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("heartHands",                               "\xF0\x9F\xAB\xB6") /* Id: 1429, Name: heartHands,                               CodePoint: 129782,  Unicode: U+01FAF6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("rightwardsPushingHand",                    "\xF0\x9F\xAB\xB8") /* Id: 1430, Name: rightwardsPushingHand,                    CodePoint: 129784,  Unicode: U+01FAF8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("leftwardsPushingHand",                     "\xF0\x9F\xAB\xB7") /* Id: 1431, Name: leftwardsPushingHand,                     CodePoint: 129783,  Unicode: U+01FAF7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("eyeInSpeechBubble",                        "\x00")             /* Id: 1432, Name: eyeInSpeechBubble,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("heartOnFire",                              "\x00")             /* Id: 1433, Name: heartOnFire,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mendingHeart",                             "\x00")             /* Id: 1434, Name: mendingHeart,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("artist",                                   "\x00")             /* Id: 1435, Name: artist,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("astronaut",                                "\x00")             /* Id: 1436, Name: astronaut,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("cook",                                     "\x00")             /* Id: 1437, Name: cook,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("factoryWorker",                            "\x00")             /* Id: 1438, Name: factoryWorker,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("farmer",                                   "\x00")             /* Id: 1439, Name: farmer,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("firefighter",                              "\x00")             /* Id: 1440, Name: firefighter,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("healthWorker",                             "\x00")             /* Id: 1441, Name: healthWorker,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("judge",                                    "\x00")             /* Id: 1442, Name: judge,                                    CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("mechanic",                                 "\x00")             /* Id: 1443, Name: mechanic,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("menWithBunnyEars",                         "\x00")             /* Id: 1444, Name: menWithBunnyEars,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("officeWorker",                             "\x00")             /* Id: 1445, Name: officeWorker,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personFeedingBaby",                        "\x00")             /* Id: 1446, Name: personFeedingBaby,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personInManualWheelchair",                 "\x00")             /* Id: 1447, Name: personInManualWheelchair,                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personInMotorizedWheelchair",              "\x00")             /* Id: 1448, Name: personInMotorizedWheelchair,              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personWithWhiteCane",                      "\x00")             /* Id: 1449, Name: personWithWhiteCane,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pilot",                                    "\x00")             /* Id: 1450, Name: pilot,                                    CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("scientist",                                "\x00")             /* Id: 1451, Name: scientist,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("singer",                                   "\x00")             /* Id: 1452, Name: singer,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("student",                                  "\x00")             /* Id: 1453, Name: student,                                  CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("teacher",                                  "\x00")             /* Id: 1454, Name: teacher,                                  CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("technologist",                             "\x00")             /* Id: 1455, Name: technologist,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("womenWithBunnyEars",                       "\x00")             /* Id: 1456, Name: womenWithBunnyEars,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("blackCat",                                 "\x00")             /* Id: 1457, Name: blackCat,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("polarBearFace",                            "\x00")             /* Id: 1458, Name: polarBearFace,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("serviceDog",                               "\x00")             /* Id: 1459, Name: serviceDog,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("faceExhaling",                             "\x00")             /* Id: 1460, Name: faceExhaling,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("faceInClouds",                             "\x00")             /* Id: 1461, Name: faceInClouds,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("faceWithSpiralEyes",                       "\x00")             /* Id: 1462, Name: faceWithSpiralEyes,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("family_boy_center",                        "\x00")             /* Id: 1463, Name: family_boy_center,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("family_boy_left",                          "\x00")             /* Id: 1464, Name: family_boy_left,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("family_boy_right",                         "\x00")             /* Id: 1465, Name: family_boy_right,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("family_girl_center",                       "\x00")             /* Id: 1466, Name: family_girl_center,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("family_girl_left",                         "\x00")             /* Id: 1467, Name: family_girl_left,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("family_girl_right",                        "\x00")             /* Id: 1468, Name: family_girl_right,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F46A_u1F468",                            "\x00")             /* Id: 1469, Name: u1F46A_u1F468,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("family_man_left",                          "\x00")             /* Id: 1470, Name: family_man_left,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("family_man_right",                         "\x00")             /* Id: 1471, Name: family_man_right,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u1F46A_u1F469",                            "\x00")             /* Id: 1472, Name: u1F46A_u1F469,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManBoy",                             "\x00")             /* Id: 1473, Name: familyManBoy,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManBoyBoy",                          "\x00")             /* Id: 1474, Name: familyManBoyBoy,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManGirl",                            "\x00")             /* Id: 1475, Name: familyManGirl,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManGirlBoy",                         "\x00")             /* Id: 1476, Name: familyManGirlBoy,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManGirlGirl",                        "\x00")             /* Id: 1477, Name: familyManGirlGirl,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManManBoy",                          "\x00")             /* Id: 1478, Name: familyManManBoy,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManManBoyBoy",                       "\x00")             /* Id: 1479, Name: familyManManBoyBoy,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManManGirl",                         "\x00")             /* Id: 1480, Name: familyManManGirl,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManManGirlBoy",                      "\x00")             /* Id: 1481, Name: familyManManGirlBoy,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManManGirlGirl",                     "\x00")             /* Id: 1482, Name: familyManManGirlGirl,                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManWomanBoy",                        "\x00")             /* Id: 1483, Name: familyManWomanBoy,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManWomanBoyBoy",                     "\x00")             /* Id: 1484, Name: familyManWomanBoyBoy,                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManWomanGirl",                       "\x00")             /* Id: 1485, Name: familyManWomanGirl,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManWomanGirlBoy",                    "\x00")             /* Id: 1486, Name: familyManWomanGirlBoy,                    CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyManWomanGirlGirl",                   "\x00")             /* Id: 1487, Name: familyManWomanGirlGirl,                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyWomanBoy",                           "\x00")             /* Id: 1488, Name: familyWomanBoy,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyWomanBoyBoy",                        "\x00")             /* Id: 1489, Name: familyWomanBoyBoy,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyWomanGirl",                          "\x00")             /* Id: 1490, Name: familyWomanGirl,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyWomanGirlBoy",                       "\x00")             /* Id: 1491, Name: familyWomanGirlBoy,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyWomanGirlGirl",                      "\x00")             /* Id: 1492, Name: familyWomanGirlGirl,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyWomanWomanBoy",                      "\x00")             /* Id: 1493, Name: familyWomanWomanBoy,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyWomanWomanBoyBoy",                   "\x00")             /* Id: 1494, Name: familyWomanWomanBoyBoy,                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyWomanWomanGirl",                     "\x00")             /* Id: 1495, Name: familyWomanWomanGirl,                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyWomanWomanGirlBoy",                  "\x00")             /* Id: 1496, Name: familyWomanWomanGirlBoy,                  CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("familyWomanWomanGirlGirl",                 "\x00")             /* Id: 1497, Name: familyWomanWomanGirlGirl,                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("manWithBeard",                             "\x00")             /* Id: 1498, Name: manWithBeard,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("manWithBlondeHair",                        "\x00")             /* Id: 1499, Name: manWithBlondeHair,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("manWithRedHair",                           "\x00")             /* Id: 1500, Name: manWithRedHair,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("manWithWhiteHair",                         "\x00")             /* Id: 1501, Name: manWithWhiteHair,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("peopleHoldingHands",                       "\x00")             /* Id: 1502, Name: peopleHoldingHands,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personBald",                               "\x00")             /* Id: 1503, Name: personBald,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personWithCurlyHair",                      "\x00")             /* Id: 1504, Name: personWithCurlyHair,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personWithRedHair",                        "\x00")             /* Id: 1505, Name: personWithRedHair,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personWithWhiteHair",                      "\x00")             /* Id: 1506, Name: personWithWhiteHair,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("womanWithBeard",                           "\x00")             /* Id: 1507, Name: womanWithBeard,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("womanWithBlondeHair",                      "\x00")             /* Id: 1508, Name: womanWithBlondeHair,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("womanWithRedHair",                         "\x00")             /* Id: 1509, Name: womanWithRedHair,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("womanWithWhiteHair",                       "\x00")             /* Id: 1510, Name: womanWithWhiteHair,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("zero.tag",                                 "\xF3\xA0\x80\xB0") /* Id: 1511, Name: zero.tag,                                 CodePoint: 917552,  Unicode: U+0E0030  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("one.tag",                                  "\xF3\xA0\x80\xB1") /* Id: 1512, Name: one.tag,                                  CodePoint: 917553,  Unicode: U+0E0031  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("two.tag",                                  "\xF3\xA0\x80\xB2") /* Id: 1513, Name: two.tag,                                  CodePoint: 917554,  Unicode: U+0E0032  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("three.tag",                                "\xF3\xA0\x80\xB3") /* Id: 1514, Name: three.tag,                                CodePoint: 917555,  Unicode: U+0E0033  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("four.tag",                                 "\xF3\xA0\x80\xB4") /* Id: 1515, Name: four.tag,                                 CodePoint: 917556,  Unicode: U+0E0034  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("five.tag",                                 "\xF3\xA0\x80\xB5") /* Id: 1516, Name: five.tag,                                 CodePoint: 917557,  Unicode: U+0E0035  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("six.tag",                                  "\xF3\xA0\x80\xB6") /* Id: 1517, Name: six.tag,                                  CodePoint: 917558,  Unicode: U+0E0036  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("seven.tag",                                "\xF3\xA0\x80\xB7") /* Id: 1518, Name: seven.tag,                                CodePoint: 917559,  Unicode: U+0E0037  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("eight.tag",                                "\xF3\xA0\x80\xB8") /* Id: 1519, Name: eight.tag,                                CodePoint: 917560,  Unicode: U+0E0038  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("nine.tag",                                 "\xF3\xA0\x80\xB9") /* Id: 1520, Name: nine.tag,                                 CodePoint: 917561,  Unicode: U+0E0039  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("a.tag",                                    "\xF3\xA0\x81\xA1") /* Id: 1521, Name: a.tag,                                    CodePoint: 917601,  Unicode: U+0E0061  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("b.tag",                                    "\xF3\xA0\x81\xA2") /* Id: 1522, Name: b.tag,                                    CodePoint: 917602,  Unicode: U+0E0062  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("c.tag",                                    "\xF3\xA0\x81\xA3") /* Id: 1523, Name: c.tag,                                    CodePoint: 917603,  Unicode: U+0E0063  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("d.tag",                                    "\xF3\xA0\x81\xA4") /* Id: 1524, Name: d.tag,                                    CodePoint: 917604,  Unicode: U+0E0064  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("e.tag",                                    "\xF3\xA0\x81\xA5") /* Id: 1525, Name: e.tag,                                    CodePoint: 917605,  Unicode: U+0E0065  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("f.tag",                                    "\xF3\xA0\x81\xA6") /* Id: 1526, Name: f.tag,                                    CodePoint: 917606,  Unicode: U+0E0066  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("g.tag",                                    "\xF3\xA0\x81\xA7") /* Id: 1527, Name: g.tag,                                    CodePoint: 917607,  Unicode: U+0E0067  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("h.tag",                                    "\xF3\xA0\x81\xA8") /* Id: 1528, Name: h.tag,                                    CodePoint: 917608,  Unicode: U+0E0068  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("i.tag",                                    "\xF3\xA0\x81\xA9") /* Id: 1529, Name: i.tag,                                    CodePoint: 917609,  Unicode: U+0E0069  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("j.tag",                                    "\xF3\xA0\x81\xAA") /* Id: 1530, Name: j.tag,                                    CodePoint: 917610,  Unicode: U+0E006A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("k.tag",                                    "\xF3\xA0\x81\xAB") /* Id: 1531, Name: k.tag,                                    CodePoint: 917611,  Unicode: U+0E006B  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("l.tag",                                    "\xF3\xA0\x81\xAC") /* Id: 1532, Name: l.tag,                                    CodePoint: 917612,  Unicode: U+0E006C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("m.tag",                                    "\xF3\xA0\x81\xAD") /* Id: 1533, Name: m.tag,                                    CodePoint: 917613,  Unicode: U+0E006D  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("n.tag",                                    "\xF3\xA0\x81\xAE") /* Id: 1534, Name: n.tag,                                    CodePoint: 917614,  Unicode: U+0E006E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("o.tag",                                    "\xF3\xA0\x81\xAF") /* Id: 1535, Name: o.tag,                                    CodePoint: 917615,  Unicode: U+0E006F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("p.tag",                                    "\xF3\xA0\x81\xB0") /* Id: 1536, Name: p.tag,                                    CodePoint: 917616,  Unicode: U+0E0070  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("q.tag",                                    "\xF3\xA0\x81\xB1") /* Id: 1537, Name: q.tag,                                    CodePoint: 917617,  Unicode: U+0E0071  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("r.tag",                                    "\xF3\xA0\x81\xB2") /* Id: 1538, Name: r.tag,                                    CodePoint: 917618,  Unicode: U+0E0072  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("s.tag",                                    "\xF3\xA0\x81\xB3") /* Id: 1539, Name: s.tag,                                    CodePoint: 917619,  Unicode: U+0E0073  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("t.tag",                                    "\xF3\xA0\x81\xB4") /* Id: 1540, Name: t.tag,                                    CodePoint: 917620,  Unicode: U+0E0074  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("u.tag",                                    "\xF3\xA0\x81\xB5") /* Id: 1541, Name: u.tag,                                    CodePoint: 917621,  Unicode: U+0E0075  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("v.tag",                                    "\xF3\xA0\x81\xB6") /* Id: 1542, Name: v.tag,                                    CodePoint: 917622,  Unicode: U+0E0076  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("w.tag",                                    "\xF3\xA0\x81\xB7") /* Id: 1543, Name: w.tag,                                    CodePoint: 917623,  Unicode: U+0E0077  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("x.tag",                                    "\xF3\xA0\x81\xB8") /* Id: 1544, Name: x.tag,                                    CodePoint: 917624,  Unicode: U+0E0078  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("y.tag",                                    "\xF3\xA0\x81\xB9") /* Id: 1545, Name: y.tag,                                    CodePoint: 917625,  Unicode: U+0E0079  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("z.tag",                                    "\xF3\xA0\x81\xBA") /* Id: 1546, Name: z.tag,                                    CodePoint: 917626,  Unicode: U+0E007A  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("cancel.tag",                               "\xF3\xA0\x81\xBF") /* Id: 1547, Name: cancel.tag,                               CodePoint: 917631,  Unicode: U+0E007F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("keycap_hash",                              "\xF3\xBE\xA0\xAC") /* Id: 1548, Name: keycap_hash,                              CodePoint: 1042476, Unicode: U+0FE82C  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("keycap_asterisk",                          "\x00")             /* Id: 1549, Name: keycap_asterisk,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("keycap1",                                  "\xF3\xBE\xA0\xAE") /* Id: 1550, Name: keycap1,                                  CodePoint: 1042478, Unicode: U+0FE82E  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("keycap2",                                  "\xF3\xBE\xA0\xAF") /* Id: 1551, Name: keycap2,                                  CodePoint: 1042479, Unicode: U+0FE82F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("keycap3",                                  "\xF3\xBE\xA0\xB0") /* Id: 1552, Name: keycap3,                                  CodePoint: 1042480, Unicode: U+0FE830  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("keycap4",                                  "\xF3\xBE\xA0\xB1") /* Id: 1553, Name: keycap4,                                  CodePoint: 1042481, Unicode: U+0FE831  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("keycap5",                                  "\xF3\xBE\xA0\xB2") /* Id: 1554, Name: keycap5,                                  CodePoint: 1042482, Unicode: U+0FE832  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("keycap6",                                  "\xF3\xBE\xA0\xB3") /* Id: 1555, Name: keycap6,                                  CodePoint: 1042483, Unicode: U+0FE833  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("keycap7",                                  "\xF3\xBE\xA0\xB4") /* Id: 1556, Name: keycap7,                                  CodePoint: 1042484, Unicode: U+0FE834  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("keycap8",                                  "\xF3\xBE\xA0\xB5") /* Id: 1557, Name: keycap8,                                  CodePoint: 1042485, Unicode: U+0FE835  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("keycap9",                                  "\xF3\xBE\xA0\xB6") /* Id: 1558, Name: keycap9,                                  CodePoint: 1042486, Unicode: U+0FE836  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("keycap0",                                  "\xF3\xBE\xA0\xB7") /* Id: 1559, Name: keycap0,                                  CodePoint: 1042487, Unicode: U+0FE837  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("keycap10",                                 "\xF0\x9F\x94\x9F") /* Id: 1560, Name: keycap10,                                 CodePoint: 128287,  Unicode: U+01F51F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("A.down",                                   "\x00")             /* Id: 1561, Name: A.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("B.down",                                   "\x00")             /* Id: 1562, Name: B.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("C.down",                                   "\x00")             /* Id: 1563, Name: C.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("D.down",                                   "\x00")             /* Id: 1564, Name: D.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("E.down",                                   "\x00")             /* Id: 1565, Name: E.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("F.down",                                   "\x00")             /* Id: 1566, Name: F.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("G.down",                                   "\x00")             /* Id: 1567, Name: G.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("H.down",                                   "\x00")             /* Id: 1568, Name: H.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("I.down",                                   "\x00")             /* Id: 1569, Name: I.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("J.down",                                   "\x00")             /* Id: 1570, Name: J.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("K.down",                                   "\x00")             /* Id: 1571, Name: K.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("L.down",                                   "\x00")             /* Id: 1572, Name: L.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("M.down",                                   "\x00")             /* Id: 1573, Name: M.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("N.down",                                   "\x00")             /* Id: 1574, Name: N.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("O.down",                                   "\x00")             /* Id: 1575, Name: O.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("P.down",                                   "\x00")             /* Id: 1576, Name: P.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("Q.down",                                   "\x00")             /* Id: 1577, Name: Q.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("R.down",                                   "\x00")             /* Id: 1578, Name: R.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("S.down",                                   "\x00")             /* Id: 1579, Name: S.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("T.down",                                   "\x00")             /* Id: 1580, Name: T.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("U.down",                                   "\x00")             /* Id: 1581, Name: U.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("V.down",                                   "\x00")             /* Id: 1582, Name: V.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("W.down",                                   "\x00")             /* Id: 1583, Name: W.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("X.down",                                   "\x00")             /* Id: 1584, Name: X.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("Y.down",                                   "\x00")             /* Id: 1585, Name: Y.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("Z.down",                                   "\x00")             /* Id: 1586, Name: Z.down,                                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("A.up",                                     "\x00")             /* Id: 1587, Name: A.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("B.up",                                     "\x00")             /* Id: 1588, Name: B.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("C.up",                                     "\x00")             /* Id: 1589, Name: C.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("D.up",                                     "\x00")             /* Id: 1590, Name: D.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("E.up",                                     "\x00")             /* Id: 1591, Name: E.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("F.up",                                     "\x00")             /* Id: 1592, Name: F.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("G.up",                                     "\x00")             /* Id: 1593, Name: G.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("H.up",                                     "\x00")             /* Id: 1594, Name: H.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("I.up",                                     "\x00")             /* Id: 1595, Name: I.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("J.up",                                     "\x00")             /* Id: 1596, Name: J.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("K.up",                                     "\x00")             /* Id: 1597, Name: K.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("L.up",                                     "\x00")             /* Id: 1598, Name: L.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("M.up",                                     "\x00")             /* Id: 1599, Name: M.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("N.up",                                     "\x00")             /* Id: 1600, Name: N.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("O.up",                                     "\x00")             /* Id: 1601, Name: O.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("P.up",                                     "\x00")             /* Id: 1602, Name: P.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("Q.up",                                     "\x00")             /* Id: 1603, Name: Q.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("R.up",                                     "\x00")             /* Id: 1604, Name: R.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("S.up",                                     "\x00")             /* Id: 1605, Name: S.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("T.up",                                     "\x00")             /* Id: 1606, Name: T.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("U.up",                                     "\x00")             /* Id: 1607, Name: U.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("V.up",                                     "\x00")             /* Id: 1608, Name: V.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("W.up",                                     "\x00")             /* Id: 1609, Name: W.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("X.up",                                     "\x00")             /* Id: 1610, Name: X.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("Y.up",                                     "\x00")             /* Id: 1611, Name: Y.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("Z.up",                                     "\x00")             /* Id: 1612, Name: Z.up,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAfghanistan",                          "\x00")             /* Id: 1613, Name: flagAfghanistan,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAlbania",                              "\x00")             /* Id: 1614, Name: flagAlbania,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAlgeria",                              "\x00")             /* Id: 1615, Name: flagAlgeria,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAmericanSamoa",                        "\x00")             /* Id: 1616, Name: flagAmericanSamoa,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAndorra",                              "\x00")             /* Id: 1617, Name: flagAndorra,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAngola",                               "\x00")             /* Id: 1618, Name: flagAngola,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAnguilla",                             "\x00")             /* Id: 1619, Name: flagAnguilla,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAntarctica",                           "\x00")             /* Id: 1620, Name: flagAntarctica,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAntiguaBarbuda",                       "\x00")             /* Id: 1621, Name: flagAntiguaBarbuda,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagArgentina",                            "\x00")             /* Id: 1622, Name: flagArgentina,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagArmenia",                              "\x00")             /* Id: 1623, Name: flagArmenia,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAruba",                                "\x00")             /* Id: 1624, Name: flagAruba,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAscensionIsland",                      "\x00")             /* Id: 1625, Name: flagAscensionIsland,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAustralia",                            "\x00")             /* Id: 1626, Name: flagAustralia,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAustria",                              "\x00")             /* Id: 1627, Name: flagAustria,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flaglandIslands",                          "\x00")             /* Id: 1628, Name: flaglandIslands,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagAzerbaijan",                           "\x00")             /* Id: 1629, Name: flagAzerbaijan,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBahamas",                              "\x00")             /* Id: 1630, Name: flagBahamas,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBahrain",                              "\x00")             /* Id: 1631, Name: flagBahrain,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBangladesh",                           "\x00")             /* Id: 1632, Name: flagBangladesh,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBarbados",                             "\x00")             /* Id: 1633, Name: flagBarbados,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBelarus",                              "\x00")             /* Id: 1634, Name: flagBelarus,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBelgium",                              "\x00")             /* Id: 1635, Name: flagBelgium,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBelize",                               "\x00")             /* Id: 1636, Name: flagBelize,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBenin",                                "\x00")             /* Id: 1637, Name: flagBenin,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagStBarthlemy",                          "\x00")             /* Id: 1638, Name: flagStBarthlemy,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBermuda",                              "\x00")             /* Id: 1639, Name: flagBermuda,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBhutan",                               "\x00")             /* Id: 1640, Name: flagBhutan,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBolivia",                              "\x00")             /* Id: 1641, Name: flagBolivia,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBosniaHerzegovina",                    "\x00")             /* Id: 1642, Name: flagBosniaHerzegovina,                    CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBotswana",                             "\x00")             /* Id: 1643, Name: flagBotswana,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBouvetIsland",                         "\x00")             /* Id: 1644, Name: flagBouvetIsland,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBrazil",                               "\x00")             /* Id: 1645, Name: flagBrazil,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBritishVirginIslands",                 "\x00")             /* Id: 1646, Name: flagBritishVirginIslands,                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBrunei",                               "\x00")             /* Id: 1647, Name: flagBrunei,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBulgaria",                             "\x00")             /* Id: 1648, Name: flagBulgaria,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBurkinaFaso",                          "\x00")             /* Id: 1649, Name: flagBurkinaFaso,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagBurundi",                              "\x00")             /* Id: 1650, Name: flagBurundi,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCambodia",                             "\x00")             /* Id: 1651, Name: flagCambodia,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCameroon",                             "\x00")             /* Id: 1652, Name: flagCameroon,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCanada",                               "\x00")             /* Id: 1653, Name: flagCanada,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCteDIvoire",                           "\x00")             /* Id: 1654, Name: flagCteDIvoire,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCanaryIslands",                        "\x00")             /* Id: 1655, Name: flagCanaryIslands,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCapeVerde",                            "\x00")             /* Id: 1656, Name: flagCapeVerde,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCuraao",                               "\x00")             /* Id: 1657, Name: flagCuraao,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCaribbeanNetherlands",                 "\x00")             /* Id: 1658, Name: flagCaribbeanNetherlands,                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCaymanIslands",                        "\x00")             /* Id: 1659, Name: flagCaymanIslands,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCentralAfricanRepublic",               "\x00")             /* Id: 1660, Name: flagCentralAfricanRepublic,               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCeutaMelilla",                         "\x00")             /* Id: 1661, Name: flagCeutaMelilla,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagChad",                                 "\x00")             /* Id: 1662, Name: flagChad,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagChile",                                "\x00")             /* Id: 1663, Name: flagChile,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagChristmasIsland",                      "\x00")             /* Id: 1664, Name: flagChristmasIsland,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagClippertonIsland",                     "\x00")             /* Id: 1665, Name: flagClippertonIsland,                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCocosKeelingIslands",                  "\x00")             /* Id: 1666, Name: flagCocosKeelingIslands,                  CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagColombia",                             "\x00")             /* Id: 1667, Name: flagColombia,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagComoros",                              "\x00")             /* Id: 1668, Name: flagComoros,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCongoBrazzaville",                     "\x00")             /* Id: 1669, Name: flagCongoBrazzaville,                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCongoKinshasa",                        "\x00")             /* Id: 1670, Name: flagCongoKinshasa,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCookIslands",                          "\x00")             /* Id: 1671, Name: flagCookIslands,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagChina",                                "\xF3\xBE\x93\xAD") /* Id: 1672, Name: flagChina,                                CodePoint: 1041645, Unicode: U+0FE4ED  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCostaRica",                            "\x00")             /* Id: 1673, Name: flagCostaRica,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCroatia",                              "\x00")             /* Id: 1674, Name: flagCroatia,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCuba",                                 "\x00")             /* Id: 1675, Name: flagCuba,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCyprus",                               "\x00")             /* Id: 1676, Name: flagCyprus,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagCzechia",                              "\x00")             /* Id: 1677, Name: flagCzechia,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagDenmark",                              "\x00")             /* Id: 1678, Name: flagDenmark,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGermany",                              "\xF3\xBE\x93\xA8") /* Id: 1679, Name: flagGermany,                              CodePoint: 1041640, Unicode: U+0FE4E8  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagDiegoGarcia",                          "\x00")             /* Id: 1680, Name: flagDiegoGarcia,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagDjibouti",                             "\x00")             /* Id: 1681, Name: flagDjibouti,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagDominica",                             "\x00")             /* Id: 1682, Name: flagDominica,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagDominicanRepublic",                    "\x00")             /* Id: 1683, Name: flagDominicanRepublic,                    CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagEcuador",                              "\x00")             /* Id: 1684, Name: flagEcuador,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagEgypt",                                "\x00")             /* Id: 1685, Name: flagEgypt,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagElSalvador",                           "\x00")             /* Id: 1686, Name: flagElSalvador,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagEngland",                              "\x00")             /* Id: 1687, Name: flagEngland,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagEquatorialGuinea",                     "\x00")             /* Id: 1688, Name: flagEquatorialGuinea,                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagEritrea",                              "\x00")             /* Id: 1689, Name: flagEritrea,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagEstonia",                              "\x00")             /* Id: 1690, Name: flagEstonia,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagEswatini",                             "\x00")             /* Id: 1691, Name: flagEswatini,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSpain",                                "\xF3\xBE\x93\xAB") /* Id: 1692, Name: flagSpain,                                CodePoint: 1041643, Unicode: U+0FE4EB  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagEthiopia",                             "\x00")             /* Id: 1693, Name: flagEthiopia,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagEuropeanUnion",                        "\x00")             /* Id: 1694, Name: flagEuropeanUnion,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagFalklandIslands",                      "\x00")             /* Id: 1695, Name: flagFalklandIslands,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagFaroeIslands",                         "\x00")             /* Id: 1696, Name: flagFaroeIslands,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagFiji",                                 "\x00")             /* Id: 1697, Name: flagFiji,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagFinland",                              "\x00")             /* Id: 1698, Name: flagFinland,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagFrenchGuiana",                         "\x00")             /* Id: 1699, Name: flagFrenchGuiana,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagFrance",                               "\xF3\xBE\x93\xA7") /* Id: 1700, Name: flagFrance,                               CodePoint: 1041639, Unicode: U+0FE4E7  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagFrenchPolynesia",                      "\x00")             /* Id: 1701, Name: flagFrenchPolynesia,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagFrenchSouthernTerritories",            "\x00")             /* Id: 1702, Name: flagFrenchSouthernTerritories,            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGabon",                                "\x00")             /* Id: 1703, Name: flagGabon,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGambia",                               "\x00")             /* Id: 1704, Name: flagGambia,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGeorgia",                              "\x00")             /* Id: 1705, Name: flagGeorgia,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGhana",                                "\x00")             /* Id: 1706, Name: flagGhana,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGibraltar",                            "\x00")             /* Id: 1707, Name: flagGibraltar,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGreece",                               "\x00")             /* Id: 1708, Name: flagGreece,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGreenland",                            "\x00")             /* Id: 1709, Name: flagGreenland,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGrenada",                              "\x00")             /* Id: 1710, Name: flagGrenada,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGuadeloupe",                           "\x00")             /* Id: 1711, Name: flagGuadeloupe,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGuam",                                 "\x00")             /* Id: 1712, Name: flagGuam,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGuatemala",                            "\x00")             /* Id: 1713, Name: flagGuatemala,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGuernsey",                             "\x00")             /* Id: 1714, Name: flagGuernsey,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGuinea",                               "\x00")             /* Id: 1715, Name: flagGuinea,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGuineaBissau",                         "\x00")             /* Id: 1716, Name: flagGuineaBissau,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGuyana",                               "\x00")             /* Id: 1717, Name: flagGuyana,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagHaiti",                                "\x00")             /* Id: 1718, Name: flagHaiti,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagHonduras",                             "\x00")             /* Id: 1719, Name: flagHonduras,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagHongKongSarChina",                     "\x00")             /* Id: 1720, Name: flagHongKongSarChina,                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagHungary",                              "\x00")             /* Id: 1721, Name: flagHungary,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagIceland",                              "\x00")             /* Id: 1722, Name: flagIceland,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagIndia",                                "\x00")             /* Id: 1723, Name: flagIndia,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagIndonesia",                            "\x00")             /* Id: 1724, Name: flagIndonesia,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagIran",                                 "\x00")             /* Id: 1725, Name: flagIran,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagIraq",                                 "\x00")             /* Id: 1726, Name: flagIraq,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagIreland",                              "\x00")             /* Id: 1727, Name: flagIreland,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagIsleOfMan",                            "\x00")             /* Id: 1728, Name: flagIsleOfMan,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagIsrael",                               "\x00")             /* Id: 1729, Name: flagIsrael,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagItaly",                                "\xF3\xBE\x93\xA9") /* Id: 1730, Name: flagItaly,                                CodePoint: 1041641, Unicode: U+0FE4E9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagJamaica",                              "\x00")             /* Id: 1731, Name: flagJamaica,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagJersey",                               "\x00")             /* Id: 1732, Name: flagJersey,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagJordan",                               "\x00")             /* Id: 1733, Name: flagJordan,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagJapan",                                "\xF3\xBE\x93\xA5") /* Id: 1734, Name: flagJapan,                                CodePoint: 1041637, Unicode: U+0FE4E5  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagKazakhstan",                           "\x00")             /* Id: 1735, Name: flagKazakhstan,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagKenya",                                "\x00")             /* Id: 1736, Name: flagKenya,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagKiribati",                             "\x00")             /* Id: 1737, Name: flagKiribati,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagKosovo",                               "\x00")             /* Id: 1738, Name: flagKosovo,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSouthKorea",                           "\xF3\xBE\x93\xAE") /* Id: 1739, Name: flagSouthKorea,                           CodePoint: 1041646, Unicode: U+0FE4EE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagKuwait",                               "\x00")             /* Id: 1740, Name: flagKuwait,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagKyrgyzstan",                           "\x00")             /* Id: 1741, Name: flagKyrgyzstan,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagLaos",                                 "\x00")             /* Id: 1742, Name: flagLaos,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagLatvia",                               "\x00")             /* Id: 1743, Name: flagLatvia,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagLebanon",                              "\x00")             /* Id: 1744, Name: flagLebanon,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagLesotho",                              "\x00")             /* Id: 1745, Name: flagLesotho,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagLiberia",                              "\x00")             /* Id: 1746, Name: flagLiberia,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagLibya",                                "\x00")             /* Id: 1747, Name: flagLibya,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagLiechtenstein",                        "\x00")             /* Id: 1748, Name: flagLiechtenstein,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagLithuania",                            "\x00")             /* Id: 1749, Name: flagLithuania,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagLuxembourg",                           "\x00")             /* Id: 1750, Name: flagLuxembourg,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMacaoSarChina",                        "\x00")             /* Id: 1751, Name: flagMacaoSarChina,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMadagascar",                           "\x00")             /* Id: 1752, Name: flagMadagascar,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMalawi",                               "\x00")             /* Id: 1753, Name: flagMalawi,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMalaysia",                             "\x00")             /* Id: 1754, Name: flagMalaysia,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMaldives",                             "\x00")             /* Id: 1755, Name: flagMaldives,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMali",                                 "\x00")             /* Id: 1756, Name: flagMali,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMalta",                                "\x00")             /* Id: 1757, Name: flagMalta,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMarshallIslands",                      "\x00")             /* Id: 1758, Name: flagMarshallIslands,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMartinique",                           "\x00")             /* Id: 1759, Name: flagMartinique,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMauritania",                           "\x00")             /* Id: 1760, Name: flagMauritania,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMauritius",                            "\x00")             /* Id: 1761, Name: flagMauritius,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMayotte",                              "\x00")             /* Id: 1762, Name: flagMayotte,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMexico",                               "\x00")             /* Id: 1763, Name: flagMexico,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMicronesia",                           "\x00")             /* Id: 1764, Name: flagMicronesia,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMoldova",                              "\x00")             /* Id: 1765, Name: flagMoldova,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMonaco",                               "\x00")             /* Id: 1766, Name: flagMonaco,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMongolia",                             "\x00")             /* Id: 1767, Name: flagMongolia,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMontenegro",                           "\x00")             /* Id: 1768, Name: flagMontenegro,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMontserrat",                           "\x00")             /* Id: 1769, Name: flagMontserrat,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMorocco",                              "\x00")             /* Id: 1770, Name: flagMorocco,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMozambique",                           "\x00")             /* Id: 1771, Name: flagMozambique,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagMyanmarBurma",                         "\x00")             /* Id: 1772, Name: flagMyanmarBurma,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNamibia",                              "\x00")             /* Id: 1773, Name: flagNamibia,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNauru",                                "\x00")             /* Id: 1774, Name: flagNauru,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNepal",                                "\x00")             /* Id: 1775, Name: flagNepal,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNetherlands",                          "\x00")             /* Id: 1776, Name: flagNetherlands,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNewCaledonia",                         "\x00")             /* Id: 1777, Name: flagNewCaledonia,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNewZealand",                           "\x00")             /* Id: 1778, Name: flagNewZealand,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNicaragua",                            "\x00")             /* Id: 1779, Name: flagNicaragua,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNiger",                                "\x00")             /* Id: 1780, Name: flagNiger,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNigeria",                              "\x00")             /* Id: 1781, Name: flagNigeria,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNiue",                                 "\x00")             /* Id: 1782, Name: flagNiue,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNorfolkIsland",                        "\x00")             /* Id: 1783, Name: flagNorfolkIsland,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNorthKorea",                           "\x00")             /* Id: 1784, Name: flagNorthKorea,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNorthMacedonia",                       "\x00")             /* Id: 1785, Name: flagNorthMacedonia,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagNorthernMarianaIslands",               "\x00")             /* Id: 1786, Name: flagNorthernMarianaIslands,               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagOman",                                 "\x00")             /* Id: 1787, Name: flagOman,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagPakistan",                             "\x00")             /* Id: 1788, Name: flagPakistan,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagPalau",                                "\x00")             /* Id: 1789, Name: flagPalau,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagPalestinianTerritories",               "\x00")             /* Id: 1790, Name: flagPalestinianTerritories,               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagPanama",                               "\x00")             /* Id: 1791, Name: flagPanama,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagPapuaNewGuinea",                       "\x00")             /* Id: 1792, Name: flagPapuaNewGuinea,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagParaguay",                             "\x00")             /* Id: 1793, Name: flagParaguay,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagPeru",                                 "\x00")             /* Id: 1794, Name: flagPeru,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagPhilippines",                          "\x00")             /* Id: 1795, Name: flagPhilippines,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagPitcairnIslands",                      "\x00")             /* Id: 1796, Name: flagPitcairnIslands,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagPoland",                               "\x00")             /* Id: 1797, Name: flagPoland,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagPortugal",                             "\x00")             /* Id: 1798, Name: flagPortugal,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagPuertoRico",                           "\x00")             /* Id: 1799, Name: flagPuertoRico,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagQatar",                                "\x00")             /* Id: 1800, Name: flagQatar,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagRunion",                               "\x00")             /* Id: 1801, Name: flagRunion,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagRomania",                              "\x00")             /* Id: 1802, Name: flagRomania,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagRwanda",                               "\x00")             /* Id: 1803, Name: flagRwanda,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagRussia",                               "\xF3\xBE\x93\xAC") /* Id: 1804, Name: flagRussia,                               CodePoint: 1041644, Unicode: U+0FE4EC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSamoa",                                "\x00")             /* Id: 1805, Name: flagSamoa,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSanMarino",                            "\x00")             /* Id: 1806, Name: flagSanMarino,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSaudiArabia",                          "\x00")             /* Id: 1807, Name: flagSaudiArabia,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagScotland",                             "\x00")             /* Id: 1808, Name: flagScotland,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSenegal",                              "\x00")             /* Id: 1809, Name: flagSenegal,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSerbia",                               "\x00")             /* Id: 1810, Name: flagSerbia,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSeychelles",                           "\x00")             /* Id: 1811, Name: flagSeychelles,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSierraLeone",                          "\x00")             /* Id: 1812, Name: flagSierraLeone,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSingapore",                            "\x00")             /* Id: 1813, Name: flagSingapore,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSintMaarten",                          "\x00")             /* Id: 1814, Name: flagSintMaarten,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSlovakia",                             "\x00")             /* Id: 1815, Name: flagSlovakia,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSlovenia",                             "\x00")             /* Id: 1816, Name: flagSlovenia,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSolomonIslands",                       "\x00")             /* Id: 1817, Name: flagSolomonIslands,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSomalia",                              "\x00")             /* Id: 1818, Name: flagSomalia,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSouthAfrica",                          "\x00")             /* Id: 1819, Name: flagSouthAfrica,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSouthGeorgiaSouthSandwichIslands",     "\x00")             /* Id: 1820, Name: flagSouthGeorgiaSouthSandwichIslands,     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSouthSudan",                           "\x00")             /* Id: 1821, Name: flagSouthSudan,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSoTomPrncipe",                         "\x00")             /* Id: 1822, Name: flagSoTomPrncipe,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSriLanka",                             "\x00")             /* Id: 1823, Name: flagSriLanka,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagStHelena",                             "\x00")             /* Id: 1824, Name: flagStHelena,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagStKittsNevis",                         "\x00")             /* Id: 1825, Name: flagStKittsNevis,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagStLucia",                              "\x00")             /* Id: 1826, Name: flagStLucia,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagStMartin",                             "\x00")             /* Id: 1827, Name: flagStMartin,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagStPierreMiquelon",                     "\x00")             /* Id: 1828, Name: flagStPierreMiquelon,                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagStVincentGrenadines",                  "\x00")             /* Id: 1829, Name: flagStVincentGrenadines,                  CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSudan",                                "\x00")             /* Id: 1830, Name: flagSudan,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSuriname",                             "\x00")             /* Id: 1831, Name: flagSuriname,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSweden",                               "\x00")             /* Id: 1832, Name: flagSweden,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSwitzerland",                          "\x00")             /* Id: 1833, Name: flagSwitzerland,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSyria",                                "\x00")             /* Id: 1834, Name: flagSyria,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTaiwan",                               "\x00")             /* Id: 1835, Name: flagTaiwan,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTajikistan",                           "\x00")             /* Id: 1836, Name: flagTajikistan,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTanzania",                             "\x00")             /* Id: 1837, Name: flagTanzania,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagThailand",                             "\x00")             /* Id: 1838, Name: flagThailand,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTimorLeste",                           "\x00")             /* Id: 1839, Name: flagTimorLeste,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTogo",                                 "\x00")             /* Id: 1840, Name: flagTogo,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTokelau",                              "\x00")             /* Id: 1841, Name: flagTokelau,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTonga",                                "\x00")             /* Id: 1842, Name: flagTonga,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTrinidadTobago",                       "\x00")             /* Id: 1843, Name: flagTrinidadTobago,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTristanDaCunha",                       "\x00")             /* Id: 1844, Name: flagTristanDaCunha,                       CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTunisia",                              "\x00")             /* Id: 1845, Name: flagTunisia,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTurkey",                               "\x00")             /* Id: 1846, Name: flagTurkey,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTurkmenistan",                         "\x00")             /* Id: 1847, Name: flagTurkmenistan,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTurksCaicosIslands",                   "\x00")             /* Id: 1848, Name: flagTurksCaicosIslands,                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagTuvalu",                               "\x00")             /* Id: 1849, Name: flagTuvalu,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagUSOutlyingIslands",                    "\x00")             /* Id: 1850, Name: flagUSOutlyingIslands,                    CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagUSVirginIslands",                      "\x00")             /* Id: 1851, Name: flagUSVirginIslands,                      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagUganda",                               "\x00")             /* Id: 1852, Name: flagUganda,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagUkraine",                              "\x00")             /* Id: 1853, Name: flagUkraine,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagUnitedArabEmirates",                   "\x00")             /* Id: 1854, Name: flagUnitedArabEmirates,                   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagGreatBritain",                         "\xF3\xBE\x93\xAA") /* Id: 1855, Name: flagGreatBritain,                         CodePoint: 1041642, Unicode: U+0FE4EA  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagUnitedNations",                        "\x00")             /* Id: 1856, Name: flagUnitedNations,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagUnitedStates",                         "\xF3\xBE\x93\xA6") /* Id: 1857, Name: flagUnitedStates,                         CodePoint: 1041638, Unicode: U+0FE4E6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagUruguay",                              "\x00")             /* Id: 1858, Name: flagUruguay,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagUzbekistan",                           "\x00")             /* Id: 1859, Name: flagUzbekistan,                           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagVanuatu",                              "\x00")             /* Id: 1860, Name: flagVanuatu,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagVaticanCity",                          "\x00")             /* Id: 1861, Name: flagVaticanCity,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagVenezuela",                            "\x00")             /* Id: 1862, Name: flagVenezuela,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagVietnam",                              "\x00")             /* Id: 1863, Name: flagVietnam,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagWales",                                "\x00")             /* Id: 1864, Name: flagWales,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagWallisFutuna",                         "\x00")             /* Id: 1865, Name: flagWallisFutuna,                         CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagWesternSahara",                        "\x00")             /* Id: 1866, Name: flagWesternSahara,                        CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagYemen",                                "\x00")             /* Id: 1867, Name: flagYemen,                                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagZambia",                               "\x00")             /* Id: 1868, Name: flagZambia,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagZimbabwe",                             "\x00")             /* Id: 1869, Name: flagZimbabwe,                             CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("pirateFlag",                               "\x00")             /* Id: 1870, Name: pirateFlag,                               CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("rainbowFlag",                              "\x00")             /* Id: 1871, Name: rainbowFlag,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("transgenderFlag",                          "\x00")             /* Id: 1872, Name: transgenderFlag,                          CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("Baseflag",                                 "\x00")             /* Id: 1873, Name: Baseflag,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("unknownFlag",                              "\x00")             /* Id: 1874, Name: unknownFlag,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("1FAE9",                                    "\xF0\x9F\xAB\xA9") /* Id: 1875, Name: 1FAE9,                                    CodePoint: 129769,  Unicode: U+01FAE9  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("1FAC6",                                    "\xF0\x9F\xAB\x86") /* Id: 1876, Name: 1FAC6,                                    CodePoint: 129734,  Unicode: U+01FAC6  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("1FADC",                                    "\xF0\x9F\xAB\x9C") /* Id: 1877, Name: 1FADC,                                    CodePoint: 129756,  Unicode: U+01FADC  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("1FABE",                                    "\xF0\x9F\xAA\xBE") /* Id: 1878, Name: 1FABE,                                    CodePoint: 129726,  Unicode: U+01FABE  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("1FA89",                                    "\xF0\x9F\xAA\x89") /* Id: 1879, Name: 1FA89,                                    CodePoint: 129673,  Unicode: U+01FA89  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("1FA8F",                                    "\xF0\x9F\xAA\x8F") /* Id: 1880, Name: 1FA8F,                                    CodePoint: 129679,  Unicode: U+01FA8F  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("1FADF",                                    "\xF0\x9F\xAB\x9F") /* Id: 1881, Name: 1FADF,                                    CodePoint: 129759,  Unicode: U+01FADF  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("flagSark",                                 "\x00")             /* Id: 1882, Name: flagSark,                                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("brokenChain",                              "\x00")             /* Id: 1883, Name: brokenChain,                              CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("brownMushroom",                            "\x00")             /* Id: 1884, Name: brownMushroom,                            CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("headShakingHorizontally",                  "\x00")             /* Id: 1885, Name: headShakingHorizontally,                  CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("headShakingVertically",                    "\x00")             /* Id: 1886, Name: headShakingVertically,                    CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("lime",                                     "\x00")             /* Id: 1887, Name: lime,                                     CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personInManualWheelchairFacingRight",      "\x00")             /* Id: 1888, Name: personInManualWheelchairFacingRight,      CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personInMotorizedWheelchairFacingRight",   "\x00")             /* Id: 1889, Name: personInMotorizedWheelchairFacingRight,   CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personKneelingFacingRight",                "\x00")             /* Id: 1890, Name: personKneelingFacingRight,                CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personRunningFacingRight",                 "\x00")             /* Id: 1891, Name: personRunningFacingRight,                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personWalkingFacingRight",                 "\x00")             /* Id: 1892, Name: personWalkingFacingRight,                 CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("personWithWhiteCaneFacingRight",           "\x00")             /* Id: 1893, Name: personWithWhiteCaneFacingRight,           CodePoint: 0,       Unicode: U+000000  */ \
+    NOTO_EMOJI_24_DEFINE_SYMBOL("phoenix",                                  "\x00")             /* Id: 1894, Name: phoenix,                                  CodePoint: 0,       Unicode: U+000000  */
+
+    static const symbol_def_t noto_emoji_24_symbol_table[] = {
+        NOTO_EMOJI_24_SYMBOLS_LIST
+        {NULL,NULL}
+    };
+#undef NOTO_EMOJI_24_DEFINE_SYMBOL
+
+#define TOTAL_NOTO_EMOJI_24_SYMBOLS    1895
+
+#endif /* #if CUSTOM_FONT_NOTO_EMOJI_24_SYMBOL */
+
+#ifdef __cplusplus
+    } /* extern "C" */
+#endif
+
+#endif /* #if CUSTOM_FONT_NOTO_EMOJI_24_SYMBOL_DEF_H */

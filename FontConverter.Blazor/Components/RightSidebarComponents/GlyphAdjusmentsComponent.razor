@@ -1,0 +1,91 @@
+﻿<RadzenAccordion Multiple="false">
+    <Items>
+        <RadzenAccordionItem Text="Glyph Adjusments" Icon="page_info">
+            <RadzenStack Orientation="Orientation.Vertical" Gap="15">
+
+                <RadzenText Style="color:#605e5c; font-size: 0.75rem;">
+                    Anti-Alias
+                </RadzenText>
+                <RadzenSwitch Value=@(MainViewModel.LastSelectedGlyph?.Adjusments.AntiAlias??false)
+                              Change="@OnAntiAliasChanged"
+                              Style="margin-left: 20px;" />
+
+                <RadzenText Style="color:#605e5c; font-size: 0.75rem;">
+                    Dither
+                </RadzenText>
+                <RadzenSwitch Value=@(MainViewModel.LastSelectedGlyph?.Adjusments.Dither??false)
+                              Change="@OnDitherChanged"
+                              Style="margin-left: 20px;" />
+
+                <RadzenFormField AllowFloatingLabel="@floatFieldLabel"
+                                 Text="Style"
+                                 Variant="@variant"
+                                 Style="width: 100%;">
+                    <ChildContent>
+                        <RadzenDropDown Value=@MainViewModel.LastSelectedGlyph?.Adjusments.Style
+                                        Data=@PredefinedData.GlyphStyleList
+                                        TextProperty="Value"
+                                        ValueProperty="Key"
+                                        Change="@OnStyleChanged" />
+                    </ChildContent>
+                </RadzenFormField>
+
+                <RadzenText Style="color:#605e5c; font-size: 0.75rem;">
+                    Stroke Width
+                </RadzenText>
+                <RadzenStack Orientation="Orientation.Horizontal"
+                             AlignItems="AlignItems.Center"
+                             JustifyContent="JustifyContent.SpaceBetween"
+                             Style="width: 100%; padding-left: 20px;">
+                    <RadzenSlider Min="0"
+                                  Max="20"
+                                  TValue="int?"
+                                  Value=@MainViewModel.LastSelectedGlyph?.Adjusments.StrokeWidth
+                                  Change="@OnStrokeWidthChanged"
+                                  Style="width:60% !important;" />
+                    <RadzenBadge BadgeStyle="BadgeStyle.Base"
+                                 Text="@(string.Format("{0:N0}",MainViewModel.LastSelectedGlyph?.Adjusments.StrokeWidth))"
+                                 Style="width: 30% !important;" />
+                </RadzenStack>
+
+                <RadzenText Style="color:#605e5c; font-size: 0.75rem;">
+                    Gamma
+                </RadzenText>
+                <RadzenStack Orientation="Orientation.Horizontal"
+                             AlignItems="AlignItems.Center"
+                             JustifyContent="JustifyContent.SpaceBetween"
+                             Style="width: 100%; padding-left: 20px;">
+                    <GradienSlider Value=@MainViewModel.LastSelectedGlyph?.Adjusments.Gamma
+                                   TValue="int?"
+                                   Min="0"
+                                   Max="100"
+                                   IsReverse=true
+                                   Change="@OnGammaChanged"
+                                   Style="width:60% !important; height: 12px; background: #ffffff; background: linear-gradient(90deg, black 0%, white 100%); border: 2px solid #DDD !important;" />
+                    <RadzenBadge BadgeStyle="BadgeStyle.Base"
+                                 Text="@(string.Format("{0:0.0}",_GammaValue))"
+                                 Style="width: 30% !important;" />
+                </RadzenStack>
+
+                <RadzenText Style="color:#605e5c; font-size: 0.75rem;">
+                    Threshold
+                </RadzenText>
+                <RadzenStack Orientation="Orientation.Horizontal"
+                             AlignItems="AlignItems.Center"
+                             JustifyContent="JustifyContent.SpaceBetween"
+                             Style="width: 100%; padding-left: 20px;">
+                    <GradienSlider Value=@MainViewModel.LastSelectedGlyph?.Adjusments.Threshold
+                                   TValue="int?"
+                                   Min="0"
+                                   Max="255"
+                                   Change="@OnThresholdChanged"
+                                   Style="width:60% !important; height: 12px; background: #ffffff; background: linear-gradient(90deg, white 0%, black 100%); border: 2px solid #DDD !important;" />
+                    <RadzenBadge BadgeStyle="BadgeStyle.Base"
+                                 Text="@(string.Format("{0:N0}",MainViewModel.LastSelectedGlyph?.Adjusments.Threshold))"
+                                 Style="width: 30% !important;" />
+                </RadzenStack>
+
+            </RadzenStack>
+        </RadzenAccordionItem>
+    </Items>
+</RadzenAccordion>
