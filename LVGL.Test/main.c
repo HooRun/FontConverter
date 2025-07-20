@@ -20,10 +20,6 @@
 #define TAB3_TITLE "Binary"
 #define TAB4_TITLE "SVG"
 
-#define CANVAS_WIDTH  200
-#define CANVAS_HEIGHT 200
-
-
 typedef struct {
     char font_name[255];
     lv_font_t* font;
