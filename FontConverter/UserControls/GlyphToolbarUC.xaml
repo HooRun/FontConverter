@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="LVGLFontConverter.UserControls.GlyphToolbarUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LVGLFontConverter.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Vertical" >
+
+        <!--<AppBarButton Label="Add Glyph" Style="{StaticResource GlyphToolbarAppBarButtonStyle}">
+            <AppBarButton.Resources>
+                <Color x:Key="AppBarButtonBackground">White</Color>
+                <Color x:Key="AppBarButtonBackgroundPointerOver">#EEEEEE</Color>
+                <Color x:Key="AppBarButtonBackgroundPressed">#F2F2F2</Color>
+            </AppBarButton.Resources>
+            <AppBarButton.Icon>
+                <FontIcon Glyph="replace_image" Style="{StaticResource GlyphToolbarFontIcon}"/>
+            </AppBarButton.Icon>
+        </AppBarButton>-->
+        <AppBarButton Label="Edit Glyph" Style="{StaticResource GlyphToolbarAppBarButtonStyle}">
+            <AppBarButton.Resources>
+                <Color x:Key="AppBarButtonBackground">White</Color>
+                <Color x:Key="AppBarButtonBackgroundPointerOver">#EEEEEE</Color>
+                <Color x:Key="AppBarButtonBackgroundPressed">#F2F2F2</Color>
+            </AppBarButton.Resources>
+            <AppBarButton.Icon>
+                <FontIcon Glyph="draw" Style="{StaticResource GlyphToolbarFontIcon}"/>
+            </AppBarButton.Icon>
+        </AppBarButton>
+        
+        <!--<AppBarButton Label="Remove Glyph" Style="{StaticResource GlyphToolbarAppBarButtonStyle}">
+            <AppBarButton.Resources>
+                <Color x:Key="AppBarButtonBackground">White</Color>
+                <Color x:Key="AppBarButtonBackgroundPointerOver">#EEEEEE</Color>
+                <Color x:Key="AppBarButtonBackgroundPressed">#F2F2F2</Color>
+            </AppBarButton.Resources>
+            <AppBarButton.Icon>
+                <FontIcon Glyph="ev_shadow_minus" Style="{StaticResource GlyphToolbarFontIcon}"/>
+            </AppBarButton.Icon>
+        </AppBarButton>-->
+        <!--<AppBarButton Label="Add Charachter" Style="{StaticResource GlyphToolbarAppBarButtonStyle}">
+            <AppBarButton.Resources>
+                <Color x:Key="AppBarButtonBackground">White</Color>
+                <Color x:Key="AppBarButtonBackgroundPointerOver">#EEEEEE</Color>
+                <Color x:Key="AppBarButtonBackgroundPressed">#F2F2F2</Color>
+            </AppBarButton.Resources>
+            <AppBarButton.Icon>
+                <FontIcon Glyph="text_increase" Style="{StaticResource GlyphToolbarFontIcon}"/>
+            </AppBarButton.Icon>
+        </AppBarButton>-->
+        <AppBarButton Label="Remove Charachter" Style="{StaticResource GlyphToolbarAppBarButtonStyle}">
+            <AppBarButton.Resources>
+                <Color x:Key="AppBarButtonBackground">White</Color>
+                <Color x:Key="AppBarButtonBackgroundPointerOver">#EEEEEE</Color>
+                <Color x:Key="AppBarButtonBackgroundPressed">#F2F2F2</Color>
+            </AppBarButton.Resources>
+            <AppBarButton.Icon>
+                <FontIcon Glyph="delete" Style="{StaticResource GlyphToolbarFontIcon}"/>
+            </AppBarButton.Icon>
+        </AppBarButton>
+        
+        <AppBarButton Label="Zoom In" Style="{StaticResource GlyphToolbarAppBarButtonStyle}">
+            <AppBarButton.Resources>
+                <Color x:Key="AppBarButtonBackground">White</Color>
+                <Color x:Key="AppBarButtonBackgroundPointerOver">#EEEEEE</Color>
+                <Color x:Key="AppBarButtonBackgroundPressed">#F2F2F2</Color>
+            </AppBarButton.Resources>
+            <AppBarButton.Icon>
+                <FontIcon Glyph="zoom_in" Style="{StaticResource GlyphToolbarFontIcon}"/>
+            </AppBarButton.Icon>
+        </AppBarButton>
+        <AppBarButton Label="Zoom Out" Style="{StaticResource GlyphToolbarAppBarButtonStyle}">
+            <AppBarButton.Resources>
+                <Color x:Key="AppBarButtonBackground">White</Color>
+                <Color x:Key="AppBarButtonBackgroundPointerOver">#EEEEEE</Color>
+                <Color x:Key="AppBarButtonBackgroundPressed">#F2F2F2</Color>
+            </AppBarButton.Resources>
+            <AppBarButton.Icon>
+                <FontIcon Glyph="zoom_out" Style="{StaticResource GlyphToolbarFontIcon}"/>
+            </AppBarButton.Icon>
+        </AppBarButton>
+
+    </StackPanel>
+
+</UserControl>

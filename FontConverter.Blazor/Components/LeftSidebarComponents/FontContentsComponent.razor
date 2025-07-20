@@ -1,0 +1,39 @@
+﻿<RadzenAccordion Multiple="false">
+    <Items>
+        <RadzenAccordionItem Text="@SharedResources.Text_Accordion_Font_Content" Icon="@SharedResources.Icon_Accordion_Font_Content">
+            <RadzenStack Orientation="Orientation.Vertical" Gap="15">
+                @if (MainViewModel.FontContentsViewModel?.Contents == null || !MainViewModel.FontContentsViewModel.Contents.Any())
+                {
+                    <p>Data unavailable.</p>
+                }
+                else
+                {
+                    <RadzenTree Data="@MainViewModel.FontContentsViewModel.Contents.Values"
+                                Style="width: 100%;"
+                                Change="@(args => OnTreeChange(args))"
+                                @ref=@contentTreeView>
+                        <RadzenTreeLevel TextProperty="@nameof(FontContentViewModel.Header)"
+                                         ChildrenProperty="@nameof(FontContentViewModel.Children)"
+                                         HasChildren="@(item => ((FontContentViewModel)item).Children.Any())"
+                                         Selected="@(item => ((FontContentViewModel)item).IsSelected)">
+                            <Template>
+                                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="5">
+                                    <RadzenIcon Icon="@(((FontContentViewModel)context.Value).Icon)"
+                                                class="filled-icon"
+                                                IconStyle="IconStyle.Dark"/>
+                                    <RadzenBadge Shade="Shade.Lighter"
+                                                 BadgeStyle="BadgeStyle.Primary"
+                                                 Text="@(string.Format("{0:N0}", ((FontContentViewModel)context.Value).Count))"
+                                                 Style="font-size: 10px !important;"/>
+                                    <span style="font-size:10px;">@(((FontContentViewModel)context.Value).Header)</span>
+                                </RadzenStack>
+                            </Template>
+                        </RadzenTreeLevel>
+                    </RadzenTree>
+                }
+            </RadzenStack>
+        </RadzenAccordionItem>
+    </Items>
+</RadzenAccordion>
+
+

@@ -1,0 +1,36 @@
+﻿
+
+<RadzenSidebar Responsive="false"
+               @bind-Expanded="@MainViewModel.LeftSidebarExpanded"
+               class="left-sidebar">
+    <RadzenStack Orientation="Orientation.Horizontal"
+                 AlignItems="AlignItems.Center"
+                 Style="position: sticky; top: 0; z-index: 4; width: 100% !important; background-color: whitesmoke;"
+                 class="rz-p-2">
+        <RadzenText Style="vertical-align:middle !important; "
+                    Text="Font Settings"
+                    Visible="true" />
+        <RadzenButton Style="margin-left: auto; font-weight: 700;"
+                      Icon="close" Variant="Variant.Flat"
+                      ButtonStyle="ButtonStyle.Base"
+                      Shade="Shade.Lighter"
+                      Size="ButtonSize.Large"
+                      class="rz-border-radius-10 rz-shadow-10"
+                      Click="@(() => MainViewModel.LeftSidebarExpanded = false)" />
+    </RadzenStack>
+    <FontFileOperationComponent />
+    <RadzenStack Orientation="Orientation.Vertical"
+                 AlignItems="AlignItems.Stretch"
+                 Wrap="FlexWrap.NoWrap"
+                 Gap="15px"
+                 style="padding: 15px;">
+        <UpdateGlyphsComponent />
+        <FontSettingsComponent />
+        <FontAdjusmentsComponent />
+        <FontContentsComponent />
+        <FontInformationsComponent />
+    </RadzenStack>
+</RadzenSidebar>
+<div class="rz-dialog-mask left-sidebar-mask @(MainViewModel.LeftSidebarExpanded ? "visible" : "hidden")"
+     @onclick="() => MainViewModel.LeftSidebarExpanded = false">
+</div>

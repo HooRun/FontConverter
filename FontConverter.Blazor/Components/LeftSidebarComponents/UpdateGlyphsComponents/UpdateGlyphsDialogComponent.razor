@@ -1,0 +1,71 @@
+﻿<RadzenStack>
+
+    <RadzenRow>
+        <RadzenColumn Size="@leftColumnSize">
+            <span style="color:#605e5c; font-size: 0.75rem;">Count Of Glyphs:</span>
+        </RadzenColumn>
+        <RadzenColumn>
+            <span style="color:#605e5c; font-size: 0.75rem; border-radius:5px;"
+                  class="rz-background-color-success-lighter rz-color-on-success-lighter rz-p-1">
+                @glyphCountsText
+            </span>
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn Size="@leftColumnSize">
+            <span style="color:#605e5c; font-size: 0.75rem;">Rendering Glyphs:</span>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenProgressBar ShowValue=@renderingGlyphsProgressShowValue
+                               Value=@renderingGlyphsProgressValue
+                               Min=@renderingGlyphsProgressMinValue
+                               Max=@renderingGlyphsProgressMaxValue
+                               Mode=@renderingGlyphsProgressMode
+                               ProgressBarStyle=@renderingGlyphsProgressStyle>
+                <Template>
+                    @renderingGlyphsProgressValue.ToString("0.0")%
+                    <span aria-hidden="true" class="rz-progressbar-label-value">@renderingGlyphsProgressValue.ToString("0.0")%</span>
+                </Template>
+            </RadzenProgressBar>
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenRow>
+        <RadzenColumn Size="@leftColumnSize">
+            <span style="color:#605e5c; font-size: 0.75rem;">Organizing Glyphs:</span>
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenProgressBar ShowValue=@organizingGlyphsProgressShowValue
+                               Value=@organizingGlyphsProgressValue
+                               Min=@organizingGlyphsProgressMinValue
+                               Max=@organizingGlyphsProgressMaxValue
+                               Mode=@organizingGlyphsProgressMode
+                               ProgressBarStyle=@organizingGlyphsProgressStyle>
+                <Template>
+                    @organizingGlyphsProgressValue.ToString("0.0")%
+                    <span aria-hidden="true" class="rz-progressbar-label-value">@organizingGlyphsProgressValue.ToString("0.0")%</span>
+                </Template>
+            </RadzenProgressBar>
+        </RadzenColumn>
+    </RadzenRow>
+
+    <RadzenAlert AllowClose="false"
+                 AlertStyle="AlertStyle.Warning"
+                 Variant="Variant.Flat"
+                 Shade="Shade.Lighter"
+                 Size="AlertSize.ExtraSmall"
+                 @bind-Visible=@alertWarningApplyVisibilty>
+        Be aware: Applying this will delete all existing font data.
+    </RadzenAlert>
+
+    <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Center" class="rz-text-align-center">
+        <RadzenColumn>
+            <RadzenButton Text="Apply" Click="@((args) => dialogService.Close(responseUpddatedGlyphs))" @bind-Disabled="@applyButonDisabled" ButtonStyle="ButtonStyle.Primary" />
+        </RadzenColumn>
+        <RadzenColumn>
+            <RadzenButton Text="Close" Click="@((args) => dialogService.Close(null))" ButtonStyle="ButtonStyle.Base" />
+        </RadzenColumn>
+    </RadzenRow>
+
+</RadzenStack>

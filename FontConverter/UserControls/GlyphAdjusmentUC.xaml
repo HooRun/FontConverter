@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="LVGLFontConverter.UserControls.GlyphAdjusmentUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LVGLFontConverter.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:helper="using:LVGLFontConverter.Helpers"
+    mc:Ignorable="d">
+
+    <Expander IsExpanded="False" ExpandDirection="Down" VerticalAlignment="Top" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Padding="10">
+        <Expander.Header>
+            <TextBlock Text="{helper:Loc Key=Text_Header_GlyphAdjusments}" Style="{StaticResource ExpanderHeaderTextBlock}"/>
+        </Expander.Header>
+        <Expander.Content>
+            <Grid Background="Transparent" RowSpacing="5" ColumnSpacing="5" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- 0 -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- 1 -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- 2 -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- 3 -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- 4 -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- 5 -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- 6 -->
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <ToggleSwitch Grid.Row="0" FontSize="12" IsOn="True" VerticalAlignment="Center">
+                    <ToggleSwitch.Header>
+                        <TextBlock Text="{helper:Loc Key=Text_Header_FontAdjusment_AntiAlias}" Style="{StaticResource EntryTextBlock}"/>
+                    </ToggleSwitch.Header>
+                    <ToggleSwitch.OnContent>
+                        <TextBlock Text="{helper:Loc Key=Text_Status_FontAdjusment_AntiAlias_On}" Style="{StaticResource EntryTextBlock}"/>
+                    </ToggleSwitch.OnContent>
+                    <ToggleSwitch.OffContent>
+                        <TextBlock Text="{helper:Loc Key=Text_Status_FontAdjusment_AntiAlias_Off}" Style="{StaticResource EntryTextBlock}"/>
+                    </ToggleSwitch.OffContent>
+                </ToggleSwitch>
+                <ToggleSwitch Grid.Row="1" FontSize="12" IsOn="True" VerticalAlignment="Center">
+                    <ToggleSwitch.Header>
+                        <TextBlock Text="{helper:Loc Key=Text_Header_FontAdjusment_Dither}" Style="{StaticResource EntryTextBlock}"/>
+                    </ToggleSwitch.Header>
+                    <ToggleSwitch.OnContent>
+                        <TextBlock Text="{helper:Loc Key=Text_Status_FontAdjusment_Dither_On}" Style="{StaticResource EntryTextBlock}"/>
+                    </ToggleSwitch.OnContent>
+                    <ToggleSwitch.OffContent>
+                        <TextBlock Text="{helper:Loc Key=Text_Status_FontAdjusment_Dither_Off}" Style="{StaticResource EntryTextBlock}"/>
+                    </ToggleSwitch.OffContent>
+                </ToggleSwitch>
+                <ToggleSwitch Grid.Row="2" FontSize="12" IsOn="True" VerticalAlignment="Center">
+                    <ToggleSwitch.Header>
+                        <TextBlock Text="{helper:Loc Key=Text_Header_FontAdjusment_ColorFilter}" Style="{StaticResource EntryTextBlock}"/>
+                    </ToggleSwitch.Header>
+                    <ToggleSwitch.OnContent>
+                        <TextBlock Text="{helper:Loc Key=Text_Status_FontAdjusment_ColorFilter_On}" Style="{StaticResource EntryTextBlock}"/>
+                    </ToggleSwitch.OnContent>
+                    <ToggleSwitch.OffContent>
+                        <TextBlock Text="{helper:Loc Key=Text_Status_FontAdjusment_ColorFilter_Off}" Style="{StaticResource EntryTextBlock}"/>
+                    </ToggleSwitch.OffContent>
+                </ToggleSwitch>
+                <ToggleSwitch Grid.Row="3" FontSize="12" IsOn="True" VerticalAlignment="Center">
+                    <ToggleSwitch.Header>
+                        <TextBlock Text="{helper:Loc Key=Text_Header_FontAdjusment_Shader}" Style="{StaticResource EntryTextBlock}"/>
+                    </ToggleSwitch.Header>
+                    <ToggleSwitch.OnContent>
+                        <TextBlock Text="{helper:Loc Key=Text_Status_FontAdjusment_Shader_On}" Style="{StaticResource EntryTextBlock}"/>
+                    </ToggleSwitch.OnContent>
+                    <ToggleSwitch.OffContent>
+                        <TextBlock Text="{helper:Loc Key=Text_Status_FontAdjusment_Shader_Off}" Style="{StaticResource EntryTextBlock}"/>
+                    </ToggleSwitch.OffContent>
+                </ToggleSwitch>
+                <ComboBox Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                    <ComboBox.Header>
+                        <TextBlock Grid.Row="4" Text="{helper:Loc Key=Text_Header_FontAdjusment_Style}" Style="{StaticResource EntryTextBlock}"/>
+                    </ComboBox.Header>
+                    <ComboBoxItem Content="{helper:Loc Key=Text_Item_FontAdjusment_Style_Fill}" IsSelected="True"/>
+                    <ComboBoxItem Content="{helper:Loc Key=Text_Item_FontAdjusment_Style_Stroke}"/>
+                    <ComboBoxItem Content="{helper:Loc Key=Text_Item_FontAdjusment_Style_FillAndStroke}"/>
+                </ComboBox>
+                <Slider Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                    <Slider.Header>
+                        <TextBlock Grid.Row="6" Text="{helper:Loc Key=Text_Header_FontAdjusment_Gamma}" Style="{StaticResource EntryTextBlock}"/>
+                    </Slider.Header>
+                </Slider>
+                <Slider Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                    <Slider.Header>
+                        <TextBlock Grid.Row="8" Text="{helper:Loc Key=Text_Header_FontAdjusment_Threshold}" Style="{StaticResource EntryTextBlock}"/>
+                    </Slider.Header>
+                </Slider>
+            </Grid>
+        </Expander.Content>
+    </Expander>
+
+</UserControl>
