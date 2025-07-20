@@ -63,3 +63,4 @@
 #*.RTF   diff=astextplain
 
 LVGL.Test/** linguist-vendored
+docs/** linguist-vendored
