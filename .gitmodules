@@ -1,3 +1,0 @@
-[submodule "LVGL.Test/lvgl"]
-	path = LVGL.Test/lvgl
-	url = https://github.com/lvgl/lvgl.git
