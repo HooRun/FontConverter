@@ -7,7 +7,7 @@ public class PredefinedDataService : PredefinedData
 {
     public PredefinedDataService() : base()
     {
-        _ = InitializePrimaryDataAsync();
+        
     }
 
     public async Task InitializePrimaryDataAsync(CancellationToken cancellationToken = default)
@@ -15,22 +15,12 @@ public class PredefinedDataService : PredefinedData
         try
         {
             cancellationToken.ThrowIfCancellationRequested();
-
-            var unicodeTask = InitialUnicodeBlockCollectionHelper.InitialUnicodeBlockCollection(cancellationToken);
-            var macintoshTask = InitialStandardMacintoshGlyphNameHelper.InitialStandardMacintoshGlyphName(cancellationToken);
-            var bitPerPixelTask = InitialBitPerPixelListHelper.InitialBitPerPixelList(cancellationToken);
-            var subPixelTask = InitialSubPixelListHelper.InitialSubPixellList(cancellationToken);
-            var glyphStyleTask = InitialGlyphStyleListHelper.InitialGlyphStyleList(cancellationToken);
-            var embeddedFontsTask = InitialEmbeddedLVGLFontsListHelper.InitialEmbeddedLVGLFontsList(cancellationToken);
-
-            await Task.WhenAll(unicodeTask, macintoshTask, bitPerPixelTask, subPixelTask, glyphStyleTask, embeddedFontsTask);
-
-            UnicodeBlockCollection = unicodeTask.Result;
-            StandardMacintoshGlyphNames = macintoshTask.Result;
-            BitPerPixelList = bitPerPixelTask.Result;
-            SubPixelList = subPixelTask.Result;
-            GlyphStyleList = glyphStyleTask.Result;
-            EmbeddedLVGLFontsList = embeddedFontsTask.Result;
+            StandardMacintoshGlyphNames = InitialStandardMacintoshGlyphNameHelper.InitialStandardMacintoshGlyphName();
+            BitPerPixelList = InitialBitPerPixelListHelper.InitialBitPerPixelList();
+            SubPixelList = InitialSubPixelListHelper.InitialSubPixellList();
+            GlyphStyleList = InitialGlyphStyleListHelper.InitialGlyphStyleList();
+            EmbeddedLVGLFontsList = InitialEmbeddedLVGLFontsListHelper.InitialEmbeddedLVGLFontsList();
+            Blocks = await InitialUnicodeBlockCollectionHelper.InitialUnicodeBlockCollection(cancellationToken);
         }
         catch (OperationCanceledException)
         {

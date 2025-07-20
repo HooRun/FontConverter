@@ -6,7 +6,7 @@ public class PredefinedData
 {
     public PredefinedData()
     {
-        UnicodeBlockCollection = new();
+        Blocks = [];
         StandardMacintoshGlyphNames = new();
         BitPerPixelList = new();
         SubPixelList = new();
@@ -14,7 +14,7 @@ public class PredefinedData
         EmbeddedLVGLFontsList = new();
     }
 
-    public UnicodeBlockCollection UnicodeBlockCollection { get; set; }
+    public SortedDictionary<uint, UnicodeBlock> Blocks { get; set; }
     public SortedList<int, string> StandardMacintoshGlyphNames { get; set; }
     public SortedList<LVGLFontEnums.BIT_PER_PIXEL_ENUM, string> BitPerPixelList { get; set; }
     public SortedList<LVGLFontEnums.SUB_Pixel_ENUM, string> SubPixelList { get; set; }

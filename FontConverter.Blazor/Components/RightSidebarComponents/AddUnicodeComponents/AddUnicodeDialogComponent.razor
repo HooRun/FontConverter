@@ -3,7 +3,7 @@
 <RadzenStack Orientation="Orientation.Vertical"
              Gap="15px">
 
-    <RadzenDataGrid Data="@PredefinedData.UnicodeBlockCollection.Blocks.Values"
+    <RadzenDataGrid Data="@PredefinedData.Blocks.Values"
                     GridLines="DataGridGridLines.Both"
                     SelectionMode="DataGridSelectionMode.Single"
                     AllowColumnResize="true"
@@ -14,7 +14,7 @@
                     Density="Density.Compact"
                     Value=@_SelectedBlocksList
                     TItem="UnicodeBlock"
-                    ValueChanged="@OnBlockChanged"
+                    ValueChanged="@OnBlockChangedAsync"
                     Style="height: 200px; font-size:10px;">
         <HeaderTemplate>
             <RadzenStack Orientation="Orientation.Horizontal"

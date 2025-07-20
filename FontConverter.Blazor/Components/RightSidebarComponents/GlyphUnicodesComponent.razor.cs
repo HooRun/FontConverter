@@ -166,7 +166,7 @@ public partial class GlyphUnicodesComponent : ComponentBase, IRerenderable
         var fontContentVM = MainViewModel.FontContentsViewModel;
         var glyph = MainViewModel.LastSelectedGlyph;
         var ucContents = fontContentVM.Contents[fontContent.UnicodesHeader];
-        string blockStart = PredefinedData.UnicodeBlockCollection.Blocks[_SelectedChar.Block].StartString;
+        string blockStart = PredefinedData.Blocks[_SelectedChar.Block].StartString;
 
         ucContents.Count--;
         if (ucContents.Count <= 0)

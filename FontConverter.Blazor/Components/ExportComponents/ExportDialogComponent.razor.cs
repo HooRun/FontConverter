@@ -1,5 +1,4 @@
-﻿using FontConverter.Blazor.Components.PrismJSComponents;
-using FontConverter.Blazor.Interfaces;
+﻿using FontConverter.Blazor.Interfaces;
 using FontConverter.Blazor.Services;
 using FontConverter.Blazor.ViewModels;
 using FontConverter.SharedLibrary.Models;
@@ -38,7 +37,7 @@ public partial class ExportDialogComponent : ComponentBase, IRerenderable
     {
         base.OnInitialized();
         GridData = MainViewModel.LVGLFont.Glyphs.Values.ToList();
-        MainViewModel.RegisterComponent(nameof(CodeBlockComponent), this);
+        MainViewModel.RegisterComponent(nameof(ExportTypeComponent), this);
         _AllUnicodesFilter = MainViewModel.GlyphsList.Values
             .Where(g => g.CodePoints.Count > 0)
             .SelectMany(g => g.CodePoints.Values)
@@ -206,7 +205,7 @@ public partial class ExportDialogComponent : ComponentBase, IRerenderable
             }
             else if (_GridGroupOption == 3)
             {
-                GridData = await Task.Run(()=> GroupByUnicodeRanges(PredefinedData.UnicodeBlockCollection.Blocks));
+                GridData = await Task.Run(()=> GroupByUnicodeRanges(PredefinedData.Blocks));
                 _GlyphsDataGrid.Groups.Clear();
                 _GlyphsDataGrid.Groups.Add(new GroupDescriptor() { Property = "GlyphGroupByUnicodeRangeHeader", SortOrder = SortOrder.Ascending });
                 _GridAllowVirtualization = true;

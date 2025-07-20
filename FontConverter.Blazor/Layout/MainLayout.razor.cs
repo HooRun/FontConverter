@@ -4,6 +4,8 @@ using FontConverter.Blazor.Interfaces;
 using FontConverter.Blazor.ViewModels;
 using Microsoft.AspNetCore.Components;
 using Radzen;
+using FontConverter.SharedLibrary.Helpers;
+using FontConverter.Blazor.Services;
 
 namespace FontConverter.Blazor.Layout;
 
@@ -19,11 +21,14 @@ public partial class MainLayout : LayoutComponentBase, IRerenderable, IDisposabl
     public MainViewModel MainViewModel { get; set; } = default!;
 
     [Inject]
+    public PredefinedDataService PredefinedData { get; set; } = default!;
+
+    [Inject]
     private IResizeListener ResizeListener { get; set; } = default!;
 
     protected override void OnInitialized()
     {
-        base.OnInitialized(); 
+        base.OnInitialized();
         MainViewModel.RegisterComponent(nameof(MainLayout), this);
         ResizeListener.OnResized += OnWindowResized;
     }

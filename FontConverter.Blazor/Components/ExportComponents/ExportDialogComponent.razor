@@ -169,9 +169,9 @@
                              JustifyContent="JustifyContent.Normal"
                              Gap="15px">
 
-                    <CodeBlockComponent FileType=LVGL_FILE_TYPE.LVGL_FILE_TYPE_C
+                    <ExportTypeComponent FileType=LVGL_FILE_TYPE.LVGL_FILE_TYPE_C
                                         Glyphs=@_SelectedGlyphsList
-                                        Blocks="@PredefinedData.UnicodeBlockCollection.Blocks"/>
+                                        Blocks="@PredefinedData.Blocks"/>
 
                 </RadzenStack>
 
@@ -184,9 +184,9 @@
                              JustifyContent="JustifyContent.Normal"
                              Gap="15px">
 
-                    <CodeBlockComponent FileType=LVGL_FILE_TYPE.LVGL_FILE_TYPE_SYMBOL
+                    <ExportTypeComponent FileType=LVGL_FILE_TYPE.LVGL_FILE_TYPE_SYMBOL
                                         Glyphs=@_SelectedGlyphsList
-                                        Blocks="@PredefinedData.UnicodeBlockCollection.Blocks" />
+                                        Blocks="@PredefinedData.Blocks" />
 
                 </RadzenStack>
 
@@ -194,9 +194,9 @@
 
             <RadzenTabsItem Text="Binary">
 
-                <CodeBlockComponent FileType=LVGL_FILE_TYPE.LVGL_FILE_TYPE_BINARY
+                <ExportTypeComponent FileType=LVGL_FILE_TYPE.LVGL_FILE_TYPE_BINARY
                                     Glyphs=@_SelectedGlyphsList 
-                                    Blocks="@PredefinedData.UnicodeBlockCollection.Blocks" />
+                                    Blocks="@PredefinedData.Blocks" />
 
             </RadzenTabsItem>
 
@@ -207,9 +207,9 @@
                              JustifyContent="JustifyContent.Normal"
                              Gap="15px">
                     
-                    <CodeBlockComponent FileType=LVGL_FILE_TYPE.LVGL_FILE_TYPE_SVG_H
+                    <ExportTypeComponent FileType=LVGL_FILE_TYPE.LVGL_FILE_TYPE_SVG_H
                                         Glyphs=@_SelectedGlyphsList 
-                                        Blocks="@PredefinedData.UnicodeBlockCollection.Blocks" />
+                                        Blocks="@PredefinedData.Blocks" />
 
                 </RadzenStack>
 

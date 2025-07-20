@@ -8,29 +8,15 @@ namespace FontConverter.SharedLibrary.Helpers;
 
 public static class InitialGlyphStyleListHelper
 {
-    public static async Task<SortedList<LVGLFontEnums.GLYPH_STYLE, string>> InitialGlyphStyleList(CancellationToken cancellationToken = default)
+    private static readonly SortedList<LVGLFontEnums.GLYPH_STYLE, string> _GlyphStyleList = new()
     {
-        SortedList<LVGLFontEnums.GLYPH_STYLE, string> glyphStylelList = new();
-        try
-        {
-            cancellationToken.ThrowIfCancellationRequested();
-            await Task.Run(() =>
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-                glyphStylelList.Add(LVGLFontEnums.GLYPH_STYLE.STYLE_FILL, "Fill");
-                glyphStylelList.Add(LVGLFontEnums.GLYPH_STYLE.STYLE_STROKE, "Stroke");
-                glyphStylelList.Add(LVGLFontEnums.GLYPH_STYLE.STYLE_FILL_STROKE, "Fill and Stroke");
-            }, cancellationToken);
+        { LVGLFontEnums.GLYPH_STYLE.STYLE_FILL, "Fill" },
+        { LVGLFontEnums.GLYPH_STYLE.STYLE_STROKE, "Stroke" },
+        { LVGLFontEnums.GLYPH_STYLE.STYLE_FILL_STROKE, "Fill and Stroke" }
+    };
 
-        }
-        catch (OperationCanceledException)
-        {
-            throw;
-        }
-        catch (Exception)
-        {
-            throw;
-        }
-        return glyphStylelList;
+    public static SortedList<LVGLFontEnums.GLYPH_STYLE, string> InitialGlyphStyleList()
+    {
+        return _GlyphStyleList;
     }
 }

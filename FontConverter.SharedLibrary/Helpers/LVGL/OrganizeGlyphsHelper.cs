@@ -91,7 +91,7 @@ public static class OrganizeGlyphsHelper
                 if (!justRender)
                 {
                     glyphToUnicodeMap.TryGetValue((ushort)processedGlyphs, out var codePoints);
-                    FillGlyphFromCodePoints(lvglGlyph, codePoints, predefinedData.UnicodeBlockCollection);
+                    FillGlyphFromCodePoints(lvglGlyph, codePoints, predefinedData.Blocks);
                     lvglGlyph.LeftKernings = kernPairs.Where(p => p.Left == processedGlyphs).OrderBy(p => p.Left).ToList();
                     lvglGlyph.RightKernings = kernPairs.Where(p => p.Right == processedGlyphs).OrderBy(p => p.Right).ToList();
                 }
@@ -137,7 +137,7 @@ public static class OrganizeGlyphsHelper
     public static void FillGlyphFromCodePoints(
     LVGLGlyph glyph,
     List<uint>? codePoints,
-    UnicodeBlockCollection blockCollection)
+    SortedDictionary<uint, UnicodeBlock> blockCollection)
     {
         glyph.CodePoints.Clear();
         glyph.Blocks.Clear();
@@ -145,7 +145,7 @@ public static class OrganizeGlyphsHelper
         {
             foreach (uint codePoint in codePoints)
             {
-                foreach (var blockEntry in blockCollection.Blocks.Values)
+                foreach (var blockEntry in blockCollection.Values)
                 {
                     if (blockEntry.Start > codePoint &&  codePoint > blockEntry.End)
                         continue;

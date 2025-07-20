@@ -79,7 +79,7 @@ code {
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-    color: var(--bs-secondary-color);
+    color: rgba(33, 37, 41, 0.75);
     text-align: end;
 }
 

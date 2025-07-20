@@ -43,15 +43,15 @@ public static class ParseBlocksHelper
                 string name = parts[1];
                 Block block = new Block(start, end, name);
                 uint lenght = (block.End - block.Start + 1);
-                Parallel.For(0, lenght, i =>
-                {
-                    uint codePoint = (uint)(start + i);
-                    Character character = new Character(codePoint, $"U+{codePoint:X6}", start);
-                    lock (block.Characters)
-                    {
-                        block.Characters.TryAdd(codePoint, character);
-                    }
-                });
+                //Parallel.For(0, lenght, i =>
+                //{
+                //    uint codePoint = (uint)(start + i);
+                //    Character character = new Character(codePoint, $"U+{codePoint:X6}", start);
+                //    lock (block.Characters)
+                //    {
+                //        block.Characters.TryAdd(codePoint, character);
+                //    }
+                //});
                 lock (blocks)
                 {
                     if (!blocks.ContainsKey(start))

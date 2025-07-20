@@ -10,30 +10,16 @@ namespace FontConverter.SharedLibrary.Helpers;
 
 public static class InitialBitPerPixelListHelper
 {
-    public static async Task<SortedList<LVGLFontEnums.BIT_PER_PIXEL_ENUM, string>> InitialBitPerPixelList(CancellationToken cancellationToken = default)
+    private static readonly SortedList<LVGLFontEnums.BIT_PER_PIXEL_ENUM, string> _BitPerPixelList = new()
     {
-        SortedList<LVGLFontEnums.BIT_PER_PIXEL_ENUM, string> bitPerPixelList = new();
-        try
-        {
-            cancellationToken.ThrowIfCancellationRequested();
-            await Task.Run(() =>
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-                bitPerPixelList.Add(LVGLFontEnums.BIT_PER_PIXEL_ENUM.BPP_1, "1 Bit Per Pixel");
-                bitPerPixelList.Add(LVGLFontEnums.BIT_PER_PIXEL_ENUM.BPP_2, "2 Bit Per Pixel");
-                bitPerPixelList.Add(LVGLFontEnums.BIT_PER_PIXEL_ENUM.BPP_4, "4 Bit Per Pixel");
-                bitPerPixelList.Add(LVGLFontEnums.BIT_PER_PIXEL_ENUM.BPP_8, "8 Bit Per Pixel");
-            }, cancellationToken);
+        { LVGLFontEnums.BIT_PER_PIXEL_ENUM.BPP_1, "1 Bit Per Pixel" },
+        { LVGLFontEnums.BIT_PER_PIXEL_ENUM.BPP_2, "2 Bit Per Pixel" },
+        { LVGLFontEnums.BIT_PER_PIXEL_ENUM.BPP_4, "4 Bit Per Pixel" },
+        { LVGLFontEnums.BIT_PER_PIXEL_ENUM.BPP_8, "8 Bit Per Pixel" },
+    };
 
-        }
-        catch (OperationCanceledException)
-        {
-            throw;
-        }
-        catch (Exception)
-        {
-            throw;
-        }
-        return bitPerPixelList;
+    public static SortedList<LVGLFontEnums.BIT_PER_PIXEL_ENUM, string> InitialBitPerPixelList()
+    {
+        return _BitPerPixelList;
     }
 }

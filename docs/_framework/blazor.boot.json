@@ -1,12 +1,12 @@
 {
   "mainAssemblyName": "FontConverter.Blazor",
   "resources": {
-    "hash": "sha256-F6l/KC9c2LhHEO+9r3Cu3kc+srj7TFGHUMiprnvYeGM=",
+    "hash": "sha256-m3qp4lC8rgty9ElYBBybmVsuJz1TmTyMGju4bdzVQOo=",
     "fingerprinting": {
       "AutoMapper.bjj0byeosc.wasm": "AutoMapper.wasm",
       "BlazorPro.BlazorSize.fjkic6tfmp.wasm": "BlazorPro.BlazorSize.wasm",
-      "FontConverter.Blazor.tl2805vedr.wasm": "FontConverter.Blazor.wasm",
-      "FontConverter.SharedLibrary.9wres0t4r7.wasm": "FontConverter.SharedLibrary.wasm",
+      "FontConverter.Blazor.zkhk0f8e23.wasm": "FontConverter.Blazor.wasm",
+      "FontConverter.SharedLibrary.c48c1br9u4.wasm": "FontConverter.SharedLibrary.wasm",
       "MessagePack.Annotations.mgfofoo4l2.wasm": "MessagePack.Annotations.wasm",
       "MessagePack.alv66v4f65.wasm": "MessagePack.wasm",
       "Microsoft.AspNetCore.Components.Forms.enqcc7azlm.wasm": "Microsoft.AspNetCore.Components.Forms.wasm",
@@ -63,7 +63,7 @@
       "System.Net.Primitives.el7k0yi1gl.wasm": "System.Net.Primitives.wasm",
       "System.Numerics.Vectors.ft5rh3fak8.wasm": "System.Numerics.Vectors.wasm",
       "System.ObjectModel.6e9kn5jeqf.wasm": "System.ObjectModel.wasm",
-      "System.Private.CoreLib.r5fyoszyw5.wasm": "System.Private.CoreLib.wasm",
+      "System.Private.CoreLib.545qkk123u.wasm": "System.Private.CoreLib.wasm",
       "System.Private.Uri.1ice6d4jm5.wasm": "System.Private.Uri.wasm",
       "System.Private.Xml.Linq.ovkd8l387e.wasm": "System.Private.Xml.Linq.wasm",
       "System.Private.Xml.0p2ygyf1a1.wasm": "System.Private.Xml.wasm",
@@ -92,7 +92,7 @@
       "System.Xml.ReaderWriter.g9ndmnrp0u.wasm": "System.Xml.ReaderWriter.wasm",
       "System.Xml.XDocument.sh85j4oe8l.wasm": "System.Xml.XDocument.wasm",
       "dotnet.native.xf8e98a0w9.js": "dotnet.native.js",
-      "dotnet.native.qndxdzgsr5.wasm": "dotnet.native.wasm",
+      "dotnet.native.tf7ukzgdj1.wasm": "dotnet.native.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.runtime.qrl1fuqt3c.js": "dotnet.runtime.js",
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
@@ -106,7 +106,7 @@
       "dotnet.runtime.qrl1fuqt3c.js": "sha256-ilTXrnUF4HKbIAFVIYlRmX3ryKNZpGUObkWMF0n2Kcg="
     },
     "wasmNative": {
-      "dotnet.native.qndxdzgsr5.wasm": "sha256-mqN3cc4/EmiRCZYa2fzLXSfGoW1KGMfFhSB3hp7fmT4="
+      "dotnet.native.tf7ukzgdj1.wasm": "sha256-1z4UUjFZu/OQTCnX85rFN7YRqcRHMYGEN7L8gvigXFw="
     },
     "icu": {
       "icudt_CJK.tjcz0u77k5.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -114,14 +114,14 @@
       "icudt_no_CJK.lfu7j35m59.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "coreAssembly": {
-      "System.Private.CoreLib.r5fyoszyw5.wasm": "sha256-PznR+7WZZP5J+w+JGKXN3uYkLQOIdVzmVJeuRVH+d1w=",
+      "System.Private.CoreLib.545qkk123u.wasm": "sha256-ZZAeh4ndnlwlgUYifO9aIiPH/xdk8ng6pRb1+BgrvYs=",
       "System.Runtime.InteropServices.JavaScript.2rrgnrarl0.wasm": "sha256-fhN1VgGEJpBfqaKMiyIj7xesCD1lNiZXO8rVDv9J+Bs="
     },
     "assembly": {
       "AutoMapper.bjj0byeosc.wasm": "sha256-GQo32qh5DNzZ+hacmSBhfXDiIX1rQNMh81LAcQe4/Rs=",
       "BlazorPro.BlazorSize.fjkic6tfmp.wasm": "sha256-hdMaU5fRqDC+IQhVKHLCY42jcC+r1iizaeGx7dBAB1E=",
-      "FontConverter.Blazor.tl2805vedr.wasm": "sha256-z5xhfgbxBBjU8+pz0g0IU3tHi4peE3WLBUW8f5JTRbc=",
-      "FontConverter.SharedLibrary.9wres0t4r7.wasm": "sha256-Rw/jtBMozaf6hDqbgwCR0/IwxTyDTYxMB1HMOjlboX0=",
+      "FontConverter.Blazor.zkhk0f8e23.wasm": "sha256-AzIsZM8UjzYmUb6VeA+FKdIPqad+FokGQ5ftnWrZk10=",
+      "FontConverter.SharedLibrary.c48c1br9u4.wasm": "sha256-HFHsSHPO8IVlzAnJw+JUxi9bo0lvo4LyDgF0/e8I7sE=",
       "MessagePack.Annotations.mgfofoo4l2.wasm": "sha256-RrNQNbVnCNdsklKGi/BF4Chz1x0rfDKKUFQys+Q+DaQ=",
       "MessagePack.alv66v4f65.wasm": "sha256-bocUQb1muRhukge3onc7s34MnV7uDbNOKzWDVO/n1K8=",
       "Microsoft.AspNetCore.Components.Forms.enqcc7azlm.wasm": "sha256-6nk9ihGrhExR2GEGpy8tgELoRJEr67bLvtcA6aYIyH8=",

@@ -26,6 +26,15 @@ public static class ApplyUnicodeCharactersHelper
                     cp.DecompositionMapping.Clear();
                     cp.DecompositionMapping.AddRange(character.DecompositionMapping);
                 }
+                else
+                {
+                    Character newCharacter = new Character(character.CodePoint, character.Name, character.DecompositionType, character.DecompositionMapping);
+                    newCharacter.Block = block.Start;
+                    if (!block.Characters.ContainsKey(newCharacter.CodePoint))
+                    {
+                        block.Characters.Add(newCharacter.CodePoint, newCharacter);
+                    }
+                }
             }
         }
     }

@@ -1,16 +1,16 @@
 ﻿using FontConverter.SharedLibrary.Models;
 using MessagePack;
 using System.Reflection;
+using static FontConverter.SharedLibrary.Helpers.UCDEnumsHelper;
 
 namespace FontConverter.SharedLibrary.Helpers;
 
 public static class InitialUnicodeBlockCollectionHelper
 {
 
-    public static async Task<UnicodeBlockCollection> InitialUnicodeBlockCollection(CancellationToken cancellationToken = default)
+    public static async Task<SortedDictionary<uint, UnicodeBlock>> InitialUnicodeBlockCollection(CancellationToken cancellationToken = default)
     {
-        await Task.Yield();
-        UnicodeBlockCollection unicodeBlockCollection = new UnicodeBlockCollection();
+        SortedDictionary<uint, UnicodeBlock> _Blocks = [];
         try
         {
             cancellationToken.ThrowIfCancellationRequested();
@@ -26,16 +26,15 @@ public static class InitialUnicodeBlockCollectionHelper
             if (stream == null)
                 throw new NullReferenceException("Stream is null.");
 
-            var blocks = await MessagePackSerializer.DeserializeAsync<SortedDictionary<uint, UnicodeBlock>>(stream);
+            var blocks = await MessagePackSerializer.DeserializeAsync<SortedDictionary<uint, UnicodeBlock>>(stream, null, cancellationToken);
             if (blocks == null)
             {
                 throw new InvalidOperationException("Failed to deserialize Unicode blocks from embedded resource.");
             }
             else
             {
-                unicodeBlockCollection.Blocks = blocks;
+                _Blocks = blocks;
             }
-
         }
         catch (OperationCanceledException)
         {
@@ -46,7 +45,6 @@ public static class InitialUnicodeBlockCollectionHelper
             throw new InvalidOperationException("Failed to initialize Unicode block collection.", ex);
         }
 
-        return unicodeBlockCollection;
+        return _Blocks;
     }
-    
 }

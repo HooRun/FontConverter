@@ -8,31 +8,17 @@ namespace FontConverter.SharedLibrary.Helpers;
 
 public static class InitialSubPixelListHelper
 {
-    public static async Task<SortedList<LVGLFontEnums.SUB_Pixel_ENUM, string>> InitialSubPixellList(CancellationToken cancellationToken = default)
+    private static readonly SortedList<LVGLFontEnums.SUB_Pixel_ENUM, string> _SubPixelList = new()
     {
-        SortedList<LVGLFontEnums.SUB_Pixel_ENUM, string> subPixelList = new();
-        try
-        {
-            cancellationToken.ThrowIfCancellationRequested();
-            await Task.Run(() =>
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-                subPixelList.Add(LVGLFontEnums.SUB_Pixel_ENUM.SUB_PIXEL_NONE, "None");
-                subPixelList.Add(LVGLFontEnums.SUB_Pixel_ENUM.SUB_PIXEL_Horizontal, "Horizontal");
-                subPixelList.Add(LVGLFontEnums.SUB_Pixel_ENUM.SUB_PIXEL_Vertical, "Vertical");
-                subPixelList.Add(LVGLFontEnums.SUB_Pixel_ENUM.SUB_PIXEL_Both, "Both");
-            }, cancellationToken);
+        { LVGLFontEnums.SUB_Pixel_ENUM.SUB_PIXEL_NONE, "None" },
+        { LVGLFontEnums.SUB_Pixel_ENUM.SUB_PIXEL_Horizontal, "Horizontal" },
+        { LVGLFontEnums.SUB_Pixel_ENUM.SUB_PIXEL_Vertical, "Vertical" },
+        { LVGLFontEnums.SUB_Pixel_ENUM.SUB_PIXEL_Both, "Both" }
+    };
 
-        }
-        catch (OperationCanceledException)
-        {
-            throw;
-        }
-        catch (Exception)
-        {
-            throw;
-        }
-        return subPixelList;
+    public static SortedList<LVGLFontEnums.SUB_Pixel_ENUM, string> InitialSubPixellList()
+    {
+        return _SubPixelList;
     }
 
     
