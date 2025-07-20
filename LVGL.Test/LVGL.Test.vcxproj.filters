@@ -15,6 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="lv_conf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LvglWindowsIconResource\LvglWindowsIconResource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fonts\custom_fonts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fonts\svg\bootstrap_icons_svg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fonts\symbols\fontawesome_24_symbol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fonts\symbols\material_icons_24_symbol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fonts\symbols\noto_emoji_24_symbol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="lvgl\src\core\lv_global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -88,6 +109,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lvgl\src\draw\dma2d\lv_draw_dma2d_private.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lvgl\src\draw\espressif\ppa\lv_draw_ppa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lvgl\src\draw\espressif\ppa\lv_draw_ppa_private.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lvgl\src\draw\nema_gfx\lv_draw_nema_gfx.h">
@@ -321,6 +348,9 @@
     <ClInclude Include="lvgl\src\drivers\display\lcd\lv_lcd_generic_mipi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="lvgl\src\drivers\display\nxp_elcdif\lv_nxp_elcdif.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="lvgl\src\drivers\display\renesas_glcdc\lv_renesas_glcdc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -388,6 +418,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lvgl\src\drivers\nuttx\lv_nuttx_libuv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lvgl\src\drivers\nuttx\lv_nuttx_mouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lvgl\src\drivers\nuttx\lv_nuttx_profiler.h">
@@ -1215,6 +1248,12 @@
     <ClInclude Include="lvgl\src\others\test\lv_test_screenshot_compare.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="lvgl\src\others\translation\lv_translation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lvgl\src\others\translation\lv_translation_private.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="lvgl\src\others\vg_lite_tvg\vg_lite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1243,9 +1282,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lvgl\src\others\xml\parsers\lv_xml_dropdown_parser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="lvgl\src\others\xml\parsers\lv_xml_event_parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lvgl\src\others\xml\parsers\lv_xml_image_parser.h">
@@ -1300,6 +1336,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lvgl\src\others\xml\lv_xml_style.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lvgl\src\others\xml\lv_xml_test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lvgl\src\others\xml\lv_xml_translation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lvgl\src\others\xml\lv_xml_update.h">
@@ -1366,6 +1408,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lvgl\src\widgets\arc\lv_arc_private.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lvgl\src\widgets\arclabel\lv_arclabel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lvgl\src\widgets\arclabel\lv_arclabel_private.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lvgl\src\widgets\bar\lv_bar.h">
@@ -1569,6 +1617,9 @@
     <ClInclude Include="lvgl\src\lv_api_map_v9_1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="lvgl\src\lv_api_map_v9_2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="lvgl\src\lv_conf_internal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1596,302 +1647,35 @@
     <ClInclude Include="lvgl\lvgl_private.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="lv_conf.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LvglWindowsIconResource\LvglWindowsIconResource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fonts\custom_fonts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\begin_code.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\close_code.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_assert.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_atomic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_audio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_bits.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_blendmode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_clipboard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_config.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_config_android.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_config_emscripten.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_config_iphoneos.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_config_macosx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_config_minimal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_config_ngage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_config_os2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_config_pandora.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_config_windows.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_config_wingdk.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_config_winrt.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_config_xbox.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_copying.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_cpuinfo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_egl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_endian.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_error.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_events.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_filesystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_gamecontroller.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_gesture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_guid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_haptic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_hidapi.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_hints.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_joystick.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_keyboard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_keycode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_loadso.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_locale.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_log.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_messagebox.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_metal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_misc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_mouse.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_mutex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_name.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_opengl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_opengl_glext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_opengles.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_opengles2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_opengles2_gl2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_opengles2_gl2ext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_opengles2_gl2platform.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_opengles2_khrplatform.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_pixels.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_platform.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_power.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_quit.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_rect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_render.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_revision.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_rwops.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_scancode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_sensor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_shape.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_stdinc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_surface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_system.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_syswm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_test.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_test_assert.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_test_common.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_test_compare.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_test_crc32.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_test_font.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_test_fuzzer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_test_harness.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_test_images.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_test_log.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_test_md5.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_test_memory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_test_random.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_thread.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_touch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_version.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_video.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2\SDL_vulkan.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fonts\svg\bootstrap_icons_svg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fonts\symbols\fontawesome_24_symbol.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fonts\symbols\material_icons_24_symbol.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fonts\symbols\noto_emoji_24_symbol.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="images\img_tab_logo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\symbols\fontawesome_24.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\c\badr_24.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\c\bardiya_24.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\c\century_gothic_24.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\c\segoei_ui_24.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\symbols\material_icons_24.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fonts\symbols\noto_emoji_24.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="lvgl\src\core\lv_group.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -1941,6 +1725,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lvgl\src\draw\dma2d\lv_draw_dma2d_img.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lvgl\src\draw\espressif\ppa\lv_draw_ppa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lvgl\src\draw\espressif\ppa\lv_draw_ppa_buf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lvgl\src\draw\espressif\ppa\lv_draw_ppa_fill.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lvgl\src\draw\espressif\ppa\lv_draw_ppa_img.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lvgl\src\draw\nema_gfx\lv_draw_nema_gfx.c">
@@ -2282,6 +2078,9 @@
     <ClCompile Include="lvgl\src\drivers\display\lcd\lv_lcd_generic_mipi.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="lvgl\src\drivers\display\nxp_elcdif\lv_nxp_elcdif.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="lvgl\src\drivers\display\renesas_glcdc\lv_renesas_glcdc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -2337,6 +2136,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lvgl\src\drivers\nuttx\lv_nuttx_libuv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lvgl\src\drivers\nuttx\lv_nuttx_mouse.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lvgl\src\drivers\nuttx\lv_nuttx_profiler.c">
@@ -2855,6 +2657,9 @@
     <ClCompile Include="lvgl\src\misc\lv_array.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="lvgl\src\misc\lv_assert.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="lvgl\src\misc\lv_async.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -3011,6 +2816,9 @@
     <ClCompile Include="lvgl\src\others\test\lv_test_screenshot_compare.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="lvgl\src\others\translation\lv_translation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="lvgl\src\others\vg_lite_tvg\vg_lite_matrix.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -3042,9 +2850,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lvgl\src\others\xml\parsers\lv_xml_dropdown_parser.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="lvgl\src\others\xml\parsers\lv_xml_event_parser.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lvgl\src\others\xml\parsers\lv_xml_image_parser.c">
@@ -3093,6 +2898,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lvgl\src\others\xml\lv_xml_style.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lvgl\src\others\xml\lv_xml_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lvgl\src\others\xml\lv_xml_translation.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lvgl\src\others\xml\lv_xml_update.c">
@@ -3165,6 +2976,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lvgl\src\widgets\arc\lv_arc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lvgl\src\widgets\arclabel\lv_arclabel.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lvgl\src\widgets\bar\lv_bar.c">
@@ -3300,33 +3114,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="lvgl\src\lv_init.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="images\img_tab_logo.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="fonts\symbols\fontawesome_24.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="fonts\c\badr_24.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="fonts\c\bardiya_24.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="fonts\c\century_gothic_24.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="fonts\c\segoei_ui_24.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="fonts\symbols\material_icons_24.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="fonts\symbols\noto_emoji_24.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
