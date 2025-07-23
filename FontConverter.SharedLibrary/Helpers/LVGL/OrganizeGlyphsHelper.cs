@@ -66,15 +66,14 @@ public static class OrganizeGlyphsHelper
                 var renderData = glyphsRenderData[processedGlyphs];
                 lvglGlyph.Bitmap = renderData.Bitmap;
                 lvglGlyph.SVG = renderData.SVG;
-                lvglGlyph.Descriptor = new LVGLGlyphDescriptor
-                {
-                    Width = renderData.Bounds.Width,
-                    Height = renderData.Bounds.Height,
-                    OffsetX = renderData.Bounds.Left,
-                    OffsetY = -renderData.Bounds.Bottom,
-                    AdvanceWidth = (int)Math.Ceiling(scale * glyphMetrics[j].AdvanceWidth),
-                    BitmapIndex = bitmapIndex
-                };
+                lvglGlyph.Descriptor = new LVGLGlyphDescriptor(
+                    processedGlyphs,
+                    renderData.Bounds.Width,
+                    renderData.Bounds.Height,
+                    renderData.Bounds.Left,
+                    -renderData.Bounds.Bottom,
+                    (int)Math.Ceiling(scale * glyphMetrics[j].AdvanceWidth));
+                
                 lvglGlyph.Adjusments = new LVGLFontAdjusments(
                     lVGLFont.FontAdjusments.AntiAlias,
                     lVGLFont.FontAdjusments.Dither,

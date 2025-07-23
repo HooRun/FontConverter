@@ -28,7 +28,7 @@
                         <RadzenNumeric Value="@MainViewModel.LastSelectedGlyph?.Descriptor.Width"
                                        Change="@OnGlyphWidthChanged" 
                                        TValue="int?"
-                                       Min="@int.MinValue"
+                                       Min="0"
                                        Max="@int.MaxValue"/>
                     </ChildContent>
                 </RadzenFormField>
@@ -40,7 +40,7 @@
                         <RadzenNumeric Value="@MainViewModel.LastSelectedGlyph?.Descriptor.Height"
                                        Change="@OnGlyphHeightChanged"
                                        TValue="int?"
-                                       Min="@int.MinValue"
+                                       Min="0"
                                        Max="@int.MaxValue" />
                     </ChildContent>
                 </RadzenFormField>
@@ -76,7 +76,7 @@
                         <RadzenNumeric Value="@MainViewModel.LastSelectedGlyph?.Descriptor.AdvanceWidth"
                                        Change="@OnGlyphAdvanceWidthChanged"
                                        TValue="int?"
-                                       Min="@int.MinValue"
+                                       Min="0"
                                        Max="@int.MaxValue" />
                     </ChildContent>
                 </RadzenFormField>

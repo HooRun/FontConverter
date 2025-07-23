@@ -49,12 +49,22 @@ public partial class FontSettingsComponent : ComponentBase, IRerenderable
         if (!string.IsNullOrEmpty(fontNameError))
         {
             messageStore.Add(() => MainViewModel.FontSettingsViewModel.FontName, fontNameError);
+            MainViewModel.FontSettingsViewModel.FontNameIsValid = false;
         }
-
+        else
+        {
+            MainViewModel.FontSettingsViewModel.FontNameIsValid = true;
+        }
+        
         var fallbackError = FontNameValidatorHelper.ValidateFontNameMessage(MainViewModel.FontSettingsViewModel.Fallback);
         if (!string.IsNullOrEmpty(fallbackError))
         {
             messageStore.Add(() => MainViewModel.FontSettingsViewModel.Fallback, fallbackError);
+            MainViewModel.FontSettingsViewModel.FallbackIsValid = false;
+        }
+        else
+        {
+            MainViewModel.FontSettingsViewModel.FallbackIsValid = true;
         }
 
         editContext.NotifyValidationStateChanged();

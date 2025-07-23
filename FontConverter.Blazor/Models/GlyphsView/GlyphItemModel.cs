@@ -27,6 +27,8 @@ public class GlyphItemModel : LVGLGlyph
         IsHovered = false;
         LastSelected = false;
         Tooltip = string.Empty;
+
+        OriginalBitmap = Array.Empty<byte>();
     }
 
     public GlyphItemModel(LVGLGlyph glyph) : this()
@@ -46,6 +48,7 @@ public class GlyphItemModel : LVGLGlyph
         IsUnMapped = glyph.IsUnMapped;
         IsSingleMapped = glyph.IsSingleMapped;
         IsMultiMapped = glyph.IsMultiMapped;
+        OriginalBitmap = Bitmap;
     }
 
 
@@ -54,5 +57,5 @@ public class GlyphItemModel : LVGLGlyph
     public bool LastSelected { get; set; }
     public string Tooltip { get; set; }
 
-    
+    public byte[] OriginalBitmap { get; set; }
 }

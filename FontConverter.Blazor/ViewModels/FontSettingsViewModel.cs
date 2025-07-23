@@ -8,22 +8,31 @@ public class FontSettingsViewModel : BaseViewModel
     public FontSettingsViewModel()
     {
         _FontName = string.Empty;
+        _FontNameIsValid = false;
         _FontBitPerPixel = BIT_PER_PIXEL_ENUM.BPP_8;
         _FontSize = 12;
         _FontSubPixel = SUB_Pixel_ENUM.SUB_PIXEL_NONE;
         _Fallback = string.Empty;
+        _FallbackIsValid = false;
     }
 
     private string _FontName;
+    private bool _FontNameIsValid;
     private BIT_PER_PIXEL_ENUM _FontBitPerPixel;
     private int _FontSize = 12;
     private SUB_Pixel_ENUM _FontSubPixel;
     private string _Fallback;
+    private bool _FallbackIsValid;
 
     public string FontName 
     { 
         get { return _FontName; } 
         set { SetProperty(ref _FontName, value); }
+    }
+    public bool FontNameIsValid
+    {
+        get { return _FontNameIsValid; }
+        set { SetProperty(ref _FontNameIsValid, value); }
     }
     public BIT_PER_PIXEL_ENUM FontBitPerPixel
     {
@@ -44,6 +53,11 @@ public class FontSettingsViewModel : BaseViewModel
     {
         get { return _Fallback; }
         set { SetProperty(ref _Fallback, value); }
+    }
+    public bool FallbackIsValid
+    {
+        get { return _FallbackIsValid; }
+        set { SetProperty(ref _FallbackIsValid, value); }
     }
 
 

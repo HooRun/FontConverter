@@ -31,8 +31,7 @@
                  class="glyphs-row">
         @for (int index = 0; index < GroupedEntry.Items.Count; index++)
         {
-            <GlyphListItemComponent GlyphId="@GroupedEntry.Items[index]"
-                                    VisibilityTrackingID="@((GroupedEntry.RowIndex * GroupedEntry.Items.Count) + (index + 1))"/>
+            <GlyphListItemComponent GlyphId="@GroupedEntry.Items[index]"/>
         }
     </RadzenStack>
 

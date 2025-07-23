@@ -10,8 +10,27 @@ public partial class GlyphListRowComponent : ComponentBase, IDisposable
     [Inject]
     public MainViewModel MainViewModel { get; set; } = default!;
 
+    private GlyphsGroupedEntryModel _groupedEntry = new();
+
     [Parameter]
-    public GlyphsGroupedEntryModel GroupedEntry { get; set; } = new();
+    public GlyphsGroupedEntryModel GroupedEntry
+    {
+        get => _groupedEntry;
+        set
+        {
+            if (!ReferenceEquals(_groupedEntry, value))
+            {
+                _groupedEntry = value;
+                _SelectedItemsCount = value.GroupSelectedItemsCount;
+                _CheckBoxValue = _SelectedItemsCount switch
+                {
+                    0 => false,
+                    var count when count == value.GroupItemsCount => true,
+                    _ => null
+                };
+            }
+        }
+    }
 
     private bool? _CheckBoxValue = false;
     private int _SelectedItemsCount = 0;
@@ -25,33 +44,24 @@ public partial class GlyphListRowComponent : ComponentBase, IDisposable
     protected override async Task OnParametersSetAsync()
     {
         _SelectedItemsCount = GroupedEntry.GroupSelectedItemsCount;
-        if (_SelectedItemsCount == 0)
+        _CheckBoxValue = _SelectedItemsCount switch
         {
-            _CheckBoxValue = false;
-        }
-        else if (_SelectedItemsCount == GroupedEntry.GroupItemsCount)
-        {
-            _CheckBoxValue = true;
-        }
-        else
-        {
-            _CheckBoxValue = null;
-        }
-        await InvokeAsync(StateHasChanged);
+            0 => false,
+            var count when count == GroupedEntry.GroupItemsCount => true,
+            _ => null
+        };
     }
 
     private void GroupSelectionChanges(bool? value)
     {
         if (value is null) value = true;
+
+        if (_CheckBoxValue == value)
+            return;
+
         _CheckBoxValue = value;
-        if (value == true)
-        {
-            MainViewModel.GroupSelectionChanged(GroupedEntry.GroupID, true);
-        }
-        else if (value == false)
-        {
-            MainViewModel.GroupSelectionChanged(GroupedEntry.GroupID, false);
-        }
+
+        MainViewModel.GroupSelectionChanged(GroupedEntry.GroupID, value == true);
     }
 
     private void SelectionChanged(GroupSelectionChangedEventArgs selectionInfo)
@@ -60,24 +70,24 @@ public partial class GlyphListRowComponent : ComponentBase, IDisposable
         {
             if (info.GroupID == GroupedEntry.GroupID)
             {
-                GroupedEntry.GroupSelectedItemsCount = info.SelectedItemsCount;
-                _SelectedItemsCount = GroupedEntry.GroupSelectedItemsCount;
-                if (_SelectedItemsCount == 0)
+                if (GroupedEntry.GroupSelectedItemsCount != info.SelectedItemsCount)
                 {
-                    _CheckBoxValue = false;
+                    GroupedEntry.GroupSelectedItemsCount = info.SelectedItemsCount;
+                    _SelectedItemsCount = info.SelectedItemsCount;
+                    _CheckBoxValue = _SelectedItemsCount switch
+                    {
+                        0 => false,
+                        var count when count == GroupedEntry.GroupItemsCount => true,
+                        _ => null
+                    };
+
+                    InvokeAsync(StateHasChanged);
                 }
-                else if (_SelectedItemsCount == GroupedEntry.GroupItemsCount)
-                {
-                    _CheckBoxValue = true;
-                }
-                else
-                {
-                    _CheckBoxValue = null;
-                }
+                break;
             }
         }
-        StateHasChanged();
     }
+
 
     public void Dispose()
     {

@@ -151,6 +151,48 @@ public class RenderGlyphsToBitmapArrayHelper
         return output;
     }
 
+    public static byte[] ResizeBitmapWidth(byte[] originalBitmap, int originalWidth, int newWidth, int height, BIT_PER_PIXEL_ENUM bpp)
+    {
+        int bppValue = (int)bpp;
+
+        int originalStride = (originalWidth * bppValue + 7) / 8;
+        int newStride = (newWidth * bppValue + 7) / 8;
+
+        var resized = new byte[newStride * height];
+
+        for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < newWidth; x++)
+            {
+                if (x >= originalWidth)
+                    continue; // padding
+
+                // Read from original
+                int srcBitIndex = x * bppValue;
+                int srcByteIndex = y * originalStride + (srcBitIndex / 8);
+                int srcBitOffset = 8 - bppValue - (srcBitIndex % 8);
+
+                if (srcByteIndex >= originalBitmap.Length || srcBitOffset < 0)
+                    continue;
+
+                byte value = (byte)((originalBitmap[srcByteIndex] >> srcBitOffset) & ((1 << bppValue) - 1));
+
+                // Write to new bitmap
+                int dstBitIndex = x * bppValue;
+                int dstByteIndex = y * newStride + (dstBitIndex / 8);
+                int dstBitOffset = 8 - bppValue - (dstBitIndex % 8);
+
+                if (dstByteIndex >= resized.Length || dstBitOffset < 0)
+                    continue;
+
+                resized[dstByteIndex] |= (byte)(value << dstBitOffset);
+            }
+        }
+
+        return resized;
+    }
+
+
     public static LVGLGlyphSVG RenderGlyphToSVG(SKFont svgFont, ushort glyphIndex)
     {
         LVGLGlyphSVG svg = new();

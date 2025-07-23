@@ -14,7 +14,7 @@
                     SelectionMode="DataGridSelectionMode.Multiple"
                     AllowColumnResize="true"
                     AllowVirtualization="@_GridAllowVirtualization"
-                    AllowPaging="@_GridllowPaging"
+                    AllowPaging="@_GridAllowPaging"
                     AllowSorting="true"
                     AllowGrouping="true"
                     AllowFiltering="true"
@@ -45,17 +45,23 @@
                 </RadzenRadioButtonList>
                 <RadzenStack Orientation="Orientation.Horizontal"
                              AlignItems="AlignItems.Center"
-                             Gap="10px">
+                             Gap="10px"
+                             Visible="@(_GridGroupOption==2 || _GridGroupOption==3)">
                     <RadzenButton Icon="expand_all"
                                   Text=""
                                   ButtonStyle="ButtonStyle.Base"
-                                  Size="ButtonSize.Small"
+                                  Size="ButtonSize.ExtraSmall"
                                   Click="@((args) =>_GridAllGroupsExpanded=true)" />
+
+                    <RadzenText Text="Expand All" TextStyle="TextStyle.Caption" />
+
                     <RadzenButton Icon="collapse_all"
                                   Text=""
                                   ButtonStyle="ButtonStyle.Base"
-                                  Size="ButtonSize.Small"
+                                  Size="ButtonSize.ExtraSmall"
                                   Click="@((args) =>_GridAllGroupsExpanded=false)" />
+
+                    <RadzenText Text="Collapse All" TextStyle="TextStyle.Caption" />
                 </RadzenStack>
             </RadzenStack>
         </HeaderTemplate>

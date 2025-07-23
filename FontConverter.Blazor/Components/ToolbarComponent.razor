@@ -4,14 +4,14 @@
                      AlignItems="AlignItems.Center"
                      JustifyContent="JustifyContent.Center"
                      Gap="5px">
-            <RadzenToggleButton Icon="settings"
+            <RadzenToggleButton Icon="font_download"
                                 ButtonStyle="ButtonStyle.Base"
                                 ToggleButtonStyle="ButtonStyle.Base"
                                 Shade="Shade.Light"
                                 ToggleShade="Shade.Darker"
                                 class="rz-border-radius-10 rz-shadow-10 toolbar-button"
                                 @bind-Value=@MainViewModel.LeftSidebarExpanded />
-            <span class="toolbar-button-text">Settings</span>
+            <span class="toolbar-button-text">Font</span>
         </RadzenStack>
 
         <RadzenStack Orientation="Orientation.Vertical"
@@ -21,6 +21,7 @@
             <RadzenButton Icon="draft"
                           ButtonStyle="ButtonStyle.Base"
                           Shade="Shade.Light"
+                          Disabled="true"
                           class="rz-border-radius-10 rz-shadow-10 toolbar-button" />
             <span class="toolbar-button-text">New</span>
         </RadzenStack>
@@ -32,6 +33,7 @@
             <RadzenButton Icon="folder_open"
                           ButtonStyle="ButtonStyle.Base"
                           Shade="Shade.Light"
+                          Disabled="true"
                           class="rz-border-radius-10 rz-shadow-10 toolbar-button" />
             <span class="toolbar-button-text">Open</span>
         </RadzenStack>
@@ -43,6 +45,7 @@
             <RadzenButton Icon="save"
                           ButtonStyle="ButtonStyle.Base"
                           Shade="Shade.Light"
+                          Disabled="true"
                           class="rz-border-radius-10 rz-shadow-10 toolbar-button" />
             <span class="toolbar-button-text">Save</span>
         </RadzenStack>

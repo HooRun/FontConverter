@@ -28,7 +28,7 @@ public partial class ExportDialogComponent : ComponentBase, IRerenderable
     private int _GridGroupOption = 1;
 
     private bool _GridAllowVirtualization = true;
-    private bool _GridllowPaging = false;
+    private bool _GridAllowPaging = false;
     private bool? _GridAllGroupsExpanded = false;
 
     private int _TotalGlyphCount = 0;
@@ -47,6 +47,7 @@ public partial class ExportDialogComponent : ComponentBase, IRerenderable
             .ToList();
         if (!_AllUnicodesFilter.Contains(string.Empty)) 
             _AllUnicodesFilter.Insert(0, string.Empty);
+        _SelectedGlyphsSet.Add(GridData.Single(g => g.Index == 0));
     }
 
     public async Task ForceRender()
@@ -91,10 +92,13 @@ public partial class ExportDialogComponent : ComponentBase, IRerenderable
             }
             else
             {
-                _SelectedGlyphsSet.Clear();
+                _SelectedGlyphsSet.IntersectWith(
+                    _SelectedGlyphsSet.Where(g => g.Index == 0)
+                );
+
             }
         }
-
+        
         await InvokeAsync(StateHasChanged);
     }
 
@@ -125,11 +129,13 @@ public partial class ExportDialogComponent : ComponentBase, IRerenderable
                 }
                 else
                 {
-                    _SelectedGlyphsSet.ExceptWith(groupItems);
+                    _SelectedGlyphsSet.IntersectWith(
+                        _SelectedGlyphsSet.Where(g => !groupItems.Contains(g) || g.Index == 0).ToList()
+                    );
+
                 }
             }
         });
-
         await InvokeAsync(StateHasChanged);
     }
 
@@ -140,9 +146,8 @@ public partial class ExportDialogComponent : ComponentBase, IRerenderable
             if (checkedValue)
                 _SelectedGlyphsSet.Add(item);
             else
-                _SelectedGlyphsSet.Remove(item);
+                if (item.Index!=0) _SelectedGlyphsSet.Remove(item);
         }
-
         await InvokeAsync(StateHasChanged);
     }
 
@@ -151,7 +156,8 @@ public partial class ExportDialogComponent : ComponentBase, IRerenderable
         if (_SelectedGlyphsSet.Count == 0)
             return false;
 
-        if (_SelectedGlyphsSet.Count < GridData.Count)
+        List<LVGLGlyph> tempList = GridData.DistinctBy(g => g.Index).ToList();
+        if (_SelectedGlyphsSet.Count < tempList.Count)
             return null;
 
         return true;
@@ -188,28 +194,21 @@ public partial class ExportDialogComponent : ComponentBase, IRerenderable
         _GridGroupOption = value;
         if (_GlyphsDataGrid != null)
         {
+            GridData = [];
             if (_GridGroupOption==1)
             {
+                _GlyphsDataGrid.Groups=[];
                 GridData = MainViewModel.LVGLFont.Glyphs.Values.ToList();
-                _GlyphsDataGrid.Groups.Clear();
-                _GridAllowVirtualization = true;
-                _GridllowPaging = false;
             }
             else if (_GridGroupOption == 2)
             {
+                _GlyphsDataGrid.Groups=[new GroupDescriptor() { Property = "GlyphGroupByContentHeader", SortOrder = SortOrder.Ascending }];
                 GridData = await Task.Run(GroupByGlyphContent);
-                _GlyphsDataGrid.Groups.Clear();
-                _GlyphsDataGrid.Groups.Add(new GroupDescriptor() { Property = "GlyphGroupByContentHeader", SortOrder = SortOrder.Ascending });
-                _GridAllowVirtualization = true;
-                _GridllowPaging = false;
             }
             else if (_GridGroupOption == 3)
             {
+                _GlyphsDataGrid.Groups=[new GroupDescriptor() { Property = "GlyphGroupByUnicodeRangeHeader", SortOrder = SortOrder.Ascending }];
                 GridData = await Task.Run(()=> GroupByUnicodeRanges(PredefinedData.Blocks));
-                _GlyphsDataGrid.Groups.Clear();
-                _GlyphsDataGrid.Groups.Add(new GroupDescriptor() { Property = "GlyphGroupByUnicodeRangeHeader", SortOrder = SortOrder.Ascending });
-                _GridAllowVirtualization = true;
-                _GridllowPaging = false;
             }
             _GridAllGroupsExpanded = false;
             _TotalGlyphCount = GridData.Count;
@@ -248,11 +247,9 @@ public partial class ExportDialogComponent : ComponentBase, IRerenderable
             {
                 newMappedGlyph.GlyphGroupByContentHeader = "5";
             }
-
             groupedByContentList.Add(newEmptyGlyph);
             groupedByContentList.Add(newMappedGlyph);
         }
-
         return groupedByContentList.OrderBy(g => g.Index).ToList();
     }
 
@@ -281,7 +278,6 @@ public partial class ExportDialogComponent : ComponentBase, IRerenderable
                 }
             }
         }
-
         return groupedByContentList.OrderBy(g => g.Index).ToList();
     }
 

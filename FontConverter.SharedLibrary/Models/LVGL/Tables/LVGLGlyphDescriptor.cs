@@ -10,16 +10,17 @@ public class LVGLGlyphDescriptor
         OffsetY = 0;
         AdvanceWidth = 0;
         BitmapIndex = 0;
+        OriginalWidth = 0;
     }
 
-    public LVGLGlyphDescriptor(int glyphIndex, int bitmapIndex, int advanceWidth, int width, int height, int offsetX, int offsetY) : this()
+    public LVGLGlyphDescriptor(int glyphIndex, int width, int height, int offsetX, int offsetY, int advanceWidth) : this()
     {
         Width = width;
         Height = height;
         OffsetX = offsetX;
         OffsetY = offsetY;
         AdvanceWidth = advanceWidth;
-        BitmapIndex = bitmapIndex;
+        OriginalWidth = Width;
     }
 
     
@@ -30,4 +31,5 @@ public class LVGLGlyphDescriptor
     public int OffsetY { get; set; }
     public int AdvanceWidth { get; set; }
     public int BitmapIndex { get; set; }
+    public int OriginalWidth { get; set; }
 }

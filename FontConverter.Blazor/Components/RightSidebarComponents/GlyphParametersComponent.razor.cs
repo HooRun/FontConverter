@@ -1,5 +1,6 @@
 ﻿using FontConverter.Blazor.Interfaces;
 using FontConverter.Blazor.ViewModels;
+using FontConverter.SharedLibrary.Helpers;
 using Microsoft.AspNetCore.Components;
 using Radzen;
 
@@ -46,6 +47,13 @@ public partial class GlyphParametersComponent : ComponentBase, IRerenderable
     {
         if (newValue != null && MainViewModel.LastSelectedGlyph != null && MainViewModel.LastSelectedGlyph.Descriptor.Width != newValue)
         {
+            MainViewModel.LastSelectedGlyph.Bitmap = RenderGlyphsToBitmapArrayHelper.ResizeBitmapWidth(
+                MainViewModel.LastSelectedGlyph.OriginalBitmap,
+                MainViewModel.LastSelectedGlyph.Descriptor.OriginalWidth,
+                newValue ?? 0,
+                MainViewModel.LastSelectedGlyph.Descriptor.Height,
+                MainViewModel.FontSettingsViewModel.FontBitPerPixel
+                );
             MainViewModel.LastSelectedGlyph.Descriptor.Width = newValue ?? 0;
             MainViewModel.OnGlyphPropertiesChanged?.Invoke(MainViewModel.LastSelectedGlyph.Index);
         }

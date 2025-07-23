@@ -84,4 +84,12 @@ public class LVGLGlyph
     public IList<string> Unicodes => CodePoints.Count > 0 ? CodePoints.Values.Select(g => g.CodePointString).Append(" ").ToList() : new List<string>() { string.Empty };
     public string GlyphGroupByContentHeader { get; set; }
     public string GlyphGroupByUnicodeRangeHeader { get; set; }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is not LVGLGlyph other) return false;
+        return Index == other.Index;
+    }
+
+    public override int GetHashCode() => Index.GetHashCode();
 }

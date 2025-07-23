@@ -11,22 +11,11 @@
         @_HeaderTitle
     </div>
 
-    <div class="glyph-canvas-wrapper" style="@($"width:{_Dimentions.CanvasWidth}px; height:{_Dimentions.CanvasHeight}px; position: relative;")">
-
-        <SKCanvasView OnPaintSurface="OnPaintSurface"
-                      IgnorePixelScaling="true"
-                      style="@($"width:{_Dimentions.CanvasWidth}px; height:{_Dimentions.CanvasHeight}px;")"
-                      class="glyph-canvas"
-                      @ref="_SKCanvasView" />
-        @if (!_IsRenderAllowed)
-        {
-            <div class="glyph-loading">
-                <div class="loading-gradient" />
-            </div>
-        }
-
-
-    </div>
+    <SKCanvasView OnPaintSurface="OnPaintSurface"
+                  IgnorePixelScaling="true"
+                  style="@($"width:{_Dimentions.CanvasWidth}px; height:{_Dimentions.CanvasHeight}px;")"
+                  class="glyph-canvas"
+                  @ref="_SKCanvasView" />
 
     @if (_LastSelected)
     {

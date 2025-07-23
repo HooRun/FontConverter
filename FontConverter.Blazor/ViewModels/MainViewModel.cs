@@ -11,10 +11,9 @@ namespace FontConverter.Blazor.ViewModels;
 
 public class MainViewModel : BaseViewModel
 {
-    public MainViewModel(IMapper mapper, GlyphRenderQueueService glyphRenderQueueService)
+    public MainViewModel(IMapper mapper)
     {
         _Mapper = mapper;
-        _GlyphRenderQueueService = glyphRenderQueueService;
         _OpenTypeFont = new();
         _LVGLFont = new();
         _FontSettingsViewModel = new();
@@ -24,7 +23,7 @@ public class MainViewModel : BaseViewModel
         _GlyphViewItemPropertiesViewModel = new();
         _GlyphsList = new();
         _GlyphsGroupedList = new();
-        _LeftSidebarExpanded = false;
+        _LeftSidebarExpanded = true;
         _RightSidebarExpanded = false;
         _HaveSelectedGlyph = false;
         _BrowserWindowWidth = 0;
@@ -33,7 +32,6 @@ public class MainViewModel : BaseViewModel
     }
 
     private readonly IMapper _Mapper;
-    private readonly GlyphRenderQueueService _GlyphRenderQueueService;
     private readonly Dictionary<string, IRerenderable> _Components = new();
 
     private OpenTypeFont _OpenTypeFont;

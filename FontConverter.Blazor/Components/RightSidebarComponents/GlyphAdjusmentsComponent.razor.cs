@@ -129,14 +129,14 @@ public partial class GlyphAdjusmentsComponent : ComponentBase, IRerenderable
         var scale = MainViewModel.LVGLFont.FontSettings.FontSize / (double)MainViewModel.OpenTypeFont.HeadTable.UnitsPerEm;
         var glyphMetrics = MainViewModel.OpenTypeFont.HmtxTable.GlyphMetrics;
         MainViewModel.LastSelectedGlyph.Bitmap = renderData.Bitmap;
-        MainViewModel.LastSelectedGlyph.Descriptor = new LVGLGlyphDescriptor
-        {
-            Width = renderData.Bounds.Width,
-            Height = renderData.Bounds.Height,
-            OffsetX = renderData.Bounds.Left,
-            OffsetY = -renderData.Bounds.Bottom,
-            AdvanceWidth = (int)Math.Ceiling(scale * glyphMetrics[MainViewModel.LastSelectedGlyph.Index].AdvanceWidth),
-        };
+        MainViewModel.LastSelectedGlyph.OriginalBitmap = renderData.Bitmap;
+        MainViewModel.LastSelectedGlyph.Descriptor = new LVGLGlyphDescriptor(
+                    MainViewModel.LastSelectedGlyph.Index,
+                    renderData.Bounds.Width,
+                    renderData.Bounds.Height,
+                    renderData.Bounds.Left,
+                    -renderData.Bounds.Bottom,
+                    (int)Math.Ceiling(scale * glyphMetrics[MainViewModel.LastSelectedGlyph.Index].AdvanceWidth));
 
         MainViewModel.OnGlyphPropertiesChanged?.Invoke(MainViewModel.LastSelectedGlyph.Index);
     }

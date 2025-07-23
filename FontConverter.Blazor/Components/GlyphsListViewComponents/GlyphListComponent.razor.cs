@@ -17,9 +17,6 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
     [Inject]
     public IJSRuntime JSRuntime { get; set; } = default!;
 
-    [Inject]
-    public GlyphRenderQueueService GlyphRenderQueueService { get; set; } = default!;
-
     private Virtualize<GlyphsGroupedEntryModel>? virtualizeComponent;
 
     private int _ListHorizontalGap = 10;
@@ -31,6 +28,10 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
     private int CountOfColumns = 1;
     private float _VirtualizeRowHeight = 75.0f;
     private int _VirtualizeRowCounts = 0;
+
+    private string lastLoadDataArgs = "";
+    private Task lastLoadDataTask = Task.CompletedTask;
+    private List<GlyphsGroupedEntryModel> _VirtualizeDataItems = [];
 
     private DotNetObjectReference<GlyphListComponent>? _ObjRef;
     private CancellationTokenSource? _ResizeDebounceCts;
@@ -62,6 +63,7 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
         //await Task.Delay(100);
         if (virtualizeComponent is not null)
         {
+            PrecalculateVirtualizeInfo();
             await virtualizeComponent.RefreshDataAsync();
         }
         await InvokeAsync(StateHasChanged);
@@ -78,6 +80,7 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
             itemsContainerDimensions = size;
             if (virtualizeComponent is not null)
             {
+                PrecalculateVirtualizeInfo();
                 await virtualizeComponent.RefreshDataAsync();
             }
             await InvokeAsync(StateHasChanged);
@@ -114,30 +117,21 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
         return (1, 0);
     }
 
-    private async ValueTask<ItemsProviderResult<GlyphsGroupedEntryModel>> LoadChunkedGlyphs(ItemsProviderRequest request)
+    // Thanks Radzen
+    private Task InvokeLoadDataAsync(int startIndex, int count)
     {
-        UpdateCountOfRowsAndColumns();
-
-        int startIndex = request.StartIndex;
-        int count = request.Count;
         int endIndex = startIndex + count;
-
-
-        int groupIndex = 0;
         int currentIndex = 0;
+        _VirtualizeDataItems = [];
 
-        UpdateVirtualizeRowCount();
-        UpdateVirtualizeRowHeight();
-
-        List<GlyphsGroupedEntryModel> resultEntries = [];
-
-        foreach (GlyphsGroupModel group in MainViewModel.GlyphsGroupedList)
+        for (int groupIndex = 0; groupIndex < MainViewModel.GlyphsGroupedList.Count; groupIndex++)
         {
-            groupIndex++;
+            var group = MainViewModel.GlyphsGroupedList[groupIndex];
+
             int rowCount = 0;
-            if (group.IsExpanded && group.IsLoaded && group.Items != null && CountOfColumns > 0)
+            if (group.IsExpanded && group.IsLoaded && group.Items is { Count: > 0 })
             {
-                rowCount = (int)Math.Ceiling((double)group.Items.Count / CountOfColumns);
+                rowCount = (int)Math.Ceiling(group.Items.Count / (double)CountOfColumns);
             }
 
             int groupTotalRows = 1 + rowCount;
@@ -151,66 +145,81 @@ public partial class GlyphListComponent : ComponentBase, IRerenderable, IAsyncDi
             if (currentIndex >= endIndex)
                 break;
 
-
             if (currentIndex >= startIndex && currentIndex < endIndex)
             {
-                List<int> items = [];
-                for (int unmounted = 0; unmounted < CountOfColumns; unmounted++)
-                    items.Add(-1);
-                resultEntries.Add(new GlyphsGroupedEntryModel
+                _VirtualizeDataItems.Add(new GlyphsGroupedEntryModel
                 {
-                    GroupID = groupIndex - 1,
-                    GroupItemsCount = group.Items?.Count ?? 0,
-                    GroupSelectedItemsCount = group.SelectedItems.Count,
+                    GroupID = groupIndex,
                     IsGroupHeader = true,
-                    GroupIcon = group.Icon,
                     GroupHeader = group.Header,
                     GroupSubTitle = group.SubTitle,
-                    Items = [.. items],
+                    GroupIcon = group.Icon,
+                    GroupItemsCount = group.Items?.Count ?? 0,
+                    GroupSelectedItemsCount = group.SelectedItems.Count,
+                    Items = Enumerable.Repeat(-1, CountOfColumns).ToList(),
                     ColumnsGap = _ListVerticalGap,
                     RowIndex = currentIndex - groupIndex,
                 });
             }
             currentIndex++;
 
-            for (int i = 0; i < rowCount; i++)
+            if (group.IsExpanded && group.IsLoaded && group.Items is { Count: > 0 })
             {
-                if (currentIndex >= startIndex && currentIndex < endIndex)
+                for (int i = 0; i < rowCount; i++)
                 {
-                    List<int> chunk = group.Items?.Skip(i * CountOfColumns).Take(CountOfColumns).ToList() ?? [];
-                    if (chunk.Count > 0)
-                    {
-                        if (chunk.Count < CountOfColumns)
-                        {
-                            for (int unmounted = chunk.Count; unmounted < CountOfColumns; unmounted++)
-                                chunk.Add(-1);
-                        }
+                    if (currentIndex >= endIndex)
+                        break;
 
-                        resultEntries.Add(new GlyphsGroupedEntryModel
+                    if (currentIndex >= startIndex)
+                    {
+                        var chunk = group.Items.Skip(i * CountOfColumns).Take(CountOfColumns).ToList();
+
+                        if (chunk.Count < CountOfColumns)
+                            chunk.AddRange(Enumerable.Repeat(-1, CountOfColumns - chunk.Count));
+
+                        _VirtualizeDataItems.Add(new GlyphsGroupedEntryModel
                         {
-                            GroupID = groupIndex - 1,
-                            GroupItemsCount = group.Items?.Count ?? 0,
-                            GroupSelectedItemsCount = group.SelectedItems.Count,
+                            GroupID = groupIndex,
                             IsGroupHeader = false,
-                            GroupIcon = group.Icon,
                             GroupHeader = group.Header,
                             GroupSubTitle = group.SubTitle,
-                            Items = [.. chunk],
+                            GroupIcon = group.Icon,
+                            GroupItemsCount = group.Items.Count,
+                            GroupSelectedItemsCount = group.SelectedItems.Count,
+                            Items = chunk,
                             ColumnsGap = _ListVerticalGap,
                             RowIndex = currentIndex - groupIndex,
                         });
-
                     }
+                    currentIndex++;
                 }
-                currentIndex++;
-
-                if (currentIndex >= endIndex)
-                    break;
             }
-
         }
-        
-        return new ItemsProviderResult<GlyphsGroupedEntryModel>(resultEntries, _VirtualizeRowCounts);
+
+        return Task.CompletedTask;
+    }
+
+    private async ValueTask<ItemsProviderResult<GlyphsGroupedEntryModel>> LoadChunkedGlyphs(ItemsProviderRequest request)
+    {
+        string loadDataArgs = $"{request.StartIndex}|{request.Count}|{CountOfColumns}|{_ListVerticalGap}|{_VirtualizeRowCounts}";
+
+        if (loadDataArgs != lastLoadDataArgs)
+        {
+            lastLoadDataArgs = loadDataArgs;
+            lastLoadDataTask = InvokeLoadDataAsync(request.StartIndex, request.Count);
+        }
+
+        await lastLoadDataTask;
+
+        return new ItemsProviderResult<GlyphsGroupedEntryModel>(_VirtualizeDataItems, _VirtualizeRowCounts);
+    }
+
+
+    private void PrecalculateVirtualizeInfo()
+    {
+        UpdateCountOfRowsAndColumns();
+        UpdateVirtualizeRowCount();
+        UpdateVirtualizeRowHeight();
     }
 
     private void UpdateVirtualizeRowCount()
