@@ -6,7 +6,7 @@
 #include <math.h>
 #include "lvgl.h"
 #include "LvglWindowsIconResource\LvglWindowsIconResource.h"
-#include "fonts/custom_fonts.h"
+#include "custom_fonts.h"
 #include "symbols/fontawesome_24_symbol.h"
 #include "symbols/material_icons_24_symbol.h"
 #include "symbols/noto_emoji_24_symbol.h"
